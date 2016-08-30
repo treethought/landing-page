@@ -1,0 +1,44 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "landing page for goodcall.nyc",
+  "main": "./js/index.js",
+  "scripts": {
+    "start": "budo . -d --serve bundle.js --live",
+    "build": "browserify . -o bundle.js -g uglifyify",
+    "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
+    "push": "gh-pages -d dist",
+    "deploy": "npm run build && npm run dist && npm run push"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/good-call-nyc/landing-page"
+  },
+  "author": "data-doge",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/good-call-nyc/landing-page/issues"
+  },
+  "homepage": "https://github.com/good-call-nyc/landing-page",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "babelify": "^7.3.0",
+    "browserify": "^10.0.0",
+    "budo": "^4.0.0",
+    "gh-pages": "^0.3.0",
+    "uglifyify": "^3.0.1"
+  }
+}
