@@ -2,6 +2,8 @@
 
 landing page for goodcall.nyc
 
+[structure doc](./structure.md)
+
 ## setup
 
 #### clone this repo
