@@ -13,3 +13,5 @@ h1 {
   font-weight: lighter;
   text-align: center;
 }
+
+@import url("./landing-page/index.css");
