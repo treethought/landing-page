@@ -9,27 +9,23 @@ class Header extends Component {
   render () {
     return (
       <div className="landing-page__header">
-        <div className="landing-page__header">
-          <AppBar
-            showMenuIconButton={false}
-            title={<span>GC</span>}
-            iconElementRight={
-              <IconMenu
-                iconButtonElement={
-                  <IconButton><MoreVertIcon /></IconButton>
-                }
-                targetOrigin={{horizontal: 'right', vertical: 'top'}}
-                anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-              >
-                <MenuItem primaryText="Intro" />
-                <MenuItem primaryText="How It Works" />
-                <MenuItem primaryText="Our Mission" />
-                <MenuItem primaryText="Contact Us" />
-              </IconMenu>
-            }
-          >
-          </AppBar>
-        </div>
+        <AppBar
+          showMenuIconButton={false}
+          title={<span>GC</span>}
+          iconElementRight={
+            <IconMenu
+              iconButtonElement={
+                <IconButton><MoreVertIcon /></IconButton>
+              }
+              targetOrigin={{horizontal: 'right', vertical: 'top'}}
+              anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+            >
+              <MenuItem primaryText="Intro" onTouchTap={this.props.scrollToIntro}/>
+              <MenuItem primaryText="How It Works" onTouchTap={this.props.scrollToHowItWorks}/>
+            </IconMenu>
+          }
+        >
+        </AppBar>
       </div>
     )
   }
