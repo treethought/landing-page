@@ -2,7 +2,7 @@
 
 landing page for goodcall.nyc
 
-[structure doc](./structure.md)
+[structure doc](./STRUCTURE.md)
 
 ## setup
 
