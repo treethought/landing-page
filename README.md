@@ -24,7 +24,7 @@ npm install -g s3-website
 mv .env.example .env
 ```
 
-and then add our s3 environment variables to `.env`
+and then add our s3 environment variables to `.env` (ask eugene if u don't have them)
 
 ## develop
 
