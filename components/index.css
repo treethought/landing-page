@@ -5,13 +5,18 @@ html, body {
   height: 100%;
 }
 
-body {
-  font-family: sans-serif;
+@font-face {
+  font-family: 'Futura-Book';
+  src: url('./../assets/fonts/futura-book.woff2') format('woff2'),
+       url('./../assets/fonts/futura-book.woff') format('woff'),
+       url('./../assets/fonts/futura-book.ttf') format('truetype')
 }
 
-h1 {
-  font-weight: lighter;
-  text-align: center;
-}
+/*
+COLORS
+  gc-yellow: #F6E36B;
+  gc-green: #40B097;
+*/
+
 
 @import url("./landing-page/index.css");

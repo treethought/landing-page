@@ -8,3 +8,7 @@ npm-debug.log*
 
 .env
 .s3-website.json
+
+design-files
+
+todo.md
