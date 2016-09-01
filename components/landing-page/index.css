@@ -1,6 +1,16 @@
-.landing-page {
-  margin-top: 64px;
+/* general */
+
+.landing-page__green-btn {
+  width: 158px !important;
 }
+
+.landing-page__green-btn span {
+  font-family: Futura-Light;
+  text-transform: none !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* header */
 
 .landing-page__header {
   position: fixed;
@@ -14,7 +24,7 @@
 }
 
 .landing-page__header-nav-btn {
-  font-family: 'Futura-Book' !important;
+  font-family: Futura-Book !important;
   color: #40B097 !important;
   font-size: 14px;
 }
@@ -25,24 +35,53 @@
   padding-right: 25px !important;
 }
 
+/* intro panel */
+
+.landing-page__phone-img {
+  position: absolute;
+  left: -66px;
+  width: 333px;
+  height: 323px;
+}
+
+.landing-page__handcuffs-img {
+  position: absolute;
+  top: 230px;
+  right: -10px;
+  width: 193px;
+  height: 165px;
+}
+
 .landing-page__intro {
-  padding-top: 10px;
+  position: relative;
+  padding-top: 167px;
   text-align: center;
-  height: 507px;
+  height: 404px;
   background: #F6E36B !important;
 }
 
-.landing-page__paragraph {
-  padding-left: 20px;
-  padding-right: 20px;
+.landing-page__intro-header {
+  font-family: Futura-Medium;
+  font-weight: normal;
+  font-size: 50px;
+  color: #4A4A4A;
+  margin: 0 auto;
+}
+
+.landing-page__intro-subheader {
+  font-family: Interstate-Light;
+  font-size: 20px;
+  color: #4A4A4A;
+  max-width: 534px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 63px;
   text-align: left;
 }
 
-.landing-page__subheader {
-  font-weight: normal;
-}
-
-.landing-page__how-it-works {
-  padding-top: 10px;
-  text-align: center;
+.landing-page__intro-see-how-it-works-txt {
+  margin-top: 140px;
+  font-family: Futura-Book-Italic;
+  font-size: 14px;
+  color: #4A4A4A;
 }
