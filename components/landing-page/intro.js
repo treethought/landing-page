@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 class Intro extends Component {
   render () {
     return (
-      <div className="landing-page__intro" name="landing-page__intro">
+      <div className="landing-page__intro">
         <img className="landing-page__phone-img" src="./assets/imgs/phone_img.svg" />
         <img className="landing-page__handcuffs-img" src="./assets/imgs/handcuffs_img.svg" />
 

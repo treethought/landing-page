@@ -20,7 +20,7 @@ class LandingPage extends Component {
 
   render () {
     return (
-      <div className="landing-page__footer">
+      <div className="landing-page">
         <Header
           scrollToIntro={this.scrollTo('intro').bind(this)}
           scrollToHowItWorks={this.scrollTo('how-it-works').bind(this)}
