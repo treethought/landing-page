@@ -180,3 +180,26 @@
   margin-top: 6px;
   margin-bottom: 53px;
 }
+
+/* footer */
+
+.landing-page__footer {
+  background: #F6E36B;
+  font-family: Futura-Book;
+  font-size: 14px;
+}
+
+.landing-page__footer-link-container {
+  padding-left: 94px;
+  padding-top: 62px;
+  padding-bottom: 50px;
+}
+
+.landing-page__footer-header {
+  color: #40B097;
+  margin-bottom: 12px;
+}
+
+.landing-page__footer-link {
+  margin-bottom: 12px;
+}

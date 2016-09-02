@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
-import { Grid, Row, Cell } from 'react-inline-grid'
 
 class ContactUs extends Component {
   render () {
