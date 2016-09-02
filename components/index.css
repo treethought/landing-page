@@ -1,48 +1,17 @@
 @import url("./normalize.css");
+@import url("./fonts.css");
 
 html, body {
   position: relative;
   height: 100%;
 }
 
-@font-face {
-  font-family: 'Futura-Book';
-  src: url('./../assets/fonts/futura-book.woff2') format('woff2'),
-       url('./../assets/fonts/futura-book.woff') format('woff'),
-       url('./../assets/fonts/futura-book.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Futura-Book-Italic';
-  src: url('./../assets/fonts/futura-book-italic.woff') format('woff'),
-       url('./../assets/fonts/futura-book-italic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Futura-Light';
-  src: url('./../assets/fonts/futura-light.woff2') format('woff2'),
-       url('./../assets/fonts/futura-light.woff') format('woff'),
-       url('./../assets/fonts/futura-light.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Futura-Medium';
-  src: url('./../assets/fonts/futura-medium.woff2') format('woff2'),
-       url('./../assets/fonts/futura-medium.woff') format('woff'),
-       url('./../assets/fonts/futura-medium.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Interstate-Light';
-  src: url('./../assets/fonts/interstate-light.woff') format('woff'),
-       url('./../assets/fonts/interstate-light.ttf') format('truetype');
-}
-
 /*
 COLORS
   gc-yellow: #F6E36B;
   gc-green: #40B097;
+  gc-grey: #4A4A4A;
+  gc-white: #F7F9F9;
 */
-
 
 @import url("./landing-page/index.css");

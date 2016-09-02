@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Futura-Book';
+  src: url('./../assets/fonts/futura-book.woff2') format('woff2'),
+       url('./../assets/fonts/futura-book.woff') format('woff'),
+       url('./../assets/fonts/futura-book.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura-Book-Italic';
+  src: url('./../assets/fonts/futura-book-italic.woff') format('woff'),
+       url('./../assets/fonts/futura-book-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura-Light';
+  src: url('./../assets/fonts/futura-light.woff2') format('woff2'),
+       url('./../assets/fonts/futura-light.woff') format('woff'),
+       url('./../assets/fonts/futura-light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura-Light-Italic';
+  src: url('./../assets/fonts/futura-light-italic.woff') format('woff'),
+       url('./../assets/fonts/futura-light-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura-Medium';
+  src: url('./../assets/fonts/futura-medium.woff2') format('woff2'),
+       url('./../assets/fonts/futura-medium.woff') format('woff'),
+       url('./../assets/fonts/futura-medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Interstate-Light';
+  src: url('./../assets/fonts/interstate-light.woff') format('woff'),
+       url('./../assets/fonts/interstate-light.ttf') format('truetype');
+}
