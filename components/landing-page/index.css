@@ -1,13 +1,26 @@
 /* general */
 
-.landing-page__green-btn {
+.landing-page__std-btn {
   width: 158px !important;
 }
 
-.landing-page__green-btn span {
+.landing-page__std-btn span {
   font-family: Futura-Light;
   text-transform: none !important;
   letter-spacing: 0.5px !important;
+}
+
+.landing-page__std-header {
+  font-family: Futura-Light;
+  font-size: 30px;
+  margin: 0;
+}
+
+.landing-page__std-subheader {
+  font-family: Futura-Light-Italic;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 /* header */
@@ -68,7 +81,7 @@
   margin: 0 auto;
 }
 
-.landing-page__intro-subheader {
+.landing-page__intro-text {
   font-family: Interstate-Light;
   font-size: 20px;
   color: #4A4A4A;
@@ -93,19 +106,6 @@
   padding-top: 62px;
   text-align: center;
   color: #4A4A4A;
-}
-
-.landing-page__how-it-works-header {
-  font-family: Futura-Medium;
-  font-size: 30px;
-  margin: 0;
-}
-
-.landing-page__how-it-works-subheader {
-  font-family: Futura-Light-Italic;
-  font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 25px;
 }
 
 .landing-page__how-it-works-step-container {
@@ -136,4 +136,33 @@
 .landing-page__sample-call-btn {
   margin-top: 35px;
   margin-bottom: 96px;
+}
+
+/* about us panel */
+
+.landing-page__about-us {
+  background: #4A4A4A;
+  color: #F7F9F9;
+  text-align: center;
+  padding-top: 62px;
+}
+
+.landing-page__about-us-text {
+  font-family: Interstate-Light;
+  font-size: 18px;
+  max-width: 800px;
+  padding-top: 5px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+
+.landing-page__manifesto-btn {
+  width: 207px !important;
+  margin-bottom: 58px;
+}
+
+.landing-page__manifesto-btn span {
+  font-family: Futura-Medium;
+  text-transform: none !important;
+  letter-spacing: 0.5px !important;
 }

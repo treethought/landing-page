@@ -10,12 +10,12 @@ class Intro extends Component {
 
         <h1 className="landing-page__intro-header">[product definition of GC]</h1>
 
-        <h2 className="landing-page__intro-subheader">
+        <p className="landing-page__intro-text">
           No one expects to be arrested, but if you’re at the wrong place, at the wrong time, just call 1-800-GOOD CALL
-        </h2>
+        </p>
 
         <RaisedButton
-          className="landing-page__green-btn"
+          className="landing-page__std-btn"
           label="sign up"
           backgroundColor="#40B097"
           labelColor="#FFFFFF"

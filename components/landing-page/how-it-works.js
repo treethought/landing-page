@@ -12,8 +12,8 @@ class HowItWorks extends Component {
   render () {
     return (
       <div className="landing-page__how-it-works" name="landing-page__how-it-works">
-        <h2 className="landing-page__how-it-works-header">Make your call count.</h2>
-        <h3 className="landing-page__how-it-works-subheader">How it works</h3>
+        <h2 className="landing-page__std-header">Make your call count.</h2>
+        <h3 className="landing-page__std-subheader">How it works</h3>
 
         <Grid>
           <Row is="around">
@@ -30,7 +30,7 @@ class HowItWorks extends Component {
         </Grid>
 
         <RaisedButton
-          className="landing-page__green-btn landing-page__sample-call-btn"
+          className="landing-page__std-btn landing-page__sample-call-btn"
           label="try a sample call"
           backgroundColor="#40B097"
           labelColor="#FFFFFF"
