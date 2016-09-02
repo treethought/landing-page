@@ -166,3 +166,17 @@
   text-transform: none !important;
   letter-spacing: 0.5px !important;
 }
+
+/* contact us panel */
+
+.landing-page__contact-us {
+  background: #F7F9F9;
+  padding-top: 35px;
+  text-align: center;
+  color: #4A4A4A;
+}
+
+.landing-page__sign-up-btn {
+  margin-top: 6px;
+  margin-bottom: 53px;
+}

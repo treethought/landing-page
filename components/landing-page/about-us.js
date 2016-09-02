@@ -2,12 +2,6 @@ import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import { Grid, Row, Cell } from 'react-inline-grid'
 
-const steps = [
-  {number: 1, iconSrc: './assets/imgs/signup_icon.svg', text: 'Provide us with an emergency contact'},
-  {number: 2, iconSrc: './assets/imgs/phone_icon.svg', text: 'If you\'re arrested, call 1-800 GOOD CALL. Leave a message for your loved ones if you can\'t reach them.'},
-  {number: 3, iconSrc: './assets/imgs/balance_icon.svg', text: 'If you\'re arrested, call 1-800 GOOD CALL. Leave a message for your loved ones.'}
-]
-
 class AboutUs extends Component {
   render () {
     return (
