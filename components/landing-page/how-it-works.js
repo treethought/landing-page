@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import { Grid, Row, Cell } from 'react-inline-grid'
 
+const steps = [
+  {number: 1, iconSrc: './assets/imgs/signup_icon.svg', text: 'Provide us with an emergency contact'},
+  {number: 2, iconSrc: './assets/imgs/phone_icon.svg', text: 'If you\'re arrested, call 1-800 GOOD CALL. Leave a message for your loved ones if you can\'t reach them.'},
+  {number: 3, iconSrc: './assets/imgs/balance_icon.svg', text: 'If you\'re arrested, call 1-800 GOOD CALL. Leave a message for your loved ones.'}
+]
+
 class HowItWorks extends Component {
   render () {
     return (
@@ -11,29 +17,15 @@ class HowItWorks extends Component {
 
         <Grid>
           <Row is="around">
-            <Cell is="3">
-              <img className="landing-page__how-it-works-icon" src="./assets/imgs/signup_icon.svg"></img>
-              <p className="landing-page__how-it-works-text">
-                <div className="landing-page__how-it-works-step-number">1</div>
-                Provide us with an emergency contact
-              </p>
-            </Cell>
-
-            <Cell is="3">
-              <img className="landing-page__how-it-works-icon" src="./assets/imgs/phone_icon.svg"></img>
-              <p className="landing-page__how-it-works-text">
-                <div className="landing-page__how-it-works-step-number">2</div>
-                If you're arrested, call 1-800 GOOD CALL. Leave a message for your loved ones if you can't reach them.
-              </p>
-            </Cell>
-
-            <Cell is="3">
-              <img className="landing-page__how-it-works-icon" src="./assets/imgs/balance_icon.svg"></img>
-              <p className="landing-page__how-it-works-text">
-                <div className="landing-page__how-it-works-step-number">3</div>
-                If you’re arrested, call 1-800 GOOD CALL. Leave a message for your loved ones.
-              </p>
-            </Cell>
+            {steps.map((step) => (
+              <Cell is="3" key={step.number}>
+                <img className="landing-page__how-it-works-icon" src={step.iconSrc}></img>
+                <p className="landing-page__how-it-works-text">
+                  <span className="landing-page__how-it-works-step-number">{step.number}</span>
+                  {step.text}
+                </p>
+              </Cell>
+            ))}
           </Row>
         </Grid>
 
