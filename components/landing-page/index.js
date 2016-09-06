@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Header from './header.js'
-import Intro from './intro.js'
-import HowItWorks from './how-it-works.js'
-import AboutUs from './about-us.js'
-import ContactUs from './contact-us.js'
-import Footer from './footer.js'
+import Header from './header'
+import Intro from './intro'
+import HowItWorks from './how-it-works'
+import AboutUs from './about-us'
+import ContactUs from './contact-us'
+import Footer from './footer'
 
 class LandingPage extends Component {
   render () {
