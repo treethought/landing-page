@@ -7,11 +7,12 @@ import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 import SvgIcon from 'material-ui/SvgIcon'
 import FlatButton from 'material-ui/FlatButton'
 import MediaQuery from 'react-responsive'
+import {Link} from 'react-router'
 
 const navBtns = [
-  {label: "How it works"},
-  {label: "About us"},
-  {label: "Contact Us"}
+  {label: "How it works", to: "/how-it-works"},
+  {label: "About us", to: "/about-us"},
+  {label: "Contact Us", to: "contact-us"}
 ]
 
 class Header extends Component {
@@ -22,12 +23,21 @@ class Header extends Component {
           className="landing-page__app-bar"
           showMenuIconButton={false}
           zDepth={0}
-          title={ <img src="./assets/imgs/logo.svg"/> }
+          title={
+            <Link to="/">
+              <img src="./assets/imgs/logo.svg" />
+            </Link>
+          }
           iconElementRight={
             <nav className="landing-page__header-nav">
               <MediaQuery query="(min-width: 675px)">
                 {navBtns.map((btn, i) => (
-                  <FlatButton className="landing-page__header-nav-btn" label={btn.label} key={i}/>
+                  <FlatButton
+                    className="landing-page__header-nav-btn"
+                    key={i}
+                    label={btn.label}
+                    containerElement={<Link to={btn.to} />}
+                  />
                 ))}
               </MediaQuery>
 
@@ -39,7 +49,11 @@ class Header extends Component {
                   anchorOrigin={{horizontal: 'right', vertical: 'top'}}
                 >
                   {navBtns.map((btn, i) => (
-                    <MenuItem primaryText={btn.label} key={i}/>
+                    <MenuItem
+                      primaryText={btn.label}
+                      key={i}
+                      containerElement={<Link to={btn.to} />}
+                    />
                   ))}
                 </IconMenu>
               </MediaQuery>
