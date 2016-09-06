@@ -67,6 +67,13 @@
 
 /* intro panel */
 
+.landing-page__intro {
+  position: relative;
+  padding: 167px 20px 26px;
+  text-align: center;
+  background: #F6E36B !important;
+}
+
 .landing-page__phone-img {
   position: absolute;
   left: -66px;
@@ -80,14 +87,6 @@
   right: 0;
   width: 193px;
   height: 165px;
-}
-
-.landing-page__intro {
-  position: relative;
-  padding-top: 167px;
-  text-align: center;
-  background: #F6E36B !important;
-  padding-bottom: 26px;
 }
 
 .landing-page__intro-header {
@@ -130,7 +129,7 @@
 
 .landing-page__how-it-works {
   background: #F7F9F9;
-  padding-top: 62px;
+  padding: 62px 20px 0;
   text-align: center;
   color: #4A4A4A;
 }
@@ -170,7 +169,7 @@
   background: #4A4A4A;
   color: #F7F9F9;
   text-align: center;
-  padding-top: 62px;
+  padding: 62px 20px 0;
 }
 
 .landing-page__about-us-text {
@@ -197,7 +196,7 @@
 
 .landing-page__contact-us {
   background: #F7F9F9;
-  padding-top: 35px;
+  padding: 35px 20px 0;
   text-align: center;
   color: #4A4A4A;
 }
