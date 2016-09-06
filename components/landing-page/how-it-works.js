@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import { Grid, Row, Cell } from 'react-inline-grid'
+import MediaQuery from 'react-responsive'
 
 const steps = [
   {number: 1, iconSrc: './assets/imgs/signup_icon.svg', text: 'Provide us with an emergency contact'},
@@ -16,18 +17,37 @@ class HowItWorks extends Component {
         <h3 className="landing-page__std-subheader">How it works</h3>
 
         <Grid>
-          <Row is="around">
-            {steps.map((step) => (
-              <Cell is="3" key={step.number}>
-                <img className="landing-page__how-it-works-icon" src={step.iconSrc}></img>
-                <p className="landing-page__how-it-works-text">
-                  <span className="landing-page__how-it-works-step-number">{step.number}</span>
-                  {step.text}
-                </p>
-              </Cell>
-            ))}
-          </Row>
+          <div>
+            <MediaQuery query="(min-width: 850px)">
+              <Row is="around">
+                {steps.map((step) => (
+                  <Cell is="3" key={step.number}>
+                    <img className="landing-page__how-it-works-icon" src={step.iconSrc}></img>
+                    <p className="landing-page__how-it-works-text">
+                      <span className="landing-page__how-it-works-step-number">{step.number}</span>
+                      {step.text}
+                    </p>
+                  </Cell>
+                ))}
+              </Row>
+            </MediaQuery>
+
+            <MediaQuery query="(max-width: 850px)">
+              {steps.map((step) => (
+                <Row is="center" key={step.number}>
+                  <Cell is="3">
+                    <img className="landing-page__how-it-works-icon" src={step.iconSrc}></img>
+                    <p className="landing-page__how-it-works-text">
+                      <span className="landing-page__how-it-works-step-number">{step.number}</span>
+                      {step.text}
+                    </p>
+                  </Cell>
+                </Row>
+              ))}
+            </MediaQuery>
+          </div>
         </Grid>
+
 
         <RaisedButton
           className="landing-page__std-btn landing-page__sample-call-btn"

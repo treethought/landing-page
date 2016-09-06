@@ -21,6 +21,8 @@ class Intro extends Component {
           labelColor="#FFFFFF"
         />
 
+        <div className="landing-page__thumbscroll-placeholder"></div>
+        
         <div className="landing-page__intro-see-how-it-works-txt">
           See how it works
         </div>
