@@ -11,6 +11,16 @@ const steps = [
 
 class HowItWorks extends Component {
   render () {
+    let CellFor = (step) => (
+      <Cell is="3" key={step.number}>
+        <img className="landing-page__how-it-works-icon" src={step.iconSrc}></img>
+        <p className="landing-page__how-it-works-text">
+          <span className="landing-page__how-it-works-step-number">{step.number}</span>
+          {step.text}
+        </p>
+      </Cell>
+    )
+
     return (
       <div className="landing-page__how-it-works">
         <h2 className="landing-page__std-header">Make your call count.</h2>
@@ -21,27 +31,15 @@ class HowItWorks extends Component {
             <MediaQuery query="(min-width: 850px)">
               <Row is="around">
                 {steps.map((step) => (
-                  <Cell is="3" key={step.number}>
-                    <img className="landing-page__how-it-works-icon" src={step.iconSrc}></img>
-                    <p className="landing-page__how-it-works-text">
-                      <span className="landing-page__how-it-works-step-number">{step.number}</span>
-                      {step.text}
-                    </p>
-                  </Cell>
+                  CellFor(step)
                 ))}
               </Row>
             </MediaQuery>
 
-            <MediaQuery query="(max-width: 850px)">
+            <MediaQuery query="(max-width: 849px)">
               {steps.map((step) => (
                 <Row is="center" key={step.number}>
-                  <Cell is="3">
-                    <img className="landing-page__how-it-works-icon" src={step.iconSrc}></img>
-                    <p className="landing-page__how-it-works-text">
-                      <span className="landing-page__how-it-works-step-number">{step.number}</span>
-                      {step.text}
-                    </p>
-                  </Cell>
+                  {CellFor(step)}
                 </Row>
               ))}
             </MediaQuery>
