@@ -8,6 +8,10 @@ html, body {
   width: 100%;
 }
 
+body {
+  background: #F6E36B;  
+}
+
 /*
 COLORS
   gc-yellow: #F6E36B;
