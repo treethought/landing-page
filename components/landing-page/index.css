@@ -215,9 +215,21 @@
 }
 
 .landing-page__footer-link-container {
-  padding-left: 94px;
   padding-top: 62px;
   padding-bottom: 50px;
+  padding-left: 94px;
+}
+
+@media (max-width: 479px) {
+  .landing-page__footer-link-container {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .landing-page__footer-link-container {
+    padding-left: 45px;
+  }
 }
 
 .landing-page__footer-header {
@@ -227,4 +239,8 @@
 
 .landing-page__footer-link {
   margin-bottom: 12px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
