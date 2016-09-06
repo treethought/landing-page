@@ -1,5 +1,6 @@
 @import url("./normalize.css");
 @import url("./fonts.css");
+@import url("./overrides.css");
 
 html, body {
   position: relative;
