@@ -23,7 +23,7 @@ class Intro extends Component {
           labelColor="#FFFFFF"
         />
 
-        <Link to="how-it-works" duration={500} smooth={true} offset={-62}>
+        <Link to="how-it-works" duration={500} smooth={true} offset={-64}>
           <img className="landing-page__scroll-icon" src="./assets/imgs/scroll_progress_indicator.svg" />
         </Link>
 
