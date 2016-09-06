@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Header from './header'
+import Header from './../header'
 import Intro from './intro'
 import HowItWorks from './how-it-works'
 import AboutUs from './about-us'
 import JoinTheCause from './join-the-cause'
-import Footer from './footer'
+import Footer from './../footer'
 import Scroll from 'react-scroll'
 const {scroller, Element} = Scroll
 

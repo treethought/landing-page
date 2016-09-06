@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-  background: #F6E36B;  
+  background: #F6E36B;
 }
 
 /*
@@ -20,4 +20,6 @@ COLORS
   gc-white: #F7F9F9;
 */
 
+@import url("./header/index.css");
+@import url("./footer/index.css");
 @import url("./landing-page/index.css");
