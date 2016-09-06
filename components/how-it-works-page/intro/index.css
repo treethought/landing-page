@@ -1,0 +1,28 @@
+.how-it-works-page__intro {
+  background: #F7F9F9;
+  color: #4A4A4A;
+  padding-top: 165px;
+  padding-left: 76px;
+  padding-bottom: 12px;
+}
+
+.how-it-works-page__intro-header {
+  font-family: Futura-Medium;
+  font-size: 50px;
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+.how-it-works-page__intro-subheader {
+  font-family: Interstate-Light;
+  font-size: 20px;
+  color: #4A4A4A;
+  letter-spacing: 0px;
+  max-width: 396px;
+  margin-bottom: 30px;
+}
+
+.how-it-works__intro-sign-up-btn {
+  width: 236px !important;
+  margin-bottom: 99px;
+}

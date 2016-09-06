@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
-import Scroll from 'react-scroll'
-const {Link} = Scroll
+import ScrollDownBtn from './../../scroll-down-btn'
 
 class Intro extends Component {
   render () {
@@ -17,19 +16,13 @@ class Intro extends Component {
         </p>
 
         <RaisedButton
-          className="landing-page__std-btn"
+          className="gc-std-btn landing-page__intro-sign-up-btn"
           label="sign up"
           backgroundColor="#40B097"
           labelColor="#FFFFFF"
         />
 
-        <Link to="how-it-works" duration={500} smooth={true} offset={-64}>
-          <img className="landing-page__scroll-icon" src="./assets/imgs/scroll_progress_indicator.svg" />
-        </Link>
-
-        <div className="landing-page__intro-see-how-it-works-txt">
-          See how it works
-        </div>
+        <ScrollDownBtn to="landing-page__how-it-works" text="See how it works"/>
       </div>
     )
   }

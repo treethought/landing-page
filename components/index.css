@@ -13,6 +13,16 @@ body {
   background: #F6E36B;
 }
 
+.gc-std-btn {
+  width: 158px !important;
+}
+
+.gc-std-btn span {
+  font-family: Futura-Light;
+  text-transform: none !important;
+  letter-spacing: 0.5px !important;
+}
+
 /*
 COLORS
   gc-yellow: #F6E36B;
@@ -25,3 +35,5 @@ COLORS
 @import url("./footer/index.css");
 @import url("./landing-page/index.css");
 @import url("./how-it-works-page/index.css");
+
+@import url("./scroll-down-btn/index.css");

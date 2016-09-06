@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import Header from './../header'
 import Footer from './../footer'
+import Intro from './intro'
+import Details from './details'
 import Scroll from 'react-scroll'
-const {scroller, Element} = Scroll
+const {Element} = Scroll
 
 class HowItWorksPage extends Component {
   render () {
     return (
       <div className="how-it-works-page">
         <Header />
-        <h1>
-          HELLO WORLD
-        </h1>
+        <Intro />
+        <Element name="how-it-works-page__details">
+          <Details />
+        </Element>
         <Footer />
       </div>
     )

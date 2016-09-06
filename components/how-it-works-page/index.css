@@ -1,3 +1,2 @@
-.how-it-works-page {
-  
-}
+@import url("./intro/index.css");
+@import url("./details/index.css");

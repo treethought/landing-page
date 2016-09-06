@@ -9,7 +9,7 @@ class JoinTheCause extends Component {
         <h3 className="landing-page__std-subheader">Join the cause.</h3>
 
         <RaisedButton
-          className="landing-page__std-btn landing-page__sign-up-btn"
+          className="gc-std-btn landing-page__sign-up-btn"
           label="sign up"
           backgroundColor="#40B097"
           labelColor="#FFFFFF"

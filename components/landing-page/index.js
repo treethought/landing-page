@@ -6,7 +6,7 @@ import AboutUs from './about-us'
 import JoinTheCause from './join-the-cause'
 import Footer from './../footer'
 import Scroll from 'react-scroll'
-const {scroller, Element} = Scroll
+const {Element} = Scroll
 
 class LandingPage extends Component {
   render () {
@@ -14,7 +14,7 @@ class LandingPage extends Component {
       <div className="landing-page">
         <Header />
         <Intro />
-        <Element name="how-it-works">
+        <Element name="landing-page__how-it-works">
           <HowItWorks />
         </Element>
         <AboutUs />
