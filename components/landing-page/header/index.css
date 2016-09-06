@@ -10,10 +10,6 @@
   background: #F6E36B !important;
 }
 
-.landing-page__header-nav-icon-menu {
-  display: none !important;
-}
-
 .landing-page__header-nav-btn {
   font-family: Futura-Book !important;
   color: #40B097 !important;
@@ -24,15 +20,4 @@
   text-transform: none !important;
   padding-left: 25px !important;
   padding-right: 25px !important;
-}
-
-
-@media (max-width: 675px) {
-  .landing-page__header-nav-btns {
-    display: none;
-  }
-
-  .landing-page__header-nav-icon-menu {
-    display: block !important;
-  }
 }

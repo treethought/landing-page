@@ -6,6 +6,14 @@ import MenuItem from 'material-ui/MenuItem'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 import SvgIcon from 'material-ui/SvgIcon'
 import FlatButton from 'material-ui/FlatButton'
+import MediaQuery from 'react-responsive'
+
+const navBtns = [
+  {label: "How it works"},
+  {label: "About us"},
+  {label: "Contact Us"},
+  {label: "Log In"}
+]
 
 class Header extends Component {
   render () {
@@ -15,35 +23,30 @@ class Header extends Component {
           className="landing-page__app-bar"
           showMenuIconButton={false}
           zDepth={0}
-          title={
-            <img src="./assets/imgs/logo.svg"/>
-          }
+          title={ <img src="./assets/imgs/logo.svg"/> }
           iconElementRight={
             <nav className="landing-page__header-nav">
-              <div className="landing-page__header-nav-btns">
-                <FlatButton className="landing-page__header-nav-btn" label="How it works" />
-                <FlatButton className="landing-page__header-nav-btn" label="About us" />
-                <FlatButton className="landing-page__header-nav-btn" label="Contact us" />
-                <FlatButton className="landing-page__header-nav-btn" label="Log in" />
-              </div>
+              <MediaQuery query="(min-width: 675px)">
+                {navBtns.map((btn, i) => (
+                  <FlatButton className="landing-page__header-nav-btn" label={btn.label} key={i}/>
+                ))}
+              </MediaQuery>
 
-             <IconMenu
-                className="landing-page__header-nav-icon-menu"
-                iconButtonElement={
-                  <IconButton><MenuIcon /></IconButton>
-                }
-                targetOrigin={{horizontal: 'right', vertical: 'top'}}
-                anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-              >
-                <MenuItem primaryText="How it works" />
-                <MenuItem primaryText="About us" />
-                <MenuItem primaryText="Contact us" />
-                <MenuItem primaryText="Log in" />
-              </IconMenu>
+              <MediaQuery query="(max-width: 674px)">
+                <IconMenu
+                  menuStyle={{ "background": "#F7F9F9" }}
+                  iconButtonElement={ <IconButton><MenuIcon /></IconButton> }
+                  targetOrigin={{horizontal: 'right', vertical: 'top'}}
+                  anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+                >
+                  {navBtns.map((btn, i) => (
+                    <MenuItem primaryText={btn.label} key={i}/>
+                  ))}
+                </IconMenu>
+              </MediaQuery>
             </nav>
           }
-        >
-        </AppBar>
+        />
       </div>
     )
   }
