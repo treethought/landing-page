@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
+import Scroll from 'react-scroll'
+const {Link} = Scroll
 
 class Intro extends Component {
   render () {
@@ -21,8 +23,10 @@ class Intro extends Component {
           labelColor="#FFFFFF"
         />
 
-        <div className="landing-page__thumbscroll-placeholder"></div>
-        
+        <Link to="how-it-works" duration={500} smooth={true} offset={-62}>
+          <img className="landing-page__scroll-icon" src="./assets/imgs/scroll_progress_indicator.svg" />
+        </Link>
+
         <div className="landing-page__intro-see-how-it-works-txt">
           See how it works
         </div>

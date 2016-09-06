@@ -12,7 +12,7 @@ const steps = [
 class HowItWorks extends Component {
   render () {
     return (
-      <div className="landing-page__how-it-works" name="landing-page__how-it-works">
+      <div className="landing-page__how-it-works">
         <h2 className="landing-page__std-header">Make your call count.</h2>
         <h3 className="landing-page__std-subheader">How it works</h3>
 
