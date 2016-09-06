@@ -11,8 +11,7 @@ import MediaQuery from 'react-responsive'
 const navBtns = [
   {label: "How it works"},
   {label: "About us"},
-  {label: "Contact Us"},
-  {label: "Log In"}
+  {label: "Contact Us"}
 ]
 
 class Header extends Component {
