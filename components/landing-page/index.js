@@ -3,7 +3,7 @@ import Header from './header'
 import Intro from './intro'
 import HowItWorks from './how-it-works'
 import AboutUs from './about-us'
-import ContactUs from './contact-us'
+import JoinTheCause from './join-the-cause'
 import Footer from './footer'
 
 class LandingPage extends Component {
@@ -14,7 +14,7 @@ class LandingPage extends Component {
         <Intro />
         <HowItWorks />
         <AboutUs />
-        <ContactUs />
+        <JoinTheCause />
         <Footer />
       </div>
     )

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 
-class ContactUs extends Component {
+class JoinTheCause extends Component {
   render () {
     return (
       <div className="landing-page__contact-us">
@@ -19,4 +19,4 @@ class ContactUs extends Component {
   }
 }
 
-export default ContactUs
+export default JoinTheCause
