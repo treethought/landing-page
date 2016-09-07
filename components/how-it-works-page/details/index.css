@@ -87,7 +87,7 @@
   left: 41px;
 }
 
-.how-it-works__details-sign-up-btn {
+.how-it-works-page__details-sign-up-btn {
   width: 236px !important;
   margin-top: 126px;
 }
@@ -194,6 +194,59 @@
 
 }
 
+@media (max-width: 640px) {
+
+  .how-it-works-page__step-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .how-it-works-page__step-horiz-separator {
+    width: 120px;
+  }
+
+  .how-it-works-page__line {
+    right: 160px;
+  }
+
+  .how-it-works-page__branched-line {
+    width: 115px;
+  }
+
+  .how-it-works-page__parallel-step-icon-container {
+    width: 80px;
+  }
+
+  .how-it-works-page__lawyer-icon {
+    right: 20px;
+  }
+
+  .how-it-works-page__family-icon {
+    left: 20px;
+  }
+
+  .how-it-works-page__sub-step-number-icon-container {
+    width: 80px;
+  }
+
+  .how-it-works-page__step-text {
+    width: 200px;
+  }
+
+  .how-it-works-page__step-list {
+    padding-left: 50px;
+  }
+
+  .how-it-works-page__step-text {
+    font-size: 14px;
+  }
+
+  .how-it-works-page__sub-step-row {
+    height: 40px;
+  }
+
+}
+
 @media (max-width: 480px) {
 
   .how-it-works-page__details-header {
@@ -267,6 +320,11 @@
 
   .how-it-works-page__family-icon {
     left: 11px;
+  }
+
+  .how-it-works-page__details-sign-up-btn {
+    width: 180px !important;
+    margin-top: 126px;
   }
 
 }

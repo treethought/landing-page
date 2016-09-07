@@ -12,7 +12,7 @@ class Intro extends Component {
           <h2 className="how-it-works-page__intro-subheader">Call us if you’re arrested and we will alert a lawyer and your loved ones for you.</h2>
 
           <RaisedButton
-            className="gc-std-btn how-it-works__intro-sign-up-btn"
+            className="gc-std-btn how-it-works-page__intro-sign-up-btn"
             label="sign up for updates"
             backgroundColor="#40B097"
             labelColor="#FFFFFF"

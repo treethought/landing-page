@@ -81,7 +81,7 @@ class Details extends Component {
         </ol>
 
         <RaisedButton
-          className="gc-std-btn how-it-works__details-sign-up-btn"
+          className="gc-std-btn how-it-works-page__details-sign-up-btn"
           label="sign up for updates"
           backgroundColor="#40B097"
           labelColor="#FFFFFF"
