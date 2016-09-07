@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import {Grid, Row, Cell} from 'react-inline-grid'
 import renderIf from 'render-if'
 
+const firstSteps = [
+  {iconSrc: './assets/imgs/arrested_icon.svg', text: 'you get unexpectedly arrested'},
+  {iconSrc: './assets/imgs/precinct_icon.svg', text: 'your\'re brought to the precinct'},
+  {iconSrc: './assets/imgs/phone_icon.svg', text: 'you call 1-800-GOODCALL'}
+]
+
 const callSubsteps = [
   {number: 1, text: 'we ask you for your name & cell number'},
   {number: 2, text: 'we tell you your rights'},
@@ -17,29 +23,24 @@ class Details extends Component {
         <h3 className="how-it-works-page__details-subheader">How it works</h3>
 
         <ol className="how-it-works-page__step-list">
-          <li className="how-it-works-page__step-container">
-            <img className="how-it-works-page__step-icon" src="./assets/imgs/arrested_icon.svg" />
-            <span className="how-it-works-page__step-text">you get unexpectedly arrested</span>
-          </li>
 
-          <div className="how-it-works-page__step-vert-white-line"></div>
-
-          <li className="how-it-works-page__step-container">
-            <img className="how-it-works-page__step-icon" src="./assets/imgs/precinct_icon.svg" />
-            <span className="how-it-works-page__step-text">you're brought to precinct</span>
-          </li>
-
-          <div className="how-it-works-page__step-vert-white-line"></div>
-
-          <li className="how-it-works-page__step-container">
-            <img className="how-it-works-page__step-icon" src="./assets/imgs/phone_icon.svg" />
-            <span className="how-it-works-page__step-text">you call 1-800-GOODCALL</span>
-          </li>
-
-          <div className="how-it-works-page__step-short-vert-green-line"></div>
-
-          {callSubsteps.map((substep, i, arr) => (
+          {firstSteps.map((step, i, arr) => (
             <div key={i}>
+              <li className="how-it-works-page__step-container">
+                <img className="how-it-works-page__step-icon" src={step.iconSrc} />
+                <span className="how-it-works-page__step-text">{step.text}</span>
+              </li>
+
+              {renderIf(i < arr.length - 1)(
+                <div className="how-it-works-page__step-vert-white-line"></div>
+              )}
+            </div>
+          ))}
+
+          {callSubsteps.map((substep, i) => (
+            <div key={i}>
+              <div className="how-it-works-page__step-short-vert-green-line"></div>
+
               <li className="how-it-works-page__sub-step-container">
                 <div className="how-it-works-page__sub-step-number-icon-container">
                   <div className="how-it-works-page__sub-step-number-container">
@@ -49,10 +50,6 @@ class Details extends Component {
 
                 <span className="how-it-works-page__step-text">{substep.text}</span>
               </li>
-
-              {renderIf(i < arr.length - 1)(
-                <div className="how-it-works-page__step-short-vert-green-line"></div>
-              )}
             </div>
           ))}
         </ol>
