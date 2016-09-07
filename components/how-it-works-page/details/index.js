@@ -43,14 +43,14 @@ class Details extends Component {
             <div key={i}>
               <div className="how-it-works-page__line how-it-works-page__short-vert-green-line how-it-works-page__vert-line"></div>
 
-              <li className="how-it-works-page__details-centered-row">
+              <li className="how-it-works-page__sub-step-row how-it-works-page__details-centered-row">
                 <div className="how-it-works-page__sub-step-number-icon-container">
                   <div className="how-it-works-page__sub-step-number-container how-it-works-page__details-centered-row">
                     <div className="how-it-works-page__sub-step-number">{substep.number}</div>
                   </div>
                 </div>
                 <span className="how-it-works-page__step-horiz-separator"></span>
-                
+
                 <span className="how-it-works-page__step-text">{substep.text}</span>
               </li>
             </div>

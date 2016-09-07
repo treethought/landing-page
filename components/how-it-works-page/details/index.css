@@ -196,6 +196,14 @@
 
 @media (max-width: 480px) {
 
+  .how-it-works-page__details-header {
+    font-size: 26px;
+  }
+
+  .how-it-works-page__details-subheader {
+    font-size: 18px;
+  }
+
   .how-it-works-page__step-icon {
     width: 50px;
     height: 50px;
@@ -203,6 +211,10 @@
 
   .how-it-works-page__branched-line {
     width: 72px;
+  }
+
+  .how-it-works-page__sub-step-row {
+    height: 30px;
   }
 
   .how-it-works-page__sub-step-number-container {
@@ -232,11 +244,11 @@
   }
 
   .how-it-works-page__step-horiz-separator {
-    width: 51px;
+    width: 60px;
   }
 
   .how-it-works-page__line {
-    right: 86px;
+    right: 90px;
   }
 
   .how-it-works-page__step-list {
