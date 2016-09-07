@@ -1,3 +1,96 @@
 .how-it-works-page__details {
+  background: #4A4A4A;
+  color: #FFFFFF;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
 
+.how-it-works-page__details-header {
+  font-family: Futura-Light;
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 7px;
+}
+
+.how-it-works-page__details-subheader {
+  font-family: Futura-Light-Italic;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 83px;
+}
+
+.how-it-works-page__step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.how-it-works-page__step-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.how-it-works-page__step-icon {
+  width: 140px;
+  height: 140px;
+  margin-right: 166px;
+}
+
+.how-it-works-page__step-text {
+  font-family: Interstate-Light;
+  text-align: left;
+  width: 240px;
+}
+
+.how-it-works-page__step-vert-white-line {
+  position: relative;
+  margin: 0 auto;
+  right: 203px;
+  width: 4px;
+  height: 80px;
+  background: #FFFFFF;
+}
+
+.how-it-works-page__step-short-vert-green-line {
+  position: relative;
+  margin: 0 auto;
+  right: 203px;
+  width: 4px;
+  height: 25px;
+  background: #40B097;
+}
+
+.how-it-works-page__sub-step-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.how-it-works-page__sub-step-number-icon-container {
+  display: inline-block;
+  width: 140px;
+  height: 50px;
+  margin-right: 166px;
+}
+
+.how-it-works-page__sub-step-number-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #40B097;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.how-it-works-page__sub-step-number {
+  font-size: 35px;
 }
