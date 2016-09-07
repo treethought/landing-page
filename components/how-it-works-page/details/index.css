@@ -38,7 +38,10 @@
 .how-it-works-page__step-icon {
   width: 140px;
   height: 140px;
-  margin-right: 166px;
+}
+
+.how-it-works-page__step-horiz-separator {
+  width: 166px;
 }
 
 .how-it-works-page__step-text {
@@ -51,16 +54,25 @@
   position: relative;
   margin: 0 auto;
   right: 203px;
-  width: 4px;
+  width: 6px;
   height: 80px;
   background: #FFFFFF;
+}
+
+.how-it-works-page__step-vert-green-line {
+  position: relative;
+  margin: 0 auto;
+  right: 203px;
+  width: 6px;
+  height: 80px;
+  background: #40B097;
 }
 
 .how-it-works-page__step-short-vert-green-line {
   position: relative;
   margin: 0 auto;
   right: 203px;
-  width: 4px;
+  width: 6px;
   height: 25px;
   background: #40B097;
 }
@@ -93,4 +105,60 @@
 
 .how-it-works-page__sub-step-number {
   font-size: 35px;
+}
+
+.how-it-works-page__step-green-branch {
+  width: 213px;
+  height: 36px;
+  border: 6px solid #40B097;
+  border-bottom: none;
+  position: relative;
+  margin: 0 auto;
+  right: 203px;
+}
+
+.how-it-works-page__parallel-step-icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 140px;
+  position: relative;
+}
+
+.how-it-works-page__parallel-step-icon {
+  position: relative;
+}
+
+.how-it-works-page__lawyer-icon {
+  right: 41px;
+}
+
+.how-it-works-page__family-icon {
+  left: 41px;
+}
+
+.how-it-works-page__step-white-branch {
+  width: 213px;
+  height: 36px;
+  border: 6px solid #FFFFFF;
+  border-top: none;
+  position: relative;
+  margin: 0 auto;
+  right: 203px;
+}
+
+.how-it-works-page__step-short-vert-white-line {
+  position: relative;
+  margin: 0 auto;
+  right: 203px;
+  width: 6px;
+  height: 25px;
+  background: #FFFFFF;
+}
+
+.how-it-works__details-sign-up-btn {
+  width: 236px !important;
+  margin-top: 126px;
 }

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import {Grid, Row, Cell} from 'react-inline-grid'
 import renderIf from 'render-if'
+import RaisedButton from 'material-ui/RaisedButton'
 
 const firstSteps = [
   {iconSrc: './assets/imgs/arrested_icon.svg', text: 'you get unexpectedly arrested'},
-  {iconSrc: './assets/imgs/precinct_icon.svg', text: 'your\'re brought to the precinct'},
+  {iconSrc: './assets/imgs/precinct_icon.svg', text: 'you\'re brought to the precinct'},
   {iconSrc: './assets/imgs/phone_icon.svg', text: 'you call 1-800-GOODCALL'}
 ]
 
@@ -28,6 +29,7 @@ class Details extends Component {
             <div key={i}>
               <li className="how-it-works-page__step-container">
                 <img className="how-it-works-page__step-icon" src={step.iconSrc} />
+                <span className="how-it-works-page__step-horiz-separator"></span>
                 <span className="how-it-works-page__step-text">{step.text}</span>
               </li>
 
@@ -52,7 +54,37 @@ class Details extends Component {
               </li>
             </div>
           ))}
+
+          <div className="how-it-works-page__step-vert-green-line"></div>
+
+          <div className="how-it-works-page__step-green-branch"></div>
+
+          <li className="how-it-works-page__step-container">
+            <div className="how-it-works-page__parallel-step-icon-container">
+              <img className="how-it-works-page__parallel-step-icon how-it-works-page__lawyer-icon" src="./assets/imgs/lawyer_icon.svg" />
+              <img className="how-it-works-page__parallel-step-icon how-it-works-page__family-icon" src="./assets/imgs/family_icon.svg" />
+            </div>
+            <span className="how-it-works-page__step-horiz-separator"></span>
+            <span className="how-it-works-page__step-text">Good Call will alert a lawyer for you and get your message to your loved ones</span>
+          </li>
+
+          <div className="how-it-works-page__step-white-branch"></div>
+
+          <div className="how-it-works-page__step-short-vert-white-line"></div>
+
+          <li className="how-it-works-page__step-container">
+            <img className="how-it-works-page__step-icon" src="./assets/imgs/free_icon.svg" />
+            <span className="how-it-works-page__step-horiz-separator"></span>
+            <span className="how-it-works-page__step-text">You get released after arraignment</span>
+          </li>
         </ol>
+
+        <RaisedButton
+          className="gc-std-btn how-it-works__details-sign-up-btn"
+          label="sign up for updates"
+          backgroundColor="#40B097"
+          labelColor="#FFFFFF"
+        />
       </div>
     )
   }
