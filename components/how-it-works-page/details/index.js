@@ -27,25 +27,25 @@ class Details extends Component {
 
           {firstSteps.map((step, i, arr) => (
             <div key={i}>
-              <li className="how-it-works-page__step-container">
+              <li className="how-it-works-page__details-centered-row">
                 <img className="how-it-works-page__step-icon" src={step.iconSrc} />
                 <span className="how-it-works-page__step-horiz-separator"></span>
                 <span className="how-it-works-page__step-text">{step.text}</span>
               </li>
 
               {renderIf(i < arr.length - 1)(
-                <div className="how-it-works-page__step-vert-white-line"></div>
+                <div className="how-it-works-page__vert-white-line how-it-works-page__vert-line"></div>
               )}
             </div>
           ))}
 
           {callSubsteps.map((substep, i) => (
             <div key={i}>
-              <div className="how-it-works-page__step-short-vert-green-line"></div>
+              <div className="how-it-works-page__short-vert-green-line how-it-works-page__vert-line"></div>
 
-              <li className="how-it-works-page__sub-step-container">
+              <li className="how-it-works-page__details-centered-row">
                 <div className="how-it-works-page__sub-step-number-icon-container">
-                  <div className="how-it-works-page__sub-step-number-container">
+                  <div className="how-it-works-page__sub-step-number-container how-it-works-page__details-centered-row">
                     <div className="how-it-works-page__sub-step-number">{substep.number}</div>
                   </div>
                 </div>
@@ -55,24 +55,24 @@ class Details extends Component {
             </div>
           ))}
 
-          <div className="how-it-works-page__step-vert-green-line"></div>
+          <div className="how-it-works-page__vert-green-line how-it-works-page__vert-line"></div>
 
-          <div className="how-it-works-page__step-green-branch"></div>
+          <div className="how-it-works-page__green-branched-line how-it-works-page__branched-line"></div>
 
-          <li className="how-it-works-page__step-container">
-            <div className="how-it-works-page__parallel-step-icon-container">
-              <img className="how-it-works-page__parallel-step-icon how-it-works-page__lawyer-icon" src="./assets/imgs/lawyer_icon.svg" />
-              <img className="how-it-works-page__parallel-step-icon how-it-works-page__family-icon" src="./assets/imgs/family_icon.svg" />
+          <li className="how-it-works-page__details-centered-row">
+            <div className="how-it-works-page__parallel-step-icon-container how-it-works-page__details-centered-row">
+              <img className="how-it-works-page__step-icon how-it-works-page__lawyer-icon" src="./assets/imgs/lawyer_icon.svg" />
+              <img className="how-it-works-page__step-icon how-it-works-page__family-icon" src="./assets/imgs/family_icon.svg" />
             </div>
             <span className="how-it-works-page__step-horiz-separator"></span>
             <span className="how-it-works-page__step-text">Good Call will alert a lawyer for you and get your message to your loved ones</span>
           </li>
 
-          <div className="how-it-works-page__step-white-branch"></div>
+          <div className="how-it-works-page__white-branched-line how-it-works-page__branched-line"></div>
 
-          <div className="how-it-works-page__step-short-vert-white-line"></div>
+          <div className="how-it-works-page__short-vert-white-line how-it-works-page__vert-line"></div>
 
-          <li className="how-it-works-page__step-container">
+          <li className="how-it-works-page__details-centered-row">
             <img className="how-it-works-page__step-icon" src="./assets/imgs/free_icon.svg" />
             <span className="how-it-works-page__step-horiz-separator"></span>
             <span className="how-it-works-page__step-text">You get released after arraignment</span>

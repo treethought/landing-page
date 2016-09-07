@@ -2,8 +2,11 @@
   background: #F7F9F9;
   color: #4A4A4A;
   padding-top: 101px;
-  padding-left: 76px;
   padding-bottom: 12px;
+}
+
+.how-it-works-page__intro-main {
+  padding-left: 76px;
 }
 
 .how-it-works-page__intro-header {

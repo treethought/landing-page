@@ -1,3 +1,12 @@
+/* general */
+
+.how-it-works-page__details-centered-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .how-it-works-page__details {
   background: #4A4A4A;
   color: #FFFFFF;
@@ -5,6 +14,8 @@
   padding-top: 60px;
   padding-bottom: 80px;
 }
+
+/* header */
 
 .how-it-works-page__details-header {
   font-family: Futura-Light;
@@ -22,20 +33,16 @@
   margin-bottom: 83px;
 }
 
+/* steps */
+
 .how-it-works-page__step-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.how-it-works-page__step-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 .how-it-works-page__step-icon {
+  position: relative;
   width: 140px;
   height: 140px;
 }
@@ -50,40 +57,6 @@
   width: 240px;
 }
 
-.how-it-works-page__step-vert-white-line {
-  position: relative;
-  margin: 0 auto;
-  right: 203px;
-  width: 6px;
-  height: 80px;
-  background: #FFFFFF;
-}
-
-.how-it-works-page__step-vert-green-line {
-  position: relative;
-  margin: 0 auto;
-  right: 203px;
-  width: 6px;
-  height: 80px;
-  background: #40B097;
-}
-
-.how-it-works-page__step-short-vert-green-line {
-  position: relative;
-  margin: 0 auto;
-  right: 203px;
-  width: 6px;
-  height: 25px;
-  background: #40B097;
-}
-
-.how-it-works-page__sub-step-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 .how-it-works-page__sub-step-number-icon-container {
   display: inline-block;
   width: 140px;
@@ -92,10 +65,6 @@
 }
 
 .how-it-works-page__sub-step-number-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   width: 50px;
   height: 50px;
   background: #40B097;
@@ -107,28 +76,8 @@
   font-size: 35px;
 }
 
-.how-it-works-page__step-green-branch {
-  width: 213px;
-  height: 36px;
-  border: 6px solid #40B097;
-  border-bottom: none;
-  position: relative;
-  margin: 0 auto;
-  right: 203px;
-}
-
 .how-it-works-page__parallel-step-icon-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   width: 140px;
-  height: 140px;
-  position: relative;
-}
-
-.how-it-works-page__parallel-step-icon {
-  position: relative;
 }
 
 .how-it-works-page__lawyer-icon {
@@ -139,26 +88,55 @@
   left: 41px;
 }
 
-.how-it-works-page__step-white-branch {
-  width: 213px;
-  height: 36px;
-  border: 6px solid #FFFFFF;
-  border-top: none;
-  position: relative;
-  margin: 0 auto;
-  right: 203px;
+.how-it-works__details-sign-up-btn {
+  width: 236px !important;
+  margin-top: 126px;
 }
 
-.how-it-works-page__step-short-vert-white-line {
+/* lines */
+
+.how-it-works-page__vert-line {
   position: relative;
   margin: 0 auto;
   right: 203px;
   width: 6px;
+}
+
+.how-it-works-page__vert-white-line {
+  height: 80px;
+  background: #FFFFFF;
+}
+
+.how-it-works-page__vert-green-line {
+  height: 80px;
+  background: #40B097;
+}
+
+.how-it-works-page__short-vert-green-line {
+  height: 25px;
+  background: #40B097;
+}
+
+.how-it-works-page__short-vert-white-line {
   height: 25px;
   background: #FFFFFF;
 }
 
-.how-it-works__details-sign-up-btn {
-  width: 236px !important;
-  margin-top: 126px;
+.how-it-works-page__branched-line {
+  width: 213px;
+  height: 36px;
+  border: 6px solid;
+  position: relative;
+  margin: 0 auto;
+  right: 203px;
+}
+
+.how-it-works-page__white-branched-line {
+  border-top: none;
+  border-color: #FFFFFF;
+}
+
+.how-it-works-page__green-branched-line {
+  border-bottom: none;
+  border-color: #40B097;
 }
