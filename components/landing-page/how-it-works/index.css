@@ -8,6 +8,8 @@
 .landing-page__how-it-works-icon {
   display: block;
   margin: 0 auto;
+  width: 132px;
+  height: 132px;
 }
 
 .landing-page__how-it-works-text {
