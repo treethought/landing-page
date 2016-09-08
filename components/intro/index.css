@@ -1,4 +1,4 @@
-.how-it-works-page__intro {
+.intro {
   background: #F7F9F9;
   color: #4A4A4A;
   padding-top: 101px;
@@ -6,14 +6,14 @@
   padding-bottom: 12px;
 }
 
-.how-it-works-page__intro-header {
+.intro__header {
   font-family: Futura-Medium;
   font-size: 50px;
   margin: 0 auto;
   font-weight: normal;
 }
 
-.how-it-works-page__intro-subheader {
+.intro__subheader {
   font-family: Interstate-Light;
   font-size: 20px;
   color: #4A4A4A;
@@ -22,7 +22,7 @@
   margin-bottom: 30px;
 }
 
-.how-it-works__intro-sign-up-btn {
+.intro__sign-up-btn {
   width: 236px !important;
   margin-bottom: 99px;
 }
