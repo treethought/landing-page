@@ -5,7 +5,7 @@ import Footer from './../footer'
 class InnerPage extends Component {
   render () {
     return (
-      <div className="page">
+      <div className="inner-page">
         <Header />
           {this.props.children}
         <Footer />
