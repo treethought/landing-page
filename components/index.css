@@ -32,6 +32,7 @@ COLORS
 */
 
 @import url("./header/index.css");
+@import url("./intro/index.css");
 @import url("./footer/index.css");
 @import url("./landing-page/index.css");
 @import url("./how-it-works-page/index.css");

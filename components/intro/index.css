@@ -1,0 +1,53 @@
+.intro {
+  background: #F7F9F9;
+  color: #4A4A4A;
+  padding-top: 101px;
+  padding-bottom: 12px;
+  padding-left: 79px;
+  padding-right: 79px;
+}
+
+.intro__header {
+  font-family: Futura-Medium;
+  font-size: 50px;
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+.intro__subheader {
+  font-family: Interstate-Light;
+  font-size: 20px;
+  color: #4A4A4A;
+  letter-spacing: 0px;
+  max-width: 396px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 640px) {
+
+  .intro {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .intro__header {
+    font-size: 42px;
+  }
+
+  .intro__subheader {
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .intro__main {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .intro__header {
+    font-size: 26px;
+  }
+}
