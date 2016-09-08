@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Grid, Row, Cell} from 'react-inline-grid'
 import renderIf from 'render-if'
 import RaisedButton from 'material-ui/RaisedButton'
 
@@ -18,7 +17,7 @@ const callSubsteps = [
 
 class Details extends Component {
   render () {
-    let Step = ({iconSrc, text, className, customIcon}) => (
+    let Step = ({iconSrc, text, className = "", customIcon}) => (
       <li className={"how-it-works-page__details-centered-row " + className}>
         {renderIf(customIcon) (customIcon)}
         {renderIf(!customIcon) (<img className="how-it-works-page__step-icon" src={iconSrc} />)}
