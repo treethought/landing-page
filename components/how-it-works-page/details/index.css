@@ -5,6 +5,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
 }
 
 .how-it-works-page__details {
@@ -45,6 +49,7 @@
   position: relative;
   width: 140px;
   height: 140px;
+  display: inline-block;
 }
 
 .how-it-works-page__step-horiz-separator {
@@ -76,15 +81,19 @@
 }
 
 .how-it-works-page__parallel-step-icon-container {
+  position: relative;
+  height: 140px;
   width: 140px;
 }
 
 .how-it-works-page__lawyer-icon {
-  right: 41px;
+  position: absolute;
+  right: 108px;
 }
 
 .how-it-works-page__family-icon {
-  left: 41px;
+  position: absolute;
+  left: 108px;
 }
 
 .how-it-works-page__details-sign-up-btn {
@@ -176,16 +185,25 @@
     right: 190px;
   }
 
-  .how-it-works-page__parallel-step-icon-container {
-    width: 110px;
-  }
-
   .how-it-works-page__step-horiz-separator {
     width: 140px;
   }
 
   .how-it-works-page__step-list {
     padding-left: 90px;
+  }
+
+  .how-it-works-page__parallel-step-icon-container {
+    height: 110px;
+    width: 110px;
+  }
+
+  .how-it-works-page__lawyer-icon {
+    right: 95px;
+  }
+
+  .how-it-works-page__family-icon {
+    left: 95px;
   }
 
 }
@@ -210,18 +228,6 @@
     right: 160px;
   }
 
-  .how-it-works-page__parallel-step-icon-container {
-    width: 80px;
-  }
-
-  .how-it-works-page__lawyer-icon {
-    right: 20px;
-  }
-
-  .how-it-works-page__family-icon {
-    left: 20px;
-  }
-
   .how-it-works-page__sub-step-number-icon-container {
     width: 80px;
   }
@@ -240,6 +246,19 @@
 
   .how-it-works-page__sub-step-row {
     height: 40px;
+  }
+
+  .how-it-works-page__parallel-step-icon-container {
+    height: 80px;
+    width: 80px;
+  }
+
+  .how-it-works-page__lawyer-icon {
+    right: 60px;
+  }
+
+  .how-it-works-page__family-icon {
+    left: 60px;
   }
 
 }
@@ -288,10 +307,6 @@
     right: 90px;
   }
 
-  .how-it-works-page__parallel-step-icon-container {
-    width: 50px;
-  }
-
   .how-it-works-page__step-horiz-separator {
     width: 60px;
   }
@@ -306,12 +321,17 @@
     width: 120px;
   }
 
+  .how-it-works-page__parallel-step-icon-container {
+    height: 50px;
+    width: 50px;
+  }
+
   .how-it-works-page__lawyer-icon {
-    right: 11px;
+    right: 37px;
   }
 
   .how-it-works-page__family-icon {
-    left: 11px;
+    left: 37px;
   }
 
   .how-it-works-page__details-sign-up-btn {
