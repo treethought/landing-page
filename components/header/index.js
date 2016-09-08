@@ -11,8 +11,7 @@ import {Link} from 'react-router'
 
 const navBtns = [
   {label: "How it works", to: "/how-it-works"},
-  {label: "About us", to: "/about-us"},
-  {label: "Contact Us", to: "contact-us"}
+  {label: "About us", to: "/about-us"}
 ]
 
 class Header extends Component {
