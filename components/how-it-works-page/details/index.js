@@ -18,9 +18,10 @@ const callSubsteps = [
 
 class Details extends Component {
   render () {
-    let Step = ({iconSrc, text}) => (
-      <li className="how-it-works-page__details-centered-row">
-        <img className="how-it-works-page__step-icon" src={iconSrc} />
+    let Step = ({iconSrc, text, className, customIcon}) => (
+      <li className={"how-it-works-page__details-centered-row " + className}>
+        {renderIf(customIcon) (customIcon)}
+        {renderIf(!customIcon) (<img className="how-it-works-page__step-icon" src={iconSrc} />)}
         <span className="how-it-works-page__step-horiz-separator"></span>
         <span className="how-it-works-page__step-text">{text}</span>
       </li>
@@ -40,14 +41,10 @@ class Details extends Component {
         <h3 className="how-it-works-page__details-subheader">How it works</h3>
 
         <ol className="how-it-works-page__step-list">
-
           {firstSteps.map((step, i, arr) => (
             <div key={i}>
               <Step iconSrc={step.iconSrc} text={step.text} />
-
-              {renderIf(i < arr.length - 1)(
-                <Line type="vert" color="white" />
-              )}
+              {renderIf(i < arr.length - 1)(<Line type="vert" color="white" />)}
             </div>
           ))}
 
@@ -55,16 +52,13 @@ class Details extends Component {
             <div key={i}>
               <Line type="short-vert" color="green" />
 
-              <li className="how-it-works-page__sub-step-row how-it-works-page__details-centered-row">
+              <Step className="how-it-works-page__sub-step-row" text={substep.text} customIcon={
                 <div className="how-it-works-page__sub-step-number-icon-container">
                   <div className="how-it-works-page__sub-step-number-container how-it-works-page__details-centered-row">
                     <div className="how-it-works-page__sub-step-number">{substep.number}</div>
                   </div>
                 </div>
-                <span className="how-it-works-page__step-horiz-separator"></span>
-
-                <span className="how-it-works-page__step-text">{substep.text}</span>
-              </li>
+              }/>
             </div>
           ))}
 
@@ -72,14 +66,12 @@ class Details extends Component {
 
           <Branch type="downward" color="green" />
 
-          <li className="how-it-works-page__details-centered-row">
+          <Step text="Good Call will alert a lawyer for you and get your message to your loved ones" customIcon={
             <div className="how-it-works-page__parallel-step-icon-container how-it-works-page__details-centered-row">
               <img className="how-it-works-page__step-icon how-it-works-page__lawyer-icon" src="./assets/imgs/lawyer_icon.svg" />
               <img className="how-it-works-page__step-icon how-it-works-page__family-icon" src="./assets/imgs/family_icon.svg" />
             </div>
-            <span className="how-it-works-page__step-horiz-separator"></span>
-            <span className="how-it-works-page__step-text">Good Call will alert a lawyer for you and get your message to your loved ones</span>
-          </li>
+          }/>
 
           <Branch type="upward" color="white" />
 
