@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 
-class AboutUs extends Component {
+class Mission extends Component {
   render () {
     return (
-      <div className="landing-page__about-us">
+      <div className="landing-page__mission">
         <h2 className="landing-page__std-header">Everyone deserves fairness.</h2>
         <h3 className="landing-page__std-subheader">Our mission</h3>
 
-        <p className="landing-page__about-us-text">
+        <p className="landing-page__mission-text">
           lorem ipsum something something. To improve fairness in the arrest process by connecting people with a lawyer. We believe that everyone should have procedural justice blah blah blah.
         </p>
 
@@ -23,4 +23,4 @@ class AboutUs extends Component {
   }
 }
 
-export default AboutUs
+export default Mission
