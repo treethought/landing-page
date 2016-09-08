@@ -18,6 +18,22 @@ const callSubsteps = [
 
 class Details extends Component {
   render () {
+    let Step = ({iconSrc, text}) => (
+      <li className="how-it-works-page__details-centered-row">
+        <img className="how-it-works-page__step-icon" src={iconSrc} />
+        <span className="how-it-works-page__step-horiz-separator"></span>
+        <span className="how-it-works-page__step-text">{text}</span>
+      </li>
+    )
+
+    let Line = ({type, color}) => (
+      <div className={`how-it-works-page__line how-it-works-page__${type}-line how-it-works-page__${color}-line`}></div>
+    )
+
+    let Branch = ({type, color}) => (
+      <div className={`how-it-works-page__branch how-it-works-page__${type}-branch how-it-works-page__${color}-branch`}></div>
+    )
+
     return (
       <div className="how-it-works-page__details">
         <h2 className="how-it-works-page__details-header">Know what to expect.</h2>
@@ -27,21 +43,17 @@ class Details extends Component {
 
           {firstSteps.map((step, i, arr) => (
             <div key={i}>
-              <li className="how-it-works-page__details-centered-row">
-                <img className="how-it-works-page__step-icon" src={step.iconSrc} />
-                <span className="how-it-works-page__step-horiz-separator"></span>
-                <span className="how-it-works-page__step-text">{step.text}</span>
-              </li>
+              <Step iconSrc={step.iconSrc} text={step.text} />
 
               {renderIf(i < arr.length - 1)(
-                <div className="how-it-works-page__line how-it-works-page__vert-white-line how-it-works-page__vert-line"></div>
+                <Line type="vert" color="white" />
               )}
             </div>
           ))}
 
           {callSubsteps.map((substep, i) => (
             <div key={i}>
-              <div className="how-it-works-page__line how-it-works-page__short-vert-green-line how-it-works-page__vert-line"></div>
+              <Line type="short-vert" color="green" />
 
               <li className="how-it-works-page__sub-step-row how-it-works-page__details-centered-row">
                 <div className="how-it-works-page__sub-step-number-icon-container">
@@ -56,9 +68,9 @@ class Details extends Component {
             </div>
           ))}
 
-          <div className="how-it-works-page__line how-it-works-page__vert-green-line how-it-works-page__vert-line"></div>
+          <Line type="vert" color="green" />
 
-          <div className="how-it-works-page__line how-it-works-page__green-branched-line how-it-works-page__branched-line"></div>
+          <Branch type="downward" color="green" />
 
           <li className="how-it-works-page__details-centered-row">
             <div className="how-it-works-page__parallel-step-icon-container how-it-works-page__details-centered-row">
@@ -69,15 +81,11 @@ class Details extends Component {
             <span className="how-it-works-page__step-text">Good Call will alert a lawyer for you and get your message to your loved ones</span>
           </li>
 
-          <div className="how-it-works-page__line how-it-works-page__white-branched-line how-it-works-page__branched-line"></div>
+          <Branch type="upward" color="white" />
 
-          <div className="how-it-works-page__line how-it-works-page__short-vert-white-line how-it-works-page__vert-line"></div>
+          <Line type="short-vert" color="white" />
 
-          <li className="how-it-works-page__details-centered-row">
-            <img className="how-it-works-page__step-icon" src="./assets/imgs/free_icon.svg" />
-            <span className="how-it-works-page__step-horiz-separator"></span>
-            <span className="how-it-works-page__step-text">You get released after arraignment</span>
-          </li>
+          <Step iconSrc="./assets/imgs/free_icon.svg" text="You get released after arraignment" />
         </ol>
 
         <RaisedButton
