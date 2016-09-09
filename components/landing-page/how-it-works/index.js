@@ -51,7 +51,7 @@ class HowItWorks extends Component {
         <RaisedButton
           className="gc-std-btn landing-page__sample-call-btn"
           label="try a sample call"
-          backgroundColor="#40B097"
+          backgroundColor="#45D8B8"
           labelColor="#FFFFFF"
         />
       </div>

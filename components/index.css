@@ -24,12 +24,15 @@ body {
   font-weight: 300 !important;
 }
 
+/* TODO: remove unused colors */
+
 /*
 COLORS
   gc-yellow: #F6E36B;
   gc-green: #40B097;
   gc-grey: #4A4A4A;
   gc-new-white: #FDFFF9;
+  gc-mint: #45D8B8
 */
 
 @import url("./header/index.css");
