@@ -1,37 +1,36 @@
 .landing-page__how-it-works {
-  background: #F7F9F9;
   padding: 62px 20px 0;
   text-align: center;
   color: #4A4A4A;
 }
 
+.landing-page__how-it-works-step-list {
+  list-style: none;
+  padding-left: 0;
+}
+
 .landing-page__how-it-works-icon {
   display: block;
   margin: 0 auto;
-  width: 132px;
-  height: 132px;
+  width: 76px;
+  height: 76px;
+}
+
+.landing-page__how-it-works-step-header {
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .landing-page__how-it-works-text {
   position: relative;
-  font-family: Interstate-Light;
   font-size: 18px;
-  margin: 18px auto;
+  margin: 0 auto;
   width: 190px;
-  min-height: 100px;
-}
-
-.landing-page__how-it-works-step-number {
-  display: block;
-  position: absolute;
-  color: rgba(255,230,76,0.27);
-  font-size: 140px;
-  font-family: Futura-Medium;
-  top: -35px;
-  width: 100%;
 }
 
 .landing-page__sample-call-btn {
-  margin-top: 35px;
-  margin-bottom: 96px;
+  margin-top: 52px;
+  margin-bottom: 60px;
 }
