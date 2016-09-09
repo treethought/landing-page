@@ -10,32 +10,34 @@ import MediaQuery from 'react-responsive'
 import {Link} from 'react-router'
 
 const navBtns = [
-  {label: "How it works", to: "/how-it-works"},
-  {label: "About us", to: "/about-us"}
+  {label: 'How it works', to: '/how-it-works'},
+  {label: 'About us', to: '/about-us'},
+  {label: 'Sign up for updates', to: '/', className: 'header__sign-up-btn' }
 ]
 
 class Header extends Component {
   render () {
     return (
-      <div className="landing-page__header">
+      <div className="header">
         <AppBar
-          className="landing-page__app-bar"
+          className="header__app-bar"
           showMenuIconButton={false}
           zDepth={0}
           title={
             <Link to="/">
-              <img src="./assets/imgs/logo.svg" />
+              <img src="./assets/imgs/logo.png" className="header-logo"/>
             </Link>
           }
           iconElementRight={
-            <nav className="landing-page__header-nav">
+            <nav className="header__nav">
               <MediaQuery query="(min-width: 675px)">
                 {navBtns.map((btn, i) => (
                   <FlatButton
-                    className="landing-page__header-nav-btn"
+                    className={`header__nav-btn ${btn.className || ''}`}
                     key={i}
                     label={btn.label}
                     containerElement={<Link to={btn.to} />}
+                    hoverColor="#FDFFF9"
                   />
                 ))}
               </MediaQuery>

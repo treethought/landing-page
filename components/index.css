@@ -1,6 +1,8 @@
-@import url("./normalize.css");
-@import url("./fonts.css");
-@import url("./overrides.css");
+@import url("./../assets/styles/normalize.css");
+@import url("./../assets/styles/fonts.css");
+@import url("./../assets/styles/overrides.css");
+@import url("./../assets/styles/slick.min.css");
+@import url("./../assets/styles/slick-theme.min.css");
 
 html, body {
   position: relative;
@@ -10,7 +12,8 @@ html, body {
 
 body {
   padding-top: 64px;
-  background: #F6E36B;
+  background: #FDFFF9;
+  font-family: Lato;
 }
 
 .gc-std-btn {
@@ -18,17 +21,20 @@ body {
 }
 
 .gc-std-btn span {
-  font-family: Futura-Light;
   text-transform: none !important;
-  letter-spacing: 0.5px !important;
+  letter-spacing: 0.57px !important;
+  font-weight: 300 !important;
 }
+
+/* TODO: remove unused colors */
 
 /*
 COLORS
   gc-yellow: #F6E36B;
   gc-green: #40B097;
   gc-grey: #4A4A4A;
-  gc-white: #F7F9F9;
+  gc-new-white: #FDFFF9;
+  gc-mint: #45D8B8;
 */
 
 @import url("./header/index.css");

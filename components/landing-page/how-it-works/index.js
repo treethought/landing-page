@@ -4,53 +4,54 @@ import { Grid, Row, Cell } from 'react-inline-grid'
 import MediaQuery from 'react-responsive'
 
 const steps = [
-  {number: 1, iconSrc: './assets/imgs/signup_icon.svg', text: 'Provide us with an emergency contact'},
-  {number: 2, iconSrc: './assets/imgs/phone_icon.svg', text: 'If you\'re arrested, call 1-800 GOOD CALL. Leave a message for your loved ones if you can\'t reach them.'},
-  {number: 3, iconSrc: './assets/imgs/balance_icon.svg', text: 'If you\'re arrested, call 1-800 GOOD CALL. Leave a message for your loved ones.'}
+  {number: 1, iconSrc: './assets/imgs/signup_icon.svg', header: '1.  Become a member for free', text: 'Become a member for free by provide us with an emergency contact'},
+  {number: 2, iconSrc: './assets/imgs/phone_icon.svg', header: '2. Call us if you’re arrested', text: 'Call us and give us your name then leave a message for your loved ones if you can’t reach them.'},
+  {number: 3, iconSrc: './assets/imgs/balance_icon.svg', header: '3. Know we got your back', text: 'We will alert a lawyer and call your loved ones to let them know you’re okay.'}
 ]
 
 class HowItWorks extends Component {
   render () {
-    let CellFor = (step) => (
-      <Cell is="3" key={step.number}>
-        <img className="landing-page__how-it-works-icon" src={step.iconSrc}></img>
-        <p className="landing-page__how-it-works-text">
-          <span className="landing-page__how-it-works-step-number">{step.number}</span>
-          {step.text}
-        </p>
+    let Step = ({step}) => (
+      <Cell is="4 tablet-6">
+        <li>
+          <img className="landing-page__how-it-works-icon" src={step.iconSrc}></img>
+          <h4 className="landing-page__how-it-works-step-header">{step.header}</h4>
+          <p className="landing-page__how-it-works-text">
+            {step.text}
+          </p>
+        </li>
       </Cell>
     )
 
     return (
       <div className="landing-page__how-it-works">
         <h2 className="landing-page__std-header">Make your call count.</h2>
-        <h3 className="landing-page__std-subheader">How it works</h3>
+        <h3 className="landing-page__std-subheader"><em>How it works</em></h3>
 
         <Grid>
-          <div>
+          <ol className="landing-page__how-it-works-step-list">
             <MediaQuery query="(min-width: 850px)">
-              <Row is="around">
+              <Row is="around" style={{'padding': 0}}>
                 {steps.map((step) => (
-                  CellFor(step)
+                  <Step step={step} key={step.number}/>
                 ))}
               </Row>
             </MediaQuery>
 
             <MediaQuery query="(max-width: 849px)">
               {steps.map((step) => (
-                <Row is="center" key={step.number}>
-                  {CellFor(step)}
+                <Row is="center" key={step.number} style={{'padding': 0}}>
+                  <Step step={step} />
                 </Row>
               ))}
             </MediaQuery>
-          </div>
+          </ol>
         </Grid>
-
 
         <RaisedButton
           className="gc-std-btn landing-page__sample-call-btn"
           label="try a sample call"
-          backgroundColor="#40B097"
+          backgroundColor="#45D8B8"
           labelColor="#FFFFFF"
         />
       </div>
