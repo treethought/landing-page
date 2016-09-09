@@ -4,26 +4,42 @@ import { Grid, Row, Cell } from 'react-inline-grid'
 class Footer extends Component {
   render () {
     return (
-      <div className="landing-page__footer">
-        <div className="landing-page__footer-link-container">
-          <Grid>
-            <Row is="start">
-              <Cell is="5 tablet-4">
-                <div className="landing-page__footer-header">Contact Us</div>
-                <a className="landing-page__footer-link">150 Court St. 2nd Floor, Brooklyn 11201</a>
-                <a className="landing-page__footer-link">hello@goodcall.com</a>
-              </Cell>
+      <footer className="landing-page__footer">
+        <Grid>
+          <Row is="start">
+            <Cell is="5 tablet-4">
+              <div className="landing-page__footer-header">Contact Us</div>
 
-              <Cell is="5 tablet-4">
-                <div className="landing-page__footer-header">Help</div>
+              <address className="landing-page__footer-links-container">
+                <a href="https://www.google.com/maps?q=150+Court+St.+2nd+Floor,+Brooklyn+11201" className="landing-page__footer-link">150 Court St. 2nd Floor, Brooklyn 11201</a>
+                <a href="mailto:hello@goodcall.nyc" className="landing-page__footer-link">hello@goodcall.nyc</a>
+              </address>
+            </Cell>
+
+            <Cell is="3 tablet-4">
+              <div className="landing-page__footer-header">Help</div>
+
+              <div className="landing-page__footer-links-container">
                 <a className="landing-page__footer-link">Privacy Policy</a>
                 <a className="landing-page__footer-link">Terms & Conditions</a>
                 <a className="landing-page__footer-link">Your Rights</a>
-              </Cell>
-            </Row>
-          </Grid>
-        </div>
-      </div>
+              </div>
+            </Cell>
+
+            <Cell is="4 tablet-4">
+              <div className="landing-page__footer-header">Our Partners</div>
+
+              <div className="landing-page__footer-links-container">
+                <div>
+                  <a className="landing-page__footer-link" href="https://labs.robinhood.org/" target="_blank">
+                    <img src="./assets/imgs/blueridgelabs.png"></img>
+                  </a>
+                </div>
+              </div>
+            </Cell>
+          </Row>
+        </Grid>
+      </footer>
     )
   }
 }

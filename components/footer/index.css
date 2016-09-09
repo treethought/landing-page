@@ -1,36 +1,41 @@
 .landing-page__footer {
-  background: #F6E36B;
-  font-family: Futura-Book;
+  background: #4A4A4A;
+  color: #FDFFF9;
   font-size: 14px;
+  font-weight: 300;
+  padding: 50px 94px;
+  padding-right: 0;
 }
 
-.landing-page__footer-link-container {
-  padding-top: 62px;
-  padding-bottom: 50px;
-  padding-left: 94px;
+.landing-page__footer-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+  height: 50px;
+  font-style: normal;
+  margin-bottom: 25px;
+}
+
+.landing-page__footer-header {
+  margin-bottom: 20px;
+}
+
+.landing-page__footer-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 @media (max-width: 479px) {
-  .landing-page__footer-link-container {
+  .landing-page__footer {
     padding-left: 20px;
   }
 }
 
 @media (max-width: 900px) {
-  .landing-page__footer-link-container {
+  .landing-page__footer {
     padding-left: 45px;
   }
-}
-
-.landing-page__footer-header {
-  color: #40B097;
-  margin-bottom: 12px;
-}
-
-.landing-page__footer-link {
-  margin-bottom: 12px;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  cursor: pointer;
 }
