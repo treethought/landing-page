@@ -9,7 +9,7 @@ class ScrollDownBtn extends Component {
         <img className="scroll-down-btn__icon" src="./assets/imgs/scroll_progress_indicator.svg" />
 
         <div className="scroll-down-btn__text">
-          {this.props.text}
+          <em>{this.props.text}</em>
         </div>
       </Link>
     )
