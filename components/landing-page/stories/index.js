@@ -12,6 +12,18 @@ const stories = [
 ]
 
 class Stories extends Component {
+  componentDidMount () {
+    window.addEventListener('resize', this.reloadPage)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.reloadPage)
+  }
+
+  reloadPage () {
+    location.reload()
+  }
+
   render () {
     let sliderSettings = {
       className:'landing-page__stories-carousel',
