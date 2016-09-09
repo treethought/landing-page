@@ -1,6 +1,8 @@
-@import url("./normalize.css");
-@import url("./fonts.css");
-@import url("./overrides.css");
+@import url("./../assets/styles/normalize.css");
+@import url("./../assets/styles/fonts.css");
+@import url("./../assets/styles/overrides.css");
+@import url("./../assets/styles/slick.min.css");
+@import url("./../assets/styles/slick-theme.min.css");
 
 html, body {
   position: relative;

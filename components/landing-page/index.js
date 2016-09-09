@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Header from './../header'
-import Intro from './intro'
-import HowItWorks from './how-it-works'
+import Stories from './stories'
 import Mission from './mission'
+import HowItWorks from './how-it-works'
 import LaunchingSoon from './launching-soon'
 import Footer from './../footer'
 import Scroll from 'react-scroll'
@@ -13,7 +13,7 @@ class LandingPage extends Component {
     return (
       <div className="landing-page">
         <Header />
-        <Intro />
+        <Stories />
         <Mission />
 
         <section className="landing-page__blurb-container">

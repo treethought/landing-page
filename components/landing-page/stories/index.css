@@ -1,0 +1,81 @@
+.landing-page__stories {
+  position: relative;
+  padding-top: 103px;
+  text-align: center;
+}
+
+.landing-page__stories-header {
+  font-weight: normal;
+  font-size: 50px;
+  color: #4A4A4A;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.landing-page__story-container {
+  position: relative;
+  text-align: center;
+  height: 352px;
+  color: #FDFFF9;
+  background-image: url(fireworks-over-wdw.jpg);
+}
+
+.landing-page__story-container-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.landing-page__story {
+  float: right;
+  width: 420px;
+  margin-right: 50px;
+  margin-top: 80px;
+  text-align: left;
+}
+
+.landing-page__story-header {
+  font-weight: normal;
+  font-size: 40px;
+  margin: 0;
+}
+
+.landing-page__story-header mark {
+  background: #45D8B8;
+  color: inherit;
+  padding-bottom: 7px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.landing-page__story-text {
+  position: relative;
+  margin-top: 35px;
+  width: 360px;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.landing-page__story-text-left-quote {
+  position: absolute;
+  font-size: 100px;
+  top: -32px;
+  left: -41px;
+}
+
+.landing-page__story-text-right-quote {
+  position: absolute;
+  font-size: 100px;
+  bottom: -83px;
+  right: -24px;
+}
+
+.landing-page__story-name-and-location {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 300;
+  position: relative;
+  top: 45px;
+  right: 4px;
+}

@@ -28,7 +28,7 @@
 }
 
 @media (max-width: 480px) {
-  
+
   .landing-page__std-header {
     font-size: 22px;
   }
@@ -43,7 +43,7 @@
 
 }
 
-@import url("./intro/index.css");
+@import url("./stories/index.css");
 @import url("./mission/index.css");
 @import url("./launching-soon/index.css");
 @import url("./how-it-works/index.css");
