@@ -19,7 +19,7 @@
   text-align: center;
   height: 352px;
   color: #FDFFF9;
-  background-image: url(fireworks-over-wdw.jpg);
+  background-size: cover;
 }
 
 .landing-page__story-container-overlay {

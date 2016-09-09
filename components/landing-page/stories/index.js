@@ -19,7 +19,7 @@ class Stories extends Component {
   }
 
   reloadPage () {
-    location.reload()
+    window.location.href = window.location.href
   }
 
   render () {
