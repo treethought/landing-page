@@ -1,20 +1,23 @@
 .landing-page__mission {
   background: #4A4A4A;
-  color: #F7F9F9;
+  color: #FDFFF9;;
   text-align: center;
   padding: 62px 20px 0;
 }
 
 .landing-page__mission-text {
-  font-family: Interstate-Light;
-  font-size: 18px;
   max-width: 800px;
   padding-top: 5px;
   margin: 0 auto;
   margin-bottom: 70px;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: left;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
-.landing-page__manifesto-btn {
+.landing-page__learn-about-us-btn {
   width: 207px !important;
   margin-bottom: 58px;
 }
@@ -23,4 +26,10 @@
   font-family: Futura-Medium;
   text-transform: none !important;
   letter-spacing: 0.5px !important;
+}
+
+@media (max-width: 480px) {
+  .landing-page__mission-text {
+    font-size: 18px;
+  }
 }

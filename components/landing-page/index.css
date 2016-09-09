@@ -1,14 +1,24 @@
 .landing-page__std-header {
-  font-family: Futura-Light;
   font-size: 30px;
   margin: 0;
+  font-weight: normal;
 }
 
 .landing-page__std-subheader {
-  font-family: Futura-Light-Italic;
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 25px;
+  font-weight: 300;
+}
+
+@media (max-width: 480px) {
+  .landing-page__std-header {
+    font-size: 22px;
+  }
+
+  .landing-page__std-subheader {
+    font-size: 18px;
+  }
 }
 
 @import url("./intro/index.css");

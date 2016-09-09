@@ -14,10 +14,10 @@ class LandingPage extends Component {
       <div className="landing-page">
         <Header />
         <Intro />
+        <Mission />
         <Element name="landing-page__how-it-works">
           <HowItWorks />
         </Element>
-        <Mission />
         <JoinTheCause />
         <Footer />
       </div>
