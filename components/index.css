@@ -10,7 +10,8 @@ html, body {
 
 body {
   padding-top: 64px;
-  background: #F6E36B;
+  background: #FDFFF9;
+  font-family: 'Lato';
 }
 
 .gc-std-btn {
@@ -29,6 +30,7 @@ COLORS
   gc-green: #40B097;
   gc-grey: #4A4A4A;
   gc-white: #F7F9F9;
+  gc-new-white: #FDFFF9;
 */
 
 @import url("./header/index.css");
