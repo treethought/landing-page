@@ -5,7 +5,7 @@ class LaunchingSoon extends Component {
   render () {
     return (
       <div className="landing-page__launching-soon">
-        <h2 className="landing-page__std-header">We are launching soon!</h2>
+        <h2 className="landing-page__std-header landing-page__launching-soon-header">We are launching soon!</h2>
         <h3 className="landing-page__std-subheader"><em>Be a member today to get updates and to be part of our beta launch</em></h3>
 
         <RaisedButton

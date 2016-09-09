@@ -3,7 +3,7 @@ import Header from './../header'
 import Intro from './intro'
 import HowItWorks from './how-it-works'
 import Mission from './mission'
-import JoinTheCause from './join-the-cause'
+import LaunchingSoon from './launching-soon'
 import Footer from './../footer'
 import Scroll from 'react-scroll'
 const {Element} = Scroll
@@ -26,7 +26,7 @@ class LandingPage extends Component {
           <HowItWorks />
         </Element>
 
-        <JoinTheCause />
+        <LaunchingSoon />
         <Footer />
       </div>
     )
