@@ -86,13 +86,16 @@
   width: 140px;
 }
 
-.how-it-works-page__lawyer-icon {
+.how-it-works-page__parallel-step-icon {
   position: absolute;
+  top: 0;
+}
+
+.how-it-works-page__lawyer-icon {
   right: 108px;
 }
 
 .how-it-works-page__family-icon {
-  position: absolute;
   left: 108px;
 }
 

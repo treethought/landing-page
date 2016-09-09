@@ -67,8 +67,8 @@ class Details extends Component {
 
           <Step text="Good Call will alert a lawyer for you and get your message to your loved ones" customIcon={
             <div className="how-it-works-page__parallel-step-icon-container how-it-works-page__details-centered-row">
-              <img className="how-it-works-page__step-icon how-it-works-page__lawyer-icon" src="./assets/imgs/lawyer_icon.svg" />
-              <img className="how-it-works-page__step-icon how-it-works-page__family-icon" src="./assets/imgs/family_icon.svg" />
+              <img className="how-it-works-page__step-icon how-it-works-page__parallel-step-icon how-it-works-page__lawyer-icon" src="./assets/imgs/lawyer_icon.svg" />
+              <img className="how-it-works-page__step-icon how-it-works-page__parallel-step-icon how-it-works-page__family-icon" src="./assets/imgs/family_icon.svg" />
             </div>
           }/>
 
