@@ -15,9 +15,17 @@ class LandingPage extends Component {
         <Header />
         <Intro />
         <Mission />
+
+        <section className="landing-page__blurb-container">
+          <p className="landing-page__blurb">
+            We are helping people who are arrested to reach their loved ones and to alert a lawyer earlier on in the arrest process for a more fair court outcome.
+          </p>
+        </section>
+
         <Element name="landing-page__how-it-works">
           <HowItWorks />
         </Element>
+
         <JoinTheCause />
         <Footer />
       </div>
