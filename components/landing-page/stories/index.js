@@ -3,12 +3,10 @@ import RaisedButton from 'material-ui/RaisedButton'
 import ScrollDownBtn from './../../scroll-down-btn'
 import Slider from 'react-slick'
 
-// <ScrollDownBtn to="landing-page__how-it-works" text="Learn more"/>
-
 const stories = [
   {pictureSrc: 'https://desu-usergeneratedcontent.xyz/a/image/1467/65/1467651370670.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was suspended and I haven\'t had time to renew it time to renew it time to renew it time to renew it time to renew it', nameAndLocation: 'Stephanie, Queens, NY'},
   {pictureSrc: 'http://www.animeclick.it/immagini/anime/Bananya/gallery_original/Bananya-577d0ce7b4619.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was suspended and I haven\'t had time to renew it', nameAndLocation: 'Stephanie, Queens, NY'},
-  {pictureSrc: 'http://pbs.twimg.com/media/CrcvK6sWYAABCfT.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was', nameAndLocation: 'Stephanie, Queens, NY'}
+  {pictureSrc: 'http://pbs.twimg.com/media/CrcvK6sWYAABCfT.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was my license was', nameAndLocation: 'Stephanie, Queens, NY'}
 ]
 
 class Stories extends Component {
@@ -39,7 +37,6 @@ class Stories extends Component {
 
     return (
       <div className="landing-page__stories">
-
         <h1 className="landing-page__stories-header">No one expects to be arrested.</h1>
 
         <Slider {...sliderSettings}>
@@ -52,9 +49,9 @@ class Stories extends Component {
                   </h2>
 
                   <p className="landing-page__story-text">
-                    <span className="landing-page__story-text-left-quote">“</span>
+                    <span className="landing-page__story-text-quote landing-page__story-text-left-quote">“</span>
                     {story.text}
-                    <span className="landing-page__story-text-right-quote">”</span>
+                    <span className="landing-page__story-text-quote landing-page__story-text-right-quote">”</span>
                     <span className="landing-page__story-name-and-location"><em>- {story.nameAndLocation}</em></span>
                   </p>
                 </div>
@@ -62,6 +59,10 @@ class Stories extends Component {
             </div>
           ))}
         </Slider>
+
+        <div className="landing-page__stories-scroll-down-btn-container">
+          <ScrollDownBtn to="landing-page__mission" text="Learn more"/>
+        </div>
       </div>
     )
   }
