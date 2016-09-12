@@ -12,6 +12,10 @@ const stories = [
 ]
 
 class Stories extends Component {
+  componentWillReceiveProps () {
+    this.setComponentKey()
+  }
+
   componentWillMount () {
     this.setComponentKey()
   }
