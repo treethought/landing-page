@@ -1,36 +1,348 @@
-.landing-page__how-it-works {
-  padding: 62px 20px 0;
+/* general */
+
+.how-it-works__centered-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+}
+
+.how-it-works {
+  background: #4A4A4A;
+  color: #FDFFF9;
   text-align: center;
-  color: #4A4A4A;
+  padding-top: 60px;
+  padding-bottom: 80px;
 }
 
-.landing-page__how-it-works-step-list {
-  list-style: none;
-  padding-left: 0;
+/* header */
+
+.how-it-works__header {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 7px;
 }
 
-.landing-page__how-it-works-icon {
-  display: block;
-  margin: 0 auto;
-  width: 76px;
-  height: 76px;
-}
-
-.landing-page__how-it-works-step-header {
+.how-it-works__subheader {
   font-size: 20px;
-  font-weight: normal;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 83px;
 }
 
-.landing-page__how-it-works-text {
+/* steps */
+
+.how-it-works__step-list {
+  list-style: none;
+  padding-left: 110px;
+  margin: 0;
+}
+
+.how-it-works__step-icon {
   position: relative;
-  font-size: 18px;
-  margin: 0 auto;
-  width: 190px;
+  width: 140px;
+  height: 140px;
+  display: inline-block;
 }
 
-.landing-page__sample-call-btn {
-  margin-top: 52px;
-  margin-bottom: 60px;
+.how-it-works__step-horiz-separator {
+  width: 166px;
+}
+
+.how-it-works__step-text {
+  text-align: left;
+  width: 240px;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.how-it-works__sub-step-row {
+  height: 50px;
+}
+
+.how-it-works__sub-step-number-icon-container {
+  display: inline-block;
+  width: 140px;
+  height: 50px;
+}
+
+.how-it-works__sub-step-number-container {
+  width: 50px;
+  height: 50px;
+  background: #40B097;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.how-it-works__sub-step-number {
+  font-size: 35px;
+}
+
+.how-it-works__parallel-step-icon-container {
+  position: relative;
+  height: 140px;
+  width: 140px;
+}
+
+.how-it-works__parallel-step-icon {
+  position: absolute;
+  top: 0;
+}
+
+.how-it-works__lawyer-icon {
+  right: 108px;
+}
+
+.how-it-works__family-icon {
+  left: 108px;
+}
+
+.how-it-works__sign-up-btn {
+  width: 236px !important;
+  margin-top: 126px;
+}
+
+/* lines + branches */
+
+.how-it-works__line {
+  margin: 0 auto;
+  position: relative;
+  right: 203px;
+  width: 6px;
+}
+
+.how-it-works__vert-line {
+  height: 80px;
+}
+
+.how-it-works__short-vert-line {
+  height: 25px;
+}
+
+.how-it-works__white-line {
+  background: #FFFFFF;
+}
+
+.how-it-works__green-line {
+  background: #40B097;
+}
+
+.how-it-works__branch {
+  margin: 0 auto;
+  position: relative;
+  right: 203px;
+  width: 213px;
+  height: 36px;
+  border: 6px solid;
+}
+
+.how-it-works__white-branch {
+  border-color: #FFFFFF;
+}
+
+.how-it-works__green-branch {
+  border-color: #40B097;
+}
+
+.how-it-works__downward-branch {
+  border-bottom: none;
+}
+
+.how-it-works__upward-branch {
+  border-top: none;
+}
+
+/* media queries */
+
+@media (max-width: 900px) {
+
+  .how-it-works__step-icon {
+    width: 110px;
+    height: 110px;
+  }
+
+  .how-it-works__sub-step-number-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  .how-it-works__sub-step-number-icon-container {
+    width: 110px;
+    height: 40px;
+  }
+
+  .how-it-works__sub-step-number {
+    font-size: 22px;
+  }
+
+  .how-it-works__branch  {
+    width: 188px;
+    border-width: 4px;
+    right: 190px;
+  }
+
+  .how-it-works__line {
+    width: 4px;
+    right: 190px;
+  }
+
+  .how-it-works__step-horiz-separator {
+    width: 140px;
+  }
+
+  .how-it-works__step-list {
+    padding-left: 90px;
+  }
+
+  .how-it-works__parallel-step-icon-container {
+    height: 110px;
+    width: 110px;
+  }
+
+  .how-it-works__lawyer-icon {
+    right: 95px;
+  }
+
+  .how-it-works__family-icon {
+    left: 95px;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .how-it-works__step-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .how-it-works__step-horiz-separator {
+    width: 120px;
+  }
+
+  .how-it-works__line {
+    right: 160px;
+  }
+
+  .how-it-works__branch {
+    width: 115px;
+    right: 160px;
+  }
+
+  .how-it-works__sub-step-number-icon-container {
+    width: 80px;
+  }
+
+  .how-it-works__step-text {
+    width: 200px;
+  }
+
+  .how-it-works__step-list {
+    padding-left: 50px;
+  }
+
+  .how-it-works__step-text {
+    font-size: 14px;
+  }
+
+  .how-it-works__sub-step-row {
+    height: 40px;
+  }
+
+  .how-it-works__parallel-step-icon-container {
+    height: 80px;
+    width: 80px;
+  }
+
+  .how-it-works__lawyer-icon {
+    right: 60px;
+  }
+
+  .how-it-works__family-icon {
+    left: 60px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .how-it-works__header {
+    font-size: 26px;
+  }
+
+  .how-it-works__subheader {
+    font-size: 18px;
+  }
+
+  .how-it-works__step-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .how-it-works__branch {
+    width: 72px;
+    border-width: 2px;
+    right: 90px;
+  }
+
+  .how-it-works__sub-step-row {
+    height: 30px;
+  }
+
+  .how-it-works__sub-step-number-container {
+    width: 30px;
+    height: 30px;
+  }
+
+  .how-it-works__sub-step-number-icon-container {
+    width: 50px;
+    height: 30px;
+  }
+
+  .how-it-works__sub-step-number {
+    font-size: 16px;
+  }
+
+  .how-it-works__line {
+    width: 2px;
+    right: 90px;
+  }
+
+  .how-it-works__step-horiz-separator {
+    width: 60px;
+  }
+
+  .how-it-works__step-list {
+    padding-left: 30px;
+    padding-right: 15px;
+  }
+
+  .how-it-works__step-text {
+    font-size: 12px;
+    width: 120px;
+  }
+
+  .how-it-works__parallel-step-icon-container {
+    height: 50px;
+    width: 50px;
+  }
+
+  .how-it-works__lawyer-icon {
+    right: 37px;
+  }
+
+  .how-it-works__family-icon {
+    left: 37px;
+  }
+
+  .how-it-works__sign-up-btn {
+    width: 180px !important;
+    margin-top: 126px;
+  }
+
 }

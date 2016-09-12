@@ -36,6 +36,7 @@
   "homepage": "https://github.com/good-call-nyc/landing-page",
   "dependencies": {
     "material-ui": "^0.15.4",
+    "node-uuid": "^1.4.7",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-inline-grid": "^0.5.3",

@@ -8,11 +8,11 @@ html, body {
   position: relative;
   height: 100%;
   width: 100%;
+  background: #FDFFF9;
 }
 
 body {
   padding-top: 64px;
-  background: #FDFFF9;
   font-family: Lato;
 }
 
@@ -41,6 +41,5 @@ COLORS
 @import url("./intro/index.css");
 @import url("./footer/index.css");
 @import url("./landing-page/index.css");
-@import url("./how-it-works-page/index.css");
 
 @import url("./scroll-down-btn/index.css");

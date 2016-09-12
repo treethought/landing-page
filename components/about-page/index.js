@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import InnerPage from '../inner-page'
 import Intro from './../intro'
-import Mission from './../landing-page/mission'
+import Problem from './../landing-page/problem'
 
 class AboutPage extends Component {
   render () {
@@ -10,7 +10,7 @@ class AboutPage extends Component {
         <Intro heading="About us" subheading="Some text here">
           <p>More, more more</p>
         </Intro>
-        <Mission />
+        <Problem />
       </InnerPage>
     )
   }

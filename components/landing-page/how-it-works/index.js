@@ -1,60 +1,91 @@
 import React, { Component } from 'react'
+import renderIf from 'render-if'
 import RaisedButton from 'material-ui/RaisedButton'
-import { Grid, Row, Cell } from 'react-inline-grid'
-import MediaQuery from 'react-responsive'
 
-const steps = [
-  {number: 1, iconSrc: './assets/imgs/signup_icon.svg', header: '1.  Become a member for free', text: 'Become a member for free by provide us with an emergency contact'},
-  {number: 2, iconSrc: './assets/imgs/phone_icon.svg', header: '2. Call us if you’re arrested', text: 'Call us and give us your name then leave a message for your loved ones if you can’t reach them.'},
-  {number: 3, iconSrc: './assets/imgs/balance_icon.svg', header: '3. Know we got your back', text: 'We will alert a lawyer and call your loved ones to let them know you’re okay.'}
+const firstSteps = [
+  {iconSrc: './assets/imgs/arrested_icon.svg', text: 'you get unexpectedly arrested'},
+  {iconSrc: './assets/imgs/precinct_icon.svg', text: 'you\'re brought to the precinct'},
+  {iconSrc: './assets/imgs/phone_icon.svg', text: 'you call 1-800-GOODCALL'}
+]
+
+const callSubsteps = [
+  {number: 1, text: 'we ask you for your name & cell number'},
+  {number: 2, text: 'we tell you your rights'},
+  {number: 3, text: 'we will ask you if you would like us to help you reach a loved one'},
+  {number: 4, text: 'you record a voice message for your loved one'}
 ]
 
 class HowItWorks extends Component {
   render () {
-    let Step = ({step}) => (
-      <Cell is="4 tablet-6">
-        <li>
-          <img className="landing-page__how-it-works-icon" src={step.iconSrc}></img>
-          <h4 className="landing-page__how-it-works-step-header">{step.header}</h4>
-          <p className="landing-page__how-it-works-text">
-            {step.text}
-          </p>
-        </li>
-      </Cell>
+    let Step = ({iconSrc, text, className = "", customIcon}) => (
+      <li className={"how-it-works__centered-row " + className}>
+        {renderIf(customIcon) (customIcon)}
+        {renderIf(!customIcon) (<img className="how-it-works__step-icon" src={iconSrc} />)}
+        <span className="how-it-works__step-horiz-separator"></span>
+        <span className="how-it-works__step-text">{text}</span>
+      </li>
+    )
+
+    let Line = ({type, color}) => (
+      <div className={`how-it-works__line how-it-works__${type}-line how-it-works__${color}-line`}></div>
+    )
+
+    let Branch = ({type, color}) => (
+      <div className={`how-it-works__branch how-it-works__${type}-branch how-it-works__${color}-branch`}></div>
     )
 
     return (
-      <div className="landing-page__how-it-works">
-        <h2 className="landing-page__std-header">Make your call count.</h2>
-        <h3 className="landing-page__std-subheader"><em>How it works</em></h3>
+      <section className="how-it-works">
+        <h2 className="how-it-works__header">Know what to expect.</h2>
+        <h3 className="how-it-works__subheader"><em>How it works</em></h3>
 
-        <Grid>
-          <ol className="landing-page__how-it-works-step-list">
-            <MediaQuery query="(min-width: 850px)">
-              <Row is="around" style={{'padding': 0}}>
-                {steps.map((step) => (
-                  <Step step={step} key={step.number}/>
-                ))}
-              </Row>
-            </MediaQuery>
+        <ol className="how-it-works__step-list">
+          {firstSteps.map((step, i, arr) => (
+            <div key={i}>
+              <Step iconSrc={step.iconSrc} text={step.text} />
+              {renderIf(i < arr.length - 1)(<Line type="vert" color="white" />)}
+            </div>
+          ))}
 
-            <MediaQuery query="(max-width: 849px)">
-              {steps.map((step) => (
-                <Row is="center" key={step.number} style={{'padding': 0}}>
-                  <Step step={step} />
-                </Row>
-              ))}
-            </MediaQuery>
-          </ol>
-        </Grid>
+          {callSubsteps.map((substep, i) => (
+            <div key={i}>
+              <Line type="short-vert" color="green" />
+
+              <Step className="how-it-works__sub-step-row" text={substep.text} customIcon={
+                <div className="how-it-works__sub-step-number-icon-container">
+                  <div className="how-it-works__sub-step-number-container how-it-works__centered-row">
+                    <div className="how-it-works__sub-step-number">{substep.number}</div>
+                  </div>
+                </div>
+              }/>
+            </div>
+          ))}
+
+          <Line type="vert" color="green" />
+
+          <Branch type="downward" color="green" />
+
+          <Step text="Good Call will alert a lawyer for you and get your message to your loved ones" customIcon={
+            <div className="how-it-works__parallel-step-icon-container how-it-works__centered-row">
+              <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__lawyer-icon" src="./assets/imgs/lawyer_icon.svg" />
+              <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__family-icon" src="./assets/imgs/family_icon.svg" />
+            </div>
+          }/>
+
+          <Branch type="upward" color="white" />
+
+          <Line type="short-vert" color="white" />
+
+          <Step iconSrc="./assets/imgs/free_icon.svg" text="You get released after arraignment" />
+        </ol>
 
         <RaisedButton
-          className="gc-std-btn landing-page__sample-call-btn"
-          label="try a sample call"
+          className="gc-std-btn how-it-works__sign-up-btn"
+          label="sign up for updates"
           backgroundColor="#45D8B8"
           labelColor="#FFFFFF"
         />
-      </div>
+      </section>
     )
   }
 }

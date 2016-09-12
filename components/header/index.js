@@ -10,8 +10,7 @@ import MediaQuery from 'react-responsive'
 import {Link} from 'react-router'
 
 const navBtns = [
-  {label: 'How it works', to: '/how-it-works'},
-  {label: 'About us', to: '/about-us'},
+  {label: 'About us', to: '/about-us', className: 'header__about-us-btn'}, // hiding this btn for now
   {label: 'Sign up for updates', to: '/', className: 'header__sign-up-btn' }
 ]
 
@@ -54,6 +53,7 @@ class Header extends Component {
                       primaryText={btn.label}
                       key={i}
                       containerElement={<Link to={btn.to} />}
+                      className={`${btn.className}-menu-item`}
                     />
                   ))}
                 </IconMenu>
