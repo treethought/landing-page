@@ -37,7 +37,7 @@ class Details extends Component {
     return (
       <div className="how-it-works-page__details">
         <h2 className="how-it-works-page__details-header">Know what to expect.</h2>
-        <h3 className="how-it-works-page__details-subheader">How it works</h3>
+        <h3 className="how-it-works-page__details-subheader"><em>How it works</em></h3>
 
         <ol className="how-it-works-page__step-list">
           {firstSteps.map((step, i, arr) => (
@@ -82,7 +82,7 @@ class Details extends Component {
         <RaisedButton
           className="gc-std-btn how-it-works-page__details-sign-up-btn"
           label="sign up for updates"
-          backgroundColor="#40B097"
+          backgroundColor="#45D8B8"
           labelColor="#FFFFFF"
         />
       </div>

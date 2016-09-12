@@ -13,7 +13,7 @@
 
 .how-it-works-page__details {
   background: #4A4A4A;
-  color: #FFFFFF;
+  color: #FDFFF9;
   text-align: center;
   padding-top: 60px;
   padding-bottom: 80px;
@@ -22,17 +22,15 @@
 /* header */
 
 .how-it-works-page__details-header {
-  font-family: Futura-Light;
   font-size: 30px;
-  font-weight: normal;
+  font-weight: 400;
   margin: 0;
   margin-bottom: 7px;
 }
 
 .how-it-works-page__details-subheader {
-  font-family: Futura-Light-Italic;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 300;
   margin: 0;
   margin-bottom: 83px;
 }
@@ -57,9 +55,14 @@
 }
 
 .how-it-works-page__step-text {
-  font-family: Interstate-Light;
   text-align: left;
   width: 240px;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.how-it-works-page__sub-step-row {
+  height: 50px;
 }
 
 .how-it-works-page__sub-step-number-icon-container {
