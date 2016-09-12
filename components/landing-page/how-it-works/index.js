@@ -35,7 +35,7 @@ class HowItWorks extends Component {
     )
 
     return (
-      <div className="how-it-works">
+      <section className="how-it-works">
         <h2 className="how-it-works__header">Know what to expect.</h2>
         <h3 className="how-it-works__subheader"><em>How it works</em></h3>
 
@@ -85,7 +85,7 @@ class HowItWorks extends Component {
           backgroundColor="#45D8B8"
           labelColor="#FFFFFF"
         />
-      </div>
+      </section>
     )
   }
 }

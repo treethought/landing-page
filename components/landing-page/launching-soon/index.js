@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 class LaunchingSoon extends Component {
   render () {
     return (
-      <div className="landing-page__launching-soon">
+      <section className="landing-page__launching-soon">
         <h2 className="landing-page__std-header landing-page__launching-soon-header">We are launching soon!</h2>
         <h3 className="landing-page__std-subheader"><em>Be a member today to get updates and to be part of our beta launch</em></h3>
 
@@ -14,7 +14,7 @@ class LaunchingSoon extends Component {
           backgroundColor="#FDFFF9"
           labelColor="#4A4A4A"
         />
-      </div>
+      </section>
     )
   }
 }

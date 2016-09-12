@@ -52,34 +52,36 @@ class Stories extends Component {
     }
 
     return (
-      <div className="landing-page__stories" key={this.state.componentKey}>
+      <section className="landing-page__stories" key={this.state.componentKey}>
         <h1 className="landing-page__stories-header">No one expects to be arrested.</h1>
 
-        <Slider {...sliderSettings} ref="landing-page__stories-carousel">
-          {stories.map((story, i) => (
-            <div className="landing-page__story-container" key={i} style={{'backgroundImage': `url('${story.pictureSrc}')`, 'height': this.state.height}}>
-              <div className="landing-page__story-container-overlay">
-                <div className="landing-page__story">
-                  <h2 className="landing-page__story-header">
-                    <em dangerouslySetInnerHTML={{__html: story.headerHTML}}></em>
-                  </h2>
+        <ul>
+          <Slider {...sliderSettings} ref="landing-page__stories-carousel">
+            {stories.map((story, i) => (
+              <div className="landing-page__story-container" key={i} style={{'backgroundImage': `url('${story.pictureSrc}')`, 'height': this.state.height}}>
+                <div className="landing-page__story-container-overlay">
+                  <li className="landing-page__story">
+                    <h2 className="landing-page__story-header">
+                      <em dangerouslySetInnerHTML={{__html: story.headerHTML}}></em>
+                    </h2>
 
-                  <p className="landing-page__story-text">
-                    <span className="landing-page__story-text-quote landing-page__story-text-left-quote">“</span>
-                    {story.text}
-                    <span className="landing-page__story-text-quote landing-page__story-text-right-quote">”</span>
-                    <span className="landing-page__story-name-and-location"><em>- {story.nameAndLocation}</em></span>
-                  </p>
+                    <p className="landing-page__story-text">
+                      <span className="landing-page__story-text-quote landing-page__story-text-left-quote">“</span>
+                      {story.text}
+                      <span className="landing-page__story-text-quote landing-page__story-text-right-quote">”</span>
+                      <span className="landing-page__story-name-and-location"><em>- {story.nameAndLocation}</em></span>
+                    </p>
+                  </li>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </ul>
 
         <div className="landing-page__stories-scroll-down-btn-container">
           <ScrollDownBtn to="landing-page__problem" text="Learn more"/>
         </div>
-      </div>
+      </section>
     )
   }
 }

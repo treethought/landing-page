@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 class Problem extends Component {
   render () {
     return (
-      <div className="landing-page__problem">
+      <section className="landing-page__problem">
         <h2 className="landing-page__std-header">Everyone deserves fairness.</h2>
         <h3 className="landing-page__std-subheader"><em>The problem</em></h3>
 
@@ -18,7 +18,7 @@ class Problem extends Component {
           backgroundColor="#45D8B8"
           labelColor="#FFFFFF"
         />*/}
-      </div>
+      </section>
     )
   }
 }
