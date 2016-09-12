@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from './../header'
 import Stories from './stories'
-import Mission from './mission'
+import Problem from './problem'
 import HowItWorks from './how-it-works'
 import LaunchingSoon from './launching-soon'
 import Footer from './../footer'
@@ -14,8 +14,8 @@ class LandingPage extends Component {
       <div className="landing-page">
         <Header />
         <Stories />
-        <Element name="landing-page__mission">
-          <Mission />
+        <Element name="landing-page__problem">
+          <Problem />
         </Element>
         <section className="landing-page__blurb-container">
           <p className="landing-page__blurb">

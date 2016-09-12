@@ -68,7 +68,7 @@ class Stories extends Component {
         </Slider>
 
         <div className="landing-page__stories-scroll-down-btn-container">
-          <ScrollDownBtn to="landing-page__mission" text="Learn more"/>
+          <ScrollDownBtn to="landing-page__problem" text="Learn more"/>
         </div>
       </div>
     )

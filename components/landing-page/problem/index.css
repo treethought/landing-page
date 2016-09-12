@@ -1,11 +1,11 @@
-.landing-page__mission {
+.landing-page__problem {
   background: #4A4A4A;
   color: #FDFFF9;;
   text-align: center;
   padding: 62px 20px 58px;
 }
 
-.landing-page__mission-text {
+.landing-page__problem-text {
   max-width: 800px;
   padding-top: 5px;
   margin: 0 auto;
@@ -23,14 +23,14 @@
 
 @media (max-width: 839px) {
 
-  .landing-page__mission-text {
+  .landing-page__problem-text {
     font-size: 18px;
   }
 
 }
 
 @media (max-width: 480px) {
-  .landing-page__mission-text {
+  .landing-page__problem-text {
     font-size: 16px;
   }
 }
