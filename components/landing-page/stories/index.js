@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import ScrollDownBtn from './../../scroll-down-btn'
 import Slider from 'react-slick'
+import uuid from 'node-uuid'
 
 const stories = [
   {pictureSrc: 'https://desu-usergeneratedcontent.xyz/a/image/1467/65/1467651370670.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was suspended and I haven\'t had time to renew it time to renew it time to renew it time to renew it time to renew it', nameAndLocation: 'Stephanie, Queens, NY'},
@@ -10,16 +11,21 @@ const stories = [
 ]
 
 class Stories extends Component {
+  componentWillMount () {
+    this.setState({componentKey: uuid.v4()})
+  }
+
   componentDidMount () {
-    window.addEventListener('resize', this.reloadPage)
+    window.addEventListener('resize', this.remountComponent.bind(this))
   }
 
   componentWillUnmount () {
-    window.removeEventListener('resize', this.reloadPage)
+    window.removeEventListener('resize', this.remountComponent.bind(this))
   }
 
-  reloadPage () {
-    window.location.href = window.location.href
+  remountComponent () {
+    // necessary for <Slider /> to actually be responsive
+    this.setState({componentKey: uuid.v4()})
   }
 
   render () {
@@ -32,11 +38,12 @@ class Stories extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       speed: 1000,
-      pauseOnHover: false
+      pauseOnHover: false,
+      adaptiveHeight: true
     }
 
     return (
-      <div className="landing-page__stories">
+      <div className="landing-page__stories" key={this.state.componentKey}>
         <h1 className="landing-page__stories-header">No one expects to be arrested.</h1>
 
         <Slider {...sliderSettings}>
