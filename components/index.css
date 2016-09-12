@@ -1,17 +1,45 @@
-@import url("./normalize.css");
+@import url("./../assets/styles/normalize.css");
+@import url("./../assets/styles/fonts.css");
+@import url("./../assets/styles/overrides.css");
+@import url("./../assets/styles/slick.min.css");
+@import url("./../assets/styles/slick-theme.min.css");
 
 html, body {
   position: relative;
   height: 100%;
+  width: 100%;
+  background: #FDFFF9;
 }
 
 body {
-  font-family: sans-serif;
+  padding-top: 64px;
+  font-family: Lato;
 }
 
-h1 {
-  font-weight: lighter;
-  text-align: center;
+.gc-std-btn {
+  width: 158px !important;
 }
 
+.gc-std-btn span {
+  text-transform: none !important;
+  letter-spacing: 0.57px !important;
+  font-weight: 300 !important;
+}
+
+/* TODO: remove unused colors */
+
+/*
+COLORS
+  gc-yellow: #F6E36B;
+  gc-green: #40B097;
+  gc-grey: #4A4A4A;
+  gc-new-white: #FDFFF9;
+  gc-mint: #45D8B8;
+*/
+
+@import url("./header/index.css");
+@import url("./intro/index.css");
+@import url("./footer/index.css");
 @import url("./landing-page/index.css");
+
+@import url("./scroll-down-btn/index.css");

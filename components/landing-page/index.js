@@ -1,29 +1,30 @@
 import React, { Component } from 'react'
-import {findDOMNode} from 'react-dom'
-import $ from 'jquery'
-import Header from './header.js'
-import Intro from './intro.js'
-import HowItWorks from './how-it-works.js'
+import Header from './../header'
+import Stories from './stories'
+import Problem from './problem'
+import HowItWorks from './how-it-works'
+import LaunchingSoon from './launching-soon'
+import Footer from './../footer'
+import Scroll from 'react-scroll'
+const {Element} = Scroll
 
 class LandingPage extends Component {
-  scrollTo (ref) {
-    return () => {
-      let $targetEl = $(findDOMNode(this.refs[ref])), $thisEl = $(findDOMNode(this))
-      $('html, body').animate({
-        scrollTop: $targetEl.offset().top - parseInt($thisEl.css('margin-top'))
-      }, 500)
-    }
-  }
-
   render () {
     return (
       <div className="landing-page">
-        <Header
-          scrollToIntro={this.scrollTo('intro').bind(this)}
-          scrollToHowItWorks={this.scrollTo('how-it-works').bind(this)}
-        />
-        <Intro ref="intro"/>
-        <HowItWorks ref="how-it-works"/>
+        <Header />
+        <Stories />
+        <Element name="landing-page__problem">
+          <Problem />
+        </Element>
+        <section className="landing-page__blurb-container">
+          <p className="landing-page__blurb">
+            We are helping people who are arrested to reach their loved ones and to alert a lawyer earlier on in the arrest process for a more fair court outcome.
+          </p>
+        </section>
+        <HowItWorks />
+        <LaunchingSoon />
+        <Footer />
       </div>
     )
   }
