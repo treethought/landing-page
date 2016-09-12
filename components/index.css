@@ -8,11 +8,11 @@ html, body {
   position: relative;
   height: 100%;
   width: 100%;
+  background: #FDFFF9;
 }
 
 body {
   padding-top: 64px;
-  background: #FDFFF9;
   font-family: Lato;
 }
 
