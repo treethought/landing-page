@@ -10,7 +10,7 @@ import MediaQuery from 'react-responsive'
 import {Link} from 'react-router'
 
 const navBtns = [
-  {label: 'About us', to: '/about-us'},
+  {label: 'About us', to: '/about-us', className: 'header__about-us-btn'}, // hiding this btn for now
   {label: 'Sign up for updates', to: '/', className: 'header__sign-up-btn' }
 ]
 
