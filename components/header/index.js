@@ -53,6 +53,7 @@ class Header extends Component {
                       primaryText={btn.label}
                       key={i}
                       containerElement={<Link to={btn.to} />}
+                      className={`${btn.className}-menu-item`}
                     />
                   ))}
                 </IconMenu>
