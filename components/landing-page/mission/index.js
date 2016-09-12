@@ -12,12 +12,12 @@ class Mission extends Component {
           Something about increasing fairness for everyone… Bacon ipsum dolor amet pork loin drumstick sausage pastrami. T-bone shankle pork loin cupim. Short loin tri-tip porchetta, pork belly ground round biltong shoulder pork chop. Doner cow meatloaf pork fatback biltong turkey corned beef. Kielbasa porchetta jerky, short ribs andouille fatback jowl drumstick sirloin strip steak.
         </p>
 
-        <RaisedButton
+        {/*<RaisedButton
           className="gc-std-btn landing-page__learn-about-us-btn"
           label="learn about us"
           backgroundColor="#45D8B8"
           labelColor="#FFFFFF"
-        />
+        />*/}
       </div>
     )
   }

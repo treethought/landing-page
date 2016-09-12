@@ -2,7 +2,7 @@
   background: #4A4A4A;
   color: #FDFFF9;;
   text-align: center;
-  padding: 62px 20px 0;
+  padding: 62px 20px 58px;
 }
 
 .landing-page__mission-text {
@@ -17,16 +17,9 @@
   padding-left: 10px;
 }
 
-.landing-page__learn-about-us-btn {
+/*.landing-page__learn-about-us-btn {
   width: 207px !important;
-  margin-bottom: 58px;
-}
-
-.landing-page__manifesto-btn span {
-  font-family: Futura-Medium;
-  text-transform: none !important;
-  letter-spacing: 0.5px !important;
-}
+}*/
 
 @media (max-width: 839px) {
 
