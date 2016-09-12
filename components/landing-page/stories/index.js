@@ -3,6 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import ScrollDownBtn from './../../scroll-down-btn'
 import Slider from 'react-slick'
 import uuid from 'node-uuid'
+import {findDOMNode} from 'react-dom'
 
 const stories = [
   {pictureSrc: 'https://desu-usergeneratedcontent.xyz/a/image/1467/65/1467651370670.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was suspended and I haven\'t had time to renew it time to renew it time to renew it time to renew it time to renew it', nameAndLocation: 'Stephanie, Queens, NY'},
@@ -12,20 +13,28 @@ const stories = [
 
 class Stories extends Component {
   componentWillMount () {
-    this.setState({componentKey: uuid.v4()})
+    this.setComponentKey()
   }
 
   componentDidMount () {
-    window.addEventListener('resize', this.remountComponent.bind(this))
+    this.adjustCarouselHeight()
+    window.addEventListener('resize', this.setComponentKey.bind(this))
   }
 
   componentWillUnmount () {
-    window.removeEventListener('resize', this.remountComponent.bind(this))
+    window.removeEventListener('resize', this.setComponentKey.bind(this))
   }
 
-  remountComponent () {
-    // necessary for <Slider /> to actually be responsive
+  setComponentKey () {
+    // this causes the component to remount, which is needed for <Slider /> to actually be responsive
     this.setState({componentKey: uuid.v4()})
+  }
+
+  adjustCarouselHeight () {
+    let DOMNode = findDOMNode(this.refs['landing-page__stories-carousel'])
+    let viewportOffset = DOMNode.getBoundingClientRect().top
+    let height = window.innerHeight - viewportOffset
+    this.setState({height: height})
   }
 
   render () {
@@ -46,9 +55,9 @@ class Stories extends Component {
       <div className="landing-page__stories" key={this.state.componentKey}>
         <h1 className="landing-page__stories-header">No one expects to be arrested.</h1>
 
-        <Slider {...sliderSettings}>
+        <Slider {...sliderSettings} ref="landing-page__stories-carousel">
           {stories.map((story, i) => (
-            <div className="landing-page__story-container" key={i} style={{'backgroundImage': `url('${story.pictureSrc}')`}}>
+            <div className="landing-page__story-container" key={i} style={{'backgroundImage': `url('${story.pictureSrc}')`, 'height': this.state.height}}>
               <div className="landing-page__story-container-overlay">
                 <div className="landing-page__story">
                   <h2 className="landing-page__story-header">
