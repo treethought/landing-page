@@ -193,3 +193,23 @@
   }
 
 }
+
+@media (max-height: 500px) {
+
+  .landing-page__stories {
+    padding-top: 20px;
+  }
+
+  .landing-page__stories-header {
+    font-size: 20px;
+  }
+
+  .landing-page__story-name-and-location {
+    top: 25px;
+  }
+
+  .landing-page__story {
+    margin-top: 25px;
+  }
+
+}
