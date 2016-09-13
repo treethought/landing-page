@@ -4,10 +4,12 @@ import config from './../config'
 import fetcher from './../services/fetcher'
 import objectMap from 'object.map'
 
+let tmpContactId = 0
+
 class SignUpPageContainer extends Component {
   constructor () {
     super()
-    this.state = {formStage: 1, user: {}, userFormErrors: {}, contacts: [{}], contactsFormErrors: [{}], formToken: {}}
+    this.state = {formStage: 1, user: {}, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}], formToken: {}}
   }
 
   createUser () {
@@ -37,7 +39,25 @@ class SignUpPageContainer extends Component {
   }
 
   addContact () {
-    this.setState({contacts: this.state.contacts.concat({})})
+    this.setState({contacts: this.state.contacts.concat({tmpId: ++tmpContactId})})
+  }
+
+  setContact (tmpId, propName) {
+    return (e) => {
+      let prop = e.target.value
+      let contacts = this.state.contacts.map((contact) => {
+        if (contact.tmpId === tmpId) { contact[propName] = prop }
+        return contact
+      })
+      this.setState({ contacts: contacts })
+    }
+  }
+
+  removeContact (tmpId) {
+    return () => {
+      let contacts = this.state.contacts.filter((contact) => contact.tmpId !== tmpId)
+      this.setState({contacts: contacts})
+    }
   }
 
   render () {
@@ -47,6 +67,8 @@ class SignUpPageContainer extends Component {
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
         addContact={this.addContact.bind(this)}
+        removeContact={this.removeContact.bind(this)}
+        setContact={this.setContact.bind(this)}
       />
     )
   }

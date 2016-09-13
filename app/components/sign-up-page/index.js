@@ -54,7 +54,7 @@ class SignUpPage extends Component {
 
               <form className="sign-up-page__form-2">
                 {this.props.contacts.map((contact, i) => (
-                  <div className="sign-up-page__contact-fields-container" key={i}>
+                  <div className="sign-up-page__contact-fields-container" key={contact.tmpId}>
                     {contactFields.map((field, j) => (
                       <TextField
                         key={j}
@@ -63,8 +63,11 @@ class SignUpPage extends Component {
                         floatingLabelText={field.label}
                         name={field.name}
                         type={field.type || ''}
+                        onChange={this.props.setContact(contact.tmpId, field.name)}
                       ></TextField>
                     ))}
+
+                    <RaisedButton label="go away" onClick={this.props.removeContact(contact.tmpId)}/>
                   </div>
                 ))}
               </form>
