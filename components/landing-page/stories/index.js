@@ -14,34 +14,33 @@ const stories = [
   {pictureSrc: 'http://pbs.twimg.com/media/CrcvK6sWYAABCfT.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was my license was', nameAndLocation: 'Stephanie, Queens, NY'}
 ]
 
-class Stories extends Component {
-  componentWillReceiveProps () {
-    this.setComponentKey()
-  }
+const minHeight = 290
 
-  componentWillMount () {
-    this.setComponentKey()
+class Stories extends Component {
+  constructor () {
+    super()
+    this.state = {componentKey: uuid.v4()}
+    this.adjustCarouselSize = this.adjustCarouselSize.bind(this)
   }
 
   componentDidMount () {
-    this.adjustCarouselHeight()
-    window.addEventListener('resize', this.setComponentKey.bind(this))
+    this.adjustCarouselSize()
+    window.addEventListener('resize', this.adjustCarouselSize)
   }
 
   componentWillUnmount () {
-    window.removeEventListener('resize', this.setComponentKey.bind(this))
+    window.removeEventListener('resize', this.adjustCarouselSize)
   }
 
-  setComponentKey () {
+  adjustCarouselSize () {
     // this causes the component to remount, which is needed for <Slider /> to actually be responsive
-    this.setState({componentKey: uuid.v4()})
-  }
-
-  adjustCarouselHeight () {
     let DOMNode = findDOMNode(this.refs['landing-page__stories-carousel'])
     let viewportOffset = DOMNode.getBoundingClientRect().top
     let height = window.innerHeight - viewportOffset
-    this.setState({height: height})
+    this.setState({
+      componentKey: uuid.v4(),
+      height: height >= minHeight ? height : minHeight
+    })
   }
 
   render () {
