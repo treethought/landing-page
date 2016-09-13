@@ -66,7 +66,7 @@ class Stories extends Component {
           <FlatButton
             className="header__nav-btn landing-page__stories-sign-up-btn"
             label="Sign up for updates"
-            containerElement={<Link to="/" />}
+            containerElement={<Link to="/sign-up" />}
             hoverColor="#FDFFF9"
           />
         </MediaQuery>

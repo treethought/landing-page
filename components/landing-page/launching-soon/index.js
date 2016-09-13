@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
+import {Link} from 'react-router'
 
 class LaunchingSoon extends Component {
   render () {
@@ -13,6 +14,7 @@ class LaunchingSoon extends Component {
           label="sign up for updates"
           backgroundColor="#FDFFF9"
           labelColor="#4A4A4A"
+          containerElement={<Link to="/sign-up" />}
         />
       </section>
     )

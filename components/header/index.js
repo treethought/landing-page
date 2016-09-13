@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
 import IconMenu from 'material-ui/IconMenu'
@@ -11,7 +11,7 @@ import {Link} from 'react-router'
 
 const navBtns = [
   {label: 'About us', to: '/about-us', className: 'header__about-us-btn'}, // hiding this btn for now
-  {label: 'Sign up for updates', to: '/', className: 'header__sign-up-btn' }
+  {label: 'Sign up for updates', to: '/sign-up', className: 'header__sign-up-btn' }
 ]
 
 class Header extends Component {
