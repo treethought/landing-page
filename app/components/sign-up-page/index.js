@@ -2,11 +2,12 @@ import React, {Component} from 'react'
 import InnerPage from './../inner-page'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
+import ReactPhoneInput from 'react-phone-input'
 
 const form1Fields = [
   {name: 'name', label: 'First Name, Last Name'},
   {name: 'phone', label: 'Phone (xxx) xxx-xxxx'},
-  {name: 'email', label: 'Email'},
+  {name: 'email', label: 'Email', type: 'email'},
   {name: 'zip', label: 'Zip Code'},
 ]
 
@@ -26,6 +27,7 @@ class SignUpPage extends Component {
                 id={`sign-up-page__form-1-${field.name}`}
                 floatingLabelText={field.label}
                 name={field.name}
+                type={field.type || ''}
               ></TextField>
             ))}
 

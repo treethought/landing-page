@@ -5,8 +5,8 @@ injectTapEventPlugin();
 
 import React from 'react'
 import {render} from 'react-dom'
-import Root from './components'
-import css from './components/index.css'
+import Root from './app'
+import css from './app/index.css'
 
 render(
   <Root />,
