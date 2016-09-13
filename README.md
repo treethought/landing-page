@@ -36,10 +36,22 @@ npm start
 
 visit http://localhost:9966
 
+## stage
+
+merge changes into `staging`, checkout `staging`, and then run:
+
+```bash
+npm run stage
+```
+
+visit https://good-call-nyc.github.io/landing-page
+
 ## deploy
 
 ```bash
 npm run deploy
 ```
 
-visit http://goodcall.nyc.s3-website-us-east-1.amazonaws.com/
+visit http://goodcall.nyc.s3-website-us-east-1.amazonaws.com/ to see the changes immediately on the S3 bucket
+
+once cloudfront is done syncing with the S3 bucket, changes should be visible at https://goodcall.nyc. this can take several hours.

@@ -7,8 +7,10 @@
     "start": "budo . -d --pushstate --serve bundle.js --live",
     "build": "browserify . -o bundle.js -g uglifyify",
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html} dist && cp -r assets dist'",
-    "push": "s3-website deploy dist",
-    "deploy": "export NODE_ENV=production; npm run build && npm run dist && npm run push"
+    "stage-push": "gh-pages -d dist",
+    "stage": "export NODE_ENV=staging; npm run build && npm run dist && npm run stage-push",
+    "deploy-push": "s3-website deploy dist",
+    "deploy": "export NODE_ENV=production; npm run build && npm run dist && npm run deploy-push"
   },
   "browserify": {
     "transform": [
