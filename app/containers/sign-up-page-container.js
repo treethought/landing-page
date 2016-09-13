@@ -7,7 +7,7 @@ import objectMap from 'object.map'
 class SignUpPageContainer extends Component {
   constructor () {
     super()
-    this.state = { formStage: 0, user: {}, formToken: {}, formErrors: {} }
+    this.state = {formStage: 1, user: {}, userFormErrors: {}, contacts: [{}], contactsFormErrors: [{}], formToken: {}}
   }
 
   createUser () {
@@ -18,10 +18,10 @@ class SignUpPageContainer extends Component {
     }).then((res) => {
       let {status, json} = res
       if (status === 200) {
-        this.setState({formErrors: {}, formToken: json.user.formToken, formStage: 1})
+        this.setState({userFormErrors: {}, formToken: json.user.formToken, formStage: 1})
       } else {
         this.setState({
-          formErrors: objectMap(json.errors, (v) => v.join(', '))
+          userFormErrors: objectMap(json.errors, (v) => v.join(', '))
         })
       }
     })
@@ -36,12 +36,17 @@ class SignUpPageContainer extends Component {
     }
   }
 
+  addContact () {
+    this.setState({contacts: this.state.contacts.concat({})})
+  }
+
   render () {
     return (
       <SignUpPage
         {...this.state}
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
+        addContact={this.addContact.bind(this)}
       />
     )
   }

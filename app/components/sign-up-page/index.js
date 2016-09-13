@@ -5,46 +5,71 @@ import RaisedButton from 'material-ui/RaisedButton'
 import ReactPhoneInput from 'react-phone-input'
 import renderIf from 'render-if'
 
-const form1Fields = [
+const userFields = [
   {name: 'name', label: 'First Name, Last Name'},
   {name: 'phone', label: 'Phone (xxx) xxx-xxxx'},
   {name: 'email', label: 'Email', type: 'email'},
   {name: 'zip', label: 'Zip Code'},
 ]
 
-class SignUpPage extends Component {
-  componentDidUpdate () {
-    console.log('this.props', this.props)
-  }
+const contactFields = [
+  {name: 'name', label: 'First Name, Last Name'},
+  {name: 'relationship', label: 'Relationship'},
+  {name: 'phone', label: 'Phone (xxx) xxx-xxxx'}
+]
 
+class SignUpPage extends Component {
   render () {
     return (
       <InnerPage>
         <div className="sign-up-page">
           {renderIf(this.props.formStage === 0) (
-            <div key="idk">
+            <div>
               <h1>Become a member to test our pilot</h1>
               <h2>tell us about yourself</h2>
 
               <form className="sign-up-page__form-1">
-                {form1Fields.map((field, i) => (
+                {userFields.map((field, i) => (
                   <TextField
                     key={i}
                     className="sign-up-page__text-field"
-                    id={`sign-up-page__form-1-${field.name}`}
+                    id={`sign-up-page__form-1-user-${field.name}`}
                     floatingLabelText={field.label}
                     name={field.name}
                     type={field.type || ''}
                     onChange={this.props.setUser(field.name)}
-                    errorText={this.props.formErrors[field.name]}
+                    errorText={this.props.userFormErrors[field.name]}
                     ></TextField>
                 ))}
 
-                <RaisedButton
-                  label="Continue"
-                  onClick={this.props.createUser}
-                  />
+                <RaisedButton label="Continue" onClick={this.props.createUser} />
               </form>
+            </div>
+          )}
+
+          {renderIf(this.props.formStage === 1) (
+            <div>
+              <h1>Form part 2</h1>
+              <h2>meow meow</h2>
+
+              <form className="sign-up-page__form-2">
+                {this.props.contacts.map((contact, i) => (
+                  <div className="sign-up-page__contact-fields-container" key={i}>
+                    {contactFields.map((field, j) => (
+                      <TextField
+                        key={j}
+                        className="sign-up-page__text-field"
+                        id={`sign-up-page__form-1-contacts-${i}-${field.name}`}
+                        floatingLabelText={field.label}
+                        name={field.name}
+                        type={field.type || ''}
+                      ></TextField>
+                    ))}
+                  </div>
+                ))}
+              </form>
+
+              <RaisedButton label="Add another contact" onClick={this.props.addContact}/>
             </div>
           )}
         </div>
