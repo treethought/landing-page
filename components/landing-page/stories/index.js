@@ -1,9 +1,12 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
+import FlatButton from 'material-ui/FlatButton'
+import {Link} from 'react-router'
 import ScrollDownBtn from './../../scroll-down-btn'
 import Slider from 'react-slick'
 import uuid from 'node-uuid'
 import {findDOMNode} from 'react-dom'
+import MediaQuery from 'react-responsive'
 
 const stories = [
   {pictureSrc: 'https://desu-usergeneratedcontent.xyz/a/image/1467/65/1467651370670.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was suspended and I haven\'t had time to renew it time to renew it time to renew it time to renew it time to renew it', nameAndLocation: 'Stephanie, Queens, NY'},
@@ -58,6 +61,15 @@ class Stories extends Component {
     return (
       <section className="landing-page__stories" key={this.state.componentKey}>
         <h1 className="landing-page__stories-header">No one expects to be arrested.</h1>
+
+        <MediaQuery query="(max-width: 674px)">
+          <FlatButton
+            className="header__nav-btn landing-page__stories-sign-up-btn"
+            label="Sign up for updates"
+            containerElement={<Link to="/" />}
+            hoverColor="#FDFFF9"
+          />
+        </MediaQuery>
 
         <ul>
           <Slider {...sliderSettings} ref="landing-page__stories-carousel">

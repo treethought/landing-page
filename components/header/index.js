@@ -41,7 +41,7 @@ class Header extends Component {
                 ))}
               </MediaQuery>
 
-              <MediaQuery query="(max-width: 674px)">
+              {/*}<MediaQuery query="(max-width: 674px)">
                 <IconMenu
                   menuStyle={{ "background": "#F7F9F9" }}
                   iconButtonElement={ <IconButton><MenuIcon /></IconButton> }
@@ -57,7 +57,7 @@ class Header extends Component {
                     />
                   ))}
                 </IconMenu>
-              </MediaQuery>
+              </MediaQuery>*/}
             </nav>
           }
         />

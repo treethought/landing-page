@@ -78,13 +78,6 @@ class HowItWorks extends Component {
 
           <Step iconSrc="./assets/imgs/free_icon.svg" text="You get released after arraignment" />
         </ol>
-
-        <RaisedButton
-          className="gc-std-btn how-it-works__sign-up-btn"
-          label="sign up for updates"
-          backgroundColor="#45D8B8"
-          labelColor="#FFFFFF"
-        />
       </section>
     )
   }
