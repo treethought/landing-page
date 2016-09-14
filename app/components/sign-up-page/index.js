@@ -8,6 +8,8 @@ import {Link} from 'react-router'
 import includes from 'lodash.includes'
 import values from 'lodash.values'
 import isEmpty from 'lodash.isempty'
+import SelectField from 'material-ui/SelectField'
+import MenuItem from 'material-ui/MenuItem'
 
 const userFields = [
   {name: 'name', label: 'First Name, Last Name'},
@@ -20,6 +22,18 @@ const contactFields = [
   {name: 'name', label: 'First Name, Last Name'},
   {name: 'relationship', label: 'Relationship'},
   {name: 'phone', label: 'Phone (xxx) xxx-xxxx'}
+]
+
+const heardAboutUsThroughOpts = [
+  '',
+  'Internet search',
+  'Friends or family',
+  'Social Media',
+  'Email list',
+  'Community event',
+  'Good Call Representative',
+  'Good Call business card or flyer',
+  'Other'
 ]
 
 class SignUpPage extends Component {
@@ -46,10 +60,25 @@ class SignUpPage extends Component {
                     ></TextField>
                 ))}
 
+                <SelectField
+                  value={this.props.user.heardAboutUsThrough}
+                  onChange={this.props.setUser('heardAboutUsThrough')}
+                >
+                  {heardAboutUsThroughOpts.map((opt, i) => (
+                    <MenuItem key={i} value={opt} primaryText={opt} />
+                  ))}
+                </SelectField>
+
                 <RaisedButton
                   label="Continue"
                   onClick={this.props.createUser}
-                  disabled={isEmpty(this.props.user) || includes(values(this.props.user), '')}
+                  disabled={
+                    isEmpty(this.props.user)
+                    || !this.props.user.name
+                    || !this.props.user.phone
+                    || !this.props.user.email
+                    || !this.props.user.zip
+                  }
                 />
               </form>
             </div>

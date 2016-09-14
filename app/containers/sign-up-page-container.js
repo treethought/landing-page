@@ -33,8 +33,8 @@ class SignUpPageContainer extends Component {
   }
 
   setUser (propName) {
-    return (e) => {
-      let prop = e.target.value
+    return (e, i, v) => {
+      let prop = propName === 'heardAboutUsThrough' ? v : e.target.value
       this.setState({
         user: {...this.state.user, [propName]: prop}
       })
