@@ -23,6 +23,11 @@ class Stories extends Component {
     this.adjustCarouselSize = this.adjustCarouselSize.bind(this)
   }
 
+  componentWillReceiveProps () {
+    // necessary to rerender carousel correctly on route change
+    this.setState({componentKey: uuid.v4()})
+  }
+
   componentDidMount () {
     this.adjustCarouselSize()
     window.addEventListener('resize', this.adjustCarouselSize)
