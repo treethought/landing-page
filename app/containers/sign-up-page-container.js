@@ -10,23 +10,24 @@ let tmpContactId = 0
 class SignUpPageContainer extends Component {
   constructor () {
     super()
-    this.state = {formStage: 0, user: {}, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
+    this.state = {formStage: 0, user: {}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
   }
 
   createUser () {
     return fetcher({
       url: `${config.apiBaseUrl}/users`,
       method: 'POST',
-      body: {user: this.state.user}
+      body: {user: this.state.user},
+      first: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
       let {status, json} = res
-      console.log('json: ', json)
       if (status === 200) {
-        this.setState({user: json.user, userFormErrors: {}, formStage: 1})
+        this.setState({user: json.user, userFormErrors: {}, formStage: 1, requestInProgress: false})
         cookie.save('formTokenValue', json.user.form_token.value)
       } else {
         this.setState({
-          userFormErrors: objectMap(json.errors, (v) => v.join(', '))
+          userFormErrors: objectMap(json.errors, (v) => v.join(', ')),
+          requestInProgress: false
         })
       }
     })
@@ -64,7 +65,7 @@ class SignUpPageContainer extends Component {
   }
 
   saveContacts () {
-    return fetcher({
+    fetcher({
       url: `${config.apiBaseUrl}/contacts`,
       method: 'POST',
       body: {
@@ -73,14 +74,15 @@ class SignUpPageContainer extends Component {
           form_token_value: cookie.load('formTokenValue'),
           user_id: this.state.user.id
         }
-      }
+      },
+      first: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
       let {status, json} = res
       if (status === 200) {
-        this.setState({contactsFormErrors: {}, contacts: [], formStage: 2})
+        this.setState({contactsFormErrors: {}, contacts: [], formStage: 2, requestInProgress: false})
         cookie.remove('formTokenValue')
       } else {
-        this.setState({contactFormErrors: json.errors})
+        this.setState({contactFormErrors: json.errors, requestInProgress: false})
       }
     })
   }

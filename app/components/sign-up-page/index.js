@@ -80,7 +80,8 @@ class SignUpPage extends Component {
                   label="Continue"
                   onClick={this.props.createUser}
                   disabled={
-                    isEmpty(this.props.user)
+                    this.props.requestInProgress
+                    || isEmpty(this.props.user)
                     || !this.props.user.name
                     || !this.props.user.phone
                     || !this.props.user.email
@@ -124,7 +125,11 @@ class SignUpPage extends Component {
 
               <RaisedButton label="Add another contact" onClick={this.props.addContact}/>
 
-              <RaisedButton label="Save contacts" onClick={this.props.saveContacts}/>
+              <RaisedButton
+                label="Save contacts"
+                onClick={this.props.saveContacts}
+                disabled={this.props.requestInProgress}
+              />
             </div>
           )}
 

@@ -9,6 +9,10 @@ import isPlainObject from 'lodash.isplainobject'
 export default function fetcher (options) {
   options = options || {}
 
+  if (options.first) {
+    options.first()
+  }
+
   options.headers = options.headers || new Headers()
 
   let { url, query } = options
