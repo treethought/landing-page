@@ -30,14 +30,6 @@
   padding-right: 25px !important;
 }
 
-.header__about-us-btn {
-  display: none !important;
-}
-
-/*.header__about-us-btn-menu-item {
-  display: none !important;
-}*/
-
 .header__sign-up-btn {
   position: relative;
   top: 3px;

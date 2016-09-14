@@ -66,15 +66,6 @@ class Stories extends Component {
       <section className="landing-page__stories" key={this.state.componentKey}>
         <h1 className="landing-page__stories-header">No one expects to be arrested.</h1>
 
-        <MediaQuery query="(max-width: 674px)">
-          <FlatButton
-            className="header__nav-btn landing-page__stories-sign-up-btn"
-            label="Sign up for updates"
-            containerElement={<Link to="/" />}
-            hoverColor="#FDFFF9"
-          />
-        </MediaQuery>
-
         <ul>
           <Slider {...sliderSettings} ref="landing-page__stories-carousel">
             {stories.map((story, i) => (

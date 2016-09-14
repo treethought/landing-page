@@ -10,7 +10,7 @@ import MediaQuery from 'react-responsive'
 import {Link} from 'react-router'
 
 const navBtns = [
-  {label: 'About us', to: '/about-us', className: 'header__about-us-btn'}, // hiding this btn for now
+  {label: 'About us', to: '/about-us', className: 'header__about-us-btn'},
   {label: 'Sign up for updates', to: '/', className: 'header__sign-up-btn' }
 ]
 
@@ -41,7 +41,7 @@ class Header extends Component {
                 ))}
               </MediaQuery>
 
-              {/*}<MediaQuery query="(max-width: 674px)">
+              <MediaQuery query="(max-width: 674px)">
                 <IconMenu
                   menuStyle={{ "background": "#F7F9F9" }}
                   iconButtonElement={ <IconButton><MenuIcon /></IconButton> }
@@ -57,7 +57,7 @@ class Header extends Component {
                     />
                   ))}
                 </IconMenu>
-              </MediaQuery>*/}
+              </MediaQuery>
             </nav>
           }
         />
