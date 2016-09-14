@@ -61,6 +61,17 @@
   font-size: 18px;
 }
 
+.how-it-works__time-passes-step {
+  margin: 50px auto;
+}
+
+.how-it-works__time-passes-step-text {
+  font-weight: 300;
+  font-size: 18px;
+  position: relative;
+  right: 198px;
+}
+
 .how-it-works__sub-step-row {
   height: 50px;
 }
@@ -198,6 +209,10 @@
     padding-left: 90px;
   }
 
+  .how-it-works__time-passes-step-text {
+    right: 189px;
+  }
+
   .how-it-works__parallel-step-icon-container {
     height: 110px;
     width: 110px;
@@ -245,6 +260,11 @@
     padding-left: 50px;
   }
 
+  .how-it-works__time-passes-step-text {
+    right: 158px;
+    font-size: 14px;
+  }
+
   .how-it-works__step-text {
     font-size: 14px;
   }
@@ -282,6 +302,10 @@
   .how-it-works__branch {
     width: 72px;
     border-width: 2px;
+    right: 90px;
+  }
+
+  .how-it-works__time-passes-step-text {
     right: 90px;
   }
 

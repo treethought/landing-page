@@ -18,7 +18,7 @@ class LandingPage extends Component {
           </Element>
           <section className="landing-page__blurb-container">
             <p className="landing-page__blurb">
-              We are helping people who are arrested to reach their loved ones and to alert a lawyer earlier on in the arrest process for a more fair court outcome.
+              Good Call is a completely free service that helps people who are arrested reach their loved ones and secure a free lawyer. Everyone deserves fairness. 
             </p>
           </section>
           <HowItWorks />
