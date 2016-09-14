@@ -5,6 +5,9 @@ import RaisedButton from 'material-ui/RaisedButton'
 import ReactPhoneInput from 'react-phone-input'
 import renderIf from 'render-if'
 import {Link} from 'react-router'
+import includes from 'lodash.includes'
+import values from 'lodash.values'
+import isEmpty from 'lodash.isempty'
 
 const userFields = [
   {name: 'name', label: 'First Name, Last Name'},
@@ -43,7 +46,11 @@ class SignUpPage extends Component {
                     ></TextField>
                 ))}
 
-                <RaisedButton label="Continue" onClick={this.props.createUser} />
+                <RaisedButton
+                  label="Continue"
+                  onClick={this.props.createUser}
+                  disabled={isEmpty(this.props.user) || includes(values(this.props.user), '')}
+                />
               </form>
             </div>
           )}
