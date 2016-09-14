@@ -4,6 +4,7 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import ReactPhoneInput from 'react-phone-input'
 import renderIf from 'render-if'
+import {Link} from 'react-router'
 
 const userFields = [
   {name: 'name', label: 'First Name, Last Name'},
@@ -73,6 +74,15 @@ class SignUpPage extends Component {
               </form>
 
               <RaisedButton label="Add another contact" onClick={this.props.addContact}/>
+
+              <RaisedButton label="Save contacts" onClick={this.props.saveContacts}/>
+            </div>
+          )}
+
+          {renderIf(this.props.formStage === 2) (
+            <div>
+              <h1>UR DONE</h1>
+              <RaisedButton label="GO BACK" containerElement={<Link to="/" />}/>
             </div>
           )}
         </div>

@@ -3,13 +3,14 @@ import SignUpPage from './../components/sign-up-page'
 import config from './../config'
 import fetcher from './../services/fetcher'
 import objectMap from 'object.map'
+import cookie from 'react-cookie'
 
 let tmpContactId = 0
 
 class SignUpPageContainer extends Component {
   constructor () {
     super()
-    this.state = {formStage: 1, user: {}, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}], formToken: {}}
+    this.state = {formStage: 0, user: {}, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
   }
 
   createUser () {
@@ -19,8 +20,10 @@ class SignUpPageContainer extends Component {
       body: {user: this.state.user}
     }).then((res) => {
       let {status, json} = res
+      console.log('json: ', json)
       if (status === 200) {
-        this.setState({userFormErrors: {}, formToken: json.user.formToken, formStage: 1})
+        this.setState({user: json.user, userFormErrors: {}, formStage: 1})
+        cookie.save('formTokenValue', json.user.form_token.value)
       } else {
         this.setState({
           userFormErrors: objectMap(json.errors, (v) => v.join(', '))
@@ -60,6 +63,28 @@ class SignUpPageContainer extends Component {
     }
   }
 
+  saveContacts () {
+    return fetcher({
+      url: `${config.apiBaseUrl}/contacts`,
+      method: 'POST',
+      body: {
+        contacts: {
+          list: this.state.contacts,
+          form_token_value: cookie.load('formTokenValue'),
+          user_id: this.state.user.id
+        }
+      }
+    }).then((res) => {
+      let {status, json} = res
+      if (status === 200) {
+        this.setState({contactsFormErrors: {}, contacts: [], formStage: 2})
+        cookie.remove('formTokenValue')
+      } else {
+        this.setState({contactFormErrors: json.errors})
+      }
+    })
+  }
+
   render () {
     return (
       <SignUpPage
@@ -69,6 +94,7 @@ class SignUpPageContainer extends Component {
         addContact={this.addContact.bind(this)}
         removeContact={this.removeContact.bind(this)}
         setContact={this.setContact.bind(this)}
+        saveContacts={this.saveContacts.bind(this)}
       />
     )
   }
