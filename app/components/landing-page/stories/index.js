@@ -7,6 +7,7 @@ import Slider from 'react-slick'
 import uuid from 'node-uuid'
 import {findDOMNode} from 'react-dom'
 import MediaQuery from 'react-responsive'
+import getPosition from './../../../services/get-position'
 
 const stories = [
   {pictureSrc: 'https://desu-usergeneratedcontent.xyz/a/image/1467/65/1467651370670.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was suspended and I haven\'t had time to renew it time to renew it time to renew it time to renew it time to renew it', nameAndLocation: 'Stephanie, Queens, NY'},
@@ -40,12 +41,10 @@ class Stories extends Component {
   adjustCarouselSize () {
     // this causes the component to remount, which is needed for <Slider /> to actually be responsive
     let DOMNode = findDOMNode(this.refs['landing-page__stories-carousel'])
-    let viewportOffset = DOMNode.getBoundingClientRect().top
-    let height = window.innerHeight - viewportOffset
-    this.setState({
-      componentKey: uuid.v4(),
-      height: height >= minHeight ? height : minHeight
-    })
+    let distanceFromTop = getPosition(DOMNode).y
+    let height = window.innerHeight - distanceFromTop
+    let adjustedHeight = height >= minHeight ? height : minHeight
+    this.setState({componentKey: uuid.v4(), height: adjustedHeight})
   }
 
   render () {
