@@ -10,6 +10,7 @@ import values from 'lodash.values'
 import isEmpty from 'lodash.isempty'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
+import Checkbox from 'material-ui/Checkbox'
 
 const userFields = [
   {name: 'name', label: 'First Name, Last Name'},
@@ -37,6 +38,12 @@ const heardAboutUsThroughOpts = [
 ]
 
 class SignUpPage extends Component {
+  onIsContactableByUsCheck (contact) {
+    return (e, isChecked) => {
+      this.props.setContact(contact.tmpId, 'isContactableByUs')(null, null, isChecked)
+    }
+  }
+
   render () {
     return (
       <InnerPage>
@@ -103,6 +110,12 @@ class SignUpPage extends Component {
                         onChange={this.props.setContact(contact.tmpId, field.name)}
                       ></TextField>
                     ))}
+
+                    <Checkbox
+                      label="Can we let this person know that you signed up for Good Call?"
+                      defaultChecked={false}
+                      onCheck={this.onIsContactableByUsCheck(contact).bind(this)}
+                    />
 
                     <RaisedButton label="go away" onClick={this.props.removeContact(contact.tmpId)}/>
                   </div>

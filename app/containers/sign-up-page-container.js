@@ -46,8 +46,8 @@ class SignUpPageContainer extends Component {
   }
 
   setContact (tmpId, propName) {
-    return (e) => {
-      let prop = e.target.value
+    return (e, i, v) => {
+      let prop = propName === 'isContactableByUs' ? v : e.target.value
       let contacts = this.state.contacts.map((contact) => {
         if (contact.tmpId === tmpId) { contact[propName] = prop }
         return contact
