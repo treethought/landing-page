@@ -7,6 +7,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   padding: 20px;
 }
 
