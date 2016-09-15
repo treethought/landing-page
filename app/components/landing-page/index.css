@@ -11,22 +11,6 @@
   font-weight: 300;
 }
 
-.landing-page__blurb-container {
-  border-bottom: 1px solid #4A4A4A;
-  padding-right: 40px;
-  padding-left: 40px;
-}
-
-.landing-page__blurb {
-  font-size: 30px;
-  color: rgba(45,43,43,0.99);
-  max-width: 841px;
-  min-height: 108px;
-  margin: 70px auto;
-  font-weight: 700;
-  text-align: center;
-}
-
 @media (max-width: 839px) {
 
   .landing-page__std-header {
@@ -35,10 +19,6 @@
 
   .landing-page__std-subheader {
     font-size: 18px;
-  }
-
-  .landing-page__blurb {
-    font-size: 22px;
   }
 
 }

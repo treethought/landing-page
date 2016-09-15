@@ -7,11 +7,16 @@ import Slider from 'react-slick'
 import uuid from 'node-uuid'
 import {findDOMNode} from 'react-dom'
 import MediaQuery from 'react-responsive'
+import getDistanceFromTop from './../../../services/get-distance-from-top'
 
 const stories = [
-  {pictureSrc: 'https://desu-usergeneratedcontent.xyz/a/image/1467/65/1467651370670.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was suspended and I haven\'t had time to renew it time to renew it time to renew it time to renew it time to renew it', nameAndLocation: 'Stephanie, Queens, NY'},
-  {pictureSrc: 'http://www.animeclick.it/immagini/anime/Bananya/gallery_original/Bananya-577d0ce7b4619.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was suspended and I haven\'t had time to renew it', nameAndLocation: 'Stephanie, Queens, NY'},
-  {pictureSrc: 'http://pbs.twimg.com/media/CrcvK6sWYAABCfT.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because my license was my license was', nameAndLocation: 'Stephanie, Queens, NY'}
+  {pictureSrc: './assets/imgs/pharaoh-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I was defending myself.', nameAndLocation: 'Pharaoh, Brooklyn, NY'},
+  {pictureSrc: './assets/imgs/nate-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because the officer said it was protocol.', nameAndLocation: 'Nate, Brooklyn, NY'},
+  {pictureSrc: './assets/imgs/sharmene-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I was misunderstood.', nameAndLocation: 'Sharmene, Brooklyn, NY'},
+  {pictureSrc: './assets/imgs/tina-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I wanted my voice to be heard.', nameAndLocation: 'Tina, Brooklyn, NY'},
+  // {pictureSrc: './assets/imgs/ray-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I fit the description.', nameAndLocation: 'Ray, Brooklyn, NY'},
+  {pictureSrc: './assets/imgs/jelani-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because ______.', nameAndLocation: 'Jelani, Brooklyn, NY'},
+  {pictureSrc: './assets/imgs/steven-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because ______.', nameAndLocation: 'Steven, Brooklyn, NY'}
 ]
 
 const minHeight = 290
@@ -21,6 +26,11 @@ class Stories extends Component {
     super()
     this.state = {componentKey: uuid.v4()}
     this.adjustCarouselSize = this.adjustCarouselSize.bind(this)
+  }
+
+  componentWillReceiveProps () {
+    // necessary to rerender carousel correctly on route change
+    this.setState({componentKey: uuid.v4()})
   }
 
   componentDidMount () {
@@ -35,12 +45,10 @@ class Stories extends Component {
   adjustCarouselSize () {
     // this causes the component to remount, which is needed for <Slider /> to actually be responsive
     let DOMNode = findDOMNode(this.refs['landing-page__stories-carousel'])
-    let viewportOffset = DOMNode.getBoundingClientRect().top
-    let height = window.innerHeight - viewportOffset
-    this.setState({
-      componentKey: uuid.v4(),
-      height: height >= minHeight ? height : minHeight
-    })
+    let distanceFromTop = getDistanceFromTop(DOMNode)
+    let height = window.innerHeight - distanceFromTop
+    let adjustedHeight = height >= minHeight ? height : minHeight
+    this.setState({componentKey: uuid.v4(), height: adjustedHeight})
   }
 
   render () {
@@ -60,15 +68,6 @@ class Stories extends Component {
     return (
       <section className="landing-page__stories" key={this.state.componentKey}>
         <h1 className="landing-page__stories-header">No one expects to be arrested.</h1>
-
-        <MediaQuery query="(max-width: 674px)">
-          <FlatButton
-            className="header__nav-btn landing-page__stories-sign-up-btn"
-            label="Sign up for updates"
-            containerElement={<Link to="/sign-up" />}
-            hoverColor="#FDFFF9"
-          />
-        </MediaQuery>
 
         <ul>
           <Slider {...sliderSettings} ref="landing-page__stories-carousel">

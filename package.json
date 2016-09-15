@@ -7,7 +7,7 @@
     "start": "budo . -d --pushstate --serve bundle.js --live",
     "build": "browserify . -o bundle.js -g uglifyify",
     "dist": "mkdir -p dist && bash -c 'cp *.{js,html} dist && cp -r assets dist'",
-    "stage-push": "gh-pages -d dist",
+    "stage-push": "surge dist good-call-nyc-staging.surge.sh",
     "stage": "export NODE_ENV=staging; npm run build && npm run dist && npm run stage-push",
     "deploy-push": "s3-website deploy dist",
     "deploy": "export NODE_ENV=production; npm run build && npm run dist && npm run deploy-push"
@@ -73,7 +73,8 @@
     "browserify-css": "^0.9.1",
     "budo": "^4.0.0",
     "envify": "^3.4.1",
-    "gh-pages": "^0.3.0",
+    "s3-website": "^2.1.0",
+    "surge": "^0.18.0",
     "uglifyify": "^3.0.1"
   }
 }

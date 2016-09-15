@@ -10,8 +10,8 @@ import MediaQuery from 'react-responsive'
 import {Link} from 'react-router'
 
 const navBtns = [
-  {label: 'About us', to: '/about-us', className: 'header__about-us-btn'}, // hiding this btn for now
-  {label: 'Sign up for updates', to: '/sign-up', className: 'header__sign-up-btn' }
+  {label: 'About us', to: '/about-us', className: 'header__about-us-btn'},
+  {label: 'join our movement', to: '/sign-up', className: 'header__sign-up-btn' }
 ]
 
 class Header extends Component {
@@ -24,7 +24,7 @@ class Header extends Component {
           zDepth={0}
           title={
             <Link to="/">
-              <img src="./assets/imgs/logo.png" className="header-logo"/>
+              <img src="./assets/imgs/logo.png" className="header__logo" />
             </Link>
           }
           iconElementRight={
@@ -41,8 +41,9 @@ class Header extends Component {
                 ))}
               </MediaQuery>
 
-              {/*}<MediaQuery query="(max-width: 674px)">
+              <MediaQuery query="(max-width: 674px)">
                 <IconMenu
+                  className="header__icon-menu"
                   menuStyle={{ "background": "#F7F9F9" }}
                   iconButtonElement={ <IconButton><MenuIcon /></IconButton> }
                   targetOrigin={{horizontal: 'right', vertical: 'top'}}
@@ -57,7 +58,7 @@ class Header extends Component {
                     />
                   ))}
                 </IconMenu>
-              </MediaQuery>*/}
+              </MediaQuery>
             </nav>
           }
         />

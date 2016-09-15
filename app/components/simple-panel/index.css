@@ -1,0 +1,19 @@
+.simple-panel {
+  padding: 70px 40px;
+}
+
+.simple-panel__text {
+  margin: 0 auto;
+  font-size: 30px;
+  max-width: 841px;
+  min-height: 108px;
+  text-align: center;
+}
+
+@media (max-width: 839px) {
+
+  .simple-panel__text {
+    font-size: 22px;
+  }
+
+}

@@ -1,0 +1,108 @@
+.about-page__banner {
+  background-image: url('./../../../assets/imgs/jelani-min.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 506px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  padding: 20px;
+}
+
+.about-page__banner-header {
+  background: rgba(0, 255, 238, 0.77);
+  color: #FDFFF9;
+  font-size: 40px;
+  font-weight: normal;
+  padding: 15px 7px 15px 13px;
+}
+
+.about-page__two-col-panel {
+  padding: 72px 126px;
+  text-align: center;
+}
+
+.about-page__two-col-panel-subheader {
+  font-size: 30px;
+  color: #4A4A4A;
+  max-width: 160px;
+  text-align: left;
+}
+
+.about-page__two-col-panel-paragraph {
+  font-size: 20px;
+  color: rgba(45,43,43,0.99);
+  line-height: 1.15;
+  text-align: left;
+}
+
+.about-page__paragraph-link {
+  color: #40B097;
+  text-decoration: none;
+}
+
+.about-page__our-team {
+  border-bottom: 1px solid #979797;
+}
+
+.about-page__sign-up-btn {
+  height: 44px !important;
+  line-height: 44px !important;
+  min-height: 44px !important;
+  background: #40B097 !important;
+  width: 211px !important;
+  margin-top: 20px !important;
+}
+
+.about-page__sign-up-btn span {
+  font-size: 16px !important;
+  color: #FFFFFF;
+  letter-spacing: 0.57px !important;
+  font-weight: 300 !important;
+  text-transform: none !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+
+@media (max-width: 839px) {
+
+  .about-page__banner-header {
+    font-size: 32px;
+  }
+
+  .about-page__two-col-panel {
+    padding: 60px 70px;
+  }
+
+  .about-page__two-col-panel-subheader {
+    font-size: 26px;
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .about-page__two-col-panel-paragraph {
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .about-page__banner-header {
+    font-size: 26px;
+  }
+
+  .about-page__two-col-panel {
+    padding: 20px 20px;
+  }
+
+  .about-page__join-our-movement {
+    padding-bottom: 40px;
+  }
+
+}

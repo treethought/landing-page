@@ -2,19 +2,19 @@
   background: #4A4A4A;
   color: #FDFFF9;;
   text-align: center;
-  padding: 62px 20px 58px;
+  padding: 70px 20px 72px;
 }
 
 .landing-page__problem-text {
   max-width: 800px;
   padding-top: 5px;
   margin: 0 auto;
-  margin-bottom: 70px;
   font-size: 20px;
   font-weight: 300;
   text-align: left;
   padding-right: 10px;
   padding-left: 10px;
+  line-height: 1.15;
 }
 
 /*.landing-page__learn-about-us-btn {

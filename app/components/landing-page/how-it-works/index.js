@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 const firstSteps = [
   {iconSrc: './assets/imgs/arrested_icon.svg', text: 'you get unexpectedly arrested'},
   {iconSrc: './assets/imgs/precinct_icon.svg', text: 'you\'re brought to the precinct'},
-  {iconSrc: './assets/imgs/phone_icon.svg', text: 'you call 1-800-GOODCALL'}
+  {iconSrc: './assets/imgs/phone_icon.svg', text: 'you call GOOD CALL'}
 ]
 
 const callSubsteps = [
@@ -36,10 +36,19 @@ class HowItWorks extends Component {
 
     return (
       <section className="how-it-works">
-        <h2 className="how-it-works__header">Know what to expect.</h2>
+        <h2 className="how-it-works__header">Introducing Good Call</h2>
         <h3 className="how-it-works__subheader"><em>How it works</em></h3>
 
         <ol className="how-it-works__step-list">
+          <Step
+            iconSrc='./assets/imgs/registration_icon.svg'
+            text="sign up for free and give us an emergency contact  to become a Good Call member"
+          />
+
+          <li className="how-it-works__time-passes-step">
+            <em className="how-it-works__time-passes-step-text">some time passes</em>
+          </li>
+
           {firstSteps.map((step, i, arr) => (
             <div key={i}>
               <Step iconSrc={step.iconSrc} text={step.text} />
@@ -65,7 +74,7 @@ class HowItWorks extends Component {
 
           <Branch type="downward" color="green" />
 
-          <Step text="Good Call will alert a lawyer for you and get your message to your loved ones" customIcon={
+          <Step text="GOOD CALL will alert a lawyer for you and get your message to your loved ones" customIcon={
             <div className="how-it-works__parallel-step-icon-container how-it-works__centered-row">
               <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__lawyer-icon" src="./assets/imgs/lawyer_icon.svg" />
               <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__family-icon" src="./assets/imgs/family_icon.svg" />

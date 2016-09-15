@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import InnerPage from './../inner-page'
 import Stories from './stories'
+import SimplePanel from './../simple-panel'
 import Problem from './problem'
 import HowItWorks from './how-it-works'
 import LaunchingSoon from './launching-soon'
@@ -16,11 +17,11 @@ class LandingPage extends Component {
           <Element name="landing-page__problem">
             <Problem />
           </Element>
-          <section className="landing-page__blurb-container">
-            <p className="landing-page__blurb">
-              We are helping people who are arrested to reach their loved ones and to alert a lawyer earlier on in the arrest process for a more fair court outcome.
-            </p>
-          </section>
+          <SimplePanel
+            color='rgba(45,43,43,0.99)'
+            text="Good Call is a completely free service that helps people who are arrested reach their loved ones and secure a free lawyer. Everyone deserves fairness."
+            fontWeight="700"
+          />
           <HowItWorks />
           <LaunchingSoon />
         </div>

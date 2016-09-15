@@ -14,12 +14,6 @@ cd landing-page
 npm install
 ```
 
-#### install [s3-website](https://github.com/klaemo/s3-website)
-
-```bash
-npm install -g s3-website
-```
-
 #### set s3 environment variables
 
 ```bash
@@ -44,7 +38,9 @@ merge changes into `staging`, checkout `staging`, and then run:
 npm run stage
 ```
 
-visit https://good-call-nyc.github.io/landing-page
+if prompted for login details for surge, use the ones in our accounts doc
+
+visit http://good-call-nyc-staging.surge.sh/
 
 ## deploy
 
