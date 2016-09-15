@@ -41,5 +41,7 @@ COLORS
 @import url("./components/intro/index.css");
 @import url("./components/footer/index.css");
 @import url("./components/landing-page/index.css");
+@import url("./components/about-page/index.css");
 
 @import url("./components/scroll-down-btn/index.css");
+@import url("./components/simple-panel/index.css");
