@@ -10,7 +10,7 @@ class LaunchingSoon extends Component {
 
         <FlatButton
           className="landing-page__launching-soon-sign-up-btn"
-          label="join our movement"
+          label="join the movement"
         />
       </section>
     )

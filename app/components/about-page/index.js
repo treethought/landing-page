@@ -51,6 +51,8 @@ class AboutPage extends Component {
             text={"We come from a diverse set of backgrounds and experiences, from 3D Printing to web design to community organizing. However, we share a passion for creating a better a more just New York City for everyone."}
           />
 
+          <div className="about-page__horiz-divider"></div>
+
           <TwoColPanel
             heading="Join our movement."
             text={"We are currently preparing to launch a pilot in the Bronx. If you live in the Bronx and are interested in being part of our pilot, or want to stay up to date on our progress, please sign up below!"}

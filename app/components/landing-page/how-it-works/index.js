@@ -4,15 +4,14 @@ import RaisedButton from 'material-ui/RaisedButton'
 
 const firstSteps = [
   {iconSrc: './assets/imgs/arrested_icon.svg', text: 'you get unexpectedly arrested'},
-  {iconSrc: './assets/imgs/precinct_icon.svg', text: 'you\'re brought to the precinct'},
-  {iconSrc: './assets/imgs/phone_icon.svg', text: 'you call GOOD CALL'}
+  {iconSrc: './assets/imgs/precinct_icon.svg', text: 'you are brought to the precinct'},
+  {iconSrc: './assets/imgs/phone_icon.svg', text: 'you call the Good Call hotline (coming soon)'}
 ]
 
 const callSubsteps = [
-  {number: 1, text: 'we ask you for your name & cell number'},
+  {number: 1, text: 'we collect your information'},
   {number: 2, text: 'we tell you your rights'},
-  {number: 3, text: 'we will ask you if you would like us to help you reach a loved one'},
-  {number: 4, text: 'you record a voice message for your loved one'}
+  {number: 3, text: 'we confirm your emergency contact'}
 ]
 
 class HowItWorks extends Component {
@@ -42,7 +41,7 @@ class HowItWorks extends Component {
         <ol className="how-it-works__step-list">
           <Step
             iconSrc='./assets/imgs/registration_icon.svg'
-            text="sign up for free and give us an emergency contact  to become a Good Call member"
+            text="you sign up for Good Call and list an emergency contact"
           />
 
           <li className="how-it-works__time-passes-step">
@@ -74,7 +73,7 @@ class HowItWorks extends Component {
 
           <Branch type="downward" color="green" />
 
-          <Step text="GOOD CALL will alert a lawyer for you and get your message to your loved ones" customIcon={
+          <Step text="Good Call will alert your emergency contact and get a lawyer on your case right away" customIcon={
             <div className="how-it-works__parallel-step-icon-container how-it-works__centered-row">
               <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__lawyer-icon" src="./assets/imgs/lawyer_icon.svg" />
               <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__family-icon" src="./assets/imgs/family_icon.svg" />
@@ -85,7 +84,7 @@ class HowItWorks extends Component {
 
           <Line type="short-vert" color="white" />
 
-          <Step iconSrc="./assets/imgs/free_icon.svg" text="You get released after arraignment" />
+          <Step iconSrc="./assets/imgs/free_icon.svg" text="you can return home as soon as possible" />
         </ol>
       </section>
     )

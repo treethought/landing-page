@@ -8,6 +8,7 @@ import uuid from 'node-uuid'
 import {findDOMNode} from 'react-dom'
 import MediaQuery from 'react-responsive'
 import getDistanceFromTop from './../../../services/get-distance-from-top'
+import shuffle from 'lodash.shuffle'
 
 const stories = [
   {pictureSrc: './assets/imgs/pharaoh-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I was defending myself.', nameAndLocation: 'Pharaoh, Brooklyn, NY'},
@@ -54,9 +55,9 @@ class Stories extends Component {
   render () {
     let sliderSettings = {
       className:'landing-page__stories-carousel',
-      arrows: false,
+      arrows: true,
       autoplay: true,
-      autoplaySpeed: 6000,
+      autoplaySpeed: 5000,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -67,11 +68,11 @@ class Stories extends Component {
 
     return (
       <section className="landing-page__stories" key={this.state.componentKey}>
-        <h1 className="landing-page__stories-header">No one expects to be arrested.</h1>
+        <h1 className="landing-page__stories-header">No one expects to get arrested.</h1>
 
         <ul>
           <Slider {...sliderSettings} ref="landing-page__stories-carousel">
-            {stories.map((story, i) => (
+            {shuffle(stories).map((story, i) => (
               <div className="landing-page__story-container" key={i} style={{'backgroundImage': `url('${story.pictureSrc}')`, 'height': this.state.height}}>
                 <div className="landing-page__story-container-overlay">
                   <li className="landing-page__story">
