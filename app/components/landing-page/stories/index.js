@@ -9,6 +9,8 @@ import {findDOMNode} from 'react-dom'
 import MediaQuery from 'react-responsive'
 import getDistanceFromTop from './../../../services/get-distance-from-top'
 import shuffle from 'lodash.shuffle'
+import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
+import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 
 const stories = [
   {pictureSrc: './assets/imgs/pharaoh-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I was defending myself.', nameAndLocation: 'Pharaoh, Brooklyn, NY'},
@@ -52,11 +54,19 @@ class Stories extends Component {
     this.setState({componentKey: uuid.v4(), height: adjustedHeight})
   }
 
+  prevSlide () {
+    this.refs['landing-page__stories-carousel'].slickPrev()
+  }
+
+  nextSlide () {
+    this.refs['landing-page__stories-carousel'].slickNext()
+  }
+
   render () {
     let sliderSettings = {
       className:'landing-page__stories-carousel',
-      arrows: true,
       autoplay: true,
+      arrows: false,
       autoplaySpeed: 5000,
       infinite: true,
       slidesToShow: 1,
@@ -70,7 +80,14 @@ class Stories extends Component {
       <section className="landing-page__stories" key={this.state.componentKey}>
         <h1 className="landing-page__stories-header">No one expects to get arrested.</h1>
 
-        <ul>
+        <ul className="landing-page__stories-carousel-list-container">
+          <div
+            className="landing-page__stories-carousel__arrow-container landing-page__stories-carousel__left-arrow-container"
+            onClick={this.prevSlide.bind(this)}
+          >
+            <KeyboardArrowLeft className="landing-page__stories-carousel__arrow" color="#FDFFF9" />
+          </div>
+
           <Slider {...sliderSettings} ref="landing-page__stories-carousel">
             {shuffle(stories).map((story, i) => (
               <div className="landing-page__story-container" key={i} style={{'backgroundImage': `url('${story.pictureSrc}')`, 'height': this.state.height}}>
@@ -91,6 +108,13 @@ class Stories extends Component {
               </div>
             ))}
           </Slider>
+
+          <div
+            className="landing-page__stories-carousel__arrow-container landing-page__stories-carousel__right-arrow-container"
+            onClick={this.nextSlide.bind(this)}
+          >
+            <KeyboardArrowRight className="landing-page__stories-carousel__arrow" color="#FDFFF9" />
+          </div>
         </ul>
 
         <div className="landing-page__stories-scroll-down-btn-container">
