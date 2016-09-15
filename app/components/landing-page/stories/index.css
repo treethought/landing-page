@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-.landing-page__stories-carousel-container {
+.landing-page__stories-carousel-list-container {
   flex-grow: 1;
   -webkit-flex-grow: 1;
   position: relative;
