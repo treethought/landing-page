@@ -54,6 +54,7 @@ class AboutPage extends Component {
           <TwoColPanel
             heading="Join our movement."
             text={"We are currently preparing to launch a pilot in the Bronx. If you live in the Bronx and are interested in being part of our pilot, or want to stay up to date on our progress, please sign up below!"}
+            className="about-page__join-our-movement"
           >
             <FlatButton
               className="about-page__sign-up-btn"

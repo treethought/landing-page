@@ -50,10 +50,6 @@
   border-bottom: 1px solid #979797;
 }
 
-.about-page__join-our-movement {
-  margin-bottom: 20px;
-}
-
 .about-page__sign-up-btn {
   height: 44px !important;
   line-height: 44px !important;
@@ -103,6 +99,10 @@
 
   .about-page__two-col-panel {
     padding: 20px 20px;
+  }
+
+  .about-page__join-our-movement {
+    padding-bottom: 40px;
   }
 
 }
