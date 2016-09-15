@@ -27,31 +27,27 @@ const minHeight = 290
 class Stories extends Component {
   constructor () {
     super()
+    this.resetComponentKey = this.resetComponentKey.bind(this)
     this.state = {componentKey: uuid.v4()}
-    this.adjustCarouselSize = this.adjustCarouselSize.bind(this)
   }
 
   componentWillReceiveProps () {
     // necessary to rerender carousel correctly on route change
-    this.setState({componentKey: uuid.v4()})
+    this.resetComponentKey()
   }
 
   componentDidMount () {
-    this.adjustCarouselSize()
-    window.addEventListener('resize', this.adjustCarouselSize)
+    this.resetComponentKey()
+    window.addEventListener('resize', this.resetComponentKey)
   }
 
   componentWillUnmount () {
-    window.removeEventListener('resize', this.adjustCarouselSize)
+    window.removeEventListener('resize', this.resetComponentKey)
   }
 
-  adjustCarouselSize () {
+  resetComponentKey () {
     // this causes the component to remount, which is needed for <Slider /> to actually be responsive
-    let DOMNode = findDOMNode(this.refs['landing-page__stories-carousel'])
-    let distanceFromTop = getDistanceFromTop(DOMNode)
-    let height = window.innerHeight - distanceFromTop
-    let adjustedHeight = height >= minHeight ? height : minHeight
-    this.setState({componentKey: uuid.v4(), height: adjustedHeight})
+    this.setState({componentKey: uuid.v4()})
   }
 
   prevSlide () {
@@ -72,8 +68,7 @@ class Stories extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       speed: 1000,
-      pauseOnHover: false,
-      adaptiveHeight: true
+      pauseOnHover: false
     }
 
     return (
@@ -90,7 +85,7 @@ class Stories extends Component {
 
           <Slider {...sliderSettings} ref="landing-page__stories-carousel">
             {shuffle(stories).map((story, i) => (
-              <div className="landing-page__story-container" key={i} style={{'backgroundImage': `url('${story.pictureSrc}')`, 'height': this.state.height}}>
+              <div className="landing-page__story-container" key={i} style={{'backgroundImage': `url('${story.pictureSrc}')`}}>
                 <div className="landing-page__story-container-overlay">
                   <li className="landing-page__story">
                     <h2 className="landing-page__story-header">
