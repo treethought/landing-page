@@ -3,15 +3,18 @@
   padding-top: 103px;
   text-align: center;
   display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
   height: calc(100vh - 64px);
   min-height: 290px;
   overflow: hidden;
   box-sizing: border-box;
-  flex-direction: column;
 }
 
-.landing-page__stories-carousel-container {
+.landing-page__stories-carousel-list-container {
   flex-grow: 1;
+  -webkit-flex-grow: 1;
   position: relative;
 }
 
