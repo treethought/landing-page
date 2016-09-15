@@ -14,6 +14,12 @@
   padding-left: 32px !important;
 }
 
+.header__logo {
+  height: 52px;
+  position: relative;
+  top: 5px;
+}
+
 .header__nav {
   position: relative;
   bottom: 8px;
@@ -45,6 +51,11 @@
   color: #FFFFFF;
   letter-spacing: 0.57px !important;
   font-weight: 300 !important;
+}
+
+.header__icon-menu {
+  position: relative;
+  top: 5px;
 }
 
 @media (min-width: 675px) {

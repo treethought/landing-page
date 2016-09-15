@@ -24,7 +24,7 @@ class Header extends Component {
           zDepth={0}
           title={
             <Link to="/">
-              <img src="./assets/imgs/logo.png" className="header-logo" />
+              <img src="./assets/imgs/logo.png" className="header__logo" />
             </Link>
           }
           iconElementRight={
@@ -43,6 +43,7 @@ class Header extends Component {
 
               <MediaQuery query="(max-width: 674px)">
                 <IconMenu
+                  className="header__icon-menu"
                   menuStyle={{ "background": "#F7F9F9" }}
                   iconButtonElement={ <IconButton><MenuIcon /></IconButton> }
                   targetOrigin={{horizontal: 'right', vertical: 'top'}}
