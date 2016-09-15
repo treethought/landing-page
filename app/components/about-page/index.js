@@ -58,7 +58,7 @@ class AboutPage extends Component {
             <FlatButton
               className="about-page__sign-up-btn"
               label="sign up"
-              containerElement={<Link to="/"/>}
+              containerElement={<Link to="/sign-up"/>}
             />
           </TwoColPanel>
         </div>
