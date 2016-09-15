@@ -24,11 +24,26 @@ const minHeight = 290
 class Stories extends Component {
   constructor () {
     super()
+    this.resetComponentKey = this.resetComponentKey.bind(this)
     this.state = {componentKey: uuid.v4()}
   }
 
   componentWillReceiveProps () {
     // necessary to rerender carousel correctly on route change
+    this.resetComponentKey()
+  }
+
+  componentDidMount () {
+    this.resetComponentKey()
+    window.addEventListener('resize', this.resetComponentKey)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.resetComponentKey)
+  }
+
+  resetComponentKey () {
+    // this causes the component to remount, which is needed for <Slider /> to actually be responsive
     this.setState({componentKey: uuid.v4()})
   }
 
