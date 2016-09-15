@@ -2,6 +2,25 @@
   position: relative;
   padding-top: 103px;
   text-align: center;
+  display: flex;
+  height: calc(100vh - 64px);
+  min-height: 290px;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.landing-page__stories-carousel-container {
+  flex-grow: 1;
+  position: relative;
+}
+
+.landing-page__stories-carousel, .slick-list, .slick-track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .landing-page__stories-header {
