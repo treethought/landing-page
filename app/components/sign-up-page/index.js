@@ -11,7 +11,7 @@ class SignUpPage extends Component {
       <InnerPage location={this.props.location}>
         <div className="sign-up-page">
           {renderIf(this.props.formStage === 0) (
-            <div>
+            <div className="sign-up-page__create-user-form-container">
               <h1 className="sign-up-page__form-header">Become a member today to get updates and be part of our Bronx pilot launch</h1>
               <h2 className="sign-up-page__form-subheader">tell us about yourself</h2>
 
@@ -26,7 +26,7 @@ class SignUpPage extends Component {
           )}
 
           {renderIf(this.props.formStage === 1) (
-            <div>
+            <div className="sign-up-page__create-user-form-container">
               <h1 className="sign-up-page__form-header">Become a member today to get updates and be part of our Bronx pilot launch</h1>
               <h2 className="sign-up-page__form-subheader">provide an emergency contact</h2>
 

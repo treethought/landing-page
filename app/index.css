@@ -20,6 +20,7 @@ body {
   min-height: 44px !important;
   background: #40B097 !important;
   min-width: 190px !important;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
 }
 
 .gc-std-btn span {

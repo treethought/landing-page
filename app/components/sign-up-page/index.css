@@ -1,8 +1,11 @@
 .sign-up-page {
   padding-top: 70px;
-  max-width: 664px;
   margin: 0 auto;
   color: #4A4A4A;
+}
+
+.sign-up-page__create-user-form-container {
+  max-width: 664px;
 }
 
 .sign-up-page__form-header {
