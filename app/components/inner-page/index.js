@@ -6,7 +6,7 @@ class InnerPage extends Component {
   render () {
     return (
       <div className="inner-page">
-        <Header />
+        <Header location={this.props.location}/>
           {this.props.children}
         <Footer />
       </div>

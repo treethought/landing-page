@@ -101,6 +101,7 @@ class SignUpPageContainer extends Component {
     return (
       <SignUpPage
         {...this.state}
+        location={this.props.location}
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
         addContact={this.addContact.bind(this)}

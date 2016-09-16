@@ -8,7 +8,7 @@ import SuccessPanels from './success-panels'
 class SignUpPage extends Component {
   render () {
     return (
-      <InnerPage>
+      <InnerPage location={this.props.location}>
         <div className="sign-up-page">
           {renderIf(this.props.formStage === 0) (
             <div>
