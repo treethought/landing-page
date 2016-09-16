@@ -18,34 +18,35 @@ class CreateContactsForm extends Component {
 
   render () {
     return (
-      <form className="sign-up-page__create-user-form">
-        <div className="sign-up-page__create-user-form-hint-bubble-container" ref="hint">
-          <div className="sign-up-page__create-user-form-hint-bubble">
-            <p className="sign-up-page__create-user-form-hint-text">
+      <form className="sign-up-page__form">
+        <div className="sign-up-page__form-hint-bubble-container" ref="hint">
+          <div className="sign-up-page__form-hint-bubble">
+            <p className="sign-up-page__form-hint-text">
               {this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you get arrested to let them know you’re okay
             </p>
           </div>
-          <div className="sign-up-page__create-user-form-hint-bubble-arrow"></div>
+          <div className="sign-up-page__form-hint-bubble-arrow"></div>
         </div>
 
-        <div className="sign-up-page__create-user-form-fields-container" ref="formFields">
+        <div className="sign-up-page__form-fields-container" ref="formFields">
           {this.props.contacts.map((contact, i) => (
             <div className="sign-up-page__contact-fields-container" key={contact.tmpId}>
               {contactFields.map((field, j) => (
                 <TextField
-                  key={j}
-                  className="sign-up-page__create-user-form-text-field"
-                  id={`sign-up-page__form-1-contacts-${i}-${field.name}`}
-                  floatingLabelText={field.label}
-                  floatingLabelFocusStyle={{fontSize: '14px', color: '#40B097', textTransform: 'uppercase'}}
-                  style={{textAlign: 'left'}}
-                  inputStyle={{fontSize: '18px'}}
+                  className="sign-up-page__form-text-field"
                   errorStyle={{marginBottom: '-15px'}}
-                  underlineFocusStyle={{borderColor: '#40B097'}}
+                  floatingLabelFocusStyle={{fontSize: '14px', color: '#40B097', textTransform: 'uppercase'}}
+                  floatingLabelText={field.label}
+                  inputStyle={{fontSize: '18px'}}
                   name={field.name}
-                  type={field.type || ''}
-                  onChange={this.props.setContact(contact.tmpId, field.name)}
+                  key={j}
                   onFocus={this.showHint.bind(this)}
+                  style={{textAlign: 'left'}}
+                  type={field.type || ''}
+                  underlineFocusStyle={{borderColor: '#40B097'}}
+
+                  id={`sign-up-page__form-1-contacts-${i}-${field.name}`}
+                  onChange={this.props.setContact(contact.tmpId, field.name)}
                 ></TextField>
               ))}
 
@@ -68,7 +69,7 @@ class CreateContactsForm extends Component {
           </div>
 
           <FlatButton
-            className="gc-std-btn sign-up-page__create-user-form-continue-btn"
+            className="gc-std-btn sign-up-page__form-continue-btn"
             label="Continue"
             onClick={this.props.saveContacts}
             disabled={this.props.requestInProgress}
