@@ -10,6 +10,20 @@ const contactFields = [
 ]
 
 class CreateContactsForm extends Component {
+  componentWillMount () {
+    window.addEventListener('beforeunload', this.popup.bind(this))
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('beforeunload', this.popup.bind(this))
+  }
+
+  popup (e) {
+    let confirmationMessage = '\o/'
+    e.returnValue = confirmationMessage
+    return confirmationMessage
+  }
+
   showHint () {
     let {hint, formFields} = this.refs
     hint.style.display = 'flex'
