@@ -48,7 +48,9 @@ class AboutPage extends Component {
             className="about-page__our-team"
             heading="Our team."
             text={"We come from a diverse set of backgrounds and experiences, from 3D Printing to web design to community organizing. However, we share a passion for creating a better a more just New York City for everyone."}
-          />
+          >
+            <img className="about-page__team-photo" src="/assets/imgs/team-wood.png"></img>
+          </TwoColPanel>
 
           <div className="about-page__horiz-divider"></div>
 

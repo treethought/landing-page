@@ -48,6 +48,16 @@
   text-decoration: none;
 }
 
+.about-page__our-team {
+  padding-bottom: 0;
+}
+
+.about-page__team-photo {
+  width: 100%;
+  position: relative;
+  top: 5px;
+}
+
 .about-page__horiz-divider {
   height: 1px;
   width: 100%;
@@ -88,6 +98,7 @@
 
   .about-page__two-col-panel {
     padding: 20px 20px;
+    padding-bottom: 0;
   }
 
   .about-page__join-our-movement {
