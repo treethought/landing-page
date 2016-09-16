@@ -22,7 +22,7 @@ class CreateContactsForm extends Component {
         <div className="sign-up-page__create-user-form-hint-bubble-container" ref="hint">
           <div className="sign-up-page__create-user-form-hint-bubble">
             <p className="sign-up-page__create-user-form-hint-text">
-              This is the person we would contact if you get arrested to let them know you’re okay
+              {this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you get arrested to let them know you’re okay
             </p>
           </div>
           <div className="sign-up-page__create-user-form-hint-bubble-arrow"></div>
@@ -55,6 +55,18 @@ class CreateContactsForm extends Component {
 
           <div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>
 
+          <div className="sign-up-page__checkbox-container">
+            <Checkbox
+              label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you were arrested.`}
+              defaultChecked={false}
+              onCheck={this.props.consentToContactIs()}
+              style={{textAlign: "left"}}
+              iconStyle={{width: "32px", height: "32px", fill: "#40B097"}}
+              labelStyle={{fontSize: "18px", color: "#4A4A4A", lineHeight: "24px", fontWeight: "300"}}
+            />
+
+          </div>
+
           <FlatButton
             className="gc-std-btn sign-up-page__create-user-form-continue-btn"
             label="Continue"
@@ -66,22 +78,5 @@ class CreateContactsForm extends Component {
     )
   }
 }
-
-/*
-<Checkbox
-  label="Can we let this person know that you signed up for Good Call?"
-  defaultChecked={false}
-  onCheck={this.onIsContactableByUsCheck(contact).bind(this)}
-/>
-
-onIsContactableByUsCheck (contact) {
-  return (e, isChecked) => {
-    this.props.setContact(contact.tmpId, 'isContactableByUs')(null, null, isChecked)
-  }
-}
-
-<span onClick={this.props.removeContact(contact.tmpId)}>- remove contact</span>
-*/
-
 
 export default CreateContactsForm

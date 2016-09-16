@@ -10,11 +10,11 @@ let tmpContactId = 0
 class SignUpPageContainer extends Component {
   constructor () {
     super()
-    this.state = {formStage: 1, user: {}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
+    this.state = {formStage: 0, user: {}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
   }
 
   createUser () {
-    return fetcher({
+    fetcher({
       url: `${config.apiBaseUrl}/users`,
       method: 'POST',
       body: {user: this.state.user},
@@ -54,6 +54,16 @@ class SignUpPageContainer extends Component {
         return contact
       })
       this.setState({ contacts: contacts })
+    }
+  }
+
+  consentToContactIs () {
+    return (e, isChecked) => {
+      let contacts = this.state.contacts.map((contact) => {
+        contact.isContactableByUs = isChecked
+        return contact
+      })
+      this.setState({contacts: contacts})
     }
   }
 
@@ -97,6 +107,7 @@ class SignUpPageContainer extends Component {
         removeContact={this.removeContact.bind(this)}
         setContact={this.setContact.bind(this)}
         saveContacts={this.saveContacts.bind(this)}
+        consentToContactIs={this.consentToContactIs.bind(this)}
       />
     )
   }

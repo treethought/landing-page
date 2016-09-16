@@ -37,6 +37,7 @@ class SignUpPage extends Component {
                 addContact={this.props.addContact}
                 saveContacts={this.props.saveContacts}
                 requestInProgress={this.props.requestInProgress}
+                consentToContactIs={this.props.consentToContactIs}
               />
             </div>
           )}

@@ -33,7 +33,7 @@
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-left: 20px solid #40B097;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .sign-up-page__create-user-form-hint-text {
