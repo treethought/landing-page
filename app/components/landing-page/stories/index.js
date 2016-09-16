@@ -12,13 +12,13 @@ import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-lef
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 
 const stories = [
-  {pictureSrc: '/assets/imgs/pharaoh-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I was defending myself.', nameAndLocation: 'Pharaoh, Brooklyn, NY'},
-  {pictureSrc: '/assets/imgs/nate-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because the officer said it was protocol.', nameAndLocation: 'Nate, Brooklyn, NY'},
-  {pictureSrc: '/assets/imgs/sharmene-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I was misunderstood.', nameAndLocation: 'Sharmene, Brooklyn, NY'},
-  {pictureSrc: '/assets/imgs/tina-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I wanted my voice to be heard.', nameAndLocation: 'Tina, Brooklyn, NY'},
-  {pictureSrc: '/assets/imgs/ray-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I fit the description.', nameAndLocation: 'Ray, Brooklyn, NY'},
-  {pictureSrc: '/assets/imgs/steven-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because ______.', nameAndLocation: 'Steven, Brooklyn, NY'},
-  {pictureSrc: '/assets/imgs/toma-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because ______.', nameAndLocation: 'Toma, Brooklyn, NY'}
+  {pictureSrc: '/assets/imgs/pharaoh-min.jpg', subheader: 'because I was defending myself', text: 'When Pharaoh was attacked by two tenants in his Brooklyn home, he tried his best to defend himself. Battered and bruised, he was still arrested when the police showed up.'},
+  {pictureSrc: '/assets/imgs/nate-min.jpg', subheader: 'because the officer said it was protocol', text: 'Nate was arrested for the possession of marijuana. Although this low level offense is usually resolved with a simple ticket, the officer decided to arrest Nate because he believed it was “protocol.'},
+  {pictureSrc: '/assets/imgs/sharmene-min.jpg', subheader: 'out of nowhere', text: 'When an altercation from months before turned into a warrant without her knowledge, Shermene was arrested unexpectedly.'},
+  // {pictureSrc: '/assets/imgs/tina-min.jpg', subheader: 'for speaking out', text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'},
+  // {pictureSrc: '/assets/imgs/steven-min.jpg', subheader: 'I was arrested because ______.', text: ''},
+  // {pictureSrc: '/assets/imgs/toma-min.jpg', subheader: 'I was arrested because ______.', text: ''},
+  {pictureSrc: '/assets/imgs/ray-min.jpg', subheader: 'because I fit the description.', text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'}
 ]
 
 const minHeight = 290
@@ -88,15 +88,19 @@ class Stories extends Component {
                 <div className="landing-page__story-container-overlay">
                   <li className="landing-page__story">
                     <h2 className="landing-page__story-header">
-                      <em dangerouslySetInnerHTML={{__html: story.headerHTML}}></em>
+                      <mark>I was arrested.</mark>
                     </h2>
 
-                    <p className="landing-page__story-text">
-                      <span className="landing-page__story-text-quote landing-page__story-text-left-quote">“</span>
-                      {story.text}
-                      <span className="landing-page__story-text-quote landing-page__story-text-right-quote">”</span>
+                    <div className="landing-page__story-text-container">
+                      <h3 className="landing-page__story-subheader">
+                        <span className="landing-page__story-text-quote">“</span>
+                        <span className="landing-page__story-subheader-text">{story.subheader}</span>
+                        <span className="landing-page__story-text-quote">”</span>
+                      </h3>
+
+                      <p className="landing-page__story-text">{story.text}</p>
                       <span className="landing-page__story-name-and-location"><em>- {story.nameAndLocation}</em></span>
-                    </p>
+                    </div>
                   </li>
                 </div>
               </div>
