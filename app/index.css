@@ -32,6 +32,16 @@ body {
   padding-right: 25px !important;
 }
 
+.gc-std-btn:disabled {
+  background: #E5E5E5 !important;
+}
+
+.gc-std-btn:disabled span {
+  color: #A1A1A1 !important;
+}
+
+
+
 /* TODO: remove unused colors */
 
 /*

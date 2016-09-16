@@ -9,7 +9,7 @@
 
 .sign-up-page__create-user-form-hint-bubble-container {
   width: 50%;
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: flex-start;
   position: relative;
@@ -18,7 +18,7 @@
 
 .sign-up-page__create-user-form-hint-bubble {
   background: #40B097;
-  /*box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);*/
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
   border-radius: 8px 0 8px 8px;
   position: relative;
   display: flex;
@@ -33,6 +33,7 @@
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-left: 20px solid #40B097;
+  z-index: 1000;
 }
 
 .sign-up-page__create-user-form-hint-text {
@@ -46,6 +47,7 @@
 
 .sign-up-page__create-user-form-fields-container {
   width: 50%;
+  text-align: center;
 }
 
 .sign-up-page__create-user-form-text-field {
@@ -57,5 +59,4 @@
 .sign-up-page__create-user-form-continue-btn {
   margin-top: 75px !important;
   margin-bottom: 95px !important;
-  float: right;
 }

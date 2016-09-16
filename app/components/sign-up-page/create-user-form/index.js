@@ -25,10 +25,16 @@ const heardAboutUsThroughOpts = [
 ]
 
 class CreateUserForm extends Component {
+  showHint () {
+    let {hint, formFields} = this.refs
+    hint.style.display = 'flex'
+    formFields.style.textAlign = 'right'
+  }
+
   render () {
     return (
       <form className="sign-up-page__create-user-form">
-        <div className="sign-up-page__create-user-form-hint-bubble-container">
+        <div className="sign-up-page__create-user-form-hint-bubble-container" ref="hint">
           <div className="sign-up-page__create-user-form-hint-bubble">
             <p className="sign-up-page__create-user-form-hint-text">
               Your information will not be shared with anyone. It is used only to verify you in case of an arrest.
@@ -37,7 +43,7 @@ class CreateUserForm extends Component {
           <div className="sign-up-page__create-user-form-hint-bubble-arrow"></div>
         </div>
 
-        <div className="sign-up-page__create-user-form-fields-container">
+        <div className="sign-up-page__create-user-form-fields-container" ref="formFields">
           {userFields.map((field, i) => (
             <TextField
               key={i}
@@ -45,14 +51,16 @@ class CreateUserForm extends Component {
               id={`sign-up-page__form-1-user-${field.name}`}
               floatingLabelText={field.label}
               floatingLabelFocusStyle={{fontSize: '14px', color: '#40B097', textTransform: 'uppercase'}}
+              style={{textAlign: 'left'}}
               inputStyle={{fontSize: '18px'}}
               errorStyle={{marginBottom: '-15px'}}
               underlineFocusStyle={{borderColor: '#40B097'}}
               name={field.name}
               type={field.type || ''}
               onChange={this.props.setUser(field.name)}
+              onFocus={this.showHint.bind(this)}
               errorText={this.props.userFormErrors[field.name]}
-              ></TextField>
+            />
           ))}
 
           <SelectField
@@ -60,11 +68,11 @@ class CreateUserForm extends Component {
             fullWidth={true}
             autoWidth={true}
             hintText="How did you learn about Good Call?"
-            hintStyle={{fontSize: '16px', color: '#4A4A4A', fontWeight: '300'}}
+            hintStyle={{fontSize: '16px', color: '#4A4A4A', fontWeight: '300', textAlign: 'left'}}
             value={this.props.user.heardAboutUsThrough}
             onChange={this.props.setUser('heardAboutUsThrough')}
             iconStyle={{fill: '#40B097', transform: 'rotateZ(180deg)', right: '5px', top: '12px'}}
-            style={{boxShadow: '0px 2px 4px 0px rgba(0,0,0,0.24)', paddingLeft: '11px', paddingTop: '3px', marginTop: '6px'}}
+            style={{boxShadow: '0px 2px 4px 0px rgba(0,0,0,0.24)', paddingLeft: '11px', paddingTop: '3px', marginTop: '6px', textAlign: 'left'}}
             underlineStyle={{borderColor: 'transparent'}}
           >
             {heardAboutUsThroughOpts.map((opt, i) => (
@@ -76,7 +84,6 @@ class CreateUserForm extends Component {
             className="gc-std-btn sign-up-page__create-user-form-continue-btn"
             label="Continue"
             onClick={this.props.createUser}
-            backgroundColor="#40B097"
             disabled={
               this.props.requestInProgress
               || isEmpty(this.props.user)
