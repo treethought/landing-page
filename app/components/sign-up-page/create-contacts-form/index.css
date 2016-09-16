@@ -1,0 +1,24 @@
+.sign-up-page__contact-fields-container {
+  position: relative;
+  border: 2px solid #4A4A4A;
+  padding: 10px 15px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.sign-up-page__add-contact-btn {
+  font-size: 18px;
+  color: #40B097;
+  line-height: 24px;
+  font-weight: 300;
+  cursor: pointer;
+  float: left;
+}
+
+.sign-up-page__remove-contact-btn {
+  position: absolute;
+  top: 3px;
+  right: 9px;
+  font-size: 20px;
+  cursor: pointer;
+}

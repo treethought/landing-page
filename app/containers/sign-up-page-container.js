@@ -10,7 +10,7 @@ let tmpContactId = 0
 class SignUpPageContainer extends Component {
   constructor () {
     super()
-    this.state = {formStage: 0, user: {}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
+    this.state = {formStage: 1, user: {}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
   }
 
   createUser () {
