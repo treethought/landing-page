@@ -4,9 +4,9 @@ import Checkbox from 'material-ui/Checkbox'
 import FlatButton from 'material-ui/FlatButton'
 
 const contactFields = [
-  {name: 'name', label: 'First Name, Last Name'},
-  {name: 'relationship', label: 'Relationship'},
-  {name: 'phone', label: 'Phone (xxx) xxx-xxxx'}
+  {name: 'name', label: 'First Name, Last Name (optional)'},
+  {name: 'relationship', label: 'Relationship (optional)'},
+  {name: 'phone', label: 'Phone (xxx) xxx-xxxx (optional)'}
 ]
 
 class CreateContactsForm extends Component {
