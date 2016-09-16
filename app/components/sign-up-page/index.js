@@ -10,9 +10,9 @@ class SignUpPage extends Component {
       <InnerPage location={this.props.location}>
         <div className="sign-up-page">
           {renderIf(this.props.formStage === 0) (
-            <div className="sign-up-success-page__form-container">
-              <h1 className="sign-up-success-page__form-header">Become a member today to get updates and be part of our Bronx pilot launch</h1>
-              <h2 className="sign-up-success-page__form-subheader">tell us about yourself</h2>
+            <div className="sign-up-page__form-container">
+              <h1 className="sign-up-page__form-header">Become a member today to get updates and be part of our Bronx pilot launch</h1>
+              <h2 className="sign-up-page__form-subheader">tell us about yourself</h2>
 
               <CreateUserForm
                 user={this.props.user}
@@ -25,9 +25,9 @@ class SignUpPage extends Component {
           )}
 
           {renderIf(this.props.formStage === 1) (
-            <div className="sign-up-success-page__form-container">
-              <h1 className="sign-up-success-page__form-header">Become a member today to get updates and be part of our Bronx pilot launch</h1>
-              <h2 className="sign-up-success-page__form-subheader">provide an emergency contact</h2>
+            <div className="sign-up-page__form-container">
+              <h1 className="sign-up-page__form-header">Become a member today to get updates and be part of our Bronx pilot launch</h1>
+              <h2 className="sign-up-page__form-subheader">provide an emergency contact</h2>
 
               <CreateContactsForm
                 setContact={this.props.setContact}

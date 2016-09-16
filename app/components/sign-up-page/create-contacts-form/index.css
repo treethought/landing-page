@@ -1,4 +1,4 @@
-.sign-up-success-page__contact-fields-container {
+.sign-up-page__contact-fields-container {
   position: relative;
   border: 2px solid #4A4A4A;
   padding: 10px 15px;
@@ -6,7 +6,7 @@
   margin-bottom: 10px;
 }
 
-.sign-up-success-page__add-contact-btn {
+.sign-up-page__add-contact-btn {
   font-size: 18px;
   color: #40B097;
   line-height: 24px;
@@ -16,7 +16,7 @@
   margin-bottom: 37px;
 }
 
-.sign-up-success-page__remove-contact-btn {
+.sign-up-page__remove-contact-btn {
   position: absolute;
   top: 3px;
   right: 9px;
