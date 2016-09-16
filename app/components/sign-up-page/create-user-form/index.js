@@ -33,20 +33,20 @@ class CreateUserForm extends Component {
 
   render () {
     return (
-      <form className="sign-up-page__form">
-        <div className="sign-up-page__form-hint-bubble-container" ref="hint">
-          <div className="sign-up-page__form-hint-bubble">
-            <p className="sign-up-page__form-hint-text">
+      <form className="sign-up-success-page__form">
+        <div className="sign-up-success-page__form-hint-bubble-container" ref="hint">
+          <div className="sign-up-success-page__form-hint-bubble">
+            <p className="sign-up-success-page__form-hint-text">
               Your information will not be shared with anyone. It is used only to verify you in case of an arrest.
             </p>
           </div>
-          <div className="sign-up-page__form-hint-bubble-arrow"></div>
+          <div className="sign-up-success-page__form-hint-bubble-arrow"></div>
         </div>
 
-        <div className="sign-up-page__form-fields-container" ref="formFields">
+        <div className="sign-up-success-page__form-fields-container" ref="formFields">
           {userFields.map((field, i) => (
             <TextField
-              className="sign-up-page__form-text-field"
+              className="sign-up-success-page__form-text-field"
               errorStyle={{marginBottom: '-15px'}}
               floatingLabelFocusStyle={{fontSize: '14px', color: '#40B097', textTransform: 'uppercase'}}
               floatingLabelText={field.label}
@@ -60,13 +60,13 @@ class CreateUserForm extends Component {
 
               errorText={this.props.userFormErrors[field.name]}
               onChange={this.props.setUser(field.name)}
-              id={`sign-up-page__form-1-user-${field.name}`}
+              id={`sign-up-success-page__form-1-user-${field.name}`}
             />
           ))}
 
           <SelectField
             autoWidth={true}
-            className="sign-up-page__form-select-field"
+            className="sign-up-success-page__form-select-field"
             fullWidth={true}
             iconStyle={{fill: '#40B097', transform: 'rotateZ(180deg)', right: '5px', top: '12px'}}
             hintText="How did you learn about Good Call?"
@@ -82,7 +82,7 @@ class CreateUserForm extends Component {
           </SelectField>
 
           <FlatButton
-            className="gc-std-btn sign-up-page__form-continue-btn"
+            className="gc-std-btn sign-up-success-page__form-continue-btn"
             label="Continue"
             onClick={this.props.createUser}
             disabled={

@@ -3,9 +3,9 @@ import renderIf from 'render-if'
 import RaisedButton from 'material-ui/RaisedButton'
 
 const firstSteps = [
-  {iconSrc: './assets/imgs/arrested_icon.svg', text: 'you get unexpectedly arrested'},
-  {iconSrc: './assets/imgs/precinct_icon.svg', text: 'you are brought to the precinct'},
-  {iconSrc: './assets/imgs/phone_icon.svg', text: 'you call the Good Call hotline (coming soon)'}
+  {iconSrc: '/assets/imgs/arrested_icon.svg', text: 'you get unexpectedly arrested'},
+  {iconSrc: '/assets/imgs/precinct_icon.svg', text: 'you are brought to the precinct'},
+  {iconSrc: '/assets/imgs/phone_icon.svg', text: 'you call the Good Call hotline (coming soon)'}
 ]
 
 const callSubsteps = [
@@ -40,7 +40,7 @@ class HowItWorks extends Component {
 
         <ol className="how-it-works__step-list">
           <Step
-            iconSrc='./assets/imgs/registration_icon.svg'
+            iconSrc='/assets/imgs/registration_icon.svg'
             text="you sign up for Good Call and list an emergency contact"
           />
 
@@ -75,8 +75,8 @@ class HowItWorks extends Component {
 
           <Step text="Good Call will alert your emergency contact and get a lawyer on your case right away" customIcon={
             <div className="how-it-works__parallel-step-icon-container how-it-works__centered-row">
-              <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__lawyer-icon" src="./assets/imgs/lawyer_icon.svg" />
-              <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__family-icon" src="./assets/imgs/family_icon.svg" />
+              <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__lawyer-icon" src="/assets/imgs/lawyer_icon.svg" />
+              <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__family-icon" src="/assets/imgs/family_icon.svg" />
             </div>
           }/>
 
@@ -84,7 +84,7 @@ class HowItWorks extends Component {
 
           <Line type="short-vert" color="white" />
 
-          <Step iconSrc="./assets/imgs/free_icon.svg" text="you can return home as soon as possible" />
+          <Step iconSrc="/assets/imgs/free_icon.svg" text="you can return home as soon as possible" />
         </ol>
       </section>
     )

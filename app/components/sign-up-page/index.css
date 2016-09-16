@@ -3,26 +3,26 @@
   color: #4A4A4A;
 }
 
-.sign-up-page__form-container {
+.sign-up-success-page__form-container {
   max-width: 664px;
   margin: 0 auto;
 }
 
-.sign-up-page__form-header {
+.sign-up-success-page__form-header {
   text-align: center;
   font-weight: normal;
   font-size: 30px;
   margin-bottom: 44px;
 }
 
-.sign-up-page__form-subheader {
+.sign-up-success-page__form-subheader {
   margin-top: 0;
   text-align: center;
   font-size: 30px;
   font-weight: 300;
 }
 
-.sign-up-page__form {
+.sign-up-success-page__form {
   position: relative;
   margin: 0 auto;
   display: flex;
@@ -31,7 +31,7 @@
   justify-content: center;
 }
 
-.sign-up-page__form-hint-bubble-container {
+.sign-up-success-page__form-hint-bubble-container {
   width: 50%;
   display: none;
   flex-direction: row;
@@ -40,7 +40,7 @@
   top: 6px;
 }
 
-.sign-up-page__form-hint-bubble {
+.sign-up-success-page__form-hint-bubble {
   background: #40B097;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
   border-radius: 8px 0 8px 8px;
@@ -53,14 +53,14 @@
   max-width: 280px;
 }
 
-.sign-up-page__form-hint-bubble-arrow {
+.sign-up-success-page__form-hint-bubble-arrow {
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-left: 20px solid #40B097;
   z-index: 1;
 }
 
-.sign-up-page__form-hint-text {
+.sign-up-success-page__form-hint-text {
   font-size: 18px;
   color: #FDFFF9;
   font-weight: 300;
@@ -69,22 +69,21 @@
   margin: 0;
 }
 
-.sign-up-page__form-fields-container {
+.sign-up-success-page__form-fields-container {
   width: 50%;
   text-align: center;
 }
 
-.sign-up-page__form-text-field {
+.sign-up-success-page__form-text-field {
   display: block;
   width: 100% !important;
   margin-top: -15px !important;
 }
 
-.sign-up-page__form-continue-btn {
+.sign-up-success-page__form-continue-btn {
   margin-top: 75px !important;
   margin-bottom: 95px !important;
 }
 
 @import url("./create-user-form/index.css");
 @import url("./create-contacts-form/index.css");
-@import url("./success-panels/index.css");

@@ -1,9 +1,10 @@
-.sign-up-page__success-panels {
+.sign-up-success-page {
   text-align: center;
   color: #FDFFF9;
+  padding-top: 70px;
 }
 
-.sign-up-page__success-panels-header {
+.sign-up-success-page__header {
   font-size: 40px;
   color: #4A4A4A;
   letter-spacing: -0.21px;
@@ -13,7 +14,7 @@
   padding-right: 36px;
 }
 
-.sign-up-page__success-panels-subheader {
+.sign-up-success-page__subheader {
   font-size: 30px;
   color: #4A4A4A;
   font-weight: normal;
@@ -22,32 +23,32 @@
   padding-right: 36px;
 }
 
-.sign-up-page__success-panels-panels {
+.sign-up-success-page__panels {
   display: flex;
   flex-direction: row;
   margin-bottom: 210px;
 }
 
-.sign-up-page__success-panels-panel {
+.sign-up-success-page__panel {
   padding: 36px 68px;
   flex-grow: 1;
   flex-basis: 0;
   height: 269px;
 }
 
-.sign-up-page__get-in-touch-panel {
+.sign-up-success-page__get-in-touch-panel {
   background: #45D8B8;
 }
 
-.sign-up-page__follow-us-panel {
+.sign-up-success-page__follow-us-panel {
   background: #40B097;
 }
 
-.sign-up-page__learn-about-us-panel {
+.sign-up-success-page__learn-about-us-panel {
   background: #00FFEE;
 }
 
-.sign-up-page__success-panels-panel-header {
+.sign-up-success-page__panel-header {
   font-size: 30px;
   color: #FDFFF9;
   margin-top: 0;
@@ -56,7 +57,7 @@
   min-height: 68px;
 }
 
-.sign-up-page__success-panels-link {
+.sign-up-success-page__link {
   text-decoration: none;
   color: inherit;
   font-size: 20px;
@@ -64,11 +65,11 @@
   font-weight: 300;
 }
 
-.sign-up-page__success-panels-mission-btn {
+.sign-up-success-page__mission-btn {
   background: #FDFFF9 !important;
 }
 
-.sign-up-page__success-panels-mission-btn span {
+.sign-up-success-page__mission-btn span {
   color: #4A4A4A !important;
   font-size: 16px !important;
   font-weight: normal !important;
@@ -76,16 +77,16 @@
 
 @media (max-width: 980px) {
 
-  .sign-up-page__success-panels-panels {
+  .sign-up-success-page__panels {
     flex-direction: column;
     margin-bottom: 160px;
   }
 
-  .sign-up-page__success-panels-panel {
+  .sign-up-success-page__panel {
     padding: 36px;
   }
 
-  .sign-up-page__success-panels-panel-header {
+  .sign-up-success-page__panel-header {
     min-height: 30px;
   }
 

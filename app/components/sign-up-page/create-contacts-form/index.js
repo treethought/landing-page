@@ -18,22 +18,22 @@ class CreateContactsForm extends Component {
 
   render () {
     return (
-      <form className="sign-up-page__form">
-        <div className="sign-up-page__form-hint-bubble-container" ref="hint">
-          <div className="sign-up-page__form-hint-bubble">
-            <p className="sign-up-page__form-hint-text">
+      <form className="sign-up-success-page__form">
+        <div className="sign-up-success-page__form-hint-bubble-container" ref="hint">
+          <div className="sign-up-success-page__form-hint-bubble">
+            <p className="sign-up-success-page__form-hint-text">
               {this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you get arrested to let them know you’re okay
             </p>
           </div>
-          <div className="sign-up-page__form-hint-bubble-arrow"></div>
+          <div className="sign-up-success-page__form-hint-bubble-arrow"></div>
         </div>
 
-        <div className="sign-up-page__form-fields-container" ref="formFields">
+        <div className="sign-up-success-page__form-fields-container" ref="formFields">
           {this.props.contacts.map((contact, i) => (
-            <div className="sign-up-page__contact-fields-container" key={contact.tmpId}>
+            <div className="sign-up-success-page__contact-fields-container" key={contact.tmpId}>
               {contactFields.map((field, j) => (
                 <TextField
-                  className="sign-up-page__form-text-field"
+                  className="sign-up-success-page__form-text-field"
                   errorStyle={{marginBottom: '-15px'}}
                   floatingLabelFocusStyle={{fontSize: '14px', color: '#40B097', textTransform: 'uppercase'}}
                   floatingLabelText={field.label}
@@ -45,18 +45,18 @@ class CreateContactsForm extends Component {
                   type={field.type || ''}
                   underlineFocusStyle={{borderColor: '#40B097'}}
 
-                  id={`sign-up-page__form-1-contacts-${i}-${field.name}`}
+                  id={`sign-up-success-page__form-1-contacts-${i}-${field.name}`}
                   onChange={this.props.setContact(contact.tmpId, field.name)}
                 ></TextField>
               ))}
 
-              <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
+              <div className="sign-up-success-page__remove-contact-btn" onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
             </div>
           ))}
 
-          <div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>
+          <div className="sign-up-success-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>
 
-          <div className="sign-up-page__checkbox-container">
+          <div className="sign-up-success-page__checkbox-container">
             <Checkbox
               label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you were arrested.`}
               defaultChecked={false}
@@ -69,7 +69,7 @@ class CreateContactsForm extends Component {
           </div>
 
           <FlatButton
-            className="gc-std-btn sign-up-page__form-continue-btn"
+            className="gc-std-btn sign-up-success-page__form-continue-btn"
             label="Continue"
             onClick={this.props.saveContacts}
             disabled={this.props.requestInProgress}

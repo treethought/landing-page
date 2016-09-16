@@ -21,7 +21,7 @@ class Header extends Component {
   }
 
   componentDidMount () {
-    if (this.props.location && this.props.location.pathname === '/sign-up') {
+    if (this.props.location && this.props.location.pathname.includes('/sign-up')) {
       this.setState({
         navBtns: this.state.navBtns.map((btn) => {
           if (btn.to === '/sign-up') { btn.style = {display: 'none'} }
@@ -40,7 +40,7 @@ class Header extends Component {
           zDepth={0}
           title={
             <Link to="/">
-              <img src="./assets/imgs/logo.png" className="header__logo" />
+              <img src="/assets/imgs/logo.png" className="header__logo" />
             </Link>
           }
           iconElementRight={

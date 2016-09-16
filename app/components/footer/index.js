@@ -34,7 +34,7 @@ class Footer extends Component {
               <div className="landing-page__footer-links-container">
                 <div>
                   <a className="landing-page__footer-link" href="https://labs.robinhood.org/" target="_blank">
-                    <img src="./assets/imgs/blueridgelabs.png"></img>
+                    <img src="/assets/imgs/blueridgelabs.png"></img>
                   </a>
                 </div>
               </div>
