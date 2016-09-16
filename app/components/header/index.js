@@ -9,12 +9,28 @@ import FlatButton from 'material-ui/FlatButton'
 import MediaQuery from 'react-responsive'
 import {Link} from 'react-router'
 
-const navBtns = [
-  {label: 'About us', to: '/about-us', className: 'header__about-us-btn'},
-  {label: 'join the movement', to: '/', className: 'header__sign-up-btn' }
-]
-
 class Header extends Component {
+  constructor () {
+    super()
+    this.state = {
+      navBtns: [
+        {label: 'About us', to: '/about-us', className: 'header__about-us-btn'},
+        {label: 'Join the movement', to: '/sign-up', className: 'header__sign-up-btn'}
+      ]
+    }
+  }
+
+  componentDidMount () {
+    if (this.props.location && this.props.location.pathname === '/sign-up') {
+      this.setState({
+        navBtns: this.state.navBtns.map((btn) => {
+          if (btn.to === '/sign-up') { btn.style = {display: 'none'} }
+          return btn
+        })
+      })
+    }
+  }
+
   render () {
     return (
       <div className="header">
@@ -30,13 +46,14 @@ class Header extends Component {
           iconElementRight={
             <nav className="header__nav">
               <MediaQuery query="(min-width: 675px)">
-                {navBtns.map((btn, i) => (
+                {this.state.navBtns.map((btn, i) => (
                   <FlatButton
                     className={`header__nav-btn ${btn.className || ''}`}
                     key={i}
                     label={btn.label}
                     containerElement={<Link to={btn.to} />}
                     hoverColor="#FDFFF9"
+                    style={btn.style || {}}
                   />
                 ))}
               </MediaQuery>
@@ -49,12 +66,13 @@ class Header extends Component {
                   targetOrigin={{horizontal: 'right', vertical: 'top'}}
                   anchorOrigin={{horizontal: 'right', vertical: 'top'}}
                 >
-                  {navBtns.map((btn, i) => (
+                  {this.state.navBtns.map((btn, i) => (
                     <MenuItem
                       primaryText={btn.label}
                       key={i}
                       containerElement={<Link to={btn.to} />}
                       className={`${btn.className}-menu-item`}
+                      style={btn.style || {}}
                     />
                   ))}
                 </IconMenu>

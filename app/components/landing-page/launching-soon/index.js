@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FlatButton from 'material-ui/FlatButton'
+import {Link} from 'react-router'
 
 class LaunchingSoon extends Component {
   render () {
@@ -9,8 +10,9 @@ class LaunchingSoon extends Component {
         <h3 className="landing-page__std-subheader landing-page__launching-soon-subheader"><em>Sign up to get updates and to be part of our beta launch</em></h3>
 
         <FlatButton
-          className="landing-page__launching-soon-sign-up-btn"
           label="join the movement"
+          className="gc-std-btn"
+          containerElement={<Link to="/sign-up" />}
         />
       </section>
     )

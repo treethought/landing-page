@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import InnerPage from '../inner-page'
-// consider removing intro component
 import {Grid, Row, Cell} from 'react-inline-grid'
 import SimplePanel from './../simple-panel'
 import FlatButton from 'material-ui/FlatButton'
@@ -54,14 +53,14 @@ class AboutPage extends Component {
           <div className="about-page__horiz-divider"></div>
 
           <TwoColPanel
-            heading="Join our movement."
+            heading="Join the movement."
             text={"We are currently preparing to launch a pilot in the Bronx. If you live in the Bronx and are interested in being part of our pilot, or want to stay up to date on our progress, please sign up below!"}
             className="about-page__join-our-movement"
           >
             <FlatButton
-              className="about-page__sign-up-btn"
+              className="about-page__sign-up-btn gc-std-btn"
               label="sign up"
-              containerElement={<Link to="/"/>}
+              containerElement={<Link to="/sign-up"/>}
             />
           </TwoColPanel>
         </div>

@@ -55,22 +55,7 @@
 }
 
 .about-page__sign-up-btn {
-  height: 44px !important;
-  line-height: 44px !important;
-  min-height: 44px !important;
-  background: #40B097 !important;
-  width: 211px !important;
   margin-top: 20px !important;
-}
-
-.about-page__sign-up-btn span {
-  font-size: 16px !important;
-  color: #FFFFFF;
-  letter-spacing: 0.57px !important;
-  font-weight: 300 !important;
-  text-transform: none !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
 }
 
 @media (max-width: 839px) {

@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .header__app-bar {
@@ -31,7 +31,7 @@
 }
 
 .header__nav-btn span {
-  text-transform: none !important;
+  text-transform: lowercase !important;
   padding-left: 25px !important;
   padding-right: 25px !important;
 }
