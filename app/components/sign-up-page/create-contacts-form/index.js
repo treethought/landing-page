@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import TextField from 'material-ui/TextField'
 import Checkbox from 'material-ui/Checkbox'
 import FlatButton from 'material-ui/FlatButton'
+import renderIf from 'render-if'
 
 const contactFields = [
   {name: 'name', label: 'First Name, Last Name (optional)'},
@@ -16,6 +17,7 @@ class CreateContactsForm extends Component {
   }
 
   componentDidMount () {
+    document.body.scrollTop = document.documentElement.scrollTop = 0
     window.addEventListener('beforeunload', this.popup)
     window.addEventListener('unload', () => { window.removeEventListener('beforeunload', this.popup) })
   }
@@ -70,7 +72,10 @@ class CreateContactsForm extends Component {
                 ></TextField>
               ))}
 
-              <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
+
+              {renderIf(this.props.contacts.length > 1) (
+                <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
+              )}
             </div>
           ))}
 
@@ -79,7 +84,7 @@ class CreateContactsForm extends Component {
           <div className="sign-up-page__checkbox-container">
             <Checkbox
               label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you were arrested.`}
-              defaultChecked={false}
+              defaultChecked={true}
               onCheck={this.props.consentToContactIs()}
               style={{textAlign: "left"}}
               iconStyle={{width: "32px", height: "32px", fill: "#40B097"}}

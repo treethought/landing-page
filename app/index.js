@@ -7,9 +7,15 @@ import ErrorPage from './components/error-page'
 import SignUpPageContainer from './containers/sign-up-page-container'
 import AboutPage from "./components/about-page"
 import SignUpSuccessPage from './components/sign-up-success-page'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+
+// HACK: to get the selectedTextColor of the SelectField to not be hot pink
+const theme = getMuiTheme({
+  palette: {accent1Color: '#40B097'}
+})
 
 export default () => (
-  <MuiThemeProvider>
+  <MuiThemeProvider muiTheme={theme}>
     <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
       <Route path="/">
         <IndexRoute component={LandingPage} />

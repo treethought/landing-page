@@ -22,9 +22,9 @@ class Footer extends Component {
 
               <div className="landing-page__footer-links-container">
                 <Link to="/about-us" className="landing-page__footer-link">About Us</Link>
-                <a className="landing-page__footer-link">Privacy Policy</a>
+                {/*<a className="landing-page__footer-link">Privacy Policy</a>
                 <a className="landing-page__footer-link">Terms & Conditions</a>
-                <a className="landing-page__footer-link">Your Rights</a>
+                <a className="landing-page__footer-link">Your Rights</a>*/}
               </div>
             </Cell>
 
@@ -33,7 +33,7 @@ class Footer extends Component {
 
               <div className="landing-page__footer-links-container">
                 <div>
-                  <a className="landing-page__footer-link" href="https://labs.robinhood.org/" target="_blank">
+                  <a className="landing-page__footer-link" href="https://labs.robinhood.org/">
                     <img src="/assets/imgs/blueridgelabs.png"></img>
                   </a>
                 </div>

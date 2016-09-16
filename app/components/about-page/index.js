@@ -59,11 +59,20 @@ class AboutPage extends Component {
             text={"We are currently preparing to launch a pilot in the Bronx. If you live in the Bronx and are interested in being part of our pilot, or want to stay up to date on our progress, please sign up below!"}
             className="about-page__join-our-movement"
           >
-            <FlatButton
-              className="about-page__sign-up-btn gc-std-btn"
-              label="sign up"
-              containerElement={<Link to="/sign-up"/>}
-            />
+            <Grid>
+              <Row>
+                <Cell is="5">
+                </Cell>
+
+                <Cell is="7">
+                  <FlatButton
+                    className="about-page__sign-up-btn gc-std-btn"
+                    label="sign up"
+                    containerElement={<Link to="/sign-up"/>}
+                  />
+                </Cell>
+              </Row>
+            </Grid>
           </TwoColPanel>
         </div>
       </InnerPage>

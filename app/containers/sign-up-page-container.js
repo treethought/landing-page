@@ -74,7 +74,6 @@ class SignUpPageContainer extends Component {
   }
 
   saveContacts () {
-    console.log('this.state.user: ', this.state.user)
     fetcher({
       url: `${config.apiBaseUrl}/contacts`,
       method: 'POST',

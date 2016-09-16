@@ -66,6 +66,7 @@
 
 .about-page__sign-up-btn {
   margin-top: 20px !important;
+  float: left;
 }
 
 @media (max-width: 839px) {

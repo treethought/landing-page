@@ -71,6 +71,7 @@ class CreateUserForm extends Component {
             iconStyle={{fill: '#40B097', transform: 'rotateZ(180deg)', right: '5px', top: '12px'}}
             hintText="How did you learn about Good Call?"
             hintStyle={{fontSize: '16px', color: '#4A4A4A', fontWeight: '300', textAlign: 'left'}}
+            menuStyle={{color: '#000000'}}
             onChange={this.props.setUser('heardAboutUsThrough')}
             style={{boxShadow: '0px 2px 4px 0px rgba(0,0,0,0.24)', paddingLeft: '11px', paddingTop: '3px', marginTop: '6px', textAlign: 'left'}}
             underlineStyle={{borderColor: 'transparent'}}
