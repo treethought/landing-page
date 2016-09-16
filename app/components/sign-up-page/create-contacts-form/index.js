@@ -10,12 +10,18 @@ const contactFields = [
 ]
 
 class CreateContactsForm extends Component {
-  componentWillMount () {
-    window.addEventListener('beforeunload', this.popup.bind(this))
+  constructor () {
+    super()
+    this.popup = this.popup.bind(this)
+  }
+
+  componentDidMount () {
+    window.addEventListener('beforeunload', this.popup)
+    window.addEventListener('unload', () => { window.removeEventListener('beforeunload', this.popup) })
   }
 
   componentWillUnmount () {
-    window.removeEventListener('beforeunload', this.popup.bind(this))
+    window.removeEventListener('beforeunload', this.popup)
   }
 
   popup (e) {
