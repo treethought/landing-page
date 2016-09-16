@@ -11,7 +11,7 @@ import {Link} from 'react-router'
 
 const navBtns = [
   {label: 'About us', to: '/about-us', className: 'header__about-us-btn'},
-  {label: 'join our movement', to: '/', className: 'header__sign-up-btn' }
+  {label: 'join the movement', to: '/', className: 'header__sign-up-btn' }
 ]
 
 class Header extends Component {

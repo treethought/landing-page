@@ -8,6 +8,9 @@ import uuid from 'node-uuid'
 import {findDOMNode} from 'react-dom'
 import MediaQuery from 'react-responsive'
 import getDistanceFromTop from './../../../services/get-distance-from-top'
+import shuffle from 'lodash.shuffle'
+import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
+import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 
 const stories = [
   {pictureSrc: './assets/imgs/pharaoh-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I was defending myself.', nameAndLocation: 'Pharaoh, Brooklyn, NY'},
@@ -15,7 +18,6 @@ const stories = [
   {pictureSrc: './assets/imgs/sharmene-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I was misunderstood.', nameAndLocation: 'Sharmene, Brooklyn, NY'},
   {pictureSrc: './assets/imgs/tina-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I wanted my voice to be heard.', nameAndLocation: 'Tina, Brooklyn, NY'},
   // {pictureSrc: './assets/imgs/ray-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because I fit the description.', nameAndLocation: 'Ray, Brooklyn, NY'},
-  {pictureSrc: './assets/imgs/jelani-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because ______.', nameAndLocation: 'Jelani, Brooklyn, NY'},
   {pictureSrc: './assets/imgs/steven-min.jpg', headerHTML: 'I was <mark>arrested.</mark>', text: 'I was arrested because ______.', nameAndLocation: 'Steven, Brooklyn, NY'}
 ]
 
@@ -47,12 +49,20 @@ class Stories extends Component {
     this.setState({componentKey: uuid.v4()})
   }
 
+  prevSlide () {
+    this.refs['landing-page__stories-carousel'].slickPrev()
+  }
+
+  nextSlide () {
+    this.refs['landing-page__stories-carousel'].slickNext()
+  }
+
   render () {
     let sliderSettings = {
       className:'landing-page__stories-carousel',
-      arrows: false,
       autoplay: true,
-      autoplaySpeed: 6000,
+      arrows: false,
+      autoplaySpeed: 5000,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -62,11 +72,18 @@ class Stories extends Component {
 
     return (
       <section className="landing-page__stories" key={this.state.componentKey}>
-        <h1 className="landing-page__stories-header">No one expects to be arrested.</h1>
+        <h1 className="landing-page__stories-header">No one expects to get arrested.</h1>
 
         <ul className="landing-page__stories-carousel-list-container">
+          <div
+            className="landing-page__stories-carousel__arrow-container landing-page__stories-carousel__left-arrow-container"
+            onClick={this.prevSlide.bind(this)}
+          >
+            <KeyboardArrowLeft className="landing-page__stories-carousel__arrow" color="#FDFFF9" />
+          </div>
+
           <Slider {...sliderSettings} ref="landing-page__stories-carousel">
-            {stories.map((story, i) => (
+            {shuffle(stories).map((story, i) => (
               <div className="landing-page__story-container" key={i} style={{'backgroundImage': `url('${story.pictureSrc}')`}}>
                 <div className="landing-page__story-container-overlay">
                   <li className="landing-page__story">
@@ -85,6 +102,13 @@ class Stories extends Component {
               </div>
             ))}
           </Slider>
+
+          <div
+            className="landing-page__stories-carousel__arrow-container landing-page__stories-carousel__right-arrow-container"
+            onClick={this.nextSlide.bind(this)}
+          >
+            <KeyboardArrowRight className="landing-page__stories-carousel__arrow" color="#FDFFF9" />
+          </div>
         </ul>
 
         <div className="landing-page__stories-scroll-down-btn-container">

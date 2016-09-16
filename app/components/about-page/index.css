@@ -25,6 +25,8 @@
 .about-page__two-col-panel {
   padding: 72px 126px;
   text-align: center;
+  max-width: 841px;
+  margin: 0 auto;
 }
 
 .about-page__two-col-panel-subheader {
@@ -46,8 +48,10 @@
   text-decoration: none;
 }
 
-.about-page__our-team {
-  border-bottom: 1px solid #979797;
+.about-page__horiz-divider {
+  height: 1px;
+  width: 100%;
+  background: #979797;
 }
 
 .about-page__sign-up-btn {
