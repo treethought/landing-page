@@ -56,7 +56,7 @@ class AboutPage extends Component {
             className="about-page__join-our-movement"
           >
             <FlatButton
-              className="about-page__sign-up-btn"
+              className="about-page__sign-up-btn gc-std-btn"
               label="sign up"
               containerElement={<Link to="/sign-up"/>}
             />

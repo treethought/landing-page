@@ -10,7 +10,7 @@ class LaunchingSoon extends Component {
         <h3 className="landing-page__std-subheader landing-page__launching-soon-subheader"><em>Sign up to get updates and to be part of our beta launch</em></h3>
 
         <FlatButton
-          className="landing-page__launching-soon-sign-up-btn"
+          className="gc-std-btn"
           label="join our movement"
           containerElement={<Link to="/sign-up" />}
         />

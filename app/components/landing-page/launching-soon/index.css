@@ -13,20 +13,3 @@
   font-weight: 300;
   margin-bottom: 42px;
 }
-
-.landing-page__launching-soon-sign-up-btn {
-  height: 44px !important;
-  line-height: 44px !important;
-  min-height: 44px !important;
-  background: #40B097 !important;
-}
-
-.landing-page__launching-soon-sign-up-btn span {
-  font-size: 16px !important;
-  color: #FFFFFF;
-  letter-spacing: 0.57px !important;
-  font-weight: 300 !important;
-  text-transform: none !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
-}

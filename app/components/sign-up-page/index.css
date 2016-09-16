@@ -1,3 +1,24 @@
+.sign-up-page {
+  padding-top: 70px;
+  max-width: 664px;
+  margin: 0 auto;
+  color: #4A4A4A;
+}
+
+.sign-up-page__form-header {
+  text-align: center;
+  font-weight: normal;
+  font-size: 30px;
+  margin-bottom: 44px;
+}
+
+.sign-up-page__form-subheader {
+  margin-top: 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+}
+
 @import url("./create-user-form/index.css");
 @import url("./create-contacts-form/index.css");
 @import url("./success-panels/index.css");
