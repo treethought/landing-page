@@ -3,7 +3,6 @@ import SignUpPage from './../components/sign-up-page'
 import config from './../config'
 import fetcher from './../services/fetcher'
 import objectMap from 'object.map'
-import cookie from 'react-cookie'
 import {browserHistory} from 'react-router'
 
 let tmpContactId = 0
@@ -24,7 +23,6 @@ class SignUpPageContainer extends Component {
       let {status, json} = res
       if (status === 200) {
         this.setState({user: json.user, userFormErrors: {}, formStage: 1, requestInProgress: false})
-        cookie.save('formTokenValue', json.user.form_token.value, {path: '/sign-up'})
       } else {
         this.setState({
           userFormErrors: objectMap(json.errors, (v) => v.join(', ')),
@@ -76,13 +74,14 @@ class SignUpPageContainer extends Component {
   }
 
   saveContacts () {
+    console.log('this.state.user: ', this.state.user)
     fetcher({
       url: `${config.apiBaseUrl}/contacts`,
       method: 'POST',
       body: {
         contacts: {
           list: this.state.contacts,
-          form_token_value: cookie.load('formTokenValue', {path: '/sign-up'}),
+          form_token_value: this.state.user.form_token.value,
           user_id: this.state.user.id
         }
       },
@@ -92,7 +91,6 @@ class SignUpPageContainer extends Component {
       if (status === 200) {
         this.setState({contactsFormErrors: {}, contacts: [], requestInProgress: false})
         browserHistory.push('/sign-up/success')
-        cookie.remove('formTokenValue', {path: '/sign-up'})
       } else {
         this.setState({contactFormErrors: json.errors, requestInProgress: false})
       }
