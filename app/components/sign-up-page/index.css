@@ -31,6 +31,10 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-items: flex-start;
 }
 
 .sign-up-page__form-hint-bubble-container {
@@ -38,6 +42,8 @@
   display: none;
   flex-direction: row;
   align-items: flex-start;
+  -webkit-flex-direction: row;
+  -webkit-align-items: flex-start;
   position: relative;
   top: 6px;
 }

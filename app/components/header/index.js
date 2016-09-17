@@ -9,6 +9,7 @@ import FlatButton from 'material-ui/FlatButton'
 import MediaQuery from 'react-responsive'
 import {Link} from 'react-router'
 import renderIf from 'render-if'
+import includes from 'lodash.includes'
 
 class Header extends Component {
   constructor () {
@@ -35,7 +36,7 @@ class Header extends Component {
           }
           iconElementRight={
             <nav className="header__nav">
-              {renderIf(!(this.props.location && this.props.location.pathname.includes('/sign-up')))(
+              {renderIf(!(this.props.location && includes(this.props.location.pathname, '/sign-up')))(
                 <div>
                   <MediaQuery query="(min-width: 675px)">
                     {this.state.navBtns.map((btn, i) => (

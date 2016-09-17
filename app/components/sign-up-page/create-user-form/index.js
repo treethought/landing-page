@@ -7,6 +7,7 @@ import isEmpty from 'lodash.isempty'
 import {findDOMNode} from 'react-dom'
 import MediaQuery from 'react-responsive'
 import Dialog from 'material-ui/Dialog'
+import bowser from 'bowser'
 
 const userFields = [
   {name: 'name', label: 'First Name, Last Name'},
@@ -35,7 +36,7 @@ class CreateUserForm extends Component {
   showHint () {
     if (window.innerWidth > 640) {
       let {hint, formFields} = this.refs
-      hint.style.display = 'flex'
+      hint.style.display = bowser.safari ? '-webkit-flex' : 'flex'
       formFields.style.textAlign = 'right'
     } else {
       if (!this.state.hintShown) {

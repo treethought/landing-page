@@ -26,6 +26,8 @@
 .sign-up-success-page__panels {
   display: flex;
   flex-direction: row;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
   margin-bottom: 210px;
 }
 
@@ -33,6 +35,8 @@
   padding: 36px 68px;
   flex-grow: 1;
   flex-basis: 0;
+  -webkit-flex-grow: 1;
+  -webkit-flex-basis: 0;
   height: 269px;
 }
 
@@ -78,7 +82,7 @@
 @media (max-width: 980px) {
 
   .sign-up-success-page__panels {
-    flex-direction: column;
+    -webkit-flex-direction: column;
     margin-bottom: 160px;
   }
 
