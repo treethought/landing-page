@@ -63,7 +63,7 @@ class Stories extends Component {
       autoplay: true,
       // lazyLoad: true,
       arrows: false,
-      autoplaySpeed: 8000,
+      autoplaySpeed: 15000,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
