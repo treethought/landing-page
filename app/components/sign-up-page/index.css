@@ -1,5 +1,7 @@
 .sign-up-page {
   padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: #4A4A4A;
 }
 
@@ -84,6 +86,27 @@
 .sign-up-page__form-continue-btn {
   margin-top: 75px !important;
   margin-bottom: 95px !important;
+}
+
+@media (max-width: 640px) {
+
+  .sign-up-page__form-header {
+    font-size: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 42px;
+  }
+
+  .sign-up-page__form-subheader {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .sign-up-page__form-fields-container {
+    max-width: 300px;
+    width: auto;
+  }
+
 }
 
 @import url("./create-user-form/index.css");
