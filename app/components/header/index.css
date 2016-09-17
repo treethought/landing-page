@@ -1,0 +1,67 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header__app-bar {
+  background: #FDFFF9 !important;
+  height: 85px !important;
+  -webkit-align-items: center;
+  align-items: center;
+  padding-left: 32px !important;
+}
+
+.header__logo {
+  height: 42px;
+  position: relative;
+  top: 5px;
+}
+
+.header__nav {
+  position: relative;
+  bottom: 8px;
+}
+
+.header__nav-btn {
+  color: #4A4A4A !important;
+  font-size: 14px;
+}
+
+.header__nav-btn span {
+  text-transform: lowercase !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+
+.header__sign-up-btn {
+  position: relative;
+  top: 6px;
+  height: 44px !important;
+  line-height: 44px !important;
+  min-height: 44px !important;
+  background: #40B097 !important;
+  margin-left: 25px !important;
+}
+
+.header__sign-up-btn span {
+  font-size: 16px !important;
+  color: #FFFFFF;
+  letter-spacing: 0.57px !important;
+  font-weight: 300 !important;
+}
+
+.header__icon-menu {
+  position: relative;
+  top: 5px;
+}
+
+@media (min-width: 675px) {
+
+  .header__app-bar {
+    padding-right: 40px !important;
+  }
+
+}

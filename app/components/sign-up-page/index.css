@@ -1,0 +1,131 @@
+.sign-up-page {
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #4A4A4A;
+}
+
+.sign-up-page__token-errors {
+  margin: 0 auto;
+  text-align: center;
+  color: red;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.sign-up-page__form-container {
+  max-width: 664px;
+  margin: 0 auto;
+}
+
+.sign-up-page__form-header {
+  text-align: center;
+  font-weight: normal;
+  font-size: 30px;
+  margin-bottom: 44px;
+}
+
+.sign-up-page__form-subheader {
+  margin-top: 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.sign-up-page__form {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-items: flex-start;
+}
+
+.sign-up-page__form-hint-bubble-container {
+  width: 50%;
+  display: none;
+  flex-direction: row;
+  align-items: flex-start;
+  -webkit-flex-direction: row;
+  -webkit-align-items: flex-start;
+  position: relative;
+  top: 6px;
+}
+
+.sign-up-page__form-hint-bubble {
+  background: #40B097;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+  border-radius: 8px 0 8px 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  max-width: 280px;
+}
+
+.sign-up-page__form-hint-bubble-arrow {
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #40B097;
+  z-index: 1;
+}
+
+.sign-up-page__form-hint-text {
+  font-size: 18px;
+  color: #FDFFF9;
+  font-weight: 300;
+  padding: 25px;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 120px;
+}
+
+.sign-up-page__form-fields-container {
+  width: 50%;
+  text-align: center;
+}
+
+.sign-up-page__form-text-field {
+  display: block;
+  width: 100% !important;
+  margin-top: -15px !important;
+}
+
+.sign-up-page__form-continue-btn {
+  margin-top: 75px !important;
+  margin-bottom: 95px !important;
+}
+
+@media (max-width: 640px) {
+
+  .sign-up-page__contact-fields-container {
+    padding: 10px !important;
+  }
+
+  .sign-up-page__form-header {
+    font-size: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 42px;
+  }
+
+  .sign-up-page__form-subheader {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .sign-up-page__form-fields-container {
+    max-width: 300px;
+    width: auto;
+  }
+
+}
+
+@import url("./create-user-form/index.css");
+@import url("./create-contacts-form/index.css");
