@@ -37,7 +37,7 @@ class CreateUserForm extends Component {
         <div className="sign-up-page__form-hint-bubble-container" ref="hint">
           <div className="sign-up-page__form-hint-bubble">
             <p className="sign-up-page__form-hint-text">
-              Your information will not be shared with anyone. It is used only to verify you in case of an arrest.
+              Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case.  
             </p>
           </div>
           <div className="sign-up-page__form-hint-bubble-arrow"></div>

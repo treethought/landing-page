@@ -42,17 +42,21 @@ class CreateContactsForm extends Component {
     return (
       <form className="sign-up-page__form">
         <div className="sign-up-page__form-hint-bubble-container" ref="hint">
-          <div className="sign-up-page__form-hint-bubble">
+          <div className="sign-up-page__form-hint-bubble sign-up-page__add-contacts-bubble">
             <p className="sign-up-page__form-hint-text">
-              {this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you get arrested to let them know you’re okay
+              {this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you get arrested
             </p>
           </div>
-          <div className="sign-up-page__form-hint-bubble-arrow"></div>
+          <div className="sign-up-page__form-hint-bubble-arrow sign-up-page__add-contacts-bubble-arrow"></div>
         </div>
 
         <div className="sign-up-page__form-fields-container" ref="formFields">
           {this.props.contacts.map((contact, i) => (
             <div className="sign-up-page__contact-fields-container" key={contact.tmpId}>
+              {renderIf(i > 0)(
+                <h3 className="sign-up-page__additional-contact-header">Additional contact</h3>
+              )}
+
               {contactFields.map((field, j) => (
                 <TextField
                   className="sign-up-page__form-text-field"
