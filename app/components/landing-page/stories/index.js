@@ -18,7 +18,7 @@ const stories = [
   // {pictureSrc: '/assets/imgs/tina-min.jpg', subheader: 'for speaking out', text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'},
   // {pictureSrc: '/assets/imgs/steven-min.jpg', subheader: 'I was arrested because ______.', text: ''},
   // {pictureSrc: '/assets/imgs/toma-min.jpg', subheader: 'I was arrested because ______.', text: ''},
-  {pictureSrc: '/assets/imgs/ray-min.jpg', subheader: 'because I fit the description.', text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'}
+  {pictureSrc: '/assets/imgs/ray-min.jpg', subheader: 'because I fit the description', text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'}
 ]
 
 const minHeight = 290
@@ -61,7 +61,7 @@ class Stories extends Component {
     let sliderSettings = {
       className:'landing-page__stories-carousel',
       autoplay: true,
-      lazyLoad: true,
+      // lazyLoad: true,
       arrows: false,
       autoplaySpeed: 8000,
       infinite: true,
