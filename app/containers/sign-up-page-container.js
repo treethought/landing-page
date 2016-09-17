@@ -74,13 +74,16 @@ class SignUpPageContainer extends Component {
   }
 
   saveContacts () {
+    let form_token = this.state.user.form_token
+    let form_token_value = form_token ? form_token.value : ''
+
     fetcher({
       url: `${config.apiBaseUrl}/contacts`,
       method: 'POST',
       body: {
         contacts: {
           list: this.state.contacts,
-          form_token_value: this.state.user.form_token.value,
+          form_token_value: form_token_value,
           user_id: this.state.user.id
         }
       },
@@ -91,7 +94,8 @@ class SignUpPageContainer extends Component {
         this.setState({contactsFormErrors: {}, contacts: [], requestInProgress: false})
         browserHistory.push('/sign-up/success')
       } else {
-        this.setState({contactFormErrors: json.errors, requestInProgress: false})
+        document.body.scrollTop = document.documentElement.scrollTop = 0
+        this.setState({contactsFormErrors: json.errors, requestInProgress: false})
       }
     })
   }

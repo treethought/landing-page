@@ -3,6 +3,7 @@ import InnerPage from './../inner-page'
 import renderIf from 'render-if'
 import CreateUserForm from './create-user-form'
 import CreateContactsForm from './create-contacts-form'
+import isEmpty from 'lodash.isempty'
 
 class SignUpPage extends Component {
   render () {
@@ -28,6 +29,13 @@ class SignUpPage extends Component {
             <div className="sign-up-page__form-container">
               <h1 className="sign-up-page__form-header">Become a member today to get updates and be part of our Bronx pilot launch</h1>
               <h2 className="sign-up-page__form-subheader">provide an emergency contact</h2>
+
+              {renderIf(!isEmpty(this.props.contactsFormErrors[0])) (
+                <div className="sign-up-page__token-errors">
+                  looks like something went wrong ツ <br />
+                  need help? just email hello@goodcall.nyc
+                 </div>
+              )}
 
               <CreateContactsForm
                 setContact={this.props.setContact}

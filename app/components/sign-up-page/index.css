@@ -5,6 +5,14 @@
   color: #4A4A4A;
 }
 
+.sign-up-page__token-errors {
+  margin: 0 auto;
+  text-align: center;
+  color: red;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
 .sign-up-page__form-container {
   max-width: 664px;
   margin: 0 auto;
