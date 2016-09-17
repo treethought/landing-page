@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField'
 import Checkbox from 'material-ui/Checkbox'
 import FlatButton from 'material-ui/FlatButton'
 import renderIf from 'render-if'
+import Dialog from 'material-ui/Dialog'
 
 const contactFields = [
   {name: 'name', label: 'First Name, Last Name (optional)'},
@@ -14,6 +15,7 @@ class CreateContactsForm extends Component {
   constructor () {
     super()
     this.popup = this.popup.bind(this)
+    this.state = {hintShown: false, hintClosed: false}
   }
 
   componentDidMount () {
@@ -33,9 +35,19 @@ class CreateContactsForm extends Component {
   }
 
   showHint () {
-    let {hint, formFields} = this.refs
-    hint.style.display = 'flex'
-    formFields.style.textAlign = 'right'
+    if (window.innerWidth > 640) {
+      let {hint, formFields} = this.refs
+      hint.style.display = 'flex'
+      formFields.style.textAlign = 'right'
+    } else {
+      if (!this.state.hintShown) {
+        this.setState({hintShown: true})
+      }
+    }
+  }
+
+  closeHintDialog () {
+    this.setState({hintClosed: true})
   }
 
   render () {
@@ -49,6 +61,24 @@ class CreateContactsForm extends Component {
           </div>
           <div className="sign-up-page__form-hint-bubble-arrow sign-up-page__add-contacts-bubble-arrow"></div>
         </div>
+
+        <Dialog
+          actions={
+            <FlatButton
+              label="GOT IT"
+              labelStyle={{color: "#FDFFF9", fontSize: "14px", letterSpacing: "0.5px"}}
+              onTouchTap={this.closeHintDialog.bind(this)}
+            />
+          }
+          contentStyle={{fontSize: "16px", color: "#FDFFF9", lineHeight: "24px", fontWeight: "300"}}
+          bodyStyle={{background: "#40B097", color: "#FDFFF9"}}
+          actionsContainerStyle={{background: "#40B097"}}
+          modal={false}
+          open={this.state.hintShown && !this.state.hintClosed}
+          onRequestClose={this.closeHintDialog.bind(this)}
+        >
+          These are the people we would contact if you get arrested
+        </Dialog>
 
         <div className="sign-up-page__form-fields-container" ref="formFields">
           {this.props.contacts.map((contact, i) => (
@@ -92,7 +122,7 @@ class CreateContactsForm extends Component {
               onCheck={this.props.consentToContactIs()}
               style={{textAlign: "left"}}
               iconStyle={{width: "32px", height: "32px", fill: "#40B097"}}
-              labelStyle={{fontSize: "18px", color: "#4A4A4A", lineHeight: "24px", fontWeight: "300"}}
+              labelStyle={{fontSize: window.innerWidth > 640 ? "18px" : "16px", color: "#4A4A4A", lineHeight: "24px", fontWeight: "300"}}
             />
 
           </div>

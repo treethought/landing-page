@@ -45,7 +45,6 @@ class CreateUserForm extends Component {
   }
 
   closeHintDialog () {
-    console.log('meow')
     this.setState({hintClosed: true})
   }
 
