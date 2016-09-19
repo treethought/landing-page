@@ -295,12 +295,12 @@
   }
 
   .how-it-works__step-icon {
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 54px;
   }
 
   .how-it-works__branch {
-    width: 72px;
+    width: 62px;
     border-width: 2px;
     right: 90px;
   }
@@ -319,7 +319,7 @@
   }
 
   .how-it-works__sub-step-number-icon-container {
-    width: 50px;
+    width: 54px;
     height: 30px;
   }
 
@@ -342,21 +342,24 @@
   }
 
   .how-it-works__step-text {
-    font-size: 12px;
     width: 120px;
   }
 
   .how-it-works__parallel-step-icon-container {
-    height: 50px;
-    width: 50px;
+    height: 54px;
+    width: 54px;
   }
 
   .how-it-works__lawyer-icon {
-    right: 37px;
+    right: 32px;
   }
 
   .how-it-works__family-icon {
-    left: 37px;
+    left: 32px;
+  }
+
+  .how-it-works__parallel-centered-row {
+    height: 54px;
   }
 
 }

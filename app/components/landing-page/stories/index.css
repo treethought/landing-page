@@ -96,7 +96,7 @@
 }
 
 .landing-page__story-header mark {
-  background: #45D8B8;
+  background: rgba(0, 255, 238, 0.77);
   color: inherit;
   padding: 1px 5px;
 }
@@ -116,6 +116,7 @@
   font-size: 30px;
   font-weight: 300;
   margin-bottom: 10px;
+  line-height: 0.9;
 }
 
 .landing-page__story-subheader-text {
@@ -214,8 +215,8 @@
 @media (max-width: 520px) {
 
   .landing-page__story-text-container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .landing-page__story-text-quote {
@@ -223,11 +224,15 @@
   }
 
   .landing-page__stories-header {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .landing-page__story-header {
-    font-size: 30px;
+    font-size: 22px;
+  }
+
+  .landing-page__story-subheader {
+    margin-top: 0;
   }
 
   .landing-page__story-subheader-text {
@@ -235,7 +240,7 @@
   }
 
   .landing-page__story-text {
-    font-size: 16px;
+    font-size: 18px;
   }
 
 }
@@ -262,8 +267,18 @@
     padding-top: 20px;
   }
 
-  .landing-page__stories-header {
-    font-size: 20px;
+  .landing-page__story-text-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+  }
+
+  .landing-page__story {
+    margin-top: 30px;
+  }
+
+  .landing-page__story-subheader {
+    margin-bottom: 15px;
   }
 
 }

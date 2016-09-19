@@ -21,8 +21,6 @@ const stories = [
   {pictureSrc: '/assets/imgs/ray-min.jpg', subheader: 'because I fit the description', text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'}
 ]
 
-const minHeight = 290
-
 class Stories extends Component {
   constructor () {
     super()

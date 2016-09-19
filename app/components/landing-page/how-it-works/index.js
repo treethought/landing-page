@@ -73,7 +73,7 @@ class HowItWorks extends Component {
 
           <Branch type="downward" color="green" />
 
-          <Step text="Good Call will alert your emergency contact and get a lawyer on your case right away" customIcon={
+          <Step text="Good Call will alert your emergency contact and get a lawyer on your case right away" className="how-it-works__parallel-centered-row" customIcon={
             <div className="how-it-works__parallel-step-icon-container how-it-works__centered-row">
               <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__lawyer-icon" src="/assets/imgs/lawyer_icon.svg" />
               <img className="how-it-works__step-icon how-it-works__parallel-step-icon how-it-works__family-icon" src="/assets/imgs/family_icon.svg" />

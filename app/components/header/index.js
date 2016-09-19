@@ -16,8 +16,8 @@ class Header extends Component {
     super()
     this.state = {
       navBtns: [
-        {label: 'About us', to: '/about-us', className: 'header__about-us-btn'},
-        {label: 'Join the movement', to: '/sign-up', className: 'header__sign-up-btn'}
+        {label: 'About us', to: '/about-us', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
+        {label: 'Join the movement', to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'}
       ]
     }
   }
@@ -41,10 +41,10 @@ class Header extends Component {
                   <MediaQuery query="(min-width: 675px)">
                     {this.state.navBtns.map((btn, i) => (
                       <FlatButton
-                        className={`header__nav-btn ${btn.className || ''}`}
+                        className={`${btn.className || ''}`}
                         key={i}
                         label={btn.label}
-                        containerElement={<Link to={btn.to} />}
+                        containerElement={<Link to={btn.to} activeClassName={btn.activeClassName || ''}/>}
                         hoverColor="#FDFFF9"
                         style={btn.style || {}}
                       />
@@ -64,7 +64,6 @@ class Header extends Component {
                           primaryText={btn.label}
                           key={i}
                           containerElement={<Link to={btn.to} />}
-                          className={`${btn.className}-menu-item`}
                           style={btn.style || {}}
                         />
                       ))}

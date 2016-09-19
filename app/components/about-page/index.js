@@ -34,7 +34,7 @@ class AboutPage extends Component {
 
           <TwoColPanel
             heading="About Us."
-            text={"Good Call is a project started within the <a class='about-page__paragraph-link' href='https://labs.robinhood.org/fellowship/'>Blue Ridge Labs fellowship</a>, a five month program where teams build digital products aimed at addressing key issues faced by low-income New Yorkers, with an approach focused on human-centered design, testing, and outreach work. We built Good Call after months of research and discussions with people in New York communities. We heard countless stories from people who were arrested for trivial reasons, and how uncomfortable, painful, confusing, and damaging this experience can be. We decided to try to do we could to help address this issue."}
+            text={"Good Call is a project started within the <a class='about-page__paragraph-link' href='https://labs.robinhood.org/fellowship/'>Blue Ridge Labs fellowship</a>, a five month program where teams build digital products aimed at addressing key issues faced by low-income New Yorkers, with an approach focused on human-centered design, testing, and outreach work. We built Good Call after months of research and discussions with people in New York communities. We heard countless stories from people who were arrested for trivial reasons, and how uncomfortable, painful, confusing, and damaging this experience can be. We decided to try to do what we could to help address this issue."}
           />
 
           <SimplePanel
@@ -47,7 +47,7 @@ class AboutPage extends Component {
           <TwoColPanel
             className="about-page__our-team"
             heading="Our team."
-            text={"We come from a diverse set of backgrounds and experiences, from 3D Printing to web design to community organizing. However, we share a passion for creating a better a more just New York City for everyone."}
+            text={"We come from a diverse set of backgrounds and experiences, from 3D Printing to web design to community organizing. However, we share a passion for creating a better and more just New York City for everyone."}
           >
             <img className="about-page__team-photo" src="/assets/imgs/team-wood.png"></img>
           </TwoColPanel>
