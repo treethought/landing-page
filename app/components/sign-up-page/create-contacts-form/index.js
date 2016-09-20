@@ -129,7 +129,7 @@ class CreateContactsForm extends Component {
 
           <FlatButton
             className="gc-std-btn sign-up-page__form-continue-btn"
-            label="Continue"
+            label="continue"
             onClick={this.props.saveContacts}
             disabled={this.props.requestInProgress}
           />

@@ -13,7 +13,7 @@ const userFields = [
   {name: 'name', label: 'Full Name'},
   {name: 'phone', label: 'Cell Phone (xxx) xxx-xxxx'},
   {name: 'email', label: 'Email', type: 'email'},
-  {name: 'zip', label: 'Zip Code'},
+  {name: 'zip', label: 'Zip Code'}
 ]
 
 const heardAboutUsThroughOpts = [
@@ -143,7 +143,7 @@ class CreateUserForm extends Component {
 
           <FlatButton
             className="gc-std-btn sign-up-page__form-continue-btn"
-            label="Continue"
+            label="continue"
             onClick={this.props.createUser}
             disabled={
               this.props.requestInProgress
