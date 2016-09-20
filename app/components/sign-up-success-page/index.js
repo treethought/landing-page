@@ -19,8 +19,15 @@ class SignUpSuccessPage extends Component {
 
             <div className="sign-up-success-page__follow-us-panel sign-up-success-page__panel">
               <h3 className="sign-up-success-page__panel-header">Follow us and stay updated.</h3>
-              <a className="sign-up-success-page__link" href="https://twitter.com/GoodCallNYC">@goodcallnyc</a>
-              {/*<a className="sign-up-success-page__link">#goodcallnyc</a>*/}
+              <div className="sign-up-success-page__links">
+                <a className="sign-up-success-page__link" href="https://twitter.com/GoodCallNYC">
+                  <img className="sign-up-success-page__link-icon" src="/assets/imgs/twitter-icon.svg" />
+                </a>
+
+                <a className="sign-up-success-page__link" href="https://www.instagram.com/goodcallnyc">
+                  <img className="sign-up-success-page__link-icon" src="/assets/imgs/instagram-icon.svg" />
+                </a>
+              </div>
             </div>
 
             <div className="sign-up-success-page__learn-about-us-panel sign-up-success-page__panel">

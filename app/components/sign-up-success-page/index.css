@@ -79,6 +79,26 @@
   font-weight: normal !important;
 }
 
+.sign-up-success-page__links {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.sign-up-success-page__link {
+  padding: 10px;
+}
+
+.sign-up-success-page__link-icon {
+  width: 40px;
+  height: 40px;
+}
+
 @media (max-width: 980px) {
 
   .sign-up-success-page__panels {
