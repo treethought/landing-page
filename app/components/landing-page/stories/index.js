@@ -98,7 +98,6 @@ class Stories extends Component {
                       </h3>
 
                       <p className="landing-page__story-text">{story.text}</p>
-                      <span className="landing-page__story-name-and-location"><em>- {story.nameAndLocation}</em></span>
                     </div>
                   </li>
                 </div>
