@@ -11,21 +11,19 @@ import shuffle from 'lodash.shuffle'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 
-const stories = [
-  {pictureSrc: '/assets/imgs/pharaoh-min.jpg', subheader: 'because I was defending myself', text: 'When Pharaoh was attacked by two tenants in his Brooklyn home, he tried his best to defend himself. Battered and bruised, he was still arrested when the police showed up.'},
-  {pictureSrc: '/assets/imgs/nate-min.jpg', subheader: 'because the officer said it was protocol', text: 'Nate was arrested for the possession of marijuana. Although this low level offense is usually resolved with a simple ticket, the officer decided to arrest Nate because he believed it was “protocol.'},
-  {pictureSrc: '/assets/imgs/sharmene-min.jpg', subheader: 'out of nowhere', text: 'When an altercation from months before turned into a warrant without her knowledge, Shermene was arrested unexpectedly.'},
-  // {pictureSrc: '/assets/imgs/tina-min.jpg', subheader: 'for speaking out', text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'},
-  // {pictureSrc: '/assets/imgs/steven-min.jpg', subheader: 'I was arrested because ______.', text: ''},
-  // {pictureSrc: '/assets/imgs/toma-min.jpg', subheader: 'I was arrested because ______.', text: ''},
-  {pictureSrc: '/assets/imgs/ray-min.jpg', subheader: 'because I fit the description', text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'}
-]
-
 class Stories extends Component {
   constructor () {
     super()
     this.resetComponentKey = this.resetComponentKey.bind(this)
-    this.state = {componentKey: uuid.v4()}
+    this.state = {
+      componentKey: uuid.v4(),
+      stories: [
+        {pictureName: 'pharaoh-min', subheader: 'because I was defending myself', text: 'When Pharaoh was attacked by two tenants in his Brooklyn home, he tried his best to defend himself. Battered and bruised, he was still arrested when the police showed up.'},
+        {pictureName: 'nate-min', subheader: 'because the officer said it was protocol', text: 'Nate was arrested for the possession of marijuana. Although this low level offense is usually resolved with a simple ticket, the officer decided to arrest Nate because he believed it was “protocol.'},
+        {pictureName: 'sharmene-min', subheader: 'out of nowhere', text: 'When an altercation from months before turned into a warrant without her knowledge, Shermene was arrested unexpectedly.'},
+        {pictureName: 'ray-min', subheader: 'because I fit the description', text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'}
+      ]
+    }
   }
 
   componentWillReceiveProps () {
@@ -55,6 +53,10 @@ class Stories extends Component {
     this.refs['landing-page__stories-carousel'].slickNext()
   }
 
+  isMobile () {
+    return window.innerWidth < 420
+  }
+
   render () {
     let sliderSettings = {
       className:'landing-page__stories-carousel',
@@ -82,8 +84,10 @@ class Stories extends Component {
           </div>
 
           <Slider {...sliderSettings} ref="landing-page__stories-carousel">
-            {shuffle(stories).map((story, i) => (
-              <div className="landing-page__story-container" key={i} style={{'backgroundImage': `url('${story.pictureSrc}')`}}>
+            {shuffle(this.state.stories).map((story, i) => (
+              <div className="landing-page__story-container" key={i} style={{
+                'backgroundImage': `url('./assets/imgs/${story.pictureName + (this.isMobile() ? '-mobile' : '')}.jpg')`
+              }}>
                 <div className="landing-page__story-container-overlay">
                   <li className="landing-page__story">
                     <h2 className="landing-page__story-header">
