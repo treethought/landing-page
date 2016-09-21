@@ -45,7 +45,7 @@ class HowItWorks extends Component {
           />
 
           <li className="how-it-works__time-passes-step">
-            <em className="how-it-works__time-passes-step-text">some time passes</em>
+            <em className="how-it-works__time-passes-step-text"></em>
           </li>
 
           {firstSteps.map((step, i, arr) => (
