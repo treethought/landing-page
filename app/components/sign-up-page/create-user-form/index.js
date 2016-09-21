@@ -28,7 +28,7 @@ const heardAboutUsThroughOpts = [
 ]
 
 const dateOptions = {
-  months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  months: range(1,13),
   days: range(1, 32),
   years: range(1916, 1999)
 }
@@ -123,37 +123,43 @@ class CreateUserForm extends Component {
               style={{textAlign: 'left'}}
               type={field.type || ''}
               underlineFocusStyle={{borderColor: '#40B097'}}
-
               errorText={this.props.userFormErrors[field.name]}
               onChange={this.props.setUser(field.name)}
               id={`sign-up-page__form-1-user-${field.name}`}
             />
           ))}
 
-          <div className="sign-up-page__date-select-fields-container">
-            <CustomSelectField
-              fieldOpts={dateOptions.months}
-              className="sign-up-page__form-select-date-field"
-              hintText="Month"
-              width="75px"
-              value={this.props.user.dateOfBirth.month}
-            />
+          <div className="sign-up-page__date-select-container">
+            <label className="sign-up-page__date-select-label">Date of Birth</label>
 
-            <CustomSelectField
-              fieldOpts={dateOptions.days}
-              className="sign-up-page__form-select-date-field"
-              hintText="Day"
-              width="60px"
-              value={this.props.user.dateOfBirth.day}
-            />
+            <div className="sign-up-page__date-select-fields-container">
+              <CustomSelectField
+                fieldOpts={dateOptions.months}
+                className="sign-up-page__form-select-date-field"
+                hintText="Month"
+                width="75px"
+                value={this.props.user.dateOfBirthObj.month}
+                onChange={this.props.setUserDateOfBirth('month')}
+                />
 
-            <CustomSelectField
-              fieldOpts={dateOptions.years}
-              className="sign-up-page__form-select-date-field"
-              hintText="Year"
-              width="65px"
-              value={this.props.user.dateOfBirth.year}
-            />
+              <CustomSelectField
+                fieldOpts={dateOptions.days}
+                className="sign-up-page__form-select-date-field"
+                hintText="Day"
+                width="60px"
+                value={this.props.user.dateOfBirthObj.day}
+                onChange={this.props.setUserDateOfBirth('day')}
+                />
+
+              <CustomSelectField
+                fieldOpts={dateOptions.years}
+                className="sign-up-page__form-select-date-field"
+                hintText="Year"
+                width="65px"
+                value={this.props.user.dateOfBirthObj.year}
+                onChange={this.props.setUserDateOfBirth('year')}
+                />
+            </div>
           </div>
 
           <CustomSelectField
@@ -171,8 +177,8 @@ class CreateUserForm extends Component {
               this.props.requestInProgress
               || isEmpty(this.props.user)
               || !this.props.user.name
-              || !this.props.user.phone
-              || !this.props.user.email
+              || !(this.props.user.phone || this.props.user.email)
+              || !(this.props.user.dateOfBirthObj.month && this.props.user.dateOfBirthObj.day && this.props.user.dateOfBirthObj.year)
               || !this.props.user.zip
             }
           />

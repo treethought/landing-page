@@ -4,20 +4,23 @@ import config from './../config'
 import fetcher from './../services/fetcher'
 import objectMap from 'object.map'
 import {browserHistory} from 'react-router'
+import moment from 'moment'
 
 let tmpContactId = 0
 
 class SignUpPageContainer extends Component {
   constructor () {
     super()
-    this.state = {formStage: 0, user: {dateOfBirth: {}}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
+    this.state = {formStage: 0, user: {dateOfBirthObj: {}}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
   }
 
   createUser () {
+    let {year, month, day} = this.state.user.dateOfBirthObj
+    let dateOfBirth = moment(`${year}-${month}-${day}`, 'YYYY-M-D').format()
     fetcher({
       url: `${config.apiBaseUrl}/users`,
       method: 'POST',
-      body: {user: this.state.user},
+      body: {user: {...this.state.user, dateOfBirth: dateOfBirth}},
       first: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
       let {status, json} = res
@@ -35,9 +38,15 @@ class SignUpPageContainer extends Component {
   setUser (propName) {
     return (e, i, v) => {
       let prop = propName === 'heardAboutUsThrough' ? v : e.target.value
-      this.setState({
-        user: {...this.state.user, [propName]: prop}
-      })
+      this.setState({user: {...this.state.user, [propName]: prop}})
+    }
+  }
+
+  setUserDateOfBirth (field) {
+    return (e, i, v) => {
+      let dateOfBirthObj = this.state.user.dateOfBirthObj
+      dateOfBirthObj[field] = v
+      this.setState({user: {...this.state.user, dateOfBirthObj: dateOfBirthObj}})
     }
   }
 
@@ -112,6 +121,7 @@ class SignUpPageContainer extends Component {
         setContact={this.setContact.bind(this)}
         saveContacts={this.saveContacts.bind(this)}
         consentToContactIs={this.consentToContactIs.bind(this)}
+        setUserDateOfBirth={this.setUserDateOfBirth.bind(this)}
       />
     )
   }

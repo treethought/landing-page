@@ -1,16 +1,23 @@
+.sign-up-page__date-select-container {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.sign-up-page__date-select-label {
+  color: rgb(64, 176, 151);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.sign-up-page__date-select-fields-container {
+  display: -webkit-flex;
+  display: flex;
+}
+
 .sign-up-page__form-select-date-field {
-  display: inline-block;
   margin-right: 10px;
 }
 
 .sign-up-page__form-select-date-field:last-of-type {
   margin-right: 0;
-}
-
-@media (min-width: 640px) {
-
-  .sign-up-page__date-select-fields-container {
-    text-align: left;
-  }
-
 }
