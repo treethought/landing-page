@@ -42,11 +42,8 @@ class HowItWorks extends Component {
           <Step
             iconSrc='/assets/imgs/registration_icon.svg'
             text="you sign up for Good Call and list an emergency contact"
+            className="how-it-works__registration-step"
           />
-
-          <li className="how-it-works__time-passes-step">
-            <em className="how-it-works__time-passes-step-text">some time passes</em>
-          </li>
 
           {firstSteps.map((step, i, arr) => (
             <div key={i}>
