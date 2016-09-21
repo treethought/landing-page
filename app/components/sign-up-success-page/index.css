@@ -24,19 +24,19 @@
 }
 
 .sign-up-success-page__panels {
-  display: flex;
-  flex-direction: row;
   display: -webkit-flex;
   -webkit-flex-direction: row;
+  display: flex;
+  flex-direction: row;
   margin-bottom: 210px;
 }
 
 .sign-up-success-page__panel {
   padding: 36px 68px;
-  flex-grow: 1;
-  flex-basis: 0;
   -webkit-flex-grow: 1;
   -webkit-flex-basis: 0;
+  flex-grow: 1;
+  flex-basis: 0;
   height: 269px;
 }
 
@@ -80,14 +80,14 @@
 }
 
 .sign-up-success-page__links {
-  display: flex;
   display: -webkit-flex;
-  flex-direction: row;
   -webkit-flex-direction: row;
-  align-items: center;
   -webkit-align-items: center;
-  justify-content: center;
   -webkit-justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .sign-up-success-page__link {
@@ -103,6 +103,7 @@
 
   .sign-up-success-page__panels {
     -webkit-flex-direction: column;
+    flex-direction: column;
     margin-bottom: 160px;
   }
 

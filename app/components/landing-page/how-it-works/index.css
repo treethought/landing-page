@@ -1,14 +1,14 @@
 /* general */
 
 .how-it-works__centered-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: center;
   -webkit-align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .how-it-works {

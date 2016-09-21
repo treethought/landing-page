@@ -3,14 +3,14 @@
   background-size: cover;
   background-position: center;
   height: 506px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: center;
   -webkit-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 20px;
 }
 
