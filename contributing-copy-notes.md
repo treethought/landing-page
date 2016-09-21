@@ -118,19 +118,24 @@ eugene looks at the PR, and verifies that nothing is broken
 
 eugene merges if its all good
 
-everyone gets an automatic email notification and a _bananya_
+everyone gets an automatic email notification and a _bananya pic_
 
+## i want to change assets on the website (imgs, etc)
 
+- html/css/javascript lives in `./app`
+- images, fonts, and global styles live in `./assets`
 
+- if adding jpegs that are pretty big, prolly a good idea to compress them with http://compressjpeg.com/, and then create a 2000px wide desktop version, and a 1000px mobile version
+- if adding icons, svg preferred. if svgs contain text, png preferred.
 
-## i want to change assets on the website (imgs, colors, etc)
+- can use git process described above to add/commit/pull-request changes
+- branch names can have format `assets/a-nice-name`
 
----
+## i want to change styles on the website
 
-## footnotes
+- our website is made up of components, which live in `./app/components`. every component has an `index.js` and `index.css` file.
+- the root of the website lives in `./app/index.js`. global styles live in `./app/index.css`
+- naming convention for css `className`s is `component-name__a-nice-name`. no id's, only classes
 
-to verify that you're on the right branch, can run
-
-```bash
-git branch
-```
+- can use git process described above to add/commit/pull-request changes
+- branch names can have format `styling/a-nice-name`
