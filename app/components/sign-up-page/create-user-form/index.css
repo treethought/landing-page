@@ -1,0 +1,16 @@
+.sign-up-page__form-select-date-field {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.sign-up-page__form-select-date-field:last-of-type {
+  margin-right: 0;
+}
+
+@media (min-width: 640px) {
+
+  .sign-up-page__date-select-fields-container {
+    text-align: left;
+  }
+
+}
