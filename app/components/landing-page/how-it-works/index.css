@@ -61,19 +61,12 @@
   font-size: 18px;
 }
 
-.how-it-works__time-passes-step {
-  margin: 50px auto;
-}
-
-.how-it-works__time-passes-step-text {
-  font-weight: 300;
-  font-size: 18px;
-  position: relative;
-  right: 198px;
-}
-
 .how-it-works__sub-step-row {
   height: 50px;
+}
+
+.how-it-works__registration-step {
+  margin-bottom: 80px;
 }
 
 .how-it-works__sub-step-number-icon-container {
