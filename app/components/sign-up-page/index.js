@@ -21,6 +21,7 @@ class SignUpPage extends Component {
                 userFormErrors={this.props.userFormErrors}
                 createUser={this.props.createUser}
                 requestInProgress={this.props.requestInProgress}
+                setUserDateOfBirth={this.props.setUserDateOfBirth}
               />
             </div>
           )}
