@@ -22,7 +22,8 @@ class Stories extends Component {
         {pictureName: 'nate-min', subheader: 'because the officer said it was protocol', text: 'Nate was arrested for the possession of marijuana. Although this low level offense is usually resolved with a simple ticket, the officer decided to arrest Nate because he believed it was “protocol.'},
         {pictureName: 'sharmene-min', subheader: 'out of nowhere', text: 'When an altercation from months before turned into a warrant without her knowledge, Shermene was arrested unexpectedly.'},
         {pictureName: 'ray-min', subheader: 'because I fit the description', text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'},
-        {pictureName: 'steven-min', subheader: 'because of a predatory policy', text: 'Thousands of people every year are stopped, frisked, and arrested. Steven happened to be one of them.'}
+        {pictureName: 'steven-min', subheader: 'because of a predatory policy', text: 'Thousands of people every year are stopped, frisked, and arrested. Steven happened to be one of them.'},
+        {pictureName: 'tina-min', subheader: 'for speaking out', text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'}
       ]
     }
   }
