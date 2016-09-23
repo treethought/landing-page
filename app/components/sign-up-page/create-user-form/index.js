@@ -13,7 +13,9 @@ const userFields = [
   {name: 'name', label: 'Full Name'},
   {name: 'phone', label: 'Cell Phone (xxx) xxx-xxxx'},
   {name: 'email', label: 'Email', type: 'email'},
-  {name: 'zip', label: 'Zip Code'}
+  {name: 'zip', label: 'Zip Code'},
+  {name: 'securityQuestion', label: 'Security Question'},
+  {name: 'securityAnswer', label: 'Security Answer'}
 ]
 
 const heardAboutUsThroughOpts = [
@@ -180,6 +182,7 @@ class CreateUserForm extends Component {
               || !(this.props.user.phone || this.props.user.email)
               || !(this.props.user.dateOfBirthObj.month && this.props.user.dateOfBirthObj.day && this.props.user.dateOfBirthObj.year)
               || !this.props.user.zip
+              || !(this.props.user.securityQuestion && this.props.user.securityAnswer)
             }
           />
         </div>
