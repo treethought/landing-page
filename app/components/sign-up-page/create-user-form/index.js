@@ -29,11 +29,7 @@ const heardAboutUsThroughOpts = [
   'Other'
 ]
 
-const dateOptions = {
-  months: range(1,13),
-  days: range(1, 32),
-  years: range(1916, 1999)
-}
+const dateOptions = {months: range(1,13), days: range(1, 32), years: range(1916, 1999)}
 
 class CreateUserForm extends Component {
   constructor () {
@@ -125,7 +121,7 @@ class CreateUserForm extends Component {
               style={{textAlign: 'left'}}
               type={field.type || ''}
               underlineFocusStyle={{borderColor: '#40B097'}}
-              errorText={this.props.userFormErrors[field.name]}
+              errorText={this.props.user.errors.attributes[field.name]}
               onChange={this.props.setUser(field.name)}
               id={`sign-up-page__form-1-user-${field.name}`}
             />
@@ -140,7 +136,7 @@ class CreateUserForm extends Component {
                 className="sign-up-page__form-select-date-field"
                 hintText="Month"
                 width="75px"
-                value={this.props.user.dateOfBirthObj.month}
+                value={this.props.user.data.attributes.dateOfBirthObj.month}
                 onChange={this.props.setUserDateOfBirth('month')}
                 />
 
@@ -149,7 +145,7 @@ class CreateUserForm extends Component {
                 className="sign-up-page__form-select-date-field"
                 hintText="Day"
                 width="60px"
-                value={this.props.user.dateOfBirthObj.day}
+                value={this.props.user.data.attributes.dateOfBirthObj.day}
                 onChange={this.props.setUserDateOfBirth('day')}
                 />
 
@@ -158,7 +154,7 @@ class CreateUserForm extends Component {
                 className="sign-up-page__form-select-date-field"
                 hintText="Year"
                 width="65px"
-                value={this.props.user.dateOfBirthObj.year}
+                value={this.props.user.data.attributes.dateOfBirthObj.year}
                 onChange={this.props.setUserDateOfBirth('year')}
                 />
             </div>
@@ -168,7 +164,7 @@ class CreateUserForm extends Component {
             fieldOpts={heardAboutUsThroughOpts}
             onChange={this.props.setUser('heardAboutUsThrough')}
             hintText="How did you hear about Good Call?"
-            value={this.props.user.heardAboutUsThrough}
+            value={this.props.user.data.heardAboutUsThrough}
           />
 
           <FlatButton
@@ -177,12 +173,12 @@ class CreateUserForm extends Component {
             onClick={this.props.createUser}
             disabled={
               this.props.requestInProgress
-              || isEmpty(this.props.user)
-              || !this.props.user.name
-              || !(this.props.user.phone || this.props.user.email)
-              || !(this.props.user.dateOfBirthObj.month && this.props.user.dateOfBirthObj.day && this.props.user.dateOfBirthObj.year)
-              || !this.props.user.zip
-              || !(this.props.user.securityQuestion && this.props.user.securityAnswer)
+              || isEmpty(this.props.user.data.attributes)
+              || !this.props.user.data.attributes.name
+              || !(this.props.user.data.attributes.phone || this.props.user.data.attributes.email)
+              || !(this.props.user.data.attributes.dateOfBirthObj.month && this.props.user.data.attributes.dateOfBirthObj.day && this.props.user.data.attributes.dateOfBirthObj.year)
+              || !this.props.user.data.attributes.zip
+              || !(this.props.user.data.attributes.securityQuestion && this.props.user.data.attributes.securityAnswer)
             }
           />
         </div>

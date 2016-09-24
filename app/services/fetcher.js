@@ -1,17 +1,18 @@
 // THANKS @ahdinosaur for this remnant of the past!!!!
 
-import snakeize from 'snakeize'
 import camelize from 'camelize'
+import snakeize from 'snakeize'
 import Url from 'url'
 import assign from 'lodash.assign'
 import isPlainObject from 'lodash.isplainobject'
+import cookie from 'react-cookie'
+import objectPath from 'object-path'
 
 export default function fetcher (options) {
   options = options || {}
 
-  if (options.first) {
-    options.first()
-  }
+  // if desired, run any callbacks before request is made
+  if (options.beforeRequest) { options.beforeRequest() }
 
   options.headers = options.headers || new Headers()
 
@@ -28,10 +29,8 @@ export default function fetcher (options) {
 
   // support snake options.body
   if (isPlainObject(options.body)) {
-    options.body = JSON.stringify(
-      snakeize(options.body)
-    )
-    options.headers.append('content-type', 'application/json')
+    options.body = JSON.stringify({data: options.body})
+    options.headers.append('Content-Type', 'application/vnd.api+json')
   }
 
   // support credentials default as 'same-origin'
@@ -40,6 +39,10 @@ export default function fetcher (options) {
   // accept json response
   options.headers.append('accept', 'application/json')
 
+  // append auth headers, if they exist
+  options.headers.append('id', cookie.load('userId'))
+  options.headers.append('access_token', cookie.load('accessToken'))
+
   let res
   // fetch!
   return fetch(url, options)
@@ -47,10 +50,18 @@ export default function fetcher (options) {
       res = response
       return res.json()
     })
-    .then(function (json) {
-      return {
-        status: res.status,
-        json: json
+    .then(function (rawJson) {
+      let json
+      if (res.status < 400) {
+        json = camelize(rawJson).data
+      } else {
+        let errors = {}
+        rawJson.errors.forEach((error) => {
+          objectPath.set(errors, error.source.pointer.slice(1).replace(/\//g, '.'), error.detail)
+        })
+        json = {errors: camelize(errors.data)}
       }
+
+      return {status: res.status, json: json}
     })
 }
