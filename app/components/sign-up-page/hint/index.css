@@ -1,5 +1,8 @@
 .sign-up-page__hint {
-  width: 50%;
+  position: absolute;
+  width: 100%;
+  top: 6px;
+  left: 0;
 }
 
 .sign-up-page__hint-bubble-container {
@@ -9,8 +12,6 @@
   -webkit-align-items: flex-start;
   flex-direction: row;
   align-items: flex-start;
-  position: relative;
-  top: 6px;
 }
 
 .sign-up-page__hint-bubble {

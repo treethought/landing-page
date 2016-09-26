@@ -11,7 +11,7 @@ class Hint extends Component {
   }
 
   componentDidMount () {
-    if (!this.isDesktop) { document.activeElement.blur() }
+    if (!this.isDesktop()) { document.activeElement.blur() }
   }
 
   closeDialog () {
@@ -24,10 +24,10 @@ class Hint extends Component {
 
   render () {
     return (
-      <div className="sign-up-page__hint">
+      <div className={`sign-up-page__hint ${this.props.className || ''}`}>
         {renderIf(this.isDesktop())(
           <div
-            className={`sign-up-page__hint-bubble-container ${this.props.className || ''}`}
+            className={`sign-up-page__hint-bubble-container`}
             style={{display: bowser.safari ? '-webkit-flex' : 'flex'}}
           >
             <div className="sign-up-page__hint-bubble">

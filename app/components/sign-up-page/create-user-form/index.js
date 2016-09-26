@@ -8,15 +8,6 @@ import range from 'lodash.range'
 import Hint from './../hint'
 import renderIf from 'render-if'
 
-const userFields = [
-  {name: 'name', label: 'Full Name'},
-  {name: 'phone', label: 'Cell Phone (xxx) xxx-xxxx'},
-  {name: 'email', label: 'Email', type: 'email'},
-  {name: 'zip', label: 'Zip Code'},
-  {name: 'securityQuestion', label: 'Security Question'},
-  {name: 'securityAnswer', label: 'Security Answer'}
-]
-
 const heardAboutUsThroughOpts = [
   'Internet search',
   'Friends or family',
@@ -37,11 +28,26 @@ const dateOptions = {
 class CreateUserForm extends Component {
   constructor () {
     super()
-    this.state = {infoHintShown: false}
+    this.state = {
+      infoHintShown: false,
+      securityHintShown: false,
+      userFields: [
+        {name: 'name', label: 'Full Name', onFocus: this.showInfoHint.bind(this)},
+        {name: 'phone', label: 'Cell Phone (xxx) xxx-xxxx', onFocus: this.showInfoHint.bind(this)},
+        {name: 'email', label: 'Email', type: 'email', onFocus: this.showInfoHint.bind(this)},
+        {name: 'zip', label: 'Zip Code', onFocus: this.showInfoHint.bind(this)},
+        {name: 'securityQuestion', label: 'Security Question', onFocus: this.showSecurityHint.bind(this)},
+        {name: 'securityAnswer', label: 'Security Answer', onFocus: this.showSecurityHint.bind(this)}
+      ]
+    }
   }
 
   showInfoHint (e) {
     this.setState({infoHintShown: true})
+  }
+
+  showSecurityHint (e) {
+    this.setState({securityHintShown: true})
   }
 
   isDesktop () {
@@ -70,11 +76,26 @@ class CreateUserForm extends Component {
 
     return (
       <form className="sign-up-page__form">
+        {renderIf(this.state.infoHintShown || this.state.securityHintShown) (
+          <div
+            style={{
+              position: 'relative',
+              width: this.isDesktop() ? '50%' : '0'
+            }}
+          >
+            {renderIf(this.state.infoHintShown) (
+              <Hint
+                text="Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case."
+              />
+            )}
 
-        {renderIf(this.state.infoHintShown) (
-          <Hint
-            text="Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case."
-          />
+            {renderIf(this.state.securityHintShown) (
+              <Hint
+                text="We will ask you to answer this question when you call us. Choose a question with an answer that only you would know and remember. Ex. “What is your favorite childhood candy?”"
+                className="sign-up-page__hint-security"
+              />
+            )}
+          </div>
         )}
 
         <div
@@ -83,22 +104,23 @@ class CreateUserForm extends Component {
             textAlign: (this.props.infoHintShown || this.props.securityHintShown) ? 'right' : 'left'
           }}
         >
-          {userFields.map((field, i) => (
+          {this.state.userFields.map((field, i) => (
             <TextField
+              key={i}
               className="sign-up-page__form-text-field"
               errorStyle={{marginBottom: '-15px'}}
               floatingLabelFocusStyle={{fontSize: '14px', color: '#40B097', textTransform: 'uppercase'}}
-              floatingLabelText={field.label}
               inputStyle={{fontSize: '18px'}}
-              key={i}
               name={field.name}
-              onFocus={this.showInfoHint.bind(this)}
               style={{textAlign: 'left'}}
               type={field.type || ''}
               underlineFocusStyle={{borderColor: '#40B097'}}
+              id={`sign-up-page__form-1-user-${field.name}`}
+
+              floatingLabelText={field.label}
               errorText={this.props.userFormErrors[field.name]}
               onChange={this.props.setUser(field.name)}
-              id={`sign-up-page__form-1-user-${field.name}`}
+              onFocus={field.onFocus}
             />
           ))}
 
