@@ -13,12 +13,18 @@ class SignUpPageContainer extends Component {
   constructor () {
     super()
     this.state = {
-      formStage: 0,
+      formStage: 1,
       user: {
         data: {attributes: {dateOfBirthObj: {}}, relationships: {}}, // TODO: find a better way to deal with date, aside from dateOfBirthObj
         errors: {attributes: {}, relationships: {}}
       },
-      contacts: [{tmpId: tmpContactId}],
+      contacts: [
+        {
+          tmpId: tmpContactId,
+          data: {id: null, type: 'contacts', attributes: {}, relationships: {}},
+          errors: {attributes: {}, relationships: {}}
+        }
+      ],
       requestInProgress: false
     }
   }
@@ -36,35 +42,30 @@ class SignUpPageContainer extends Component {
       beforeRequest: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
       let {status, json} = res
-      this.setState({requestInProgress: false})
-      if (status === 200) {
-        // TODO: refactor?
-        // this.setState({
-        //   formStage: 1,
-        //   user: {
-        //     ...this.state.user,
-        //     errors: {
-        //       attributes: {},
-        //       relationships: {}
-        //     }
-        //   }
-        // })
-
-        // TODO: pull into service?
-        let userId = json.id
-        let accessToken = json.relationships.accessToken.data.value
-        cookie.save('userId', userId, {path: '/'})
-        cookie.save('accessToken', accessToken, {path: '/'})
-      } else {
-        this.setState({
-          user: {...this.state.user, errors: json.errors}
-        })
-      }
+      this.setState({
+        formStage: 1,
+        requestInProgress: false,
+        user: {
+          ...this.state.user,
+          errors: {attributes: {}, relationships: {}}
+        }
+      })
+      let userId = json.data.id
+      let accessToken = json.data.relationships.accessToken.data.value.toString()
+      cookie.save('userId', userId, {path: '/'})
+      cookie.save('accessToken', accessToken, {path: '/'})
+    }).catch((res) => {
+      let {status, json} = res
+      this.setState({
+        requestInProgress: false,
+        user: {...this.state.user, errors: json.errors}
+      })
     })
   }
 
   setUser (propName) {
     return (e, i, v) => {
+      // TODO: fix 'heardAboutUsThrough' case
       let prop = propName === 'heardAboutUsThrough' ? v : e.target.value
       let updatedUser = this.state.user
       updatedUser.data.attributes[propName] = prop
@@ -85,18 +86,20 @@ class SignUpPageContainer extends Component {
   // addContact () {
   //   this.setState({contacts: this.state.contacts.concat({tmpId: ++tmpContactId})})
   // }
-  //
-  // setContact (tmpId, propName) {
-  //   return (e, i, v) => {
-  //     let prop = propName === 'isContactableByUs' ? v : e.target.value
-  //     let contacts = this.state.contacts.map((contact) => {
-  //       if (contact.tmpId === tmpId) { contact[propName] = prop }
-  //       return contact
-  //     })
-  //     this.setState({ contacts: contacts })
-  //   }
-  // }
-  //
+
+  setContact (tmpId, propName) {
+    return (e, i, v) => {
+      let prop = propName === 'isContactableByUs' ? v : e.target.value
+      let contacts = this.state.contacts.map((contact) => {
+        if (contact.tmpId === tmpId) {
+          contact.data.attributes[propName] = prop
+        }
+        return contact
+      })
+      this.setState({contacts: contacts})
+    }
+  }
+
   // consentToContactIs () {
   //   return (e, isChecked) => {
   //     let contacts = this.state.contacts.map((contact) => {
@@ -113,33 +116,49 @@ class SignUpPageContainer extends Component {
   //     this.setState({contacts: contacts})
   //   }
   // }
-  //
-  // saveContacts () {
-  //   let form_token = this.state.user.form_token
-  //   let form_token_value = form_token ? form_token.value : ''
-  //
-  //   fetcher({
-  //     method: 'POST',
-  //     url: `${config.apiBaseUrl}/contacts`,
-  //     body: {
-  //       contacts: {
-  //         list: this.state.contacts,
-  //         form_token_value: form_token_value,
-  //         user_id: this.state.user.id
-  //       }
-  //     },
-  //     beforeRequest: this.setState.call(this, {requestInProgress: true})
-  //   }).then((res) => {
-  //     let {status, json} = res
-  //     if (status === 200) {
-  //       this.setState({contactsFormErrors: {}, contacts: [], requestInProgress: false})
-  //       browserHistory.push('/sign-up/success')
-  //     } else {
-  //       document.body.scrollTop = document.documentElement.scrollTop = 0
-  //       this.setState({contactsFormErrors: json.errors, requestInProgress: false})
-  //     }
-  //   })
-  // }
+
+  createContact (contact) {
+    return fetcher({
+      method: 'POST',
+      url: `${config.apiBaseUrl}/contacts`,
+      body: contact.data,
+      beforeRequest: this.setState.call(this, {requestInProgress: true})
+    }).then((res) => {
+      let {status, json} = res
+      this.setState({
+        contacts: this.state.contacts.map((c) => {
+          if (c.tmpId === contact.tmpId) {
+            c.data = json.data
+            c.errors = {attributes: {}, relationships: {}}
+          }
+          return c
+        })
+      })
+    }).catch((res) => {
+      let {status, json} = res
+      this.setState({
+        contacts: this.state.contacts.map((c) => {
+          if (c.tmpId === contact.tmpId) { c.errors = json.errors}
+          return c
+        })
+      })
+      throw(new Error(json))
+    })
+  }
+
+  createContacts () {
+    let createContactPromises = this.state.contacts.filter((contact) => {
+      return !contact.data.id
+    }).map((contact) => {
+      return this.createContact(contact)
+    })
+
+    Promise.all(createContactPromises).then(() => {
+      this.setState({requestInProgress: false})
+    }).catch(() => {
+      this.setState({requestInProgress: false})
+    })
+  }
 
   render () {
     return (
@@ -148,6 +167,8 @@ class SignUpPageContainer extends Component {
         location={this.props.location}
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
+        setContact={this.setContact.bind(this)}
+        createContacts={this.createContacts.bind(this)}
         setUserDateOfBirth={this.setUserDateOfBirth.bind(this)}
       />
     )
@@ -158,6 +179,4 @@ export default SignUpPageContainer
 
 // addContact={this.addContact.bind(this)}
 // removeContact={this.removeContact.bind(this)}
-// setContact={this.setContact.bind(this)}
-// saveContacts={this.saveContacts.bind(this)}
 // consentToContactIs={this.consentToContactIs.bind(this)}

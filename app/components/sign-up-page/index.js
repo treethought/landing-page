@@ -34,11 +34,8 @@ class SignUpPage extends Component {
               <CreateContactsForm
                 setContact={this.props.setContact}
                 contacts={this.props.contacts}
-                removeContact={this.props.removeContact}
-                addContact={this.props.addContact}
-                saveContacts={this.props.saveContacts}
+                createContacts={this.props.createContacts}
                 requestInProgress={this.props.requestInProgress}
-                consentToContactIs={this.props.consentToContactIs}
               />
             </div>
           )}
@@ -49,3 +46,7 @@ class SignUpPage extends Component {
 }
 
 export default SignUpPage
+
+// addContact={this.props.addContact}
+// removeContact={this.props.removeContact}
+// consentToContactIs={this.props.consentToContactIs}

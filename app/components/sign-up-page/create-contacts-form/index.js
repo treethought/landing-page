@@ -91,6 +91,7 @@ class CreateContactsForm extends Component {
                 <TextField
                   className="sign-up-page__form-text-field"
                   errorStyle={{marginBottom: '-15px'}}
+                  errorText={contact.errors.attributes[field.name]}
                   floatingLabelFocusStyle={{fontSize: '14px', color: '#40B097', textTransform: 'uppercase'}}
                   floatingLabelText={field.label}
                   inputStyle={{fontSize: '18px'}}
@@ -107,15 +108,15 @@ class CreateContactsForm extends Component {
               ))}
 
 
-              {renderIf(this.props.contacts.length > 1) (
+              {/*renderIf(this.props.contacts.length > 1) (
                 <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
-              )}
+              )*/}
             </div>
           ))}
 
-          <div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>
+          {/*<div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>*/}
 
-          <div className="sign-up-page__checkbox-container">
+          {/*<div className="sign-up-page__checkbox-container">
             <Checkbox
               label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you were arrested.`}
               defaultChecked={true}
@@ -125,12 +126,12 @@ class CreateContactsForm extends Component {
               labelStyle={{fontSize: window.innerWidth > 640 ? "18px" : "16px", color: "#4A4A4A", lineHeight: "24px", fontWeight: "300"}}
             />
 
-          </div>
+          </div>*/}
 
           <FlatButton
             className="gc-std-btn sign-up-page__form-continue-btn"
             label="continue"
-            onClick={this.props.saveContacts}
+            onClick={this.props.createContacts}
             disabled={this.props.requestInProgress}
           />
         </div>

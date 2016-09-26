@@ -40,28 +40,27 @@ export default function fetcher (options) {
   options.headers.append('accept', 'application/json')
 
   // append auth headers, if they exist
-  options.headers.append('id', cookie.load('userId'))
-  options.headers.append('access_token', cookie.load('accessToken'))
+  options.headers.append('USER_ID', cookie.load('userId', true))
+  options.headers.append('ACCESS_TOKEN', cookie.load('accessToken', true))
 
-  let res
-  // fetch!
-  return fetch(url, options)
-    .then(function (response) {
+  let fetchPromise = new Promise((resolve, reject) => {
+    let res
+    // fetch!
+    fetch(url, options).then((response) => {
       res = response
       return res.json()
-    })
-    .then(function (rawJson) {
-      let json
+    }).then((rawJson) => {
       if (res.status < 400) {
-        json = camelize(rawJson).data
+        resolve({status: res.status, json: camelize(rawJson)})
       } else {
         let errors = {}
         rawJson.errors.forEach((error) => {
           objectPath.set(errors, error.source.pointer.slice(1).replace(/\//g, '.'), error.detail)
         })
-        json = {errors: camelize(errors.data)}
+        reject({status: res.status, json: {errors: camelize(errors.data)}})
       }
-
-      return {status: res.status, json: json}
     })
+  })
+
+  return fetchPromise
 }
