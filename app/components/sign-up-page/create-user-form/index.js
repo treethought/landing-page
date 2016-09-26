@@ -4,10 +4,9 @@ import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import FlatButton from 'material-ui/FlatButton'
 import isEmpty from 'lodash.isempty'
-import {findDOMNode} from 'react-dom'
-import Dialog from 'material-ui/Dialog'
-import bowser from 'bowser'
 import range from 'lodash.range'
+import Hint from './../hint'
+import renderIf from 'render-if'
 
 const userFields = [
   {name: 'name', label: 'Full Name'},
@@ -38,24 +37,11 @@ const dateOptions = {
 class CreateUserForm extends Component {
   constructor () {
     super()
-    this.state = {hintShown: false, hintClosed: false}
+    this.state = {infoHintShown: false}
   }
 
-  showHint (e) {
-    if (this.isDesktop()) {
-      let {hint, formFields} = this.refs
-      hint.style.display = bowser.safari ? '-webkit-flex' : 'flex'
-      formFields.style.textAlign = 'right'
-    } else {
-      if (!this.state.hintShown) {
-        e.target.blur()
-        this.setState({hintShown: true})
-      }
-    }
-  }
-
-  closeHintDialog () {
-    this.setState({hintClosed: true})
+  showInfoHint (e) {
+    this.setState({infoHintShown: true})
   }
 
   isDesktop () {
@@ -84,34 +70,19 @@ class CreateUserForm extends Component {
 
     return (
       <form className="sign-up-page__form">
-        <div className="sign-up-page__form-hint-bubble-container" ref="hint">
-          <div className="sign-up-page__form-hint-bubble">
-            <p className="sign-up-page__form-hint-text">
-              Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case.
-            </p>
-          </div>
-          <div className="sign-up-page__form-hint-bubble-arrow"></div>
-        </div>
 
-        <Dialog
-          actions={
-            <FlatButton
-              label="GOT IT"
-              labelStyle={{color: "#FDFFF9", fontSize: "14px", letterSpacing: "0.5px"}}
-              onTouchTap={this.closeHintDialog.bind(this)}
-            />
-          }
-          contentStyle={{fontSize: "16px", color: "#FDFFF9", lineHeight: "24px", fontWeight: "300"}}
-          bodyStyle={{background: "#40B097", color: "#FDFFF9"}}
-          actionsContainerStyle={{background: "#40B097"}}
-          modal={false}
-          open={this.state.hintShown && !this.state.hintClosed}
-          onRequestClose={this.closeHintDialog.bind(this)}
+        {renderIf(this.state.infoHintShown) (
+          <Hint
+            text="Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case."
+          />
+        )}
+
+        <div
+          className="sign-up-page__form-fields-container"
+          style={{
+            textAlign: (this.props.infoHintShown || this.props.securityHintShown) ? 'right' : 'left'
+          }}
         >
-          Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case.
-        </Dialog>
-
-        <div className="sign-up-page__form-fields-container" ref="formFields">
           {userFields.map((field, i) => (
             <TextField
               className="sign-up-page__form-text-field"
@@ -121,7 +92,7 @@ class CreateUserForm extends Component {
               inputStyle={{fontSize: '18px'}}
               key={i}
               name={field.name}
-              onFocus={this.showHint.bind(this)}
+              onFocus={this.showInfoHint.bind(this)}
               style={{textAlign: 'left'}}
               type={field.type || ''}
               underlineFocusStyle={{borderColor: '#40B097'}}
