@@ -21,7 +21,7 @@ class SignUpPageContainer extends Component {
       contacts: [
         {
           tmpId: tmpContactId,
-          data: {id: null, type: 'contacts', attributes: {}, relationships: {}},
+          data: {id: null, type: 'contacts', attributes: {isContactableByUs: true}, relationships: {}},
           errors: {attributes: {}, relationships: {}}
         }
       ],
@@ -86,7 +86,7 @@ class SignUpPageContainer extends Component {
   addContact () {
     this.setState({contacts: this.state.contacts.concat({
       tmpId: ++tmpContactId,
-      data: {id: null, type: 'contacts', attributes: {}, relationships: {}},
+      data: {id: null, type: 'contacts', attributes: {isContactableByUs: true}, relationships: {}},
       errors: {attributes: {}, relationships: {}}
     })})
   }
@@ -104,15 +104,15 @@ class SignUpPageContainer extends Component {
     }
   }
 
-  // consentToContactIs () {
-  //   return (e, isChecked) => {
-  //     let contacts = this.state.contacts.map((contact) => {
-  //       contact.isContactableByUs = isChecked
-  //       return contact
-  //     })
-  //     this.setState({contacts: contacts})
-  //   }
-  // }
+  consentToContactIs () {
+    return (e, isChecked) => {
+      let contacts = this.state.contacts.map((contact) => {
+        contact.data.attributes.isContactableByUs = isChecked
+        return contact
+      })
+      this.setState({contacts: contacts})
+    }
+  }
 
   createContact (contact) {
     return fetcher({
@@ -220,11 +220,10 @@ class SignUpPageContainer extends Component {
         addContact={this.addContact.bind(this)}
         saveContacts={this.saveContacts.bind(this)}
         removeContact={this.removeContact.bind(this)}
+        consentToContactIs={this.consentToContactIs.bind(this)}
       />
     )
   }
 }
 
 export default SignUpPageContainer
-
-// consentToContactIs={this.consentToContactIs.bind(this)}

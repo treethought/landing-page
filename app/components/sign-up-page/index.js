@@ -38,6 +38,7 @@ class SignUpPage extends Component {
                 addContact={this.props.addContact}
                 removeContact={this.props.removeContact}
                 requestInProgress={this.props.requestInProgress}
+                consentToContactIs={this.props.consentToContactIs}
               />
             </div>
           )}
@@ -48,5 +49,3 @@ class SignUpPage extends Component {
 }
 
 export default SignUpPage
-
-// consentToContactIs={this.props.consentToContactIs}

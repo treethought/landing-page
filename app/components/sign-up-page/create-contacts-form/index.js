@@ -80,7 +80,7 @@ class CreateContactsForm extends Component {
 
           {<div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>}
 
-          {/*<div className="sign-up-page__checkbox-container">
+          {<div className="sign-up-page__checkbox-container">
             <Checkbox
               label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you are arrested.`}
               defaultChecked={true}
@@ -90,7 +90,7 @@ class CreateContactsForm extends Component {
               labelStyle={{fontSize: window.innerWidth > 640 ? "18px" : "16px", color: "#4A4A4A", lineHeight: "24px", fontWeight: "300"}}
             />
 
-          </div>*/}
+          </div>}
 
           <FlatButton
             className="gc-std-btn sign-up-page__form-continue-btn"
