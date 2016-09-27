@@ -49,7 +49,7 @@ class CreateContactsForm extends Component {
         {renderIf(this.state.hintShown) (
           <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
             <Hint
-              text={`${this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you get arrested`}
+              text={`${this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you are arrested`}
             />
           </div>
         )}
@@ -81,7 +81,7 @@ class CreateContactsForm extends Component {
 
           <div className="sign-up-page__checkbox-container">
             <Checkbox
-              label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you were arrested.`}
+              label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you are arrested.`}
               defaultChecked={true}
               onCheck={this.props.consentToContactIs()}
               style={{textAlign: "left"}}
