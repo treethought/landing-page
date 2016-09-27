@@ -78,7 +78,7 @@ class CreateContactsForm extends Component {
             </div>
           ))}
 
-          {/*<div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>*/}
+          {<div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>}
 
           {/*<div className="sign-up-page__checkbox-container">
             <Checkbox
@@ -95,7 +95,7 @@ class CreateContactsForm extends Component {
           <FlatButton
             className="gc-std-btn sign-up-page__form-continue-btn"
             label="continue"
-            onClick={this.props.createContacts}
+            onClick={this.props.saveContacts}
             disabled={this.props.requestInProgress}
           />
         </div>

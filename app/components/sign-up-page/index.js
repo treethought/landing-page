@@ -34,7 +34,8 @@ class SignUpPage extends Component {
               <CreateContactsForm
                 setContact={this.props.setContact}
                 contacts={this.props.contacts}
-                createContacts={this.props.createContacts}
+                saveContacts={this.props.saveContacts}
+                addContact={this.props.addContact}
                 requestInProgress={this.props.requestInProgress}
               />
             </div>

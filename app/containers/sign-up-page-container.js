@@ -83,9 +83,13 @@ class SignUpPageContainer extends Component {
     }
   }
 
-  // addContact () {
-  //   this.setState({contacts: this.state.contacts.concat({tmpId: ++tmpContactId})})
-  // }
+  addContact () {
+    this.setState({contacts: this.state.contacts.concat({
+      tmpId: ++tmpContactId,
+      data: {id: null, type: 'contacts', attributes: {}, relationships: {}},
+      errors: {attributes: {}, relationships: {}}
+    })})
+  }
 
   setContact (tmpId, propName) {
     return (e, i, v) => {
@@ -128,7 +132,7 @@ class SignUpPageContainer extends Component {
       this.setState({
         contacts: this.state.contacts.map((c) => {
           if (c.tmpId === contact.tmpId) {
-            c.data = json.data
+            c.data.id = json.data.id
             c.errors = {attributes: {}, relationships: {}}
           }
           return c
@@ -146,11 +150,41 @@ class SignUpPageContainer extends Component {
     })
   }
 
-  createContacts () {
-    let createContactPromises = this.state.contacts.filter((contact) => {
-      return !contact.data.id
-    }).map((contact) => {
-      return this.createContact(contact)
+  updateContact (contact) {
+    return fetcher({
+      method: 'PATCH',
+      url: `${config.apiBaseUrl}/contacts/${contact.data.id}`,
+      body: contact.data,
+      beforeRequest: this.setState.call(this, {requestInProgress: true})
+    }).then((res) => {
+      let {status, json} = res
+      this.setState({
+        contacts: this.state.contacts.map((c) => {
+          if (c.tmpId === contact.tmpId) {
+            c.errors = {attributes: {}, relationships: {}}
+          }
+          return c
+        })
+      })
+    }).catch((res) => {
+      let {status, json} = res
+      this.setState({
+        contacts: this.state.contacts.map((c) => {
+          if (c.tmpId === contact.tmpId) { c.errors = json.errors}
+          return c
+        })
+      })
+      throw(new Error(json))
+    })
+  }
+
+  saveContacts () {
+    let createContactPromises = this.state.contacts.map((contact) => {
+      if (contact.data.id) {
+        return this.updateContact(contact)
+      } else {
+        return this.createContact(contact)
+      }
     })
 
     Promise.all(createContactPromises).then(() => {
@@ -167,9 +201,11 @@ class SignUpPageContainer extends Component {
         location={this.props.location}
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
-        setContact={this.setContact.bind(this)}
-        createContacts={this.createContacts.bind(this)}
         setUserDateOfBirth={this.setUserDateOfBirth.bind(this)}
+
+        setContact={this.setContact.bind(this)}
+        addContact={this.addContact.bind(this)}
+        saveContacts={this.saveContacts.bind(this)}
       />
     )
   }
@@ -177,6 +213,5 @@ class SignUpPageContainer extends Component {
 
 export default SignUpPageContainer
 
-// addContact={this.addContact.bind(this)}
 // removeContact={this.removeContact.bind(this)}
 // consentToContactIs={this.consentToContactIs.bind(this)}

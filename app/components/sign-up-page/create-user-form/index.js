@@ -118,7 +118,7 @@ class CreateUserForm extends Component {
                 width="75px"
                 value={this.props.user.data.attributes.dateOfBirthObj.month}
                 onChange={this.props.setUserDateOfBirth('month')}
-                />
+              />
 
               <CustomSelectField
                 fieldOpts={dateOptions.days}
@@ -127,7 +127,7 @@ class CreateUserForm extends Component {
                 width="60px"
                 value={this.props.user.data.attributes.dateOfBirthObj.day}
                 onChange={this.props.setUserDateOfBirth('day')}
-                />
+              />
 
               <CustomSelectField
                 fieldOpts={dateOptions.years}
@@ -136,7 +136,7 @@ class CreateUserForm extends Component {
                 width="65px"
                 value={this.props.user.data.attributes.dateOfBirthObj.year}
                 onChange={this.props.setUserDateOfBirth('year')}
-                />
+              />
             </div>
           </div>
 

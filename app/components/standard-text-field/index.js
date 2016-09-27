@@ -12,7 +12,7 @@ class StandardTextField extends Component {
         inputStyle={{ fontSize: '18px', marginTop: '0' }}
         underlineStyle={{ bottom: '15px' }}
         underlineFocusStyle={{ borderColor: '#40B097', bottom: '15px' }}
-        errorStyle={{ lineHeight: '15px' }}
+        errorStyle={{ lineHeight: '15px', textAlign: 'left' }}
 
         name={this.props.name || ''}
         type={this.props.type || ''}
