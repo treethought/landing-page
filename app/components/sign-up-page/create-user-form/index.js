@@ -67,6 +67,7 @@ class CreateUserForm extends Component {
         onChange={onChange}
         style={{width: width || '100%', boxShadow: '0px 2px 4px 0px rgba(0,0,0,0.24)', paddingLeft: '11px', paddingTop: '3px', marginTop: '6px', textAlign: 'left'}}
         underlineStyle={{borderColor: 'transparent'}}
+        maxHeight={200}
         value={value}
       >
         {fieldOpts.map((opt, i) => (
