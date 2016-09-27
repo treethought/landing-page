@@ -144,7 +144,7 @@ class CreateUserForm extends Component {
             fieldOpts={heardAboutUsThroughOpts}
             onChange={this.props.setUser('heardAboutUsThrough')}
             hintText="How did you hear about Good Call?"
-            value={this.props.user.data.heardAboutUsThrough}
+            value={this.props.user.data.attributes.heardAboutUsThrough}
           />
 
           <FlatButton

@@ -13,7 +13,7 @@ class SignUpPageContainer extends Component {
   constructor () {
     super()
     this.state = {
-      formStage: 1,
+      formStage: 0,
       user: {
         data: {attributes: {dateOfBirthObj: {}}, relationships: {}}, // TODO: find a better way to deal with date, aside from dateOfBirthObj
         errors: {attributes: {}, relationships: {}}
@@ -65,7 +65,6 @@ class SignUpPageContainer extends Component {
 
   setUser (propName) {
     return (e, i, v) => {
-      // TODO: fix 'heardAboutUsThrough' case
       let prop = propName === 'heardAboutUsThrough' ? v : e.target.value
       let updatedUser = this.state.user
       updatedUser.data.attributes[propName] = prop
