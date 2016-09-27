@@ -36,6 +36,7 @@ class SignUpPage extends Component {
                 contacts={this.props.contacts}
                 saveContacts={this.props.saveContacts}
                 addContact={this.props.addContact}
+                removeContact={this.props.removeContact}
                 requestInProgress={this.props.requestInProgress}
               />
             </div>
@@ -48,6 +49,4 @@ class SignUpPage extends Component {
 
 export default SignUpPage
 
-// addContact={this.props.addContact}
-// removeContact={this.props.removeContact}
 // consentToContactIs={this.props.consentToContactIs}

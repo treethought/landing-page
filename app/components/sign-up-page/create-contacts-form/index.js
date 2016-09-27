@@ -72,9 +72,9 @@ class CreateContactsForm extends Component {
                 />
               ))}
 
-              {/*renderIf(this.props.contacts.length > 1) (
-                <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
-              )*/}
+              {renderIf(this.props.contacts.length > 1) (
+                <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact)}>&times;</div>
+              )}
             </div>
           ))}
 

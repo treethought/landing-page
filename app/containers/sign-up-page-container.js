@@ -113,13 +113,6 @@ class SignUpPageContainer extends Component {
   //     this.setState({contacts: contacts})
   //   }
   // }
-  //
-  // removeContact (tmpId) {
-  //   return () => {
-  //     let contacts = this.state.contacts.filter((contact) => contact.tmpId !== tmpId)
-  //     this.setState({contacts: contacts})
-  //   }
-  // }
 
   createContact (contact) {
     return fetcher({
@@ -194,6 +187,27 @@ class SignUpPageContainer extends Component {
     })
   }
 
+  removeContact (contact) {
+    return () => {
+      if (contact.data.id) {
+        fetcher({
+          method: 'DELETE',
+          url: `${config.apiBaseUrl}/contacts/${contact.data.id}`,
+          beforeRequest: this.setState.call(this, {requestInProgress: true})
+        }).then((res) => {
+          let contacts = this.state.contacts.filter((c) => c.tmpId !== contact.tmpId)
+          this.setState({contacts: contacts, requestInProgress: false})
+        }).catch((res) => {
+          this.setState({contacts: contacts, requestInProgress: false})
+          console.log('err: ', res.json)
+        })
+      } else {
+        let contacts = this.state.contacts.filter((c) => c.tmpId !== contact.tmpId)
+        this.setState({contacts: contacts})
+      }
+    }
+  }
+
   render () {
     return (
       <SignUpPage
@@ -202,10 +216,10 @@ class SignUpPageContainer extends Component {
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
         setUserDateOfBirth={this.setUserDateOfBirth.bind(this)}
-
         setContact={this.setContact.bind(this)}
         addContact={this.addContact.bind(this)}
         saveContacts={this.saveContacts.bind(this)}
+        removeContact={this.removeContact.bind(this)}
       />
     )
   }
@@ -213,5 +227,4 @@ class SignUpPageContainer extends Component {
 
 export default SignUpPageContainer
 
-// removeContact={this.removeContact.bind(this)}
 // consentToContactIs={this.consentToContactIs.bind(this)}
