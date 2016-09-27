@@ -42,7 +42,7 @@
 
 .landing-page__stories-carousel__arrow-container {
   position: absolute;
-  z-index: 1000;
+  z-index: 2;
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: center;

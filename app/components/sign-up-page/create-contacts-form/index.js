@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
-import TextField from 'material-ui/TextField'
 import Checkbox from 'material-ui/Checkbox'
 import FlatButton from 'material-ui/FlatButton'
 import renderIf from 'render-if'
 import Dialog from 'material-ui/Dialog'
+import Hint from './../hint'
+import StandardTextField from './../../standard-text-field'
 
 const contactFields = [
   {name: 'name', label: 'First Name, Last Name (optional)'},
@@ -15,7 +16,7 @@ class CreateContactsForm extends Component {
   constructor () {
     super()
     // this.popup = this.popup.bind(this)
-    this.state = {hintShown: false, hintClosed: false}
+    this.state = {hintShown: false}
   }
 
   // componentDidMount () {
@@ -35,50 +36,23 @@ class CreateContactsForm extends Component {
   // }
 
   showHint () {
-    if (window.innerWidth > 640) {
-      let {hint, formFields} = this.refs
-      hint.style.display = 'flex'
-      formFields.style.textAlign = 'right'
-    } else {
-      if (!this.state.hintShown) {
-        this.setState({hintShown: true})
-      }
-    }
+    this.setState({hintShown: true})
   }
 
-  closeHintDialog () {
-    this.setState({hintClosed: true})
+  isDesktop () {
+    return window.innerWidth > 640
   }
 
   render () {
     return (
       <form className="sign-up-page__form">
-        <div className="sign-up-page__form-hint-bubble-container" ref="hint">
-          <div className="sign-up-page__form-hint-bubble sign-up-page__add-contacts-bubble">
-            <p className="sign-up-page__form-hint-text">
-              {this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you get arrested
-            </p>
-          </div>
-          <div className="sign-up-page__form-hint-bubble-arrow sign-up-page__add-contacts-bubble-arrow"></div>
-        </div>
-
-        <Dialog
-          actions={
-            <FlatButton
-              label="GOT IT"
-              labelStyle={{color: "#FDFFF9", fontSize: "14px", letterSpacing: "0.5px"}}
-              onTouchTap={this.closeHintDialog.bind(this)}
+        {renderIf(this.state.hintShown) (
+          <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
+            <Hint
+              text={`${this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you are arrested`}
             />
-          }
-          contentStyle={{fontSize: "16px", color: "#FDFFF9", lineHeight: "24px", fontWeight: "300"}}
-          bodyStyle={{background: "#40B097", color: "#FDFFF9"}}
-          actionsContainerStyle={{background: "#40B097"}}
-          modal={false}
-          open={this.state.hintShown && !this.state.hintClosed}
-          onRequestClose={this.closeHintDialog.bind(this)}
-        >
-          These are the people we would contact if you get arrested
-        </Dialog>
+          </div>
+        )}
 
         <div className="sign-up-page__form-fields-container" ref="formFields">
           {this.props.contacts.map((contact, i) => (
@@ -88,25 +62,15 @@ class CreateContactsForm extends Component {
               )}
 
               {contactFields.map((field, j) => (
-                <TextField
-                  className="sign-up-page__form-text-field"
-                  errorStyle={{marginBottom: '-15px'}}
-                  errorText={contact.errors.attributes[field.name]}
-                  floatingLabelFocusStyle={{fontSize: '14px', color: '#40B097', textTransform: 'uppercase'}}
-                  floatingLabelText={field.label}
-                  inputStyle={{fontSize: '18px'}}
-                  name={field.name}
+                <StandardTextField
                   key={j}
                   onFocus={this.showHint.bind(this)}
-                  style={{textAlign: 'left'}}
-                  type={field.type || ''}
-                  underlineFocusStyle={{borderColor: '#40B097'}}
-
-                  id={`sign-up-page__form-1-contacts-${i}-${field.name}`}
                   onChange={this.props.setContact(contact.tmpId, field.name)}
-                ></TextField>
+                  name={field.name}
+                  labelText={field.label}
+                  errorText={contact.errors.attributes[field.name]}
+                />
               ))}
-
 
               {/*renderIf(this.props.contacts.length > 1) (
                 <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
@@ -118,7 +82,7 @@ class CreateContactsForm extends Component {
 
           {/*<div className="sign-up-page__checkbox-container">
             <Checkbox
-              label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you were arrested.`}
+              label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you are arrested.`}
               defaultChecked={true}
               onCheck={this.props.consentToContactIs()}
               style={{textAlign: "left"}}
