@@ -63,6 +63,7 @@ class CreateUserForm extends Component {
         hintText={hintText}
         hintStyle={{fontSize: this.isDesktop() ? '16px' : '14px', color: '#4A4A4A', fontWeight: '300', textAlign: 'left'}}
         menuStyle={{color: '#000000'}}
+        labelStyle={{ position: 'relative', bottom: '5px' }}
         onChange={onChange}
         style={{width: width || '100%', boxShadow: '0px 2px 4px 0px rgba(0,0,0,0.24)', paddingLeft: '11px', paddingTop: '3px', marginTop: '6px', textAlign: 'left'}}
         underlineStyle={{borderColor: 'transparent'}}
@@ -103,13 +104,16 @@ class CreateUserForm extends Component {
             <TextField
               key={i}
               className="sign-up-page__form-text-field"
-              errorStyle={{marginBottom: '-15px'}}
-              floatingLabelFocusStyle={{fontSize: '14px', color: '#40B097', textTransform: 'uppercase'}}
-              inputStyle={{fontSize: '18px'}}
+              style={{ height: '58px', marginBottom: '3px' }}
+              floatingLabelStyle={{ top: '18px' }}
+              floatingLabelFocusStyle={{ fontSize: '14px', color: '#40B097', textTransform: 'uppercase', top: '18px' }}
+              inputStyle={{ fontSize: '18px', marginTop: '0' }}
+              underlineStyle={{ bottom: '15px' }}
+              underlineFocusStyle={{ borderColor: '#40B097', bottom: '15px' }}
+              errorStyle={{ lineHeight: '15px' }}
+
               name={field.name}
-              style={{textAlign: 'left'}}
               type={field.type || ''}
-              underlineFocusStyle={{borderColor: '#40B097'}}
               id={`sign-up-page__form-1-user-${field.name}`}
 
               floatingLabelText={field.label}

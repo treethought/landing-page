@@ -1,9 +1,10 @@
 .sign-up-page__hint-security {
-  top: 232px !important;
+  top: 250px !important;
 }
 
 .sign-up-page__date-select-container {
   text-align: left;
+  margin-top: 5px;
   margin-bottom: 10px;
 }
 

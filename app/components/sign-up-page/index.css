@@ -51,9 +51,8 @@
 }
 
 .sign-up-page__form-text-field {
-  display: block;
+  display: block !important;
   width: 100% !important;
-  margin-top: -15px !important;
 }
 
 .sign-up-page__form-continue-btn {
