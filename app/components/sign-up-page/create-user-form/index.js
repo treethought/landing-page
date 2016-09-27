@@ -77,12 +77,7 @@ class CreateUserForm extends Component {
     return (
       <form className="sign-up-page__form">
         {renderIf(this.state.infoHintShown || this.state.securityHintShown) (
-          <div
-            style={{
-              position: 'relative',
-              width: this.isDesktop() ? '50%' : '0'
-            }}
-          >
+          <div style={{position: 'relative',width: this.isDesktop() ? '50%' : '0'}}>
             {renderIf(this.state.infoHintShown) (
               <Hint
                 text="Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case."
