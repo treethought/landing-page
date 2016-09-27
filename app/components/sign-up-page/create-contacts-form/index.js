@@ -15,25 +15,25 @@ const contactFields = [
 class CreateContactsForm extends Component {
   constructor () {
     super()
-    // this.popup = this.popup.bind(this)
+    this.popup = this.popup.bind(this)
     this.state = {hintShown: false}
   }
 
-  // componentDidMount () {
-  //   document.body.scrollTop = document.documentElement.scrollTop = 0
-  //   window.addEventListener('beforeunload', this.popup)
-  //   window.addEventListener('unload', () => { window.removeEventListener('beforeunload', this.popup) })
-  // }
-  //
-  // componentWillUnmount () {
-  //   window.removeEventListener('beforeunload', this.popup)
-  // }
-  //
-  // popup (e) {
-  //   let confirmationMessage = '\o/'
-  //   e.returnValue = confirmationMessage
-  //   return confirmationMessage
-  // }
+  componentDidMount () {
+    document.body.scrollTop = document.documentElement.scrollTop = 0
+    window.addEventListener('beforeunload', this.popup)
+    window.addEventListener('unload', () => { window.removeEventListener('beforeunload', this.popup) })
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('beforeunload', this.popup)
+  }
+
+  popup (e) {
+    let confirmationMessage = '\o/'
+    e.returnValue = confirmationMessage
+    return confirmationMessage
+  }
 
   showHint () {
     this.setState({hintShown: true})

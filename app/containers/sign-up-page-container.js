@@ -181,6 +181,7 @@ class SignUpPageContainer extends Component {
 
     Promise.all(createContactPromises).then(() => {
       this.setState({requestInProgress: false})
+      browserHistory.push('/sign-up/success')
     }).catch(() => {
       this.setState({requestInProgress: false})
     })

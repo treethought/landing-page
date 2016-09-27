@@ -11,7 +11,10 @@ class Hint extends Component {
   }
 
   componentDidMount () {
-    if (!this.isDesktop()) { document.activeElement.blur() }
+    if (!this.isDesktop()) {
+      document.activeElement.blur()
+      document.body.scrollTop = document.documentElement.scrollTop = 0
+    }
   }
 
   closeDialog () {
