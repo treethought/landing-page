@@ -50,11 +50,6 @@
   text-align: center;
 }
 
-.sign-up-page__form-text-field {
-  display: block !important;
-  width: 100% !important;
-}
-
 .sign-up-page__form-continue-btn {
   margin-top: 75px !important;
   margin-bottom: 95px !important;

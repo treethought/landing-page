@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import TextField from 'material-ui/TextField'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import FlatButton from 'material-ui/FlatButton'
@@ -7,6 +6,7 @@ import isEmpty from 'lodash.isempty'
 import range from 'lodash.range'
 import Hint from './../hint'
 import renderIf from 'render-if'
+import StandardTextField from './../../standard-text-field'
 
 const heardAboutUsThroughOpts = [
   'Internet search',
@@ -101,25 +101,13 @@ class CreateUserForm extends Component {
           }}
         >
           {this.state.userFields.map((field, i) => (
-            <TextField
+            <StandardTextField
               key={i}
-              className="sign-up-page__form-text-field"
-              style={{ height: '58px', marginBottom: '3px' }}
-              floatingLabelStyle={{ top: '18px' }}
-              floatingLabelFocusStyle={{ fontSize: '14px', color: '#40B097', textTransform: 'uppercase', top: '18px' }}
-              inputStyle={{ fontSize: '18px', marginTop: '0' }}
-              underlineStyle={{ bottom: '15px' }}
-              underlineFocusStyle={{ borderColor: '#40B097', bottom: '15px' }}
-              errorStyle={{ lineHeight: '15px' }}
-
               name={field.name}
-              type={field.type || ''}
-              id={`sign-up-page__form-1-user-${field.name}`}
-
-              floatingLabelText={field.label}
-              errorText={this.props.userFormErrors[field.name]}
-              onChange={this.props.setUser(field.name)}
               onFocus={field.onFocus}
+              onChange={this.props.setUser(field.name)}
+              errorText={this.props.userFormErrors[field.name]}
+              labelText={field.label}
             />
           ))}
 

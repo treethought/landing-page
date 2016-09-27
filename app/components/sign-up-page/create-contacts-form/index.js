@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-import TextField from 'material-ui/TextField'
 import Checkbox from 'material-ui/Checkbox'
 import FlatButton from 'material-ui/FlatButton'
 import renderIf from 'render-if'
 import Dialog from 'material-ui/Dialog'
 import Hint from './../hint'
+import StandardTextField from './../../standard-text-field'
 
 const contactFields = [
   {name: 'name', label: 'First Name, Last Name (optional)'},
@@ -62,24 +62,14 @@ class CreateContactsForm extends Component {
               )}
 
               {contactFields.map((field, j) => (
-                <TextField
-                  className="sign-up-page__form-text-field"
-                  errorStyle={{marginBottom: '-15px'}}
-                  floatingLabelFocusStyle={{fontSize: '14px', color: '#40B097', textTransform: 'uppercase'}}
-                  floatingLabelText={field.label}
-                  inputStyle={{fontSize: '18px'}}
-                  name={field.name}
+                <StandardTextField
                   key={j}
                   onFocus={this.showHint.bind(this)}
-                  style={{textAlign: 'left'}}
-                  type={field.type || ''}
-                  underlineFocusStyle={{borderColor: '#40B097'}}
-
-                  id={`sign-up-page__form-1-contacts-${i}-${field.name}`}
                   onChange={this.props.setContact(contact.tmpId, field.name)}
-                ></TextField>
+                  name={field.name}
+                  labelText={field.label}
+                />
               ))}
-
 
               {renderIf(this.props.contacts.length > 1) (
                 <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
