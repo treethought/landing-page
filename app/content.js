@@ -71,6 +71,65 @@ const content = {
         subheader: 'Because no one expects to get arrested.',
         signUpBtnLabel: 'sign up'
       }
+    },
+    aboutPage: {
+      header: 'We believe everyone deserves fairness.',
+      aboutUs: {
+        header: 'About Us.',
+        text: 'Good Call is a project started within the <a class="about-page__paragraph-link" href="https://labs.robinhood.org/fellowship/">Blue Ridge Labs fellowship</a>, a five month program where teams build digital products aimed at addressing key issues faced by low-income New Yorkers, with an approach focused on human-centered design, testing, and outreach work. We built Good Call after months of research and discussions with people in New York communities. We heard countless stories from people who were arrested for trivial reasons, and how uncomfortable, painful, confusing, and damaging this experience can be. We decided to try to do what we could to help address this issue.'
+      },
+      ourMissionText: 'Our mission is to make the arrest process and its aftermath less painful and harmful for those that are detained and their loved ones. We strive to make this process more transparent and just for all New Yorkers regardless of income.',
+      ourTeam: {
+        header: 'Our team.',
+        text: 'We come from a diverse set of backgrounds and experiences, from 3D Printing to web design to community organizing. However, we share a passion for creating a better and more just New York City for everyone.'
+      },
+      joinTheMovement: {
+        header: 'Join the movement.',
+        text: 'We are currently preparing to launch a pilot in the Bronx. If you live in the Bronx and are interested in being part of our pilot, or want to stay up to date on our progress, please sign up below!'
+      },
+      signUpBtnLabel: 'sign up'
+    },
+    signUpPage: {
+      header: 'Sign up today to get updates and be part of our Bronx pilot launch',
+      createUserForm: {
+        header: 'tell us about yourself',
+        nameLabel: 'Full Name',
+        phoneLabel: 'Cell Phone (xxx) xxx-xxxx',
+        emailLabel: 'Email',
+        zipLabel: 'Zip Code',
+        securityQuestionLabel: 'Security Question',
+        securityAnswerLabel: 'Security Answer',
+        heardAboutUsThroughLabel: 'How did you hear about Good Call?',
+        internetSearchLabel: 'Internet search',
+        friendsOrFamilyLabel: 'Friends or family',
+        socialMediaLabel: 'Social Media',
+        emailListLabel: 'Email list',
+        communityEventLabel: 'Community event',
+        goodCallRepresentativeLabel: 'Good Call representative',
+        goodCallBusinessCardOrFlyerLabel: 'Good Call business card or flyer',
+        otherLabel: 'Other',
+        infoHintText: 'Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case.',
+        securityHintText: 'We will ask you to answer this question when you call us. Choose a question with an answer that only you would know and remember. Ex. “What is your favorite childhood candy?”',
+        dateOfBirthLabel: 'Date of Birth',
+        continueBtnLabel: 'continue'
+      },
+      createContactsForm: {
+        header: 'provide an emergency contact',
+        errorTextLine1: 'looks like something went wrong ツ',
+        errorTextLine2: 'need help? just email hello@goodcall.nyc',
+        nameLabel: 'First Name, Last Name (optional)',
+        relationshipLabel: 'Relationship (optional)',
+        phoneLabel: 'Phone (xxx) xxx-xxxx (optional)',
+        hintText: (numOfContacts) => (
+          `${numOfContacts > 1 ? "These are the people" : "This is the person"} we would contact if you are arrested`
+        ),
+        additionalContactLabel: 'Additional contact',
+        addContactBtnLabel: 'Add another contact',
+        consentToContactLabel: (numOfContacts) => (
+          `Let us contact ${numOfContacts > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you are arrested.`
+        ),
+        continueBtnLabel: 'continue'
+      }
     }
   }
 }

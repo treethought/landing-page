@@ -6,14 +6,17 @@ import isEmpty from 'lodash.isempty'
 
 class SignUpPage extends Component {
   render () {
+    const {content} = this.props
+
     return (
       <div className="sign-up-page">
         {renderIf(this.props.formStage === 0) (
           <div className="sign-up-page__form-container">
-            <h1 className="sign-up-page__form-header">Sign up today to get updates and be part of our Bronx pilot launch</h1>
-            <h2 className="sign-up-page__form-subheader">tell us about yourself</h2>
+            <h1 className="sign-up-page__form-header">{content.header}</h1>
+            <h2 className="sign-up-page__form-subheader">{content.createUserForm.header}</h2>
 
             <CreateUserForm
+              content={content.createUserForm}
               user={this.props.user}
               setUser={this.props.setUser}
               userFormErrors={this.props.userFormErrors}
@@ -26,17 +29,18 @@ class SignUpPage extends Component {
 
         {renderIf(this.props.formStage === 1) (
           <div className="sign-up-page__form-container">
-            <h1 className="sign-up-page__form-header">Sign up today to get updates and be part of our Bronx pilot launch</h1>
-            <h2 className="sign-up-page__form-subheader">provide an emergency contact</h2>
+            <h1 className="sign-up-page__form-header">{content.header}</h1>
+            <h2 className="sign-up-page__form-subheader">{content.createContactsForm.header}</h2>
 
             {renderIf(!isEmpty(this.props.contactsFormErrors[0])) (
               <div className="sign-up-page__token-errors">
-                looks like something went wrong ツ <br />
-                need help? just email hello@goodcall.nyc
-               </div>
+                {content.createContactsForm.errorTextLine1}<br />
+                {content.createContactsForm.errorTextLine2}
+              </div>
             )}
 
             <CreateContactsForm
+              content={content.createContactsForm}
               setContact={this.props.setContact}
               contacts={this.props.contacts}
               removeContact={this.props.removeContact}

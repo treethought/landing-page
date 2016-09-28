@@ -11,7 +11,7 @@ let tmpContactId = 0
 class SignUpPageContainer extends Component {
   constructor () {
     super()
-    this.state = {formStage: 0, user: {dateOfBirthObj: {}}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
+    this.state = {formStage: 1, user: {dateOfBirthObj: {}}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
   }
 
   createUser () {
@@ -110,9 +110,12 @@ class SignUpPageContainer extends Component {
   }
 
   render () {
+    const {content} = this.props.route
+
     return (
       <SignUpPage
         {...this.state}
+        content={content}
         location={this.props.location}
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}

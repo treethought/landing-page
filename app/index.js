@@ -40,9 +40,9 @@ class App extends Component {
         <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
           <Route path="/" component={InnerPage} content={this.state.content.innerPage}>
             <IndexRoute component={LandingPage} content={this.state.content.landingPage} />
-            <Route path="about-us" component={AboutPage} />
+            <Route path="about-us" component={AboutPage} content={this.state.content.aboutPage} />
             <Route path="sign-up">
-              <IndexRoute component={SignUpPageContainer} />
+              <IndexRoute component={SignUpPageContainer} content={this.state.content.signUpPage}/>
               <Route path="success" component={SignUpSuccessPage} />
             </Route>
             <Route path="privacy-policy" component={PrivacyPolicyPage} />

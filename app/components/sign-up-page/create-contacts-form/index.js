@@ -6,51 +6,53 @@ import Dialog from 'material-ui/Dialog'
 import Hint from './../hint'
 import StandardTextField from './../../standard-text-field'
 
-const contactFields = [
-  {name: 'name', label: 'First Name, Last Name (optional)'},
-  {name: 'relationship', label: 'Relationship (optional)'},
-  {name: 'phone', label: 'Phone (xxx) xxx-xxxx (optional)'}
-]
-
 class CreateContactsForm extends Component {
-  constructor () {
-    super()
-    this.popup = this.popup.bind(this)
-    this.state = {hintShown: false}
+  constructor (props) {
+    super(props)
+    // this.popup = this.popup.bind(this)
+    const {content} = props
+    this.state = {
+      hintShown: false,
+      contactFields: [
+        {name: 'name', label: content.nameLabel},
+        {name: 'relationship', label: content.relationshipLabel},
+        {name: 'phone', label: content.phoneLabel}
+      ]
+    }
   }
 
   componentDidMount () {
     document.body.scrollTop = document.documentElement.scrollTop = 0
-    window.addEventListener('beforeunload', this.popup)
-    window.addEventListener('unload', () => { window.removeEventListener('beforeunload', this.popup) })
+    // window.addEventListener('beforeunload', this.popup)
+    // window.addEventListener('unload', () => { window.removeEventListener('beforeunload', this.popup) })
   }
 
   componentWillUnmount () {
-    window.removeEventListener('beforeunload', this.popup)
+    // window.removeEventListener('beforeunload', this.popup)
   }
 
   showHint () {
     this.setState({hintShown: true})
   }
 
-  popup (e) {
-    let confirmationMessage = '\o/'
-    e.returnValue = confirmationMessage
-    return confirmationMessage
-  }
-
+  // popup (e) {
+  //   let confirmationMessage = '\o/'
+  //   e.returnValue = confirmationMessage
+  //   return confirmationMessage
+  // }
+  //
   isDesktop () {
     return window.innerWidth > 640
   }
 
   render () {
+    const {content} = this.props
+    
     return (
       <form className="sign-up-page__form">
         {renderIf(this.state.hintShown) (
           <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
-            <Hint
-              text={`${this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you are arrested`}
-            />
+            <Hint text={content.hintText(this.props.contacts.length)} />
           </div>
         )}
 
@@ -58,10 +60,10 @@ class CreateContactsForm extends Component {
           {this.props.contacts.map((contact, i) => (
             <div className="sign-up-page__contact-fields-container" key={contact.tmpId}>
               {renderIf(i > 0)(
-                <h3 className="sign-up-page__additional-contact-header">Additional contact</h3>
+                <h3 className="sign-up-page__additional-contact-header">{content.additionalContactLabel}</h3>
               )}
 
-              {contactFields.map((field, j) => (
+              {this.state.contactFields.map((field, j) => (
                 <StandardTextField
                   key={j}
                   onFocus={this.showHint.bind(this)}
@@ -77,11 +79,11 @@ class CreateContactsForm extends Component {
             </div>
           ))}
 
-          <div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>
+          <div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ {content.addContactBtnLabel}</div>
 
           <div className="sign-up-page__checkbox-container">
             <Checkbox
-              label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you are arrested.`}
+              label={content.consentToContactLabel(this.props.contacts.length)}
               defaultChecked={true}
               onCheck={this.props.consentToContactIs()}
               style={{textAlign: "left"}}
@@ -93,7 +95,7 @@ class CreateContactsForm extends Component {
 
           <FlatButton
             className="gc-std-btn sign-up-page__form-continue-btn"
-            label="continue"
+            label={content.continueBtnLabel}
             onClick={this.props.saveContacts}
             disabled={this.props.requestInProgress}
           />
