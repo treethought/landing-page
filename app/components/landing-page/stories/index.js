@@ -12,18 +12,19 @@ import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-lef
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 
 class Stories extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.resetComponentKey = this.resetComponentKey.bind(this)
+    let {content} = props
     this.state = {
       componentKey: uuid.v4(),
       stories: [
-        {pictureName: 'pharaoh-min', subheader: 'because I was defending myself', text: 'When Pharaoh was attacked by two tenants in his Brooklyn home, he tried his best to defend himself. Battered and bruised, he was still arrested when the police showed up.'},
-        {pictureName: 'nate-min', subheader: 'because the officer said it was protocol', text: 'Nate was arrested for the possession of marijuana. Although this low level offense is usually resolved with a simple ticket, the officer decided to arrest Nate because he believed it was “protocol.”'},
-        {pictureName: 'sharmene-min', subheader: 'out of nowhere', text: 'When an altercation from months before turned into a warrant without her knowledge, Shermene was arrested unexpectedly.'},
-        {pictureName: 'ray-min', subheader: 'because I fit the description', text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'},
-        {pictureName: 'steven-min', subheader: 'because of a predatory policy', text: 'Thousands of people every year are stopped, frisked, and arrested. Steven happened to be one of them.'},
-        {pictureName: 'tina-min', subheader: 'for speaking out', text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'}
+        {pictureName: 'pharaoh-min', subheader: content.pharoah.subheader, text: content.pharoah.text},
+        {pictureName: 'nate-min', subheader: content.nate.subheader, text: content.nate.text},
+        {pictureName: 'sharmene-min', subheader: content.sharmene.subheader, text: content.sharmene.text},
+        {pictureName: 'ray-min', subheader: content.ray.subheader, text: content.ray.text},
+        {pictureName: 'steven-min', subheader: content.steven.subheader, text: content.steven.text},
+        {pictureName: 'tina-min', subheader: content.tina.subheader, text: content.tina.text}
       ]
     }
   }
@@ -63,7 +64,6 @@ class Stories extends Component {
     let sliderSettings = {
       className:'landing-page__stories-carousel',
       autoplay: true,
-      // lazyLoad: true,
       arrows: false,
       autoplaySpeed: 15000,
       infinite: true,
@@ -73,9 +73,11 @@ class Stories extends Component {
       pauseOnHover: false
     }
 
+    const {content} = this.props
+
     return (
       <section className="landing-page__stories" key={this.state.componentKey}>
-        <h1 className="landing-page__stories-header">No one expects to get arrested but if you do we got your back.</h1>
+        <h1 className="landing-page__stories-header">{content.header}</h1>
 
         <ul className="landing-page__stories-carousel-list-container">
           <div
@@ -93,7 +95,7 @@ class Stories extends Component {
                 <div className="landing-page__story-container-overlay">
                   <li className="landing-page__story">
                     <h2 className="landing-page__story-header">
-                      <mark>I was arrested.</mark>
+                      <mark>{content.storyHeader}</mark>
                     </h2>
 
                     <div className="landing-page__story-text-container">
@@ -120,7 +122,7 @@ class Stories extends Component {
         </ul>
 
         <div className="landing-page__stories-scroll-down-btn-container">
-          <ScrollDownBtn to="landing-page__problem" text="Learn more"/>
+          <ScrollDownBtn to="landing-page__problem" text={content.scrollDownBtnLabel} />
         </div>
       </section>
     )

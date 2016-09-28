@@ -12,12 +12,13 @@ import renderIf from 'render-if'
 import includes from 'lodash.includes'
 
 class Header extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
+    let content = this.props.content
     this.state = {
       navBtns: [
-        {label: 'About us', to: '/about-us', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
-        {label: 'Sign Up', to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'}
+        {label: content.aboutUsBtnLabel, to: '/about-us', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
+        {label: content.signUpBtnLabel, to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'}
       ]
     }
   }

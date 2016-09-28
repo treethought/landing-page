@@ -19,10 +19,10 @@ class LandingPage extends Component {
           </div>
         </div>
 
-        <Stories />
+        <Stories content={content.stories} />
 
         <Element name="landing-page__problem">
-          <Problem />
+          <Problem content={content.problem}/>
         </Element>
 
         <SimplePanel
@@ -31,9 +31,9 @@ class LandingPage extends Component {
           fontWeight="700"
         />
 
-        <HowItWorks />
+        <HowItWorks content={content.howItWorks} />
 
-        <LaunchingSoon />
+        <LaunchingSoon content={content.launchingSoon} />
       </div>
     )
   }

@@ -38,9 +38,9 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={theme}>
         <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
-          <Route path="/" component={InnerPage}>
+          <Route path="/" component={InnerPage} content={this.state.content.innerPage}>
             <IndexRoute component={LandingPage} content={this.state.content.landingPage} />
-            <Route path="about-us" component={AboutPage}/>
+            <Route path="about-us" component={AboutPage} />
             <Route path="sign-up">
               <IndexRoute component={SignUpPageContainer} />
               <Route path="success" component={SignUpSuccessPage} />
