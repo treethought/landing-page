@@ -15,13 +15,13 @@
   font-size: 18px;
   color: #FDFFF9;
   background: rgba(45,43,43,0.99);
-  height: 36px;
-  padding-bottom: 1px;
+  padding-top: 6px;
+  padding-bottom: 9px;
   position: fixed;
   top: 85px;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1001;
   display: -webkit-flex;
   -webkit-flex-direction: column;
   -webkit-justify-content: center;
@@ -30,6 +30,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .landing-page__hotline-banner-text {
@@ -44,6 +45,19 @@
 
   .landing-page__std-subheader {
     font-size: 18px;
+  }
+
+}
+
+@media (max-width: 674px) {
+
+  .landing-page__hotline-banner {
+    padding: 12px 19px 14px 16px;
+    top: 70px;
+  }
+
+  .landing-page__hotline-banner-text {
+    font-size: 13px;
   }
 
 }
