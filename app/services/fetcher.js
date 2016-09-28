@@ -7,6 +7,7 @@ import assign from 'lodash.assign'
 import isPlainObject from 'lodash.isplainobject'
 import cookie from 'react-cookie'
 import objectPath from 'object-path'
+import {browserHistory} from 'react-router'
 
 export default function fetcher (options) {
   options = options || {}
@@ -57,7 +58,15 @@ export default function fetcher (options) {
         rawJson.errors.forEach((error) => {
           objectPath.set(errors, error.source.pointer.slice(1).replace(/\//g, '.'), error.detail)
         })
-        reject({status: res.status, json: {errors: camelize(errors.data)}})
+        let json = {errors: camelize(errors.data)}
+        reject({status: res.status, json: json})
+
+        if (res.status === 401) {
+          browserHistory.push({
+            pathname: '/login',
+            state: {errorMessage: json.errors.relationships.accessToken}
+          })
+        }
       }
     })
   })
