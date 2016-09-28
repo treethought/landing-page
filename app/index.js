@@ -43,7 +43,7 @@ class App extends Component {
             <Route path="about-us" component={AboutPage} content={this.state.content.aboutPage} />
             <Route path="sign-up">
               <IndexRoute component={SignUpPageContainer} content={this.state.content.signUpPage}/>
-              <Route path="success" component={SignUpSuccessPage} />
+              <Route path="success" component={SignUpSuccessPage} content={this.state.content.signUpSuccessPage} />
             </Route>
             <Route path="privacy-policy" component={PrivacyPolicyPage} />
             <Route path="*" component={ErrorPage} />

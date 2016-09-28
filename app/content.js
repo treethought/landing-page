@@ -130,6 +130,17 @@ const content = {
         ),
         continueBtnLabel: 'continue'
       }
+    },
+    signUpSuccessPage: {
+      header: 'Thank you for joining our pilot in the Bronx!',
+      callText: 'Call',
+      ifText: 'if',
+      ifConditions: [
+        'You are arrested and are brought to the precinct in the Bronx',
+        'You cannot reach your loved ones',
+        'Someone you know gets arrested'
+      ],
+      faqLinkText: 'Have questions? Read our FAQ'
     }
   }
 }
