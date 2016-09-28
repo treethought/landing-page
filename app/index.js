@@ -11,6 +11,7 @@ import PrivacyPolicyPage from './components/privacy-policy-page'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import content from './content'
 import currentLanguage from './services/current-language'
+import InnerPage from './components/inner-page'
 
 // HACK: to get the selectedTextColor of the SelectField to not be hot pink
 const theme = getMuiTheme({
@@ -37,7 +38,7 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={theme}>
         <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
-          <Route path="/">
+          <Route path="/" component={InnerPage}>
             <IndexRoute component={LandingPage} content={this.state.content.landingPage} />
             <Route path="about-us" component={AboutPage}/>
             <Route path="sign-up">
