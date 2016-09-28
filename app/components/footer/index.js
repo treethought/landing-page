@@ -21,10 +21,9 @@ class Footer extends Component {
               <div className="landing-page__footer-header">Help</div>
 
               <div className="landing-page__footer-links-container">
+                <Link to="/sign-up" className="landing-page__footer-link">Sign Up</Link>
                 <Link to="/about-us" className="landing-page__footer-link">About Us</Link>
                 <Link to="/privacy-policy" className="landing-page__footer-link">Privacy Policy</Link>
-                {/*<a className="landing-page__footer-link">Terms & Conditions</a>
-                <a className="landing-page__footer-link">Your Rights</a>*/}
               </div>
             </Cell>
 

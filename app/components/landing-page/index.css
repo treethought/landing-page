@@ -11,6 +11,31 @@
   font-weight: 300;
 }
 
+.landing-page__hotline-banner {
+  font-size: 18px;
+  color: #FDFFF9;
+  background: rgba(45,43,43,0.99);
+  height: 36px;
+  padding-bottom: 1px;
+  position: fixed;
+  top: 85px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-page__hotline-banner-text {
+  font-weight: 300;
+}
+
 @media (max-width: 839px) {
 
   .landing-page__std-header {

@@ -1,6 +1,6 @@
 .landing-page__stories {
   position: relative;
-  padding-top: 103px;
+  padding-top: 90px;
   text-align: center;
   display: -webkit-flex;
   -webkit-flex-direction: column;
@@ -27,13 +27,13 @@
 }
 
 .landing-page__stories-header {
-  font-weight: normal;
-  font-size: 50px;
+  font-size: 30px;
   color: #4A4A4A;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   padding-right: 20px;
   padding-left: 20px;
+  letter-spacing: -0.16px;
 }
 
 .landing-page__stories-carousel-list-container {

@@ -75,7 +75,7 @@ class Stories extends Component {
 
     return (
       <section className="landing-page__stories" key={this.state.componentKey}>
-        <h1 className="landing-page__stories-header">No one expects to get arrested.</h1>
+        <h1 className="landing-page__stories-header">No one expects to get arrested but if you do we got your back.</h1>
 
         <ul className="landing-page__stories-carousel-list-container">
           <div

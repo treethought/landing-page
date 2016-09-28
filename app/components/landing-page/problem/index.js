@@ -9,7 +9,7 @@ class Problem extends Component {
         <h3 className="landing-page__std-subheader"><em>Our mission</em></h3>
 
         <p className="landing-page__problem-text">
-          {"If you don't have a private lawyer to call, which most of us don't, it is hard to know what to do if you’ve been arrested. Without a cell phone, and only a few free calls from a precinct, it is difficult at best to reach the help you need. We\'re trying to change that."}
+          {"If you don't have a private lawyer to call, which most of us don't, it is hard to know what to do if you’ve been arrested. Without a cell phone, and only a few free calls from a precinct, it is difficult at best to reach the help you need.  We want to change that."}
         </p>
       </section>
     )
