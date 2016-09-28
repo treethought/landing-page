@@ -17,7 +17,7 @@ class Header extends Component {
     this.state = {
       navBtns: [
         {label: 'About us', to: '/about-us', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
-        {label: 'sign up', to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'}
+        {label: 'Sign Up', to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'}
       ]
     }
   }
