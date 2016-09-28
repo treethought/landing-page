@@ -18,10 +18,22 @@ class Footer extends Component {
             <Cell is="5 tablet-4">
               <div className="landing-page__footer-header">Contact Us</div>
 
-              <address className="landing-page__footer-links-container">
-                <a href="https://www.google.com/maps?q=150+Court+St.+2nd+Floor,+Brooklyn+11201" className="landing-page__footer-link">150 Court St. 2nd Floor, Brooklyn 11201</a>
+              <div className="landing-page__footer-links-container">
+                <address className="landing-page__footer-address-link-container">
+                  <a href="https://www.google.com/maps?q=150+Court+St.+2nd+Floor,+Brooklyn+11201" className="landing-page__footer-link">150 Court St. 2nd Floor, Brooklyn 11201</a>
+                </address>
+
                 <a href="mailto:hello@goodcall.nyc" className="landing-page__footer-link">hello@goodcall.nyc</a>
-              </address>
+
+                <div className="landing-page__footer-social-media-links-container">
+                  <a href="https://twitter.com/GoodCallNYC" className="landing-page__footer-social-media-link">
+                    <img src="/assets/imgs/twitter_icon.svg" className="landing-page__footer-social-media-link-icon" />
+                  </a>
+                  <a href="https://www.instagram.com/goodcallnyc/" className="landing-page__footer-social-media-link">
+                    <img src="/assets/imgs/instagram_icon.svg" className="landing-page__footer-social-media-link-icon" />
+                  </a>
+                </div>
+              </div>
             </Cell>
 
             <Cell is="3 tablet-4">
