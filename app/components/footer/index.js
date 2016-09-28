@@ -2,6 +2,13 @@ import React, {Component} from 'react'
 import {Grid, Row, Cell} from 'react-inline-grid'
 import {Link} from 'react-router'
 
+const helpLinks = [
+  {to: '/sign-up', label: 'Sign Up'},
+  {to: '/faq', label: 'FAQ'},
+  {to: '/about-us', label: 'About Us'},
+  {to: '/privacy-policy', label: 'Privacy Policy'},
+]
+
 class Footer extends Component {
   render () {
     return (
@@ -21,9 +28,9 @@ class Footer extends Component {
               <div className="landing-page__footer-header">Help</div>
 
               <div className="landing-page__footer-links-container">
-                <Link to="/sign-up" className="landing-page__footer-link">Sign Up</Link>
-                <Link to="/about-us" className="landing-page__footer-link">About Us</Link>
-                <Link to="/privacy-policy" className="landing-page__footer-link">Privacy Policy</Link>
+                {helpLinks.map((link, i) => (
+                  <Link key={i} to={link.to} className="landing-page__footer-link">{link.label}</Link>
+                ))}
               </div>
             </Cell>
 
