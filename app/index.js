@@ -35,17 +35,19 @@ class App extends Component {
   }
 
   render () {
+    const {content} = this.state
+
     return (
       <MuiThemeProvider muiTheme={theme}>
         <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
-          <Route path="/" component={InnerPage} content={this.state.content.innerPage}>
-            <IndexRoute component={LandingPage} content={this.state.content.landingPage} />
-            <Route path="about-us" component={AboutPage} content={this.state.content.aboutPage} />
+          <Route path="/" component={InnerPage} content={content.innerPage}>
+            <IndexRoute component={LandingPage} content={content.landingPage} />
+            <Route path="about-us" component={AboutPage} content={content.aboutPage} />
             <Route path="sign-up">
-              <IndexRoute component={SignUpPageContainer} content={this.state.content.signUpPage}/>
-              <Route path="success" component={SignUpSuccessPage} content={this.state.content.signUpSuccessPage} />
+              <IndexRoute component={SignUpPageContainer} content={content.signUpPage}/>
+              <Route path="success" component={SignUpSuccessPage} content={content.signUpSuccessPage} />
             </Route>
-            <Route path="privacy-policy" component={PrivacyPolicyPage} />
+            <Route path="privacy-policy" component={PrivacyPolicyPage} content={content.privacyPolicyPage} />
             <Route path="*" component={ErrorPage} />
           </Route>
         </Router>
