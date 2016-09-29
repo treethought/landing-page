@@ -10,37 +10,34 @@ import SignUpSuccessPage from './components/sign-up-success-page'
 import PrivacyPolicyPage from './components/privacy-policy-page'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import content from './content'
-import currentLanguage from './services/current-language'
+import locale from './services/locale'
 import InnerPage from './components/inner-page'
 
 // HACK: to get the selectedTextColor of the SelectField to not be hot pink
-const theme = getMuiTheme({
-  palette: {accent1Color: '#40B097'}
-})
-
-// set up copy
-// check cookie for translation shit
+const theme = getMuiTheme({palette: {accent1Color: '#40B097'}})
 
 class App extends Component {
   constructor () {
     super()
-    this.state = {content: content[currentLanguage.get()]}
+    let currentLocale = locale.get()
+    this.state = {locale: currentLocale, content: content[currentLocale]}
   }
 
-  changeLanguage (language) {
-    currentLanguage.set(language)
-    this.setState({
-      content: content[currentLanguage.get()]
-    })
+  setLocale (newLocale) {
+    return () => {
+      locale.set(newLocale)
+      location.reload()
+    }
   }
 
   render () {
     const {content} = this.state
+    console.log('content: ', content)
 
     return (
       <MuiThemeProvider muiTheme={theme}>
         <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
-          <Route path="/" component={InnerPage} content={content.innerPage}>
+          <Route path="/" component={InnerPage} content={content.innerPage} locale={this.state.locale} setLocale={this.setLocale.bind(this)}>
             <IndexRoute component={LandingPage} content={content.landingPage} />
             <Route path="about-us" component={AboutPage} content={content.aboutPage} />
             <Route path="sign-up">
