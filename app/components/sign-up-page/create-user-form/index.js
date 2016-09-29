@@ -22,7 +22,7 @@ const heardAboutUsThroughOpts = [
 const dateOptions = {
   months: range(1,13),
   days: range(1, 32),
-  years: range(1916, 1999)
+  years: range(1916, 2004)
 }
 
 class CreateUserForm extends Component {
