@@ -48,7 +48,7 @@ class App extends Component {
               <Route path="success" component={SignUpSuccessPage} content={content.signUpSuccessPage} />
             </Route>
             <Route path="privacy-policy" component={PrivacyPolicyPage} content={content.privacyPolicyPage} />
-            <Route path="*" component={ErrorPage} />
+            <Route path="*" component={ErrorPage} content={content.errorPage} />
           </Route>
         </Router>
       </MuiThemeProvider>

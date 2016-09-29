@@ -199,6 +199,9 @@ const content = {
       paragraph20Text: 'WE DO NOT KNOWINGLY COLLECT OR SOLICIT PERSONAL INFORMATION FROM ANYONE UNDER THE AGE OF 13. IF YOU ARE UNDER 13, PLEASE DO NOT ATTEMPT TO REGISTER FOR THE SERVICE OR SEND ANY PERSONAL INFORMATION ABOUT YOURSELF TO US. IF WE LEARN THAT WE HAVE COLLECTED PERSONAL INFORMATION FROM A CHILD UNDER AGE 13, WE WILL DELETE THAT INFORMATION AS QUICKLY AS POSSIBLE. IF YOU BELIEVE THAT A CHILD UNDER 13 MAY HAVE PROVIDED US PERSONAL INFORMATION, PLEASE CONTACT US AT hello@goodcall.nyc',
       subheader9: 'Contacting Us',
       paragraph21Text: 'If you have any questions or concerns regarding our privacy policies, please send us a detailed message to hello@goodcall.nyc.'
+    },
+    errorPage: {
+      subheader: 'The page you requested does not exist'
     }
   }
 }
