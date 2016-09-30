@@ -67,3 +67,16 @@
   }
 
 }
+
+@media (max-width: 674px) {
+
+  .header__app-bar {
+    height: 70px !important;
+  }
+
+  .header__logo {
+    height: 35px;
+    top: 7px;
+  }
+
+}
