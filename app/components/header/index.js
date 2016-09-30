@@ -75,13 +75,13 @@ class Header extends Component {
           }
         />
 
-        {renderIf(!(this.props.inRegistrationFlow))(
+        {/*renderIf(!(this.props.inRegistrationFlow))(
           <div className="header__hotline-banner">
             <div className="header__hotline-banner-text">
               If you or your loved one has been arrested in the Bronx call <strong>(347)-95 BRONX</strong>
             </div>
           </div>
-        )}
+        )*/}
       </div>
     )
   }

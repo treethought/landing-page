@@ -5,7 +5,8 @@ import RaisedButton from 'material-ui/RaisedButton'
 const firstSteps = [
   {iconSrc: '/assets/imgs/arrested_icon.svg', text: 'you are unexpectedly arrested'},
   {iconSrc: '/assets/imgs/precinct_icon.svg', text: 'you are brought to the precinct'},
-  {iconSrc: '/assets/imgs/phone_icon.svg', text: 'you call Good Call at\n (347) 95-BRONX'}
+  // {iconSrc: '/assets/imgs/phone_icon.svg', text: 'you call Good Call at\n (347) 95-BRONX'}
+  {iconSrc: '/assets/imgs/phone_icon.svg', text: 'you call the Good Call hotline (coming soon)'}
 ]
 
 const callSubsteps = [
