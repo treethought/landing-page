@@ -39,3 +39,35 @@
   font-size: 20px;
   margin: 0;
 }
+
+@media (max-width: 800px) {
+
+  .faq-page {
+    padding: 99px 70px;
+  }
+
+  .faq-page__header {
+    font-size: 32px;
+  }
+
+  .faq-page__section-header {
+    font-size: 26px;
+  }
+
+  .faq-page__faq-question {
+    font-size: 20px;
+  }
+
+  .faq-page__faq-answer {
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .faq-page {
+    padding: 99px 40px;
+  }
+
+}
