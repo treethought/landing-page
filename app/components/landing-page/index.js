@@ -13,12 +13,6 @@ class LandingPage extends Component {
 
     return (
       <div className="landing-page">
-        <div className="landing-page__hotline-banner">
-          <div className="landing-page__hotline-banner-text">
-            {content.hotlineBannerText} <strong>(347)-95 BRONX</strong>
-          </div>
-        </div>
-
         <Stories content={content.stories} />
 
         <Element name="landing-page__problem">

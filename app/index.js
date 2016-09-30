@@ -8,6 +8,7 @@ import SignUpPageContainer from './containers/sign-up-page-container'
 import AboutPage from './components/about-page'
 import SignUpSuccessPage from './components/sign-up-success-page'
 import PrivacyPolicyPage from './components/privacy-policy-page'
+import FaqPage from './components/faq-page'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import content from './content'
 import locale from './services/locale'
@@ -32,7 +33,6 @@ class App extends Component {
 
   render () {
     const {content} = this.state
-    console.log('content: ', content)
 
     return (
       <MuiThemeProvider muiTheme={theme}>
@@ -45,12 +45,14 @@ class App extends Component {
               <Route path="success" component={SignUpSuccessPage} content={content.signUpSuccessPage} />
             </Route>
             <Route path="privacy-policy" component={PrivacyPolicyPage} content={content.privacyPolicyPage} />
+            <Route path="faq" component={FaqPage} content={content.faqPage} />
             <Route path="*" component={ErrorPage} content={content.errorPage} />
           </Route>
         </Router>
       </MuiThemeProvider>
     )
   }
+
 }
 
 export default App

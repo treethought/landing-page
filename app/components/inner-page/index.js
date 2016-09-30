@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './../header'
 import Footer from './../footer'
 import locale from './../../services/locale'
+import includes from 'lodash.includes'
 
 class InnerPage extends Component {
   render () {
@@ -11,8 +12,8 @@ class InnerPage extends Component {
     return (
       <div className="inner-page">
         <Header
-          location={this.props.location}
           content={content.header}
+          inRegistrationFlow={this.props.location && includes(this.props.location.pathname, '/sign-up')}
         />
           <div
             style={{ position: 'fixed', top: '200px', left: '40px', zIndex: '2000', background: 'red', color: 'white', padding: '20px', cursor: 'pointer'}}
