@@ -60,6 +60,32 @@
   top: 5px;
 }
 
+.header__hotline-banner {
+  font-size: 18px;
+  color: #FDFFF9;
+  background: rgba(45,43,43,0.99);
+  padding-top: 6px;
+  padding-bottom: 9px;
+  position: fixed;
+  top: 85px;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header__hotline-banner-text {
+  font-weight: 300;
+}
+
 @media (min-width: 675px) {
 
   .header__app-bar {
@@ -77,6 +103,15 @@
   .header__logo {
     height: 35px;
     top: 7px;
+  }
+
+  .header__hotline-banner {
+    padding: 12px 19px 14px 16px;
+    top: 70px;
+  }
+
+  .header__hotline-banner-text {
+    font-size: 13px;
   }
 
 }

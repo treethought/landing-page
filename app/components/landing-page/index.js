@@ -12,11 +12,6 @@ class LandingPage extends Component {
   render () {
     return (
       <InnerPage>
-        <div className="landing-page__hotline-banner">
-          <div className="landing-page__hotline-banner-text">
-            If you or your loved one has been arrested in the Bronx call <strong>(347)-95 BRONX</strong>
-          </div>
-        </div>
         <div className="landing-page">
           <Stories />
           <Element name="landing-page__problem">
