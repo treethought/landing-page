@@ -9,6 +9,7 @@ import AboutPage from './components/about-page'
 import SignUpSuccessPage from './components/sign-up-success-page'
 import PrivacyPolicyPage from './components/privacy-policy-page'
 import LoginPageContainer from './containers/login-page-container'
+import FaqPage from './components/faq-page'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 // HACK: to get the selectedTextColor of the SelectField to not be hot pink
@@ -28,6 +29,7 @@ export default () => (
         </Route>
         <Route path="privacy-policy" component={PrivacyPolicyPage} />
         <Route path="login" component={LoginPageContainer} />
+        <Route path="faq" component={FaqPage} />
         <Route path="*" component={ErrorPage} />
       </Route>
     </Router>

@@ -9,15 +9,15 @@ import FlatButton from 'material-ui/FlatButton'
 import MediaQuery from 'react-responsive'
 import {Link} from 'react-router'
 import renderIf from 'render-if'
-import includes from 'lodash.includes'
 
 class Header extends Component {
   constructor () {
     super()
     this.state = {
       navBtns: [
+        {label: 'FAQ', to: '/faq', className: 'header__nav-btn header__nav-faq-btn', activeClassName: 'header__nav-btn-active'},
         {label: 'About us', to: '/about-us', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
-        {label: 'Join the movement', to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'}
+        {label: 'Sign Up', to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'}
       ]
     }
   }
@@ -36,7 +36,7 @@ class Header extends Component {
           }
           iconElementRight={
             <nav className="header__nav">
-              {renderIf(!(this.props.location && includes(this.props.location.pathname, '/sign-up')))(
+              {renderIf(!(this.props.inRegistrationFlow))(
                 <div>
                   <MediaQuery query="(min-width: 675px)">
                     {this.state.navBtns.map((btn, i) => (
@@ -74,6 +74,14 @@ class Header extends Component {
             </nav>
           }
         />
+
+        {/*renderIf(!(this.props.inRegistrationFlow))(
+          <div className="header__hotline-banner">
+            <div className="header__hotline-banner-text">
+              If you or your loved one has been arrested in the Bronx call <strong>(347)-95 BRONX</strong>
+            </div>
+          </div>
+        )*/}
       </div>
     )
   }

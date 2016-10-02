@@ -51,7 +51,9 @@ class SignUpPageContainer extends Component {
         }
       })
       let userId = json.data.id
-      let accessToken = json.data.relationships.accessToken.data.value.toString()
+      let accessToken = json.included.find((obj) => {
+        return obj.type === 'access-tokens' && obj.id === json.data.relationships.accessToken.data.id
+      }).attributes.value
       cookie.save('userId', userId, {path: '/'})
       cookie.save('accessToken', accessToken, {path: '/'})
     }).catch((res) => {
