@@ -16,10 +16,19 @@ const theme = getMuiTheme({
   palette: {accent1Color: '#40B097'}
 })
 
+const sendMessageWithNextUrl = (prevState, nextState, replace, callback) => {
+  if (window.location.hostname === 'labs.robinhood.org') {
+    const nextUrl = `https://goodcall.nyc${nextState.location.pathname}`
+    window.parent.postMessage(nextUrl, 'https://labs.robinhood.org/goodcall/')
+  } else {
+    callback()
+  }
+}
+
 export default () => (
   <MuiThemeProvider muiTheme={theme}>
     <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
-      <Route path="/">
+      <Route path="/" onChange={sendMessageWithNextUrl}>
         <IndexRoute component={LandingPage} />
           <Route path="about-us" component={AboutPage}/>
           <Route path="sign-up">
