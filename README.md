@@ -20,7 +20,22 @@ npm install
 mv .env.example .env
 ```
 
-and then add our s3 environment variables to `.env` (ask eugene if u don't have them)
+and then add our s3 environment variables to `.env` (ask eugene if u don't have them).
+
+When first creating the s3 bucket, add the following CORS configuration to
+support deploying the site on the robinhood domain for adwords:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+    <CORSRule>
+        <AllowedOrigin>https://labs.robinhood.org/</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <AllowedHeader>Authorization</AllowedHeader>
+    </CORSRule>
+</CORSConfiguration>
+```
 
 ## develop
 
