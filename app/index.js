@@ -19,7 +19,7 @@ const theme = getMuiTheme({
 const sendMessageWithNextUrl = (prevState, nextState, replace, callback) => {
   if (window.location.hostname === 'labs.robinhood.org') {
     const nextUrl = `https://goodcall.nyc${nextState.location.pathname}`
-    window.parent.postMessage(nextUrl, 'https://labs.robinhood.org/goodcall/')
+    window.parent.postMessage(nextUrl, 'https://labs.robinhood.org')
   } else {
     callback()
   }
