@@ -6,6 +6,8 @@ import objectMap from 'object.map'
 import {browserHistory} from 'react-router'
 import moment from 'moment'
 
+console.log('config: ', config)
+
 let tmpContactId = 0
 
 class SignUpPageContainer extends Component {
