@@ -31,19 +31,12 @@ class SignUpPage extends Component {
               <h1 className="sign-up-page__form-header">Sign up today to get updates and be part of our Bronx pilot launch</h1>
               <h2 className="sign-up-page__form-subheader">provide an emergency contact</h2>
 
-              {renderIf(!isEmpty(this.props.contactsFormErrors[0])) (
-                <div className="sign-up-page__token-errors">
-                  looks like something went wrong ツ <br />
-                  need help? just email hello@goodcall.nyc
-                 </div>
-              )}
-
               <CreateContactsForm
                 setContact={this.props.setContact}
                 contacts={this.props.contacts}
-                removeContact={this.props.removeContact}
-                addContact={this.props.addContact}
                 saveContacts={this.props.saveContacts}
+                addContact={this.props.addContact}
+                removeContact={this.props.removeContact}
                 requestInProgress={this.props.requestInProgress}
                 consentToContactIs={this.props.consentToContactIs}
               />

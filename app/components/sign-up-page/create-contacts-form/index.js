@@ -29,14 +29,14 @@ class CreateContactsForm extends Component {
     window.removeEventListener('beforeunload', this.popup)
   }
 
-  showHint () {
-    this.setState({hintShown: true})
-  }
-
   popup (e) {
     let confirmationMessage = '\o/'
     e.returnValue = confirmationMessage
     return confirmationMessage
+  }
+
+  showHint () {
+    this.setState({hintShown: true})
   }
 
   isDesktop () {
@@ -68,18 +68,19 @@ class CreateContactsForm extends Component {
                   onChange={this.props.setContact(contact.tmpId, field.name)}
                   name={field.name}
                   labelText={field.label}
+                  errorText={contact.errors.attributes[field.name]}
                 />
               ))}
 
               {renderIf(this.props.contacts.length > 1) (
-                <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
+                <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact)}>&times;</div>
               )}
             </div>
           ))}
 
-          <div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>
+          {<div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>}
 
-          <div className="sign-up-page__checkbox-container">
+          {<div className="sign-up-page__checkbox-container">
             <Checkbox
               label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you are arrested.`}
               defaultChecked={true}
@@ -89,7 +90,7 @@ class CreateContactsForm extends Component {
               labelStyle={{fontSize: window.innerWidth > 640 ? "18px" : "16px", color: "#4A4A4A", lineHeight: "24px", fontWeight: "300"}}
             />
 
-          </div>
+          </div>}
 
           <FlatButton
             className="gc-std-btn sign-up-page__form-continue-btn"
