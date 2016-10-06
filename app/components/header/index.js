@@ -1,10 +1,9 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
 import IconMenu from 'material-ui/IconMenu'
 import MenuItem from 'material-ui/MenuItem'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
-import SvgIcon from 'material-ui/SvgIcon'
 import FlatButton from 'material-ui/FlatButton'
 import MediaQuery from 'react-responsive'
 import {Link} from 'react-router'
@@ -24,40 +23,40 @@ class Header extends Component {
   }
 
   render () {
-    const {content} = this.props
+    // const {content} = this.props
 
     return (
-      <div className="header">
+      <div className='header'>
         <AppBar
-          className="header__app-bar"
+          className='header__app-bar'
           showMenuIconButton={false}
           zDepth={0}
           title={
-            <Link to="/">
-              <img src="/assets/imgs/logo.png" className="header__logo" />
+            <Link to='/'>
+              <img src='/assets/imgs/logo.png' className='header__logo' />
             </Link>
           }
           iconElementRight={
-            <nav className="header__nav">
+            <nav className='header__nav'>
               {renderIf(!(this.props.inRegistrationFlow))(
                 <div>
-                  <MediaQuery query="(min-width: 675px)">
+                  <MediaQuery query='(min-width: 675px)'>
                     {this.state.navBtns.map((btn, i) => (
                       <FlatButton
                         className={`${btn.className || ''}`}
                         key={i}
                         label={btn.label}
                         containerElement={<Link to={btn.to} activeClassName={btn.activeClassName || ''}/>}
-                        hoverColor="#FDFFF9"
+                        hoverColor='#FDFFF9'
                         style={btn.style || {}}
                       />
                     ))}
                   </MediaQuery>
 
-                  <MediaQuery query="(max-width: 674px)">
+                  <MediaQuery query='(max-width: 674px)'>
                     <IconMenu
-                      className="header__icon-menu"
-                      menuStyle={{ "background": "#F7F9F9" }}
+                      className='header__icon-menu'
+                      menuStyle={{ 'background': '#F7F9F9' }}
                       iconButtonElement={ <IconButton><MenuIcon /></IconButton> }
                       targetOrigin={{horizontal: 'right', vertical: 'top'}}
                       anchorOrigin={{horizontal: 'right', vertical: 'top'}}
@@ -78,16 +77,21 @@ class Header extends Component {
           }
         />
 
-        {renderIf(!(this.props.inRegistrationFlow))(
-          <div className="header__hotline-banner">
-            <div className="header__hotline-banner-text">
+        {/* renderIf(!(this.props.inRegistrationFlow))(
+          <div className='header__hotline-banner'>
+            <div className='header__hotline-banner-text'>
               {content.hotlineBannerText}
             </div>
           </div>
-        )}
+        ) */}
       </div>
     )
   }
+}
+
+Header.propTypes = {
+  content: PropTypes.object,
+  inRegistrationFlow: PropTypes.bool
 }
 
 export default Header

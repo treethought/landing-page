@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import Stories from './stories'
 import SimplePanel from './../simple-panel'
 import Problem from './problem'
@@ -12,17 +12,17 @@ class LandingPage extends Component {
     const {content} = this.props.route
 
     return (
-      <div className="landing-page">
+      <div className='landing-page'>
         <Stories content={content.stories} />
 
-        <Element name="landing-page__problem">
+        <Element name='landing-page__problem'>
           <Problem content={content.problem}/>
         </Element>
 
         <SimplePanel
           color='rgba(45,43,43,0.99)'
           text={content.goodCallSummary}
-          fontWeight="700"
+          fontWeight='700'
         />
 
         <HowItWorks content={content.howItWorks} />
@@ -31,6 +31,10 @@ class LandingPage extends Component {
       </div>
     )
   }
+}
+
+LandingPage.propTypes = {
+  route: PropTypes.object
 }
 
 export default LandingPage

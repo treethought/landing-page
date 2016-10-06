@@ -17,6 +17,16 @@ import InnerPage from './components/inner-page'
 // HACK: to get the selectedTextColor of the SelectField to not be hot pink
 const theme = getMuiTheme({palette: {accent1Color: '#40B097'}})
 
+const sendMessageWithNextUrl = (prevState, nextState, replace, callback) => {
+  // checks if we're in an iframe or not
+  if (window.parent !== window) {
+    const nextUrl = `https://goodcall.nyc${nextState.location.pathname}`
+    window.parent.postMessage(nextUrl, 'https://labs.robinhood.org')
+  } else {
+    callback()
+  }
+}
+
 class App extends Component {
   constructor () {
     super()
@@ -27,7 +37,7 @@ class App extends Component {
   setLocale (newLocale) {
     return () => {
       locale.set(newLocale)
-      location.reload()
+      window.location.reload()
     }
   }
 
@@ -37,22 +47,21 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={theme}>
         <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
-          <Route path="/" component={InnerPage} content={content.innerPage} locale={this.state.locale} setLocale={this.setLocale.bind(this)}>
+          <Route path='/' component={InnerPage} content={content.innerPage} locale={this.state.locale} setLocale={this.setLocale.bind(this)} onChange={sendMessageWithNextUrl}>
             <IndexRoute component={LandingPage} content={content.landingPage} />
-            <Route path="about-us" component={AboutPage} content={content.aboutPage} />
-            <Route path="sign-up">
+            <Route path='about-us' component={AboutPage} content={content.aboutPage} />
+            <Route path='sign-up'>
               <IndexRoute component={SignUpPageContainer} content={content.signUpPage}/>
-              <Route path="success" component={SignUpSuccessPage} content={content.signUpSuccessPage} />
+              <Route path='success' component={SignUpSuccessPage} content={content.signUpSuccessPage} />
             </Route>
-            <Route path="privacy-policy" component={PrivacyPolicyPage} content={content.privacyPolicyPage} />
-            <Route path="faq" component={FaqPage} content={content.faqPage} />
-            <Route path="*" component={ErrorPage} content={content.errorPage} />
+            <Route path='privacy-policy' component={PrivacyPolicyPage} content={content.privacyPolicyPage} />
+            <Route path='faq' component={FaqPage} content={content.faqPage} />
+            <Route path='*' component={ErrorPage} content={content.errorPage} />
           </Route>
         </Router>
       </MuiThemeProvider>
     )
   }
-
 }
 
 export default App

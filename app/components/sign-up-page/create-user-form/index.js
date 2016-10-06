@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import FlatButton from 'material-ui/FlatButton'
@@ -9,7 +9,7 @@ import renderIf from 'render-if'
 import StandardTextField from './../../standard-text-field'
 
 const dateOptions = {
-  months: range(1,13).map(n => ({label: n, value: n})),
+  months: range(1, 13).map(n => ({label: n, value: n})),
   days: range(1, 32).map(n => ({label: n, value: n})),
   years: range(1916, 1999).map(n => ({label: n, value: n}))
 }
@@ -79,21 +79,21 @@ class CreateUserForm extends Component {
     const {content} = this.props
 
     return (
-      <form className="sign-up-page__form">
-        {renderIf(this.state.infoHintShown || this.state.securityHintShown) (
-          <div style={{position: 'relative',width: this.isDesktop() ? '50%' : '0'}}>
-            {renderIf(this.state.infoHintShown) (
+      <form className='sign-up-page__form'>
+        {renderIf(this.state.infoHintShown || this.state.securityHintShown)(
+          <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
+            {renderIf(this.state.infoHintShown)(
               <Hint text={content.infoHintText} />
             )}
 
-            {renderIf(this.state.securityHintShown) (
-              <Hint text={content.securityHintText} className="sign-up-page__hint-security" />
+            {renderIf(this.state.securityHintShown)(
+              <Hint text={content.securityHintText} className='sign-up-page__hint-security' />
             )}
           </div>
         )}
 
         <div
-          className="sign-up-page__form-fields-container"
+          className='sign-up-page__form-fields-container'
           style={{
             textAlign: (this.props.infoHintShown || this.props.securityHintShown) ? 'right' : 'left'
           }}
@@ -109,33 +109,33 @@ class CreateUserForm extends Component {
             />
           ))}
 
-          <div className="sign-up-page__date-select-container">
-            <label className="sign-up-page__date-select-label">{content.dateOfBirthLabel}</label>
+          <div className='sign-up-page__date-select-container'>
+            <label className='sign-up-page__date-select-label'>{content.dateOfBirthLabel}</label>
 
-            <div className="sign-up-page__date-select-fields-container">
+            <div className='sign-up-page__date-select-fields-container'>
               <CustomSelectField
                 fieldOpts={dateOptions.months}
-                className="sign-up-page__form-select-date-field"
-                hintText="Month"
-                width="75px"
+                className='sign-up-page__form-select-date-field'
+                hintText='Month'
+                width='75px'
                 value={this.props.user.dateOfBirthObj.month}
                 onChange={this.props.setUserDateOfBirth('month')}
               />
 
               <CustomSelectField
                 fieldOpts={dateOptions.days}
-                className="sign-up-page__form-select-date-field"
-                hintText="Day"
-                width="60px"
+                className='sign-up-page__form-select-date-field'
+                hintText='Day'
+                width='60px'
                 value={this.props.user.dateOfBirthObj.day}
                 onChange={this.props.setUserDateOfBirth('day')}
               />
 
               <CustomSelectField
                 fieldOpts={dateOptions.years}
-                className="sign-up-page__form-select-date-field"
-                hintText="Year"
-                width="65px"
+                className='sign-up-page__form-select-date-field'
+                hintText='Year'
+                width='65px'
                 value={this.props.user.dateOfBirthObj.year}
                 onChange={this.props.setUserDateOfBirth('year')}
               />
@@ -150,23 +150,34 @@ class CreateUserForm extends Component {
           />
 
           <FlatButton
-            className="gc-std-btn sign-up-page__form-continue-btn"
+            className='gc-std-btn sign-up-page__form-continue-btn'
             label={content.continueBtnLabel}
             onClick={this.props.createUser}
             disabled={
-              this.props.requestInProgress
-              || isEmpty(this.props.user)
-              || !this.props.user.name
-              || !(this.props.user.phone || this.props.user.email)
-              || !(this.props.user.dateOfBirthObj.month && this.props.user.dateOfBirthObj.day && this.props.user.dateOfBirthObj.year)
-              || !this.props.user.zip
-              || !(this.props.user.securityQuestion && this.props.user.securityAnswer)
+              this.props.requestInProgress ||
+              isEmpty(this.props.user) ||
+              !this.props.user.name ||
+              !(this.props.user.phone || this.props.user.email) ||
+              !(this.props.user.dateOfBirthObj.month && this.props.user.dateOfBirthObj.day && this.props.user.dateOfBirthObj.year) ||
+              !this.props.user.zip || !(this.props.user.securityQuestion && this.props.user.securityAnswer)
             }
           />
         </div>
       </form>
     )
   }
+}
+
+CreateUserForm.propTypes = {
+  content: PropTypes.object,
+  infoHintShown: PropTypes.bool,
+  securityHintShown: PropTypes.bool,
+  setUser: PropTypes.func,
+  userFormErrors: PropTypes.object,
+  user: PropTypes.object,
+  setUserDateOfBirth: PropTypes.func,
+  createUser: PropTypes.func,
+  requestInProgress: PropTypes.bool
 }
 
 export default CreateUserForm

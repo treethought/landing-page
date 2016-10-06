@@ -6,7 +6,7 @@
   "scripts": {
     "start": "budo . -d --pushstate --serve bundle.js --live",
     "build": "browserify . -o bundle.js -g uglifyify",
-    "dist": "mkdir -p dist && bash -c 'cp *.{js,html} dist && cp -r assets dist'",
+    "dist": "mkdir -p dist && bash -c 'cp index.html dist && cp bundle.js dist && cp -r assets dist'",
     "stage-push": "surge dist good-call-nyc-staging.surge.sh",
     "stage-copy-html": "cp -r dist/index.html dist/200.html",
     "stage": "export NODE_ENV=production; export IS_STAGING=true; npm run build && npm run dist && npm run stage-copy-html && npm run stage-push",

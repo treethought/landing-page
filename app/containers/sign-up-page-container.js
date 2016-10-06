@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import SignUpPage from './../components/sign-up-page'
 import config from './../config'
 import fetcher from './../services/fetcher'
@@ -100,7 +100,7 @@ class SignUpPageContainer extends Component {
     }).then((res) => {
       let {status, json} = res
       if (status === 200) {
-        this.setState({contactsFormErrors: {}, contacts: [], requestInProgress: false})
+        this.setState({contactsFormErrors: [{}], contacts: [], requestInProgress: false})
         browserHistory.push('/sign-up/success')
       } else {
         document.body.scrollTop = document.documentElement.scrollTop = 0
@@ -128,6 +128,11 @@ class SignUpPageContainer extends Component {
       />
     )
   }
+}
+
+SignUpPageContainer.propTypes = {
+  route: PropTypes.object,
+  location: PropTypes.object
 }
 
 export default SignUpPageContainer
