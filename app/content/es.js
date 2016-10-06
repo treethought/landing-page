@@ -1,146 +1,155 @@
 const es = {
   innerPage: {
     header: {
-      hotlineBannerText: 'If you or your loved one has been arrested in the Bronx call SPANISH SPANISH',
-      faqBtnLabel: 'FAQ',
-      aboutUsBtnLabel: 'About us',
-      signUpBtnLabel: 'Sign up'
+      hotlineBannerText: 'Si usted o un ser querido ha sido arrestado en el Bronx llama al',
+      faqBtnLabel: 'PF',
+      aboutUsBtnLabel: 'Acerca de nosotros',
+      signUpBtnLabel: 'Regístrate'
     },
     footer: {
-      signUpLinkLabel: 'Sign Up',
-      faqLinkLabel: 'FAQ',
-      aboutUsLinkLabel: 'About Us',
-      privacyPolicyLinkLabel: 'Privacy Policy',
-      contactUsHeader: 'Contact Us',
+      signUpLinkLabel: 'Regístrate',
+      faqLinkLabel: 'PF',
+      aboutUsLinkLabel: 'Acerca de nosotros',
+      privacyPolicyLinkLabel: 'Política de privacidad',
+      contactUsHeader: 'Contáctenos',
       address: '150 Court St. 2nd Floor, Brooklyn 11201',
-      helpHeader: 'Help',
-      ourPartnersHeader: 'Our Partners'
+      helpHeader: 'Ayuda',
+      ourPartnersHeader: 'Nuestros socios'
     }
   },
   landingPage: {
-    goodCallSummary: 'Good Call is a completely free service that helps people who are arrested reach their loved ones and secure a free lawyer. Everyone deserves fairness.',
+    goodCallSummary: 'Good Call es un servicio totalmente gratuito que ayuda a las personas que son arrestadas a contactar a sus seres queridos y asegurar un abogado gratuito. Todos merecen justicia.',
     stories: {
-      header: 'No one expects to get arrested but if you do we got your back.',
-      storyHeader: 'I was arrested.',
-      scrollDownBtnLabel: 'Learn more',
+      header: 'Nadie espera ser arrestado, pero si sucede, nosotros cuidamos tu espalda.',
+      storyHeader: 'Yo fui arrestado.',
+      scrollDownBtnLabel: 'Conoce más',
       pharoah: {
-        subheader: 'because I was defending myself',
-        text: 'When Pharaoh was attacked by two tenants in his Brooklyn home, he tried his best to defend himself. Battered and bruised, he was still arrested when the police showed up.'
+        subheader: 'porque yo me estaba defendiendo',
+        text: 'Cuando Pharaoh fue atacado por dos inquilinos en su casa en Brooklyn, él hizo todo lo posible para defenderse. Maltratado y golpeado, fue detenido cuando la policía se presentó.'
       },
       nate: {
-        subheader: 'because the officer said it was protocol',
-        text: 'Nate was arrested for the possession of marijuana. Although this low level offense is usually resolved with a simple ticket, the officer decided to arrest Nate because he believed it was “protocol.”'
+        subheader: 'porque el oficial dijo que era el protocolo',
+        text: 'Nate fue arrestado por posesión de marihuana. Aunque es un delito de bajo nivel que por lo general se resuelve con un simple multa, el oficial decidió arrestar a Nate porque creía que era "protocolo".'
       },
       sharmene: {
-        subheader: 'out of nowhere',
-        text: 'When an altercation from months before turned into a warrant without her knowledge, Shermene was arrested unexpectedly.'
+        subheader: 'de la nada',
+        text: 'Cuando un altercado de meses antes se convirtió en una orden de arresto sin su conocimiento, Shermene fué detenida de forma inesperada.'
       },
       ray: {
-        subheader: 'because I fit the description',
-        text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'
+        subheader: 'porque yo correspondí a la descripción',
+        text: 'En el barrio de Ray en Brooklyn “corresponder a la descripción" es una ofensa común. Una noche, Ray miró fuera de su casa a causa de un sonido perturbador, y rápidamente pasó de habitante preocupado a sospechoso.'
       },
       steven: {
-        subheader: 'because of a predatory policy',
-        text: 'Thousands of people every year are stopped, frisked, and arrested. Steven happened to be one of them.'
+        subheader: 'debido a una política depredadora',
+        text: 'Miles de personas cada año son detenidas, chequeadas y arrestadas. Steven fué uno de ellos.'
       },
       tina: {
-        subheader: 'for speaking out',
-        text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'
+        subheader: 'por hablar',
+        text: 'Tina estaba disfrutando la tarde en su casa. La policía entró a su casa en busca de su ex-novio sin una orden de registro. Cuando ella habló en contra del porque estaban haciendo la búsqueda, fue detenida.'
       }
     },
     problem: {
-      header: 'For most New Yorkers, there is nowhere to turn for help.',
-      subheader: 'Our mission',
-      text: 'If you don\'t have a private lawyer to call, which most of us don\'t, it is hard to know what to do if you’ve been arrested. Without a cell phone, and only a few free calls from a precinct, it is difficult at best to reach the help you need. We want to change that.'
+      header: 'Para la mayoría de Neoyorquinos, no hay donde acudir por ayuda.',
+      subheader: 'Nuestra misión',
+      text: 'Si usted no tiene un abogado privado que pueda llamar, el cual la mayoría de nosotros no tiene, es difícil saber qué hacer si usted es arrestado. Sin un teléfono celular, y sólo unas pocas llamadas gratuitas desde el precinto, es difícil solicitar la ayuda que usted necesita. Queremos cambiar esto.'
     },
     howItWorks: {
-      header: 'Introducing Good Call',
-      subheader: 'How it works',
-      step1Text: 'you sign up for Good Call and list an emergency contact',
-      step2Text: 'you are unexpectedly arrested',
-      step3Text: 'you are brought to the precinct',
-      step4Text: 'you call Good Call at\n (347) 95-BRONX',
-      step4substep1Text: 'we collect your information',
-      step4substep2Text: 'we tell you your rights',
-      step4substep3Text: 'we confirm your emergency contact',
-      step5Text: 'Good Call will alert your emergency contact and get a lawyer on your case right away',
-      step6Text: 'you can return home as soon as possible'
+      header: 'Presentamos Good Call',
+      subheader: 'Como funciona',
+      step1Text: 'Te registras en Good Call y escribes una lista de contactos de emergencia',
+      step2Text: 'tu eres detenido de forma inesperada',
+      step3Text: 'tu eres llevado a un precinto',
+      // step4Text: 'tu llamas a Good Call al (347) 95-BRONX',
+      // TODO: translate
+      step4Text: 'you call the Good Call hotline (coming soon)',
+      step4substep1Text: 'recogemos tu información',
+      step4substep2Text: 'te decimos tus derechos',
+      step4substep3Text: 'confirmamos tu contacto de emergencia',
+      step5Text: 'Good Call avisa a tu contacto de emergencia y te consigue un abogado de inmediato',
+      step6Text: 'Tu puedes volver a casa tan pronto como sea posible'
     },
     launchingSoon: {
-      header: 'Sign up for free for our pilot in the Bronx',
-      subheader: 'Because no one expects to get arrested.',
-      signUpBtnLabel: 'sign up'
+      header: 'Registrarse de forma gratuita para nuestro piloto en el Bronx',
+      subheader: 'Porque nadie espera ser arrestado.',
+      signUpBtnLabel: 'regístrate'
     }
   },
   aboutPage: {
-    header: 'We believe everyone deserves fairness.',
+    header: 'Nosotros creemos que todos merecen justicia.',
     aboutUs: {
-      header: 'About Us.',
-      text: 'Good Call is a project started within the <a class="about-page__paragraph-link" href="https://labs.robinhood.org/fellowship/">Blue Ridge Labs fellowship</a>, a five month program where teams build digital products aimed at addressing key issues faced by low-income New Yorkers, with an approach focused on human-centered design, testing, and outreach work. We built Good Call after months of research and discussions with people in New York communities. We heard countless stories from people who were arrested for trivial reasons, and how uncomfortable, painful, confusing, and damaging this experience can be. We decided to try to do what we could to help address this issue.'
+      header: 'Acerca de nosotros.',
+      text: 'Good Call es un proyecto que comenzó dentro de Blue Ridge Labs, un programa de cinco meses, donde equipos construyen productos digitales destinados a abordar las dificultades que enfrentan los neoyorquinos con bajos ingresos, con un enfoque de diseño centrado en las personas, ciclos de pruebas y trabajo social. Construimos Good Call después de meses de investigación y conversaciones con personas de las comunidades de Nueva York. Hemos escuchado innumerables historias de personas que fueron arrestadas por razones triviales, y lo incómodo, doloroso, confuso y dañino que esta experiencia puede ser. Decidimos tratar de hacer lo que podamos para ayudar a resolver este problema.'
     },
-    ourMissionText: 'Our mission is to make the arrest process and its aftermath less painful and harmful for those that are detained and their loved ones. We strive to make this process more transparent and just for all New Yorkers regardless of income.',
+    ourMissionText: 'Nuestra misión es hacer que el proceso de detención y sus secuelas sean menos dolorosas y perjudiciales para aquellos que son arrestados y sus seres queridos. Nos esforzamos para que este proceso sea más transparente y justo para todos los neoyorquinos, independientemente de sus ingresos.',
     ourTeam: {
-      header: 'Our team.',
-      text: 'We come from a diverse set of backgrounds and experiences, from 3D Printing to web design to community organizing. However, we share a passion for creating a better and more just New York City for everyone.'
+      header: 'Nuestro equipo.',
+      text: 'Somos un grupo con diversos conocimientos y experiencias, desde la impresión 3D, el diseño web, hasta la organización comunitaria. Sin embargo, compartimos una pasión por crear una ciudad más justa para todos.'
     },
     joinTheMovement: {
-      header: 'Join the movement.',
-      text: 'We are currently preparing to launch a pilot in the Bronx. If you live in the Bronx and are interested in being part of our pilot, or want to stay up to date on our progress, please sign up below!'
+      header: 'Únete al movimiento.',
+      text: 'Actualmente estamos preparando el lanzamiento de un piloto en el Bronx. Si usted vive en el Bronx y está interesado en ser parte de nuestro piloto, o si quiere estar al día sobre nuestro progreso, por favor regístrese a continuación!'
     },
-    signUpBtnLabel: 'sign up'
+    signUpBtnLabel: 'regístrate'
   },
   signUpPage: {
-    header: 'Sign up today to get updates and be part of our Bronx pilot launch',
+    header: 'Regístrate hoy para obtener actualizaciones y ser parte de nuestro piloto de lanzamiento en el Bronx',
     createUserForm: {
-      header: 'tell us about yourself',
-      nameLabel: 'Full Name',
-      phoneLabel: 'Cell Phone (xxx) xxx-xxxx',
+      header: 'cuéntanos acerca de ti',
+      nameLabel: 'Nombre Completo',
+      phoneLabel: 'Teléfono móbil (xxx) xxx-xxxx',
       emailLabel: 'Email',
       zipLabel: 'Zip Code',
-      securityQuestionLabel: 'Security Question',
-      securityAnswerLabel: 'Security Answer',
-      heardAboutUsThroughLabel: 'How did you hear about Good Call?',
-      internetSearchLabel: 'Internet search',
-      friendsOrFamilyLabel: 'Friends or family',
-      socialMediaLabel: 'Social Media',
-      emailListLabel: 'Email list',
-      communityEventLabel: 'Community event',
-      goodCallRepresentativeLabel: 'Good Call representative',
-      goodCallBusinessCardOrFlyerLabel: 'Good Call business card or flyer',
-      otherLabel: 'Other',
-      infoHintText: 'Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case.',
-      securityHintText: 'We will ask you to answer this question when you call us. Choose a question with an answer that only you would know and remember. Ex. “What is your favorite childhood candy?”',
-      dateOfBirthLabel: 'Date of Birth',
-      continueBtnLabel: 'continue'
+      securityQuestionLabel: 'Pregunta de Seguridad',
+      securityAnswerLabel: 'Respuesta de Seguridad',
+      heardAboutUsThroughLabel: '¿Como se enteró de Good Call?',
+      internetSearchLabel: 'Busqueda en Internet',
+      friendsOrFamilyLabel: 'Amigos o Familia',
+      socialMediaLabel: 'Medios sociales',
+      emailListLabel: 'Lista de correos electronicos',
+      communityEventLabel: 'Evento comunitario',
+      goodCallRepresentativeLabel: 'Representante de Good Call',
+      goodCallBusinessCardOrFlyerLabel: 'Tarjeta de presentación o flyer de Good Call',
+      otherLabel: 'Otro',
+      infoHintText: 'Su información sólo será utilizada por Good Call para verificar su identidad en caso de un arresto y por su abogado en su caso.',
+      securityHintText: 'Vamos a pedirte que respondas a esta pregunta cuando nos llames. Elige una pregunta con una respuesta que sólo tú sepas y recuerdes. Ejemplo: "¿Cuál es tu dulce favorito de la infancia?"',
+      dateOfBirthLabel: 'Fecha de Nacimiento',
+      continueBtnLabel: 'continúe'
     },
     createContactsForm: {
-      header: 'provide an emergency contact',
-      errorTextLine1: 'looks like something went wrong ツ',
-      errorTextLine2: 'need help? just email hello@goodcall.nyc',
-      nameLabel: 'First Name, Last Name (optional)',
-      relationshipLabel: 'Relationship (optional)',
-      phoneLabel: 'Phone (xxx) xxx-xxxx (optional)',
+      header: 'Proporcione un contacto de emergencia',
+      errorTextLine1: 'Parece que also salio mal ツ',
+      errorTextLine2: '¿Necesitas ayuda? Envíanos un email a hello@goodcall.nyc',
+      nameLabel: 'Nombre, Apellido (opcional)',
+      relationshipLabel: 'Relación (opcional)',
+      phoneLabel: 'Teléfono (xxx) xxx-xxxx (opcional)',
       hintText: (numOfContacts) => (
-        `${numOfContacts > 1 ? "These are the people" : "This is the person"} we would contact if you are arrested`
+        `${numOfContacts > 1 ? 'Estas son las personas' : 'Esta es la persona'} que contactaremos si usted es arrestado`
       ),
-      additionalContactLabel: 'Additional contact',
-      addContactBtnLabel: 'Add another contact',
+      additionalContactLabel: 'Contacto adicional',
+      addContactBtnLabel: 'Agregar otro contacto',
       consentToContactLabel: (numOfContacts) => (
-        `Let us contact ${numOfContacts > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you are arrested.`
+        `Dejanos contactar ${numOfContacts > 1 ? 'estas personas' : 'esta persona'} para hacerles saber que te has suscrito. Esto nos permitirá contactarnos con ellos si eres arrestado.`
       ),
-      continueBtnLabel: 'continue'
+      continueBtnLabel: 'continuar'
     }
   },
   signUpSuccessPage: {
-    header: 'Thank you for joining our pilot in the Bronx!',
-    callText: 'Call',
-    ifText: 'if',
-    ifConditions: [
-      'You are arrested and are brought to the precinct in the Bronx',
-      'You cannot reach your loved ones',
-      'Someone you know gets arrested'
-    ],
-    faqLinkText: 'Have questions? Read our FAQ'
+    // header: 'Gracias por participar en nuestro piloto en el Bronx!',
+    // callText: 'Llama',
+    // ifText: 'si',
+    // ifConditions: [
+    //   'Eres arrestado y llevado a un precinto en el Bronx',
+    //   'No puedes contactar a tus seres queridos',
+    //   'Alguien que conoces es arrestado'
+    // ],
+    // faqLinkText: '¿Tienes preguntas? Lee nuestras PF'
+    // TODO: translate
+    header: 'Thank you for joining the movement',
+    subheader: 'we will keep you updated about when our pilot launches',
+    getInTouch: 'Get in touch with us.',
+    followUs: 'Follow us and stay updated.',
+    learnAboutUs: 'Learn about what we\'re doing',
+    readOurMission: 'read our mission'
   },
   privacyPolicyPage: {
     header: 'Privacy Policy',
@@ -201,29 +210,32 @@ const es = {
     paragraph21Text: 'If you have any questions or concerns regarding our privacy policies, please send us a detailed message to hello@goodcall.nyc.'
   },
   errorPage: {
-    subheader: 'The page you requested does not exist'
+    subheader: 'Esta página no existe'
   },
   faqPage: {
+    // TODO: translate
     header: 'Frequently Asked Questions',
     sections: [
       {header: 'About Good Call', faqs: [
         {question: 'Do I have to pay to sign up and use Good Call?', answer: 'No, Good Call is free to sign up and use!'},
-        {question: 'When should I call Good Call?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
+        // {question: 'When should I call Good Call?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
         {question: 'Who can sign up for Good Call?', answer: 'Everyone! We believe everyone deserves fairness.'},
         {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'No one expects to get arrested and we definitely hope you wouldn\'t be. Unfortunately, today unncessary arrests are too common. Similar to providing emergency contacts and signing waivers, Good Call is there as a safety precaution in case something does happen. Moreover, we believe that everyone should have a just and fair court outcome, signing up will help support that mission.'},
-        {question: 'Where can I currently use Good Call?', answer: 'Our hotline is currently live in the Bronx.'},
-        {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently piloting in the Bronx and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
-        {question: 'What is the Good Call hotline for the Bronx?', answer: '1 (347) 95 BRONX'},
+        // {question: 'Where can I currently use Good Call?', answer: 'Our hotline is currently live in the Bronx.'},
+        {question: 'Where can I currently use Good Call?', answer: 'Our hotline is not live yet, but will be launching soon in the Bronx.'},
+        // {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently piloting in the Bronx and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
+        {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are piloting in the Bronx first and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
+        // {question: 'What is the Good Call hotline for the Bronx?', answer: '1 (347) 95 BRONX'},
         {question: 'Can I still call the hotline if I didn\'t sign up?', answer: 'Yes, we believe that everyone should get help when they are arrested. However, signing up will allow us to reach out to your emergency contact to let them know what\'s going on and to connect them with your lawyer which will help make your case stronger.'},
         {question: 'How does Good Call get me a free lawyer?', answer: 'Good Call partners with legal service providers around the city who serve the community. Our lawyers are committed to providing quality representation to our callers.'},
         {question: 'Will Good Call share my information with anyone?', answer: 'Good Call will only share your information with the lawyer that will represent you in the case that you get arrested. Good Call will never share your information with any one else that you have not given us the consent to.'}
-      ]},
-      {header: 'If your loved one has been arrested - ', faqs: [
-        {question: 'What should I do if my loved one is arrested?', answer: 'You can call our hotline (347) 95 BRONX and we will connect you with one of our lawyers to help you with your loved one\'s case.'},
-        {question: 'Why did I get notified by Good Call?', answer: 'If you have been notified by Good Call that someone you know has been arrested, it is because that person has called our hotline and you were listed as their emergency contact.'},
-        {question: 'What is Good Call?', answer: 'Good Call is a free hotline to help people who are arrested reach their loved ones and secure a free lawyer right away.'},
-        {question: 'How can I learn more about my loved one\'s case?', answer: 'You can call our hotline (347) 95 BRONX to talk to one of our operators.'}
       ]}
+      // {header: 'If your loved one has been arrested - ', faqs: [
+      //   {question: 'What should I do if my loved one is arrested?', answer: 'You can call our hotline (347) 95 BRONX and we will connect you with one of our lawyers to help you with your loved one\'s case.'},
+      //   {question: 'Why did I get notified by Good Call?', answer: 'If you have been notified by Good Call that someone you know has been arrested, it is because that person has called our hotline and you were listed as their emergency contact.'},
+      //   {question: 'What is Good Call?', answer: 'Good Call is a free hotline to help people who are arrested reach their loved ones and secure a free lawyer right away.'},
+      //   {question: 'How can I learn more about my loved one\'s case?', answer: 'You can call our hotline (347) 95 BRONX to talk to one of our operators.'}
+      // ]}
     ]
   }
 }
