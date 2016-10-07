@@ -18,9 +18,10 @@ const theme = getMuiTheme({
 })
 
 const sendMessageWithNextUrl = (prevState, nextState, replace, callback) => {
-  if (window.location.hostname === 'labs.robinhood.org') {
+  // checks if we're in an iframe or not
+  if (window.parent !== window) {
     const nextUrl = `https://goodcall.nyc${nextState.location.pathname}`
-    window.parent.postMessage(nextUrl, 'https://labs.robinhood.org/goodcall/')
+    window.parent.postMessage(nextUrl, 'https://labs.robinhood.org')
   } else {
     callback()
   }
