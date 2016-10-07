@@ -4,7 +4,6 @@ import IconButton from 'material-ui/IconButton'
 import IconMenu from 'material-ui/IconMenu'
 import MenuItem from 'material-ui/MenuItem'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
-import SvgIcon from 'material-ui/SvgIcon'
 import FlatButton from 'material-ui/FlatButton'
 import MediaQuery from 'react-responsive'
 import {Link} from 'react-router'
@@ -24,14 +23,16 @@ class Header extends Component {
 
   render () {
     return (
-      <div className="header">
+      <header className="header">
         <AppBar
           className="header__app-bar"
           showMenuIconButton={false}
           zDepth={0}
           title={
             <Link to="/">
-              <img src="/assets/imgs/logo.png" className="header__logo" />
+              <h1 style={{display: 'inline', margin: 0}}>
+                <img src="/assets/imgs/logo.png" alt="Good Call NYC" className="header__logo" />
+              </h1>
             </Link>
           }
           iconElementRight={
@@ -82,7 +83,7 @@ class Header extends Component {
             </div>
           </div>
         )*/}
-      </div>
+      </header>
     )
   }
 }
