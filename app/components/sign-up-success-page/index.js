@@ -14,7 +14,8 @@
 //     return (
 //       <InnerPage location={this.props.location}>
 //         <div className="sign-up-success-page">
-//           <h1 className="sign-up-success-page__header">Thank you for joining our pilot in the Bronx!</h1>
+// TODO: turn the div below back into a header1 tag later, its changed to a div rn so that google search doesn't get pissed at us
+//           <div className="sign-up-success-page__header">Thank you for joining our pilot in the Bronx!</div>
 //           <p className="sign-up-success-page__paragraph">
 //             <span className="sign-up-success-page__call-number">Call (347) 95 BRONX</span>
 //

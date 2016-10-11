@@ -23,17 +23,17 @@ class Header extends Component {
   }
 
   render () {
-    // const {content} = this.props
-
     return (
-      <div className='header'>
+      <header className='header'>
         <AppBar
           className='header__app-bar'
           showMenuIconButton={false}
           zDepth={0}
           title={
             <Link to='/'>
-              <img src='/assets/imgs/logo.png' className='header__logo' />
+              <h1 style={{display: 'inline', margin: 0}}>
+                <img src='/assets/imgs/logo.png' alt='Good Call NYC' className='header__logo' />
+              </h1>
             </Link>
           }
           iconElementRight={
@@ -84,7 +84,7 @@ class Header extends Component {
             </div>
           </div>
         ) */}
-      </div>
+      </header>
     )
   }
 }
