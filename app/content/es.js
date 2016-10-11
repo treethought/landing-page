@@ -18,7 +18,7 @@ const es = {
     }
   },
   landingPage: {
-    goodCallSummary: 'Good Call es un servicio totalmente gratuito que ayuda a las personas que son arrestadas a contactar a sus seres queridos y asegurar un abogado gratuito. Todos merecen justicia.',
+    goodCallSummary: 'Good Call es un servicio totalmente gratuito que ayuda a las personas que son arrestadas a contactar a sus seres queridos y asegurar un abogado gratuito. Todos merecen igualdad.',
     stories: {
       header: 'Nadie espera ser arrestado, pero si sucede, nosotros cuidamos tu espalda.',
       storyHeader: 'Yo fui arrestado.',
@@ -75,7 +75,7 @@ const es = {
     }
   },
   aboutPage: {
-    header: 'Nosotros creemos que todos merecen justicia.',
+    header: 'Nosotros creemos que todos merecen igualdad.',
     aboutUs: {
       header: 'Acerca de nosotros.',
       text: 'Good Call es un proyecto que comenzó dentro de Blue Ridge Labs, un programa de cinco meses, donde equipos construyen productos digitales destinados a abordar las dificultades que enfrentan los neoyorquinos con bajos ingresos, con un enfoque de diseño centrado en las personas, ciclos de pruebas y trabajo social. Construimos Good Call después de meses de investigación y conversaciones con personas de las comunidades de Nueva York. Hemos escuchado innumerables historias de personas que fueron arrestadas por razones triviales, y lo incómodo, doloroso, confuso y dañino que esta experiencia puede ser. Decidimos tratar de hacer lo que podamos para ayudar a resolver este problema.'
