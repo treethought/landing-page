@@ -1,8 +1,7 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import SignUpPage from './../components/sign-up-page'
 import config from './../config'
 import fetcher from './../services/fetcher'
-import objectMap from 'object.map'
 import {browserHistory} from 'react-router'
 import moment from 'moment'
 import cookie from 'react-cookie'
@@ -38,12 +37,12 @@ class SignUpPageContainer extends Component {
       method: 'POST',
       url: `${config.apiBaseUrl}/users`,
       body: {
-        type: "users",
+        type: 'users',
         attributes: {...this.state.user.data.attributes, dateOfBirth: dateOfBirth}
       },
       beforeRequest: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
-      let {status, json} = res
+      let {json} = res
       this.setState({
         formStage: 1,
         requestInProgress: false,
@@ -59,7 +58,7 @@ class SignUpPageContainer extends Component {
       cookie.save('userId', userId, {path: '/'})
       cookie.save('accessToken', accessToken, {path: '/'})
     }).catch((res) => {
-      let {status, json} = res
+      let {json} = res
       this.setState({
         requestInProgress: false,
         user: {...this.state.user, errors: json.errors}
@@ -124,7 +123,7 @@ class SignUpPageContainer extends Component {
       body: contact.data,
       beforeRequest: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
-      let {status, json} = res
+      let {json} = res
       this.setState({
         contacts: this.state.contacts.map((c) => {
           if (c.tmpId === contact.tmpId) {
@@ -135,14 +134,14 @@ class SignUpPageContainer extends Component {
         })
       })
     }).catch((res) => {
-      let {status, json} = res
+      let {json} = res
       this.setState({
         contacts: this.state.contacts.map((c) => {
-          if (c.tmpId === contact.tmpId) { c.errors = json.errors}
+          if (c.tmpId === contact.tmpId) { c.errors = json.errors }
           return c
         })
       })
-      throw(new Error(json))
+      throw (new Error(json))
     })
   }
 
@@ -153,7 +152,6 @@ class SignUpPageContainer extends Component {
       body: contact.data,
       beforeRequest: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
-      let {status, json} = res
       this.setState({
         contacts: this.state.contacts.map((c) => {
           if (c.tmpId === contact.tmpId) {
@@ -163,14 +161,14 @@ class SignUpPageContainer extends Component {
         })
       })
     }).catch((res) => {
-      let {status, json} = res
+      let {json} = res
       this.setState({
         contacts: this.state.contacts.map((c) => {
-          if (c.tmpId === contact.tmpId) { c.errors = json.errors}
+          if (c.tmpId === contact.tmpId) { c.errors = json.errors }
           return c
         })
       })
-      throw(new Error(json))
+      throw (new Error(json))
     })
   }
 
@@ -202,7 +200,7 @@ class SignUpPageContainer extends Component {
           let contacts = this.state.contacts.filter((c) => c.tmpId !== contact.tmpId)
           this.setState({contacts: contacts, requestInProgress: false})
         }).catch((res) => {
-          this.setState({contacts: contacts, requestInProgress: false})
+          this.setState({requestInProgress: false})
           console.log('err: ', res.json)
         })
       } else {
@@ -213,9 +211,12 @@ class SignUpPageContainer extends Component {
   }
 
   render () {
+    const {content} = this.props.route
+
     return (
       <SignUpPage
         {...this.state}
+        content={content}
         location={this.props.location}
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
@@ -228,6 +229,11 @@ class SignUpPageContainer extends Component {
       />
     )
   }
+}
+
+SignUpPageContainer.propTypes = {
+  route: PropTypes.object,
+  location: PropTypes.object
 }
 
 export default SignUpPageContainer

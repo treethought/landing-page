@@ -1,22 +1,28 @@
-import React, { Component } from 'react'
+import React, {Component, PropTypes} from 'react'
 import FlatButton from 'material-ui/FlatButton'
 import {Link} from 'react-router'
 
 class LaunchingSoon extends Component {
   render () {
+    const {content} = this.props
+
     return (
-      <section className="landing-page__launching-soon">
-        <h2 className="landing-page__std-header landing-page__launching-soon-header">Sign up for free for our pilot in the Bronx</h2>
-        <h3 className="landing-page__std-subheader landing-page__launching-soon-subheader"><em>Because no one expects to get arrested.</em></h3>
+      <section className='landing-page__launching-soon'>
+        <h2 className='landing-page__std-header landing-page__launching-soon-header'>{content.header}</h2>
+        <h3 className='landing-page__std-subheader landing-page__launching-soon-subheader'><em>{content.subheader}</em></h3>
 
         <FlatButton
-          label="sign up"
-          className="gc-std-btn"
-          containerElement={<Link to="/sign-up" />}
+          label={content.signUpBtnLabel}
+          className='gc-std-btn'
+          containerElement={<Link to='/sign-up' />}
         />
       </section>
     )
   }
+}
+
+LaunchingSoon.propTypes = {
+  content: PropTypes.object
 }
 
 export default LaunchingSoon

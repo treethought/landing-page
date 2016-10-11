@@ -1,5 +1,4 @@
-import React, {Component} from 'react'
-import InnerPage from './../inner-page'
+import React, {Component, PropTypes} from 'react'
 import Stories from './stories'
 import SimplePanel from './../simple-panel'
 import Problem from './problem'
@@ -10,24 +9,32 @@ const {Element} = Scroll
 
 class LandingPage extends Component {
   render () {
+    const {content} = this.props.route
+
     return (
-      <InnerPage>
-        <div className="landing-page">
-          <Stories />
-          <Element name="landing-page__problem">
-            <Problem />
-          </Element>
-          <SimplePanel
-            color='rgba(45,43,43,0.99)'
-            text="Good Call is a completely free service that helps people who are arrested reach their loved ones and secure a free lawyer. Everyone deserves fairness."
-            fontWeight="700"
-          />
-          <HowItWorks />
-          <LaunchingSoon />
-        </div>
-      </InnerPage>
+      <div className='landing-page'>
+        <Stories content={content.stories} />
+
+        <Element name='landing-page__problem'>
+          <Problem content={content.problem}/>
+        </Element>
+
+        <SimplePanel
+          color='rgba(45,43,43,0.99)'
+          text={content.goodCallSummary}
+          fontWeight='700'
+        />
+
+        <HowItWorks content={content.howItWorks} />
+
+        <LaunchingSoon content={content.launchingSoon} />
+      </div>
     )
   }
+}
+
+LandingPage.propTypes = {
+  route: PropTypes.object
 }
 
 export default LandingPage
