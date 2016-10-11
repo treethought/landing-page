@@ -35,11 +35,10 @@ class App extends Component {
     this.state = {locale: currentLocale, content: content[currentLocale]}
   }
 
-  setLocale (newLocale) {
-    return () => {
-      locale.set(newLocale)
-      window.location.reload()
-    }
+  toggleLocale () {
+    const newLocale = this.state.locale === 'en' ? 'es' : 'en'
+    locale.set(newLocale)
+    window.location.reload()
   }
 
   render () {
@@ -48,7 +47,7 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={theme}>
         <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
-          <Route path='/' component={InnerPage} content={content.innerPage} locale={this.state.locale} setLocale={this.setLocale.bind(this)} onChange={sendMessageWithNextUrl}>
+          <Route path='/' component={InnerPage} content={content.innerPage} toggleLocale={this.toggleLocale.bind(this)} onChange={sendMessageWithNextUrl}>
             <IndexRoute component={LandingPage} content={content.landingPage} />
             <Route path='about-us' component={AboutPage} content={content.aboutPage} />
             <Route path='sign-up'>

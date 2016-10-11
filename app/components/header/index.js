@@ -23,6 +23,17 @@ class Header extends Component {
   }
 
   render () {
+    const {content, toggleLocale} = this.props
+
+    const ToggleLanguageBtn = () => (
+      <FlatButton
+        className='header__nav-btn header__toggle-language-btn'
+        label={content.toggleLanguageBtnLabel}
+        onClick={toggleLocale}
+        hoverColor='#FDFFF9'
+      />
+    )
+
     return (
       <header className='header'>
         <AppBar
@@ -51,9 +62,11 @@ class Header extends Component {
                         style={btn.style || {}}
                       />
                     ))}
+                    <ToggleLanguageBtn />
                   </MediaQuery>
 
                   <MediaQuery query='(max-width: 674px)'>
+                    <ToggleLanguageBtn />
                     <IconMenu
                       className='header__icon-menu'
                       menuStyle={{ 'background': '#F7F9F9' }}
@@ -91,7 +104,8 @@ class Header extends Component {
 
 Header.propTypes = {
   content: PropTypes.object,
-  inRegistrationFlow: PropTypes.bool
+  inRegistrationFlow: PropTypes.bool,
+  toggleLocale: PropTypes.func
 }
 
 export default Header
