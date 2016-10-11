@@ -5,31 +5,15 @@ import includes from 'lodash.includes'
 
 class InnerPage extends Component {
   render () {
-    const {content, setLocale, locale} = this.props.route
-    const localeToSwitchTo = locale === 'en' ? 'es' : 'en'
+    const {content, toggleLocale} = this.props.route
 
     return (
       <div className='inner-page'>
         <Header
           content={content.header}
+          toggleLocale={toggleLocale}
           inRegistrationFlow={this.props.location && includes(this.props.location.pathname, '/sign-up')}
         />
-          <div
-            style={{
-              position: 'fixed',
-              top: '200px',
-              left: '40px',
-              zIndex: '2000',
-              background: 'red',
-              color: 'white',
-              padding: '20px',
-              cursor: 'pointer',
-              display: 'none'
-            }}
-            onClick={setLocale(localeToSwitchTo)}
-          >
-            {`switch to ${locale === 'en' ? 'spanish' : 'english'}`}
-          </div>
           {this.props.children}
         <Footer content={content.footer} />
       </div>

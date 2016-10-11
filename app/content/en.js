@@ -4,7 +4,8 @@ const en = {
       hotlineBannerText: 'If you or your loved one has been arrested in the Bronx call',
       faqBtnLabel: 'FAQ',
       aboutUsBtnLabel: 'About us',
-      signUpBtnLabel: 'Sign up'
+      signUpBtnLabel: 'Sign up',
+      toggleLanguageBtnLabel: 'En Español'
     },
     footer: {
       signUpLinkLabel: 'Sign Up',
