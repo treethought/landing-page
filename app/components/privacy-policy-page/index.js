@@ -27,19 +27,7 @@ class PrivacyPolicyPage extends Component {
 
         <h2 className='legal-subheader'>{content.subheader2}</h2>
 
-        <p className='legal-paragraph'>
-          {content.paragraph5Line1}<br />
-          <br />
-          {content.paragraph5Line2}<br />
-          {content.paragraph5Line3}<br />
-          {content.paragraph5Line4}<br />
-          {content.paragraph5Line5}<br />
-          {content.paragraph5Line6}<br />
-          {content.paragraph5Line7}<br />
-          <br />
-          {content.paragraph5Line8}<br />
-          {content.paragraph5Line9}<br />
-        </p>
+        <p className='legal-paragraph' dangerouslySetInnerHTML={{__html: content.paragraph5Text}}></p>
 
         <h2 className='legal-subheader'>{content.subheader3}</h2>
 
@@ -83,11 +71,7 @@ class PrivacyPolicyPage extends Component {
 
         <h2 className='legal-subheader'>{content.subheader6}</h2>
 
-        <p className='legal-paragraph'>
-          {content.paragraph18Line1}<br />
-          {content.paragraph18Line2}<br />
-          {content.paragraph18Line3}<br />
-        </p>
+        <p className='legal-paragraph' dangerouslySetInnerHTML={{__html: content.paragraph18Text}}></p>
 
         <h2 className='legal-subheader'>{content.subheader7}</h2>
 

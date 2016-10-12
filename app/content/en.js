@@ -168,15 +168,19 @@ const en = {
     paragraph4Header: 'Information Collected from Third Parties:',
     paragraph4Text: 'We may collect Personal Information from third parties we reasonably believe have the right to provide such information to us. In addition, we may collect Personal Information with your consent or as required by law or regulation.',
     subheader2: 'How We Use Personal Information',
-    paragraph5Line1: 'Good Call uses your Personal Information as follows:',
-    paragraph5Line2: 'To operate and maintain the Service (such as, for the purposes of fixing malfunctions, testing our security systems, etc.).',
-    paragraph5Line3: 'To provide you with the features, functions and benefits of the Service.',
-    paragraph5Line4: 'To enhance, improve and further develop the Service (such as, creating new features or functions, refining the user experience, increasing Service technical performance, etc.).',
-    paragraph5Line5: 'We will use your contact information to provide you with notices relate to your use of the Service.',
-    paragraph5Line6: 'We will use your contact information (such as your email address) to provide you with promotional and marketing emails, which may come from us or from one of our affiliated entities.',
-    paragraph5Line7: 'You can opt-out of receiving certain types of promotional and marketing emails, but in such case you may not receive the full benefit of the Service. Opting out can be done by clicking the unsubscribe link at the bottom of promotional emails.',
-    paragraph5Line8: 'To help personalize the Service experience for you (such as, remembering your information so you will not have to enter it each time you use the Service).',
-    paragraph5Line9: 'And for the other purposes referenced in the “Who Good Call Shares Your Personal Information With” section below (such as for the purposes of legal compliance).',
+    paragraph5Text: `
+      Good Call uses your Personal Information as follows:<br />
+      <br />
+      To operate and maintain the Service (such as, for the purposes of fixing malfunctions, testing our security systems, etc.).<br />
+      To provide you with the features, functions and benefits of the Service. <br />
+      To enhance, improve and further develop the Service (such as, creating new features or functions, refining the user experience, increasing Service technical performance, etc.).<br />
+      We will use your contact information to provide you with notices relate to your use of the Service.<br />
+      We will use your contact information (such as your email address) to provide you with promotional and marketing emails, which may come from us or from one of our affiliated entities.<br />
+      You can opt-out of receiving certain types of promotional and marketing emails, but in such case you may not receive the full benefit of the Service. Opting out can be done by clicking the unsubscribe link at the bottom of promotional emails.<br />
+      <br />
+      To help personalize the Service experience for you (such as, remembering your information so you will not have to enter it each time you use the Service).<br />
+      And for the other purposes referenced in the “Who Good Call Shares Your Personal Information With” section below (such as for the purposes of legal compliance).
+    `,
     subheader3: 'Who Good Call Shares Your Personal Information With',
     paragraph6Text: 'We neither rent nor sell your Personal Information in personally identifiable form to anyone. However, we may share your Personal Information with third parties as described in this section:',
     paragraph7Header: 'With your Consent:',
@@ -203,9 +207,11 @@ const en = {
     subheader5: 'The Location of your Personal Information',
     paragraph17Text: 'While your Personal Information is in our possession, it will be primarily stored at hosting facilities located in the USA. These facilities are either operated by Good Call or our third party providers. By using the Service you are consenting to have your Personal Information stored, transferred and processed in the USA.',
     subheader6: 'The Security of Your Personal Information',
-    paragraph18Line1: 'Good Call takes certain precautions to protect your Personal Information and to limit the risk that it will be accessed without authorization, including use of certain industry standard technologies and practices. That said, we cannot guarantee the security of such information. Unauthorized entry or use, hardware or software failure, and other factors, may compromise the security of user information at any time. No security system is perfect - so your use of the Service is at your own risk.',
-    paragraph18Line2: 'If we learn of a security systems breach, then we may attempt to notify you via email, phone, physical mail, by a posting on your Service account page or as otherwise required by applicable law - so that you can take appropriate protective steps You consent to receive such notice by electronic means (provided that such consent is void where prohibited by applicable law). To receive a free written notice of a security breach, or if you have any questions about the security of the Service, please contact us at hello@goodcall.nyc.',
-    paragraph18Line3: 'In addition to the security measures referenced above, your Service account is protected by a password for your privacy and security. You must prevent unauthorized access to your account and Personal Information by selecting and protecting your password appropriately and limiting access to your computer or device and browser by signing off after you have finished accessing your account.',
+    paragraph18Text: `
+      Good Call takes certain precautions to protect your Personal Information and to limit the risk that it will be accessed without authorization, including use of certain industry standard technologies and practices. That said, we cannot guarantee the security of such information. Unauthorized entry or use, hardware or software failure, and other factors, may compromise the security of user information at any time. No security system is perfect - so your use of the Service is at your own risk.<br />
+      If we learn of a security systems breach, then we may attempt to notify you via email, phone, physical mail, by a posting on your Service account page or as otherwise required by applicable law - so that you can take appropriate protective steps You consent to receive such notice by electronic means (provided that such consent is void where prohibited by applicable law). To receive a free written notice of a security breach, or if you have any questions about the security of the Service, please contact us at hello@goodcall.nyc.<br />
+      In addition to the security measures referenced above, your Service account is protected by a password for your privacy and security. You must prevent unauthorized access to your account and Personal Information by selecting and protecting your password appropriately and limiting access to your computer or device and browser by signing off after you have finished accessing your account.
+    `,
     subheader7: 'Changes to this Privacy Policy',
     paragraph19Text: 'This Privacy Policy was last changed on the date set forth at the top of the policy. We’re constantly trying to improve the Service, so we may need to change this Privacy Policy from time to time as well, but we will alert you to changes by placing a notice on www.goodcall.nyc, by sending you an email, and/or by some other means. In addition, we will also edit the date at the top of this policy to reflect the date of the changes. Please note that if you’ve opted not to receive legal notice emails from us (or you haven’t provided us with your email address), those legal notices will still govern your use of the Service, and you are still responsible for reading and understanding them. If you use the Service after any changes to the Privacy Policy have been posted, that means you agree to all of the changes. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is collected.',
     subheader8: 'Information from Children',
