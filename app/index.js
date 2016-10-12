@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {Router, Route, IndexRoute, browserHistory, applyRouterMiddleware} from 'react-router'
 import {useScroll} from 'react-router-scroll'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -10,11 +10,12 @@ import SignUpSuccessPage from './components/sign-up-success-page'
 import PrivacyPolicyPage from './components/privacy-policy-page'
 import FaqPage from './components/faq-page'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import content from './content'
+import locale from './services/locale'
+import InnerPage from './components/inner-page'
 
 // HACK: to get the selectedTextColor of the SelectField to not be hot pink
-const theme = getMuiTheme({
-  palette: {accent1Color: '#40B097'}
-})
+const theme = getMuiTheme({palette: {accent1Color: '#40B097'}})
 
 const sendMessageWithNextUrl = (prevState, nextState, replace, callback) => {
   // checks if we're in an iframe or not
@@ -26,20 +27,40 @@ const sendMessageWithNextUrl = (prevState, nextState, replace, callback) => {
   }
 }
 
-export default () => (
-  <MuiThemeProvider muiTheme={theme}>
-    <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
-      <Route path="/" onChange={sendMessageWithNextUrl}>
-        <IndexRoute component={LandingPage} />
-          <Route path="about-us" component={AboutPage}/>
-          <Route path="sign-up">
-            <IndexRoute component={SignUpPageContainer} />
-            <Route path="success" component={SignUpSuccessPage} />
+class App extends Component {
+  constructor () {
+    super()
+    let currentLocale = locale.get()
+    this.state = {locale: currentLocale, content: content[currentLocale]}
+  }
+
+  toggleLocale () {
+    const newLocale = this.state.locale === 'en' ? 'es' : 'en'
+    locale.set(newLocale)
+    window.location.reload()
+  }
+
+  render () {
+    const {content} = this.state
+
+    return (
+      <MuiThemeProvider muiTheme={theme}>
+        <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
+          <Route path='/' component={InnerPage} content={content.innerPage} toggleLocale={this.toggleLocale.bind(this)} onChange={sendMessageWithNextUrl}>
+            <IndexRoute component={LandingPage} content={content.landingPage} />
+            <Route path='about-us' component={AboutPage} content={content.aboutPage} />
+            <Route path='sign-up'>
+              <IndexRoute component={SignUpPageContainer} content={content.signUpPage}/>
+              <Route path='success' component={SignUpSuccessPage} content={content.signUpSuccessPage} />
+            </Route>
+            <Route path='privacy-policy' component={PrivacyPolicyPage} content={content.privacyPolicyPage} />
+            <Route path='faq' component={FaqPage} content={content.faqPage} />
+            <Route path='*' component={ErrorPage} content={content.errorPage} />
           </Route>
-          <Route path="privacy-policy" component={PrivacyPolicyPage} />
-          <Route path="faq" component={FaqPage} />
-          <Route path="*" component={ErrorPage} />
-      </Route>
-    </Router>
-  </MuiThemeProvider>
-)
+        </Router>
+      </MuiThemeProvider>
+    )
+  }
+}
+
+export default App

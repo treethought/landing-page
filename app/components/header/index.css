@@ -17,7 +17,7 @@
 .header__logo {
   height: 42px;
   position: relative;
-  top: 5px;
+  top: 0px;
 }
 
 .header__nav {
@@ -49,10 +49,21 @@
   position: relative;
   top: 4px;
   margin-left: 27px !important;
+  margin-right: 27px !important;
 }
 
 .header__sign-up-btn span {
   text-transform: lowercase !important;
+}
+
+.header__toggle-language-btn {
+  position: relative;
+  bottom: 11px;
+}
+
+.header__toggle-language-btn span {
+  text-transform: uppercase !important;
+  font-size: 13px !important;
 }
 
 .header__icon-menu {
@@ -102,7 +113,6 @@
 
   .header__logo {
     height: 35px;
-    top: 7px;
   }
 
   .header__hotline-banner {
@@ -112,6 +122,10 @@
 
   .header__hotline-banner-text {
     font-size: 13px;
+  }
+
+  .header__toggle-language-btn {
+    bottom: 1px;
   }
 
 }

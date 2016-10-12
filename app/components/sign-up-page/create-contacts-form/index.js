@@ -1,22 +1,23 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import Checkbox from 'material-ui/Checkbox'
 import FlatButton from 'material-ui/FlatButton'
 import renderIf from 'render-if'
-import Dialog from 'material-ui/Dialog'
 import Hint from './../hint'
 import StandardTextField from './../../standard-text-field'
 
-const contactFields = [
-  {name: 'name', label: 'First Name, Last Name (optional)'},
-  {name: 'relationship', label: 'Relationship (optional)'},
-  {name: 'phone', label: 'Phone (xxx) xxx-xxxx (optional)'}
-]
-
 class CreateContactsForm extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.popup = this.popup.bind(this)
-    this.state = {hintShown: false}
+    const {content} = props
+    this.state = {
+      hintShown: false,
+      contactFields: [
+        {name: 'name', label: content.nameLabel},
+        {name: 'relationship', label: content.relationshipLabel},
+        {name: 'phone', label: content.phoneLabel}
+      ]
+    }
   }
 
   componentDidMount () {
@@ -44,24 +45,24 @@ class CreateContactsForm extends Component {
   }
 
   render () {
+    const {content} = this.props
+
     return (
-      <form className="sign-up-page__form">
-        {renderIf(this.state.hintShown) (
+      <form className='sign-up-page__form'>
+        {renderIf(this.state.hintShown)(
           <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
-            <Hint
-              text={`${this.props.contacts.length > 1 ? "These are the people" : "This is the person"} we would contact if you are arrested`}
-            />
+            <Hint text={content.hintText(this.props.contacts.length)} />
           </div>
         )}
 
-        <div className="sign-up-page__form-fields-container" ref="formFields">
+        <div className='sign-up-page__form-fields-container' ref='formFields'>
           {this.props.contacts.map((contact, i) => (
-            <div className="sign-up-page__contact-fields-container" key={contact.tmpId}>
+            <div className='sign-up-page__contact-fields-container' key={contact.tmpId}>
               {renderIf(i > 0)(
-                <h3 className="sign-up-page__additional-contact-header">Additional contact</h3>
+                <h3 className='sign-up-page__additional-contact-header'>{content.additionalContactLabel}</h3>
               )}
 
-              {contactFields.map((field, j) => (
+              {this.state.contactFields.map((field, j) => (
                 <StandardTextField
                   key={j}
                   onFocus={this.showHint.bind(this)}
@@ -71,29 +72,29 @@ class CreateContactsForm extends Component {
                 />
               ))}
 
-              {renderIf(this.props.contacts.length > 1) (
-                <div className="sign-up-page__remove-contact-btn" onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
+              {renderIf(this.props.contacts.length > 1)(
+                <div className='sign-up-page__remove-contact-btn' onClick={this.props.removeContact(contact.tmpId)}>&times;</div>
               )}
             </div>
           ))}
 
-          <div className="sign-up-page__add-contact-btn" onClick={this.props.addContact}>+ Add another contact</div>
+          <div className='sign-up-page__add-contact-btn' onClick={this.props.addContact}>+ {content.addContactBtnLabel}</div>
 
-          <div className="sign-up-page__checkbox-container">
+          <div className='sign-up-page__checkbox-container'>
             <Checkbox
-              label={`Let us contact ${this.props.contacts.length > 1 ? "these people" : "this person"} to let them know you signed up. This will allow us to contact them if you are arrested.`}
+              label={content.consentToContactLabel(this.props.contacts.length)}
               defaultChecked={true}
               onCheck={this.props.consentToContactIs()}
-              style={{textAlign: "left"}}
-              iconStyle={{width: "32px", height: "32px", fill: "#40B097"}}
-              labelStyle={{fontSize: window.innerWidth > 640 ? "18px" : "16px", color: "#4A4A4A", lineHeight: "24px", fontWeight: "300"}}
+              style={{textAlign: 'left'}}
+              iconStyle={{width: '32px', height: '32px', fill: '#40B097'}}
+              labelStyle={{fontSize: window.innerWidth > 640 ? '18px' : '16px', color: '#4A4A4A', lineHeight: '24px', fontWeight: '300'}}
             />
 
           </div>
 
           <FlatButton
-            className="gc-std-btn sign-up-page__form-continue-btn"
-            label="continue"
+            className='gc-std-btn sign-up-page__form-continue-btn'
+            label={content.continueBtnLabel}
             onClick={this.props.saveContacts}
             disabled={this.props.requestInProgress}
           />
@@ -101,6 +102,17 @@ class CreateContactsForm extends Component {
       </form>
     )
   }
+}
+
+CreateContactsForm.propTypes = {
+  content: PropTypes.object,
+  contacts: PropTypes.array,
+  setContact: PropTypes.func,
+  removeContact: PropTypes.func,
+  addContact: PropTypes.func,
+  consentToContactIs: PropTypes.func,
+  saveContacts: PropTypes.func,
+  requestInProgress: PropTypes.bool
 }
 
 export default CreateContactsForm

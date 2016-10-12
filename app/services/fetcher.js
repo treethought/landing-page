@@ -1,10 +1,10 @@
 // THANKS @ahdinosaur for this remnant of the past!!!!
 
 import snakeize from 'snakeize'
-import camelize from 'camelize'
 import Url from 'url'
 import assign from 'lodash.assign'
 import isPlainObject from 'lodash.isplainobject'
+import cookie from 'react-cookie'
 
 export default function fetcher (options) {
   options = options || {}
@@ -39,6 +39,9 @@ export default function fetcher (options) {
 
   // accept json response
   options.headers.append('accept', 'application/json')
+
+  // append locale headers, if they exist
+  options.headers.append('LOCALE', cookie.load('locale', true) || 'en')
 
   let res
   // fetch!
