@@ -50,6 +50,13 @@ class CreateUserForm extends Component {
     this.setState({securityHintShown: true})
   }
 
+  continueBtnIsDisabled () {
+    const { user, requestInProgress } = this.props
+    const { name, phone, email, dateOfBirthObj, zip, securityQuestion, securityAnswer } = user
+    const { month, day, year } = dateOfBirthObj
+    return requestInProgress || isEmpty(user) || !name || !(phone || email) || !(month && day && year) || !zip || !(securityQuestion && securityAnswer)
+  }
+
   isDesktop () {
     return window.innerWidth > 640
   }
@@ -150,18 +157,12 @@ class CreateUserForm extends Component {
           />
 
           <FlatButton
-            className='gc-std-btn sign-up-page__form-continue-btn'
+            className='gc-std-btn sign-up-page__form-continue-btn sign-up-page__create-user-form-continue-btn'
             label={content.continueBtnLabel}
             onClick={this.props.createUser}
-            disabled={
-              this.props.requestInProgress ||
-              isEmpty(this.props.user) ||
-              !this.props.user.name ||
-              !(this.props.user.phone || this.props.user.email) ||
-              !(this.props.user.dateOfBirthObj.month && this.props.user.dateOfBirthObj.day && this.props.user.dateOfBirthObj.year) ||
-              !this.props.user.zip || !(this.props.user.securityQuestion && this.props.user.securityAnswer)
-            }
+            disabled={this.continueBtnIsDisabled()}
           />
+          <p className='sign-up-page__form-continue-btn-terms-text' dangerouslySetInnerHTML={{__html: content.continueBtnTermsText}}></p>
         </div>
       </form>
     )
