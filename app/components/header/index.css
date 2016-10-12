@@ -49,7 +49,7 @@
   position: relative;
   top: 4px;
   margin-left: 27px !important;
-  margin-right: 27px !important;
+  /*margin-right: 27px !important;*/
 }
 
 .header__sign-up-btn span {

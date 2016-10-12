@@ -26,3 +26,19 @@
 .sign-up-page__form-select-date-field:last-of-type {
   margin-right: 0;
 }
+
+.sign-up-page__create-user-form-continue-btn {
+  margin-bottom: 0 !important;
+}
+
+.sign-up-page__form-continue-btn-terms-text {
+  font-size: 16px;
+  color: #4A4A4A;
+  line-height: 24px;
+  margin-bottom: 95px !important;
+}
+
+.sign-up-page__form-continue-btn-terms-text a {
+  color: #40B097;
+  text-decoration: none;
+}

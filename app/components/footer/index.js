@@ -10,7 +10,8 @@ class Footer extends Component {
         {to: '/sign-up', label: props.content.signUpLinkLabel},
         {to: '/faq', label: props.content.faqLinkLabel},
         {to: '/about-us', label: props.content.aboutUsLinkLabel},
-        {to: '/privacy-policy', label: props.content.privacyPolicyLinkLabel}
+        {to: '/privacy-policy', label: props.content.privacyPolicyLinkLabel},
+        {to: '/terms-and-conditions', label: props.content.termsAndConditionsLinkLabel}
       ]
     }
   }

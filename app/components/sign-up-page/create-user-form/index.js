@@ -50,6 +50,14 @@ class CreateUserForm extends Component {
     this.setState({securityHintShown: true})
   }
 
+  continueBtnIsDisabled () {
+    const { user, requestInProgress } = this.props
+    const { attributes } = user.data.attributes
+    const { name, phone, email, dateOfBirthObj, zip, securityQuestion, securityAnswer } = attributes
+    const { month, day, year } = dateOfBirthObj
+    return requestInProgress || isEmpty(attributes) || !name || !(phone || email) || !(month && day && year) || !zip || !(securityQuestion && securityAnswer)
+  }
+
   isDesktop () {
     return window.innerWidth > 640
   }
@@ -149,19 +157,12 @@ class CreateUserForm extends Component {
           />
 
           <FlatButton
-            className='gc-std-btn sign-up-page__form-continue-btn'
+            className='gc-std-btn sign-up-page__form-continue-btn sign-up-page__create-user-form-continue-btn'
             label={content.continueBtnLabel}
             onClick={this.props.createUser}
-            disabled={
-              this.props.requestInProgress ||
-              isEmpty(this.props.user.data.attributes) ||
-              !this.props.user.data.attributes.name ||
-              !(this.props.user.data.attributes.phone || this.props.user.data.attributes.email) ||
-              !(this.props.user.data.attributes.dateOfBirthObj.month && this.props.user.data.attributes.dateOfBirthObj.day && this.props.user.data.attributes.dateOfBirthObj.year) ||
-              !this.props.user.data.attributes.zip ||
-              !(this.props.user.data.attributes.securityQuestion && this.props.user.data.attributes.securityAnswer)
-            }
+            disabled={this.continueBtnIsDisabled()}
           />
+          <p className='sign-up-page__form-continue-btn-terms-text' dangerouslySetInnerHTML={{__html: content.continueBtnTermsText}}></p>
         </div>
       </form>
     )
