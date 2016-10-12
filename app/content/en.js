@@ -12,6 +12,7 @@ const en = {
       faqLinkLabel: 'FAQ',
       aboutUsLinkLabel: 'About Us',
       privacyPolicyLinkLabel: 'Privacy Policy',
+      termsAndConditionsLinkLabel: 'Terms and Conditions',
       contactUsHeader: 'Contact Us',
       address: '150 Court St. 2nd Floor, Brooklyn 11201',
       helpHeader: 'Help',
@@ -116,7 +117,8 @@ const en = {
       infoHintText: 'Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case.',
       securityHintText: 'We will ask you to answer this question when you call us. Choose a question with an answer that only you would know and remember. Ex. “What is your favorite childhood candy?”',
       dateOfBirthLabel: 'Date of Birth',
-      continueBtnLabel: 'continue'
+      continueBtnLabel: 'continue',
+      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>.'
     },
     createContactsForm: {
       header: 'provide an emergency contact',

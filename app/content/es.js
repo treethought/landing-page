@@ -12,6 +12,7 @@ const es = {
       faqLinkLabel: 'PF',
       aboutUsLinkLabel: 'Acerca de nosotros',
       privacyPolicyLinkLabel: 'Política de privacidad',
+      termsAndConditionsLinkLabel: 'Términos de servicio',
       contactUsHeader: 'Contáctenos',
       address: '150 Court St. 2nd Floor, Brooklyn 11201',
       helpHeader: 'Ayuda',
@@ -117,7 +118,8 @@ const es = {
       infoHintText: 'Su información sólo será utilizada por Good Call para verificar su identidad en caso de un arresto y por su abogado en su caso.',
       securityHintText: 'Vamos a pedirte que respondas a esta pregunta cuando nos llames. Elige una pregunta con una respuesta que sólo tú sepas y recuerdes. Ejemplo: "¿Cuál es tu dulce favorito de la infancia?"',
       dateOfBirthLabel: 'Fecha de Nacimiento',
-      continueBtnLabel: 'continúe'
+      continueBtnLabel: 'continúe',
+      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>.'
     },
     createContactsForm: {
       header: 'Proporcione un contacto de emergencia',
