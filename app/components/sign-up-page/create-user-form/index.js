@@ -115,7 +115,7 @@ class CreateUserForm extends Component {
               <CustomSelectField
                 fieldOpts={dateOptions.months}
                 className='sign-up-page__form-select-date-field'
-                hintText='Month'
+                hintText={content.monthLabel}
                 width='75px'
                 value={this.props.user.data.attributes.dateOfBirthObj.month}
                 onChange={this.props.setUserDateOfBirth('month')}
@@ -124,7 +124,7 @@ class CreateUserForm extends Component {
               <CustomSelectField
                 fieldOpts={dateOptions.days}
                 className='sign-up-page__form-select-date-field'
-                hintText='Day'
+                hintText={content.dayLabel}
                 width='60px'
                 value={this.props.user.data.attributes.dateOfBirthObj.day}
                 onChange={this.props.setUserDateOfBirth('day')}
@@ -133,7 +133,7 @@ class CreateUserForm extends Component {
               <CustomSelectField
                 fieldOpts={dateOptions.years}
                 className='sign-up-page__form-select-date-field'
-                hintText='Year'
+                hintText={content.yearLabel}
                 width='65px'
                 value={this.props.user.data.attributes.dateOfBirthObj.year}
                 onChange={this.props.setUserDateOfBirth('year')}
