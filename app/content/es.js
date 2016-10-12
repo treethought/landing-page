@@ -241,6 +241,15 @@ const es = {
       //   {question: 'How can I learn more about my loved one\'s case?', answer: 'You can call our hotline (347) 95 BRONX to talk to one of our operators.'}
       // ]}
     ]
+  },
+  termsAndConditionsPage: {
+    header: 'Términos y Condiciones de Good Call',
+    effectiveDate: 'Última actualización: Octubre 12, 2016',
+    paragraph1Line1: 'Esto es quiénes somos nosotros y algunas cosas jurídicas generales sobre estar obligado por los términos de abajo.',
+    paragraph1Line2: 'Los siguientes términos y condiciones (el “Acuerdo”) gobiernan todo el uso del sitio web “Good Call” ubicado en www.Goodcall.nyc (el “Servicio”), si accedido por computadora, tableta o dispositivo móvil. l Servicio es proporcionado a usted por Good Call. (“Good Call”, “nosotros”, “nos” o “nuestro”). El Servicio está sujeto a su (“Usuario”, “Usted” o “Su”) aceptación sin modificación de todos los términos y condiciones contenidos aquí. AL UTILIZAR O ACCEDER CUALQUIER PARTE DEL SERVICIO, USTED ACEPTA TODOS LOS TÉRMINOS Y CONDICIONES CONTENIDOS AQUÍ. Algunas aplicaciones proporcionadas por Good Call pueden estar sujetas a términos o condiciones diferentes o adicionales (tal como acuerdos de compra o de préstamo). En la medida en que entren en conflicto con este Acuerdo, tales términos y condiciones diferentes o adicionales serán controlados.',
+    paragraph1Line3: 'Good Call se reserva el derecho, en su exclusiva discreción, de modificar o reemplazar cualquiera de los términos o condiciones de este Acuerdo en cualquier momento. Se le notificará de tales cambios por correo electrónico, notificación de cuenta o una notificación publicada en el Servicio. Su continuo uso del Servicio después de la publicación de cualquier cambio a este Acuerdo constituye la aceptación de esos cambios. P Por la presente certifica a Good Call que Usted tiene por lo menos 13 años de edad. En las jurisdicciones donde 13 años no es la edad de consentimiento para contratar, usted representa y garantiza que tiene todos los permisos y autorizaciones necesarias de un tutor legal apropiado. También certifica que Usted de otro modo está legalmente autorizado para utilizar el Servicio.',
+    subheader1: 'How do we use your information',
+    paragraph2Line1: 'By using the service you agree to have Good Call store my personal information and share your name and date of birth with the Legal Service Provider who will represent you in the event of an arrest.  In the event of my arrest in the Legal Service Provider’s legal jurisdiction, I give the Legal Service Provider permission to inform Good Call so they can reach out to my emergency contact(s).  Additionally, if the Legal Service Provider is contacted by one of my loved ones and told that I have been arrested, the Legal Service Provider can provide my name and date of birth to Good Call, so that my emergency contact(s) can be notified.'
   }
 }
 

@@ -238,6 +238,15 @@ const en = {
       //   {question: 'How can I learn more about my loved one\'s case?', answer: 'You can call our hotline (347) 95 BRONX to talk to one of our operators.'}
       // ]}
     ]
+  },
+  termsAndConditionsPage: {
+    header: 'Terms And Conditions',
+    effectiveDate: 'Effective Date: October 12, 2016',
+    paragraph1Line1: 'The following terms and conditions (the “Agreement”) govern all use of the “Good Call” website located at www.Goodcall.nyc (the “Service”), whether accessed by computer, tablet, or mobile device. The Service is provided to you by Good Call (“Us,” “We,” or “Our”). The Service is subject to your (“User,” “You,” or “Your”) acceptance without modification of all of the terms and conditions contained herein. BY USING OR ACCESSING ANY PART OF THE SERVICE, YOU AGREE TO ALL OF THE TERMS AND CONDITIONS CONTAINED HEREIN.',
+    paragraph1Line2: 'Good Call reserves the right, at its sole discretion, to modify or replace any of the terms or conditions of this Agreement at any time. You will be notified of such changes by email, account notification, or a notice posted on the Service. Your continued use of the Service following the posting of any changes to this Agreement constitutes acceptance of those changes.',
+    paragraph1Line3: 'You hereby certify to Good Call that You are at least 13 years of age. In jurisdictions where 13 is not the age of consent to contract, You represent and warrant that You have all necessary authorizations and permissions from an appropriate legal guardian. You also certify that You are otherwise legally permitted to use the Service.',
+    subheader1: 'How do we use your information',
+    paragraph2Line1: 'By using the service you agree to have Good Call store my personal information and share your name and date of birth with the Legal Service Provider who will represent you in the event of an arrest.  In the event of my arrest in the Legal Service Provider’s legal jurisdiction, I give the Legal Service Provider permission to inform Good Call so they can reach out to my emergency contact(s).  Additionally, if the Legal Service Provider is contacted by one of my loved ones and told that I have been arrested, the Legal Service Provider can provide my name and date of birth to Good Call, so that my emergency contact(s) can be notified.'
   }
 }
 
