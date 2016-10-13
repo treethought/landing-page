@@ -2,25 +2,27 @@ import React, {Component, PropTypes} from 'react'
 import ScrollDownBtn from './../../scroll-down-btn'
 import Slider from 'react-slick'
 import uuid from 'node-uuid'
-import shuffle from 'lodash.shuffle'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
+import rotate from 'rotate-array'
+import moment from 'moment'
 
 class Stories extends Component {
   constructor (props) {
     super(props)
     this.resetComponentKey = this.resetComponentKey.bind(this)
-    let {content} = props
+    const {pharoah, nate, sharmene, ray, steven, tina} = props.content
+    const stories = [
+      {pictureName: 'pharaoh-min', subheader: pharoah.subheader, text: pharoah.text},
+      {pictureName: 'nate-min', subheader: nate.subheader, text: nate.text},
+      {pictureName: 'sharmene-min', subheader: sharmene.subheader, text: sharmene.text},
+      {pictureName: 'ray-min', subheader: ray.subheader, text: ray.text},
+      {pictureName: 'steven-min', subheader: steven.subheader, text: steven.text},
+      {pictureName: 'tina-min', subheader: tina.subheader, text: tina.text}
+    ]
     this.state = {
       componentKey: uuid.v4(),
-      stories: [
-        {pictureName: 'pharaoh-min', subheader: content.pharoah.subheader, text: content.pharoah.text},
-        {pictureName: 'nate-min', subheader: content.nate.subheader, text: content.nate.text},
-        {pictureName: 'sharmene-min', subheader: content.sharmene.subheader, text: content.sharmene.text},
-        {pictureName: 'ray-min', subheader: content.ray.subheader, text: content.ray.text},
-        {pictureName: 'steven-min', subheader: content.steven.subheader, text: content.steven.text},
-        {pictureName: 'tina-min', subheader: content.tina.subheader, text: content.tina.text}
-      ]
+      stories: rotate(stories, moment().get('minute') % stories.length)
     }
   }
 
@@ -83,7 +85,7 @@ class Stories extends Component {
           </div>
 
           <Slider {...sliderSettings} ref='landing-page__stories-carousel'>
-            {shuffle(this.state.stories).map((story, i) => (
+            {this.state.stories.map((story, i) => (
               <div className='landing-page__story-container' key={i} style={{
                 'backgroundImage': `url('./assets/imgs/${story.pictureName + (this.isMobile() ? '-mobile' : '')}.jpg')`
               }}>
