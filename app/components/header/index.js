@@ -30,6 +30,7 @@ class Header extends Component {
         className='header__nav-btn header__toggle-language-btn'
         label={content.toggleLanguageBtnLabel}
         onClick={toggleLocale}
+        containerElement={<span style={{display: 'inline-block'}} />}
         hoverColor='#FDFFF9'
       />
     )
@@ -49,7 +50,7 @@ class Header extends Component {
           }
           iconElementRight={
             <nav className='header__nav'>
-              <MediaQuery query='(min-width: 675px)'>
+              <MediaQuery query='(min-width: 780px)'>
                 {this.state.navBtns.map((btn, i) => (
                   <FlatButton
                     className={`${btn.className || ''}`}
@@ -64,7 +65,7 @@ class Header extends Component {
                 <ToggleLanguageBtn />
               </MediaQuery>
 
-              <MediaQuery query='(max-width: 674px)'>
+              <MediaQuery query='(max-width: 779px)'>
                 <ToggleLanguageBtn />
 
                 {renderIf(!this.props.inRegistrationFlow)(

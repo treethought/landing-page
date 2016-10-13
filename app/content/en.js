@@ -114,6 +114,7 @@ const en = {
       goodCallBusinessCardOrFlyerLabel: 'Good Call business card or flyer',
       otherLabel: 'Other',
       infoHintText: 'Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case.',
+      hintConfirmLabelText: 'GOT IT',
       securityHintText: 'We will ask you to answer this question when you call us. Choose a question with an answer that only you would know and remember. Ex. “What is your favorite childhood candy?”',
       dateOfBirthLabel: 'Date of Birth',
       continueBtnLabel: 'continue',
@@ -129,6 +130,7 @@ const en = {
       hintText: (numOfContacts) => (
         `${numOfContacts > 1 ? 'These are the people' : 'This is the person'} we would contact if you are arrested`
       ),
+      hintConfirmLabelText: 'GOT IT',
       additionalContactLabel: 'Additional contact',
       addContactBtnLabel: 'Add another contact',
       consentToContactLabel: (numOfContacts) => (

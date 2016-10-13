@@ -90,11 +90,11 @@ class CreateUserForm extends Component {
         {renderIf(this.state.infoHintShown || this.state.securityHintShown)(
           <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
             {renderIf(this.state.infoHintShown)(
-              <Hint text={content.infoHintText} />
+              <Hint text={content.infoHintText} confirmLabelText={content.hintConfirmLabelText} />
             )}
 
             {renderIf(this.state.securityHintShown)(
-              <Hint text={content.securityHintText} className='sign-up-page__hint-security' />
+              <Hint text={content.securityHintText} confirmLabelText={content.hintConfirmLabelText} className='sign-up-page__hint-security' />
             )}
           </div>
         )}
