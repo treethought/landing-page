@@ -20,11 +20,6 @@
   top: 0px;
 }
 
-.header__nav {
-  position: relative;
-  bottom: 8px;
-}
-
 .header__nav-btn {
   color: #4A4A4A !important;
   font-size: 14px;
