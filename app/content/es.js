@@ -62,8 +62,7 @@ const es = {
       step2Text: 'tu eres detenido de forma inesperada',
       step3Text: 'tu eres llevado a un precinto',
       // step4Text: 'tu llamas a Good Call al (347) 95-BRONX',
-      // TODO: translate
-      step4Text: 'you call the Good Call hotline (coming soon)',
+      step4Text: 'Tu llamas a la línea directa Good Call (próximamente)',
       step4substep1Text: 'recogemos tu información',
       step4substep2Text: 'te decimos tus derechos',
       step4substep3Text: 'confirmamos tu contacto de emergencia',
@@ -119,7 +118,7 @@ const es = {
       securityHintText: 'Vamos a pedirte que respondas a esta pregunta cuando nos llames. Elige una pregunta con una respuesta que sólo tú sepas y recuerdes. Ejemplo: "¿Cuál es tu dulce favorito de la infancia?"',
       dateOfBirthLabel: 'Fecha de Nacimiento',
       continueBtnLabel: 'continúe',
-      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>.'
+      continueBtnTermsText: 'Al hacer clic en "Continuar", usted está de acuerdo con nuestros <a href="/terms-and-conditions" target="_blank">Términos y Condiciones</a>.'
     },
     createContactsForm: {
       header: 'Proporcione un contacto de emergencia',
@@ -149,13 +148,12 @@ const es = {
     //   'Alguien que conoces es arrestado'
     // ],
     // faqLinkText: '¿Tienes preguntas? Lee nuestras PF'
-    // TODO: translate
-    header: 'Thank you for joining the movement',
-    subheader: 'we will keep you updated about when our pilot launches',
-    getInTouch: 'Get in touch with us.',
-    followUs: 'Follow us and stay updated.',
-    learnAboutUs: 'Learn about what we\'re doing',
-    readOurMission: 'read our mission'
+    header: 'Gracias por unirse al movimiento',
+    subheader: 'Te mantendremos informado sobre nuestros lanzamiento piloto',
+    getInTouch: 'Póngase en contacto con nosotros.',
+    followUs: 'Siguenos y se mantente actualizado.',
+    learnAboutUs: 'Aprende acerca de lo que estamos haciendo',
+    readOurMission: 'Lée nuestra misión'
   },
   privacyPolicyPage: {
     header: 'Pólitica de Privacidad de Good Call',
@@ -187,8 +185,7 @@ const es = {
     paragraph7Header: 'Con su consentimiento:',
     paragraph7Text: 'Nosotros podemos compartir su información personal con terceros con su consentimiento (por ejemplo, si usted consiente que nosotros publiquemos en una cuenta de terceros en su nombre – tal como en su muro de Facebook).',
     paragraph8Header: 'Agentes:',
-    // TODO: translate
-    paragraph8Text: 'Nosotros empleamos a otras personas y compañías para realizar tareas en nuestro nombre y necesitamos compartir su información con ellos para proporcionar servicios o productos a usted; por ejemplo, we may need to share your information with the legal service provider that works with us. Al menos que le indiquemos lo contrario, nuestros agentes no tienen ningún derecho a usar la Información Personal que compartimos con ellos más allá de lo necesario para asistirnos.',
+    paragraph8Text: 'Nosotros empleamos a otras personas y compañías para realizar tareas en nuestro nombre y necesitamos compartir su información con ellos para proporcionar servicios o productos a usted; por ejemplo, es posible que tengamos que compartir tu información con el proveedor de servicio legal que trabaje con nosotros. Al menos que le indiquemos lo contrario, nuestros agentes no tienen ningún derecho a usar la Información Personal que compartimos con ellos más allá de lo necesario para asistirnos.',
     paragraph9Header: 'Transferencias de negocios:',
     paragraph9Text: 'Nosotros podemos elegir comprar o vender los activos de Good Call, Inc. En este tipo de transacciones, la información del cliente es generalmente uno de los activos comerciales que serian transferidos. Además, si nosotros (o nuestros activos) son adquiridos, o si nos vamos a la quiebra, entramos en bancarrota, o si atravesamos algún otro cambio de control, la Información Personal podría ser uno de los activos transferidos o adquiridos por un tercero.',
     paragraph10Header: 'Protección de Good Call y otros:',
@@ -224,28 +221,27 @@ const es = {
     subheader: 'Esta página no existe'
   },
   faqPage: {
-    // TODO: translate
-    header: 'Frequently Asked Questions',
+    header: 'Preguntas Frecuentes',
     sections: [
-      {header: 'About Good Call', faqs: [
-        {question: 'Do I have to pay to sign up and use Good Call?', answer: 'No, Good Call is free to sign up and use!'},
-        // {question: 'When should I call Good Call?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
-        {question: 'Who can sign up for Good Call?', answer: 'Everyone! We believe everyone deserves fairness.'},
-        {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'No one expects to get arrested and we definitely hope you wouldn\'t be. Unfortunately, today unnecessary arrests are too common. Similar to providing emergency contacts and signing waivers, Good Call is there as a safety precaution in case something does happen. Moreover, we believe that everyone should have a just and fair court outcome, signing up will help support that mission.'},
-        // {question: 'Where can I currently use Good Call?', answer: 'Our hotline is currently live in the Bronx.'},
-        {question: 'Where can I currently use Good Call?', answer: 'Our hotline is not live yet, but will be launching soon in the Bronx.'},
-        // {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently piloting in the Bronx and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
-        {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are piloting in the Bronx first and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
-        // {question: 'What is the Good Call hotline for the Bronx?', answer: '1 (347) 95 BRONX'},
-        {question: 'Can I still call the hotline if I didn\'t sign up?', answer: 'Yes, we believe that everyone should get help when they are arrested. However, signing up will allow us to reach out to your emergency contact to let them know what\'s going on and to connect them with your lawyer which will help make your case stronger.'},
-        {question: 'How does Good Call get me a free lawyer?', answer: 'Good Call partners with legal service providers around the city who serve the community. Our lawyers are committed to providing quality representation to our callers.'},
-        {question: 'Will Good Call share my information with anyone?', answer: 'Good Call will only share your information with the lawyer that will represent you in the case that you get arrested. Good Call will never share your information with anyone else that you have not given us the consent to.'}
+      {header: 'Acerca de Good Call', faqs: [
+        {question: '¿Tengo que pagar para inscribirme y utilizar Good Call?', answer: 'No, Good Call es gratuita para registrarse y utilizar la línea!'},
+        // {question: '¿Cuándo debo llamar a Good Call?', answer: 'Llame a nuestra línea si usted o un ser querido ha sido arrestado en el Bronx. Cuanto más pronto un abogado es avisado, más tiempo tendrán él para preparar adecuadamente su caso.'},
+        {question: '¿Quién puede inscribirse a Good Call?', answer: '¡Todo el mundo! Creemos que todo el mundo merece igualdad.'},
+        {question: 'No creo que vaya a ser arrestado, ¿por qué debería inscribirse?', answer: 'Nadie espera ser arrestado y sin duda esperamos que no te suceda. Por desgracia, hoy en día las detenciones innecesarias son demasiado comunes. Parecido a proporcionar contactos de emergencia o una solicitud de exención, Good Call está presente como una medida de precaución en caso de que algo suceda. Por otra parte, creemos que todo el mundo debería tener un resultado judicial justo e imparcial, registrándote apoyará nuestra misión.'},
+        // {question: '¿Dónde puedo utilizar Good Call?', answer: 'Nuestra línea directa está actualmente funcionando en el Bronx.'},
+        {question: '¿Dónde puedo utilizar Good Call?', answer: 'Nuestra línea directa aún no está activa, pero pronto lo estará en el Bronx.'},
+        // {question: 'Si yo no vivo en el Bronx, ¿Puedo inscribirme en Good Call?', answer: '¡Sí! Actualmente estamos probando la línea en el Bronx y estaremos sirviendo los otros distritos pronto. Regístrate y te haremos saber cuando la línea directa de Good Call esté disponible en tu área.'},
+        {question: 'If I don\'Si yo no vivo en el Bronx, ¿Puedo inscribirme en Good Call?', answer: '¡Sí! Estamos probando la línea en el Bronx y estaremos sirviendo otros distritos pronto.'},
+        // {question: '¿Cuál es el teléfono de Good Call en el Bronx?', answer: '1 (347) 95 BRONX'},
+        {question: '¿Todavía puedo llamar a la línea si no me he inscrito?', answer: 'Sí, creemos que todos deben recibir ayuda cuando son arrestados. Sin embargo, al registrarte nos permitirá llamar a tus contactos de emergencia para hacerles saber lo que está sucediendo y te conectaremos con un abogado que te ayudará a hacer tu caso más fuerte.'},
+        {question: '¿Cómo Good Call consegue un abogado gratuito?', answer: 'Good Call está asociado con proveedores de servicios legales alrededor de la ciudad que sirven a la comunidad. Nuestros abogados están comprometidos a proporcionar una representación de calidad a nuestros usuarios.'},
+        {question: 'Good Call compartirá mi información con alguien?', answer: 'Good Call sólo compartirá tu información con el abogado que te represente en el caso de que seas arrestado. Good Call nunca compartirá tu información con ninguna otra persona que no nos haya dado el consentimiento.'}
       ]}
-      // {header: 'If your loved one has been arrested - ', faqs: [
-      //   {question: 'What should I do if my loved one is arrested?', answer: 'You can call our hotline (347) 95 BRONX and we will connect you with one of our lawyers to help you with your loved one\'s case.'},
-      //   {question: 'Why did I get notified by Good Call?', answer: 'If you have been notified by Good Call that someone you know has been arrested, it is because that person has called our hotline and you were listed as their emergency contact.'},
-      //   {question: 'What is Good Call?', answer: 'Good Call is a free hotline to help people who are arrested reach their loved ones and secure a free lawyer right away.'},
-      //   {question: 'How can I learn more about my loved one\'s case?', answer: 'You can call our hotline (347) 95 BRONX to talk to one of our operators.'}
+      // {header: 'Si tu ser querido ha sido arrestado -', faqs: [
+      //   {question: '¿Qué debo hacer si mi ser querido es arrestado?', answer: 'Usted puede llamar a nuestra línea telefónica (347) 95 BRONX y nosotros te conectaremos con uno de nuestros abogados para ayudarle con el caso de tu ser querido.'},
+      //   {question: '¿Por qué fui contactado por Good Call?', answer: 'Si usted ha sido contactado por Good Call significa que alguien que tu conoces ha sido arrestado, y la persona ha llamado a nuestra línea telefónica y tu eres parte de su contacto de emergencia.'},
+      //   {question: 'Que es Good Call?', answer: 'Good Call es una línea telefónica gratuita para ayudar a las personas que son arrestadas a contactarse con sus seres queridos y asegurar un abogado gratuito de inmediato.'},
+      //   {question: '¿Cómo puedo obtener más información sobre el caso de mi ser querido?', answer: 'Usted puede llamar a nuestra línea telefónica BRONX (347) 95 para hablar con uno de nuestros operadores.'}
       // ]}
     ]
   },
@@ -255,8 +251,8 @@ const es = {
     paragraph1Line1: 'Esto es quiénes somos nosotros y algunas cosas jurídicas generales sobre estar obligado por los términos de abajo.',
     paragraph1Line2: 'Los siguientes términos y condiciones (el “Acuerdo”) gobiernan todo el uso del sitio web “Good Call” ubicado en www.Goodcall.nyc (el “Servicio”), si accedido por computadora, tableta o dispositivo móvil. l Servicio es proporcionado a usted por Good Call. (“Good Call”, “nosotros”, “nos” o “nuestro”). El Servicio está sujeto a su (“Usuario”, “Usted” o “Su”) aceptación sin modificación de todos los términos y condiciones contenidos aquí. AL UTILIZAR O ACCEDER CUALQUIER PARTE DEL SERVICIO, USTED ACEPTA TODOS LOS TÉRMINOS Y CONDICIONES CONTENIDOS AQUÍ. Algunas aplicaciones proporcionadas por Good Call pueden estar sujetas a términos o condiciones diferentes o adicionales (tal como acuerdos de compra o de préstamo). En la medida en que entren en conflicto con este Acuerdo, tales términos y condiciones diferentes o adicionales serán controlados.',
     paragraph1Line3: 'Good Call se reserva el derecho, en su exclusiva discreción, de modificar o reemplazar cualquiera de los términos o condiciones de este Acuerdo en cualquier momento. Se le notificará de tales cambios por correo electrónico, notificación de cuenta o una notificación publicada en el Servicio. Su continuo uso del Servicio después de la publicación de cualquier cambio a este Acuerdo constituye la aceptación de esos cambios. P Por la presente certifica a Good Call que Usted tiene por lo menos 13 años de edad. En las jurisdicciones donde 13 años no es la edad de consentimiento para contratar, usted representa y garantiza que tiene todos los permisos y autorizaciones necesarias de un tutor legal apropiado. También certifica que Usted de otro modo está legalmente autorizado para utilizar el Servicio.',
-    subheader1: 'How do we use your information',
-    paragraph2Line1: 'By using the service you agree to have Good Call store my personal information and share your name and date of birth with the Legal Service Provider who will represent you in the event of an arrest.  In the event of my arrest in the Legal Service Provider’s legal jurisdiction, I give the Legal Service Provider permission to inform Good Call so they can reach out to my emergency contact(s).  Additionally, if the Legal Service Provider is contacted by one of my loved ones and told that I have been arrested, the Legal Service Provider can provide my name and date of birth to Good Call, so that my emergency contact(s) can be notified.'
+    subheader1: 'Cómo usamos tu información',
+    paragraph2Line1: 'Al utilizar el servicio tu aceptas que Good Call guarde tu información personal y comparta su nombre y fecha de nacimiento con los Proveedor de Servicios Legales quien te representará en el caso de un arresto. En el caso de mi arresto en la jurisdicción de los Proveedor de Servicios Legales, doy el permiso al Proveedor de Servicios Legales para informar a Good Call de contactar a mi(s) contacto(s) de emergencia. Adicionalmente, si el Proveedor de Servicios Legales es contactado por uno de mis seres queridos y dice que se me ha arrestado, el Proveedor de Servicios Legales puede proporcionar mi nombre y fecha de nacimiento para Good Call, por lo cual mi(s) contacto(s) de emergencia pueden ser notificados.'
   }
 }
 
