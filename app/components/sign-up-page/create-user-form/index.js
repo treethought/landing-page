@@ -52,7 +52,7 @@ class CreateUserForm extends Component {
 
   continueBtnIsDisabled () {
     const { user, requestInProgress } = this.props
-    const { attributes } = user.data.attributes
+    const { attributes } = user.data
     const { name, phone, email, dateOfBirthObj, zip, securityQuestion, securityAnswer } = attributes || {}
     const { month, day, year } = dateOfBirthObj || {}
     return requestInProgress || isEmpty(attributes) || !name || !(phone || email) || !(month && day && year) || !zip || !(securityQuestion && securityAnswer)
