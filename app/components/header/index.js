@@ -62,11 +62,11 @@ class Header extends Component {
                         style={btn.style || {}}
                       />
                     ))}
-                    {/* <ToggleLanguageBtn /> */}
+                    <ToggleLanguageBtn />
                   </MediaQuery>
 
                   <MediaQuery query='(max-width: 674px)'>
-                    {/* <ToggleLanguageBtn /> */}
+                    <ToggleLanguageBtn />
                     <IconMenu
                       className='header__icon-menu'
                       menuStyle={{ 'background': '#F7F9F9' }}
