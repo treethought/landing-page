@@ -62,11 +62,11 @@ class Header extends Component {
                         style={btn.style || {}}
                       />
                     ))}
-                    {/* <ToggleLanguageBtn /> */}
+                    <ToggleLanguageBtn />
                   </MediaQuery>
 
                   <MediaQuery query='(max-width: 674px)'>
-                    {/* <ToggleLanguageBtn /> */}
+                    <ToggleLanguageBtn />
                     <IconMenu
                       className='header__icon-menu'
                       menuStyle={{ 'background': '#F7F9F9' }}
@@ -90,13 +90,13 @@ class Header extends Component {
           }
         />
 
-        {/* renderIf(!(this.props.inRegistrationFlow))(
+        {renderIf(!(this.props.inRegistrationFlow))(
           <div className='header__hotline-banner'>
             <div className='header__hotline-banner-text'>
               {content.hotlineBannerText}
             </div>
           </div>
-        ) */}
+        )}
       </header>
     )
   }

@@ -1,7 +1,7 @@
 const es = {
   innerPage: {
     header: {
-      hotlineBannerText: 'Si usted o un ser querido ha sido arrestado en el Bronx llama al',
+      hotlineBannerText: 'Si usted o un ser querido ha sido arrestado en el Bronx llama al (347) 95-BRONX',
       faqBtnLabel: 'PF',
       aboutUsBtnLabel: 'Acerca de nosotros',
       signUpBtnLabel: 'Regístrate',
@@ -61,8 +61,7 @@ const es = {
       step1Text: 'Te registras en Good Call y escribes una lista de contactos de emergencia',
       step2Text: 'tu eres detenido de forma inesperada',
       step3Text: 'tu eres llevado a un precinto',
-      // step4Text: 'tu llamas a Good Call al (347) 95-BRONX',
-      step4Text: 'Tu llamas a la línea directa Good Call (próximamente)',
+      step4Text: 'tu llamas a Good Call al (347) 95-BRONX',
       step4substep1Text: 'recogemos tu información',
       step4substep2Text: 'te decimos tus derechos',
       step4substep3Text: 'confirmamos tu contacto de emergencia',
@@ -139,21 +138,15 @@ const es = {
     }
   },
   signUpSuccessPage: {
-    // header: 'Gracias por participar en nuestro piloto en el Bronx!',
-    // callText: 'Llama',
-    // ifText: 'si',
-    // ifConditions: [
-    //   'Eres arrestado y llevado a un precinto en el Bronx',
-    //   'No puedes contactar a tus seres queridos',
-    //   'Alguien que conoces es arrestado'
-    // ],
-    // faqLinkText: '¿Tienes preguntas? Lee nuestras PF'
-    header: 'Gracias por unirse al movimiento',
-    subheader: 'Te mantendremos informado sobre nuestros lanzamiento piloto',
-    getInTouch: 'Póngase en contacto con nosotros.',
-    followUs: 'Siguenos y se mantente actualizado.',
-    learnAboutUs: 'Aprende acerca de lo que estamos haciendo',
-    readOurMission: 'Lée nuestra misión'
+    header: 'Gracias por participar en nuestro piloto en el Bronx!',
+    callText: 'Llama',
+    ifText: 'si',
+    ifConditions: [
+      'Eres arrestado y llevado a un precinto en el Bronx',
+      'No puedes contactar a tus seres queridos',
+      'Alguien que conoces es arrestado'
+    ],
+    faqLinkText: '¿Tienes preguntas? Lee nuestras PF'
   },
   privacyPolicyPage: {
     header: 'Pólitica de Privacidad de Good Call',
@@ -225,24 +218,22 @@ const es = {
     sections: [
       {header: 'Acerca de Good Call', faqs: [
         {question: '¿Tengo que pagar para inscribirme y utilizar Good Call?', answer: 'No, Good Call es gratuita para registrarse y utilizar la línea!'},
-        // {question: '¿Cuándo debo llamar a Good Call?', answer: 'Llame a nuestra línea si usted o un ser querido ha sido arrestado en el Bronx. Cuanto más pronto un abogado es avisado, más tiempo tendrán él para preparar adecuadamente su caso.'},
+        {question: '¿Cuándo debo llamar a Good Call?', answer: 'Llame a nuestra línea si usted o un ser querido ha sido arrestado en el Bronx. Cuanto más pronto un abogado es avisado, más tiempo tendrán él para preparar adecuadamente su caso.'},
         {question: '¿Quién puede inscribirse a Good Call?', answer: '¡Todo el mundo! Creemos que todo el mundo merece igualdad.'},
         {question: 'No creo que vaya a ser arrestado, ¿por qué debería inscribirse?', answer: 'Nadie espera ser arrestado y sin duda esperamos que no te suceda. Por desgracia, hoy en día las detenciones innecesarias son demasiado comunes. Parecido a proporcionar contactos de emergencia o una solicitud de exención, Good Call está presente como una medida de precaución en caso de que algo suceda. Por otra parte, creemos que todo el mundo debería tener un resultado judicial justo e imparcial, registrándote apoyará nuestra misión.'},
-        // {question: '¿Dónde puedo utilizar Good Call?', answer: 'Nuestra línea directa está actualmente funcionando en el Bronx.'},
-        {question: '¿Dónde puedo utilizar Good Call?', answer: 'Nuestra línea directa aún no está activa, pero pronto lo estará en el Bronx.'},
-        // {question: 'Si yo no vivo en el Bronx, ¿Puedo inscribirme en Good Call?', answer: '¡Sí! Actualmente estamos probando la línea en el Bronx y estaremos sirviendo los otros distritos pronto. Regístrate y te haremos saber cuando la línea directa de Good Call esté disponible en tu área.'},
-        {question: 'If I don\'Si yo no vivo en el Bronx, ¿Puedo inscribirme en Good Call?', answer: '¡Sí! Estamos probando la línea en el Bronx y estaremos sirviendo otros distritos pronto.'},
-        // {question: '¿Cuál es el teléfono de Good Call en el Bronx?', answer: '1 (347) 95 BRONX'},
+        {question: '¿Dónde puedo utilizar Good Call?', answer: 'Nuestra línea directa está actualmente funcionando en el Bronx.'},
+        {question: 'Si yo no vivo en el Bronx, ¿Puedo inscribirme en Good Call?', answer: '¡Sí! Actualmente estamos probando la línea en el Bronx y estaremos sirviendo los otros distritos pronto. Regístrate y te haremos saber cuando la línea directa de Good Call esté disponible en tu área.'},
+        {question: '¿Cuál es el teléfono de Good Call en el Bronx?', answer: '1 (347) 95 BRONX'},
         {question: '¿Todavía puedo llamar a la línea si no me he inscrito?', answer: 'Sí, creemos que todos deben recibir ayuda cuando son arrestados. Sin embargo, al registrarte nos permitirá llamar a tus contactos de emergencia para hacerles saber lo que está sucediendo y te conectaremos con un abogado que te ayudará a hacer tu caso más fuerte.'},
         {question: '¿Cómo Good Call consegue un abogado gratuito?', answer: 'Good Call está asociado con proveedores de servicios legales alrededor de la ciudad que sirven a la comunidad. Nuestros abogados están comprometidos a proporcionar una representación de calidad a nuestros usuarios.'},
         {question: 'Good Call compartirá mi información con alguien?', answer: 'Good Call sólo compartirá tu información con el abogado que te represente en el caso de que seas arrestado. Good Call nunca compartirá tu información con ninguna otra persona que no nos haya dado el consentimiento.'}
+      ]},
+      {header: 'Si tu ser querido ha sido arrestado -', faqs: [
+        {question: '¿Qué debo hacer si mi ser querido es arrestado?', answer: 'Usted puede llamar a nuestra línea telefónica (347) 95 BRONX y nosotros te conectaremos con uno de nuestros abogados para ayudarle con el caso de tu ser querido.'},
+        {question: '¿Por qué fui contactado por Good Call?', answer: 'Si usted ha sido contactado por Good Call significa que alguien que tu conoces ha sido arrestado, y la persona ha llamado a nuestra línea telefónica y tu eres parte de su contacto de emergencia.'},
+        {question: 'Que es Good Call?', answer: 'Good Call es una línea telefónica gratuita para ayudar a las personas que son arrestadas a contactarse con sus seres queridos y asegurar un abogado gratuito de inmediato.'},
+        {question: '¿Cómo puedo obtener más información sobre el caso de mi ser querido?', answer: 'Usted puede llamar a nuestra línea telefónica BRONX (347) 95 para hablar con uno de nuestros operadores.'}
       ]}
-      // {header: 'Si tu ser querido ha sido arrestado -', faqs: [
-      //   {question: '¿Qué debo hacer si mi ser querido es arrestado?', answer: 'Usted puede llamar a nuestra línea telefónica (347) 95 BRONX y nosotros te conectaremos con uno de nuestros abogados para ayudarle con el caso de tu ser querido.'},
-      //   {question: '¿Por qué fui contactado por Good Call?', answer: 'Si usted ha sido contactado por Good Call significa que alguien que tu conoces ha sido arrestado, y la persona ha llamado a nuestra línea telefónica y tu eres parte de su contacto de emergencia.'},
-      //   {question: 'Que es Good Call?', answer: 'Good Call es una línea telefónica gratuita para ayudar a las personas que son arrestadas a contactarse con sus seres queridos y asegurar un abogado gratuito de inmediato.'},
-      //   {question: '¿Cómo puedo obtener más información sobre el caso de mi ser querido?', answer: 'Usted puede llamar a nuestra línea telefónica BRONX (347) 95 para hablar con uno de nuestros operadores.'}
-      // ]}
     ]
   },
   termsAndConditionsPage: {
