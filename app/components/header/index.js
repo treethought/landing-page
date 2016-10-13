@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
 import IconMenu from 'material-ui/IconMenu'
@@ -6,13 +6,13 @@ import MenuItem from 'material-ui/MenuItem'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 import FlatButton from 'material-ui/FlatButton'
 import MediaQuery from 'react-responsive'
-import {Link} from 'react-router'
+import { Link } from 'react-router'
 import renderIf from 'render-if'
 
 class Header extends Component {
   constructor (props) {
     super(props)
-    let content = props.content
+    const { content } = props
     this.state = {
       navBtns: [
         {label: content.faqBtnLabel, to: '/faq', className: 'header__nav-btn header__nav-faq-btn', activeClassName: 'header__nav-btn-active'},
@@ -23,13 +23,14 @@ class Header extends Component {
   }
 
   render () {
-    const {content, toggleLocale} = this.props
+    const {content, toggleLocale, inRegistrationFlow} = this.props
 
     const ToggleLanguageBtn = () => (
       <FlatButton
         className='header__nav-btn header__toggle-language-btn'
         label={content.toggleLanguageBtnLabel}
         onClick={toggleLocale}
+        containerElement={<span style={{display: 'inline-block'}} />}
         hoverColor='#FDFFF9'
       />
     )
@@ -49,54 +50,54 @@ class Header extends Component {
           }
           iconElementRight={
             <nav className='header__nav'>
-              {renderIf(!(this.props.inRegistrationFlow))(
-                <div>
-                  <MediaQuery query='(min-width: 675px)'>
+              <MediaQuery query='(min-width: 780px)'>
+                {this.state.navBtns.map((btn, i) => (
+                  <FlatButton
+                    className={`${btn.className || ''}`}
+                    key={i}
+                    label={btn.label}
+                    containerElement={<Link to={btn.to} activeClassName={btn.activeClassName || ''}/>}
+                    hoverColor='#FDFFF9'
+                    style={{opacity: inRegistrationFlow ? 0 : 1}}
+                  />
+                ))}
+
+                <ToggleLanguageBtn />
+              </MediaQuery>
+
+              <MediaQuery query='(max-width: 779px)'>
+                <ToggleLanguageBtn />
+
+                {renderIf(!this.props.inRegistrationFlow)(
+                  <IconMenu
+                    className='header__icon-menu'
+                    menuStyle={{ 'background': '#F7F9F9' }}
+                    iconButtonElement={ <IconButton><MenuIcon /></IconButton> }
+                    targetOrigin={{horizontal: 'right', vertical: 'top'}}
+                    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+                  >
                     {this.state.navBtns.map((btn, i) => (
-                      <FlatButton
-                        className={`${btn.className || ''}`}
+                      <MenuItem
+                        primaryText={btn.label}
                         key={i}
-                        label={btn.label}
-                        containerElement={<Link to={btn.to} activeClassName={btn.activeClassName || ''}/>}
-                        hoverColor='#FDFFF9'
+                        containerElement={<Link to={btn.to} />}
                         style={btn.style || {}}
                       />
                     ))}
-                    <ToggleLanguageBtn />
-                  </MediaQuery>
-
-                  <MediaQuery query='(max-width: 674px)'>
-                    <ToggleLanguageBtn />
-                    <IconMenu
-                      className='header__icon-menu'
-                      menuStyle={{ 'background': '#F7F9F9' }}
-                      iconButtonElement={ <IconButton><MenuIcon /></IconButton> }
-                      targetOrigin={{horizontal: 'right', vertical: 'top'}}
-                      anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-                    >
-                      {this.state.navBtns.map((btn, i) => (
-                        <MenuItem
-                          primaryText={btn.label}
-                          key={i}
-                          containerElement={<Link to={btn.to} />}
-                          style={btn.style || {}}
-                        />
-                      ))}
-                    </IconMenu>
-                  </MediaQuery>
-                </div>
-              )}
+                  </IconMenu>
+                )}
+              </MediaQuery>
             </nav>
           }
         />
 
-        {/* renderIf(!(this.props.inRegistrationFlow))(
+        {renderIf(!(this.props.inRegistrationFlow))(
           <div className='header__hotline-banner'>
             <div className='header__hotline-banner-text'>
               {content.hotlineBannerText}
             </div>
           </div>
-        ) */}
+        )}
       </header>
     )
   }

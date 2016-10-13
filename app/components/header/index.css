@@ -22,7 +22,7 @@
 
 .header__nav {
   position: relative;
-  bottom: 8px;
+  bottom: 6px;
 }
 
 .header__nav-btn {
@@ -54,11 +54,6 @@
 
 .header__sign-up-btn span {
   text-transform: lowercase !important;
-}
-
-.header__toggle-language-btn {
-  position: relative;
-  bottom: 11px;
 }
 
 .header__toggle-language-btn span {
@@ -97,7 +92,7 @@
   font-weight: 300;
 }
 
-@media (min-width: 675px) {
+@media (min-width: 780px) {
 
   .header__app-bar {
     padding-right: 40px !important;
@@ -105,12 +100,12 @@
 
 }
 
-@media (max-width: 674px) {
+@media (max-width: 779px) {
 
   .header__app-bar {
     height: 70px !important;
   }
-
+  
   .header__logo {
     height: 35px;
   }
@@ -125,7 +120,8 @@
   }
 
   .header__toggle-language-btn {
-    bottom: 1px;
+    position: relative;
+    top: 10px;
   }
 
 }

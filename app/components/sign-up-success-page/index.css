@@ -1,4 +1,4 @@
-/*.sign-up-success-page {
+.sign-up-success-page {
   text-align: center;
   color: #4A4A4A;
   padding: 52px 29px 129px 29px;
@@ -13,7 +13,7 @@
 .sign-up-success-page__paragraph {
   font-size: 20px;
   margin: 0 auto;
-  max-width: 410px;
+  max-width: 420px;
 }
 
 .sign-up-success-page__call-number {
@@ -102,124 +102,6 @@
   .sign-up-success-page__if-container {
     padding-left: 20px;
     padding-right: 20px;
-  }
-
-}*/
-
-.sign-up-success-page {
-  text-align: center;
-  color: #FDFFF9;
-  padding-top: 70px;
-}
-
-.sign-up-success-page__header {
-  font-size: 40px;
-  color: #4A4A4A;
-  letter-spacing: -0.21px;
-  font-weight: 700;
-  margin-bottom: 18px;
-  padding-left: 36px;
-  padding-right: 36px;
-}
-
-.sign-up-success-page__subheader {
-  font-size: 30px;
-  color: #4A4A4A;
-  font-weight: normal;
-  margin-bottom: 72px;
-  padding-left: 36px;
-  padding-right: 36px;
-}
-
-.sign-up-success-page__panels {
-  display: flex;
-  flex-direction: row;
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
-  margin-bottom: 210px;
-}
-
-.sign-up-success-page__panel {
-  padding: 36px 68px;
-  flex-grow: 1;
-  flex-basis: 0;
-  -webkit-flex-grow: 1;
-  -webkit-flex-basis: 0;
-  height: 269px;
-}
-
-.sign-up-success-page__get-in-touch-panel {
-  background: #45D8B8;
-}
-
-.sign-up-success-page__follow-us-panel {
-  background: #40B097;
-}
-
-.sign-up-success-page__learn-about-us-panel {
-  background: #00FFEE;
-}
-
-.sign-up-success-page__panel-header {
-  font-size: 30px;
-  color: #FDFFF9;
-  margin-top: 0;
-  margin-bottom: 34px;
-  font-weight: normal;
-  min-height: 68px;
-}
-
-.sign-up-success-page__link {
-  text-decoration: none;
-  color: inherit;
-  font-size: 20px;
-  display: block;
-  font-weight: 300;
-}
-
-.sign-up-success-page__mission-btn {
-  background: #FDFFF9 !important;
-}
-
-.sign-up-success-page__mission-btn span {
-  color: #4A4A4A !important;
-  font-size: 16px !important;
-  font-weight: normal !important;
-}
-
-.sign-up-success-page__links {
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: row;
-  -webkit-flex-direction: row;
-  align-items: center;
-  -webkit-align-items: center;
-  justify-content: center;
-  -webkit-justify-content: center;
-}
-
-.sign-up-success-page__link {
-  padding: 10px;
-}
-
-.sign-up-success-page__link-icon {
-  width: 40px;
-  height: 40px;
-}
-
-@media (max-width: 980px) {
-
-  .sign-up-success-page__panels {
-    -webkit-flex-direction: column;
-    margin-bottom: 160px;
-  }
-
-  .sign-up-success-page__panel {
-    padding: 36px;
-  }
-
-  .sign-up-success-page__panel-header {
-    min-height: 30px;
   }
 
 }

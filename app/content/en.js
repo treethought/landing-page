@@ -1,7 +1,7 @@
 const en = {
   innerPage: {
     header: {
-      hotlineBannerText: 'If you or your loved one has been arrested in the Bronx call',
+      hotlineBannerText: 'If you or your loved one has been arrested in the Bronx call (347) 95-BRONX',
       faqBtnLabel: 'FAQ',
       aboutUsBtnLabel: 'About us',
       signUpBtnLabel: 'Sign up',
@@ -61,8 +61,7 @@ const en = {
       step1Text: 'you sign up for Good Call and list an emergency contact',
       step2Text: 'you are unexpectedly arrested',
       step3Text: 'you are brought to the precinct',
-      // step4Text: 'you call Good Call at\n (347) 95-BRONX',
-      step4Text: 'you call the Good Call hotline (coming soon)',
+      step4Text: 'you call Good Call at\n (347) 95-BRONX',
       step4substep1Text: 'we collect your information',
       step4substep2Text: 'we tell you your rights',
       step4substep3Text: 'we confirm your emergency contact',
@@ -115,6 +114,7 @@ const en = {
       goodCallBusinessCardOrFlyerLabel: 'Good Call business card or flyer',
       otherLabel: 'Other',
       infoHintText: 'Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case.',
+      hintConfirmLabelText: 'GOT IT',
       securityHintText: 'We will ask you to answer this question when you call us. Choose a question with an answer that only you would know and remember. Ex. “What is your favorite childhood candy?”',
       dateOfBirthLabel: 'Date of Birth',
       continueBtnLabel: 'continue',
@@ -130,6 +130,7 @@ const en = {
       hintText: (numOfContacts) => (
         `${numOfContacts > 1 ? 'These are the people' : 'This is the person'} we would contact if you are arrested`
       ),
+      hintConfirmLabelText: 'GOT IT',
       additionalContactLabel: 'Additional contact',
       addContactBtnLabel: 'Add another contact',
       consentToContactLabel: (numOfContacts) => (
@@ -139,21 +140,15 @@ const en = {
     }
   },
   signUpSuccessPage: {
-    // header: 'Thank you for joining our pilot in the Bronx!',
-    // callText: 'Call',
-    // ifText: 'if',
-    // ifConditions: [
-    //   'You are arrested and are brought to the precinct in the Bronx',
-    //   'You cannot reach your loved ones',
-    //   'Someone you know gets arrested'
-    // ],
-    // faqLinkText: 'Have questions? Read our FAQ'
-    header: 'Thank you for joining the movement',
-    subheader: 'we will keep you updated about when our pilot launches',
-    getInTouch: 'Get in touch with us.',
-    followUs: 'Follow us and stay updated.',
-    learnAboutUs: 'Learn about what we\'re doing',
-    readOurMission: 'read our mission'
+    header: 'Thank you for joining our pilot in the Bronx!',
+    callText: 'Call',
+    ifText: 'if',
+    ifConditions: [
+      'You are arrested and are brought to the precinct in the Bronx',
+      'You cannot reach your loved ones',
+      'Someone you know gets arrested'
+    ],
+    faqLinkText: 'Have questions? Read our FAQ'
   },
   privacyPolicyPage: {
     header: 'Privacy Policy',
@@ -227,24 +222,22 @@ const en = {
     sections: [
       {header: 'About Good Call', faqs: [
         {question: 'Do I have to pay to sign up and use Good Call?', answer: 'No, Good Call is free to sign up and use!'},
-        // {question: 'When should I call Good Call?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
+        {question: 'When should I call Good Call?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
         {question: 'Who can sign up for Good Call?', answer: 'Everyone! We believe everyone deserves fairness.'},
         {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'No one expects to get arrested and we definitely hope you wouldn\'t be. Unfortunately, today unnecessary arrests are too common. Similar to providing emergency contacts and signing waivers, Good Call is there as a safety precaution in case something does happen. Moreover, we believe that everyone should have a just and fair court outcome, signing up will help support that mission.'},
-        // {question: 'Where can I currently use Good Call?', answer: 'Our hotline is currently live in the Bronx.'},
-        {question: 'Where can I currently use Good Call?', answer: 'Our hotline is not live yet, but will be launching soon in the Bronx.'},
-        // {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently piloting in the Bronx and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
-        {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are piloting in the Bronx first and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
-        // {question: 'What is the Good Call hotline for the Bronx?', answer: '1 (347) 95 BRONX'},
+        {question: 'Where can I currently use Good Call?', answer: 'Our hotline is currently live in the Bronx.'},
+        {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently piloting in the Bronx and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
+        {question: 'What is the Good Call hotline for the Bronx?', answer: '1 (347) 95 BRONX'},
         {question: 'Can I still call the hotline if I didn\'t sign up?', answer: 'Yes, we believe that everyone should get help when they are arrested. However, signing up will allow us to reach out to your emergency contact to let them know what\'s going on and to connect them with your lawyer which will help make your case stronger.'},
         {question: 'How does Good Call get me a free lawyer?', answer: 'Good Call partners with legal service providers around the city who serve the community. Our lawyers are committed to providing quality representation to our callers.'},
         {question: 'Will Good Call share my information with anyone?', answer: 'Good Call will only share your information with the lawyer that will represent you in the case that you get arrested. Good Call will never share your information with anyone else that you have not given us the consent to.'}
+      ]},
+      {header: 'If your loved one has been arrested - ', faqs: [
+        {question: 'What should I do if my loved one is arrested?', answer: 'You can call our hotline (347) 95 BRONX and we will connect you with one of our lawyers to help you with your loved one\'s case.'},
+        {question: 'Why did I get notified by Good Call?', answer: 'If you have been notified by Good Call that someone you know has been arrested, it is because that person has called our hotline and you were listed as their emergency contact.'},
+        {question: 'What is Good Call?', answer: 'Good Call is a free hotline to help people who are arrested reach their loved ones and secure a free lawyer right away.'},
+        {question: 'How can I learn more about my loved one\'s case?', answer: 'You can call our hotline (347) 95 BRONX to talk to one of our operators.'}
       ]}
-      // {header: 'If your loved one has been arrested - ', faqs: [
-      //   {question: 'What should I do if my loved one is arrested?', answer: 'You can call our hotline (347) 95 BRONX and we will connect you with one of our lawyers to help you with your loved one\'s case.'},
-      //   {question: 'Why did I get notified by Good Call?', answer: 'If you have been notified by Good Call that someone you know has been arrested, it is because that person has called our hotline and you were listed as their emergency contact.'},
-      //   {question: 'What is Good Call?', answer: 'Good Call is a free hotline to help people who are arrested reach their loved ones and secure a free lawyer right away.'},
-      //   {question: 'How can I learn more about my loved one\'s case?', answer: 'You can call our hotline (347) 95 BRONX to talk to one of our operators.'}
-      // ]}
     ]
   },
   termsAndConditionsPage: {

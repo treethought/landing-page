@@ -51,7 +51,7 @@ class CreateContactsForm extends Component {
       <form className='sign-up-page__form'>
         {renderIf(this.state.hintShown)(
           <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
-            <Hint text={content.hintText(this.props.contacts.length)} />
+            <Hint text={content.hintText(this.props.contacts.length)} confirmLabelText={content.hintConfirmLabelText}/>
           </div>
         )}
 
