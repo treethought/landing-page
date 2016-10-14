@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component, PropTypes } from 'react'
 import TextField from 'material-ui/TextField'
 
 class StandardTextField extends Component {
@@ -24,6 +24,18 @@ class StandardTextField extends Component {
       />
     )
   }
+}
+
+const { string, func } = PropTypes
+
+StandardTextField.propTypes = {
+  className: string,
+  labelText: string,
+  type: string,
+  onChange: func,
+  onFocus: func,
+  name: string,
+  errorText: string
 }
 
 export default StandardTextField
