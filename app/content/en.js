@@ -124,9 +124,9 @@ const en = {
       header: 'provide an emergency contact',
       errorTextLine1: 'looks like something went wrong ツ',
       errorTextLine2: 'need help? just email hello@goodcall.nyc',
-      nameLabel: 'First Name, Last Name (optional)',
-      relationshipLabel: 'Relationship (optional)',
-      phoneLabel: 'Phone (xxx) xxx-xxxx (optional)',
+      nameLabel: 'First Name, Last Name',
+      relationshipLabel: 'Relationship',
+      phoneLabel: 'Phone (xxx) xxx-xxxx',
       hintText: (numOfContacts) => (
         `${numOfContacts > 1 ? 'These are the people' : 'This is the person'} we would contact if you are arrested`
       ),
