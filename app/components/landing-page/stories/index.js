@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import ScrollDownBtn from './../../scroll-down-btn'
-import Slider from 'react-slick'
+import Slider from 'react-slick-data-doge-fork'
 import uuid from 'node-uuid'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'

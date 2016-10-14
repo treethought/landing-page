@@ -15,7 +15,7 @@ class Header extends Component {
     const { content } = props
     this.state = {
       navBtns: [
-        {label: content.faqBtnLabel, to: '/faq', className: 'header__nav-btn header__nav-faq-btn', activeClassName: 'header__nav-btn-active'},
+        {label: content.faqBtnLabel, to: '/faq', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
         {label: content.aboutUsBtnLabel, to: '/about-us', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
         {label: content.signUpBtnLabel, to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'}
       ]
@@ -50,7 +50,7 @@ class Header extends Component {
           }
           iconElementRight={
             <nav className='header__nav'>
-              <MediaQuery query='(min-width: 780px)'>
+              <MediaQuery query='(min-width: 850px)'>
                 {this.state.navBtns.map((btn, i) => (
                   <FlatButton
                     className={`${btn.className || ''}`}
@@ -65,7 +65,7 @@ class Header extends Component {
                 <ToggleLanguageBtn />
               </MediaQuery>
 
-              <MediaQuery query='(max-width: 779px)'>
+              <MediaQuery query='(max-width: 849px)'>
                 <ToggleLanguageBtn />
 
                 {renderIf(!this.props.inRegistrationFlow)(
