@@ -20,7 +20,16 @@
   top: 0px;
 }
 
-.header__nav {
+.header__nav > div {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   position: relative;
   bottom: 6px;
 }
@@ -50,6 +59,11 @@
 
 .header__sign-up-btn span {
   text-transform: lowercase !important;
+}
+
+.header__toggle-language-btn {
+  position: relative;
+  top: 5px;
 }
 
 .header__toggle-language-btn span {
@@ -114,10 +128,5 @@
   .header__hotline-banner-text {
     font-size: 13px;
   }
-
-  .header__toggle-language-btn {
-    position: relative;
-    top: 10px;
-  }
-
+  
 }
