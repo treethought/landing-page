@@ -13,7 +13,7 @@ const es = {
       aboutUsLinkLabel: 'Acerca de nosotros',
       privacyPolicyLinkLabel: 'Política de privacidad',
       termsAndConditionsLinkLabel: 'Términos de servicio',
-      contactUsHeader: 'Contáctenos',
+      contactUsHeader: 'Contáctanos',
       address: '150 Court St. 2nd Floor, Brooklyn 11201',
       helpHeader: 'Ayuda',
       ourPartnersHeader: 'Nuestros socios'
@@ -22,38 +22,51 @@ const es = {
   landingPage: {
     goodCallSummary: 'Good Call es un servicio totalmente gratuito que ayuda a las personas que son arrestadas a contactar a sus seres queridos y asegurar un abogado sin costo alguno. Todos merecemos un trato justo.',
     stories: {
-      header: 'Nadie espera ser arrestado, pero si sucede, nosotros cubrimos tu espalda.',
-      storyHeader: 'Yo fui arrestado.',
+      header: 'Nadie espera ser arrestado, pero si sucede, nosotros te cubrimos la espalda.',
       scrollDownBtnLabel: 'Conoce más',
-      pharoah: {
-        subheader: 'porque yo me estaba defendiendo',
-        text: 'Cuando Pharaoh fue atacado por dos inquilinos en su casa en Brooklyn, él hizo todo lo posible para defenderse. Maltratado y golpeado, fue detenido cuando la policía llegó.'
-      },
-      nate: {
-        subheader: 'porque el oficial dijo que era el protocolo',
-        text: 'Nate fue arrestado por posesión de marihuana. Aunque es un delito de bajo nivel que por lo general se resuelve con un simple multa, el oficial decidió arrestar a Nate porque creía que era "protocolo".'
-      },
-      sharmene: {
-        subheader: 'de la nada',
-        text: 'Cuando un altercado de meses atrás se convirtió en una orden de arresto sin su conocimiento, Shermene fué detenida de forma inesperada.'
-      },
-      ray: {
-        subheader: 'porque yo correspondí a la descripción',
-        text: 'En el barrio de Ray en Brooklyn “corresponder a la descripción" es una ofensa común. Una noche, Ray miró fuera de su casa a causa de un sonido perturbador, y rápidamente pasó de ser habitante preocupado a sospechoso.'
-      },
-      steven: {
-        subheader: 'debido a una política depredadora',
-        text: 'Miles de personas cada año son detenidas, chequeadas y arrestadas. Steven fué uno de ellos.'
-      },
-      tina: {
-        subheader: 'por protestar',
-        text: 'Tina estaba disfrutando de la tarde en su casa. La policía entró a su casa en busca de su ex-novio sin una orden de registro. Cuando ella habló en contra del porqué estaban haciendo la búsqueda, fue detenida.'
-      }
+      stories: [
+        {
+          name: 'pharoah',
+          header: 'Yo fui arrestado.',
+          subheader: 'porque yo me estaba defendiendo',
+          text: 'Cuando Pharaoh fue atacado por dos inquilinos en su casa en Brooklyn, él hizo todo lo posible para defenderse. Maltratado y golpeado, fue detenido cuando la policía llegó.'
+        },
+        {
+          name: 'nate',
+          header: 'Yo fui arrestado.',
+          subheader: 'porque el oficial dijo que era el protocolo',
+          text: 'Nate fue arrestado por posesión de marihuana. Aunque es un delito de bajo nivel que por lo general se resuelve con una simple multa, el oficial decidió arrestar a Nate porque creía que era "protocolo".'
+        },
+        {
+          name: 'sharmene',
+          header: 'Yo fui arrestada.',
+          subheader: 'de la nada',
+          text: 'Cuando un altercado de meses atrás se convirtió en una orden de arresto sin su conocimiento, Shermene fué detenida de forma inesperada.'
+        },
+        {
+          name: 'ray',
+          header: 'Yo fui arrestado.',
+          subheader: 'porque yo correspondí a la descripción',
+          text: 'En el barrio de Ray en Brooklyn “corresponder a la descripción" es una ofensa común. Una noche, Ray miró fuera de su casa a causa de un sonido perturbador, y rápidamente pasó de ser habitante preocupado a sospechoso.'
+        },
+        {
+          name: 'steven',
+          header: 'Yo fui arrestado.',
+          subheader: 'debido a una política depredadora',
+          text: 'Miles de personas cada año son detenidas, chequeadas y arrestadas. Steven fué uno de ellos.'
+        },
+        {
+          name: 'tina',
+          header: 'Yo fui arrestada.',
+          subheader: 'por protestar',
+          text: 'Tina estaba disfrutando de la tarde en su casa. La policía entró a su casa en busca de su ex-novio sin una orden de registro. Cuando ella habló en contra del porqué estaban haciendo la búsqueda, fue detenida.'
+        }
+      ]
     },
     problem: {
       header: 'Para la mayoría de Neoyorquinos, no hay donde acudir por ayuda.',
       subheader: 'Nuestra misión',
-      text: 'Si usted no tiene un abogado privado que pueda llamar, el cual la mayoría de nosotros no tiene, es difícil saber qué hacer si usted es arrestado. Sin un teléfono celular, y sólo unas pocas llamadas gratuitas desde el precinto, es difícil solicitar la ayuda que usted necesita. Queremos cambiar esto.'
+      text: 'Si no tienes un abogado privado que puedas llamar, el cual la mayoría de nosotros no tiene, es difícil saber qué hacer si eres arrestado. Sin un teléfono celular, y sólo unas pocas llamadas gratuitas desde el precinto, es difícil solicitar la ayuda que tú necesitas. Queremos cambiar esto.'
     },
     howItWorks: {
       header: 'Presentamos Good Call',

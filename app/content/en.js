@@ -23,32 +23,45 @@ const en = {
     goodCallSummary: 'Good Call is a completely free service that helps people who are arrested reach their loved ones and secure a free lawyer. Everyone deserves fairness.',
     stories: {
       header: 'No one expects to get arrested but if you do we got your back.',
-      storyHeader: 'I was arrested.',
       scrollDownBtnLabel: 'Learn more',
-      pharoah: {
-        subheader: 'because I was defending myself',
-        text: 'When Pharaoh was attacked by two tenants in his Brooklyn home, he tried his best to defend himself. Battered and bruised, he was still arrested when the police showed up.'
-      },
-      nate: {
-        subheader: 'because the officer said it was protocol',
-        text: 'Nate was arrested for the possession of marijuana. Although this low level offense is usually resolved with a simple ticket, the officer decided to arrest Nate because he believed it was “protocol.”'
-      },
-      sharmene: {
-        subheader: 'out of nowhere',
-        text: 'When an altercation from months before turned into a warrant without her knowledge, Shermene was arrested unexpectedly.'
-      },
-      ray: {
-        subheader: 'because I fit the description',
-        text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'
-      },
-      steven: {
-        subheader: 'because of a predatory policy',
-        text: 'Thousands of people every year are stopped, frisked, and arrested. Steven happened to be one of them.'
-      },
-      tina: {
-        subheader: 'for speaking out',
-        text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'
-      }
+      stories: [
+        {
+          name: 'pharoah',
+          header: 'I was arrested.',
+          subheader: 'because I was defending myself',
+          text: 'When Pharaoh was attacked by two tenants in his Brooklyn home, he tried his best to defend himself. Battered and bruised, he was still arrested when the police showed up.'
+        },
+        {
+          name: 'nate',
+          header: 'I was arrested.',
+          subheader: 'because the officer said it was protocol',
+          text: 'Nate was arrested for the possession of marijuana. Although this low level offense is usually resolved with a simple ticket, the officer decided to arrest Nate because he believed it was “protocol.”'
+        },
+        {
+          name: 'sharmene',
+          header: 'I was arrested.',
+          subheader: 'out of nowhere',
+          text: 'When an altercation from months before turned into a warrant without her knowledge, Shermene was arrested unexpectedly.'
+        },
+        {
+          name: 'ray',
+          header: 'I was arrested.',
+          subheader: 'because I fit the description',
+          text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'
+        },
+        {
+          name: 'steven',
+          header: 'I was arrested.',
+          subheader: 'because of a predatory policy',
+          text: 'Thousands of people every year are stopped, frisked, and arrested. Steven happened to be one of them.'
+        },
+        {
+          name: 'tina',
+          header: 'I was arrested.',
+          subheader: 'for speaking out',
+          text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'
+        }
+      ]
     },
     problem: {
       header: 'For most New Yorkers, there is nowhere to turn for help.',
