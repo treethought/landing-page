@@ -60,7 +60,7 @@ class Stories extends Component {
   render () {
     let sliderSettings = {
       className: 'landing-page__stories-carousel',
-      autoplay: true,
+      autoplay: false, // todo: change back
       arrows: false,
       autoplaySpeed: 15000,
       infinite: true,
