@@ -8,52 +8,65 @@ const es = {
       toggleLanguageBtnLabel: 'English'
     },
     footer: {
-      signUpLinkLabel: 'Regístrate',
       faqLinkLabel: 'Preguntas Frecuentes',
       aboutUsLinkLabel: 'Acerca de nosotros',
       privacyPolicyLinkLabel: 'Política de privacidad',
       termsAndConditionsLinkLabel: 'Términos de servicio',
-      contactUsHeader: 'Contáctenos',
+      contactUsHeader: 'Contáctanos',
       address: '150 Court St. 2nd Floor, Brooklyn 11201',
-      helpHeader: 'Ayuda',
-      ourPartnersHeader: 'Nuestros socios'
+      ourCompanyHeader: 'Nuestra Compañía',
+      ourPartnersHeader: 'Nuestros socios',
+      pressReleasesLinkLabel: 'Comunicados de prensa'
     }
   },
   landingPage: {
     goodCallSummary: 'Good Call es un servicio totalmente gratuito que ayuda a las personas que son arrestadas a contactar a sus seres queridos y asegurar un abogado sin costo alguno. Todos merecemos un trato justo.',
     stories: {
-      header: 'Nadie espera ser arrestado, pero si sucede, nosotros cubrimos tu espalda.',
-      storyHeader: 'Yo fui arrestado.',
+      header: 'Nadie espera ser arrestado, pero si sucede, nosotros te cubrimos la espalda.',
       scrollDownBtnLabel: 'Conoce más',
-      pharoah: {
-        subheader: 'porque yo me estaba defendiendo',
-        text: 'Cuando Pharaoh fue atacado por dos inquilinos en su casa en Brooklyn, él hizo todo lo posible para defenderse. Maltratado y golpeado, fue detenido cuando la policía llegó.'
-      },
-      nate: {
-        subheader: 'porque el oficial dijo que era el protocolo',
-        text: 'Nate fue arrestado por posesión de marihuana. Aunque es un delito de bajo nivel que por lo general se resuelve con un simple multa, el oficial decidió arrestar a Nate porque creía que era "protocolo".'
-      },
-      sharmene: {
-        subheader: 'de la nada',
-        text: 'Cuando un altercado de meses atrás se convirtió en una orden de arresto sin su conocimiento, Shermene fué detenida de forma inesperada.'
-      },
-      ray: {
-        subheader: 'porque yo correspondí a la descripción',
-        text: 'En el barrio de Ray en Brooklyn “corresponder a la descripción" es una ofensa común. Una noche, Ray miró fuera de su casa a causa de un sonido perturbador, y rápidamente pasó de ser habitante preocupado a sospechoso.'
-      },
-      steven: {
-        subheader: 'debido a una política depredadora',
-        text: 'Miles de personas cada año son detenidas, chequeadas y arrestadas. Steven fué uno de ellos.'
-      },
-      tina: {
-        subheader: 'por protestar',
-        text: 'Tina estaba disfrutando de la tarde en su casa. La policía entró a su casa en busca de su ex-novio sin una orden de registro. Cuando ella habló en contra del porqué estaban haciendo la búsqueda, fue detenida.'
-      }
+      stories: [
+        {
+          name: 'pharaoh',
+          header: 'Yo fui arrestado.',
+          subheader: 'porque yo me estaba defendiendo',
+          text: 'Cuando Pharaoh fue atacado por dos inquilinos en su casa en Brooklyn, él hizo todo lo posible para defenderse. Maltratado y golpeado, fue detenido cuando la policía llegó.'
+        },
+        {
+          name: 'nate',
+          header: 'Yo fui arrestado.',
+          subheader: 'porque el oficial dijo que era el protocolo',
+          text: 'Nate fue arrestado por posesión de marihuana. Aunque es un delito de bajo nivel que por lo general se resuelve con una simple multa, el oficial decidió arrestar a Nate porque creía que era "protocolo".'
+        },
+        {
+          name: 'sharmene',
+          header: 'Yo fui arrestada.',
+          subheader: 'de la nada',
+          text: 'Cuando un altercado de meses atrás se convirtió en una orden de arresto sin su conocimiento, Shermene fué detenida de forma inesperada.'
+        },
+        {
+          name: 'ray',
+          header: 'Yo fui arrestado.',
+          subheader: 'porque yo correspondí a la descripción',
+          text: 'En el barrio de Ray en Brooklyn “corresponder a la descripción" es una ofensa común. Una noche, Ray miró fuera de su casa a causa de un sonido perturbador, y rápidamente pasó de ser habitante preocupado a sospechoso.'
+        },
+        {
+          name: 'steven',
+          header: 'Yo fui arrestado.',
+          subheader: 'debido a una política depredadora',
+          text: 'Miles de personas cada año son detenidas, chequeadas y arrestadas. Steven fué uno de ellos.'
+        },
+        {
+          name: 'tina',
+          header: 'Yo fui arrestada.',
+          subheader: 'por protestar',
+          text: 'Tina estaba disfrutando de la tarde en su casa. La policía entró a su casa en busca de su ex-novio sin una orden de registro. Cuando ella habló en contra del porqué estaban haciendo la búsqueda, fue detenida.'
+        }
+      ]
     },
     problem: {
       header: 'Para la mayoría de Neoyorquinos, no hay donde acudir por ayuda.',
       subheader: 'Nuestra misión',
-      text: 'Si usted no tiene un abogado privado que pueda llamar, el cual la mayoría de nosotros no tiene, es difícil saber qué hacer si usted es arrestado. Sin un teléfono celular, y sólo unas pocas llamadas gratuitas desde el precinto, es difícil solicitar la ayuda que usted necesita. Queremos cambiar esto.'
+      text: 'Si no tienes un abogado privado que puedas llamar, el cual la mayoría de nosotros no tiene, es difícil saber qué hacer si eres arrestado. Sin un teléfono celular, y sólo unas pocas llamadas gratuitas desde el precinto, es difícil solicitar la ayuda que tú necesitas. Queremos cambiar esto.'
     },
     howItWorks: {
       header: 'Presentamos Good Call',
@@ -124,9 +137,9 @@ const es = {
       header: 'Proporciona un contacto de emergencia',
       errorTextLine1: 'Parece que also salió mal ツ',
       errorTextLine2: '¿Necesitas ayuda? Envíanos un e-mail a hello@goodcall.nyc',
-      nameLabel: 'Nombre, Apellido (opcional)',
-      relationshipLabel: 'Relación (opcional)',
-      phoneLabel: 'Teléfono (xxx) xxx-xxxx (opcional)',
+      nameLabel: 'Nombre, Apellido',
+      relationshipLabel: 'Relación',
+      phoneLabel: 'Teléfono móvil (xxx) xxx-xxxx',
       hintText: (numOfContacts) => (
         `${numOfContacts > 1 ? 'Estas son las personas' : 'Esta es la persona'} que contactaremos si eres arrestado`
       ),
@@ -246,6 +259,19 @@ const es = {
     paragraph1Line3: 'Good Call se reserva el derecho, en su exclusiva discreción, de modificar o reemplazar cualquiera de los términos o condiciones de este Acuerdo en cualquier momento. Se le notificará de tales cambios por correo electrónico, notificación de cuenta o una notificación publicada en el Servicio. Su continuo uso del Servicio después de la publicación de cualquier cambio a este Acuerdo constituye la aceptación de esos cambios. P Por la presente certifica a Good Call que Usted tiene por lo menos 13 años de edad. En las jurisdicciones donde 13 años no es la edad de consentimiento para contratar, usted representa y garantiza que tiene todos los permisos y autorizaciones necesarias de un tutor legal apropiado. También certifica que Usted de otro modo está legalmente autorizado para utilizar el Servicio.',
     subheader1: 'Cómo usamos tu información',
     paragraph2Line1: 'Al utilizar el servicio tu aceptas que Good Call guarde tu información personal y comparta su nombre y fecha de nacimiento con los Proveedor de Servicios Legales quien te representará en el caso de un arresto. En el caso de mi arresto en la jurisdicción de los Proveedor de Servicios Legales, doy el permiso al Proveedor de Servicios Legales para informar a Good Call de contactar a mi(s) contacto(s) de emergencia. Adicionalmente, si el Proveedor de Servicios Legales es contactado por uno de mis seres queridos y dice que se me ha arrestado, el Proveedor de Servicios Legales puede proporcionar mi nombre y fecha de nacimiento para Good Call, por lo cual mi(s) contacto(s) de emergencia pueden ser notificados.'
+  },
+  pressReleasesPage: {
+    header: 'Comunicados de Prensa',
+    releases: [
+      {
+        header: 'Se lanza la línea directa "Good Call" en el Bronx para proveer mejores servicios de apoyo legal durante un arresto',
+        content: `
+          <p><strong>CIUDAD DE NUEVA YORK - 14 de Octubre de 2016</strong> - Good Call, un producto del programa de incubadora de impacto social de los Laboratorios Blue Ridge, lanzó hoy una línea directa para proveer mejores servicios de apoyo legal a personas que sean arrestadas en el Bronx. Cualquier persona que sea arrestada en el Bronx, o sus seres queridos, pueden llamar a la línea 347-95-BRONX, para recibir consejo legal y para darle tiempo a un abogado para revisar su caso.  Hoy en día las personas que son detenidas no tienen la oportunidad de consultar un abogado hasta el momento de tener una breve reunión con uno antes de copmarecer ante un juez.</p>
+          <p>"Traemos este servicio al Bronx con emoción y humildad", dijo Gabe Leader-Rose, cofundador de Good Call. "Durante los últimos meses hemos escuchado cientos de testimonios de gente que ha sido arrestada en nuestra ciudad por razones triviales y que ha pagado un precio inaceptable. Sabemos que existen muchos más problemas sistémicos en el sistema de justicia penal y prácticas policiales de los que podemos abordar, pero esperamos que Good Call ayude a la comunidad a defenderse de algunas injusticias."</p>
+          <p>Cuando alguien es arrestado, todas las pertenencias de la persona son decomisadas antes de permitirle hacer una llamada desde un teléfono de línea fija. En tiempos en los que predominan los teléfonos inteligentes, cuando pocos de nosotros memorizamos números telefónicos, esta práctica puede dificultarle a una persona afectada contactar a quien necesita. Para combatir este problema Good Call tiene una página web, goodcall.nyc, en la que los usuarios pueden registrarse y mantener una lista de contactos de emergencia a quienes se alerta en caso de que sean arrestados, sin necesidad de memorizar ningún número. Good Call se asocia con reconocidos Proveedores de Servicios Legales en el Bronx para tener operadores y abogados disponibles en la línea directa, con el objetivo de ayudar a las aproximadamente 40.000 personas que anualmente son arrestadas en el Bronx. Si la línea directa resulta exitosa en este distrito de la ciudad Good Call ampliará sus servicios a los cuatro distritos restantes para hacer de un arresto un proceso más justo para todos los neoyorquinos, independientemente de su nivel de ingresos.</p>
+        `
+      }
+    ]
   }
 }
 

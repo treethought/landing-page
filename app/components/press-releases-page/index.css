@@ -1,0 +1,44 @@
+.press-releases-page {
+  color: #4A4A4A;
+  padding: 99px 130px;
+}
+
+.press-releases-page__header {
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: -0.21px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 72px;
+}
+
+.press-releases-page__release-header {
+  font-weight: 400;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 27px;
+}
+
+.press-releases-page__release-content {
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+
+  .press-releases-page {
+    padding: 99px 40px;
+  }
+
+  .press-releases-page__header {
+    font-size: 32px;
+  }
+
+  .press-releases-page__release-header {
+    font-size: 26px;
+  }
+
+  .press-releases-page__release-content {
+    font-size: 16px;
+  }
+
+}

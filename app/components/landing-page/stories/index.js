@@ -11,15 +11,10 @@ class Stories extends Component {
   constructor (props) {
     super(props)
     this.resetComponentKey = this.resetComponentKey.bind(this)
-    const {pharoah, nate, sharmene, ray, steven, tina} = props.content
-    const stories = [
-      {pictureName: 'pharaoh-min', subheader: pharoah.subheader, text: pharoah.text},
-      {pictureName: 'nate-min', subheader: nate.subheader, text: nate.text},
-      {pictureName: 'sharmene-min', subheader: sharmene.subheader, text: sharmene.text},
-      {pictureName: 'ray-min', subheader: ray.subheader, text: ray.text},
-      {pictureName: 'steven-min', subheader: steven.subheader, text: steven.text},
-      {pictureName: 'tina-min', subheader: tina.subheader, text: tina.text}
-    ]
+    const stories = props.content.stories.map((story) => (
+      { pictureName: `${story.name}-min`, subheader: story.subheader, text: story.text, header: story.header }
+    ))
+
     this.state = {
       componentKey: uuid.v4(),
       stories: rotate(stories, moment().get('minute') % stories.length)
@@ -92,7 +87,7 @@ class Stories extends Component {
                 <div className='landing-page__story-container-overlay'>
                   <li className='landing-page__story'>
                     <h2 className='landing-page__story-header'>
-                      <mark>{content.storyHeader}</mark>
+                      <mark>{story.header}</mark>
                     </h2>
 
                     <div className='landing-page__story-text-container'>
