@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import ScrollDownBtn from './../../scroll-down-btn'
-import Slider from 'react-slick'
+import Slider from 'react-slick-data-doge-fork'
 import uuid from 'node-uuid'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
@@ -60,7 +60,7 @@ class Stories extends Component {
   render () {
     let sliderSettings = {
       className: 'landing-page__stories-carousel',
-      autoplay: false, // todo: change back
+      autoplay: true,
       arrows: false,
       autoplaySpeed: 15000,
       infinite: true,
