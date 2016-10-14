@@ -76,7 +76,7 @@
     "babelify": "7.3.0",
     "browserify": "10.0.0",
     "browserify-css": "0.9.1",
-    "budo": "4.0.0",
+    "budo": "^9.2.1",
     "envify": "3.4.1",
     "s3-website": "2.1.0",
     "surge": "0.18.0",
