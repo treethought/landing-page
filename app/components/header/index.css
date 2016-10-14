@@ -88,7 +88,7 @@
   font-weight: 300;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 850px) {
 
   .header__app-bar {
     padding-right: 40px !important;
@@ -96,7 +96,7 @@
 
 }
 
-@media (max-width: 779px) {
+@media (max-width: 849px) {
 
   .header__app-bar {
     height: 70px !important;

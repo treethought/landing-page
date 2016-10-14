@@ -50,7 +50,7 @@ class Header extends Component {
           }
           iconElementRight={
             <nav className='header__nav'>
-              <MediaQuery query='(min-width: 780px)'>
+              <MediaQuery query='(min-width: 850px)'>
                 {this.state.navBtns.map((btn, i) => (
                   <FlatButton
                     className={`${btn.className || ''}`}
@@ -65,7 +65,7 @@ class Header extends Component {
                 <ToggleLanguageBtn />
               </MediaQuery>
 
-              <MediaQuery query='(max-width: 779px)'>
+              <MediaQuery query='(max-width: 849px)'>
                 <ToggleLanguageBtn />
 
                 {renderIf(!this.props.inRegistrationFlow)(
