@@ -49,7 +49,7 @@ class Footer extends Component {
             </Cell>
 
             <Cell is='3 tablet-4'>
-              <div className='landing-page__footer-header'>{content.helpHeader}</div>
+              <div className='landing-page__footer-header'>{content.ourCompanyHeader}</div>
 
               <div className='landing-page__footer-links-container'>
                 {this.state.ourCompanyLinks.map((link, i) => (
