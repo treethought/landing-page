@@ -8,15 +8,15 @@ const en = {
       toggleLanguageBtnLabel: 'En Español'
     },
     footer: {
-      signUpLinkLabel: 'Sign Up',
       faqLinkLabel: 'FAQ',
       aboutUsLinkLabel: 'About Us',
       privacyPolicyLinkLabel: 'Privacy Policy',
       termsAndConditionsLinkLabel: 'Terms and Conditions',
       contactUsHeader: 'Contact Us',
       address: '150 Court St. 2nd Floor, Brooklyn 11201',
-      helpHeader: 'Help',
-      ourPartnersHeader: 'Our Partners'
+      ourCompanyHeader: 'Our Company',
+      ourPartnersHeader: 'Our Partners',
+      pressReleasesLinkLabel: 'Press Releases'
     }
   },
   landingPage: {
@@ -261,6 +261,19 @@ const en = {
     paragraph1Line3: 'You hereby certify to Good Call that You are at least 13 years of age. In jurisdictions where 13 is not the age of consent to contract, You represent and warrant that You have all necessary authorizations and permissions from an appropriate legal guardian. You also certify that You are otherwise legally permitted to use the Service.',
     subheader1: 'How do we use your information',
     paragraph2Line1: 'By using the service you agree to have Good Call store my personal information and share your name and date of birth with the Legal Service Provider who will represent you in the event of an arrest.  In the event of my arrest in the Legal Service Provider’s legal jurisdiction, I give the Legal Service Provider permission to inform Good Call so they can reach out to my emergency contact(s).  Additionally, if the Legal Service Provider is contacted by one of my loved ones and told that I have been arrested, the Legal Service Provider can provide my name and date of birth to Good Call, so that my emergency contact(s) can be notified.'
+  },
+  pressReleasesPage: {
+    header: 'Press Releases',
+    releases: [
+      {
+        header: '“Good Call” Hotline Launches In The Bronx To Provide Better Legal Support During Arrest',
+        content: `
+          <p><strong>NEW YORK CITY - October 14, 2016</strong> - Good Call, a product of Blue Ridge Labs’ social impact incubator program, launched a free hotline today to improve legal support for people who are arrested in the Bronx. The hotline, 347-95-BRONX, can be called by anyone who is arrested in the Bronx or their loved ones, to receive advice and give a lawyer more time to look into their case. Today, detainees don’t get a chance to speak with a lawyer until a brief meeting shortly before their arraignment.</p>
+          <p>“We are both excited and humbled to bring this service to the Bronx”, said Gabe Leader-Rose, co-founder of Good Call. “Over the past few months, we’ve heard hundreds of accounts of people in our city being arrested for trivial reasons and paying an unacceptable price. We know there are much larger systemic issues in the criminal justice system and policing practices than we are able to address, but we hope that Good Call will help the community push back against injustice.”</p>
+          <p>When arrested, all of a person’s belongings are confiscated before they are allowed to make a phone call on a traditional dial pad phone. In the age of smartphones, with less of us memorizing phone numbers, this can make it very difficult for someone to reach the people they need. To combat this issue, Good Call runs a website, goodcall.nyc, where users can signup and list emergency contacts to alert in case of their arrest - no memorization required. Good Call is partnering with reputable Legal Service Providers in the Bronx to staff intake operators and lawyers for the hotline, looking to help the subjects of roughly 40,000 arrests that happen in the Bronx each year. If the hotline is a success in the Bronx, Good Call plans to expand to the remaining four boroughs, and make the arrest process more fair for all New Yorkers, regardless of income.</p>
+        `
+      }
+    ]
   }
 }
 

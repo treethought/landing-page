@@ -6,12 +6,13 @@ class Footer extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      helpLinks: [
+      ourCompanyLinks: [
         {to: '/sign-up', label: props.content.signUpLinkLabel},
         {to: '/faq', label: props.content.faqLinkLabel},
         {to: '/about-us', label: props.content.aboutUsLinkLabel},
         {to: '/privacy-policy', label: props.content.privacyPolicyLinkLabel},
-        {to: '/terms-and-conditions', label: props.content.termsAndConditionsLinkLabel}
+        {to: '/terms-and-conditions', label: props.content.termsAndConditionsLinkLabel},
+        {to: '/press-releases', label: props.content.pressReleasesLinkLabel}
       ]
     }
   }
@@ -51,7 +52,7 @@ class Footer extends Component {
               <div className='landing-page__footer-header'>{content.helpHeader}</div>
 
               <div className='landing-page__footer-links-container'>
-                {this.state.helpLinks.map((link, i) => (
+                {this.state.ourCompanyLinks.map((link, i) => (
                   <Link key={i} to={link.to} className='landing-page__footer-link'>{link.label}</Link>
                 ))}
               </div>

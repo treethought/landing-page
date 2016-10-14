@@ -8,15 +8,15 @@ const es = {
       toggleLanguageBtnLabel: 'English'
     },
     footer: {
-      signUpLinkLabel: 'Regístrate',
       faqLinkLabel: 'Preguntas Frecuentes',
       aboutUsLinkLabel: 'Acerca de nosotros',
       privacyPolicyLinkLabel: 'Política de privacidad',
       termsAndConditionsLinkLabel: 'Términos de servicio',
       contactUsHeader: 'Contáctanos',
       address: '150 Court St. 2nd Floor, Brooklyn 11201',
-      helpHeader: 'Ayuda',
-      ourPartnersHeader: 'Nuestros socios'
+      ourCompanyHeader: 'Nuestra Compañía',
+      ourPartnersHeader: 'Nuestros socios',
+      pressReleasesLinkLabel: 'Comunicados de prensa'
     }
   },
   landingPage: {
@@ -259,6 +259,19 @@ const es = {
     paragraph1Line3: 'Good Call se reserva el derecho, en su exclusiva discreción, de modificar o reemplazar cualquiera de los términos o condiciones de este Acuerdo en cualquier momento. Se le notificará de tales cambios por correo electrónico, notificación de cuenta o una notificación publicada en el Servicio. Su continuo uso del Servicio después de la publicación de cualquier cambio a este Acuerdo constituye la aceptación de esos cambios. P Por la presente certifica a Good Call que Usted tiene por lo menos 13 años de edad. En las jurisdicciones donde 13 años no es la edad de consentimiento para contratar, usted representa y garantiza que tiene todos los permisos y autorizaciones necesarias de un tutor legal apropiado. También certifica que Usted de otro modo está legalmente autorizado para utilizar el Servicio.',
     subheader1: 'Cómo usamos tu información',
     paragraph2Line1: 'Al utilizar el servicio tu aceptas que Good Call guarde tu información personal y comparta su nombre y fecha de nacimiento con los Proveedor de Servicios Legales quien te representará en el caso de un arresto. En el caso de mi arresto en la jurisdicción de los Proveedor de Servicios Legales, doy el permiso al Proveedor de Servicios Legales para informar a Good Call de contactar a mi(s) contacto(s) de emergencia. Adicionalmente, si el Proveedor de Servicios Legales es contactado por uno de mis seres queridos y dice que se me ha arrestado, el Proveedor de Servicios Legales puede proporcionar mi nombre y fecha de nacimiento para Good Call, por lo cual mi(s) contacto(s) de emergencia pueden ser notificados.'
+  },
+  pressReleasesPage: {
+    header: 'Comunicados de Prensa',
+    releases: [
+      {
+        header: '“Good Call” Hotline Launches In The Bronx To Provide Better Legal Support During Arrest',
+        content: `
+          <p><strong>NEW YORK CITY - October 14, 2016</strong> - Good Call, a product of Blue Ridge Labs’ social impact incubator program, launched a free hotline today to improve legal support for people who are arrested in the Bronx. The hotline, 347-95-BRONX, can be called by anyone who is arrested in the Bronx or their loved ones, to receive advice and give a lawyer more time to look into their case. Today, detainees don’t get a chance to speak with a lawyer until a brief meeting shortly before their arraignment.</p>
+          <p>“We are both excited and humbled to bring this service to the Bronx”, said Gabe Leader-Rose, co-founder of Good Call. “Over the past few months, we’ve heard hundreds of accounts of people in our city being arrested for trivial reasons and paying an unacceptable price. We know there are much larger systemic issues in the criminal justice system and policing practices than we are able to address, but we hope that Good Call will help the community push back against injustice.”</p>
+          <p>When arrested, all of a person’s belongings are confiscated before they are allowed to make a phone call on a traditional dial pad phone. In the age of smartphones, with less of us memorizing phone numbers, this can make it very difficult for someone to reach the people they need. To combat this issue, Good Call runs a website, goodcall.nyc, where users can signup and list emergency contacts to alert in case of their arrest - no memorization required. Good Call is partnering with reputable Legal Service Providers in the Bronx to staff intake operators and lawyers for the hotline, looking to help the subjects of roughly 40,000 arrests that happen in the Bronx each year. If the hotline is a success in the Bronx, Good Call plans to expand to the remaining four boroughs, and make the arrest process more fair for all New Yorkers, regardless of income.</p>
+        `
+      }
+    ]
   }
 }
 
