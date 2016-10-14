@@ -26,7 +26,7 @@ const en = {
       scrollDownBtnLabel: 'Learn more',
       stories: [
         {
-          name: 'pharoah',
+          name: 'pharaoh',
           header: 'I was arrested.',
           subheader: 'because I was defending myself',
           text: 'When Pharaoh was attacked by two tenants in his Brooklyn home, he tried his best to defend himself. Battered and bruised, he was still arrested when the police showed up.'
