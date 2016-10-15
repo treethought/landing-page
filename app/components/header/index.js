@@ -58,7 +58,7 @@ class Header extends Component {
                     label={btn.label}
                     containerElement={<Link to={btn.to} activeClassName={btn.activeClassName || ''}/>}
                     hoverColor='#FDFFF9'
-                    style={{opacity: inRegistrationOrLoginFlow ? 0 : 1}}
+                    style={{display: inRegistrationOrLoginFlow ? 'none' : 'inline-block'}}
                   />
                 ))}
 
