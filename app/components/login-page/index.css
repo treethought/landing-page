@@ -35,4 +35,5 @@
 .login-page__lil-link {
   font-size: 18px;
   color: #40B097;
+  cursor: pointer;
 }

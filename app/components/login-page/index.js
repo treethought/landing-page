@@ -4,17 +4,8 @@ import StandardTextField from './../standard-text-field'
 import FlatButton from 'material-ui/FlatButton'
 
 class LoginPage extends Component {
-  emailOrPhoneIsValid () {
-    const { emailOrPhone } = this.props
-    const isValidEmail = /(.+)@(.+){2,}\.(.+){2,}/.test(emailOrPhone)
-    let trimmedPhoneDigits = emailOrPhone.trim().replace(/\D/g, '')
-    let phoneDigits = trimmedPhoneDigits[0] === '1' ? trimmedPhoneDigits.substring(1) : trimmedPhoneDigits
-    const isValidPhone = phoneDigits.length === 10
-    return isValidEmail || isValidPhone
-  }
-
   render () {
-    const { redirectError, setEmailOrPhone, requestInProgress, getAccessCode } = this.props
+    const { redirectError, setEmailOrPhone, emailOrPhoneIsValid, requestInProgress, getAccessToken, accessTokenSent, alreadyHasAnAccessCode, setAlreadyHasAccessCode } = this.props
 
     return (
       <div className='login-page'>
@@ -24,23 +15,37 @@ class LoginPage extends Component {
 
         <h1 className='login-page__header'>Log in to update your account</h1>
 
-        <h2 className='login-page__subheader'>tell us your email or phone number</h2>
+        <h2 className='login-page__subheader'>
+          { accessTokenSent ? 'we sent you a login code, enter it below': 'tell us your email or phone number'}
+        </h2>
 
-        <div className='login-page__text-field-container'>
-          <StandardTextField
-            labelText='Email or Cell number (xxx) xxx-xxxx'
-            onChange={setEmailOrPhone}
-          />
+        <div className='login-page_32_text-field-container'>
+          {renderIf(!alreadyHasAnAccessCode)(
+            <StandardTextField
+              labelText='Email or Cell number (xxx) xxx-xxxx'
+              onChange={setEmailOrPhone}
+              />
+          )}
+          {renderIf(accessTokenSent || alreadyHasAnAccessCode)(
+            <StandardTextField
+              labelText='Access Code'
+            />
+          )}
         </div>
 
         <FlatButton
           className='gc-std-btn login-page__login-code-btn'
           label='send me a login code'
-          onClick={getAccessCode}
-          disabled={requestInProgress || !this.emailOrPhoneIsValid()}
+          onClick={getAccessToken}
+          disabled={requestInProgress || !emailOrPhoneIsValid}
         />
 
-        <a className='login-page__lil-link'>Already have an access code?</a>
+        <a
+          className='login-page__lil-link'
+          onClick={setAlreadyHasAccessCode}
+        >
+          { accessTokenSent || alreadyHasAnAccessCode ? 'Didn’t receive a code? ' : 'Already have an access code?'}
+        </a>
       </div>
     )
   }
@@ -51,8 +56,12 @@ LoginPage.propTypes = {
   redirectError: string,
   setEmailOrPhone: func,
   emailOrPhone: string,
+  emailOrPhoneIsValid: bool,
   requestInProgress: bool,
-  getAccessCode: func
+  getAccessToken: func,
+  accessTokenSent: bool,
+  alreadyHasAnAccessCode: bool,
+  setAlreadyHasAccessCode: func
 }
 
 export default LoginPage
