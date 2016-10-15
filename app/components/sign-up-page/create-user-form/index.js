@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import FlatButton from 'material-ui/FlatButton'
@@ -8,36 +8,36 @@ import Hint from './../hint'
 import renderIf from 'render-if'
 import StandardTextField from './../../standard-text-field'
 
-const heardAboutUsThroughOpts = [
-  'Internet search',
-  'Friends or family',
-  'Social Media',
-  'Email list',
-  'Community event',
-  'Good Call Representative',
-  'Good Call business card or flyer', // TODO: truncate?
-  'Other'
-]
-
 const dateOptions = {
-  months: range(1,13),
-  days: range(1, 32),
-  years: range(1916, 1999)
+  months: range(1, 13).map(n => ({label: n, value: n})),
+  days: range(1, 32).map(n => ({label: n, value: n})),
+  years: range(1916, 1999).map(n => ({label: n, value: n}))
 }
 
 class CreateUserForm extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
+    let {content} = props
     this.state = {
       infoHintShown: false,
       securityHintShown: false,
       userFields: [
-        {name: 'name', label: 'Full Name', onFocus: this.showInfoHint.bind(this)},
-        {name: 'phone', label: 'Cell Phone (xxx) xxx-xxxx', onFocus: this.showInfoHint.bind(this)},
-        {name: 'email', label: 'Email', type: 'email', onFocus: this.showInfoHint.bind(this)},
-        {name: 'zip', label: 'Zip Code', onFocus: this.showInfoHint.bind(this)},
-        {name: 'securityQuestion', label: 'Security Question', onFocus: this.showSecurityHint.bind(this)},
-        {name: 'securityAnswer', label: 'Security Answer', onFocus: this.showSecurityHint.bind(this)}
+        {name: 'name', label: content.nameLabel, onFocus: this.showInfoHint.bind(this)},
+        {name: 'phone', label: content.phoneLabel, onFocus: this.showInfoHint.bind(this)},
+        {name: 'email', label: content.emailLabel, type: 'email', onFocus: this.showInfoHint.bind(this)},
+        {name: 'zip', label: content.zipLabel, onFocus: this.showInfoHint.bind(this)},
+        {name: 'securityQuestion', label: content.securityQuestionLabel, onFocus: this.showSecurityHint.bind(this)},
+        {name: 'securityAnswer', label: content.securityAnswerLabel, onFocus: this.showSecurityHint.bind(this)}
+      ],
+      heardAboutUsThroughOpts: [
+        {label: content.internetSearchLabel, value: 'Internet search'},
+        {label: content.friendsOrFamilyLabel, value: 'Friends or family'},
+        {label: content.socialMediaLabel, value: 'Social Media'},
+        {label: content.emailListLabel, value: 'Email list'},
+        {label: content.communityEventLabel, value: 'Community event'},
+        {label: content.goodCallRepresentativeLabel, value: 'Good Call Representative'},
+        {label: content.goodCallBusinessCardOrFlyerLabel, value: 'Good Call business card or flyer'},
+        {label: content.otherLabel, value: 'Other'}
       ]
     }
   }
@@ -48,6 +48,14 @@ class CreateUserForm extends Component {
 
   showSecurityHint (e) {
     this.setState({securityHintShown: true})
+  }
+
+  continueBtnIsDisabled () {
+    const { user, requestInProgress } = this.props
+    const { attributes } = user.data
+    const { name, phone, email, dateOfBirthObj, zip, securityQuestion, securityAnswer } = attributes || {}
+    const { month, day, year } = dateOfBirthObj || {}
+    return requestInProgress || isEmpty(attributes) || !name || !(phone || email) || !(month && day && year) || !zip || !(securityQuestion && securityAnswer)
   }
 
   isDesktop () {
@@ -71,32 +79,29 @@ class CreateUserForm extends Component {
         value={value}
       >
         {fieldOpts.map((opt, i) => (
-          <MenuItem key={i} value={opt} primaryText={opt} style={{background: '#FFFFFF'}} />
+          <MenuItem key={i} value={opt.value} primaryText={opt.label} style={{background: '#FFFFFF'}} />
         ))}
       </SelectField>
     )
 
+    const {content} = this.props
+
     return (
-      <form className="sign-up-page__form">
-        {renderIf(this.state.infoHintShown || this.state.securityHintShown) (
-          <div style={{position: 'relative',width: this.isDesktop() ? '50%' : '0'}}>
-            {renderIf(this.state.infoHintShown) (
-              <Hint
-                text="Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case."
-              />
+      <form className='sign-up-page__form'>
+        {renderIf(this.state.infoHintShown || this.state.securityHintShown)(
+          <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
+            {renderIf(this.state.infoHintShown)(
+              <Hint text={content.infoHintText} confirmLabelText={content.hintConfirmLabelText} />
             )}
 
-            {renderIf(this.state.securityHintShown) (
-              <Hint
-                text="We will ask you to answer this question when you call us. Choose a question with an answer that only you would know and remember. Ex. “What is your favorite childhood candy?”"
-                className="sign-up-page__hint-security"
-              />
+            {renderIf(this.state.securityHintShown)(
+              <Hint text={content.securityHintText} confirmLabelText={content.hintConfirmLabelText} className='sign-up-page__hint-security' />
             )}
           </div>
         )}
 
         <div
-          className="sign-up-page__form-fields-container"
+          className='sign-up-page__form-fields-container'
           style={{
             textAlign: (this.props.infoHintShown || this.props.securityHintShown) ? 'right' : 'left'
           }}
@@ -104,72 +109,77 @@ class CreateUserForm extends Component {
           {this.state.userFields.map((field, i) => (
             <StandardTextField
               key={i}
-              name={field.name}
+              errorText={this.props.user.errors.attributes[field.name]}
               onFocus={field.onFocus}
               onChange={this.props.setUser(field.name)}
-              errorText={this.props.userFormErrors[field.name]}
               labelText={field.label}
             />
           ))}
 
-          <div className="sign-up-page__date-select-container">
-            <label className="sign-up-page__date-select-label">Date of Birth</label>
+          <div className='sign-up-page__date-select-container'>
+            <label className='sign-up-page__date-select-label'>{content.dateOfBirthLabel}</label>
 
-            <div className="sign-up-page__date-select-fields-container">
+            <div className='sign-up-page__date-select-fields-container'>
               <CustomSelectField
                 fieldOpts={dateOptions.months}
-                className="sign-up-page__form-select-date-field"
-                hintText="Month"
-                width="75px"
-                value={this.props.user.dateOfBirthObj.month}
+                className='sign-up-page__form-select-date-field'
+                hintText={content.monthLabel}
+                width='75px'
+                value={this.props.user.data.attributes.dateOfBirthObj.month}
                 onChange={this.props.setUserDateOfBirth('month')}
-                />
+              />
 
               <CustomSelectField
                 fieldOpts={dateOptions.days}
-                className="sign-up-page__form-select-date-field"
-                hintText="Day"
-                width="60px"
-                value={this.props.user.dateOfBirthObj.day}
+                className='sign-up-page__form-select-date-field'
+                hintText={content.dayLabel}
+                width='60px'
+                value={this.props.user.data.attributes.dateOfBirthObj.day}
                 onChange={this.props.setUserDateOfBirth('day')}
-                />
+              />
 
               <CustomSelectField
                 fieldOpts={dateOptions.years}
-                className="sign-up-page__form-select-date-field"
-                hintText="Year"
-                width="65px"
-                value={this.props.user.dateOfBirthObj.year}
+                className='sign-up-page__form-select-date-field'
+                hintText={content.yearLabel}
+                width='65px'
+                value={this.props.user.data.attributes.dateOfBirthObj.year}
                 onChange={this.props.setUserDateOfBirth('year')}
-                />
+              />
             </div>
           </div>
 
           <CustomSelectField
-            fieldOpts={heardAboutUsThroughOpts}
+            fieldOpts={this.state.heardAboutUsThroughOpts}
             onChange={this.props.setUser('heardAboutUsThrough')}
-            hintText="How did you hear about Good Call?"
-            value={this.props.user.heardAboutUsThrough}
+            hintText={content.heardAboutUsThroughLabel}
+            value={this.props.user.data.attributes.heardAboutUsThrough}
           />
 
           <FlatButton
-            className="gc-std-btn sign-up-page__form-continue-btn"
-            label="continue"
+            className='gc-std-btn sign-up-page__form-continue-btn sign-up-page__create-user-form-continue-btn'
+            label={content.continueBtnLabel}
             onClick={this.props.createUser}
-            disabled={
-              this.props.requestInProgress
-              || isEmpty(this.props.user)
-              || !this.props.user.name
-              || !(this.props.user.phone || this.props.user.email)
-              || !(this.props.user.dateOfBirthObj.month && this.props.user.dateOfBirthObj.day && this.props.user.dateOfBirthObj.year)
-              || !this.props.user.zip
-              || !(this.props.user.securityQuestion && this.props.user.securityAnswer)
-            }
+            disabled={this.continueBtnIsDisabled()}
           />
+          <p className='sign-up-page__form-continue-btn-terms-text' dangerouslySetInnerHTML={{__html: content.continueBtnTermsText}}></p>
         </div>
       </form>
     )
   }
+}
+
+const { object, bool, func } = PropTypes
+CreateUserForm.propTypes = {
+  content: object,
+  infoHintShown: bool,
+  securityHintShown: bool,
+  setUser: func,
+  userFormErrors: object,
+  user: object,
+  setUserDateOfBirth: func,
+  createUser: func,
+  requestInProgress: bool
 }
 
 export default CreateUserForm

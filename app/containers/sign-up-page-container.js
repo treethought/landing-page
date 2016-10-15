@@ -1,130 +1,239 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import SignUpPage from './../components/sign-up-page'
 import config from './../config'
 import fetcher from './../services/fetcher'
-import objectMap from 'object.map'
 import {browserHistory} from 'react-router'
 import moment from 'moment'
+import cookie from 'react-cookie'
+
+console.log('config: ', config)
 
 let tmpContactId = 0
 
 class SignUpPageContainer extends Component {
   constructor () {
     super()
-    this.state = {formStage: 0, user: {dateOfBirthObj: {}}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
+    this.state = {
+      formStage: 0,
+      user: {
+        data: {attributes: {dateOfBirthObj: {}}, relationships: {}}, // TODO: find a better way to deal with date, aside from dateOfBirthObj
+        errors: {attributes: {}, relationships: {}}
+      },
+      contacts: [
+        {
+          tmpId: tmpContactId,
+          data: {id: null, type: 'contacts', attributes: {isContactableByUs: true}, relationships: {}},
+          errors: {attributes: {}, relationships: {}}
+        }
+      ],
+      requestInProgress: false
+    }
   }
 
   createUser () {
-    let {year, month, day} = this.state.user.dateOfBirthObj
+    let {year, month, day} = this.state.user.data.attributes.dateOfBirthObj
     let dateOfBirth = moment(`${year}-${month}-${day}`, 'YYYY-M-D').format()
     fetcher({
-      url: `${config.apiBaseUrl}/users`,
       method: 'POST',
-      body: {user: {...this.state.user, dateOfBirth: dateOfBirth}},
-      first: this.setState.call(this, {requestInProgress: true})
+      url: `${config.apiBaseUrl}/users`,
+      body: {
+        type: 'users',
+        attributes: {...this.state.user.data.attributes, dateOfBirth: dateOfBirth}
+      },
+      beforeRequest: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
-      let {status, json} = res
-      if (status === 200) {
-        this.setState({user: json.user, userFormErrors: {}, formStage: 1, requestInProgress: false})
-      } else {
-        this.setState({
-          userFormErrors: objectMap(json.errors, (v) => v.join(', ')),
-          requestInProgress: false
-        })
-      }
+      let {json} = res
+      this.setState({
+        formStage: 1,
+        requestInProgress: false,
+        user: {
+          ...this.state.user,
+          errors: {attributes: {}, relationships: {}}
+        }
+      })
+      let userId = json.data.id
+      let accessToken = json.included.find((obj) => {
+        return obj.type === 'access-tokens' && obj.id === json.data.relationships.accessToken.data.id
+      }).attributes.value
+      cookie.save('userId', userId, {path: '/'})
+      cookie.save('accessToken', accessToken, {path: '/'})
+    }).catch((res) => {
+      let {json} = res
+      this.setState({
+        requestInProgress: false,
+        user: {...this.state.user, errors: json.errors}
+      })
     })
   }
 
   setUser (propName) {
     return (e, i, v) => {
       let prop = propName === 'heardAboutUsThrough' ? v : e.target.value
-      this.setState({user: {...this.state.user, [propName]: prop}})
+      let updatedUser = this.state.user
+      updatedUser.data.attributes[propName] = prop
+      this.setState({user: updatedUser})
     }
   }
 
   setUserDateOfBirth (field) {
     return (e, i, v) => {
-      let dateOfBirthObj = this.state.user.dateOfBirthObj
-      dateOfBirthObj[field] = v
-      this.setState({user: {...this.state.user, dateOfBirthObj: dateOfBirthObj}})
+      let updatedDateOfBirthObj = this.state.user.data.attributes.dateOfBirthObj
+      updatedDateOfBirthObj[field] = v
+      let updatedUser = this.state.user
+      updatedUser.data.attributes.dateOfBirthObj = updatedDateOfBirthObj
+      this.setState({user: updatedUser})
     }
   }
 
   addContact () {
-    this.setState({contacts: this.state.contacts.concat({tmpId: ++tmpContactId})})
+    this.setState({contacts: this.state.contacts.concat({
+      tmpId: ++tmpContactId,
+      data: {id: null, type: 'contacts', attributes: {isContactableByUs: true}, relationships: {}},
+      errors: {attributes: {}, relationships: {}}
+    })})
   }
 
   setContact (tmpId, propName) {
     return (e, i, v) => {
       let prop = propName === 'isContactableByUs' ? v : e.target.value
       let contacts = this.state.contacts.map((contact) => {
-        if (contact.tmpId === tmpId) { contact[propName] = prop }
+        if (contact.tmpId === tmpId) {
+          contact.data.attributes[propName] = prop
+        }
         return contact
       })
-      this.setState({ contacts: contacts })
+      this.setState({contacts: contacts})
     }
   }
 
   consentToContactIs () {
     return (e, isChecked) => {
       let contacts = this.state.contacts.map((contact) => {
-        contact.isContactableByUs = isChecked
+        contact.data.attributes.isContactableByUs = isChecked
         return contact
       })
       this.setState({contacts: contacts})
     }
   }
 
-  removeContact (tmpId) {
-    return () => {
-      let contacts = this.state.contacts.filter((contact) => contact.tmpId !== tmpId)
-      this.setState({contacts: contacts})
-    }
-  }
-
-  saveContacts () {
-    let form_token = this.state.user.form_token
-    let form_token_value = form_token ? form_token.value : ''
-
-    fetcher({
-      url: `${config.apiBaseUrl}/contacts`,
+  createContact (contact) {
+    return fetcher({
       method: 'POST',
-      body: {
-        contacts: {
-          list: this.state.contacts,
-          form_token_value: form_token_value,
-          user_id: this.state.user.id
-        }
-      },
-      first: this.setState.call(this, {requestInProgress: true})
+      url: `${config.apiBaseUrl}/contacts`,
+      body: contact.data,
+      beforeRequest: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
-      let {status, json} = res
-      if (status === 200) {
-        this.setState({contactsFormErrors: {}, contacts: [], requestInProgress: false})
-        browserHistory.push('/sign-up/success')
-      } else {
-        document.body.scrollTop = document.documentElement.scrollTop = 0
-        this.setState({contactsFormErrors: json.errors, requestInProgress: false})
-      }
+      let {json} = res
+      this.setState({
+        contacts: this.state.contacts.map((c) => {
+          if (c.tmpId === contact.tmpId) {
+            c.data.id = json.data.id
+            c.errors = {attributes: {}, relationships: {}}
+          }
+          return c
+        })
+      })
+    }).catch((res) => {
+      let {json} = res
+      this.setState({
+        contacts: this.state.contacts.map((c) => {
+          if (c.tmpId === contact.tmpId) { c.errors = json.errors }
+          return c
+        })
+      })
+      throw (new Error(json))
     })
   }
 
+  updateContact (contact) {
+    return fetcher({
+      method: 'PATCH',
+      url: `${config.apiBaseUrl}/contacts/${contact.data.id}`,
+      body: contact.data,
+      beforeRequest: this.setState.call(this, {requestInProgress: true})
+    }).then((res) => {
+      this.setState({
+        contacts: this.state.contacts.map((c) => {
+          if (c.tmpId === contact.tmpId) {
+            c.errors = {attributes: {}, relationships: {}}
+          }
+          return c
+        })
+      })
+    }).catch((res) => {
+      let {json} = res
+      this.setState({
+        contacts: this.state.contacts.map((c) => {
+          if (c.tmpId === contact.tmpId) { c.errors = json.errors }
+          return c
+        })
+      })
+      throw (new Error(json))
+    })
+  }
+
+  saveContacts () {
+    let createContactPromises = this.state.contacts.map((contact) => {
+      if (contact.data.id) {
+        return this.updateContact(contact)
+      } else {
+        return this.createContact(contact)
+      }
+    })
+
+    Promise.all(createContactPromises).then(() => {
+      this.setState({requestInProgress: false})
+      browserHistory.push('/sign-up/success')
+    }).catch(() => {
+      this.setState({requestInProgress: false})
+    })
+  }
+
+  removeContact (contact) {
+    return () => {
+      if (contact.data.id) {
+        fetcher({
+          method: 'DELETE',
+          url: `${config.apiBaseUrl}/contacts/${contact.data.id}`,
+          beforeRequest: this.setState.call(this, {requestInProgress: true})
+        }).then((res) => {
+          let contacts = this.state.contacts.filter((c) => c.tmpId !== contact.tmpId)
+          this.setState({contacts: contacts, requestInProgress: false})
+        }).catch((res) => {
+          this.setState({requestInProgress: false})
+          console.log('err: ', res.json)
+        })
+      } else {
+        let contacts = this.state.contacts.filter((c) => c.tmpId !== contact.tmpId)
+        this.setState({contacts: contacts})
+      }
+    }
+  }
+
   render () {
+    const {content} = this.props.route
+
     return (
       <SignUpPage
         {...this.state}
+        content={content}
         location={this.props.location}
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
-        addContact={this.addContact.bind(this)}
-        removeContact={this.removeContact.bind(this)}
-        setContact={this.setContact.bind(this)}
-        saveContacts={this.saveContacts.bind(this)}
-        consentToContactIs={this.consentToContactIs.bind(this)}
         setUserDateOfBirth={this.setUserDateOfBirth.bind(this)}
+        setContact={this.setContact.bind(this)}
+        addContact={this.addContact.bind(this)}
+        saveContacts={this.saveContacts.bind(this)}
+        removeContact={this.removeContact.bind(this)}
+        consentToContactIs={this.consentToContactIs.bind(this)}
       />
     )
   }
+}
+
+SignUpPageContainer.propTypes = {
+  route: PropTypes.object,
+  location: PropTypes.object
 }
 
 export default SignUpPageContainer

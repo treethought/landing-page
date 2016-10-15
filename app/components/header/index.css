@@ -17,38 +17,58 @@
 .header__logo {
   height: 42px;
   position: relative;
-  top: 5px;
+  top: 0px;
 }
 
-.header__nav {
+.header__nav > div {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   position: relative;
-  bottom: 8px;
+  bottom: 6px;
 }
 
 .header__nav-btn {
   color: #4A4A4A !important;
   font-size: 14px;
-  margin-left: 25px !important;
-  margin-right: 25px !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
 }
 
 .header__nav-btn span {
   text-transform: lowercase !important;
-  padding: 0 !important;
+  padding: 0 5px !important;
 }
 
 .header__nav-btn-active span {
-  border-bottom: 2px solid #45D8B8;
+  border-bottom: 2px solid #00FFEE;
 }
 
 .header__sign-up-btn {
   position: relative;
   top: 4px;
   margin-left: 27px !important;
+  margin-right: 27px !important;
 }
 
 .header__sign-up-btn span {
   text-transform: lowercase !important;
+}
+
+.header__toggle-language-btn {
+  position: relative;
+  top: 5px;
+}
+
+.header__toggle-language-btn span {
+  text-transform: uppercase !important;
+  font-size: 13px !important;
 }
 
 .header__icon-menu {
@@ -56,10 +76,57 @@
   top: 5px;
 }
 
-@media (min-width: 675px) {
+.header__hotline-banner {
+  font-size: 18px;
+  color: #FDFFF9;
+  background: rgba(45,43,43,0.99);
+  padding-top: 6px;
+  padding-bottom: 9px;
+  position: fixed;
+  top: 85px;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header__hotline-banner-text {
+  font-weight: 300;
+}
+
+@media (min-width: 850px) {
 
   .header__app-bar {
     padding-right: 40px !important;
   }
 
+}
+
+@media (max-width: 849px) {
+
+  .header__app-bar {
+    height: 70px !important;
+  }
+
+  .header__logo {
+    height: 35px;
+  }
+
+  .header__hotline-banner {
+    padding: 12px 19px 14px 16px;
+    top: 70px;
+  }
+
+  .header__hotline-banner-text {
+    font-size: 13px;
+  }
+  
 }

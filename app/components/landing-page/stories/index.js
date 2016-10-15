@@ -1,30 +1,23 @@
-import React, {Component} from 'react'
-import RaisedButton from 'material-ui/RaisedButton'
-import FlatButton from 'material-ui/FlatButton'
-import {Link} from 'react-router'
+import React, {Component, PropTypes} from 'react'
 import ScrollDownBtn from './../../scroll-down-btn'
-import Slider from 'react-slick'
+import Slider from 'react-slick-data-doge-fork'
 import uuid from 'node-uuid'
-import MediaQuery from 'react-responsive'
-import getDistanceFromTop from './../../../services/get-distance-from-top'
-import shuffle from 'lodash.shuffle'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
+import rotate from 'rotate-array'
+import moment from 'moment'
 
 class Stories extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.resetComponentKey = this.resetComponentKey.bind(this)
+    const stories = props.content.stories.map((story) => (
+      { pictureName: `${story.name}-min`, subheader: story.subheader, text: story.text, header: story.header }
+    ))
+
     this.state = {
       componentKey: uuid.v4(),
-      stories: [
-        {pictureName: 'pharaoh-min', subheader: 'because I was defending myself', text: 'When Pharaoh was attacked by two tenants in his Brooklyn home, he tried his best to defend himself. Battered and bruised, he was still arrested when the police showed up.'},
-        {pictureName: 'nate-min', subheader: 'because the officer said it was protocol', text: 'Nate was arrested for the possession of marijuana. Although this low level offense is usually resolved with a simple ticket, the officer decided to arrest Nate because he believed it was “protocol.”'},
-        {pictureName: 'sharmene-min', subheader: 'out of nowhere', text: 'When an altercation from months before turned into a warrant without her knowledge, Shermene was arrested unexpectedly.'},
-        {pictureName: 'ray-min', subheader: 'because I fit the description', text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'},
-        {pictureName: 'steven-min', subheader: 'because of a predatory policy', text: 'Thousands of people every year are stopped, frisked, and arrested. Steven happened to be one of them.'},
-        {pictureName: 'tina-min', subheader: 'for speaking out', text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'}
-      ]
+      stories: rotate(stories, moment().get('minute') % stories.length)
     }
   }
 
@@ -61,9 +54,8 @@ class Stories extends Component {
 
   render () {
     let sliderSettings = {
-      className:'landing-page__stories-carousel',
+      className: 'landing-page__stories-carousel',
       autoplay: true,
-      // lazyLoad: true,
       arrows: false,
       autoplaySpeed: 15000,
       infinite: true,
@@ -73,37 +65,39 @@ class Stories extends Component {
       pauseOnHover: false
     }
 
-    return (
-      <section className="landing-page__stories" key={this.state.componentKey}>
-        <h1 className="landing-page__stories-header">No one expects to get arrested.</h1>
+    const {content} = this.props
 
-        <ul className="landing-page__stories-carousel-list-container">
+    return (
+      <section className='landing-page__stories' key={this.state.componentKey}>
+        <h1 className='landing-page__stories-header'>{content.header}</h1>
+
+        <ul className='landing-page__stories-carousel-list-container'>
           <div
-            className="landing-page__stories-carousel__arrow-container landing-page__stories-carousel__left-arrow-container"
+            className='landing-page__stories-carousel__arrow-container landing-page__stories-carousel__left-arrow-container'
             onClick={this.prevSlide.bind(this)}
           >
-            <KeyboardArrowLeft className="landing-page__stories-carousel__arrow" color="#FDFFF9" />
+            <KeyboardArrowLeft className='landing-page__stories-carousel__arrow' color='#FDFFF9' />
           </div>
 
-          <Slider {...sliderSettings} ref="landing-page__stories-carousel">
-            {shuffle(this.state.stories).map((story, i) => (
-              <div className="landing-page__story-container" key={i} style={{
+          <Slider {...sliderSettings} ref='landing-page__stories-carousel'>
+            {this.state.stories.map((story, i) => (
+              <div className='landing-page__story-container' key={i} style={{
                 'backgroundImage': `url('./assets/imgs/${story.pictureName + (this.isMobile() ? '-mobile' : '')}.jpg')`
               }}>
-                <div className="landing-page__story-container-overlay">
-                  <li className="landing-page__story">
-                    <h2 className="landing-page__story-header">
-                      <mark>I was arrested.</mark>
+                <div className='landing-page__story-container-overlay'>
+                  <li className='landing-page__story'>
+                    <h2 className='landing-page__story-header'>
+                      <mark>{story.header}</mark>
                     </h2>
 
-                    <div className="landing-page__story-text-container">
-                      <h3 className="landing-page__story-subheader">
-                        <span className="landing-page__story-text-quote">“</span>
-                        <span className="landing-page__story-subheader-text">{story.subheader}</span>
-                        <span className="landing-page__story-text-quote">”</span>
+                    <div className='landing-page__story-text-container'>
+                      <h3 className='landing-page__story-subheader'>
+                        <span className='landing-page__story-text-quote'>“</span>
+                        <span className='landing-page__story-subheader-text'>{story.subheader}</span>
+                        <span className='landing-page__story-text-quote'>”</span>
                       </h3>
 
-                      <p className="landing-page__story-text">{story.text}</p>
+                      <p className='landing-page__story-text'>{story.text}</p>
                     </div>
                   </li>
                 </div>
@@ -112,19 +106,23 @@ class Stories extends Component {
           </Slider>
 
           <div
-            className="landing-page__stories-carousel__arrow-container landing-page__stories-carousel__right-arrow-container"
+            className='landing-page__stories-carousel__arrow-container landing-page__stories-carousel__right-arrow-container'
             onClick={this.nextSlide.bind(this)}
           >
-            <KeyboardArrowRight className="landing-page__stories-carousel__arrow" color="#FDFFF9" />
+            <KeyboardArrowRight className='landing-page__stories-carousel__arrow' color='#FDFFF9' />
           </div>
         </ul>
 
-        <div className="landing-page__stories-scroll-down-btn-container">
-          <ScrollDownBtn to="landing-page__problem" text="Learn more"/>
+        <div className='landing-page__stories-scroll-down-btn-container'>
+          <ScrollDownBtn to='landing-page__problem' text={content.scrollDownBtnLabel} />
         </div>
       </section>
     )
   }
+}
+
+Stories.propTypes = {
+  content: PropTypes.object
 }
 
 export default Stories

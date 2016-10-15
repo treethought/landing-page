@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component, PropTypes } from 'react'
 import TextField from 'material-ui/TextField'
 
 class StandardTextField extends Component {
@@ -12,7 +12,7 @@ class StandardTextField extends Component {
         inputStyle={{ fontSize: '18px', marginTop: '0' }}
         underlineStyle={{ bottom: '15px' }}
         underlineFocusStyle={{ borderColor: '#40B097', bottom: '15px' }}
-        errorStyle={{ lineHeight: '15px' }}
+        errorStyle={{ lineHeight: '15px', textAlign: 'left' }}
 
         name={this.props.name || ''}
         type={this.props.type || ''}
@@ -24,6 +24,18 @@ class StandardTextField extends Component {
       />
     )
   }
+}
+
+const { string, func } = PropTypes
+
+StandardTextField.propTypes = {
+  className: string,
+  labelText: string,
+  type: string,
+  onChange: func,
+  onFocus: func,
+  name: string,
+  errorText: string
 }
 
 export default StandardTextField
