@@ -169,16 +169,17 @@ class CreateUserForm extends Component {
   }
 }
 
+const { object, bool, func } = PropTypes
 CreateUserForm.propTypes = {
-  content: PropTypes.object,
-  infoHintShown: PropTypes.bool,
-  securityHintShown: PropTypes.bool,
-  setUser: PropTypes.func,
-  userFormErrors: PropTypes.object,
-  user: PropTypes.object,
-  setUserDateOfBirth: PropTypes.func,
-  createUser: PropTypes.func,
-  requestInProgress: PropTypes.bool
+  content: object,
+  infoHintShown: bool,
+  securityHintShown: bool,
+  setUser: func,
+  userFormErrors: object,
+  user: object,
+  setUserDateOfBirth: func,
+  createUser: func,
+  requestInProgress: bool
 }
 
 export default CreateUserForm

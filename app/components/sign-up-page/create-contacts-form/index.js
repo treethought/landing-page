@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/FlatButton'
 import renderIf from 'render-if'
 import Hint from './../hint'
 import StandardTextField from './../../standard-text-field'
+import every from 'lodash.every'
 
 class CreateContactsForm extends Component {
   constructor (props) {
@@ -42,6 +43,15 @@ class CreateContactsForm extends Component {
 
   isDesktop () {
     return window.innerWidth > 640
+  }
+
+  continueBtnIsDisabled () {
+    const { requestInProgress, contacts } = this.props
+    const allInformationCompleted = every(contacts, (contact) => {
+      const { name, relationship, phone } = contact.data.attributes
+      return name && relationship && phone
+    })
+    return requestInProgress || !allInformationCompleted
   }
 
   render () {
@@ -97,7 +107,7 @@ class CreateContactsForm extends Component {
             className='gc-std-btn sign-up-page__form-continue-btn'
             label={content.continueBtnLabel}
             onClick={this.props.saveContacts}
-            disabled={this.props.requestInProgress}
+            disabled={this.continueBtnIsDisabled()}
           />
         </div>
       </form>
@@ -105,15 +115,16 @@ class CreateContactsForm extends Component {
   }
 }
 
+const { object, array, func, bool } = PropTypes
 CreateContactsForm.propTypes = {
-  content: PropTypes.object,
-  contacts: PropTypes.array,
-  setContact: PropTypes.func,
-  removeContact: PropTypes.func,
-  addContact: PropTypes.func,
-  consentToContactIs: PropTypes.func,
-  saveContacts: PropTypes.func,
-  requestInProgress: PropTypes.bool
+  content: object,
+  contacts: array,
+  setContact: func,
+  removeContact: func,
+  addContact: func,
+  consentToContactIs: func,
+  saveContacts: func,
+  requestInProgress: bool
 }
 
 export default CreateContactsForm
