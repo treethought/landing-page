@@ -23,7 +23,7 @@ class Header extends Component {
   }
 
   render () {
-    const {content, toggleLocale, inRegistrationFlow} = this.props
+    const {content, toggleLocale, inRegistrationOrLoginFlow} = this.props
 
     const ToggleLanguageBtn = () => (
       <FlatButton
@@ -58,7 +58,7 @@ class Header extends Component {
                     label={btn.label}
                     containerElement={<Link to={btn.to} activeClassName={btn.activeClassName || ''}/>}
                     hoverColor='#FDFFF9'
-                    style={{opacity: inRegistrationFlow ? 0 : 1}}
+                    style={{opacity: inRegistrationOrLoginFlow ? 0 : 1}}
                   />
                 ))}
 
@@ -68,7 +68,7 @@ class Header extends Component {
               <MediaQuery query='(max-width: 849px)'>
                 <ToggleLanguageBtn />
 
-                {renderIf(!this.props.inRegistrationFlow)(
+                {renderIf(!this.props.inRegistrationOrLoginFlow)(
                   <IconMenu
                     className='header__icon-menu'
                     menuStyle={{ 'background': '#F7F9F9' }}
@@ -91,7 +91,7 @@ class Header extends Component {
           }
         />
 
-        {renderIf(!(this.props.inRegistrationFlow))(
+      {renderIf(!(this.props.inRegistrationOrLoginFlow))(
           <div className='header__hotline-banner'>
             <div className='header__hotline-banner-text'>
               {content.hotlineBannerText}
@@ -105,7 +105,7 @@ class Header extends Component {
 
 Header.propTypes = {
   content: PropTypes.object,
-  inRegistrationFlow: PropTypes.bool,
+  inRegistrationOrLoginFlow: PropTypes.bool,
   toggleLocale: PropTypes.func
 }
 

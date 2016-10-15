@@ -1,16 +1,29 @@
-import React, {Component} from 'react'
+import React, { Component, PropTypes } from 'react'
 import LoginPage from './../components/login-page'
 
 class LoginPageContainer extends Component {
-  render () {
-    console.log(this.props.location)
 
+  constructor (props) {
+    super(props)
+    const { location } = props
+    this.state = {
+      redirectError: location.state ? location.state.errorMessage : null
+    }
+  }
+
+  render () {
     return (
       <LoginPage
-        location={this.props.location}
+        redirectError={this.state.redirectError}
       />
     )
   }
+}
+
+const { object } = PropTypes
+LoginPageContainer.propTypes = {
+  route: object,
+  location: object
 }
 
 export default LoginPageContainer
