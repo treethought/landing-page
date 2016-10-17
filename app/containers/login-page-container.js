@@ -2,18 +2,22 @@ import React, { Component, PropTypes } from 'react'
 import LoginPage from './../components/login-page'
 import fetcher from './../services/fetcher'
 import config from './../config'
+import cookie from 'react-cookie'
+import { browserHistory } from 'react-router'
 
 class LoginPageContainer extends Component {
 
   constructor (props) {
     super(props)
     const { location } = props
+    console.log('location: ', location)
     this.state = {
       redirectError: location.state ? location.state.errorMessage : null,
       emailOrPhone: '',
       requestInProgress: false,
       accessTokenSent: false,
-      alreadyHasAnAccessCode: false
+      alreadyHasAnAccessCode: false,
+      accessToken: ''
     }
   }
 
@@ -58,6 +62,15 @@ class LoginPageContainer extends Component {
     })
   }
 
+  setAccessToken (e) {
+    this.setState({accessToken: e.target.value})
+  }
+
+  logIn () {
+    cookie.save('accessToken', this.state.accessToken, {path: '/'})
+    browserHistory.push({pathname: '/account'})
+  }
+
   render () {
     return (
       <LoginPage
@@ -70,6 +83,9 @@ class LoginPageContainer extends Component {
         accessTokenSent={this.state.accessTokenSent}
         alreadyHasAnAccessCode={this.state.alreadyHasAnAccessCode}
         setAlreadyHasAccessCode={this.setAlreadyHasAccessCode.bind(this)}
+        setAccessToken={this.setAccessToken.bind(this)}
+        logIn={this.logIn.bind(this)}
+        accessToken={this.state.accessToken}
       />
     )
   }

@@ -41,8 +41,8 @@ export default function fetcher (options) {
   options.headers.append('accept', 'application/json')
 
   // append auth headers, if they exist
-  options.headers.append('USER_ID', cookie.load('userId', true))
   options.headers.append('ACCESS_TOKEN', cookie.load('accessToken', true))
+
   // append locale headers, if they exist
   options.headers.append('LOCALE', cookie.load('locale', true) || 'en')
 

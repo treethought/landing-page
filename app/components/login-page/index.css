@@ -1,9 +1,21 @@
 .login-page {
   text-align: center;
-  max-width: 500px;
-  margin: 0 auto;
   color: #4A4A4A;
   padding-bottom: 293px;
+}
+
+.login-page__error-banner {
+  background: #40AF96;
+  position: relative;
+  padding: 10px;
+  color: white;
+  margin-top: 21px;
+}
+
+.login-page__content-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 500px;
 }
 
 .login-page__header {
@@ -36,4 +48,12 @@
   font-size: 18px;
   color: #40B097;
   cursor: pointer;
+}
+
+@media (max-width: 849px) {
+
+  .login-page__error-banner {
+    margin-top: 6px;
+  }
+
 }

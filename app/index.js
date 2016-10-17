@@ -16,6 +16,7 @@ import locale from './services/locale'
 import InnerPage from './components/inner-page'
 import TermsAndConditionsPage from './components/terms-and-conditions-page'
 import PressReleasesPage from './components/press-releases-page'
+import AccountPageContainer from './containers/account-page-container'
 
 // HACK: to get the selectedTextColor of the SelectField to not be hot pink
 const theme = getMuiTheme({palette: {accent1Color: '#40B097'}})
@@ -61,6 +62,7 @@ class App extends Component {
             <Route path='faq' component={FaqPage} content={content.faqPage} />
             <Route path='terms-and-conditions' component={TermsAndConditionsPage} content={content.termsAndConditionsPage} />
             <Route path='press-releases' component={PressReleasesPage} content={content.pressReleasesPage} />
+            <Route path='account' component={AccountPageContainer} content={content.accountPage} />
             <Route path='*' component={ErrorPage} content={content.errorPage} />
           </Route>
         </Router>
