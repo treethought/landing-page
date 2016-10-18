@@ -40,8 +40,10 @@ class LoginPageContainer extends Component {
     return this.isValidEmail(emailOrPhone) || this.isValidPhone(emailOrPhone)
   }
 
-  setAlreadyHasAccessCode () {
-    this.setState({alreadyHasAnAccessCode: true})
+  setAlreadyHasAccessCode (value) {
+    return () => {
+      this.setState({alreadyHasAnAccessCode: value})
+    }
   }
 
   getAccessToken () {
@@ -65,6 +67,8 @@ class LoginPageContainer extends Component {
   setAccessToken (e) {
     this.setState({accessToken: e.target.value})
   }
+
+
 
   logIn () {
     cookie.save('accessToken', this.state.accessToken, {path: '/'})

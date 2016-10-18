@@ -4,8 +4,24 @@ import StandardTextField from './../standard-text-field'
 import FlatButton from 'material-ui/FlatButton'
 
 class LoginPage extends Component {
+  reloadPage () {
+    window.location.reload()
+  }
+
   render () {
-    const { redirectError, setEmailOrPhone, emailOrPhoneIsValid, requestInProgress, getAccessToken, accessTokenSent, alreadyHasAnAccessCode, setAlreadyHasAccessCode, logIn, setAccessToken, accessToken } = this.props
+    const {
+      redirectError,
+      setEmailOrPhone,
+      emailOrPhoneIsValid,
+      requestInProgress,
+      getAccessToken,
+      accessTokenSent,
+      alreadyHasAnAccessCode,
+      setAlreadyHasAccessCode,
+      logIn,
+      setAccessToken,
+      accessToken
+    } = this.props
 
     return (
       <div className='login-page'>
@@ -19,19 +35,23 @@ class LoginPage extends Component {
         <div className='login-page__content-container'>
           <h1 className='login-page__header'>Log in to update your account</h1>
 
-          <h2 className='login-page__subheader'>
-            { accessTokenSent ? 'we sent you a login code, enter it below' : 'tell us your email or phone number'}
-          </h2>
+          {renderIf(!alreadyHasAnAccessCode)(
+            <h2 className='login-page__subheader'>
+              { accessTokenSent ? 'we sent you a login code, enter it below' : 'tell us your email or phone number'}
+            </h2>
+          )}
 
-          <div className='login-page_32_text-field-container'>
+          <div className='login-page__text-field-container'>
             {renderIf(!alreadyHasAnAccessCode)(
               <StandardTextField
+                className='login-page__text-field'
                 labelText='Email or Cell number (xxx) xxx-xxxx'
                 onChange={setEmailOrPhone}
               />
             )}
             {renderIf(accessTokenSent || alreadyHasAnAccessCode)(
               <StandardTextField
+                className='login-page__text-field'
                 labelText='Access Code'
                 onChange={setAccessToken}
               />
@@ -47,7 +67,7 @@ class LoginPage extends Component {
                 disabled={requestInProgress || !emailOrPhoneIsValid}
               />
 
-              <a className='login-page__lil-link' onClick={setAlreadyHasAccessCode}>
+              <a className='login-page__lil-link' onClick={setAlreadyHasAccessCode(true)}>
                 Already have an access code?
               </a>
             </div>
@@ -62,8 +82,8 @@ class LoginPage extends Component {
                 disabled={accessToken.length === 0}
               />
 
-              <a className='login-page__lil-link' onClick={getAccessToken}>
-                Didn’t receive a code?
+              <a className='login-page__lil-link' onClick={this.reloadPage}>
+                Request another access code
               </a>
             </div>
           )}
