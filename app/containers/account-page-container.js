@@ -4,6 +4,8 @@ import fetcher from './../services/fetcher'
 import config from './../config'
 import renderIf from 'render-if'
 import LoadingOverlay from './../components/loading-overlay'
+import cookie from 'react-cookie'
+import { browserHistory } from 'react-router'
 
 class AccountPageContainer extends Component {
   constructor () {
@@ -27,6 +29,11 @@ class AccountPageContainer extends Component {
     })
   }
 
+  logOut () {
+    cookie.remove('accessToken')
+    browserHistory.push('/')
+  }
+
   render () {
     const { authorized } = this.state
 
@@ -36,7 +43,9 @@ class AccountPageContainer extends Component {
           <LoadingOverlay />
         )}
         {renderIf(authorized)(
-          <AccountPage />
+          <AccountPage
+            logOut={this.logOut}
+          />
         )}
       </div>
     )
