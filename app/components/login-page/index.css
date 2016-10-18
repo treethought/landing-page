@@ -15,7 +15,9 @@
 .login-page__content-container {
   position: relative;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 875px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .login-page__header {
@@ -33,9 +35,20 @@
 }
 
 .login-page__text-field-container {
-  width: 330px !important;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.login-page__text-field {
+  width: 330px !important;
   margin-bottom: 62px;
+  margin: 0 auto;
+}
+
+.login-page__text-field label {
+  white-space: nowrap;
 }
 
 .login-page__login-code-btn {
@@ -54,6 +67,37 @@
 
   .login-page__error-banner {
     margin-top: 6px;
+  }
+
+  .login-page__text-field-container {
+    flex-direction: column;
+  }
+
+  .login-page__content-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .login-page__text-field {
+    width: 275px !important;
+  }
+
+  .login-page__header {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .login-page__subheader {
+    font-size: 18px;
+  }
+
+  .login-page__lil-link {
+    font-size: 16px;
   }
 
 }

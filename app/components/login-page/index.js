@@ -49,6 +49,7 @@ class LoginPage extends Component {
                 onChange={setEmailOrPhone}
               />
             )}
+
             {renderIf(accessTokenSent || alreadyHasAnAccessCode)(
               <StandardTextField
                 className='login-page__text-field'
