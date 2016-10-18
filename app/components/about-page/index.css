@@ -67,6 +67,7 @@
 
 .about-page__sign-up-btn {
   margin-top: 20px !important;
+  margin-bottom: 20px !important;
   float: left;
 }
 
@@ -89,10 +90,6 @@
 
   .about-page__two-col-panel-paragraph {
     font-size: 18px;
-  }
-
-  .about-page__join-our-movement {
-    padding-bottom: 40px;
   }
 
 }

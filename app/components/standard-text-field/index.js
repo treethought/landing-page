@@ -5,8 +5,8 @@ class StandardTextField extends Component {
   render () {
     return (
       <TextField
-        className={this.props.className || ''}
         style={{ display: 'block !important', width: '100% !important', height: '58px', marginBottom: '3px' }}
+        className={this.props.className || ''}
         floatingLabelStyle={{ top: '18px' }}
         floatingLabelFocusStyle={{ fontSize: '14px', color: '#40B097', textTransform: 'uppercase', top: '18px' }}
         inputStyle={{ fontSize: '18px', marginTop: '0' }}

@@ -4,6 +4,11 @@ import Footer from './../footer'
 import includes from 'lodash.includes'
 
 class InnerPage extends Component {
+  inRegistrationOrLoginFlow () {
+    const { location } = this.props
+    return location && (includes(location.pathname, '/sign-up') || includes(location.pathname, '/login'))
+  }
+
   render () {
     const {content, toggleLocale} = this.props.route
 
@@ -12,7 +17,7 @@ class InnerPage extends Component {
         <Header
           content={content.header}
           toggleLocale={toggleLocale}
-          inRegistrationFlow={this.props.location && includes(this.props.location.pathname, '/sign-up')}
+          inRegistrationOrLoginFlow={this.inRegistrationOrLoginFlow()}
         />
           {this.props.children}
         <Footer content={content.footer} />

@@ -5,6 +5,7 @@ const en = {
       faqBtnLabel: 'FAQ',
       aboutUsBtnLabel: 'About us',
       signUpBtnLabel: 'Sign up',
+      logInBtnLabel: 'Log in',
       toggleLanguageBtnLabel: 'En Español'
     },
     footer: {
