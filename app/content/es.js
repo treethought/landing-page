@@ -5,6 +5,7 @@ const es = {
       faqBtnLabel: 'Preguntas Frecuentes',
       aboutUsBtnLabel: 'Acerca de nosotros',
       signUpBtnLabel: 'Regístrate',
+      logInBtnLabel: 'Iniciar sesión',
       toggleLanguageBtnLabel: 'English'
     },
     footer: {

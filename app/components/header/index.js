@@ -17,7 +17,8 @@ class Header extends Component {
       navBtns: [
         {label: content.faqBtnLabel, to: '/faq', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
         {label: content.aboutUsBtnLabel, to: '/about-us', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
-        {label: content.signUpBtnLabel, to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'}
+        {label: content.signUpBtnLabel, to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'},
+        {label: content.logInBtnLabel, to: '/login', className: 'header__nav-btn'}
       ]
     }
   }
