@@ -23,7 +23,7 @@
 .login-page__header {
   font-size: 30px;
   font-weight: 400;
-  margin-top: 52px;
+  margin-top: 65px;
   margin-bottom: 80px;
 }
 
@@ -36,9 +36,10 @@
 
 .login-page__text-field-container {
   margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  margin-bottom: 45px;
 }
 
 .login-page__text-field {
@@ -54,7 +55,7 @@
 .login-page__login-code-btn {
   display: block !important;
   margin: 0 auto !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 20px !important;
 }
 
 .login-page__lil-link {
@@ -70,12 +71,20 @@
   }
 
   .login-page__text-field-container {
-    flex-direction: column;
+    -webkit-flex-direction: column;
   }
 
   .login-page__content-container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .login-page__header {
+    font-size: 26px;
+  }
+
+  .login-page__subheader {
+    font-size: 22px;
   }
 
 }
@@ -88,12 +97,13 @@
   }
 
   .login-page__header {
-    font-size: 24px;
-    margin-bottom: 25px;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 
   .login-page__subheader {
-    font-size: 18px;
+    font-size: 16px;
+    margin-bottom: 40px;
   }
 
   .login-page__lil-link {
