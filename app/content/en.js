@@ -100,12 +100,12 @@ const en = {
     },
     joinTheMovement: {
       header: 'Join the movement.',
-      text: 'We are currently preparing to launch a pilot in the Bronx. If you live in the Bronx and are interested in being part of our pilot, or want to stay up to date on our progress, please sign up below!'
+      text: 'We are currently piloting in the Bronx. If you are interested in being part of our pilot, or want to stay up to date on our progress, please sign up below!'
     },
     signUpBtnLabel: 'sign up'
   },
   signUpPage: {
-    header: 'Sign up today to get updates and be part of our Bronx pilot launch',
+    header: 'We got your back, sign up for our pilot in the Bronx',
     createUserForm: {
       header: 'tell us about yourself',
       nameLabel: 'Full Name',
@@ -153,7 +153,7 @@ const en = {
     }
   },
   signUpSuccessPage: {
-    header: 'Thank you for joining our pilot in the Bronx!',
+    header: 'Thank you for signing up!',
     callText: 'Call',
     ifText: 'if',
     ifConditions: [
