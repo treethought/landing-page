@@ -31,7 +31,7 @@
   align-items: center;
   text-align: center;
   position: relative;
-  bottom: 6px;
+  bottom: 5px;
 }
 
 .header__nav-btn {
@@ -50,20 +50,9 @@
   border-bottom: 2px solid #00FFEE;
 }
 
-.header__sign-up-btn {
-  position: relative;
-  top: 4px;
-  margin-left: 27px !important;
-  margin-right: 27px !important;
-}
-
-.header__sign-up-btn span {
-  text-transform: lowercase !important;
-}
-
 .header__toggle-language-btn {
   position: relative;
-  top: 5px;
+  top: 2px;
 }
 
 .header__toggle-language-btn span {
@@ -73,7 +62,7 @@
 
 .header__icon-menu {
   position: relative;
-  top: 5px;
+  top: 2px;
 }
 
 .header__hotline-banner {
@@ -128,5 +117,5 @@
   .header__hotline-banner-text {
     font-size: 13px;
   }
-  
+
 }

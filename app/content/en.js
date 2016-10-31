@@ -22,8 +22,7 @@ const en = {
   landingPage: {
     goodCallSummary: 'Good Call is a completely free service that helps people who are arrested reach their loved ones and secure a free lawyer. Everyone deserves fairness.',
     stories: {
-      header: 'No one expects to get arrested but if you do we got your back.',
-      scrollDownBtnLabel: 'Learn more',
+      header: 'No one expects to get arrested, but if you are we got your back.',
       stories: [
         {
           name: 'pharaoh',
@@ -61,7 +60,8 @@ const en = {
           subheader: 'for speaking out',
           text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'
         }
-      ]
+      ],
+      signUpBtnLabel: 'sign up'
     },
     problem: {
       header: 'For most New Yorkers, there is nowhere to turn for help.',
