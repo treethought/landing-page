@@ -10,7 +10,7 @@
     "stage-push": "surge dist good-call-nyc-staging.surge.sh",
     "stage-copy-html": "cp -r dist/index.html dist/200.html",
     "stage": "export NODE_ENV=production; export IS_STAGING=true; npm run build && npm run dist && npm run stage-copy-html && npm run stage-push",
-    "deploy-push": "s3-website deploy dist",
+    "deploy-push": "s3-website deploy",
     "deploy": "export NODE_ENV=production; npm run build && npm run dist && npm run deploy-push"
   },
   "browserify": {
