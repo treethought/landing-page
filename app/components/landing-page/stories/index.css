@@ -139,7 +139,7 @@
 .landing-page__stories-sign-up-btn-container {
   position: absolute;
   width: 100%;
-  bottom: 40px;
+  bottom: 30px;
 }
 
 @media (max-width: 839px) {
@@ -228,11 +228,11 @@
   }
 
   .landing-page__story-subheader-text {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .landing-page__story-text {
-    font-size: 16px;
+    font-size: 14px;
   }
 
 }
@@ -263,18 +263,6 @@
 
   .landing-page__stories {
     padding-top: 77px;
-  }
-
-}
-
-@media (max-height: 550px) {
-
-  .landing-page__story-subheader-text {
-    font-size: 15px;
-  }
-
-  .landing-page__story-text {
-    font-size: 14px;
   }
 
 }
