@@ -7,11 +7,12 @@ import range from 'lodash.range'
 import Hint from './../hint'
 import renderIf from 'render-if'
 import StandardTextField from './../../standard-text-field'
+import rangeRight from 'lodash.rangeright'
 
 const dateOptions = {
   months: range(1, 13).map(n => ({label: n, value: n})),
   days: range(1, 32).map(n => ({label: n, value: n})),
-  years: range(1916, 1999).map(n => ({label: n, value: n}))
+  years: rangeRight(1916, 1999).map(n => ({label: n, value: n}))
 }
 
 class CreateUserForm extends Component {
