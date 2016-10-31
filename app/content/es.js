@@ -100,12 +100,12 @@ const es = {
     },
     joinTheMovement: {
       header: 'Únete al movimiento.',
-      text: 'Actualmente estamos preparando el lanzamiento de un proyecto piloto en el Bronx. Si tú vives en el Bronx y estás interesado en ser parte este proyecto, o si quieres estar al día acerca de nuestro progreso, ¡por favor regístrate a continuación!'
+      text: 'Actualmente estamos haciendo nuestro proyecto piloto en el Bronx. Si estás interesado en ser parte de este, o quieres estar al tanto de nuestro progreso, ¡por favor inscríbete aquí!'
     },
     signUpBtnLabel: 'regístrate'
   },
   signUpPage: {
-    header: 'Regístrate hoy para obtener actualizaciones y ser parte de nuestro proyecto piloto de lanzamiento en el Bronx',
+    header: 'Nosotros te cubrimos la espalda. Inscríbete en nuestro proyecto piloto en el Bronx',
     createUserForm: {
       header: 'cuéntanos acerca de ti',
       nameLabel: 'Nombre Completo',
@@ -153,7 +153,7 @@ const es = {
     }
   },
   signUpSuccessPage: {
-    header: 'Gracias por participar en nuestro proyecto piloto en el Bronx!',
+    header: '¡Gracias por inscribirte!',
     callText: 'Llama',
     ifText: 'sí',
     ifConditions: [
