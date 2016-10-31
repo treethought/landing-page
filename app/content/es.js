@@ -23,7 +23,7 @@ const es = {
     goodCallSummary: 'Good Call es un servicio totalmente gratuito que ayuda a las personas que son arrestadas a contactar a sus seres queridos y asegurar un abogado sin costo alguno. Todos merecemos un trato justo.',
     stories: {
       header: 'Nadie espera ser arrestado, pero si sucede, nosotros te cubrimos la espalda.',
-      scrollDownBtnLabel: 'Conoce más',
+      signUpBtnLabel: 'regístrate',
       stories: [
         {
           name: 'pharaoh',

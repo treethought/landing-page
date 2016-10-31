@@ -1,11 +1,13 @@
-import React, {Component, PropTypes} from 'react'
-import ScrollDownBtn from './../../scroll-down-btn'
+import React, { Component, PropTypes } from 'react'
 import Slider from 'react-slick-data-doge-fork'
 import uuid from 'node-uuid'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 import rotate from 'rotate-array'
 import moment from 'moment'
+import MediaQuery from 'react-responsive'
+import FlatButton from 'material-ui/FlatButton'
+import { Link } from 'react-router'
 
 class Stories extends Component {
   constructor (props) {
@@ -113,9 +115,15 @@ class Stories extends Component {
           </div>
         </ul>
 
-        <div className='landing-page__stories-scroll-down-btn-container'>
-          <ScrollDownBtn to='landing-page__problem' text={content.scrollDownBtnLabel} />
-        </div>
+        <MediaQuery query='(max-width: 849px)'>
+          <div className='landing-page__stories-sign-up-btn-container'>
+            <FlatButton
+              label={content.signUpBtnLabel}
+              className='gc-std-btn'
+              containerElement={<Link to='/sign-up' />}
+            />
+          </div>
+        </MediaQuery>
       </section>
     )
   }

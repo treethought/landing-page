@@ -18,10 +18,6 @@
   text-align: center;
 }
 
-/*.landing-page__learn-about-us-btn {
-  width: 207px !important;
-}*/
-
 @media (max-width: 839px) {
 
   .landing-page__problem-text {

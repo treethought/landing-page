@@ -22,8 +22,8 @@ const en = {
   landingPage: {
     goodCallSummary: 'Good Call is a completely free service that helps people who are arrested reach their loved ones and secure a free lawyer. Everyone deserves fairness.',
     stories: {
-      header: 'No one expects to get arrested but if you do we got your back.',
-      scrollDownBtnLabel: 'Learn more',
+      header: 'No one expects to get arrested, but if it happens, we got your back',
+      signUpBtnLabel: 'sign up',
       stories: [
         {
           name: 'pharaoh',
