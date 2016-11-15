@@ -8,6 +8,7 @@ import moment from 'moment'
 import MediaQuery from 'react-responsive'
 import FlatButton from 'material-ui/FlatButton'
 import { Link } from 'react-router'
+import ScrollDownBtn from './../../scroll-down-btn'
 
 class Stories extends Component {
   constructor (props) {
@@ -122,6 +123,12 @@ class Stories extends Component {
               className='gc-std-btn'
               containerElement={<Link to='/sign-up' />}
             />
+          </div>
+        </MediaQuery>
+
+        <MediaQuery query='(min-width: 850px)'>
+          <div className='landing-page__stories-scroll-down-btn-container'>
+            <ScrollDownBtn to='landing-page__problem' text={content.scrollDownBtnLabel} />
           </div>
         </MediaQuery>
       </section>

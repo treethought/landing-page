@@ -20,10 +20,11 @@ const en = {
     }
   },
   landingPage: {
-    goodCallSummary: 'Good Call is a completely free service that helps people who are arrested reach their loved ones and secure a free lawyer. Everyone deserves fairness.',
+    goodCallSummary: 'Good Call is a free hotline that helps people who are arrested reach their loved ones and secure a free lawyer. Everyone deserves fairness.',
     stories: {
       header: 'No one expects to get arrested, but if it happens, we got your back',
       signUpBtnLabel: 'sign up',
+      scrollDownBtnLabel: 'Learn more',
       stories: [
         {
           name: 'pharaoh',
@@ -83,7 +84,7 @@ const en = {
     },
     launchingSoon: {
       // TODO: translate
-      header: 'Sign up because everyone deserves fairness',
+      header: 'We all deserve equality. Sign up, add a contact, protect your rights.',
       // TODO: translate
       subheader: 'We are now serving the Bronx!',
       signUpBtnLabel: 'sign up'
@@ -102,7 +103,7 @@ const en = {
     },
     joinTheMovement: {
       header: 'Join the movement.',
-      text: 'We are currently piloting in the Bronx. If you are interested in being part of our pilot, or want to stay up to date on our progress, please sign up below!'
+      text: 'We are now serving the Bronx with plans to expand to the rest of New York City. Good Call is for everyone, because no one expects to get arrested. Sign up to help our mission to provide fair legal representation to everyone, regardless of income.'
     },
     signUpBtnLabel: 'sign up'
   },
@@ -241,7 +242,7 @@ const en = {
         {question: 'Who can sign up for Good Call?', answer: 'Everyone! We believe everyone deserves fairness.'},
         {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'No one expects to get arrested and we definitely hope you wouldn\'t be. Unfortunately, today unnecessary arrests are too common. Similar to providing emergency contacts and signing waivers, Good Call is there as a safety precaution in case something does happen. Moreover, we believe that everyone should have a just and fair court outcome, signing up will help support that mission.'},
         {question: 'Where can I currently use Good Call?', answer: 'Our hotline is currently live in the Bronx.'},
-        {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently piloting in the Bronx and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
+        {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently serving the Bronx and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
         {question: 'What is the Good Call hotline for the Bronx?', answer: '1 (347) 95 BRONX'},
         {question: 'Can I still call the hotline if I didn\'t sign up?', answer: 'Yes, we believe that everyone should get help when they are arrested. However, signing up will allow us to reach out to your emergency contact to let them know what\'s going on and to connect them with your lawyer which will help make your case stronger.'},
         {question: 'How does Good Call get me a free lawyer?', answer: 'Good Call partners with legal service providers around the city who serve the community. Our lawyers are committed to providing quality representation to our callers.'},
