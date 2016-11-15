@@ -142,6 +142,13 @@
   bottom: 30px;
 }
 
+.landing-page__stories-scroll-down-btn-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 6px;
+}
+
 @media (max-width: 839px) {
 
   .landing-page__story {

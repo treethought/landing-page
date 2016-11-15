@@ -24,6 +24,7 @@ const en = {
     stories: {
       header: 'No one expects to get arrested, but if it happens, we got your back',
       signUpBtnLabel: 'sign up',
+      scrollDownBtnLabel: 'Learn more',
       stories: [
         {
           name: 'pharaoh',

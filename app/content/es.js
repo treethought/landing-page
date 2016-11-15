@@ -24,6 +24,7 @@ const es = {
     stories: {
       header: 'Nadie espera ser arrestado, pero si sucede, nosotros te cubrimos la espalda.',
       signUpBtnLabel: 'regístrate',
+      scrollDownBtnLabel: 'Conoce más',
       stories: [
         {
           name: 'pharaoh',
