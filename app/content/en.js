@@ -82,8 +82,10 @@ const en = {
       step6Text: 'you can return home as soon as possible'
     },
     launchingSoon: {
-      header: 'Sign up for free for our pilot in the Bronx',
-      subheader: 'Because no one expects to get arrested.',
+      // TODO: translate
+      header: 'Sign up because everyone deserves fairness',
+      // TODO: translate
+      subheader: 'We are now serving the Bronx!',
       signUpBtnLabel: 'sign up'
     }
   },
@@ -105,7 +107,7 @@ const en = {
     signUpBtnLabel: 'sign up'
   },
   signUpPage: {
-    header: 'We got your back, sign up for our pilot in the Bronx',
+    header: 'We got your back, sign up now',
     createUserForm: {
       header: 'tell us about yourself',
       nameLabel: 'Full Name',
