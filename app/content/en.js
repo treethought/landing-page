@@ -84,7 +84,7 @@ const en = {
     },
     launchingSoon: {
       // TODO: translate
-      header: 'We all deserve equality. Sign up, add a contact, protect your rights.',
+      header: 'We all deserve justice. Sign up, add a contact, protect your rights.',
       // TODO: translate
       subheader: 'We are now serving the Bronx!',
       signUpBtnLabel: 'sign up'

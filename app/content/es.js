@@ -20,7 +20,7 @@ const es = {
     }
   },
   landingPage: {
-    goodCallSummary: 'Good Call es un servicio totalmente gratuito que ayuda a las personas que son arrestadas a contactar a sus seres queridos y asegurar un abogado sin costo alguno. Todos merecemos un trato justo.',
+    goodCallSummary: 'Good Call es una línea directa gratis que ayuda a las personas que son arrestadas a contactar a sus seres queridos y asegurar un abogado sin costo alguno. Todos merecemos un trato justo.',
     stories: {
       header: 'Nadie espera ser arrestado, pero si sucede, nosotros te cubrimos la espalda.',
       signUpBtnLabel: 'regístrate',
@@ -83,7 +83,7 @@ const es = {
       step6Text: 'puedes volver a casa tan pronto como sea posible'
     },
     launchingSoon: {
-      header: 'Regístrate de forma gratuita para nuestro proyecto piloto en el Bronx',
+      header: 'Todos merecemos un justicia. Inscríbete, añade un contacto, protege tus derechos',
       subheader: 'Porque nadie espera ser arrestado.',
       signUpBtnLabel: 'regístrate'
     }
@@ -101,7 +101,7 @@ const es = {
     },
     joinTheMovement: {
       header: 'Únete al movimiento.',
-      text: 'Actualmente estamos haciendo nuestro proyecto piloto en el Bronx. Si estás interesado en ser parte de este, o quieres estar al tanto de nuestro progreso, ¡por favor inscríbete aquí!'
+      text: 'Estamos prestando servicios en el Bronx y tenemos planes de expandirlos al resto de la  Ciudad de Nueva York.  Good Call es para todos, porque nadie espera ser arrestado. Inscríbete para ayudarnos a cumplir nuestra misión de proveer una representación legal justa para todos, sin importar el nivel de ingresos de cada quién.'
     },
     signUpBtnLabel: 'regístrate'
   },
@@ -238,7 +238,7 @@ const es = {
         {question: '¿Quién puede inscribirse en Good Call?', answer: '¡Todo el mundo! Creemos que todo el mundo merece un trato justo.'},
         {question: 'No creo que vaya a ser arrestado, ¿por qué debería inscribirme?', answer: 'Nadie espera ser arrestado y sin duda esperamos que no te suceda. Lamentablemente, hoy en día las detenciones innecesarias son demasiado comunes. Tal y como cuando se proporcionan contactos de emergencia o se tramitan solicitudes de ecención, Good Call existe como una medida de precaución en caso de que algo suceda. Por otra parte, creemos que todo el mundo debería obtener un resultado judicial justo e imparcial y registrándote apoyarás nuestra misión.'},
         {question: '¿Dónde puedo utilizar Good Call?', answer: 'Nuestra línea directa está actualmente funcionando en el Bronx.'},
-        {question: 'Si yo no vivo en el Bronx, ¿Puedo inscribirme en Good Call?', answer: '¡Sí! Actualmente estamos probando la línea en el Bronx y pronto estaremos prestando el servicio en los otros distritos. Regístrate y te haremos saber cuando la línea directa de Good Call esté disponible en tu área.'},
+        {question: 'Si yo no vivo en el Bronx, ¿Puedo inscribirme en Good Call?', answer: '¡Sí! Actualmente prestamos servicios en el Bronx y pronto estaremos prestando el servicio en los otros distritos. Regístrate y te haremos saber cuando la línea directa de Good Call esté disponible en tu área.'},
         {question: '¿Cuál es el teléfono de Good Call en el Bronx?', answer: '1 (347) 95 BRONX'},
         {question: '¿Puedo llamar a la línea si no me he inscrito?', answer: 'Sí, creemos que todos deben recibir ayuda cuando son arrestados. Sin embargo, el registrarte nos permitirá llamar a tus contactos de emergencia para hacerles saber lo que está sucediendo y te conectaremos con un abogado que te ayudará a fortalecer tu caso.'},
         {question: '¿Cómo puede Good Call conseguir un abogado gratuito?', answer: 'Good Call está asociado con proveedores de servicios legales que presatan servicios a la comunidad en toda la ciudad. Nuestros abogados están comprometidos a proporcionar una representación de calidad a nuestros usuarios.'},
