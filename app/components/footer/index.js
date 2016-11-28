@@ -7,7 +7,6 @@ class Footer extends Component {
     super(props)
     this.state = {
       ourCompanyLinks: [
-        {to: '/sign-up', label: props.content.signUpLinkLabel},
         {to: '/faq', label: props.content.faqLinkLabel},
         {to: '/about-us', label: props.content.aboutUsLinkLabel},
         {to: '/privacy-policy', label: props.content.privacyPolicyLinkLabel},
@@ -52,6 +51,7 @@ class Footer extends Component {
               <div className='landing-page__footer-header'>{content.ourCompanyHeader}</div>
 
               <div className='landing-page__footer-links-container'>
+                <a href='https://igg.me/at/C42BDfXWM58' className='landing-page__footer-link'>{content.donateBtnLabel}</a>
                 {this.state.ourCompanyLinks.map((link, i) => (
                   <Link key={i} to={link.to} className='landing-page__footer-link'>{link.label}</Link>
                 ))}

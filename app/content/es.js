@@ -8,6 +8,7 @@ const es = {
       toggleLanguageBtnLabel: 'English'
     },
     footer: {
+      donateBtnLabel: 'Donar',
       faqLinkLabel: 'Preguntas Frecuentes',
       aboutUsLinkLabel: 'Acerca de nosotros',
       privacyPolicyLinkLabel: 'Política de privacidad',
