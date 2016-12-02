@@ -10,8 +10,8 @@ class Footer extends Component {
         {to: '/faq', label: props.content.faqLinkLabel},
         {to: '/about-us', label: props.content.aboutUsLinkLabel},
         {to: '/privacy-policy', label: props.content.privacyPolicyLinkLabel},
-        {to: '/terms-and-conditions', label: props.content.termsAndConditionsLinkLabel},
-        {to: '/press-releases', label: props.content.pressReleasesLinkLabel}
+        {to: '/terms-and-conditions', label: props.content.termsAndConditionsLinkLabel}
+        // {to: '/press-releases', label: props.content.pressReleasesLinkLabel}
       ]
     }
   }
