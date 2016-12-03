@@ -14,11 +14,30 @@ class Header extends Component {
     super(props)
     const { content } = props
     this.state = {
-      navBtns: [
-        {label: content.faqBtnLabel, to: '/faq', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
-        {label: content.aboutUsBtnLabel, to: '/about-us', className: 'header__nav-btn', activeClassName: 'header__nav-btn-active'},
-        {label: content.signUpBtnLabel, to: '/sign-up', className: 'gc-std-btn header__sign-up-btn'}
-      ]
+      navBtns: [{
+        label: content.faqBtnLabel,
+        to: '/faq',
+        className: 'header__nav-btn',
+        activeClassName: 'header__nav-btn-active'
+      }, {
+        label: content.aboutUsBtnLabel,
+        to: '/about-us',
+        className: 'header__nav-btn',
+        activeClassName: 'header__nav-btn-active'
+      }, {
+        label: content.donateBtnLabel,
+        to: '/stub',
+        onClick: (e) => {
+          e.preventDefault()
+          window.location.href = 'https://igg.me/at/C42BDfXWM58'
+        },
+        className: 'header__nav-btn',
+        activeClassName: 'header__nav-btn-active'
+      }, {
+        label: content.signUpBtnLabel,
+        to: '/sign-up',
+        className: 'gc-std-btn header__sign-up-btn'
+      }]
     }
   }
 
@@ -50,13 +69,15 @@ class Header extends Component {
           }
           iconElementRight={
             <nav className='header__nav'>
-              <MediaQuery query='(min-width: 850px)'>
+              <MediaQuery query='(min-width: 950px)'>
+
                 {this.state.navBtns.map((btn, i) => (
                   <FlatButton
                     className={`${btn.className || ''}`}
+                    onClick={btn.onClick}
                     key={i}
                     label={btn.label}
-                    containerElement={<Link to={btn.to} activeClassName={btn.activeClassName || ''}/>}
+                    containerElement={<Link to={btn.to} activeClassName={btn.activeClassName || ''} />}
                     hoverColor='#FDFFF9'
                     style={{display: inRegistrationFlow ? 'none' : 'inline-block'}}
                   />
@@ -65,14 +86,14 @@ class Header extends Component {
                 <ToggleLanguageBtn />
               </MediaQuery>
 
-              <MediaQuery query='(max-width: 849px)'>
+              <MediaQuery query='(max-width: 949px)'>
                 <ToggleLanguageBtn />
 
                 {renderIf(!this.props.inRegistrationFlow)(
                   <IconMenu
                     className='header__icon-menu'
                     menuStyle={{ 'background': '#F7F9F9' }}
-                    iconButtonElement={ <IconButton><MenuIcon /></IconButton> }
+                    iconButtonElement={<IconButton><MenuIcon /></IconButton>}
                     targetOrigin={{horizontal: 'right', vertical: 'top'}}
                     anchorOrigin={{horizontal: 'right', vertical: 'top'}}
                   >
@@ -80,6 +101,7 @@ class Header extends Component {
                       <MenuItem
                         primaryText={btn.label}
                         key={i}
+                        onClick={btn.onClick}
                         containerElement={<Link to={btn.to} />}
                         style={btn.style || {}}
                       />

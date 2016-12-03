@@ -5,10 +5,10 @@ const en = {
       faqBtnLabel: 'FAQ',
       aboutUsBtnLabel: 'About us',
       signUpBtnLabel: 'Sign up',
-      toggleLanguageBtnLabel: 'En Español'
+      toggleLanguageBtnLabel: 'En Español',
+      donateBtnLabel: 'Donate'
     },
     footer: {
-      donateBtnLabel: 'Donate',
       faqLinkLabel: 'FAQ',
       aboutUsLinkLabel: 'About Us',
       privacyPolicyLinkLabel: 'Privacy Policy',
@@ -17,7 +17,8 @@ const en = {
       address: '150 Court St. 2nd Floor, Brooklyn 11201',
       ourCompanyHeader: 'Our Company',
       ourPartnersHeader: 'Our Partners',
-      pressReleasesLinkLabel: 'Press Releases'
+      pressReleasesLinkLabel: 'Press Releases',
+      donateBtnLabel: 'Donate'
     }
   },
   landingPage: {
