@@ -28,10 +28,10 @@ class Footer extends Component {
 
               <div className='landing-page__footer-links-container'>
                 <address className='landing-page__footer-address-link-container'>
-                  <a href='https://www.google.com/maps?q=150+Court+St.+2nd+Floor,+Brooklyn+11201' className='landing-page__footer-link'>{content.address}</a>
+                  <a href='https://www.google.com/maps?q=150+Court+St.+2nd+Floor,+Brooklyn+11201' className='landing-page__footer-link green-on-hover'>{content.address}</a>
                 </address>
 
-                <a href='mailto:hello@goodcall.nyc' className='landing-page__footer-link'>hello@goodcall.nyc</a>
+                <a href='mailto:hello@goodcall.nyc' className='landing-page__footer-link green-on-hover'>hello@goodcall.nyc</a>
 
                 <div className='landing-page__footer-social-media-links-container'>
                   <a href='https://www.facebook.com/goodcallnyc' className='landing-page__footer-social-media-link'>
@@ -51,9 +51,9 @@ class Footer extends Component {
               <div className='landing-page__footer-header'>{content.ourCompanyHeader}</div>
 
               <div className='landing-page__footer-links-container'>
-                <a href='https://igg.me/at/C42BDfXWM58' className='landing-page__footer-link'>{content.donateBtnLabel}</a>
+                <a href='https://igg.me/at/C42BDfXWM58' className='landing-page__footer-link green-on-hover'>{content.donateBtnLabel}</a>
                 {this.state.ourCompanyLinks.map((link, i) => (
-                  <Link key={i} to={link.to} className='landing-page__footer-link'>{link.label}</Link>
+                  <Link key={i} to={link.to} className='landing-page__footer-link green-on-hover'>{link.label}</Link>
                 ))}
               </div>
             </Cell>

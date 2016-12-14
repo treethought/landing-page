@@ -41,6 +41,14 @@ body {
   color: #A1A1A1 !important;
 }
 
+.green-on-hover {
+  transition: 0.5s;
+}
+
+.green-on-hover:hover {
+  color: #00FFEB !important;
+}
+
 /* legal pages: privacy-policy-page and terms-and-conditions-page */
 
 .legal-container {
