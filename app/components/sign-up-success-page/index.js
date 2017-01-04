@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import InnerPage from './../inner-page'
 import {Link} from 'react-router'
 
 class SignUpSuccessPage extends Component {
@@ -17,8 +16,8 @@ class SignUpSuccessPage extends Component {
               <span className='sign-up-success-page__if-circle'>
                 <span className='sign-up-success-page__if-text'>
                   {content.ifText}
-                 </span>
-               </span>
+                </span>
+              </span>
             </span>
 
             {content.ifConditions.map((condition, i) => (
@@ -28,6 +27,10 @@ class SignUpSuccessPage extends Component {
             <Link to='/faq' className='sign-up-success-page__faq-link'>{content.faqLinkText}</Link>
           </span>
         </p>
+
+        <script>
+          fbq('track', 'CompleteRegistration');
+        </script>
       </div>
     )
   }
