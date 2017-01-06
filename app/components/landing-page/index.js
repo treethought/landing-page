@@ -28,6 +28,10 @@ class LandingPage extends Component {
         <HowItWorks content={content.howItWorks} />
 
         <LaunchingSoon content={content.launchingSoon} />
+
+        <script>
+          fbq('track', 'ViewContent')
+        </script>
       </div>
     )
   }
