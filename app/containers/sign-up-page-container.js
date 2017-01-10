@@ -5,6 +5,7 @@ import fetcher from './../services/fetcher'
 import objectMap from 'object.map'
 import {browserHistory} from 'react-router'
 import moment from 'moment'
+import cookie from 'react-cookie'
 
 let tmpContactId = 0
 
@@ -17,15 +18,25 @@ class SignUpPageContainer extends Component {
   createUser () {
     let {year, month, day} = this.state.user.dateOfBirthObj
     let dateOfBirth = moment(`${year}-${month}-${day}`, 'YYYY-M-D').format()
+    // TODO: refactor into service
+    const referredByCode = cookie.load('referredByCode', { path: '/' })
+
     fetcher({
       url: `${config.apiBaseUrl}/users`,
       method: 'POST',
-      body: {user: {...this.state.user, dateOfBirth: dateOfBirth}},
+      body: {user: {
+        ...this.state.user,
+        dateOfBirth,
+        referredByCode
+      }},
       first: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
       let {status, json} = res
       if (status === 200) {
         this.setState({user: json.user, userFormErrors: {}, formStage: 1, requestInProgress: false})
+        if (referredByCode) {
+          cookie.remove('referredByCode', { path: '/' })
+        }
       } else {
         this.setState({
           userFormErrors: objectMap(json.errors, (v) => v.join(', ')),

@@ -2,8 +2,20 @@ import React, { Component, PropTypes } from 'react'
 import Header from './../header'
 import Footer from './../footer'
 import includes from 'lodash.includes'
+import cookie from 'react-cookie'
+import { browserHistory } from 'react-router'
 
 class InnerPage extends Component {
+  componentWillMount () {
+    const { query, pathname } = this.props.location
+    // TODO: refactor into service
+    const { referredByCode } = query
+    if (referredByCode) {
+      cookie.save('referredByCode', referredByCode, { path: '/' })
+      browserHistory.push({ pathname, query: null })
+    }
+  }
+
   render () {
     const {content, toggleLocale} = this.props.route
 
