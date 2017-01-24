@@ -166,7 +166,8 @@ const es = {
     ],
     faqLinkText: '¿Tienes preguntas? Lee nuestras Preguntas Frecuentes',
     tellYourFriends: '¡Dile a tus amigos que se inscriban y protejan sus derechos!',
-    copyAndShare: 'Copia y comparte este enlace:'
+    copyAndShare: 'Copia y comparte este enlace:',
+    orShareOnSocialMedia: 'O difúndelo en redes sociales:'
   },
   privacyPolicyPage: {
     header: 'Pólitica de Privacidad de Good Call',

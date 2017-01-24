@@ -34,9 +34,7 @@ class SignUpPageContainer extends Component {
       let {status, json} = res
       if (status === 200) {
         this.setState({user: json.user, userFormErrors: {}, formStage: 1, requestInProgress: false})
-        if (referredByCode) {
-          cookie.remove('referredByCode', { path: '/' })
-        }
+        if (referredByCode) { cookie.remove('referredByCode', { path: '/' }) }
       } else {
         this.setState({
           userFormErrors: objectMap(json.errors, (v) => v.join(', ')),
@@ -112,7 +110,10 @@ class SignUpPageContainer extends Component {
       let {status, json} = res
       if (status === 200) {
         this.setState({contactsFormErrors: [{}], contacts: [], requestInProgress: false})
-        browserHistory.push('/sign-up/success')
+        browserHistory.push({
+          pathname: '/sign-up/success',
+          query: { referralCode: this.state.user.referral_code }
+        })
       } else {
         document.body.scrollTop = document.documentElement.scrollTop = 0
         this.setState({contactsFormErrors: json.errors, requestInProgress: false})

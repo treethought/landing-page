@@ -19,14 +19,6 @@
   margin: 0 auto;
 }
 
-@media (max-width: 920px) {
-
-  .sign-up-success-page__content {
-    max-width: 420px;
-  }
-
-}
-
 .sign-up-success-page__paragraph {
   font-size: 20px;
   max-width: 420px;
@@ -124,6 +116,13 @@
   margin-bottom: 50px;
 }
 
+.sign-up-success-page__share-btns-text {
+  display: block;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
 .sign-up-success-page__share-btn {
   font-size: 16px;
   display: block !important;
@@ -137,6 +136,14 @@
   height: 34px !important;
 }
 
+@media (max-width: 920px) {
+
+  .sign-up-success-page__content {
+    max-width: 420px;
+  }
+
+}
+
 @media (max-width: 479px) {
 
   .sign-up-success-page__header {
@@ -144,6 +151,10 @@
   }
 
   .sign-up-success-page__call-number {
+    font-size: 24px;
+  }
+  
+  .sign-up-success-page__share-header {
     font-size: 24px;
   }
 
@@ -155,6 +166,10 @@
 
   .sign-up-success-page__if-text {
     font-size: 28px;
+  }
+
+  .sign-up-success-page__if-condition {
+    margin-bottom: 20px;
   }
 
   .sign-up-success-page__paragraph {

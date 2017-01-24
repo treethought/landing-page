@@ -168,7 +168,8 @@ const en = {
     ],
     faqLinkText: 'Have questions? Read our FAQ',
     tellYourFriends: 'Tell your friends to sign up and protect their rights!',
-    copyAndShare: 'Copy and share this link:'
+    copyAndShare: 'Copy and share this link:',
+    orShareOnSocialMedia: 'Or share on social media:'
   },
   privacyPolicyPage: {
     header: 'Privacy Policy',

@@ -4,8 +4,12 @@ import FlatButton from 'material-ui/FlatButton'
 import SvgIcon from 'material-ui/SvgIcon'
 
 class SignUpSuccessPage extends Component {
+
   render () {
-    const {content} = this.props.route
+    const { content } = this.props.route
+    const { referralCode } = this.props.location.query
+
+    const referralLink = `https://goodcall.nyc/?referredByCode=${referralCode}`
 
     const EmailIcon = (props) => (
       <SvgIcon {...props} viewBox='0 0 512 512' color='white'>
@@ -58,9 +62,12 @@ class SignUpSuccessPage extends Component {
 
             <span className='sign-up-success-page__share-link-text'>{ content.copyAndShare }</span>
 
-            <a className='sign-up-success-page__share-link' href='https://goodcall.nyc/?referredByCode=XXXXXX'>{'https://goodcall.nyc/?referredByCode=XXXXXX'}</a>
+            <a className='sign-up-success-page__share-link'>{ referralLink }</a>
+
+            <span className='sign-up-success-page__share-btns-text'>{ content.orShareOnSocialMedia }</span>
 
             <FlatButton
+              href={referralLink}
               className='gc-std-btn sign-up-success-page__share-btn'
               style={{ backgroundColor: '#40B097' }}
               label={'Email'}
@@ -68,6 +75,7 @@ class SignUpSuccessPage extends Component {
             />
 
             <FlatButton
+              href={referralLink}
               className='gc-std-btn sign-up-success-page__share-btn'
               style={{ backgroundColor: '#2D4C8D' }}
               label={'Facebook'}
@@ -75,6 +83,7 @@ class SignUpSuccessPage extends Component {
             />
 
             <FlatButton
+              href={referralLink}
               className='gc-std-btn sign-up-success-page__share-btn'
               style={{ backgroundColor: '#0098F8' }}
               label={'Twitter'}
