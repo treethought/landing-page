@@ -74,6 +74,7 @@ class Header extends Component {
                 {this.state.navBtns.map((btn, i) => (
                   <FlatButton
                     className={`green-on-hover ${btn.className || ''}`}
+                    style={btn.style}
                     onClick={btn.onClick}
                     key={i}
                     label={btn.label}

@@ -159,14 +159,16 @@ const en = {
   },
   signUpSuccessPage: {
     header: 'Thank you for signing up!',
-    callText: 'Call',
+    callText: 'Remember to call',
     ifText: 'if',
     ifConditions: [
       'You are arrested and are brought to the precinct in the Bronx',
       'You cannot reach your loved ones',
       'Someone you know gets arrested'
     ],
-    faqLinkText: 'Have questions? Read our FAQ'
+    faqLinkText: 'Have questions? Read our FAQ',
+    tellYourFriends: 'Tell your friends to sign up and protect their rights!',
+    copyAndShare: 'Copy and share this link:'
   },
   privacyPolicyPage: {
     header: 'Privacy Policy',

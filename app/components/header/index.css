@@ -55,6 +55,7 @@
   top: 4px;
   margin-left: 27px !important;
   margin-right: 27px !important;
+  background: #40B097 !important;
 }
 
 .header__sign-up-btn span {
@@ -128,5 +129,5 @@
   .header__hotline-banner-text {
     font-size: 13px;
   }
-  
+
 }

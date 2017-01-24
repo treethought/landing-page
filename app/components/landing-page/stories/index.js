@@ -121,6 +121,7 @@ class Stories extends Component {
             <FlatButton
               label={content.signUpBtnLabel}
               className='gc-std-btn'
+              style={{ backgroundColor: '#40B097' }}
               containerElement={<Link to='/sign-up' />}
             />
           </div>

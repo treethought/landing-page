@@ -13,6 +13,7 @@ class LaunchingSoon extends Component {
 
         <FlatButton
           label={content.signUpBtnLabel}
+          style={{ backgroundColor: '#40B097' }}
           className='gc-std-btn'
           containerElement={<Link to='/sign-up' />}
         />

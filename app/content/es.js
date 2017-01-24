@@ -157,14 +157,16 @@ const es = {
   },
   signUpSuccessPage: {
     header: '¡Gracias por inscribirte!',
-    callText: 'Llama',
+    callText: 'Recuerda llamar al',
     ifText: 'sí',
     ifConditions: [
       'Eres arrestado y llevado a un precinto en el Bronx',
       'No puedes contactar a tus seres queridos',
       'Alguien que conoces es arrestado'
     ],
-    faqLinkText: '¿Tienes preguntas? Lee nuestras Preguntas Frecuentes'
+    faqLinkText: '¿Tienes preguntas? Lee nuestras Preguntas Frecuentes',
+    tellYourFriends: '¡Dile a tus amigos que se inscriban y protejan sus derechos!',
+    copyAndShare: 'Copia y comparte este enlace:'
   },
   privacyPolicyPage: {
     header: 'Pólitica de Privacidad de Good Call',

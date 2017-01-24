@@ -159,6 +159,7 @@ class CreateUserForm extends Component {
 
           <FlatButton
             className='gc-std-btn sign-up-page__form-continue-btn sign-up-page__create-user-form-continue-btn'
+            style={{ backgroundColor: '#40B097' }}
             label={content.continueBtnLabel}
             onClick={this.props.createUser}
             disabled={this.continueBtnIsDisabled()}

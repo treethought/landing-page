@@ -66,6 +66,7 @@ class AboutPage extends Component {
               <Cell is='7'>
                 <FlatButton
                   className='about-page__sign-up-btn gc-std-btn'
+                  style={{ backgroundColor: '#40B097' }}
                   label={content.signUpBtnLabel}
                   containerElement={<Link to='/sign-up'/>}
                 />
