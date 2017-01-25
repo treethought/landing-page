@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import {Link} from 'react-router'
 import FlatButton from 'material-ui/FlatButton'
 import SvgIcon from 'material-ui/SvgIcon'
+import urlencode from 'urlencode'
 
 class SignUpSuccessPage extends Component {
 
@@ -67,7 +68,8 @@ class SignUpSuccessPage extends Component {
             <span className='sign-up-success-page__share-btns-text'>{ content.orShareOnSocialMedia }</span>
 
             <FlatButton
-              href={referralLink}
+              target='_blank'
+              href={`mailto:?subject=${urlencode('Sign up to Good Call and protect your rights!')}&body=${urlencode('Protect your rights! Sign up to Good Call to have a lawyer and your loved ones at your side in case of an arrest. Completely free, no catch. You can sign up here: ' + referralLink)}`}
               className='gc-std-btn sign-up-success-page__share-btn'
               style={{ backgroundColor: '#40B097' }}
               label={'Email'}
@@ -75,7 +77,10 @@ class SignUpSuccessPage extends Component {
             />
 
             <FlatButton
-              href={referralLink}
+              target='_blank'
+              href={`
+                https://www.facebook.com/sharer.php?caption=${urlencode('goodcall.nyc')}&description=${urlencode('Protect your rights! Sign up to Good Call to have a lawyer and your loved ones at your side in case of an arrest. Completely free, no catch.')}&u=${referralLink}&picture=https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_225,w_380/v1479685221/uocbe8twmfqqnrgjom0j.png
+              `}
               className='gc-std-btn sign-up-success-page__share-btn'
               style={{ backgroundColor: '#2D4C8D' }}
               label={'Facebook'}
@@ -83,7 +88,8 @@ class SignUpSuccessPage extends Component {
             />
 
             <FlatButton
-              href={referralLink}
+              target='_blank'
+              href={`https://twitter.com/intent/tweet?text=${urlencode('Sign up to Good Call and protect your rights! ' + referralLink)}`}
               className='gc-std-btn sign-up-success-page__share-btn'
               style={{ backgroundColor: '#0098F8' }}
               label={'Twitter'}
