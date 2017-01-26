@@ -69,7 +69,7 @@ class SignUpSuccessPage extends Component {
 
             <FlatButton
               target='_blank'
-              href={`mailto:?subject=${urlencode('Sign up to Good Call and protect your rights!')}&body=${urlencode('Protect your rights! Sign up to Good Call to have a lawyer and your loved ones at your side in case of an arrest. Completely free, no catch. You can sign up here: ' + referralLink)}`}
+              href={`mailto:?subject=${urlencode(content.emailSubject)}&body=${urlencode(content.emailBody(referralLink))}`}
               className='gc-std-btn sign-up-success-page__share-btn'
               style={{ backgroundColor: '#40B097' }}
               label={'Email'}
@@ -79,7 +79,7 @@ class SignUpSuccessPage extends Component {
             <FlatButton
               target='_blank'
               href={`
-                https://www.facebook.com/sharer.php?caption=${urlencode('goodcall.nyc')}&description=${urlencode('Protect your rights! Sign up to Good Call to have a lawyer and your loved ones at your side in case of an arrest. Completely free, no catch.')}&u=${referralLink}&picture=https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_225,w_380/v1479685221/uocbe8twmfqqnrgjom0j.png
+                https://www.facebook.com/sharer.php?caption=${urlencode('goodcall.nyc')}&description=${urlencode(content.facebookDescription)}&u=${referralLink}&picture=https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/c_fill,f_auto,h_225,w_380/v1479685221/uocbe8twmfqqnrgjom0j.png
               `}
               className='gc-std-btn sign-up-success-page__share-btn'
               style={{ backgroundColor: '#2D4C8D' }}
@@ -89,7 +89,7 @@ class SignUpSuccessPage extends Component {
 
             <FlatButton
               target='_blank'
-              href={`https://twitter.com/intent/tweet?text=${urlencode('Sign up to Good Call and protect your rights! ' + referralLink)}`}
+              href={`https://twitter.com/intent/tweet?text=${urlencode(content.twitterTweet(referralLink))}`}
               className='gc-std-btn sign-up-success-page__share-btn'
               style={{ backgroundColor: '#0098F8' }}
               label={'Twitter'}

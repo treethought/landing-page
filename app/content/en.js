@@ -169,7 +169,15 @@ const en = {
     faqLinkText: 'Have questions? Read our FAQ',
     tellYourFriends: 'Tell your friends to sign up and protect their rights!',
     copyAndShare: 'Copy and share this link:',
-    orShareOnSocialMedia: 'Or share on social media:'
+    orShareOnSocialMedia: 'Or share on social media:',
+    emailSubject: 'Sign up to Good Call and protect your rights!',
+    emailBody: (link) => (
+      `Protect your rights! Sign up to Good Call to have a lawyer and your loved ones at your side in case of an arrest. Completely free, no catch. You can sign up here: ${link}`
+    ),
+    facebookDescription: 'Protect your rights! Sign up to Good Call to have a lawyer and your loved ones at your side in case of an arrest. Completely free, no catch.',
+    twitterTweet: (link) => (
+      `Sign up to Good Call and protect your rights! ${link}`
+    )
   },
   privacyPolicyPage: {
     header: 'Privacy Policy',
