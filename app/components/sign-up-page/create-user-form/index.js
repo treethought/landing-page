@@ -8,6 +8,7 @@ import Hint from './../hint'
 import renderIf from 'render-if'
 import StandardTextField from './../../standard-text-field'
 import rangeRight from 'lodash.rangeright'
+import ga from './../../../services/ga'
 
 const dateOptions = {
   months: range(1, 13).map(n => ({label: n, value: n})),
@@ -23,12 +24,37 @@ class CreateUserForm extends Component {
       infoHintShown: false,
       securityHintShown: false,
       userFields: [
-        {name: 'name', label: content.nameLabel, onFocus: this.showInfoHint.bind(this)},
-        {name: 'phone', label: content.phoneLabel, onFocus: this.showInfoHint.bind(this)},
-        {name: 'email', label: content.emailLabel, type: 'email', onFocus: this.showInfoHint.bind(this)},
-        {name: 'zip', label: content.zipLabel, onFocus: this.showInfoHint.bind(this)},
-        {name: 'securityQuestion', label: content.securityQuestionLabel, onFocus: this.showSecurityHint.bind(this)},
-        {name: 'securityAnswer', label: content.securityAnswerLabel, onFocus: this.showSecurityHint.bind(this)}
+        // TODO: write a fxn that generates this for each field
+        {name: 'name', label: content.nameLabel, onFocus: () => {
+          this.showInfoHint()
+          ga.triggerEvent('name-field-focused')
+        }, onBlur: (e) => {
+          if (e.target.value) {
+            ga.triggerEvent('name-field-completed')
+          } else {
+            ga.triggerEvent('name-field-left-blank')
+          }
+        }},
+        {name: 'phone', label: content.phoneLabel, onFocus: () => {
+          this.showInfoHint()
+          ga.triggerEvent('phone-field-focused')
+        }},
+        {name: 'email', label: content.emailLabel, type: 'email', onFocus: () => {
+          this.showInfoHint()
+          ga.triggerEvent('email-field-focused')
+        }},
+        {name: 'zip', label: content.zipLabel, onFocus: () => {
+          this.showInfoHint()
+          ga.triggerEvent('zip-field-focused')
+        }},
+        {name: 'securityQuestion', label: content.securityQuestionLabel, onFocus: () => {
+          this.showSecurityHint()
+          ga.triggerEvent('security-question-field-focused')
+        }},
+        {name: 'securityAnswer', label: content.securityAnswerLabel, onFocus: () => {
+          this.showSecurityHint()
+          ga.triggerEvent('security-answer-field-focused')
+        }}
       ],
       heardAboutUsThroughOpts: [
         {label: content.internetSearchLabel, value: 'Internet search'},
@@ -111,6 +137,7 @@ class CreateUserForm extends Component {
               key={i}
               name={field.name}
               onFocus={field.onFocus}
+              onBlur={field.onBlur}
               onChange={this.props.setUser(field.name)}
               errorText={this.props.userFormErrors[field.name]}
               labelText={field.label}

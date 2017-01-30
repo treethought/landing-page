@@ -8,6 +8,8 @@ const triggerEvent = (action) => () => {
   })
 }
 
-export default {
+const ga = {
   triggerEvent
 }
+
+export default ga
