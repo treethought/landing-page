@@ -6,6 +6,7 @@ import objectMap from 'object.map'
 import {browserHistory} from 'react-router'
 import moment from 'moment'
 import cookie from 'react-cookie'
+import ga from './../services/ga'
 
 let tmpContactId = 0
 
@@ -33,9 +34,11 @@ class SignUpPageContainer extends Component {
     }).then((res) => {
       let {status, json} = res
       if (status === 200) {
+        ga.triggerEvent('create-user-form-submit-success')()
         this.setState({user: json.user, userFormErrors: {}, formStage: 1, requestInProgress: false})
         if (referredByCode) { cookie.remove('referredByCode', { path: '/' }) }
       } else {
+        ga.triggerEvent('create-user-form-submit-error')()
         this.setState({
           userFormErrors: objectMap(json.errors, (v) => v.join(', ')),
           requestInProgress: false
@@ -53,6 +56,7 @@ class SignUpPageContainer extends Component {
 
   setUserDateOfBirth (field) {
     return (e, i, v) => {
+      ga.triggerEvent(`date-of-birth-${field}-set`)()
       let dateOfBirthObj = this.state.user.dateOfBirthObj
       dateOfBirthObj[field] = v
       this.setState({user: {...this.state.user, dateOfBirthObj: dateOfBirthObj}})
@@ -60,6 +64,7 @@ class SignUpPageContainer extends Component {
   }
 
   addContact () {
+    ga.triggerEvent('add-contact-btn-clicked')()
     this.setState({contacts: this.state.contacts.concat({tmpId: ++tmpContactId})})
   }
 
@@ -86,6 +91,7 @@ class SignUpPageContainer extends Component {
 
   removeContact (tmpId) {
     return () => {
+      ga.triggerEvent('remove-contact-btn-clicked')()
       let contacts = this.state.contacts.filter((contact) => contact.tmpId !== tmpId)
       this.setState({contacts: contacts})
     }
@@ -109,12 +115,14 @@ class SignUpPageContainer extends Component {
     }).then((res) => {
       let {status, json} = res
       if (status === 200) {
+        ga.triggerEvent('create-contacts-form-submit-success')()
         this.setState({contactsFormErrors: [{}], contacts: [], requestInProgress: false})
         browserHistory.push({
           pathname: '/sign-up/success',
           query: { referralCode: this.state.user.referral_code }
         })
       } else {
+        ga.triggerEvent('create-contacts-form-submit-error')()
         document.body.scrollTop = document.documentElement.scrollTop = 0
         this.setState({contactsFormErrors: json.errors, requestInProgress: false})
       }

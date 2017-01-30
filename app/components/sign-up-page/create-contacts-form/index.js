@@ -4,19 +4,28 @@ import FlatButton from 'material-ui/FlatButton'
 import renderIf from 'render-if'
 import Hint from './../hint'
 import StandardTextField from './../../standard-text-field'
+import ga from './../../../services/ga'
 
 class CreateContactsForm extends Component {
   constructor (props) {
     super(props)
     this.popup = this.popup.bind(this)
     const {content} = props
+    const contactFields = ['name', 'relationship', 'phone'].map(name => ({
+      name,
+      label: content[`${name}Label`],
+      onFocus: () => {
+        this.showHint()
+        ga.triggerEvent(`contact-${name}-field-focused`)()
+      },
+      onBlur: (e) => {
+        const event = e.target.value ? `${name}-field-completed` : `${name}-field-left-blank`
+        ga.triggerEvent(event)()
+      }
+    }))
     this.state = {
       hintShown: false,
-      contactFields: [
-        {name: 'name', label: content.nameLabel},
-        {name: 'relationship', label: content.relationshipLabel},
-        {name: 'phone', label: content.phoneLabel}
-      ]
+      contactFields
     }
   }
 
@@ -51,7 +60,7 @@ class CreateContactsForm extends Component {
       <form className='sign-up-page__form'>
         {renderIf(this.state.hintShown)(
           <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
-            <Hint text={content.hintText(this.props.contacts.length)} confirmLabelText={content.hintConfirmLabelText}/>
+            <Hint text={content.hintText(this.props.contacts.length)} confirmLabelText={content.hintConfirmLabelText} />
           </div>
         )}
 
@@ -62,13 +71,14 @@ class CreateContactsForm extends Component {
                 <h3 className='sign-up-page__additional-contact-header'>{content.additionalContactLabel}</h3>
               )}
 
-              {this.state.contactFields.map((field, j) => (
+              {this.state.contactFields.map(({ name, label, onBlur, onFocus }, j) => (
                 <StandardTextField
                   key={j}
-                  onFocus={this.showHint.bind(this)}
-                  onChange={this.props.setContact(contact.tmpId, field.name)}
-                  name={field.name}
-                  labelText={field.label}
+                  onFocus={onFocus}
+                  onChange={this.props.setContact(contact.tmpId, name)}
+                  onBlur={onBlur}
+                  name={name}
+                  labelText={label}
                 />
               ))}
 

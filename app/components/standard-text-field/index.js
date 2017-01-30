@@ -3,9 +3,11 @@ import TextField from 'material-ui/TextField'
 
 class StandardTextField extends Component {
   render () {
+    const { className, name, type, labelText, errorText, onChange, onFocus, onBlur } = this.props
+
     return (
       <TextField
-        className={this.props.className || ''}
+        className={className || ''}
         style={{ display: 'block !important', width: '100% !important', height: '58px', marginBottom: '3px' }}
         floatingLabelStyle={{ top: '18px' }}
         floatingLabelFocusStyle={{ fontSize: '14px', color: '#40B097', textTransform: 'uppercase', top: '18px' }}
@@ -14,14 +16,14 @@ class StandardTextField extends Component {
         underlineFocusStyle={{ borderColor: '#40B097', bottom: '15px' }}
         errorStyle={{ lineHeight: '15px' }}
 
-        name={this.props.name || ''}
-        type={this.props.type || ''}
+        name={name || ''}
+        type={type || ''}
 
-        floatingLabelText={this.props.labelText}
-        errorText={this.props.errorText}
-        onChange={this.props.onChange}
-        onFocus={this.props.onFocus}
-        onBlur={this.props.onBlur}
+        floatingLabelText={labelText}
+        errorText={errorText}
+        onChange={onChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
     )
   }

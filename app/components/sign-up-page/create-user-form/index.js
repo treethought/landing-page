@@ -20,42 +20,26 @@ class CreateUserForm extends Component {
   constructor (props) {
     super(props)
     let {content} = props
+    const showInfoHint = this.showInfoHint.bind(this)
+    const showSecurityHint = this.showSecurityHint.bind(this)
+    const userFields = ['name', 'phone', 'email', 'zip', 'securityQuestion', 'securityAnswer'].map(name => ({
+      name,
+      label: content[`${name}Label`],
+      onFocus: () => {
+        const showHint = name.includes('security') ? showSecurityHint : showInfoHint
+        showHint()
+        ga.triggerEvent(`${name}-field-focused`)()
+      },
+      onBlur: (e) => {
+        const event = e.target.value ? `${name}-field-completed` : `${name}-field-left-blank`
+        ga.triggerEvent(event)()
+      }
+    }))
+
     this.state = {
       infoHintShown: false,
       securityHintShown: false,
-      userFields: [
-        // TODO: write a fxn that generates this for each field
-        {name: 'name', label: content.nameLabel, onFocus: () => {
-          this.showInfoHint()
-          ga.triggerEvent('name-field-focused')
-        }, onBlur: (e) => {
-          if (e.target.value) {
-            ga.triggerEvent('name-field-completed')
-          } else {
-            ga.triggerEvent('name-field-left-blank')
-          }
-        }},
-        {name: 'phone', label: content.phoneLabel, onFocus: () => {
-          this.showInfoHint()
-          ga.triggerEvent('phone-field-focused')
-        }},
-        {name: 'email', label: content.emailLabel, type: 'email', onFocus: () => {
-          this.showInfoHint()
-          ga.triggerEvent('email-field-focused')
-        }},
-        {name: 'zip', label: content.zipLabel, onFocus: () => {
-          this.showInfoHint()
-          ga.triggerEvent('zip-field-focused')
-        }},
-        {name: 'securityQuestion', label: content.securityQuestionLabel, onFocus: () => {
-          this.showSecurityHint()
-          ga.triggerEvent('security-question-field-focused')
-        }},
-        {name: 'securityAnswer', label: content.securityAnswerLabel, onFocus: () => {
-          this.showSecurityHint()
-          ga.triggerEvent('security-answer-field-focused')
-        }}
-      ],
+      userFields,
       heardAboutUsThroughOpts: [
         {label: content.internetSearchLabel, value: 'Internet search'},
         {label: content.friendsOrFamilyLabel, value: 'Friends or family'},
@@ -88,6 +72,11 @@ class CreateUserForm extends Component {
     return window.innerWidth > 640
   }
 
+  setHeardAboutUsThrough () {
+    this.props.setUser('heardAboutUsThrough')
+    ga.triggerEvent('heard-about-us-through-set')()
+  }
+
   render () {
     let CustomSelectField = ({fieldOpts, onChange, hintText, value, className, width}) => (
       <SelectField
@@ -110,7 +99,7 @@ class CreateUserForm extends Component {
       </SelectField>
     )
 
-    const {content} = this.props
+    const { content } = this.props
 
     return (
       <form className='sign-up-page__form'>
@@ -132,15 +121,15 @@ class CreateUserForm extends Component {
             textAlign: (this.props.infoHintShown || this.props.securityHintShown) ? 'right' : 'left'
           }}
         >
-          {this.state.userFields.map((field, i) => (
+          {this.state.userFields.map(({ name, onFocus, onBlur, label }, i) => (
             <StandardTextField
               key={i}
-              name={field.name}
-              onFocus={field.onFocus}
-              onBlur={field.onBlur}
-              onChange={this.props.setUser(field.name)}
-              errorText={this.props.userFormErrors[field.name]}
-              labelText={field.label}
+              name={name}
+              onFocus={onFocus}
+              onBlur={onBlur}
+              onChange={this.props.setUser(name)}
+              errorText={this.props.userFormErrors[name]}
+              labelText={label}
             />
           ))}
 
@@ -179,7 +168,7 @@ class CreateUserForm extends Component {
 
           <CustomSelectField
             fieldOpts={this.state.heardAboutUsThroughOpts}
-            onChange={this.props.setUser('heardAboutUsThrough')}
+            onChange={this.setHeardAboutUsThrough.bind(this)}
             hintText={content.heardAboutUsThroughLabel}
             value={this.props.user.heardAboutUsThrough}
           />
@@ -191,6 +180,7 @@ class CreateUserForm extends Component {
             onClick={this.props.createUser}
             disabled={this.continueBtnIsDisabled()}
           />
+
           <p className='sign-up-page__form-continue-btn-terms-text' dangerouslySetInnerHTML={{__html: content.continueBtnTermsText}}></p>
         </div>
       </form>

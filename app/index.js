@@ -15,6 +15,7 @@ import locale from './services/locale'
 import InnerPage from './components/inner-page'
 import TermsAndConditionsPage from './components/terms-and-conditions-page'
 // import PressReleasesPage from './components/press-releases-page'
+import ga from './services/ga'
 
 // HACK: to get the selectedTextColor of the SelectField to not be hot pink
 const theme = getMuiTheme({palette: {accent1Color: '#40B097'}})
@@ -38,6 +39,7 @@ class App extends Component {
 
   toggleLocale () {
     const newLocale = this.state.locale === 'en' ? 'es' : 'en'
+    ga.triggerEvent(`language-switched-to-${newLocale}`)()
     locale.set(newLocale)
     window.location.reload()
   }

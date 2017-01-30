@@ -19,7 +19,7 @@ class InnerPage extends Component {
   }
 
   render () {
-    const {content, toggleLocale} = this.props.route
+    const { content, toggleLocale } = this.props.route
 
     return (
       <div className='inner-page'>
