@@ -168,13 +168,13 @@ const es = {
     tellYourFriends: '¡Dile a tus amigos que se inscriban y protejan sus derechos!',
     copyAndShare: 'Copia y comparte este enlace:',
     orShareOnSocialMedia: 'O difúndelo en redes sociales:',
-    emailSubject: 'Sign up to Good Call and protect your rights!',
+    emailSubject: '¡Inscríbase para Good Call y proteger sus derechos!',
     emailBody: (link) => (
-      `Protect your rights! Sign up to Good Call to have a lawyer and your loved ones at your side in case of an arrest. Completely free, no catch. You can sign up here: ${link}`
+      `¡Proteja sus derechos! Inscríbase para Good Call para tener un abogado y su seres queridos a su lado en caso de una detención. Completamente gratís, sin condiciones. Inscríbase aquí: ${link}`
     ),
-    facebookDescription: 'Protect your rights! Sign up to Good Call to have a lawyer and your loved ones at your side in case of an arrest. Completely free, no catch.',
+    facebookDescription: '¡Proteja sus derechos! Inscríbase para Good Call para tener un abogado y su seres queridos a su lado en caso de una detención. Completamente gratís, sin condiciones.',
     twitterTweet: (link) => (
-      `Sign up to Good Call and protect your rights! ${link}`
+      `¡Inscríbase para Good Call y proteger sus derechos! ${link}`
     )
   },
   privacyPolicyPage: {
