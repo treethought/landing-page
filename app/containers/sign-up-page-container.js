@@ -17,7 +17,8 @@ class SignUpPageContainer extends Component {
   }
 
   createUser () {
-    let {year, month, day} = this.state.user.dateOfBirthObj
+    const { user } = this.state
+    let {year, month, day} = user.dateOfBirthObj
     let dateOfBirth = moment(`${year}-${month}-${day}`, 'YYYY-M-D').format()
     // TODO: refactor into service
     const referredByCode = cookie.load('referredByCode', { path: '/' })
@@ -26,7 +27,7 @@ class SignUpPageContainer extends Component {
       url: `${config.apiBaseUrl}/users`,
       method: 'POST',
       body: {user: {
-        ...this.state.user,
+        ...user,
         dateOfBirth,
         referredByCode
       }},
@@ -34,11 +35,11 @@ class SignUpPageContainer extends Component {
     }).then((res) => {
       let {status, json} = res
       if (status === 200) {
-        ga.triggerEvent('create-user-form-submit-success')()
+        ga.triggerEvent('create-user-form-submit-success', user)()
         this.setState({user: json.user, userFormErrors: {}, formStage: 1, requestInProgress: false})
         if (referredByCode) { cookie.remove('referredByCode', { path: '/' }) }
       } else {
-        ga.triggerEvent('create-user-form-submit-error')()
+        ga.triggerEvent('create-user-form-submit-error', user)()
         this.setState({
           userFormErrors: objectMap(json.errors, (v) => v.join(', ')),
           requestInProgress: false
@@ -56,7 +57,6 @@ class SignUpPageContainer extends Component {
 
   setUserDateOfBirth (field) {
     return (e, i, v) => {
-      ga.triggerEvent(`date-of-birth-${field}-set`)()
       let dateOfBirthObj = this.state.user.dateOfBirthObj
       dateOfBirthObj[field] = v
       this.setState({user: {...this.state.user, dateOfBirthObj: dateOfBirthObj}})
@@ -64,7 +64,6 @@ class SignUpPageContainer extends Component {
   }
 
   addContact () {
-    ga.triggerEvent('add-contact-btn-clicked')()
     this.setState({contacts: this.state.contacts.concat({tmpId: ++tmpContactId})})
   }
 
@@ -91,7 +90,6 @@ class SignUpPageContainer extends Component {
 
   removeContact (tmpId) {
     return () => {
-      ga.triggerEvent('remove-contact-btn-clicked')()
       let contacts = this.state.contacts.filter((contact) => contact.tmpId !== tmpId)
       this.setState({contacts: contacts})
     }
@@ -100,29 +98,30 @@ class SignUpPageContainer extends Component {
   saveContacts () {
     let form_token = this.state.user.form_token
     let form_token_value = form_token ? form_token.value : ''
+    const { contacts, user } = this.state
 
     fetcher({
       url: `${config.apiBaseUrl}/contacts`,
       method: 'POST',
       body: {
         contacts: {
-          list: this.state.contacts,
+          list: contacts,
           form_token_value: form_token_value,
-          user_id: this.state.user.id
+          user_id: user.id
         }
       },
       first: this.setState.call(this, {requestInProgress: true})
     }).then((res) => {
       let {status, json} = res
       if (status === 200) {
-        ga.triggerEvent('create-contacts-form-submit-success')()
+        ga.triggerEvent('create-contacts-form-submit-success', { user, contacts })()
         this.setState({contactsFormErrors: [{}], contacts: [], requestInProgress: false})
         browserHistory.push({
           pathname: '/sign-up/success',
-          query: { referralCode: this.state.user.referral_code }
+          query: { referralCode: user.referral_code }
         })
       } else {
-        ga.triggerEvent('create-contacts-form-submit-error')()
+        ga.triggerEvent('create-contacts-form-submit-error', { user, contacts })()
         document.body.scrollTop = document.documentElement.scrollTop = 0
         this.setState({contactsFormErrors: json.errors, requestInProgress: false})
       }
@@ -130,7 +129,7 @@ class SignUpPageContainer extends Component {
   }
 
   render () {
-    const {content} = this.props.route
+    const { content } = this.props.route
 
     return (
       <SignUpPage

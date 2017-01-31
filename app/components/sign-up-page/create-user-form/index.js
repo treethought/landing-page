@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import FlatButton from 'material-ui/FlatButton'
@@ -19,20 +19,16 @@ const dateOptions = {
 class CreateUserForm extends Component {
   constructor (props) {
     super(props)
-    let {content} = props
+    let { content } = props
     const showInfoHint = this.showInfoHint.bind(this)
     const showSecurityHint = this.showSecurityHint.bind(this)
+
     const userFields = ['name', 'phone', 'email', 'zip', 'securityQuestion', 'securityAnswer'].map(name => ({
       name,
       label: content[`${name}Label`],
       onFocus: () => {
         const showHint = name.includes('security') ? showSecurityHint : showInfoHint
         showHint()
-        ga.triggerEvent(`${name}-field-focused`)()
-      },
-      onBlur: (e) => {
-        const event = e.target.value ? `${name}-field-completed` : `${name}-field-left-blank`
-        ga.triggerEvent(event)()
       }
     }))
 
@@ -53,6 +49,17 @@ class CreateUserForm extends Component {
     }
   }
 
+  componentDidMount () {
+    window.onbeforeunload = () => {
+      const { user } = this.props
+      return ga.triggerEvent('leave-create-user-form', user)()
+    }
+  }
+
+  componentWillUnmount () {
+    window.onbeforeunload = null
+  }
+
   showInfoHint (e) {
     this.setState({infoHintShown: true})
   }
@@ -70,11 +77,6 @@ class CreateUserForm extends Component {
 
   isDesktop () {
     return window.innerWidth > 640
-  }
-
-  setHeardAboutUsThrough () {
-    this.props.setUser('heardAboutUsThrough')
-    ga.triggerEvent('heard-about-us-through-set')()
   }
 
   render () {
@@ -126,7 +128,6 @@ class CreateUserForm extends Component {
               key={i}
               name={name}
               onFocus={onFocus}
-              onBlur={onBlur}
               onChange={this.props.setUser(name)}
               errorText={this.props.userFormErrors[name]}
               labelText={label}
@@ -168,7 +169,7 @@ class CreateUserForm extends Component {
 
           <CustomSelectField
             fieldOpts={this.state.heardAboutUsThroughOpts}
-            onChange={this.setHeardAboutUsThrough.bind(this)}
+            onChange={this.props.setUser('heardAboutUsThrough')}
             hintText={content.heardAboutUsThroughLabel}
             value={this.props.user.heardAboutUsThrough}
           />

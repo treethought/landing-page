@@ -1,12 +1,11 @@
-// import ga from './../../services/ga'
-
-const triggerEvent = (action) => () => {
-  console.log({action})
-  window.ga('send', {
+const triggerEvent = (action, json = null) => () => {
+  let payload = {
     hitType: 'event',
     eventCategory: 'sign-up-flow',
     eventAction: action
-  })
+  }
+  if (json) { payload.eventLabel = JSON.stringify(json) }
+  window.ga('send', payload)
 }
 
 const ga = {
