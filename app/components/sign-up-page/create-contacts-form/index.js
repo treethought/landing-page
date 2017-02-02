@@ -9,7 +9,6 @@ import ga from './../../../services/ga'
 class CreateContactsForm extends Component {
   constructor (props) {
     super(props)
-    this.popup = this.popup.bind(this)
     const { content } = props
     const contactFields = ['name', 'relationship', 'phone'].map(name => ({
       name,
@@ -23,26 +22,35 @@ class CreateContactsForm extends Component {
 
   componentDidMount () {
     document.body.scrollTop = document.documentElement.scrollTop = 0
-    window.addEventListener('beforeunload', this.popup)
-    window.addEventListener('unload', () => {
+    window.onbeforeunload = (e) => {
+      const confirmationMessage = '\o/'
+      e.returnValue = confirmationMessage
+      return confirmationMessage
+    }
+
+    window.onunload = (e) => {
       const { contacts, user } = this.props
       ga.triggerEvent('leave-create-contacts-form', { user, contacts })()
-      window.removeEventListener('beforeunload', this.popup)
-    })
+      this.removeEventListeners()
+    }
+  }
+
+  removeEventListeners () {
+    window.onbeforeunload = null
+    window.onunload = null
   }
 
   componentWillUnmount () {
-    window.removeEventListener('beforeunload', this.popup)
+    this.removeEventListeners()
+  }
+
+  onContinueClick () {
+    this.removeEventListeners()
+    this.props.saveContacts()
   }
 
   showHint () {
     this.setState({hintShown: true})
-  }
-
-  popup (e) {
-    let confirmationMessage = '\o/'
-    e.returnValue = confirmationMessage
-    return confirmationMessage
   }
 
   isDesktop () {
@@ -104,7 +112,7 @@ class CreateContactsForm extends Component {
             className='gc-std-btn sign-up-page__form-continue-btn'
             style={{ backgroundColor: '#40B097' }}
             label={content.continueBtnLabel}
-            onClick={saveContacts}
+            onClick={this.onContinueClick.bind(this)}
             disabled={requestInProgress}
           />
         </div>
