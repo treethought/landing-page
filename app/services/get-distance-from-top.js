@@ -12,3 +12,5 @@ const getDistanceFromTop = (el) => {
 }
 
 export default getDistanceFromTop
+
+// TODO: consider moving into utils

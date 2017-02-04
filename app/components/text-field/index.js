@@ -1,12 +1,16 @@
 import React, { Component, PropTypes } from 'react'
-import TextField from 'material-ui/TextField'
+import MTextField from 'material-ui/TextField'
 
-class StandardTextField extends Component {
+class TextField extends Component {
+  onChange (e) {
+    this.props.onChange(e.target.value)
+  }
+
   render () {
-    const { className, name, type, labelText, errorText, onChange, onFocus, onBlur } = this.props
+    const { className, name, type, labelText, errorText, onFocus, onBlur } = this.props
 
     return (
-      <TextField
+      <MTextField
         className={className || ''}
         style={{ display: 'block !important', width: '100% !important', height: '58px', marginBottom: '3px' }}
         floatingLabelStyle={{ top: '18px' }}
@@ -21,7 +25,7 @@ class StandardTextField extends Component {
 
         floatingLabelText={labelText}
         errorText={errorText}
-        onChange={onChange}
+        onChange={this.onChange.bind(this)}
         onFocus={onFocus}
         onBlur={onBlur}
       />
@@ -31,7 +35,7 @@ class StandardTextField extends Component {
 
 const { string, func } = PropTypes
 
-StandardTextField.propTypes = {
+TextField.propTypes = {
   className: string,
   labelText: string,
   type: string,
@@ -41,4 +45,4 @@ StandardTextField.propTypes = {
   errorText: string
 }
 
-export default StandardTextField
+export default TextField

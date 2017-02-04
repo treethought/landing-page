@@ -7,14 +7,15 @@ import bowser from 'bowser'
 class Hint extends Component {
   constructor () {
     super()
-    this.state = {dialogClosed: false}
+    this.state = { dialogClosed: false }
   }
 
   componentDidMount () {
     if (!this.isDesktop()) { document.activeElement.blur() }
   }
 
-  closeDialog () { this.setState({dialogClosed: true})
+  closeDialog () {
+    this.setState({dialogClosed: true})
   }
 
   isDesktop () {

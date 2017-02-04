@@ -1,3 +1,7 @@
+.sign-up-page__form-fields-container {
+  text-align: left;
+}
+
 .sign-up-page__hint-security {
   top: 250px !important;
 }

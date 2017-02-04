@@ -3,7 +3,7 @@ import Checkbox from 'material-ui/Checkbox'
 import FlatButton from 'material-ui/FlatButton'
 import renderIf from 'render-if'
 import Hint from './../hint'
-import StandardTextField from './../../standard-text-field'
+import TextField from './../../standard-text-field'
 import ga from './../../../services/ga'
 
 class CreateContactsForm extends Component {
@@ -79,7 +79,7 @@ class CreateContactsForm extends Component {
               )}
 
               {this.state.contactFields.map(({ name, label, onBlur, onFocus }, j) => (
-                <StandardTextField
+                <TextField
                   key={j}
                   onFocus={this.showHint.bind(this)}
                   onChange={setContact(contact.tmpId, name).bind()}

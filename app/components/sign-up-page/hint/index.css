@@ -1,6 +1,6 @@
 .sign-up-page__hint {
-  position: absolute;
-  width: 100%;
+  position: relative;
+  width: 50%;
   top: 6px;
   left: 0;
 }
@@ -45,4 +45,12 @@
   padding: 25px;
   line-height: 1.25;
   margin: 0;
+}
+
+@media (max-width: 640px) {
+
+  .sign-up-page__hint {
+    width: 0;
+  }
+  
 }

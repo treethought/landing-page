@@ -24,7 +24,8 @@
             "es2015"
           ],
           "plugins": [
-            "transform-object-rest-spread"
+            "transform-object-rest-spread",
+            "transform-export-extensions"
           ]
         }
       ],
@@ -56,6 +57,7 @@
     "node-uuid": "1.4.7",
     "object.map": "0.2.0",
     "react": "15.3.1",
+    "react-addons-update": "^15.4.2",
     "react-cookie": "0.4.8",
     "react-dom": "15.3.1",
     "react-inline-grid": "0.5.3",
@@ -68,6 +70,7 @@
     "render-if": "0.1.1",
     "rotate-array": "1.1.0",
     "snakeize": "0.1.0",
+    "superagent": "^3.4.1",
     "url": "0.11.0",
     "urlencode": "^1.1.0"
   },
