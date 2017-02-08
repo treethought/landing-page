@@ -4,6 +4,7 @@ import Hint from './../hint'
 import renderIf from 'render-if'
 import { Checkbox, TextField } from './../../index.js'
 import ga from './../../../services/ga'
+import Recaptcha from 'react-grecaptcha'
 
 class CreateUserForm extends Component {
   constructor (props) {
@@ -28,12 +29,12 @@ class CreateUserForm extends Component {
 
   continueBtnIsDisabled () {
     const { user, requestInProgress } = this.props
-    const { name, emailOrPhone, ageVerified } = user
-    return requestInProgress || !(name && emailOrPhone && ageVerified)
+    const { name, emailOrPhone, ageVerified, recaptchaResponse } = user
+    return requestInProgress || !(name && emailOrPhone && ageVerified && recaptchaResponse)
   }
 
   render () {
-    const { content, setUser, createUser, user } = this.props
+    const { content, setUser, createUser, user, locale, recaptchaSitekey } = this.props
     const { hintShown } = this.state
 
     const userFields = ['name', 'emailOrPhone'].map(name => ({
@@ -63,6 +64,13 @@ class CreateUserForm extends Component {
 
           <Checkbox label={content.verifyAgeText} onCheck={setUser('ageVerified')} />
 
+          <Recaptcha
+            sitekey={recaptchaSitekey}
+            callback={setUser('recaptchaResponse')}
+            expiredCallback={console.log}
+            locale={locale}
+          />
+
           <FlatButton
             className='gc-std-btn sign-up-page__form-continue-btn sign-up-page__create-user-form-continue-btn'
             style={{ backgroundColor: '#40B097' }}
@@ -78,13 +86,15 @@ class CreateUserForm extends Component {
   }
 }
 
-const { object, bool, func } = PropTypes
+const { object, bool, func, string } = PropTypes
 CreateUserForm.propTypes = {
   content: object,
   hintShown: bool,
   setUser: func,
   user: object,
   createUser: func,
+  locale: string,
+  recaptchaSitekey: string,
   requestInProgress: bool
 }
 

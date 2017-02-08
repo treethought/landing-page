@@ -5,11 +5,12 @@ import { postUser } from '../services/api'
 import cookie from 'react-cookie'
 
 class SignUpPageContainer extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       requestInProgress: false,
       formStage: 0,
+      recaptchaSitekey: '6Lc7NxQUAAAAAIZCaPCuSa-9_N2tjZcCik5647lj',
       user: {
         ageVerified: true,
         referredByCode: cookie.load('referredByCode', { path: '/' }),
@@ -42,12 +43,13 @@ class SignUpPageContainer extends Component {
 
   render () {
     const { location, route } = this.props
-    const { content } = route
+    const { content, locale } = route
     return (
       <SignUpPage
         {...this.state}
         location={location}
         content={content}
+        locale={locale}
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
       />

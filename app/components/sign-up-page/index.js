@@ -5,7 +5,8 @@ import CreateUserForm from './create-user-form'
 class SignUpPage extends Component {
   render () {
     const {
-      content, formStage, user, setUser, createUser, requestInProgress
+      content, formStage, user, setUser, createUser, requestInProgress, locale,
+      recaptchaSitekey
     } = this.props
 
     return (
@@ -22,6 +23,8 @@ class SignUpPage extends Component {
                 user={user}
                 setUser={setUser}
                 createUser={createUser}
+                locale={locale}
+                recaptchaSitekey={recaptchaSitekey}
                 requestInProgress={requestInProgress}
               />
             </div>
@@ -32,9 +35,10 @@ class SignUpPage extends Component {
   }
 }
 
-const { object, number, func, bool } = PropTypes
+const { object, number, func, bool, string } = PropTypes
 SignUpPage.propTypes = {
   content: object,
+  locale: string,
   formStage: number,
   user: object,
   setUser: func,

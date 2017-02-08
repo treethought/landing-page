@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   render () {
-    const { content } = this.state
+    const { content, locale } = this.state
 
     return (
       <MuiThemeProvider muiTheme={theme}>
@@ -55,7 +55,7 @@ class App extends Component {
             <IndexRoute component={LandingPage} content={content.landingPage} />
             <Route path='about-us' component={AboutPage} content={content.aboutPage} />
             <Route path='sign-up'>
-              <IndexRoute component={SignUpPageContainer} content={content.signUpPage} />
+              <IndexRoute component={SignUpPageContainer} content={content.signUpPage} locale={locale}/>
               <Route path='success' component={SignUpSuccessPage} content={content.signUpSuccessPage} />
             </Route>
             <Route path='privacy-policy' component={PrivacyPolicyPage} content={content.privacyPolicyPage} />
