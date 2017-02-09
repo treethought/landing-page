@@ -32,7 +32,7 @@ class CreateContactsForm extends Component {
   }
 
   render () {
-    // TODO: move into separate component
+    // TODO: move into separate component?
     const DateField = ({ onClick }) => {
       const dateOptions = {
         months: range(1, 13).map(n => ({label: n, value: n})),
@@ -53,12 +53,12 @@ class CreateContactsForm extends Component {
       )
     }
 
-    const { requestInProgress } = this.props
+    const { requestInProgress, contacts, toggleContactNotificationAllowed } = this.props
     const { dateFieldShown, hintShown } = this.state
 
     return (
       <form className='sign-up-page__form'>
-        {renderIf(some(hintShown))(
+        {renderIf(contacts.list.length === 1 && some(hintShown))(
           <div className='sign-up-page__form-hints-container'>
             <Hint
               text='This is the person we will text to alert them if you get arrested.'
@@ -103,7 +103,11 @@ class CreateContactsForm extends Component {
 
           <div className='sign-up-page__text-btn'>+ Add another contact</div>
 
-          <Checkbox className='sign-up-page__create-contacts-form-checkbox' label='Let us contact this person now to let them know you signed up and confirm their information.' />
+          <Checkbox
+            className='sign-up-page__create-contacts-form-checkbox'
+            label='Let us contact this person now to let them know you signed up and confirm their information.'
+            onCheck={toggleContactNotificationAllowed}
+          />
 
           <FlatButton
             className='gc-std-btn sign-up-page__form-continue-btn'
@@ -117,17 +121,12 @@ class CreateContactsForm extends Component {
   }
 }
 
-const { object, array, func, bool } = PropTypes
+const { object, func, bool } = PropTypes
 CreateContactsForm.propTypes = {
   content: object,
-  contacts: array,
-  setContact: func,
-  removeContact: func,
-  addContact: func,
-  consentToContactIs: func,
-  saveContacts: func,
+  contacts: object,
   requestInProgress: bool,
-  user: object
+  toggleContactNotificationAllowed: func
 }
 
 export default CreateContactsForm

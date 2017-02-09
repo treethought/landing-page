@@ -3,6 +3,7 @@ import update from 'react-addons-update'
 import { SignUpPage } from '../components'
 import { postUser } from '../services/api'
 import cookie from 'react-cookie'
+import uuid from 'node-uuid'
 
 class SignUpPageContainer extends Component {
   constructor (props) {
@@ -16,7 +17,13 @@ class SignUpPageContainer extends Component {
         referredByCode: cookie.load('referredByCode', { path: '/' }),
         errors: {}
       },
-      contacts: []
+      contacts: {
+        notificationAllowed: true,
+        list: [{
+          tmpId: uuid.v4(),
+          dateFieldShown: true
+        }]
+      }
     }
   }
 
@@ -41,6 +48,12 @@ class SignUpPageContainer extends Component {
     }
   }
 
+  toggleContactNotificationAllowed () {
+    this.setState(update(this.state, {
+      contacts: { notificationAllowed: { $apply: v => !v } }
+    }))
+  }
+
   render () {
     const { location, route } = this.props
     const { content, locale } = route
@@ -52,6 +65,7 @@ class SignUpPageContainer extends Component {
         locale={locale}
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
+        toggleContactNotificationAllowed={this.toggleContactNotificationAllowed.bind(this)}
       />
     )
   }

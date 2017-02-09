@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Router, Route, IndexRoute, browserHistory, applyRouterMiddleware} from 'react-router'
 import {useScroll} from 'react-router-scroll'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-// TODO: make index file for components
+// TODO: take these component from index file
 import LandingPage from './components/landing-page'
 import ErrorPage from './components/error-page'
 import SignUpPageContainer from './containers/sign-up-page-container'
