@@ -23,14 +23,19 @@ class Hint extends Component {
   }
 
   render () {
-    const { text, confirmLabelText, top } = this.props
+    const { text, confirmLabelText, top, show } = this.props
 
     return (
-      <div className={`sign-up-page__hint ${this.props.className || ''}`}>
+      <div
+        className={`sign-up-page__hint ${this.props.className || ''}`}
+      >
         {renderIf(this.isDesktop())(
           <div
             className={`sign-up-page__hint-bubble-container`}
-            style={{display: bowser.safari ? '-webkit-flex' : 'flex'}}
+            style={{
+              display: bowser.safari ? '-webkit-flex' : 'flex',
+              opacity: show ? 1 : 0
+            }}
           >
             <div className='sign-up-page__hint-bubble'>
               <p className='sign-up-page__hint-text'>
@@ -41,7 +46,7 @@ class Hint extends Component {
           </div>
         )}
 
-        {renderIf(!this.isDesktop())(
+        {renderIf(!this.isDesktop() && show)(
           <Dialog
             actions={
               <FlatButton
@@ -65,12 +70,13 @@ class Hint extends Component {
   }
 }
 
-const { string, node } = PropTypes
+const { string, node, bool } = PropTypes
 Hint.propTypes = {
   className: string,
   text: string,
   target: node,
-  top: string
+  top: string,
+  show: bool
 }
 
 export default Hint
