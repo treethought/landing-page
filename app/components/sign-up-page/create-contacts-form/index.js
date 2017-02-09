@@ -10,16 +10,50 @@ import Hint from './../hint'
 class CreateContactsForm extends Component {
   constructor (props) {
     super(props)
+    this.state = {
+      showDateField: true
+    }
+  }
+
+  toggleDateField () {
+    if (this.showDateField) {
+      // clear the contacts date of birth value
+    }
+    this.setState({ ...this.state, showDateField: !this.state.showDateField })
   }
 
   render () {
-    const dateOptions = {
-      months: range(1, 13).map(n => ({label: n, value: n})),
-      days: range(1, 32).map(n => ({label: n, value: n})),
-      years: rangeRight(1916, 1999).map(n => ({label: n, value: n}))
+    const DateField = () => {
+      const dateOptions = {
+        months: range(1, 13).map(n => ({label: n, value: n})),
+        days: range(1, 32).map(n => ({label: n, value: n})),
+        years: rangeRight(1916, 1999).map(n => ({label: n, value: n}))
+      }
+
+      return (
+        <div>
+          <div
+            className='sign-up-page__text-btn'
+            onClick={this.toggleDateField.bind(this)}
+          >
+            Don't know their birthday? Answer another question.
+          </div>
+
+          <div className='sign-up-page__date-select-container'>
+            <label className='sign-up-page__date-select-label'>Date of Birth</label>
+
+            <div className='sign-up-page__date-select-fields-container'>
+              <SelectField width='75px' label='Month' menuItems={dateOptions.months} className='sign-up-page__form-select-date-field' />
+              <SelectField width='60px' label='Day' menuItems={dateOptions.days} className='sign-up-page__form-select-date-field' />
+              <SelectField width='65px' label='Year' menuItems={dateOptions.years} className='sign-up-page__form-select-date-field' />
+            </div>
+          </div>
+        </div>
+      )
     }
 
     const { requestInProgress } = this.props
+    const { showDateField } = this.state
 
     return (
       <form className='sign-up-page__form'>
@@ -36,17 +70,10 @@ class CreateContactsForm extends Component {
           <TextField name='relationship' labelText='Relationship to them' />
           <TextField name='phone' labelText="Emergency contact's phone number" />
 
-          <div className='sign-up-page__date-select-container'>
-            <label className='sign-up-page__date-select-label'>Date of Birth</label>
-
-            <div className='sign-up-page__date-select-fields-container'>
-              <SelectField width='75px' label='Month' menuItems={dateOptions.months} className='sign-up-page__form-select-date-field' />
-              <SelectField width='60px' label='Day' menuItems={dateOptions.days} className='sign-up-page__form-select-date-field' />
-              <SelectField width='65px' label='Year' menuItems={dateOptions.years} className='sign-up-page__form-select-date-field' />
-            </div>
-          </div>
-
-          <div className='sign-up-page__text-btn'>Don't know their birthday? Answer another question.</div>
+          { showDateField
+            ? (<DateField />)
+            : (<TextField name='neighborhood' labelText='What neighborhood did they grow up in?' />)
+          }
 
           <TextField name='fact' labelText='What is a unique fact about them?' />
 
