@@ -17,7 +17,7 @@ class TextField extends Component {
         floatingLabelFocusStyle={{ fontSize: '14px', color: '#40B097', textTransform: 'uppercase', top: '18px' }}
         inputStyle={{ fontSize: '18px', marginTop: '0' }}
         underlineStyle={{ bottom: '15px' }}
-        underlineFocusStyle={{ borderColor: '#40B097', bottom: '15px' }}
+        underlineFocusStyle={{ borderBottomColor: '#40B097', bottom: '15px' }}
         errorStyle={{ lineHeight: '15px' }}
 
         name={name || ''}

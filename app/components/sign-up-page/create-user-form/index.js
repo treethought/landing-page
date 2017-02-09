@@ -71,6 +71,7 @@ class CreateUserForm extends Component {
           />
 
           <Recaptcha
+            className='sign-up-page__recaptcha'
             sitekey={recaptchaSitekey}
             callback={setUser('recaptchaResponse')}
             expiredCallback={console.log}

@@ -7,6 +7,11 @@
   margin-bottom: 15px;
 }
 
+.sign-up-page__recaptcha {
+  transform: scale(0.85);
+  position: relative;
+  right: 23px;
+}
 /* TODO: move */
 
 .sign-up-page__date-select-container {
