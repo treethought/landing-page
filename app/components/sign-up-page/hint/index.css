@@ -1,6 +1,6 @@
 .sign-up-page__hint {
-  position: relative;
-  width: 50%;
+  margin-bottom: 15px;
+  margin-right: 20px;
 }
 
 .sign-up-page__hint-bubble-container {

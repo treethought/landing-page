@@ -5,14 +5,17 @@
   margin-bottom: 10px;
 }
 
-.sign-up-page__add-contact-btn {
-  font-size: 18px;
-  color: #40B097;
-  line-height: 24px;
+.sign-up-page__text-btn {
+  font-size: 16px;
   font-weight: 300;
+  color: #40B097;
   cursor: pointer;
-  float: left;
-  margin-bottom: 37px;
+  margin-bottom: 15px;
+}
+
+.sign-up-page__create-contacts-form-checkbox {
+  margin-bottom: 15px;
+  margin-top: 85px;
 }
 
 .sign-up-page__remove-contact-btn {

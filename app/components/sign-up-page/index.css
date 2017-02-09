@@ -47,17 +47,20 @@
   justify-content: center;
 }
 
+.sign-up-page__form-hints-container {
+  width: 50%;
+}
+
 .sign-up-page__form-fields-container {
   width: 50%;
   text-align: center;
 }
 
-.sign-up-page__form-continue-btn {
-  margin-top: 75px !important;
-  margin-bottom: 95px !important;
-}
-
 @media (max-width: 640px) {
+
+  .sign-up-page__form-hints-container {
+    width: 0;
+  }
 
   .sign-up-page__contact-fields-container {
     padding: 10px !important;
@@ -77,7 +80,7 @@
 
   .sign-up-page__form-fields-container {
     max-width: 300px;
-    width: auto;
+    width: 100%;
   }
 
 }

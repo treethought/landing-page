@@ -1,8 +1,9 @@
 .sign-up-page__form-fields-container {
+  position: relative;
   text-align: left;
 }
 
-.sign-up-page__checkbox {
+.sign-up-page__create-user-form-checkbox {
   margin-bottom: 15px;
 }
 
@@ -34,6 +35,7 @@
 }
 
 .sign-up-page__create-user-form-continue-btn {
+  margin-top: 15px !important;
   margin-bottom: 0 !important;
 }
 

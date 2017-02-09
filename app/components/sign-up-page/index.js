@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import renderIf from 'render-if'
 import CreateUserForm from './create-user-form'
+import CreateContactsForm from './create-contacts-form'
 
 class SignUpPage extends Component {
   render () {
@@ -13,7 +14,6 @@ class SignUpPage extends Component {
       <div className='sign-up-page'>
         <div className='sign-up-page__form-container'>
           <h1 className='sign-up-page__form-header'>{content.header}</h1>
-
           {renderIf(formStage === 0)(
             <div>
               <h2 className='sign-up-page__form-subheader'>{content.createUserForm.header}</h2>
@@ -25,6 +25,17 @@ class SignUpPage extends Component {
                 createUser={createUser}
                 locale={locale}
                 recaptchaSitekey={recaptchaSitekey}
+                requestInProgress={requestInProgress}
+              />
+            </div>
+          )}
+
+          {renderIf(formStage === 1)(
+            <div>
+              <h2 className='sign-up-page__form-subheader'>{content.createContactsForm.header}</h2>
+
+              <CreateContactsForm
+                content={content.createContactsForm}
                 requestInProgress={requestInProgress}
               />
             </div>

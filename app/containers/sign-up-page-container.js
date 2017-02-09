@@ -9,7 +9,7 @@ class SignUpPageContainer extends Component {
     super(props)
     this.state = {
       requestInProgress: false,
-      formStage: 0,
+      formStage: 1,
       recaptchaSitekey: '6Lc7NxQUAAAAAIZCaPCuSa-9_N2tjZcCik5647lj',
       user: {
         ageVerified: true,

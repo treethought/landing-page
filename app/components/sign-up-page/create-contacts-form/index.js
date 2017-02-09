@@ -1,118 +1,63 @@
 import React, { Component, PropTypes } from 'react'
-import Checkbox from 'material-ui/Checkbox'
+import { TextField, SelectField, Checkbox } from '../../index'
 import FlatButton from 'material-ui/FlatButton'
+import range from 'lodash.range'
+import rangeRight from 'lodash.rangeRight'
+import ga from './../../../services/ga'
 import renderIf from 'render-if'
 import Hint from './../hint'
-import TextField from './../../standard-text-field'
-import ga from './../../../services/ga'
 
 class CreateContactsForm extends Component {
   constructor (props) {
     super(props)
-    const { content } = props
-    const contactFields = ['name', 'relationship', 'phone'].map(name => ({
-      name,
-      label: content[`${name}Label`]
-    }))
-    this.state = {
-      hintShown: false,
-      contactFields
-    }
-  }
-
-  componentDidMount () {
-    document.body.scrollTop = document.documentElement.scrollTop = 0
-    window.onbeforeunload = (e) => {
-      const confirmationMessage = '\o/'
-      e.returnValue = confirmationMessage
-      return confirmationMessage
-    }
-
-    window.onunload = (e) => {
-      const { contacts, user } = this.props
-      ga.triggerEvent('leave-create-contacts-form', { user, contacts })()
-      this.removeEventListeners()
-    }
-  }
-
-  removeEventListeners () {
-    window.onbeforeunload = null
-    window.onunload = null
-  }
-
-  componentWillUnmount () {
-    this.removeEventListeners()
-  }
-
-  onContinueClick () {
-    this.removeEventListeners()
-    this.props.saveContacts()
-  }
-
-  showHint () {
-    this.setState({hintShown: true})
-  }
-
-  isDesktop () {
-    return window.innerWidth > 640
   }
 
   render () {
-    const {
-      content, contacts, addContact, removeContact, consentToContactIs,
-      setContact, saveContacts, requestInProgress
-    } = this.props
+    const dateOptions = {
+      months: range(1, 13).map(n => ({label: n, value: n})),
+      days: range(1, 32).map(n => ({label: n, value: n})),
+      years: rangeRight(1916, 1999).map(n => ({label: n, value: n}))
+    }
+
+    const { requestInProgress } = this.props
 
     return (
       <form className='sign-up-page__form'>
-        {renderIf(this.state.hintShown)(
-          <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
-            <Hint text={content.hintText(contacts.length)} confirmLabelText={content.hintConfirmLabelText} />
+        {renderIf(true)(
+          <div className='sign-up-page__form-hints-container'>
+            <Hint text='This is the person we will text to alert them if you get arrested.' confirmLabelText='GOT IT' top='14px' />
+            <Hint text='Good Call will use this information only to identify and verify your emergency contact when you call into the hotline.' confirmLabelText='GOT IT' top='80px' />
+            <Hint text='The fact should be something only you and others who are close to them would know. Ex. His favorite sport is basketball.' confirmLabelText='GOT IT' top='28px' />
           </div>
         )}
 
-        <div className='sign-up-page__form-fields-container' ref='formFields'>
-          {contacts.map((contact, i) => (
-            <div className='sign-up-page__contact-fields-container' key={contact.tmpId}>
-              {renderIf(i > 0)(
-                <h3 className='sign-up-page__additional-contact-header'>{content.additionalContactLabel}</h3>
-              )}
+        <div className='sign-up-page__form-fields-container'>
+          <TextField name='name' labelText='First name, last name' />
+          <TextField name='relationship' labelText='Relationship to them' />
+          <TextField name='phone' labelText="Emergency contact's phone number" />
 
-              {this.state.contactFields.map(({ name, label, onBlur, onFocus }, j) => (
-                <TextField
-                  key={j}
-                  onFocus={this.showHint.bind(this)}
-                  onChange={setContact(contact.tmpId, name).bind()}
-                  name={name}
-                  labelText={label}
-                />
-              ))}
+          <div className='sign-up-page__date-select-container'>
+            <label className='sign-up-page__date-select-label'>Date of Birth</label>
 
-              {renderIf(contacts.length > 1)(
-                <div className='sign-up-page__remove-contact-btn' onClick={removeContact(contact.tmpId)}>&times;</div>
-              )}
+            <div className='sign-up-page__date-select-fields-container'>
+              <SelectField width='75px' label='Month' menuItems={dateOptions.months} className='sign-up-page__form-select-date-field' />
+              <SelectField width='60px' label='Day' menuItems={dateOptions.days} className='sign-up-page__form-select-date-field' />
+              <SelectField width='65px' label='Year' menuItems={dateOptions.years} className='sign-up-page__form-select-date-field' />
             </div>
-          ))}
-
-          <div className='sign-up-page__add-contact-btn' onClick={addContact}>+ {content.addContactBtnLabel}</div>
-
-          <div className='sign-up-page__checkbox-container'>
-            <Checkbox
-              label={content.consentToContactLabel(contacts.length)}
-              defaultChecked={true}
-              onCheck={consentToContactIs()}
-              style={{textAlign: 'left'}}
-              iconStyle={{width: '32px', height: '32px', fill: '#40B097'}}
-              labelStyle={{fontSize: window.innerWidth > 640 ? '18px' : '16px', color: '#4A4A4A', lineHeight: '24px', fontWeight: '300'}}
-            />
-
           </div>
+
+          <div className='sign-up-page__text-btn'>Don't know their birthday? Answer another question.</div>
+
+          <TextField name='fact' labelText='What is a unique fact about them?' />
+
+          <div className='sign-up-page__text-btn'>+ Add another contact</div>
+
+          <Checkbox className='sign-up-page__create-contacts-form-checkbox' label='Let us contact this person now to let them know you signed up and confirm their information.' />
 
           <FlatButton
             className='gc-std-btn sign-up-page__form-continue-btn'
             style={{ backgroundColor: '#40B097' }}
-            label={content.continueBtnLabel}
-            onClick={this.onContinueClick.bind(this)}
+            label='finish'
             disabled={requestInProgress}
           />
         </div>
