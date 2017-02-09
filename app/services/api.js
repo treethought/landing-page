@@ -4,12 +4,16 @@ import camelize from 'camelize'
 import snakeize from 'snakeize'
 const { isArray } = Array
 import locale from './locale'
+import cookie from 'react-cookie'
 
-export function postUser ({ name, emailOrPhone, referredByCode }) {
+export function postUser ({ name, emailOrPhone, referredByCode, recaptchaResponse }) {
   return makeRequest({
     method: 'POST',
     path: '/users',
-    params: { user: { name, emailOrPhone, referredByCode } }
+    params: { user: { name, emailOrPhone, referredByCode, recaptchaResponse } }
+  }).then(res => {
+    console.log({res})
+    cookie.save('token', res.token.value, { path: '/' })
   })
 }
 

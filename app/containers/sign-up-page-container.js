@@ -21,9 +21,9 @@ class SignUpPageContainer extends Component {
   }
 
   createUser () {
-    const { name, emailOrPhone, referredByCode } = this.state.user
+    const { name, emailOrPhone, referredByCode, recaptchaResponse } = this.state.user
     this.setState({ ...this.state, requestInProgress: true })
-    postUser({ name, emailOrPhone, referredByCode }).then(res => {
+    postUser({ name, emailOrPhone, referredByCode, recaptchaResponse }).then(res => {
       this.setState({ ...this.state, requestInProgress: false, formStage: 1 })
     }, errors => {
       this.setState(update(this.state, {
