@@ -87,10 +87,14 @@ class CreateContactsForm extends Component {
           <TextField name='phone' labelText="Emergency contact's phone number" />
 
           <div className='sign-up-page__text-btn' onClick={this.toggleDateField.bind(this)} >
-            Don't know their birthday? Answer another question.
+            {dateFieldShown
+              ? 'Don\'t know their birthday? Answer another question.'
+              : 'Don\'t know what neigborhood they grew up in? Answer another question.'
+            }
+
           </div>
 
-          { dateFieldShown
+          {dateFieldShown
             ? (<DateField onClick={this.showHint.bind(this, 'dateOfBirth')} />)
             : (<TextField name='neighborhood' labelText='What neighborhood did they grow up in?' onFocus={this.showHint.bind(this, 'dateOfBirth')} />)
           }

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import MTextField from 'material-ui/TextField'
+import { isDesktop } from '../../services/utils'
 
 class TextField extends Component {
   onChange (e) {
@@ -13,9 +14,9 @@ class TextField extends Component {
       <MTextField
         className={className || ''}
         style={{ display: 'block !important', width: '100% !important', height: '58px', marginBottom: '3px' }}
-        floatingLabelStyle={{ top: '18px' }}
-        floatingLabelFocusStyle={{ fontSize: '14px', color: '#40B097', textTransform: 'uppercase', top: '18px' }}
-        inputStyle={{ fontSize: '18px', marginTop: '0' }}
+        floatingLabelStyle={{ top: '18px', fontSize: isDesktop ? '18px' : '14px' }}
+        floatingLabelFocusStyle={{ fontSize: isDesktop ? '14px' : '12px', color: '#40B097', textTransform: 'uppercase', top: '18px' }}
+        inputStyle={{ marginTop: '0' }}
         underlineStyle={{ bottom: '15px' }}
         underlineFocusStyle={{ borderBottomColor: '#40B097', bottom: '15px' }}
         errorStyle={{ lineHeight: '15px' }}

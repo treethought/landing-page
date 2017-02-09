@@ -3,6 +3,7 @@ import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import renderIf from 'render-if'
 import bowser from 'bowser'
+import { isDesktop } from '../../../services/utils'
 
 class Hint extends Component {
   constructor () {
@@ -11,15 +12,11 @@ class Hint extends Component {
   }
 
   componentDidMount () {
-    if (!this.isDesktop()) { document.activeElement.blur() }
+    if (!isDesktop) { document.activeElement.blur() }
   }
 
   closeDialog () {
     this.setState({dialogClosed: true})
-  }
-
-  isDesktop () {
-    return window.innerWidth > 640
   }
 
   render () {
@@ -29,7 +26,7 @@ class Hint extends Component {
       <div
         className={`sign-up-page__hint ${this.props.className || ''}`}
       >
-        {renderIf(this.isDesktop())(
+        {renderIf(isDesktop)(
           <div
             className={`sign-up-page__hint-bubble-container`}
             style={{
@@ -46,7 +43,7 @@ class Hint extends Component {
           </div>
         )}
 
-        {renderIf(!this.isDesktop() && show)(
+        {renderIf(!isDesktop && show)(
           <Dialog
             actions={
               <FlatButton
