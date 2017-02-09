@@ -23,7 +23,7 @@ class Hint extends Component {
   }
 
   render () {
-    const {text, confirmLabelText} = this.props
+    const { text, confirmLabelText, top } = this.props
 
     return (
       <div className={`sign-up-page__hint ${this.props.className || ''}`}>
@@ -37,7 +37,7 @@ class Hint extends Component {
                 {text}
               </p>
             </div>
-            <div className='sign-up-page__hint-bubble-arrow'></div>
+            <div className='sign-up-page__hint-bubble-arrow' style={{ top: top }}></div>
           </div>
         )}
 
@@ -65,9 +65,12 @@ class Hint extends Component {
   }
 }
 
+const { string, node } = PropTypes
 Hint.propTypes = {
-  className: PropTypes.string,
-  text: PropTypes.string
+  className: string,
+  text: string,
+  target: node,
+  top: string
 }
 
 export default Hint

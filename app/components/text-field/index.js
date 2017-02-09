@@ -21,7 +21,7 @@ class TextField extends Component {
         errorStyle={{ lineHeight: '15px' }}
 
         name={name || ''}
-        type={type || ''}
+        type={type || 'text'}
 
         floatingLabelText={labelText}
         errorText={errorText}

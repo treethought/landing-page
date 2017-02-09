@@ -7,11 +7,12 @@ class Checkbox extends Component {
   }
 
   render () {
-    const { label } = this.props
+    const { label, className } = this.props
 
     return (
       <MCheckbox
         label={label}
+        className={className || ''}
         defaultChecked={true}
         onCheck={this.onCheck.bind(this)}
         style={{textAlign: 'left'}}
@@ -25,7 +26,8 @@ class Checkbox extends Component {
 const { string, func } = PropTypes
 Checkbox.propTypes = {
   label: string,
-  onCheck: func
+  onCheck: func,
+  className: string
 }
 
 export default Checkbox
