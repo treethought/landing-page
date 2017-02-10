@@ -5,6 +5,7 @@ import snakeize from 'snakeize'
 const { isArray } = Array
 import locale from './locale'
 import cookie from 'react-cookie'
+import values from 'lodash.values'
 
 export function postUser ({ name, emailOrPhone, referredByCode, recaptchaResponse }) {
   return makeRequest({
@@ -22,7 +23,7 @@ export function postContacts ({ notificationAllowed, list }) {
   return makeRequest({
     method: 'POST',
     path: '/contacts',
-    params: { contacts: { notificationAllowed, token, list } }
+    params: { contacts: { notificationAllowed, token, list: values(list) } }
   })
 }
 
