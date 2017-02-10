@@ -41,13 +41,13 @@ class CreateContactsForm extends Component {
         {renderIf(lengthOfObject(contacts.list) === 1 && some(hintShown))(
           <div className='sign-up-page__form-hints-container'>
             <Hint
-              text='This is the person we will text to alert them if you get arrested.'
+              text='This is the person we will alert if you get arrested.'
               confirmLabelText='GOT IT'
               top='14px'
               show={hintShown.name}
             />
             <Hint
-              text='Good Call will use this information only to identify and verify your emergency contact when you call into the hotline.'
+              text='We will use this information only to identify and verify your emergency contact if you call into the hotline. Make sure you remember this.'
               confirmLabelText='GOT IT'
               top='110px'
               show={hintShown.dateOfBirth}
@@ -70,7 +70,7 @@ class CreateContactsForm extends Component {
             />
 
             <TextField
-              labelText='Relationship to them'
+              labelText='Relationship (ex: mother)'
               onChange={setContact(tmpId, 'relationship')}
             />
 

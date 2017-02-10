@@ -12,10 +12,10 @@ class SignUpPageContainer extends Component {
     const initialContactTmpId = uuid.v4()
     this.state = {
       requestInProgress: false,
-      formStage: 0,
+      formStage: 1,
       recaptchaSitekey: '6Lc7NxQUAAAAAIZCaPCuSa-9_N2tjZcCik5647lj',
       user: {
-        ageVerified: true,
+        ageVerified: false,
         referredByCode: cookie.load('referredByCode', { path: '/' }),
         errors: {}
       },

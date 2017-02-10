@@ -48,7 +48,7 @@ class CreateUserForm extends Component {
       <form className='sign-up-page__form'>
         {renderIf(hintShown)(
           <div className='sign-up-page__form-hints-container'>
-            <Hint text={content.hintText} confirmLabelText={content.hintConfirmLabelText} top='13px' />
+            <Hint text={content.hintText} confirmLabelText={content.hintConfirmLabelText} top='13px' show={true} />
           </div>
         )}
 
@@ -68,6 +68,7 @@ class CreateUserForm extends Component {
             label={content.verifyAgeText}
             onCheck={setUser('ageVerified')}
             className='sign-up-page__create-user-form-checkbox'
+            defaultChecked={false}
           />
 
           <Recaptcha
