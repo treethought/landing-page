@@ -97,7 +97,7 @@ class Stories extends Component {
                     <div className='landing-page__story-text-container'>
                       <h3 className='landing-page__story-subheader'>
                         <span className='landing-page__story-text-quote'>“</span>
-                        <span className='landing-page__story-subheader-text'>{story.subheader}</span>
+                        <span className='landing-page__story-subheader-text'><b>{story.subheader}</b></span>
                         <span className='landing-page__story-text-quote'>”</span>
                       </h3>
 

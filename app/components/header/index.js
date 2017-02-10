@@ -119,7 +119,7 @@ class Header extends Component {
         {renderIf(!(this.props.inRegistrationFlow))(
           <div className='header__hotline-banner'>
             <div className='header__hotline-banner-text'>
-              {content.hotlineBannerText}
+              <b>{content.hotlineBannerText}</b>
             </div>
           </div>
         )}

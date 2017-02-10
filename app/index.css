@@ -138,6 +138,10 @@ body {
     font-size: 22px;
   }
 
+  .gc-std-btn span {
+    font-weight: 500 !important;
+  }
+
 }
 
 @import url("./components/header/index.css");
