@@ -25,7 +25,7 @@ class CreateContactsForm extends Component {
   render () {
     const {
       requestInProgress, contacts, toggleContactNotificationAllowed, setContact,
-      toggleContactDateField, addContact
+      toggleContactDateField, addContact, deleteContact
     } = this.props
     const { hintShown } = this.state
 
@@ -55,7 +55,7 @@ class CreateContactsForm extends Component {
         )}
 
         {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth }, i, arr) => (
-          <div className='sign-up-page__form-fields-container sign-up-page__contact-fields-container' key={i}>
+          <div className='sign-up-page__form-fields-container sign-up-page__contact-fields-container' key={tmpId}>
             <TextField
               labelText='First name, last name'
               onFocus={this.showHint.bind(this, 'name')}
@@ -99,7 +99,13 @@ class CreateContactsForm extends Component {
               onChange={setContact(tmpId, 'fact')}
             />
 
-            {(i === arr.length - 1) ? (
+            {renderIf(arr.length > 1)(
+              <div className='sign-up-page__text-btn' onClick={deleteContact(tmpId)}>
+                - Delete contact
+              </div>
+            )}
+
+            {renderIf(i === arr.length - 1)(
               <div>
                 <div className='sign-up-page__text-btn' onClick={addContact}>
                   + Add another contact
@@ -118,10 +124,6 @@ class CreateContactsForm extends Component {
                   disabled={requestInProgress}
                 />
               </div>
-            ) : (
-              <div className='sign-up-page__text-btn' onClick={addContact}>
-                - Delete contact
-              </div>
             )}
           </div>
         ))}
@@ -138,7 +140,8 @@ CreateContactsForm.propTypes = {
   toggleContactNotificationAllowed: func,
   setContact: func,
   toggleContactDateField: func,
-  addContact: func
+  addContact: func,
+  deleteContact: func
 }
 
 export default CreateContactsForm

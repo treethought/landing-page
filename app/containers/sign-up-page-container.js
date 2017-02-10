@@ -4,6 +4,7 @@ import { SignUpPage } from '../components'
 import { postUser } from '../services/api'
 import cookie from 'react-cookie'
 import uuid from 'node-uuid'
+const { assign } = Object
 
 class SignUpPageContainer extends Component {
   constructor (props) {
@@ -88,6 +89,14 @@ class SignUpPageContainer extends Component {
     }))
   }
 
+  deleteContact (tmpId) {
+    return () => {
+      let newList = assign({}, this.state.contacts.list)
+      delete newList[tmpId]
+      this.setState(update(this.state, { contacts: { list: { $set: newList } } }))
+    }
+  }
+
   render () {
     const { location, route } = this.props
     const { content, locale } = route
@@ -103,6 +112,7 @@ class SignUpPageContainer extends Component {
         setContact={this.setContact.bind(this)}
         toggleContactDateField={this.toggleContactDateField.bind(this)}
         addContact={this.addContact.bind(this)}
+        deleteContact={this.deleteContact.bind(this)}
       />
     )
   }
