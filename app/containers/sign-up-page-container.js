@@ -81,6 +81,13 @@ class SignUpPageContainer extends Component {
     }
   }
 
+  addContact () {
+    const tmpId = uuid.v4()
+    this.setState(update(this.state, {
+      contacts: { list: { $merge: { [tmpId]: { tmpId, dateFieldShown: true } } } }
+    }))
+  }
+
   render () {
     const { location, route } = this.props
     const { content, locale } = route
@@ -95,6 +102,7 @@ class SignUpPageContainer extends Component {
         toggleContactNotificationAllowed={this.toggleContactNotificationAllowed.bind(this)}
         setContact={this.setContact.bind(this)}
         toggleContactDateField={this.toggleContactDateField.bind(this)}
+        addContact={this.addContact.bind(this)}
       />
     )
   }

@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 import { TextField, Checkbox, DateField } from '../../index'
 import FlatButton from 'material-ui/FlatButton'
 import some from 'lodash.some'
-import ga from './../../../services/ga'
 import renderIf from 'render-if'
 import Hint from './../hint'
 import update from 'react-addons-update'
@@ -26,7 +25,7 @@ class CreateContactsForm extends Component {
   render () {
     const {
       requestInProgress, contacts, toggleContactNotificationAllowed, setContact,
-      toggleContactDateField
+      toggleContactDateField, addContact
     } = this.props
     const { hintShown } = this.state
 
@@ -55,8 +54,8 @@ class CreateContactsForm extends Component {
           </div>
         )}
 
-        {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth }, i) => (
-          <div className='sign-up-page__form-fields-container' key={i}>
+        {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth }, i, arr) => (
+          <div className='sign-up-page__form-fields-container sign-up-page__contact-fields-container' key={i}>
             <TextField
               labelText='First name, last name'
               onFocus={this.showHint.bind(this, 'name')}
@@ -100,20 +99,30 @@ class CreateContactsForm extends Component {
               onChange={setContact(tmpId, 'fact')}
             />
 
-            <div className='sign-up-page__text-btn'>+ Add another contact</div>
+            {(i === arr.length - 1) ? (
+              <div>
+                <div className='sign-up-page__text-btn' onClick={addContact}>
+                  + Add another contact
+                </div>
 
-            <Checkbox
-              className='sign-up-page__create-contacts-form-checkbox'
-              label='Let us contact this person now to let them know you signed up and confirm their information.'
-              onCheck={toggleContactNotificationAllowed}
-            />
+                <Checkbox
+                  className='sign-up-page__create-contacts-form-checkbox'
+                  label='Let us contact this person now to let them know you signed up and confirm their information.'
+                  onCheck={toggleContactNotificationAllowed}
+                />
 
-            <FlatButton
-              className='gc-std-btn sign-up-page__form-continue-btn'
-              style={{ backgroundColor: '#40B097' }}
-              label='finish'
-              disabled={requestInProgress}
-            />
+                <FlatButton
+                  className='gc-std-btn sign-up-page__form-continue-btn'
+                  style={{ backgroundColor: '#40B097' }}
+                  label='finish'
+                  disabled={requestInProgress}
+                />
+              </div>
+            ) : (
+              <div className='sign-up-page__text-btn' onClick={addContact}>
+                - Delete contact
+              </div>
+            )}
           </div>
         ))}
       </form>
@@ -128,7 +137,8 @@ CreateContactsForm.propTypes = {
   requestInProgress: bool,
   toggleContactNotificationAllowed: func,
   setContact: func,
-  toggleContactDateField: func
+  toggleContactDateField: func,
+  addContact: func
 }
 
 export default CreateContactsForm

@@ -15,7 +15,6 @@
 }
 
 .sign-up-page__form-container {
-  max-width: 664px;
   margin: 0 auto;
 }
 
@@ -45,25 +44,24 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .sign-up-page__form-hints-container {
-  width: 50%;
+  max-width: 330px;
 }
 
 .sign-up-page__form-fields-container {
-  width: 50%;
+  max-width: 330px;
   text-align: center;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 @media (max-width: 640px) {
 
   .sign-up-page__form-hints-container {
     width: 0;
-  }
-
-  .sign-up-page__contact-fields-container {
-    padding: 10px !important;
   }
 
   .sign-up-page__form-header {
