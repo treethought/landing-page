@@ -22,6 +22,13 @@ class CreateContactsForm extends Component {
     }))
   }
 
+  continueBtnIsDisabled () {
+    return this.props.requestInProgress || some(this.props.contacts.list, (contact) => {
+      const { name, relationship, phone, dateOfBirth, neighborhood, fact } = contact
+      return !name || !relationship || !phone || !(dateOfBirth || neighborhood) || !fact
+    })
+  }
+
   render () {
     const {
       requestInProgress, contacts, toggleContactNotificationAllowed, setContact,
@@ -121,7 +128,7 @@ class CreateContactsForm extends Component {
                   className='gc-std-btn sign-up-page__form-continue-btn'
                   style={{ backgroundColor: '#40B097' }}
                   label='finish'
-                  disabled={requestInProgress}
+                  disabled={this.continueBtnIsDisabled()}
                 />
               </div>
             )}
