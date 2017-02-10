@@ -12,32 +12,8 @@
   position: relative;
   right: 23px;
 }
-/* TODO: move */
 
-.sign-up-page__date-select-container {
-  text-align: left;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-
-.sign-up-page__date-select-label {
-  color: rgb(64, 176, 151);
-  font-size: 11px;
-  text-transform: uppercase;
-}
-
-.sign-up-page__date-select-fields-container {
-  display: -webkit-flex;
-  display: flex;
-}
-
-.sign-up-page__form-select-date-field {
-  margin-right: 10px;
-}
-
-.sign-up-page__form-select-date-field:last-of-type {
-  margin-right: 0;
-}
+/* TODO: move? */
 
 .sign-up-page__create-user-form-continue-btn {
   margin-top: 15px !important;

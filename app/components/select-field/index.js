@@ -3,8 +3,12 @@ import MSelectField from 'material-ui/SelectField'
 import MMenuItem from 'material-ui/MenuItem'
 
 class SelectField extends Component {
+  handleChange (e, k, value) {
+    this.props.onChange(value)
+  }
+
   render () {
-    const { className, onChange, value, menuItems, width, label } = this.props
+    const { className, value, menuItems, width, label } = this.props
 
     return (
       <MSelectField
@@ -13,7 +17,7 @@ class SelectField extends Component {
         iconStyle={{fill: '#40B097', right: '5px', top: '12px'}}
         menuStyle={{color: '#000000'}}
         labelStyle={{ position: 'relative', bottom: '5px' }}
-        onChange={onChange}
+        onChange={this.handleChange.bind(this)}
         hintText={label}
         hintStyle={{fontSize: '16px', color: '#4A4A4A', fontWeight: '300', textAlign: 'left'}}
         style={{width: width || '100%', boxShadow: '0px 2px 4px 0px rgba(0,0,0,0.24)', paddingLeft: '11px', paddingTop: '3px', marginTop: '6px', textAlign: 'left'}}
@@ -33,7 +37,6 @@ const { string, func, array } = PropTypes
 SelectField.propTypes = {
   className: string,
   onChange: func,
-  value: string,
   menuItems: array,
   width: string,
   label: string

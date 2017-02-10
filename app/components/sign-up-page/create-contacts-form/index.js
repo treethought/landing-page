@@ -1,28 +1,20 @@
 import React, { Component, PropTypes } from 'react'
-import { TextField, SelectField, Checkbox } from '../../index'
+import { TextField, Checkbox, DateField } from '../../index'
 import FlatButton from 'material-ui/FlatButton'
-import range from 'lodash.range'
-import rangeRight from 'lodash.rangeRight'
 import some from 'lodash.some'
 import ga from './../../../services/ga'
 import renderIf from 'render-if'
 import Hint from './../hint'
 import update from 'react-addons-update'
+import { lengthOfObject } from '../../../services/utils'
+import values from 'lodash.values'
 
 class CreateContactsForm extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      dateFieldShown: true,
       hintShown: { name: false, dateOfBirth: false, fact: false }
     }
-  }
-
-  toggleDateField () {
-    if (this.dateFieldShown) {
-      // TODO: clear the contacts date of birth value
-    }
-    this.setState({ ...this.state, dateFieldShown: !this.state.dateFieldShown })
   }
 
   showHint (name) {
@@ -32,33 +24,15 @@ class CreateContactsForm extends Component {
   }
 
   render () {
-    // TODO: move into separate component?
-    const DateField = ({ onClick }) => {
-      const dateOptions = {
-        months: range(1, 13).map(n => ({label: n, value: n})),
-        days: range(1, 32).map(n => ({label: n, value: n})),
-        years: rangeRight(1916, 1999).map(n => ({label: n, value: n}))
-      }
-
-      return (
-        <div className='sign-up-page__date-select-container' onClick={onClick}>
-          <label className='sign-up-page__date-select-label'>Date of Birth</label>
-
-          <div className='sign-up-page__date-select-fields-container'>
-            <SelectField width='75px' label='Month' menuItems={dateOptions.months} className='sign-up-page__form-select-date-field' />
-            <SelectField width='60px' label='Day' menuItems={dateOptions.days} className='sign-up-page__form-select-date-field' />
-            <SelectField width='65px' label='Year' menuItems={dateOptions.years} className='sign-up-page__form-select-date-field' />
-          </div>
-        </div>
-      )
-    }
-
-    const { requestInProgress, contacts, toggleContactNotificationAllowed } = this.props
-    const { dateFieldShown, hintShown } = this.state
+    const {
+      requestInProgress, contacts, toggleContactNotificationAllowed, setContact,
+      toggleContactDateField
+    } = this.props
+    const { hintShown } = this.state
 
     return (
       <form className='sign-up-page__form'>
-        {renderIf(contacts.list.length === 1 && some(hintShown))(
+        {renderIf(lengthOfObject(contacts.list) === 1 && some(hintShown))(
           <div className='sign-up-page__form-hints-container'>
             <Hint
               text='This is the person we will text to alert them if you get arrested.'
@@ -81,41 +55,67 @@ class CreateContactsForm extends Component {
           </div>
         )}
 
-        <div className='sign-up-page__form-fields-container'>
-          <TextField name='name' labelText='First name, last name' onFocus={this.showHint.bind(this, 'name')} />
-          <TextField name='relationship' labelText='Relationship to them' />
-          <TextField name='phone' labelText="Emergency contact's phone number" />
+        {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth }, i) => (
+          <div className='sign-up-page__form-fields-container' key={i}>
+            <TextField
+              labelText='First name, last name'
+              onFocus={this.showHint.bind(this, 'name')}
+              onChange={setContact(tmpId, 'name')}
+            />
 
-          <div className='sign-up-page__text-btn' onClick={this.toggleDateField.bind(this)} >
-            {dateFieldShown
-              ? 'Don\'t know their birthday? Answer another question.'
-              : 'Don\'t know what neigborhood they grew up in? Answer another question.'
-            }
+            <TextField
+              labelText='Relationship to them'
+              onChange={setContact(tmpId, 'relationship')}
+            />
 
+            <TextField
+              labelText="Emergency contact's phone number"
+              onChange={setContact(tmpId, 'phone')}
+            />
+
+            <div className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>
+              {dateFieldShown
+                ? 'Don\'t know their birthday? Answer another question.'
+                : 'Don\'t know what neighborhood they grew up in? Answer another question.'
+              }
+            </div>
+
+            {dateFieldShown ? (
+              <DateField
+                onClick={this.showHint.bind(this, 'dateOfBirth')}
+                label='Date of Birth'
+                onChange={setContact(tmpId, 'dateOfBirth')}
+              />
+            ) : (
+              <TextField
+                labelText='What neighborhood did they grow up in?'
+                onFocus={this.showHint.bind(this, 'dateOfBirth')}
+                onChange={setContact(tmpId, 'neighborhood')}
+              />
+            )}
+
+            <TextField
+              labelText='What is a unique fact about them?'
+              onFocus={this.showHint.bind(this, 'fact')}
+              onChange={setContact(tmpId, 'fact')}
+            />
+
+            <div className='sign-up-page__text-btn'>+ Add another contact</div>
+
+            <Checkbox
+              className='sign-up-page__create-contacts-form-checkbox'
+              label='Let us contact this person now to let them know you signed up and confirm their information.'
+              onCheck={toggleContactNotificationAllowed}
+            />
+
+            <FlatButton
+              className='gc-std-btn sign-up-page__form-continue-btn'
+              style={{ backgroundColor: '#40B097' }}
+              label='finish'
+              disabled={requestInProgress}
+            />
           </div>
-
-          {dateFieldShown
-            ? (<DateField onClick={this.showHint.bind(this, 'dateOfBirth')} />)
-            : (<TextField name='neighborhood' labelText='What neighborhood did they grow up in?' onFocus={this.showHint.bind(this, 'dateOfBirth')} />)
-          }
-
-          <TextField name='fact' labelText='What is a unique fact about them?' onFocus={this.showHint.bind(this, 'fact')} />
-
-          <div className='sign-up-page__text-btn'>+ Add another contact</div>
-
-          <Checkbox
-            className='sign-up-page__create-contacts-form-checkbox'
-            label='Let us contact this person now to let them know you signed up and confirm their information.'
-            onCheck={toggleContactNotificationAllowed}
-          />
-
-          <FlatButton
-            className='gc-std-btn sign-up-page__form-continue-btn'
-            style={{ backgroundColor: '#40B097' }}
-            label='finish'
-            disabled={requestInProgress}
-          />
-        </div>
+        ))}
       </form>
     )
   }
@@ -126,7 +126,9 @@ CreateContactsForm.propTypes = {
   content: object,
   contacts: object,
   requestInProgress: bool,
-  toggleContactNotificationAllowed: func
+  toggleContactNotificationAllowed: func,
+  setContact: func,
+  toggleContactDateField: func
 }
 
 export default CreateContactsForm

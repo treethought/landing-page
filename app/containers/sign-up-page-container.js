@@ -8,6 +8,7 @@ import uuid from 'node-uuid'
 class SignUpPageContainer extends Component {
   constructor (props) {
     super(props)
+    const initialContactTmpId = uuid.v4()
     this.state = {
       requestInProgress: false,
       formStage: 1,
@@ -19,10 +20,12 @@ class SignUpPageContainer extends Component {
       },
       contacts: {
         notificationAllowed: true,
-        list: [{
-          tmpId: uuid.v4(),
-          dateFieldShown: true
-        }]
+        list: {
+          [initialContactTmpId]: {
+            tmpId: initialContactTmpId,
+            dateFieldShown: true
+          }
+        }
       }
     }
   }
@@ -40,10 +43,10 @@ class SignUpPageContainer extends Component {
     })
   }
 
-  setUser (name) {
+  setUser (prop) {
     return (value) => {
       this.setState(update(this.state, {
-        user: { [name]: { $set: value } }
+        user: { [prop]: { $set: value } }
       }))
     }
   }
@@ -52,6 +55,30 @@ class SignUpPageContainer extends Component {
     this.setState(update(this.state, {
       contacts: { notificationAllowed: { $apply: v => !v } }
     }))
+  }
+
+  setContact (tmpId, prop) {
+    return (value) => {
+      this.setState(update(this.state, {
+        contacts: { list: { [tmpId]: { [prop]: { $set: value } } } }
+      }))
+    }
+  }
+
+  toggleContactDateField (tmpId) {
+    return () => {
+      const dateFieldShown = this.state.contacts.list[tmpId].dateFieldShown
+      this.setState(update(this.state, {
+        contacts: {
+          list: {
+            [tmpId]: {
+              dateFieldShown: { $set: !dateFieldShown },
+              [dateFieldShown ? 'dateOfBirth' : 'neighborhood']: { $set: '' }
+            }
+          }
+        }
+      }))
+    }
   }
 
   render () {
@@ -66,6 +93,8 @@ class SignUpPageContainer extends Component {
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
         toggleContactNotificationAllowed={this.toggleContactNotificationAllowed.bind(this)}
+        setContact={this.setContact.bind(this)}
+        toggleContactDateField={this.toggleContactDateField.bind(this)}
       />
     )
   }
