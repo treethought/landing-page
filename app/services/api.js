@@ -12,8 +12,16 @@ export function postUser ({ name, emailOrPhone, referredByCode, recaptchaRespons
     path: '/users',
     params: { user: { name, emailOrPhone, referredByCode, recaptchaResponse } }
   }).then(res => {
-    console.log({res})
     cookie.save('token', res.token.value, { path: '/' })
+  })
+}
+
+export function postContacts ({ notificationAllowed, list }) {
+  const token = cookie.load('token', { path: '/' })
+  return makeRequest({
+    method: 'POST',
+    path: '/contacts',
+    params: { contacts: { notificationAllowed, token, list } }
   })
 }
 

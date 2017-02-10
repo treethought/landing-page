@@ -31,8 +31,8 @@ class CreateContactsForm extends Component {
 
   render () {
     const {
-      contacts, toggleContactNotificationAllowed, setContact,
-      toggleContactDateField, addContact, deleteContact
+      contacts, toggleContactNotificationAllowed, setContact, toggleContactDateField,
+      addContact, deleteContact, createContacts
     } = this.props
     const { hintShown } = this.state
 
@@ -129,6 +129,7 @@ class CreateContactsForm extends Component {
                   style={{ backgroundColor: '#40B097' }}
                   label='finish'
                   disabled={this.continueBtnIsDisabled()}
+                  onClick={createContacts}
                 />
               </div>
             )}
@@ -148,7 +149,8 @@ CreateContactsForm.propTypes = {
   setContact: func,
   toggleContactDateField: func,
   addContact: func,
-  deleteContact: func
+  deleteContact: func,
+  createContacts: func
 }
 
 export default CreateContactsForm

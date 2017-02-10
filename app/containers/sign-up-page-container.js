@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import update from 'react-addons-update'
 import { SignUpPage } from '../components'
-import { postUser } from '../services/api'
+import { postUser, postContacts } from '../services/api'
 import cookie from 'react-cookie'
 import uuid from 'node-uuid'
 const { assign } = Object
@@ -97,6 +97,17 @@ class SignUpPageContainer extends Component {
     }
   }
 
+  createContacts () {
+    postContacts(this.state.contacts).then(res => {
+      console.log({ res })
+      // destroy token
+      // redirect to success page with referralCode in query params
+    }, errors => {
+      console.log({ errors })
+      // add errors to respective contacts
+    })
+  }
+
   render () {
     const { location, route } = this.props
     const { content, locale } = route
@@ -113,6 +124,7 @@ class SignUpPageContainer extends Component {
         toggleContactDateField={this.toggleContactDateField.bind(this)}
         addContact={this.addContact.bind(this)}
         deleteContact={this.deleteContact.bind(this)}
+        createContacts={this.createContacts.bind(this)}
       />
     )
   }

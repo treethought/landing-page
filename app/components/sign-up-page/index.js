@@ -8,7 +8,7 @@ class SignUpPage extends Component {
     const {
       content, formStage, user, setUser, createUser, requestInProgress, locale,
       recaptchaSitekey, toggleContactNotificationAllowed, contacts, setContact,
-      toggleContactDateField, addContact, deleteContact
+      toggleContactDateField, addContact, deleteContact, createContacts
     } = this.props
 
     return (
@@ -44,6 +44,7 @@ class SignUpPage extends Component {
                 requestInProgress={requestInProgress}
                 addContact={addContact}
                 deleteContact={deleteContact}
+                createContacts={createContacts}
               />
             </div>
           )}
@@ -67,7 +68,8 @@ SignUpPage.propTypes = {
   setContact: func,
   toggleContactDateField: func,
   addContact: func,
-  deleteContact: func
+  deleteContact: func,
+  createContacts: func
 }
 
 export default SignUpPage
