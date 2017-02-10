@@ -31,7 +31,7 @@ class CreateContactsForm extends Component {
 
   render () {
     const {
-      requestInProgress, contacts, toggleContactNotificationAllowed, setContact,
+      contacts, toggleContactNotificationAllowed, setContact,
       toggleContactDateField, addContact, deleteContact
     } = this.props
     const { hintShown } = this.state
@@ -120,7 +120,7 @@ class CreateContactsForm extends Component {
 
                 <Checkbox
                   className='sign-up-page__create-contacts-form-checkbox'
-                  label='Let us contact this person now to let them know you signed up and confirm their information.'
+                  label={`Let us contact ${arr.length > 1 ? 'these people' : 'this person'} now to let them know you signed up and confirm their information.`}
                   onCheck={toggleContactNotificationAllowed}
                 />
 

@@ -31,6 +31,14 @@ class SignUpPageContainer extends Component {
     }
   }
 
+  setUser (prop) {
+    return (value) => {
+      this.setState(update(this.state, {
+        user: { [prop]: { $set: value } }
+      }))
+    }
+  }
+
   createUser () {
     const { name, emailOrPhone, referredByCode, recaptchaResponse } = this.state.user
     this.setState({ ...this.state, requestInProgress: true })
@@ -42,14 +50,6 @@ class SignUpPageContainer extends Component {
         requestInProgress: { $set: false }
       }))
     })
-  }
-
-  setUser (prop) {
-    return (value) => {
-      this.setState(update(this.state, {
-        user: { [prop]: { $set: value } }
-      }))
-    }
   }
 
   toggleContactNotificationAllowed () {
