@@ -13,6 +13,7 @@ export function postUser ({ name, emailOrPhone, referredByCode, recaptchaRespons
     params: { user: { name, emailOrPhone, referredByCode, recaptchaResponse } }
   }).then(res => {
     cookie.save('token', res.token.value, { path: '/' })
+    cookie.save('referralCode', res.user.referralCode, { path: '/' })
   })
 }
 
