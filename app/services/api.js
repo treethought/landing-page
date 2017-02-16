@@ -1,6 +1,6 @@
 import request from 'superagent'
 import config from '../config'
-import camelize from 'camelize'
+import camelize from '../services/camelize'
 import snakeize from 'snakeize'
 const { isArray } = Array
 import locale from './locale'
@@ -36,11 +36,11 @@ function makeRequest ({ method = 'GET', path, params = {} }) {
       .set('LOCALE', locale.get())
     requestPromise.then(({ body }) => {
       let camelizedBody = isArray(body)
-        ? body.map(camelize)
-        : camelize(body)
+        ? body.map(el => camelize(body, '_'))
+        : camelize(body, '_')
       resolve(camelizedBody)
     }, err => {
-      const errors = camelize(err.response.body.errors)
+      const errors = camelize(err.response.body.errors, '_')
       reject(errors)
     })
   })

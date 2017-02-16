@@ -61,12 +61,13 @@ class CreateContactsForm extends Component {
           </div>
         )}
 
-        {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth }, i, arr) => (
+        {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth, errors }, i, arr) => (
           <div className='sign-up-page__form-fields-container sign-up-page__contact-fields-container' key={tmpId}>
             <TextField
               labelText='First name, last name'
               onFocus={this.showHint.bind(this, 'name')}
               onChange={setContact(tmpId, 'name')}
+              errorText={errors.name}
             />
 
             <TextField
@@ -77,6 +78,7 @@ class CreateContactsForm extends Component {
             <TextField
               labelText="Emergency contact's phone number"
               onChange={setContact(tmpId, 'phone')}
+              errorText={errors.phone}
             />
 
             <div className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>

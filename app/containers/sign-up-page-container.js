@@ -5,6 +5,8 @@ import { postUser, postContacts } from '../services/api'
 import cookie from 'react-cookie'
 import uuid from 'node-uuid'
 const { assign } = Object
+import { browserHistory } from 'react-router'
+import each from 'lodash.foreach'
 
 class SignUpPageContainer extends Component {
   constructor (props) {
@@ -12,7 +14,7 @@ class SignUpPageContainer extends Component {
     const initialContactTmpId = uuid.v4()
     this.state = {
       requestInProgress: false,
-      formStage: 1,
+      formStage: 0,
       recaptchaSitekey: '6Lc7NxQUAAAAAIZCaPCuSa-9_N2tjZcCik5647lj',
       user: {
         ageVerified: false,
@@ -24,7 +26,8 @@ class SignUpPageContainer extends Component {
         list: {
           [initialContactTmpId]: {
             tmpId: initialContactTmpId,
-            dateFieldShown: true
+            dateFieldShown: true,
+            errors: {}
           }
         }
       }
@@ -85,7 +88,7 @@ class SignUpPageContainer extends Component {
   addContact () {
     const tmpId = uuid.v4()
     this.setState(update(this.state, {
-      contacts: { list: { $merge: { [tmpId]: { tmpId, dateFieldShown: true } } } }
+      contacts: { list: { $merge: { [tmpId]: { tmpId, dateFieldShown: true, errors: {} } } } }
     }))
   }
 
@@ -99,12 +102,17 @@ class SignUpPageContainer extends Component {
 
   createContacts () {
     postContacts(this.state.contacts).then(res => {
-      console.log({ res })
-      // destroy token
-      // redirect to success page with referralCode in query params
+      const referralCode = cookie.load('referralCode', { path: '/' })
+      cookie.remove('referralCode', { path: '/' })
+      cookie.remove('token', { path: '/' })
+      browserHistory.push({ pathname: '/sign-up/success', query: { referralCode } })
     }, errors => {
-      console.log({ errors })
-      // add errors to respective contacts
+      each(errors, (errs, tmpId) => {
+        console.log({errs, tmpId})
+        this.setState(update(this.state, {
+          contacts: { list: { [tmpId]: { errors: { $set: errs } } } }
+        }))
+      })
     })
   }
 

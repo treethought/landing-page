@@ -44,10 +44,10 @@
   "homepage": "https://github.com/good-call-nyc/landing-page",
   "dependencies": {
     "bowser": "1.4.5",
-    "camelize": "1.0.0",
     "isomorphic-fetch": "2.2.1",
     "lodash.assign": "4.2.0",
     "lodash.every": "^4.6.0",
+    "lodash.foreach": "^4.5.0",
     "lodash.includes": "4.3.0",
     "lodash.isempty": "4.4.0",
     "lodash.isplainobject": "4.0.6",
