@@ -108,7 +108,6 @@ class SignUpPageContainer extends Component {
       browserHistory.push({ pathname: '/sign-up/success', query: { referralCode } })
     }, errors => {
       each(errors, (errs, tmpId) => {
-        console.log({errs, tmpId})
         this.setState(update(this.state, {
           contacts: { list: { [tmpId]: { errors: { $set: errs } } } }
         }))
