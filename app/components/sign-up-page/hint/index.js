@@ -16,7 +16,7 @@ class Hint extends Component {
   }
 
   closeDialog () {
-    this.setState({dialogClosed: true})
+    this.setState({ dialogClosed: true })
   }
 
   render () {
@@ -39,7 +39,7 @@ class Hint extends Component {
                 {text}
               </p>
             </div>
-            <div className='sign-up-page__hint-bubble-arrow' style={{ top: top }}></div>
+            <div className='sign-up-page__hint-bubble-arrow' style={{ top: top }} />
           </div>
         )}
 

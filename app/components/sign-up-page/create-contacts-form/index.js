@@ -71,7 +71,7 @@ class CreateContactsForm extends Component {
         )}
 
         {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth, errors }, i, arr) => (
-          <div className='sign-up-page__form-fields-container sign-up-page__contact-fields-container' key={tmpId}>
+          <div className='sign-up-page__form-fields-container' key={tmpId}>
             <TextField
               labelText='First name, last name'
               onFocus={this.showHint.bind(this, 'name')}

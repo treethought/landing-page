@@ -9,7 +9,6 @@ import ga from './../../services/ga'
 class InnerPage extends Component {
   componentWillMount () {
     const { query, pathname } = this.props.location
-    // TODO: refactor into service
     const { referredByCode } = query
     if (referredByCode) {
       cookie.save('referredByCode', referredByCode, { path: '/' })
@@ -19,26 +18,28 @@ class InnerPage extends Component {
   }
 
   render () {
-    const { content, toggleLocale } = this.props.route
+    const { location, children, route } = this.props
+    const { content, toggleLocale } = route
 
     return (
       <div className='inner-page'>
         <Header
           content={content.header}
           toggleLocale={toggleLocale}
-          inRegistrationFlow={this.props.location && includes(this.props.location.pathname, '/sign-up')}
+          inRegistrationFlow={location && includes(location.pathname, '/sign-up')}
         />
-          {this.props.children}
+        {children}
         <Footer content={content.footer} />
       </div>
     )
   }
 }
 
+const { object, element } = PropTypes
 InnerPage.propTypes = {
-  route: PropTypes.object,
-  location: PropTypes.object,
-  children: PropTypes.element
+  route: object,
+  location: object,
+  children: element
 }
 
 export default InnerPage

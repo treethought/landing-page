@@ -5,9 +5,9 @@ class ErrorPage extends Component {
     const { content } = this.props.route
 
     return (
-      <div className="error-page">
-        <h1 className="error-page__header">404</h1>
-        <h2 className="error-page__subheader">{content.subheader}</h2>
+      <div className='error-page'>
+        <h1 className='error-page__header'>404</h1>
+        <h2 className='error-page__subheader'>{content.subheader}</h2>
       </div>
     )
   }

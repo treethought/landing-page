@@ -28,7 +28,6 @@ export function postContacts ({ contacts, userName }) {
   })
 }
 
-// TODO: get locale from cookies
 function makeRequest ({ method = 'GET', path, params = {} }) {
   return new Promise((resolve, reject) => {
     const requestPromise = request(method, config.apiBaseUrl + path)
