@@ -101,7 +101,10 @@ class SignUpPageContainer extends Component {
   }
 
   createContacts () {
-    postContacts(this.state.contacts).then(res => {
+    postContacts({
+      contacts: this.state.contacts,
+      userName: this.state.user.name
+    }).then(res => {
       const referralCode = cookie.load('referralCode', { path: '/' })
       cookie.remove('referralCode', { path: '/' })
       cookie.remove('token', { path: '/' })

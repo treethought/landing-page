@@ -18,12 +18,13 @@ export function postUser ({ name, emailOrPhone, referredByCode, recaptchaRespons
   })
 }
 
-export function postContacts ({ notificationAllowed, list }) {
+export function postContacts ({ contacts, userName }) {
+  const { notificationAllowed, list } = contacts
   const token = cookie.load('token', { path: '/' })
   return makeRequest({
     method: 'POST',
     path: '/contacts',
-    params: { contacts: { notificationAllowed, token, list: values(list) } }
+    params: { contacts: { notificationAllowed, token, list: values(list), userName } }
   })
 }
 
