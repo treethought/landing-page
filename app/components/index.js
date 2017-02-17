@@ -4,8 +4,6 @@ export FaqPage from './faq-page'
 export Footer from './footer'
 export Header from './header'
 export InnerPage from './inner-page'
-// TODO: remove intro component, put in error page only
-export Intro from './intro'
 export LandingPage from './landing-page'
 export PressReleasesPage from './press-releases-page'
 export SignUpPage from './sign-up-page'
