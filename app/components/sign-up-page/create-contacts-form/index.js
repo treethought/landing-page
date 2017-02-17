@@ -5,7 +5,7 @@ import some from 'lodash.some'
 import renderIf from 'render-if'
 import Hint from './../hint'
 import update from 'react-addons-update'
-import { lengthOfObject } from '../../../services/utils'
+import { lengthOfObject, scrollToTop } from '../../../services/utils'
 import values from 'lodash.values'
 
 class CreateContactsForm extends Component {
@@ -14,6 +14,15 @@ class CreateContactsForm extends Component {
     this.state = {
       hintShown: { name: false, dateOfBirth: false, fact: false }
     }
+  }
+
+  componentDidMount () {
+    scrollToTop()
+    window.onbeforeunload = (e) => ''
+  }
+
+  componentWillUnmount () {
+    window.onbeforeunload = null
   }
 
   showHint (name) {
