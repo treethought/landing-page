@@ -64,7 +64,7 @@ class SignUpSuccessPage extends Component {
 
             <span className='sign-up-success-page__share-link-text'>{ content.copyAndShare }</span>
 
-            <input className='sign-up-success-page__share-link' value={referralLink} onSelect={ga.triggerEvent('share-link-selected')} />
+            <textarea className='sign-up-success-page__share-link' value={referralLink} onSelect={ga.triggerEvent('share-link-selected')} />
 
             <span className='sign-up-success-page__share-btns-text'>{ content.orShareOnSocialMedia }</span>
 
