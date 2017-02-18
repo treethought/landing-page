@@ -61,13 +61,13 @@ class CreateContactsForm extends Component {
             <Hint
               text='We will use this information only to identify and verify your emergency contact if you call into the hotline. Make sure you remember this.'
               confirmLabelText='GOT IT'
-              top='110px'
+              top='41px'
               show={hintShown.dateOfBirth}
             />
             <Hint
               text='The fact should be something only you and others who are close to them would know. Ex. His favorite sport is basketball.'
               confirmLabelText='GOT IT'
-              top='28px'
+              top='43px'
               show={hintShown.fact}
             />
           </div>
