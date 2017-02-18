@@ -33,8 +33,8 @@ class CreateContactsForm extends Component {
 
   continueBtnIsDisabled () {
     return this.props.requestInProgress || some(this.props.contacts.list, (contact) => {
-      const { name, relationship, phone, dateOfBirth, neighborhood, fact } = contact
-      return !name || !relationship || !phone || !(dateOfBirth || neighborhood) || !fact
+      const { name, phone, dateOfBirth, neighborhood, fact } = contact
+      return !name || !phone || !(dateOfBirth || neighborhood) || !fact
     })
   }
 
@@ -77,11 +77,6 @@ class CreateContactsForm extends Component {
               onFocus={this.showHint.bind(this, 'name')}
               onChange={setContact(tmpId, 'name')}
               errorText={errors.name}
-            />
-
-            <TextField
-              labelText='Relationship (ex: mother)'
-              onChange={setContact(tmpId, 'relationship')}
             />
 
             <TextField

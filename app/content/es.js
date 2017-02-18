@@ -141,7 +141,6 @@ const es = {
       errorTextLine1: 'Parece que also salió mal ツ',
       errorTextLine2: '¿Necesitas ayuda? Envíanos un e-mail a hello@goodcall.nyc',
       nameLabel: 'Nombre, Apellido',
-      relationshipLabel: 'Relación',
       phoneLabel: 'Teléfono móvil (xxx) xxx-xxxx',
       hintText: (numOfContacts) => (
         `${numOfContacts > 1 ? 'Estas son las personas' : 'Esta es la persona'} que contactaremos si eres arrestado`
