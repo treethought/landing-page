@@ -88,17 +88,10 @@ class CreateContactsForm extends Component {
               errorText={errors.phone}
             />
 
-            <div className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>
-              {dateFieldShown
-                ? 'Don\'t know their birthday? Answer another question.'
-                : 'Don\'t know? Answer another question.'
-              }
-            </div>
-
             {dateFieldShown ? (
               <DateField
                 onClick={this.showHint.bind(this, 'dateOfBirth')}
-                label='Date of Birth'
+                labelText="Emergency Contact's Date of Birth"
                 onChange={setContact(tmpId, 'dateOfBirth')}
               />
             ) : (
@@ -108,6 +101,13 @@ class CreateContactsForm extends Component {
                 onChange={setContact(tmpId, 'neighborhood')}
               />
             )}
+
+            <div className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>
+              {dateFieldShown
+                ? 'Don\'t know their birthday? Answer another question.'
+                : 'Don\'t know? Answer another question.'
+              }
+            </div>
 
             <TextField
               labelText='What is a unique fact about them?'
