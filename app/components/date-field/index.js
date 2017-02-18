@@ -33,7 +33,7 @@ class DateField extends Component {
     const { month, day, year } = this.state
 
     return (
-      <div className='date-field' onClick={onClick}>
+      <div className='date-field' onClick={onClick} onTouchStart={onClick}>
         <label className='date-field__label'>{labelText}</label>
 
         <div className='date-field__select-fields'>

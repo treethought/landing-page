@@ -52,6 +52,7 @@ class Hint extends Component {
                 onTouchTap={this.closeDialog.bind(this)}
               />
             }
+            style={{ zIndex: 10000 }}
             contentStyle={{fontSize: '16px', color: '#FDFFF9', lineHeight: '24px', fontWeight: '300'}}
             bodyStyle={{background: '#40B097', color: '#FDFFF9'}}
             actionsContainerStyle={{background: '#40B097'}}
