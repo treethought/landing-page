@@ -21,6 +21,7 @@ class Hint extends Component {
 
   render () {
     const { text, confirmLabelText, top, show } = this.props
+    const { dialogClosed } = this.state
 
     return (
       <div
@@ -48,16 +49,15 @@ class Hint extends Component {
             actions={
               <FlatButton
                 label={confirmLabelText}
-                labelStyle={{color: '#FDFFF9', fontSize: '14px', letterSpacing: '0.5px'}}
+                labelStyle={{ color: '#FDFFF9', fontSize: '14px', letterSpacing: '0.5px' }}
                 onTouchTap={this.closeDialog.bind(this)}
               />
             }
-            style={{ zIndex: 10000 }}
-            contentStyle={{fontSize: '16px', color: '#FDFFF9', lineHeight: '24px', fontWeight: '300'}}
-            bodyStyle={{background: '#40B097', color: '#FDFFF9'}}
-            actionsContainerStyle={{background: '#40B097'}}
-            modal={false}
-            open={!this.state.dialogClosed}
+            contentStyle={{ fontSize: '16px', color: '#FDFFF9', lineHeight: '24px', fontWeight: '300' }}
+            bodyStyle={{ background: '#40B097', color: '#FDFFF9' }}
+            actionsContainerStyle={{ background: '#40B097' }}
+            modal={true}
+            open={!dialogClosed}
             onRequestClose={this.closeDialog.bind(this)}
           >
             {text}
