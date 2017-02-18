@@ -14,7 +14,7 @@ class TextField extends Component {
       <MTextField
         className={className || ''}
         style={{ display: 'block !important', width: '100% !important', height: '58px', marginBottom: '3px' }}
-        floatingLabelStyle={{ top: '18px', fontSize: isDesktop ? '18px' : '14px' }}
+        floatingLabelStyle={{ top: '18px', fontSize: isDesktop ? '18px' : '14px', whiteSpace: 'nowrap' }}
         floatingLabelFocusStyle={{ fontSize: isDesktop ? '14px' : '12px', color: '#40B097', textTransform: 'uppercase', top: '18px' }}
         inputStyle={{ marginTop: '0' }}
         underlineStyle={{ bottom: '15px' }}

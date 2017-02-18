@@ -91,7 +91,7 @@ class CreateContactsForm extends Component {
             <div className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>
               {dateFieldShown
                 ? 'Don\'t know their birthday? Answer another question.'
-                : 'Don\'t know what neighborhood they grew up in? Answer another question.'
+                : 'Don\'t know? Answer another question.'
               }
             </div>
 
