@@ -1,7 +1,7 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 import FlatButton from 'material-ui/FlatButton'
-import {Link} from 'react-router'
-import ga from './../../../services/ga'
+import { Link } from 'react-router'
+import { triggerEvent } from './../../../services/ga'
 
 class LaunchingSoon extends Component {
   render () {
@@ -17,7 +17,7 @@ class LaunchingSoon extends Component {
           style={{ backgroundColor: '#40B097' }}
           className='gc-std-btn'
           containerElement={<Link to='/sign-up' />}
-          onClick={ga.triggerEvent('sign-up-btn-clicked')}
+          onClick={triggerEvent('sign-up-btn-clicked')}
         />
       </section>
     )

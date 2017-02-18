@@ -6,25 +6,38 @@ const { isArray } = Array
 import locale from './locale'
 import cookie from 'react-cookie'
 import values from 'lodash.values'
+import { triggerEvent } from './ga'
 
-export function postUser ({ name, emailOrPhone, referredByCode, recaptchaResponse }) {
+export function postUser (user, onSuccess, onError) {
   return makeRequest({
     method: 'POST',
     path: '/users',
-    params: { user: { name, emailOrPhone, referredByCode, recaptchaResponse } }
+    params: { user }
   }).then(res => {
     cookie.save('token', res.token.value, { path: '/' })
     cookie.save('referralCode', res.user.referralCode, { path: '/' })
+    triggerEvent('create-user-form-submit-success')()
+    onSuccess(res)
+  }, errors => {
+    triggerEvent('create-user-form-submit-error', errors)()
+    onError(errors)
   })
 }
 
-export function postContacts ({ contacts, userName }) {
+export function postContacts ({ contacts, userName }, onSuccess, onError) {
   const { notificationAllowed, list } = contacts
   const token = cookie.load('token', { path: '/' })
   return makeRequest({
     method: 'POST',
     path: '/contacts',
     params: { contacts: { notificationAllowed, token, list: values(list), userName } }
+  }).then(res => {
+    triggerEvent('create-contacts-form-submit-success')()
+    cookie.remove('token', { path: '/' })
+    onSuccess(res)
+  }, errors => {
+    triggerEvent('create-contacts-form-submit-error', errors)()
+    onError(errors)
   })
 }
 

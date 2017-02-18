@@ -3,7 +3,7 @@ import FlatButton from 'material-ui/FlatButton'
 import Hint from './../hint'
 import renderIf from 'render-if'
 import { Checkbox, TextField } from './../../index.js'
-import ga from './../../../services/ga'
+import { triggerEvent } from './../../../services/ga'
 import Recaptcha from 'react-grecaptcha'
 
 class CreateUserForm extends Component {
@@ -15,7 +15,7 @@ class CreateUserForm extends Component {
   componentDidMount () {
     window.onbeforeunload = () => {
       const { user } = this.props
-      return ga.triggerEvent('leave-create-user-form', user)()
+      return triggerEvent('leave-create-user-form', user)()
     }
   }
 

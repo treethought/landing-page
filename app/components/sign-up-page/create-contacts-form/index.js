@@ -7,6 +7,7 @@ import Hint from './../hint'
 import update from 'react-addons-update'
 import { lengthOfObject, scrollToTop, isDesktop } from '../../../services/utils'
 import values from 'lodash.values'
+import { triggerEvent } from '../../../services/ga'
 
 class CreateContactsForm extends Component {
   constructor (props) {
@@ -17,12 +18,17 @@ class CreateContactsForm extends Component {
   }
 
   componentDidMount () {
+    const { contacts } = this.props
     scrollToTop()
     window.onbeforeunload = (e) => ''
+    window.onunload = (e) => {
+      triggerEvent('leave-create-contacts-form', { contacts })()
+    }
   }
 
   componentWillUnmount () {
     window.onbeforeunload = null
+    window.onunload = null
   }
 
   showHint (name) {

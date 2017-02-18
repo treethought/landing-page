@@ -43,10 +43,9 @@ class SignUpPageContainer extends Component {
   }
 
   createUser () {
-    const { name, emailOrPhone, referredByCode, recaptchaResponse } = this.state.user
-    this.setState({ ...this.state, requestInProgress: true })
-    postUser({ name, emailOrPhone, referredByCode, recaptchaResponse }).then(res => {
-      this.setState({ ...this.state, requestInProgress: false, formStage: 1 })
+    this.setState({ requestInProgress: true })
+    postUser(this.state.user, res => {
+      this.setState({ requestInProgress: false, formStage: 1 })
     }, errors => {
       this.setState(update(this.state, {
         user: { errors: { $set: errors } },
@@ -104,10 +103,9 @@ class SignUpPageContainer extends Component {
     postContacts({
       contacts: this.state.contacts,
       userName: this.state.user.name
-    }).then(res => {
+    }, res => {
       const referralCode = cookie.load('referralCode', { path: '/' })
       cookie.remove('referralCode', { path: '/' })
-      cookie.remove('token', { path: '/' })
       browserHistory.push({ pathname: '/sign-up/success', query: { referralCode } })
     }, errors => {
       each(errors, (errs, tmpId) => {

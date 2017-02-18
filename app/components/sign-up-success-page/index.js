@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 import FlatButton from 'material-ui/FlatButton'
 import SvgIcon from 'material-ui/SvgIcon'
 import urlencode from 'urlencode'
-import ga from './../../services/ga'
+import { triggerEvent } from './../../services/ga'
 
 class SignUpSuccessPage extends Component {
 
@@ -64,7 +64,7 @@ class SignUpSuccessPage extends Component {
 
             <span className='sign-up-success-page__share-link-text'>{ content.copyAndShare }</span>
 
-            <textarea className='sign-up-success-page__share-link' value={referralLink} onSelect={ga.triggerEvent('share-link-selected')} />
+            <textarea className='sign-up-success-page__share-link' value={referralLink} onSelect={triggerEvent('share-link-selected')} />
 
             <span className='sign-up-success-page__share-btns-text'>{ content.orShareOnSocialMedia }</span>
 
@@ -75,7 +75,7 @@ class SignUpSuccessPage extends Component {
               style={{ backgroundColor: '#40B097' }}
               label={'Email'}
               icon={<EmailIcon />}
-              onClick={ga.triggerEvent('share-via-email-btn-clicked')}
+              onClick={triggerEvent('share-via-email-btn-clicked')}
             />
 
             <FlatButton
@@ -87,7 +87,7 @@ class SignUpSuccessPage extends Component {
               style={{ backgroundColor: '#2D4C8D' }}
               label={'Facebook'}
               icon={<FacebookIcon />}
-              onClick={ga.triggerEvent('share-via-facebook-btn-clicked')}
+              onClick={triggerEvent('share-via-facebook-btn-clicked')}
             />
 
             <FlatButton
@@ -97,7 +97,7 @@ class SignUpSuccessPage extends Component {
               style={{ backgroundColor: '#0098F8' }}
               label={'Twitter'}
               icon={<TwitterIcon />}
-              onClick={ga.triggerEvent('share-via-twitter-btn-clicked')}
+              onClick={triggerEvent('share-via-twitter-btn-clicked')}
             />
           </div>
         </div>

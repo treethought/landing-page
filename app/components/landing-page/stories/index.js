@@ -9,7 +9,7 @@ import MediaQuery from 'react-responsive'
 import FlatButton from 'material-ui/FlatButton'
 import { Link } from 'react-router'
 import ScrollDownBtn from './../../scroll-down-btn'
-import ga from './../../../services/ga'
+import { triggerEvent } from './../../../services/ga'
 
 class Stories extends Component {
   constructor (props) {
@@ -121,7 +121,7 @@ class Stories extends Component {
           <div className='landing-page__stories-sign-up-btn-container'>
             <FlatButton
               label={content.signUpBtnLabel}
-              onClick={ga.triggerEvent('sign-up-btn-clicked')}
+              onClick={triggerEvent('sign-up-btn-clicked')}
               className='gc-std-btn'
               style={{ backgroundColor: '#40B097' }}
               containerElement={<Link to='/sign-up' />}

@@ -3,7 +3,7 @@ import {Grid, Row, Cell} from 'react-inline-grid'
 import SimplePanel from './../simple-panel'
 import FlatButton from 'material-ui/FlatButton'
 import {Link} from 'react-router'
-import ga from './../../services/ga'
+import { triggerEvent } from './../../services/ga'
 
 class AboutPage extends Component {
   render () {
@@ -69,7 +69,7 @@ class AboutPage extends Component {
                   className='about-page__sign-up-btn gc-std-btn'
                   style={{ backgroundColor: '#40B097' }}
                   label={content.signUpBtnLabel}
-                  onClick={ga.triggerEvent('sign-up-btn-clicked')}
+                  onClick={triggerEvent('sign-up-btn-clicked')}
                   containerElement={<Link to='/sign-up'/>}
                 />
               </Cell>
