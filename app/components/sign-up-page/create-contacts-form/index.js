@@ -5,7 +5,7 @@ import some from 'lodash.some'
 import renderIf from 'render-if'
 import Hint from './../hint'
 import update from 'react-addons-update'
-import { lengthOfObject, scrollToTop } from '../../../services/utils'
+import { lengthOfObject, scrollToTop, isDesktop } from '../../../services/utils'
 import values from 'lodash.values'
 
 class CreateContactsForm extends Component {
@@ -44,10 +44,13 @@ class CreateContactsForm extends Component {
       addContact, deleteContact, createContacts
     } = this.props
     const { hintShown } = this.state
+    const hintsContainerIsShown = isDesktop
+      ? lengthOfObject(contacts.list) === 1 && some(hintShown)
+      : some(hintShown)
 
     return (
       <form className='sign-up-page__form'>
-        {renderIf(lengthOfObject(contacts.list) === 1 && some(hintShown))(
+        {renderIf(hintsContainerIsShown)(
           <div className='sign-up-page__form-hints-container'>
             <Hint
               text='This is the person we will alert if you get arrested.'
