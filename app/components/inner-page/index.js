@@ -35,10 +35,11 @@ class InnerPage extends Component {
   }
 }
 
+const { object, element } = PropTypes
 InnerPage.propTypes = {
-  route: PropTypes.object,
-  location: PropTypes.object,
-  children: PropTypes.element
+  route: object,
+  location: object,
+  children: element
 }
 
 export default InnerPage
