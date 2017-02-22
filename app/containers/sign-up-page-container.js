@@ -19,6 +19,7 @@ class SignUpPageContainer extends Component {
       user: {
         ageVerified: false,
         referredByCode: cookie.load('referredByCode', { path: '/' }),
+        recaptchaResponse: null,
         errors: {}
       },
       contacts: {
