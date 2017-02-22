@@ -19,7 +19,7 @@ class CreateContactsForm extends Component {
 
   componentDidMount () {
     const { contacts } = this.props
-    scrollToTop()
+    setTimeout(scrollToTop, 300)
     window.onbeforeunload = (e) => ''
     window.onunload = (e) => {
       triggerEvent('leave-create-contacts-form', { contacts })()
