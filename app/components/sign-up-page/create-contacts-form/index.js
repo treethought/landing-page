@@ -13,7 +13,7 @@ class CreateContactsForm extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      hintShown: { name: false, dateOfBirth: false, fact: false }
+      hintShown: { name: false, info: false }
     }
   }
 
@@ -47,100 +47,98 @@ class CreateContactsForm extends Component {
   render () {
     const {
       contacts, toggleContactNotificationAllowed, setContact, toggleContactDateField,
-      addContact, deleteContact, createContacts
+      addContact, deleteContact, createContacts, content
     } = this.props
     const { hintShown } = this.state
     const hintsContainerIsShown = isDesktop
       ? lengthOfObject(contacts.list) === 1 && some(hintShown)
       : some(hintShown)
 
-    // TODO: put in en.js
-
     return (
       <form className='sign-up-page__form'>
         {renderIf(hintsContainerIsShown)(
-          <div className='sign-up-page__form-hints-container'>
+          <div className='sign-up-page__create-contacts-form-hints-container'>
             <Hint
-              text='This is the person we will alert if you get arrested.'
-              confirmLabelText='GOT IT'
+              text={content.nameHintText}
+              confirmLabelText={content.hintConfirmLabelText}
               top='14px'
               show={hintShown.name}
             />
             <Hint
-              text='We will use this information only to identify and verify your emergency contact if you call into the hotline. Make sure you remember this.'
-              confirmLabelText='GOT IT'
+              text={content.infoHintText}
+              confirmLabelText={content.hintConfirmLabelText}
               top='41px'
-              show={hintShown.dateOfBirth}
-            />
-            <Hint
-              text='The fact should be something only you and others who are close to them would know. Ex. His favorite sport is basketball.'
-              confirmLabelText='GOT IT'
-              top='43px'
-              show={hintShown.fact}
+              show={hintShown.info}
             />
           </div>
         )}
 
         {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth, errors }, i, arr) => (
           <div className='sign-up-page__form-fields-container' key={tmpId}>
-            <h3 className='sign-up-page__form-fields-header'>Contact #{i + 1}</h3>
+            <h3 className='sign-up-page__create-contacts-form-fields-header'>
+              <span>{content.contactFormGroupHeader} #{i + 1}</span>
+              {renderIf(arr.length > 1)(
+                <span className='sign-up-page__create-contacts-form-delete-btn' onClick={deleteContact(tmpId)}>&times;</span>
+              )}
+            </h3>
 
             <TextField
-              labelText='First name, last name'
+              labelText={content.nameLabel}
               onFocus={this.showHint.bind(this, 'name')}
               onChange={setContact(tmpId, 'name')}
               errorText={errors.name}
             />
 
             <TextField
-              labelText="Emergency contact's phone number"
+              labelText={content.phoneLabel}
               onChange={setContact(tmpId, 'phone')}
               errorText={errors.phone}
             />
 
             {dateFieldShown ? (
-              <DateField
-                onClick={this.showHint.bind(this, 'dateOfBirth')}
-                labelText="Emergency Contact's Date of Birth"
-                onChange={setContact(tmpId, 'dateOfBirth')}
-              />
+              <div className='sign-up-page__dont-know-container'>
+                <DateField
+                  onClick={this.showHint.bind(this, 'info')}
+                  labelText={content.dateOfBirthLabel}
+                  onChange={setContact(tmpId, 'dateOfBirth')}
+                />
+                <span className='sign-up-page__dont-know-question'>{content.dontKnowBirthdayQuestion}</span>&nbsp;
+                <span className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>{content.dontKnowBirthdayAction}</span>
+              </div>
             ) : (
-              <TextField
-                labelText='What neighborhood did they grow up in?'
-                onFocus={this.showHint.bind(this, 'dateOfBirth')}
-                onChange={setContact(tmpId, 'neighborhood')}
-              />
+              <div className='sign-up-page__dont-know-container'>
+                <TextField
+                  labelText={content.neighborhoodLabel}
+                  onFocus={this.showHint.bind(this, 'info')}
+                  onChange={setContact(tmpId, 'neighborhood')}
+                />
+                <span className='sign-up-page__dont-know-question'>{content.dontKnowNeighborhoodQuestion}</span>&nbsp;
+                <span className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>{content.dontKnowNeighborhoodAction}</span>
+              </div>
             )}
-
-            <div className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>
-              {dateFieldShown
-                ? 'Don\'t know their birthday? Answer another question.'
-                : 'Don\'t know? Tell us their birthday instead.'
-              }
-            </div>
 
             <TextField
               labelText='What is a unique fact about them?'
-              onFocus={this.showHint.bind(this, 'fact')}
+              onFocus={this.showHint.bind(this, 'info')}
               onChange={setContact(tmpId, 'fact')}
             />
 
             {renderIf(i === arr.length - 1)(
               <div>
                 <div className='sign-up-page__text-btn' onClick={addContact}>
-                  + Add another contact
+                  + {content.addContactBtnLabel}
                 </div>
 
                 <Checkbox
                   className='sign-up-page__create-contacts-form-checkbox'
-                  label={`Let us contact ${arr.length > 1 ? 'these people' : 'this person'} now to let them know you signed up and confirm their information.`}
+                  label={content.consentToContactLabel(arr.length)}
                   onCheck={toggleContactNotificationAllowed}
                 />
 
                 <FlatButton
                   className='gc-std-btn sign-up-page__form-continue-btn'
                   style={{ backgroundColor: '#40B097' }}
-                  label='finish'
+                  label={content.finishBtnLabel}
                   disabled={this.continueBtnIsDisabled()}
                   onClick={createContacts}
                 />

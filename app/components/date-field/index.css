@@ -23,3 +23,9 @@
 .date-field__select-field:last-of-type {
   margin-right: 0;
 }
+
+@media (max-width: 640px) {
+  .date-field__label {
+    font-size: 10px;
+  }
+}

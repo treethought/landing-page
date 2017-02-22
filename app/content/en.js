@@ -123,20 +123,23 @@ const en = {
     },
     createContactsForm: {
       header: 'provide an emergency contact',
-      errorTextLine1: 'looks like something went wrong ツ',
-      errorTextLine2: 'need help? just email hello@goodcall.nyc',
-      nameLabel: 'First Name, Last Name',
-      phoneLabel: 'Phone (xxx) xxx-xxxx',
-      hintText: (numOfContacts) => (
-        `${numOfContacts > 1 ? 'These are the people' : 'This is the person'} we would contact if you are arrested`
-      ),
+      contactFormGroupHeader: 'Contact',
+      nameLabel: 'First name, last name',
+      phoneLabel: 'Emergency contact\'s phone number',
+      dateOfBirthLabel: 'Emergency Contact\'s Date of Birth',
+      neighborhoodLabel: 'What neighborhood did they grow up in?',
+      dontKnowBirthdayQuestion: 'Don\'t know their birthday?',
+      dontKnowBirthdayAction: 'Answer another question.',
+      dontKnowNeighborhoodQuestion: 'Don\'t know?',
+      dontKnowNeighborhoodAction: 'Tell us their birthday instead.',
+      nameHintText: 'This is the person we will alert if you get arrested.',
+      infoHintText: 'This will only be used to identify your emergency contact if you call the hotline in case of an arrest. Make sure you remember this information',
       hintConfirmLabelText: 'GOT IT',
-      additionalContactLabel: 'Additional contact',
       addContactBtnLabel: 'Add another contact',
-      consentToContactLabel: (numOfContacts) => (
-        `Let us contact ${numOfContacts > 1 ? 'these people' : 'this person'} to let them know you signed up. This will allow us to contact them if you are arrested.`
+      consentToContactLabel: numOfContacts => (
+        `Let us contact ${numOfContacts.length > 1 ? 'these people' : 'this person'} now to let them know you signed up and confirm their information.`
       ),
-      continueBtnLabel: 'continue'
+      finishBtnLabel: 'finish'
     }
   },
   signUpSuccessPage: {
