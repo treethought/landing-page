@@ -54,6 +54,8 @@ class CreateContactsForm extends Component {
       ? lengthOfObject(contacts.list) === 1 && some(hintShown)
       : some(hintShown)
 
+    // TODO: put in en.js
+
     return (
       <form className='sign-up-page__form'>
         {renderIf(hintsContainerIsShown)(
@@ -81,6 +83,8 @@ class CreateContactsForm extends Component {
 
         {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth, errors }, i, arr) => (
           <div className='sign-up-page__form-fields-container' key={tmpId}>
+            <h3 className='sign-up-page__form-fields-header'>Contact #{i + 1}</h3>
+
             <TextField
               labelText='First name, last name'
               onFocus={this.showHint.bind(this, 'name')}
@@ -111,7 +115,7 @@ class CreateContactsForm extends Component {
             <div className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>
               {dateFieldShown
                 ? 'Don\'t know their birthday? Answer another question.'
-                : 'Don\'t know? Answer another question.'
+                : 'Don\'t know? Tell us their birthday instead.'
               }
             </div>
 
@@ -120,12 +124,6 @@ class CreateContactsForm extends Component {
               onFocus={this.showHint.bind(this, 'fact')}
               onChange={setContact(tmpId, 'fact')}
             />
-
-            {renderIf(arr.length > 1)(
-              <div className='sign-up-page__text-btn' onClick={deleteContact(tmpId)}>
-                - Delete contact
-              </div>
-            )}
 
             {renderIf(i === arr.length - 1)(
               <div>
