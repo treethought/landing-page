@@ -44,14 +44,14 @@ class Header extends Component {
   }
 
   render () {
-    const {content, toggleLocale, inRegistrationFlow} = this.props
+    const { content, toggleLocale, inRegistrationFlow } = this.props
 
     const ToggleLanguageBtn = () => (
       <FlatButton
         className='header__nav-btn header__toggle-language-btn'
         label={content.toggleLanguageBtnLabel}
         onClick={toggleLocale}
-        containerElement={<span style={{display: 'inline-block'}} />}
+        containerElement={<span style={{ display: 'inline-block' }} />}
         hoverColor='#FDFFF9'
       />
     )
