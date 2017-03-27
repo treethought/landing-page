@@ -8,6 +8,7 @@ export PressReleasesPage from './press-releases-page'
 export SignUpPage from './sign-up-page'
 export SignUpSuccessPage from './sign-up-success-page'
 export TermsAndConditionsPage from './terms-and-conditions-page'
+export PrivacyPolicyPage from './privacy-policy-page'
 
 export SimplePanel from './simple-panel'
 export Footer from './footer'
