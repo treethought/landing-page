@@ -29,7 +29,7 @@ class DateField extends Component {
       years: rangeRight(1916, 1999).map(n => ({label: n, value: n}))
     }
 
-    const { onClick, labelText } = this.props
+    const { onClick, labelText, content } = this.props
     const { month, day, year } = this.state
 
     return (
@@ -39,7 +39,7 @@ class DateField extends Component {
         <div className='date-field__select-fields'>
           <SelectField
             width='75px'
-            label='Month'
+            label={content.month}
             menuItems={dateOptions.months}
             className='date-field__select-field'
             value={month}
@@ -47,7 +47,7 @@ class DateField extends Component {
           />
           <SelectField
             width='60px'
-            label='Day'
+            label={content.day}
             menuItems={dateOptions.days}
             className='date-field__select-field'
             value={day}
@@ -55,7 +55,7 @@ class DateField extends Component {
           />
           <SelectField
             width='65px'
-            label='Year'
+            label={content.year}
             menuItems={dateOptions.years}
             className='date-field__select-field'
             value={year}
@@ -67,11 +67,12 @@ class DateField extends Component {
   }
 }
 
-const { func, string } = PropTypes
+const { func, string, object } = PropTypes
 DateField.propTypes = {
   onClick: func,
   onChange: func,
-  labelText: string
+  labelText: string,
+  content: object
 }
 
 export default DateField

@@ -101,6 +101,7 @@ class CreateContactsForm extends Component {
                   onClick={this.showHint.bind(this, 'info')}
                   labelText={content.dateOfBirthLabel}
                   onChange={setContact(tmpId, 'dateOfBirth')}
+                  content={content.dateField}
                 />
                 <span className='sign-up-page__dont-know-question'>{content.dontKnowBirthdayQuestion}</span>&nbsp;
                 <span className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>{content.dontKnowBirthdayAction}</span>

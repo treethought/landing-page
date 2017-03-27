@@ -1,4 +1,9 @@
 const es = {
+  dateField: {
+    month: 'Mes',
+    day: 'Día',
+    year: 'Año'
+  },
   innerPage: {
     header: {
       hotlineBannerText: 'Si tú o un ser querido han sido arrestados en el Bronx llama al (347) 95-BRONX',
