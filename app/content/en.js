@@ -108,7 +108,7 @@ const en = {
     },
     joinTheMovement: {
       header: 'Why Sign Up?',
-      text: 'We understand that no one expects to get arrested, but unfortunately as we see on the news, the criminal justice system doesn\'t treat everyone equally. Good Call is for everyone. Whether it\'s because you live in an area or where police interaction is a common occurence, or if you are a supportive ally for criminal justice reform, signing up for Good Call helps our mission to provide fair legal representation to everyone, regardless of income.'
+      text: 'We understand that no one expects to get arrested, but unfortunately as we see on the news, the criminal justice system doesn\'t treat everyone equally. Good Call is for everyone. Whether it\'s because you live in an area where police interaction is a common occurrence, or if you are a supportive ally for criminal justice reform, signing up for Good Call helps our mission to provide fair legal representation to everyone, regardless of income.'
     },
     signUpBtnLabel: 'sign up'
   },
@@ -241,7 +241,7 @@ const en = {
         {question: 'Do I have to pay to sign up and use Good Call?', answer: 'No, Good Call is free to sign up and use!'},
         {question: 'When should I call Good Call?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
         {question: 'Who can sign up for Good Call?', answer: 'Everyone! We believe everyone deserves fairness.'},
-        {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'No one expects to get arrested and we definitely hope you wouldn\'t be. Unforunately, the law enforcement and criminal justice system doesn\'t treat everyone equally and people get arrested for trivial reasons. Similar to providing emergency contacts and signing waivers, Good Call is there as a safety precaution to protect your rights in case something does happen. Even if you may not be personally affected by the system\'s injustice, signing up to show support and sharing Good Call with those around you will help accomplish our mission to provide a just and fair outcome for everyone.'},
+        {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'No one expects to get arrested and we definitely hope you wouldn\'t be. Unfortunately, the law enforcement and criminal justice system doesn\'t treat everyone equally and people get arrested for trivial reasons. Similar to providing emergency contacts and signing waivers, Good Call is there as a safety precaution to protect your rights in case something does happen. Even if you may not be personally affected by the system\'s injustice, signing up to show support and sharing Good Call with those around you will help accomplish our mission to provide a just and fair outcome for everyone.'},
         {question: 'Where can I currently use Good Call?', answer: 'Our hotline is currently live in the Bronx.'},
         {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently serving the Bronx and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
         {question: 'What is the Good Call hotline for the Bronx?', answer: '1 (347) 95 BRONX'},
