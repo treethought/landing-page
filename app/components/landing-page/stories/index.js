@@ -131,7 +131,7 @@ class Stories extends Component {
 
         <MediaQuery query='(min-width: 850px)'>
           <div className='landing-page__stories-scroll-down-btn-container'>
-            <ScrollDownBtn to='landing-page__problem' text={content.scrollDownBtnLabel} />
+            <ScrollDownBtn to='landing-page__summary' text={content.scrollDownBtnLabel} />
           </div>
         </MediaQuery>
       </section>
