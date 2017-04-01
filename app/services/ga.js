@@ -1,3 +1,5 @@
+const { ga } = window
+
 export const triggerEvent = (action, json = null) => () => {
   let payload = {
     hitType: 'event',
@@ -6,5 +8,10 @@ export const triggerEvent = (action, json = null) => () => {
   }
   if (json) { payload.eventLabel = JSON.stringify(json) }
   console.log({ payload })
-  window.ga('send', payload)
+  ga('send', payload)
+}
+
+export const trackPageView = (pathname) => {
+  ga('set', 'page', pathname)
+  ga('send', 'pageview')
 }

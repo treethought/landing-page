@@ -10,10 +10,12 @@ import {
   PrivacyPolicyPage, FaqPage, InnerPage, TermsAndConditionsPage
 } from './components'
 import { sendMessageWithNextUrl } from './services/utils'
-import { triggerEvent } from './services/ga'
+import { triggerEvent, trackPageView } from './services/ga'
 
 // HACK: to get the selectedTextColor of the SelectField to not be hot pink
 const theme = getMuiTheme({ palette: { accent1Color: '#40B097' } })
+
+browserHistory.listen(location => { trackPageView(location.pathname) })
 
 class App extends Component {
   constructor () {
