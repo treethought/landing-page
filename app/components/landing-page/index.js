@@ -15,15 +15,15 @@ class LandingPage extends Component {
       <div className='landing-page'>
         <Stories content={content.stories} />
 
-        <Element name='landing-page__problem'>
-          <Problem content={content.problem} />
+        <Element name='landing-page__summary'>
+          <SimplePanel
+            text={content.goodCallSummary}
+            backgroundColor='#4A4A4A'
+            color='#FDFFF9'
+          />
         </Element>
 
-        <SimplePanel
-          color='rgba(45,43,43,0.99)'
-          text={content.goodCallSummary}
-          fontWeight='700'
-        />
+        <Problem content={content.problem} />
 
         <HowItWorks content={content.howItWorks} />
 
