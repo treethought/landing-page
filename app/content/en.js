@@ -2,6 +2,7 @@ const en = {
   innerPage: {
     header: {
       hotlineBannerText: 'If you or your loved one has been arrested in the Bronx call (347) 95-BRONX',
+      hotlineBannerText: 'If you or a loved one has been arrested in the Bronx call 347-95-BRONX (347-952-7669) for free legal support 24/7',
       faqBtnLabel: 'FAQ',
       aboutUsBtnLabel: 'About us',
       signUpBtnLabel: 'Sign up',
