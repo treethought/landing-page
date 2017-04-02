@@ -1,17 +1,16 @@
 const { ga } = window
 
-export const triggerEvent = (action, json = null) => () => {
-  let payload = {
-    hitType: 'event',
-    eventCategory: 'sign-up-flow',
-    eventAction: action
-  }
+export const trackRegistrationEvent = (action, json) => {
+  let payload = { hitType: 'event', eventCategory: 'registration', eventAction: action }
   if (json) { payload.eventLabel = JSON.stringify(json) }
-  console.log({ payload })
   ga('send', payload)
 }
 
-export const trackPageView = (pathname) => {
+export const trackPageView = pathname => {
   ga('set', 'page', pathname)
   ga('send', 'pageview')
+}
+
+export const trackShareEvent = action => {
+  ga('send', { hitType: 'event', eventCategory: 'share', eventAction: action })
 }

@@ -8,7 +8,6 @@ import FlatButton from 'material-ui/FlatButton'
 import MediaQuery from 'react-responsive'
 import { Link } from 'react-router'
 import renderIf from 'render-if'
-import { triggerEvent } from './../../services/ga'
 
 class Header extends Component {
   constructor (props) {
@@ -37,8 +36,7 @@ class Header extends Component {
       }, {
         label: content.signUpBtnLabel,
         to: '/sign-up',
-        className: 'gc-std-btn header__sign-up-btn',
-        onClick: triggerEvent('sign-up-btn-clicked')
+        className: 'gc-std-btn header__sign-up-btn'
       }]
     }
   }

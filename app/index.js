@@ -10,7 +10,7 @@ import {
   PrivacyPolicyPage, FaqPage, InnerPage, TermsAndConditionsPage
 } from './components'
 import { sendMessageWithNextUrl } from './services/utils'
-import { triggerEvent, trackPageView } from './services/ga'
+import { trackPageView } from './services/ga'
 
 // HACK: to get the selectedTextColor of the SelectField to not be hot pink
 const theme = getMuiTheme({ palette: { accent1Color: '#40B097' } })
@@ -26,7 +26,6 @@ class App extends Component {
 
   toggleLocale () {
     const newLocale = this.state.locale === 'en' ? 'es' : 'en'
-    triggerEvent(`language-switched-to-${newLocale}`)()
     locale.set(newLocale)
     window.location.reload()
   }

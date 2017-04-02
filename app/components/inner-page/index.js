@@ -4,7 +4,6 @@ import Footer from './../footer'
 import includes from 'lodash.includes'
 import cookie from 'react-cookie'
 import { browserHistory } from 'react-router'
-import { triggerEvent } from './../../services/ga'
 
 class InnerPage extends Component {
   componentWillMount () {
@@ -12,7 +11,6 @@ class InnerPage extends Component {
     const { referredByCode } = query
     if (referredByCode) {
       cookie.save('referredByCode', referredByCode, { path: '/' })
-      triggerEvent('referred-by-code-saved-to-cookie', { referredByCode })()
       browserHistory.push({ pathname, query: null })
     }
   }

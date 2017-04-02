@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import FlatButton from 'material-ui/FlatButton'
-import Hint from './../hint'
 import renderIf from 'render-if'
-import { Checkbox, TextField } from './../../index.js'
-import { triggerEvent } from './../../../services/ga'
 import Recaptcha from 'react-grecaptcha'
+import pick from 'lodash.pick'
+import mapObject from 'object.map'
+import Hint from './../hint'
+import { Checkbox, TextField } from './../../index.js'
+import { trackRegistrationEvent } from './../../../services/ga'
 
 class CreateUserForm extends Component {
   constructor (props) {
@@ -12,14 +14,20 @@ class CreateUserForm extends Component {
     this.state = { hintShown: false }
   }
 
+  handleDropoff () {
+    const formData = mapObject(pick(this.props.user,
+      ['ageVerified', 'recaptchaResponse', 'name', 'emailOrPhone']
+    ), val => !!val)
+    trackRegistrationEvent('leave-create-user-form', formData)
+  }
+
   componentDidMount () {
-    window.onbeforeunload = () => {
-      const { user } = this.props
-      return triggerEvent('leave-create-user-form', user)()
-    }
+    window.onbeforeunload = () =>
+      this.handleDropoff()
   }
 
   componentWillUnmount () {
+    this.handleDropoff()
     window.onbeforeunload = null
   }
 

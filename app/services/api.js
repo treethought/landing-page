@@ -6,7 +6,7 @@ const { isArray } = Array
 import locale from './locale'
 import cookie from 'react-cookie'
 import values from 'lodash.values'
-import { triggerEvent } from './ga'
+import { trackRegistrationEvent } from './ga'
 
 export function postUser (user, onSuccess, onError) {
   return makeRequest({
@@ -16,12 +16,9 @@ export function postUser (user, onSuccess, onError) {
   }).then(res => {
     cookie.save('token', res.token.value, { path: '/' })
     cookie.save('referralCode', res.user.referralCode, { path: '/' })
-    triggerEvent('create-user-form-submit-success')()
+    trackRegistrationEvent('create-user-form-submit-success')
     onSuccess(res)
-  }, errors => {
-    triggerEvent('create-user-form-submit-error', errors)()
-    onError(errors)
-  })
+  }, onError)
 }
 
 export function postContacts ({ contacts, userName }, onSuccess, onError) {
@@ -32,13 +29,10 @@ export function postContacts ({ contacts, userName }, onSuccess, onError) {
     path: '/contacts',
     params: { contacts: { notificationAllowed, token, list: values(list), userName } }
   }).then(res => {
-    triggerEvent('create-contacts-form-submit-success')()
+    trackRegistrationEvent('create-contacts-form-submit-success')
     cookie.remove('token', { path: '/' })
     onSuccess(res)
-  }, errors => {
-    triggerEvent('create-contacts-form-submit-error', errors)()
-    onError(errors)
-  })
+  }, onError)
 }
 
 function makeRequest ({ method = 'GET', path, params = {} }) {

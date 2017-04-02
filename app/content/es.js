@@ -1,9 +1,4 @@
 const es = {
-  dateField: {
-    month: 'Mes',
-    day: 'Día',
-    year: 'Año'
-  },
   innerPage: {
     header: {
       hotlineBannerText: 'Si tú o un ser querido han sido arrestados en el Bronx llama al (347) 95-BRONX',
@@ -142,7 +137,12 @@ const es = {
       consentToContactLabel: (numOfContacts) => (
         `TODO`
       ),
-      finishBtnLabel: 'TODO'
+      finishBtnLabel: 'TODO',
+      dateField: {
+        month: 'Mes',
+        day: 'Día',
+        year: 'Año'
+      }
     }
   },
   signUpSuccessPage: {

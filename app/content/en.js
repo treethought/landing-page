@@ -1,9 +1,4 @@
 const en = {
-  dateField: {
-    month: 'Month',
-    day: 'Day',
-    year: 'Year'
-  },
   innerPage: {
     header: {
       hotlineBannerText: 'If you or your loved one has been arrested in the Bronx call (347) 95-BRONX',
@@ -142,7 +137,12 @@ const en = {
       consentToContactLabel: numOfContacts => (
         `Let us contact ${numOfContacts.length > 1 ? 'these people' : 'this person'} now to let them know you signed up and confirm their information.`
       ),
-      finishBtnLabel: 'finish'
+      finishBtnLabel: 'finish',
+      dateField: {
+        month: 'Month',
+        day: 'Day',
+        year: 'Year'
+      }
     }
   },
   signUpSuccessPage: {

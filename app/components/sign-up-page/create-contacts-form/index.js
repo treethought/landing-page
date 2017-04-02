@@ -1,13 +1,15 @@
 import React, { Component, PropTypes } from 'react'
-import { TextField, Checkbox, DateField } from '../../index'
 import FlatButton from 'material-ui/FlatButton'
 import some from 'lodash.some'
-import renderIf from 'render-if'
-import Hint from './../hint'
-import update from 'react-addons-update'
-import { lengthOfObject, scrollToTop, isDesktop } from '../../../services/utils'
 import values from 'lodash.values'
-import { triggerEvent } from '../../../services/ga'
+import renderIf from 'render-if'
+import update from 'react-addons-update'
+import pick from 'lodash.pick'
+import mapObject from 'object.map'
+import { TextField, Checkbox, DateField } from '../../index'
+import Hint from './../hint'
+import { lengthOfObject, scrollToTop, isDesktop } from '../../../services/utils'
+import { trackRegistrationEvent } from '../../../services/ga'
 
 class CreateContactsForm extends Component {
   constructor (props) {
@@ -17,18 +19,24 @@ class CreateContactsForm extends Component {
     }
   }
 
+  handleDropoff () {
+    const formData = values(this.props.contacts.list).map(contact => (
+      mapObject(pick(contact,
+        ['name', 'phone', 'dateOfBirth', 'neighborhood', 'fact']
+      ), attrs => !!attrs)
+    ))
+    trackRegistrationEvent('leave-create-contacts-form', formData)
+  }
+
   componentDidMount () {
-    const { contacts } = this.props
     setTimeout(scrollToTop, 300)
-    window.onbeforeunload = (e) => ''
-    window.onunload = (e) => {
-      triggerEvent('leave-create-contacts-form', { contacts })()
-    }
+    window.onbeforeunload = () =>
+      this.handleDropoff()
   }
 
   componentWillUnmount () {
+    this.handleDropoff()
     window.onbeforeunload = null
-    window.onunload = null
   }
 
   showHint (name) {
