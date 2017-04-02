@@ -45,6 +45,7 @@
 
 .sign-up-page__form-fields-container {
   max-width: 330px;
+  width: 100%;
   text-align: center;
   margin-right: 20px;
   margin-left: 20px;
