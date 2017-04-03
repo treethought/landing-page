@@ -123,7 +123,7 @@ const es = {
       header: 'Proporciona un contacto de emergencia',
       contactFormGroupHeader: 'Contacto',
       nameLabel: 'Nombre, Apellido',
-      phoneLabel: 'Número telefónico del contacto de emergencia',
+      phoneLabel: 'Número telefónico',
       dateOfBirthLabel: 'TODO',
       neighborhoodLabel: '¿En qué vecindario se criaron?',
       dontKnowBirthdayQuestion: 'TODO',

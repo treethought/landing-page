@@ -123,7 +123,7 @@ const en = {
       header: 'provide an emergency contact',
       contactFormGroupHeader: 'Contact',
       nameLabel: 'First name, last name',
-      phoneLabel: 'Emergency contact\'s phone number',
+      phoneLabel: 'Phone number',
       dateOfBirthLabel: 'Emergency Contact\'s Date of Birth',
       neighborhoodLabel: 'What neighborhood did they grow up in?',
       dontKnowBirthdayQuestion: 'Don\'t know their birthday?',
