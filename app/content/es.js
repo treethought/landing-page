@@ -136,7 +136,7 @@ const es = {
       hintConfirmLabelText: 'ENTIENDO',
       addContactBtnLabel: 'Agregar otro contacto',
       consentToContactLabel: numOfContacts => (
-        `Permítenos contactar ahora a ${numOfContacts.length > 1 ? 'estas personas' : 'esta persona'} para hacerles saber que te has inscrito y confirmar su información.`
+        `Permítenos contactar ahora a ${numOfContacts > 1 ? 'estas personas' : 'esta persona'} para hacerles saber que te has inscrito y confirmar su información.`
       ),
       finishBtnLabel: 'Terminado',
       dateField: {

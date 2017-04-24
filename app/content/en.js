@@ -136,7 +136,7 @@ const en = {
       hintConfirmLabelText: 'GOT IT',
       addContactBtnLabel: 'Add another contact',
       consentToContactLabel: numOfContacts => (
-        `Let us contact ${numOfContacts.length > 1 ? 'these people' : 'this person'} now to let them know you signed up and confirm their information.`
+        `Let us contact ${numOfContacts > 1 ? 'these people' : 'this person'} now to let them know you signed up and confirm their information.`
       ),
       finishBtnLabel: 'finish',
       dateField: {
