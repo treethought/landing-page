@@ -5,7 +5,7 @@ injectTapEventPlugin()
 import 'isomorphic-fetch'
 
 import React from 'react'
-import {render} from 'react-dom'
+import { render } from 'react-dom'
 import App from './app'
 import css from './app/index.css'
 

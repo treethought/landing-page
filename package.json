@@ -24,7 +24,8 @@
             "es2015"
           ],
           "plugins": [
-            "transform-object-rest-spread"
+            "transform-object-rest-spread",
+            "transform-export-extensions"
           ]
         }
       ],
@@ -43,21 +44,27 @@
   "homepage": "https://github.com/good-call-nyc/landing-page",
   "dependencies": {
     "bowser": "1.4.5",
-    "camelize": "1.0.0",
     "isomorphic-fetch": "2.2.1",
     "lodash.assign": "4.2.0",
+    "lodash.every": "^4.6.0",
+    "lodash.foreach": "^4.5.0",
     "lodash.includes": "4.3.0",
     "lodash.isempty": "4.4.0",
     "lodash.isplainobject": "4.0.6",
+    "lodash.pick": "^4.4.0",
     "lodash.range": "3.2.0",
     "lodash.rangeright": "^4.2.0",
+    "lodash.some": "^4.6.0",
+    "lodash.values": "^4.3.0",
     "material-ui": "0.15.4",
     "moment": "2.15.1",
     "node-uuid": "1.4.7",
     "object.map": "0.2.0",
     "react": "15.3.1",
+    "react-addons-update": "^15.4.2",
     "react-cookie": "0.4.8",
     "react-dom": "15.3.1",
+    "react-grecaptcha": "^1.1.4",
     "react-inline-grid": "0.5.3",
     "react-responsive": "1.1.4",
     "react-router": "2.7.0",
@@ -68,6 +75,7 @@
     "render-if": "0.1.1",
     "rotate-array": "1.1.0",
     "snakeize": "0.1.0",
+    "superagent": "^3.4.1",
     "url": "0.11.0",
     "urlencode": "^1.1.0"
   },

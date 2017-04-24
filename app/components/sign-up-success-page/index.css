@@ -114,6 +114,7 @@
   color: #40B097;
   font-weight: lighter;
   margin-bottom: 50px;
+  resize: none;
 }
 
 .sign-up-success-page__share-btns-text {

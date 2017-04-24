@@ -33,7 +33,6 @@
 .about-page__two-col-panel-subheader {
   font-size: 30px;
   color: #4A4A4A;
-  max-width: 160px;
   text-align: left;
 }
 
@@ -56,7 +55,7 @@
 .about-page__team-photo {
   width: 100%;
   position: relative;
-  top: 5px;
+  top: 3px;
 }
 
 .about-page__horiz-divider {

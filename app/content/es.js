@@ -1,7 +1,6 @@
 const es = {
   innerPage: {
     header: {
-      hotlineBannerText: 'Si tú o un ser querido han sido arrestados en el Bronx llama al (347) 95-BRONX',
       hotlineBannerText: 'Si tú o un ser querido han sido arrestados en el Bronx llama al (347) 95-BRONX para recibir servicios de apoyo legal sin costo alguno 24/7',
       faqBtnLabel: 'Preguntas Frecuentes',
       aboutUsBtnLabel: 'Acerca de nosotros',
@@ -23,7 +22,7 @@ const es = {
     }
   },
   landingPage: {
-    goodCallSummary: 'Good Call es una línea directa gratis que ayuda a las personas que son arrestadas a contactar a sus seres queridos y asegurar un abogado sin costo alguno. Todos merecemos un trato justo.',
+    goodCallSummary: 'Good Call es una línea directa 24/7 completamente  gratis que le ayuda a personas que han sido arrestadas a contactar a sus seres queridos y a un abogado gratis. Todos merecemos un trato justo.',
     stories: {
       header: 'Nadie espera ser arrestado, pero si sucede, nosotros te cubrimos la espalda.',
       signUpBtnLabel: 'regístrate',
@@ -73,8 +72,8 @@ const es = {
       text: 'Si no tienes un abogado privado que puedas llamar, el cual la mayoría de nosotros no tiene, es difícil saber qué hacer si eres arrestado. Sin un teléfono celular, y sólo unas pocas llamadas gratuitas desde el precinto, es difícil solicitar la ayuda que tú necesitas. Queremos cambiar esto.'
     },
     howItWorks: {
-      header: 'Presentamos Good Call',
-      subheader: 'Como funciona',
+      header: 'Así funciona Good Call',
+      subheader: 'Qué esperar de Good Call',
       step1Text: 'Te registras en Good Call y escribes una lista de contactos de emergencia',
       step2Text: 'eres detenido de forma inesperada',
       step3Text: 'eres llevado a un precinto',
@@ -87,7 +86,7 @@ const es = {
     },
     launchingSoon: {
       header: 'Todos merecemos un justicia. Inscríbete, añade un contacto, protege tus derechos',
-      subheader: 'Porque nadie espera ser arrestado.',
+      subheader: '¡Ya proveemos servicio en el Bronx!',
       signUpBtnLabel: 'regístrate'
     }
   },
@@ -95,7 +94,7 @@ const es = {
     header: 'Nosotros creemos que todos merecemos un trato justo.',
     aboutUs: {
       header: 'Acerca de nosotros.',
-      text: 'Good Call es un proyecto que comenzó dentro de <a class="about-page__paragraph-link" href="https://labs.robinhood.org/fellowship/">Blue Ridge Labs</a>, un programa de cinco meses, donde existen equipos de personas que construyen productos digitales destinados a abordar las dificultades que enfrentan los neoyorquinos de bajos ingresos, con un enfoque de diseño centrado en las personas, ciclos de pruebas y trabajo social. Construimos Good Call después de meses de investigación y conversaciones con personas de las comunidades de Nueva York. Hemos escuchado innumerables historias de personas que fueron arrestadas por razones triviales, y nos contaron lo incómodo, doloroso, confuso y dañino que esta experiencia puede ser. Decidimos tratar de hacer lo posible para ayudar a resolver este problema.'
+      text: 'Good Call es un proyecto gestado dentro  de Blue Ridge Labs, un programa de cinco meses en el que diversos equipos de trabajo desarrollan productos digitales con el fin de atender y solucionar asuntos clave que afectan a los neoyorquinos de bajos ingresos.  El programa apunta hacia diseños enfocados al ser humano, pruebas de los diseños y trabajo de alcance comunitario. Desarrollamos Good Call tras meses the investigación y de conversaciones con la gente de las comunidades de Nueva York y con expertos en asuntos legales dentro del sistema de justicia penal. Escuchamos innumerables historias de personas que fueron arrestadas por razones triviales y de lo incómoda, dolorosa, confusa, y dañina que la experiencia puede ser. Decidimos hacer todo lo posible para ayudar a solucionar estos asuntos.  Nos complace que nuestra línea directa ya preste servicio en el Bronx y además tenemos planes de ampliar nuestro servicio al resto de la ciudad de Nueva York.'
     },
     ourMissionText: 'Nuestra misión es hacer que el proceso de detención y sus secuelas sean menos dolorosas y perjudiciales para aquellos que son arrestados y sus seres queridos. Nos esforzamos para que este proceso sea más transparente y justo para todos los neoyorquinos, independientemente de su nivel de ingresos.',
     ourTeam: {
@@ -103,8 +102,8 @@ const es = {
       text: 'Somos un grupo con diversos conocimientos y experiencias, desde impresión 3D, diseño web, hasta organización comunitaria. Sin embargo, compartimos una pasión por crear una ciudad más justa para todos.'
     },
     joinTheMovement: {
-      header: 'Únete al movimiento.',
-      text: 'Estamos prestando servicios en el Bronx y tenemos planes de expandirlos al resto de la  Ciudad de Nueva York.  Good Call es para todos, porque nadie espera ser arrestado. Inscríbete para ayudarnos a cumplir nuestra misión de proveer una representación legal justa para todos, sin importar el nivel de ingresos de cada quién.'
+      header: '¿Porqué registrarse?',
+      text: 'Entendemos que nadie espera ser arrestado, pero desafortunadamente , como vemos en las noticias, el sistema penal no trata a todos con equidad.  Good Call es para todos.  Ya sea porque vives en un sector donde la interacción con la policía es frecuente o porque apoyas la causa de la reforma del sistema penal, inscribiéndote en Good Call nos ayudas a cumplir nuestra misión de proveer un representante legal a cada persona, sin importar su nivel de ingresos.'
     },
     signUpBtnLabel: 'regístrate'
   },
@@ -113,47 +112,38 @@ const es = {
     createUserForm: {
       header: 'cuéntanos acerca de ti',
       nameLabel: 'Nombre Completo',
-      phoneLabel: 'Teléfono móvil (xxx) xxx-xxxx',
-      emailLabel: 'E-mail',
-      zipLabel: 'Zip Code',
-      securityQuestionLabel: 'Pregunta de Seguridad',
-      securityAnswerLabel: 'Respuesta de Seguridad',
-      monthLabel: 'Mes',
-      dayLabel: 'Día',
-      yearLabel: 'Año',
-      heardAboutUsThroughLabel: '¿Cómo te enteraste acerca de Good Call?',
-      internetSearchLabel: 'Búsqueda en Internet',
-      friendsOrFamilyLabel: 'Amigos o Familia',
-      socialMediaLabel: 'Medios sociales',
-      emailListLabel: 'Lista de correos electrónicos',
-      communityEventLabel: 'Evento comunitario',
-      goodCallRepresentativeLabel: 'Representante de Good Call',
-      goodCallBusinessCardOrFlyerLabel: 'Tarjeta de presentación o volante de Good Call',
-      otherLabel: 'Otro',
-      infoHintText: 'Tu información sólo será utilizada por Good Call para verificar tu identidad en caso de ser arrestado y por el abogado que maneja tu caso.',
+      emailOrPhoneLabel: 'Correo electrónico o móvil (xxx) xxx-xxxx',
+      hintText: 'Tu información será utilizada por Good Call solo para enviarte actualizaciones relacionadas con nuestro servicio.',
       hintConfirmLabelText: 'ENTIENDO',
-      securityHintText: 'Vamos a pedirte que respondas a esta pregunta cuando nos llames. Elige una pregunta cuya respuesta sólo tú sepas y recuerdes. Ejemplo: "¿Cuál era tu dulce favorito cuando fuiste niño?"',
-      dateOfBirthLabel: 'Fecha de Nacimiento',
+      verifyAgeText: 'Haz click aquí para indicar que estás de acuerdo con que eres mayor de 18 años o, si eres mayor de 13 años, con que tienes permiso de padres o acudientes.',
       continueBtnLabel: 'continuar',
       continueBtnTermsText: 'Al hacer clic en "Continuar", tú estás de acuerdo con nuestros <a href="/terms-and-conditions" target="_blank">Términos y Condiciones</a>.'
     },
     createContactsForm: {
       header: 'Proporciona un contacto de emergencia',
-      errorTextLine1: 'Parece que also salió mal ツ',
-      errorTextLine2: '¿Necesitas ayuda? Envíanos un e-mail a hello@goodcall.nyc',
+      contactFormGroupHeader: 'Contacto',
       nameLabel: 'Nombre, Apellido',
-      relationshipLabel: 'Relación',
-      phoneLabel: 'Teléfono móvil (xxx) xxx-xxxx',
-      hintText: (numOfContacts) => (
-        `${numOfContacts > 1 ? 'Estas son las personas' : 'Esta es la persona'} que contactaremos si eres arrestado`
-      ),
+      phoneLabel: 'Número telefónico',
+      dateOfBirthLabel: 'Fecha de nacimiento del contacto de emergencia',
+      neighborhoodLabel: '¿En qué vecindario se criaron?',
+      dontKnowBirthdayQuestion: '¿No sabes su fecha de nacimiento?',
+      dontKnowBirthdayAction: 'Responde otra pregunta.',
+      dontKnowNeighborhoodQuestion: '¿No tienes esta información?',
+      dontKnowNeighborhoodAction: 'O dinos cuál es su cumpleaños.',
+      uniqueFact: '¿Dinos de algo que los caracterice?',
+      nameHintText: 'Esta es la persona a la que le enviaremos una alerta si eres arrestado.',
+      infoHintText: 'Esta información sera utilizada para identificar tu contacto de emergencia solo si llamas a la línea directa en caso de arresto. Asegúrate de recordar esta información.',
       hintConfirmLabelText: 'ENTIENDO',
-      additionalContactLabel: 'Contacto adicional',
       addContactBtnLabel: 'Agregar otro contacto',
-      consentToContactLabel: (numOfContacts) => (
-        `Déjanos contactar ${numOfContacts > 1 ? 'estas personas' : 'esta persona'} para hacerles saber que te has suscrito. Esto nos permitirá contactarlos si eres arrestado.`
+      consentToContactLabel: numOfContacts => (
+        `Permítenos contactar ahora a ${numOfContacts.length > 1 ? 'estas personas' : 'esta persona'} para hacerles saber que te has inscrito y confirmar su información.`
       ),
-      continueBtnLabel: 'continuar'
+      finishBtnLabel: 'Terminado',
+      dateField: {
+        month: 'Mes',
+        day: 'Día',
+        year: 'Año'
+      }
     }
   },
   signUpSuccessPage: {
@@ -250,7 +240,7 @@ const es = {
         {question: '¿Tengo que pagar para inscribirme y utilizar Good Call?', answer: 'No. ¡Registrarse en Good Call y utilizar la línea es completamente gratuito!'},
         {question: '¿Cuándo debo llamar a Good Call?', answer: 'Llama a nuestra línea si tú o un ser querido han sido arrestados en el Bronx. Cuanto más pronto un abogado sea avisado, más tiempo tendrá él para preparar adecuadamente tu caso.'},
         {question: '¿Quién puede inscribirse en Good Call?', answer: '¡Todo el mundo! Creemos que todo el mundo merece un trato justo.'},
-        {question: 'No creo que vaya a ser arrestado, ¿por qué debería inscribirme?', answer: 'Nadie espera ser arrestado y sin duda esperamos que no te suceda. Lamentablemente, hoy en día las detenciones innecesarias son demasiado comunes. Tal y como cuando se proporcionan contactos de emergencia o se tramitan solicitudes de ecención, Good Call existe como una medida de precaución en caso de que algo suceda. Por otra parte, creemos que todo el mundo debería obtener un resultado judicial justo e imparcial y registrándote apoyarás nuestra misión.'},
+        {question: 'No creo que vaya a ser arrestado, ¿por qué debería inscribirme?', answer: 'Nadie espera ser arrestado y definitivamente esperamos que nunca te encuentres en esa situación. Desafortunadamente los agentes de la ley y el sistema penal no tratan a todos con equidad y hay personas que resultan arrestadas por razones triviales. Good Call existe como una medida de precaución para proteger tus derechos en caso de que algo ocurra, así como lo es proveer contactos de emergencia y firmar permisos.  Incluso si no resultas afectado directamente por las injusticias del sistema el inscribirte para demostrar tu apoyo y compartir Good Call con quienes te rodean nos ayudaría a cumplir la misión de facilitar un resultado justo para todos.'},
         {question: '¿Dónde puedo utilizar Good Call?', answer: 'Nuestra línea directa está actualmente funcionando en el Bronx.'},
         {question: 'Si yo no vivo en el Bronx, ¿Puedo inscribirme en Good Call?', answer: '¡Sí! Actualmente prestamos servicios en el Bronx y pronto estaremos prestando el servicio en los otros distritos. Regístrate y te haremos saber cuando la línea directa de Good Call esté disponible en tu área.'},
         {question: '¿Cuál es el teléfono de Good Call en el Bronx?', answer: '1 (347) 95 BRONX'},

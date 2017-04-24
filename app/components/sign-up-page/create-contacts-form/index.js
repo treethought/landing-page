@@ -1,137 +1,176 @@
 import React, { Component, PropTypes } from 'react'
-import Checkbox from 'material-ui/Checkbox'
 import FlatButton from 'material-ui/FlatButton'
+import some from 'lodash.some'
+import values from 'lodash.values'
 import renderIf from 'render-if'
+import update from 'react-addons-update'
+import pick from 'lodash.pick'
+import mapObject from 'object.map'
+import { TextField, Checkbox, DateField } from '../../index'
 import Hint from './../hint'
-import StandardTextField from './../../standard-text-field'
-import ga from './../../../services/ga'
+import { lengthOfObject, scrollToTop, isDesktop } from '../../../services/utils'
+import { trackRegistrationEvent } from '../../../services/ga'
 
 class CreateContactsForm extends Component {
   constructor (props) {
     super(props)
-    const { content } = props
-    const contactFields = ['name', 'relationship', 'phone'].map(name => ({
-      name,
-      label: content[`${name}Label`]
-    }))
     this.state = {
-      hintShown: false,
-      contactFields
+      hintShown: { name: false, info: false }
     }
+  }
+
+  handleDropoff () {
+    const formData = values(this.props.contacts.list).map(contact => (
+      mapObject(pick(contact,
+        ['name', 'phone', 'dateOfBirth', 'neighborhood', 'fact']
+      ), attrs => !!attrs)
+    ))
+    trackRegistrationEvent('leave-create-contacts-form', formData)
   }
 
   componentDidMount () {
-    document.body.scrollTop = document.documentElement.scrollTop = 0
-    window.onbeforeunload = (e) => {
-      const confirmationMessage = '\o/'
-      e.returnValue = confirmationMessage
-      return confirmationMessage
-    }
-
-    window.onunload = (e) => {
-      const { contacts, user } = this.props
-      ga.triggerEvent('leave-create-contacts-form', { user, contacts })()
-      this.removeEventListeners()
-    }
-  }
-
-  removeEventListeners () {
-    window.onbeforeunload = null
-    window.onunload = null
+    setTimeout(scrollToTop, 300)
+    window.onbeforeunload = () =>
+      this.handleDropoff()
   }
 
   componentWillUnmount () {
-    this.removeEventListeners()
+    this.handleDropoff()
+    window.onbeforeunload = null
   }
 
-  onContinueClick () {
-    this.removeEventListeners()
-    this.props.saveContacts()
+  showHint (name) {
+    this.setState(update(this.state, {
+      hintShown: { [name]: { $set: true } }
+    }))
   }
 
-  showHint () {
-    this.setState({hintShown: true})
-  }
-
-  isDesktop () {
-    return window.innerWidth > 640
+  continueBtnIsDisabled () {
+    return this.props.requestInProgress || some(this.props.contacts.list, (contact) => {
+      const { name, phone, dateOfBirth, neighborhood, fact } = contact
+      return !name || !phone || !(dateOfBirth || neighborhood) || !fact
+    })
   }
 
   render () {
     const {
-      content, contacts, addContact, removeContact, consentToContactIs,
-      setContact, saveContacts, requestInProgress
+      contacts, toggleContactNotificationAllowed, setContact, toggleContactDateField,
+      addContact, deleteContact, createContacts, content
     } = this.props
+    const { hintShown } = this.state
+    const hintsContainerIsShown = isDesktop
+      ? lengthOfObject(contacts.list) === 1 && some(hintShown)
+      : some(hintShown)
 
     return (
       <form className='sign-up-page__form'>
-        {renderIf(this.state.hintShown)(
-          <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
-            <Hint text={content.hintText(contacts.length)} confirmLabelText={content.hintConfirmLabelText} />
+        {renderIf(hintsContainerIsShown)(
+          <div className='sign-up-page__create-contacts-form-hints-container'>
+            <Hint
+              text={content.nameHintText}
+              confirmLabelText={content.hintConfirmLabelText}
+              top='14px'
+              show={hintShown.name}
+            />
+            <Hint
+              text={content.infoHintText}
+              confirmLabelText={content.hintConfirmLabelText}
+              top='41px'
+              show={hintShown.info}
+            />
           </div>
         )}
 
-        <div className='sign-up-page__form-fields-container' ref='formFields'>
-          {contacts.map((contact, i) => (
-            <div className='sign-up-page__contact-fields-container' key={contact.tmpId}>
-              {renderIf(i > 0)(
-                <h3 className='sign-up-page__additional-contact-header'>{content.additionalContactLabel}</h3>
+        {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth, errors }, i, arr) => (
+          <div className='sign-up-page__form-fields-container' key={tmpId}>
+            <h3 className='sign-up-page__create-contacts-form-fields-header'>
+              <span>{content.contactFormGroupHeader} #{i + 1}</span>
+              {renderIf(arr.length > 1)(
+                <span className='sign-up-page__create-contacts-form-delete-btn' onClick={deleteContact(tmpId)}>&times;</span>
               )}
+            </h3>
 
-              {this.state.contactFields.map(({ name, label, onBlur, onFocus }, j) => (
-                <StandardTextField
-                  key={j}
-                  onFocus={this.showHint.bind(this)}
-                  onChange={setContact(contact.tmpId, name).bind()}
-                  name={name}
-                  labelText={label}
-                />
-              ))}
-
-              {renderIf(contacts.length > 1)(
-                <div className='sign-up-page__remove-contact-btn' onClick={removeContact(contact.tmpId)}>&times;</div>
-              )}
-            </div>
-          ))}
-
-          <div className='sign-up-page__add-contact-btn' onClick={addContact}>+ {content.addContactBtnLabel}</div>
-
-          <div className='sign-up-page__checkbox-container'>
-            <Checkbox
-              label={content.consentToContactLabel(contacts.length)}
-              defaultChecked={true}
-              onCheck={consentToContactIs()}
-              style={{textAlign: 'left'}}
-              iconStyle={{width: '32px', height: '32px', fill: '#40B097'}}
-              labelStyle={{fontSize: window.innerWidth > 640 ? '18px' : '16px', color: '#4A4A4A', lineHeight: '24px', fontWeight: '300'}}
+            <TextField
+              labelText={content.nameLabel}
+              onFocus={this.showHint.bind(this, 'name')}
+              onChange={setContact(tmpId, 'name')}
+              errorText={errors.name}
             />
 
-          </div>
+            <TextField
+              labelText={content.phoneLabel}
+              onChange={setContact(tmpId, 'phone')}
+              errorText={errors.phone}
+            />
 
-          <FlatButton
-            className='gc-std-btn sign-up-page__form-continue-btn'
-            style={{ backgroundColor: '#40B097' }}
-            label={content.continueBtnLabel}
-            onClick={this.onContinueClick.bind(this)}
-            disabled={requestInProgress}
-          />
-        </div>
+            {dateFieldShown ? (
+              <div className='sign-up-page__dont-know-container'>
+                <DateField
+                  onClick={this.showHint.bind(this, 'info')}
+                  labelText={content.dateOfBirthLabel}
+                  onChange={setContact(tmpId, 'dateOfBirth')}
+                  content={content.dateField}
+                />
+                <span className='sign-up-page__dont-know-question'>{content.dontKnowBirthdayQuestion}</span>&nbsp;
+                <span className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>{content.dontKnowBirthdayAction}</span>
+              </div>
+            ) : (
+              <div className='sign-up-page__dont-know-container'>
+                <TextField
+                  labelText={content.neighborhoodLabel}
+                  onFocus={this.showHint.bind(this, 'info')}
+                  onChange={setContact(tmpId, 'neighborhood')}
+                />
+                <span className='sign-up-page__dont-know-question'>{content.dontKnowNeighborhoodQuestion}</span>&nbsp;
+                <span className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>{content.dontKnowNeighborhoodAction}</span>
+              </div>
+            )}
+
+            <TextField
+              labelText={content.uniqueFact}
+              onFocus={this.showHint.bind(this, 'info')}
+              onChange={setContact(tmpId, 'fact')}
+            />
+
+            {renderIf(i === arr.length - 1)(
+              <div>
+                <div className='sign-up-page__text-btn' onClick={addContact}>
+                  + {content.addContactBtnLabel}
+                </div>
+
+                <Checkbox
+                  className='sign-up-page__create-contacts-form-checkbox'
+                  label={content.consentToContactLabel(arr.length)}
+                  onCheck={toggleContactNotificationAllowed}
+                />
+
+                <FlatButton
+                  className='gc-std-btn sign-up-page__form-continue-btn'
+                  style={{ backgroundColor: '#40B097' }}
+                  label={content.finishBtnLabel}
+                  disabled={this.continueBtnIsDisabled()}
+                  onClick={createContacts}
+                />
+              </div>
+            )}
+          </div>
+        ))}
       </form>
     )
   }
 }
 
-const { object, array, func, bool } = PropTypes
+const { object, func, bool } = PropTypes
 CreateContactsForm.propTypes = {
   content: object,
-  contacts: array,
-  setContact: func,
-  removeContact: func,
-  addContact: func,
-  consentToContactIs: func,
-  saveContacts: func,
+  contacts: object,
   requestInProgress: bool,
-  user: object
+  toggleContactNotificationAllowed: func,
+  setContact: func,
+  toggleContactDateField: func,
+  addContact: func,
+  deleteContact: func,
+  createContacts: func
 }
 
 export default CreateContactsForm

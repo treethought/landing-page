@@ -1,204 +1,117 @@
 import React, { Component, PropTypes } from 'react'
-import SelectField from 'material-ui/SelectField'
-import MenuItem from 'material-ui/MenuItem'
 import FlatButton from 'material-ui/FlatButton'
-import isEmpty from 'lodash.isempty'
-import range from 'lodash.range'
-import Hint from './../hint'
 import renderIf from 'render-if'
-import StandardTextField from './../../standard-text-field'
-import rangeRight from 'lodash.rangeright'
-import ga from './../../../services/ga'
-
-const dateOptions = {
-  months: range(1, 13).map(n => ({label: n, value: n})),
-  days: range(1, 32).map(n => ({label: n, value: n})),
-  years: rangeRight(1916, 1999).map(n => ({label: n, value: n}))
-}
+import Recaptcha from 'react-grecaptcha'
+import pick from 'lodash.pick'
+import mapObject from 'object.map'
+import Hint from './../hint'
+import { Checkbox, TextField } from './../../index.js'
+import { trackRegistrationEvent } from './../../../services/ga'
 
 class CreateUserForm extends Component {
   constructor (props) {
     super(props)
-    let { content } = props
-    const showInfoHint = this.showInfoHint.bind(this)
-    const showSecurityHint = this.showSecurityHint.bind(this)
+    this.state = { hintShown: false }
+  }
 
-    const userFields = ['name', 'phone', 'email', 'zip', 'securityQuestion', 'securityAnswer'].map(name => ({
-      name,
-      label: content[`${name}Label`],
-      onFocus: () => {
-        const showHint = name.includes('security') ? showSecurityHint : showInfoHint
-        showHint()
-      }
-    }))
-
-    this.state = {
-      infoHintShown: false,
-      securityHintShown: false,
-      userFields,
-      heardAboutUsThroughOpts: [
-        {label: content.internetSearchLabel, value: 'Internet search'},
-        {label: content.friendsOrFamilyLabel, value: 'Friends or family'},
-        {label: content.socialMediaLabel, value: 'Social Media'},
-        {label: content.emailListLabel, value: 'Email list'},
-        {label: content.communityEventLabel, value: 'Community event'},
-        {label: content.goodCallRepresentativeLabel, value: 'Good Call Representative'},
-        {label: content.goodCallBusinessCardOrFlyerLabel, value: 'Good Call business card or flyer'},
-        {label: content.otherLabel, value: 'Other'}
-      ]
-    }
+  handleDropoff () {
+    const formData = mapObject(pick(this.props.user,
+      ['ageVerified', 'recaptchaResponse', 'name', 'emailOrPhone']
+    ), val => !!val)
+    trackRegistrationEvent('leave-create-user-form', formData)
   }
 
   componentDidMount () {
-    window.onbeforeunload = () => {
-      const { user } = this.props
-      return ga.triggerEvent('leave-create-user-form', user)()
-    }
+    window.onbeforeunload = () =>
+      this.handleDropoff()
   }
 
   componentWillUnmount () {
+    this.handleDropoff()
     window.onbeforeunload = null
   }
 
-  showInfoHint (e) {
-    this.setState({infoHintShown: true})
-  }
-
-  showSecurityHint (e) {
-    this.setState({securityHintShown: true})
+  showHint () {
+    this.setState({ hintShown: true })
   }
 
   continueBtnIsDisabled () {
     const { user, requestInProgress } = this.props
-    const { name, phone, email, dateOfBirthObj, zip, securityQuestion, securityAnswer } = user
-    const { month, day, year } = dateOfBirthObj
-    return requestInProgress || isEmpty(user) || !name || !(phone || email) || !(month && day && year) || !zip || !(securityQuestion && securityAnswer)
-  }
-
-  isDesktop () {
-    return window.innerWidth > 640
+    const { name, emailOrPhone, ageVerified, recaptchaResponse } = user
+    return requestInProgress || !(name && emailOrPhone && ageVerified && recaptchaResponse)
   }
 
   render () {
-    let CustomSelectField = ({fieldOpts, onChange, hintText, value, className, width}) => (
-      <SelectField
-        className={className || ''}
-        autoWidth={true}
-        iconStyle={{fill: '#40B097', right: '5px', top: '12px'}}
-        hintText={hintText}
-        hintStyle={{fontSize: this.isDesktop() ? '16px' : '14px', color: '#4A4A4A', fontWeight: '300', textAlign: 'left'}}
-        menuStyle={{color: '#000000'}}
-        labelStyle={{ position: 'relative', bottom: '5px' }}
-        onChange={onChange}
-        style={{width: width || '100%', boxShadow: '0px 2px 4px 0px rgba(0,0,0,0.24)', paddingLeft: '11px', paddingTop: '3px', marginTop: '6px', textAlign: 'left'}}
-        underlineStyle={{borderColor: 'transparent'}}
-        maxHeight={200}
-        value={value}
-      >
-        {fieldOpts.map((opt, i) => (
-          <MenuItem key={i} value={opt.value} primaryText={opt.label} style={{background: '#FFFFFF'}} />
-        ))}
-      </SelectField>
-    )
+    const { content, setUser, createUser, user, locale, recaptchaSitekey } = this.props
+    const { hintShown } = this.state
 
-    const { content } = this.props
+    const userFields = ['name', 'emailOrPhone'].map(name => ({
+      name,
+      label: content[`${name}Label`],
+      onFocus: this.showHint.bind(this),
+      onChange: setUser(name)
+    }))
 
     return (
       <form className='sign-up-page__form'>
-        {renderIf(this.state.infoHintShown || this.state.securityHintShown)(
-          <div style={{position: 'relative', width: this.isDesktop() ? '50%' : '0'}}>
-            {renderIf(this.state.infoHintShown)(
-              <Hint text={content.infoHintText} confirmLabelText={content.hintConfirmLabelText} />
-            )}
-
-            {renderIf(this.state.securityHintShown)(
-              <Hint text={content.securityHintText} confirmLabelText={content.hintConfirmLabelText} className='sign-up-page__hint-security' />
-            )}
+        {renderIf(hintShown)(
+          <div className='sign-up-page__form-hints-container'>
+            <Hint text={content.hintText} confirmLabelText={content.hintConfirmLabelText} top='13px' show={true} />
           </div>
         )}
 
-        <div
-          className='sign-up-page__form-fields-container'
-          style={{
-            textAlign: (this.props.infoHintShown || this.props.securityHintShown) ? 'right' : 'left'
-          }}
-        >
-          {this.state.userFields.map(({ name, onFocus, onBlur, label }, i) => (
-            <StandardTextField
+        <div className='sign-up-page__form-fields-container'>
+          {userFields.map(({ name, onFocus, onChange, label }, i) => (
+            <TextField
               key={i}
               name={name}
               onFocus={onFocus}
-              onChange={this.props.setUser(name)}
-              errorText={this.props.userFormErrors[name]}
+              onChange={onChange}
               labelText={label}
+              errorText={user.errors[name]}
             />
           ))}
 
-          <div className='sign-up-page__date-select-container'>
-            <label className='sign-up-page__date-select-label'>{content.dateOfBirthLabel}</label>
+          <Checkbox
+            label={content.verifyAgeText}
+            onCheck={setUser('ageVerified')}
+            className='sign-up-page__create-user-form-checkbox'
+            defaultChecked={false}
+          />
 
-            <div className='sign-up-page__date-select-fields-container'>
-              <CustomSelectField
-                fieldOpts={dateOptions.months}
-                className='sign-up-page__form-select-date-field'
-                hintText={content.monthLabel}
-                width='75px'
-                value={this.props.user.dateOfBirthObj.month}
-                onChange={this.props.setUserDateOfBirth('month')}
-              />
-
-              <CustomSelectField
-                fieldOpts={dateOptions.days}
-                className='sign-up-page__form-select-date-field'
-                hintText={content.dayLabel}
-                width='60px'
-                value={this.props.user.dateOfBirthObj.day}
-                onChange={this.props.setUserDateOfBirth('day')}
-              />
-
-              <CustomSelectField
-                fieldOpts={dateOptions.years}
-                className='sign-up-page__form-select-date-field'
-                hintText={content.yearLabel}
-                width='65px'
-                value={this.props.user.dateOfBirthObj.year}
-                onChange={this.props.setUserDateOfBirth('year')}
-              />
-            </div>
-          </div>
-
-          <CustomSelectField
-            fieldOpts={this.state.heardAboutUsThroughOpts}
-            onChange={this.props.setUser('heardAboutUsThrough')}
-            hintText={content.heardAboutUsThroughLabel}
-            value={this.props.user.heardAboutUsThrough}
+          <Recaptcha
+            className='sign-up-page__recaptcha'
+            sitekey={recaptchaSitekey}
+            callback={setUser('recaptchaResponse')}
+            expiredCallback={setUser('recaptchaResponse').bind(null)}
+            locale={locale}
           />
 
           <FlatButton
             className='gc-std-btn sign-up-page__form-continue-btn sign-up-page__create-user-form-continue-btn'
             style={{ backgroundColor: '#40B097' }}
             label={content.continueBtnLabel}
-            onClick={this.props.createUser}
+            onClick={createUser}
             disabled={this.continueBtnIsDisabled()}
           />
 
-          <p className='sign-up-page__form-continue-btn-terms-text' dangerouslySetInnerHTML={{__html: content.continueBtnTermsText}}></p>
+          <p className='sign-up-page__form-continue-btn-terms-text' dangerouslySetInnerHTML={{__html: content.continueBtnTermsText}} />
         </div>
       </form>
     )
   }
 }
 
+const { object, bool, func, string } = PropTypes
 CreateUserForm.propTypes = {
-  content: PropTypes.object,
-  infoHintShown: PropTypes.bool,
-  securityHintShown: PropTypes.bool,
-  setUser: PropTypes.func,
-  userFormErrors: PropTypes.object,
-  user: PropTypes.object,
-  setUserDateOfBirth: PropTypes.func,
-  createUser: PropTypes.func,
-  requestInProgress: PropTypes.bool
+  content: object,
+  hintShown: bool,
+  setUser: func,
+  user: object,
+  createUser: func,
+  locale: string,
+  recaptchaSitekey: string,
+  requestInProgress: bool
 }
 
 export default CreateUserForm

@@ -1,0 +1,31 @@
+/* TODO: keep */
+.date-field {
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.date-field__label {
+  color: rgb(64, 176, 151);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.date-field__select-fields {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.date-field__select-field {
+  margin-right: 10px;
+}
+
+.date-field__select-field:last-of-type {
+  margin-right: 0;
+}
+
+@media (max-width: 640px) {
+  .date-field__label {
+    font-size: 10px;
+  }
+}

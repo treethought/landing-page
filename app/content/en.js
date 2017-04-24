@@ -1,7 +1,6 @@
 const en = {
   innerPage: {
     header: {
-      hotlineBannerText: 'If you or your loved one has been arrested in the Bronx call (347) 95-BRONX',
       hotlineBannerText: 'If you or a loved one has been arrested in the Bronx call 347-95-BRONX (347-952-7669) for free legal support 24/7',
       faqBtnLabel: 'FAQ',
       aboutUsBtnLabel: 'About us',
@@ -23,7 +22,7 @@ const en = {
     }
   },
   landingPage: {
-    goodCallSummary: 'Good Call is a free hotline that helps people who are arrested reach their loved ones and secure a free lawyer. Everyone deserves fairness.',
+    goodCallSummary: 'Good Call is a completely free 24/7 hotline that helps people who are arrested alert their loved ones and connect to a free lawyer. Everyone deserves fairness.',
     stories: {
       header: 'No one expects to get arrested, but if it happens, we got your back',
       signUpBtnLabel: 'sign up',
@@ -73,8 +72,8 @@ const en = {
       text: 'If you don\'t have a private lawyer to call, which most of us don\'t, it is hard to know what to do if you’ve been arrested. Without a cell phone, and only a few free calls from a precinct, it is difficult at best to reach the help you need. We want to change that.'
     },
     howItWorks: {
-      header: 'Introducing Good Call',
-      subheader: 'How it works',
+      header: 'How Good Call Works',
+      subheader: 'Know what to expect',
       step1Text: 'you sign up for Good Call and list an emergency contact',
       step2Text: 'you are unexpectedly arrested',
       step3Text: 'you are brought to the precinct',
@@ -86,9 +85,7 @@ const en = {
       step6Text: 'you can return home as soon as possible'
     },
     launchingSoon: {
-      // TODO: translate
       header: 'We all deserve justice. Sign up, add a contact, protect your rights.',
-      // TODO: translate
       subheader: 'We are now serving the Bronx!',
       signUpBtnLabel: 'sign up'
     }
@@ -97,7 +94,7 @@ const en = {
     header: 'We believe everyone deserves fairness.',
     aboutUs: {
       header: 'About Us.',
-      text: 'Good Call is a project started within the <a class="about-page__paragraph-link" href="https://labs.robinhood.org/fellowship/">Blue Ridge Labs fellowship</a>, a five month program where teams build digital products aimed at addressing key issues faced by low-income New Yorkers, with an approach focused on human-centered design, testing, and outreach work. We built Good Call after months of research and discussions with people in New York communities. We heard countless stories from people who were arrested for trivial reasons, and how uncomfortable, painful, confusing, and damaging this experience can be. We decided to try to do what we could to help address this issue.'
+      text: 'Good Call is a project started within the <a class="about-page__paragraph-link" href="https://labs.robinhood.org/fellowship/">Blue Ridge Labs fellowship</a>, a five month program where teams build digital products aimed at addressing key issues faced by low-income New Yorkers, with an approach focused on human-centered design, testing, and outreach work. We built Good Call after months of research and discussions with people in New York communities and legal experts in the criminal justice space. We heard countless stories from people who were arrested for trivial reasons, and how uncomfortable, painful, confusing, and damaging this experience can be. We decided to try to do what we could to help address this issue. We are excited that our hotline is now serving the Bronx, with plans to expand to the rest of New York City.'
     },
     ourMissionText: 'Our mission is to make the arrest process and its aftermath less painful and harmful for those that are detained and their loved ones. We strive to make this process more transparent and just for all New Yorkers regardless of income.',
     ourTeam: {
@@ -105,8 +102,8 @@ const en = {
       text: 'We come from a diverse set of backgrounds and experiences, from 3D Printing to web design to community organizing. However, we share a passion for creating a better and more just New York City for everyone.'
     },
     joinTheMovement: {
-      header: 'Join the movement.',
-      text: 'We are now serving the Bronx with plans to expand to the rest of New York City. Good Call is for everyone, because no one expects to get arrested. Sign up to help our mission to provide fair legal representation to everyone, regardless of income.'
+      header: 'Why Sign Up?',
+      text: 'We understand that no one expects to get arrested, but unfortunately as we see on the news, the criminal justice system doesn\'t treat everyone equally. Good Call is for everyone. Whether it\'s because you live in an area where police interaction is a common occurrence, or if you are a supportive ally for criminal justice reform, signing up for Good Call helps our mission to provide fair legal representation to everyone, regardless of income.'
     },
     signUpBtnLabel: 'sign up'
   },
@@ -115,47 +112,38 @@ const en = {
     createUserForm: {
       header: 'tell us about yourself',
       nameLabel: 'Full Name',
-      phoneLabel: 'Cell Phone (xxx) xxx-xxxx',
-      emailLabel: 'Email',
-      zipLabel: 'Zip Code',
-      securityQuestionLabel: 'Security Question',
-      securityAnswerLabel: 'Security Answer',
-      monthLabel: 'Month',
-      dayLabel: 'Day',
-      yearLabel: 'Year',
-      heardAboutUsThroughLabel: 'How did you hear about Good Call?',
-      internetSearchLabel: 'Internet search',
-      friendsOrFamilyLabel: 'Friends or family',
-      socialMediaLabel: 'Social Media',
-      emailListLabel: 'Email list',
-      communityEventLabel: 'Community event',
-      goodCallRepresentativeLabel: 'Good Call representative',
-      goodCallBusinessCardOrFlyerLabel: 'Good Call business card or flyer',
-      otherLabel: 'Other',
-      infoHintText: 'Your information will only be used by Good Call to verify you in case of an arrest and by your lawyer for your case.',
+      emailOrPhoneLabel: 'Email or Cell Phone (xxx) xxx-xxxx',
+      hintText: 'Your information will only be used by Good Call to send you updates about our service.',
       hintConfirmLabelText: 'GOT IT',
-      securityHintText: 'We will ask you to answer this question when you call us. Choose a question with an answer that only you would know and remember. Ex. “What is your favorite childhood candy?”',
-      dateOfBirthLabel: 'Date of Birth',
+      verifyAgeText: 'Check this to agree that you are over 18 years old or have parental consent to sign up if you are over 13 years old.',
       continueBtnLabel: 'continue',
       continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>.'
     },
     createContactsForm: {
       header: 'provide an emergency contact',
-      errorTextLine1: 'looks like something went wrong ツ',
-      errorTextLine2: 'need help? just email hello@goodcall.nyc',
-      nameLabel: 'First Name, Last Name',
-      relationshipLabel: 'Relationship',
-      phoneLabel: 'Phone (xxx) xxx-xxxx',
-      hintText: (numOfContacts) => (
-        `${numOfContacts > 1 ? 'These are the people' : 'This is the person'} we would contact if you are arrested`
-      ),
+      contactFormGroupHeader: 'Contact',
+      nameLabel: 'First name, last name',
+      phoneLabel: 'Phone number',
+      dateOfBirthLabel: 'Emergency Contact\'s Date of Birth',
+      neighborhoodLabel: 'What neighborhood did they grow up in?',
+      dontKnowBirthdayQuestion: 'Don\'t know their birthday?',
+      dontKnowBirthdayAction: 'Answer another question.',
+      dontKnowNeighborhoodQuestion: 'Don\'t know?',
+      dontKnowNeighborhoodAction: 'Tell us their birthday instead.',
+      uniqueFact: 'What is a unique fact about them?',
+      nameHintText: 'This is the person we will alert if you get arrested.',
+      infoHintText: 'This will only be used to identify your emergency contact if you call the hotline in case of an arrest. Make sure you remember this information',
       hintConfirmLabelText: 'GOT IT',
-      additionalContactLabel: 'Additional contact',
       addContactBtnLabel: 'Add another contact',
-      consentToContactLabel: (numOfContacts) => (
-        `Let us contact ${numOfContacts > 1 ? 'these people' : 'this person'} to let them know you signed up. This will allow us to contact them if you are arrested.`
+      consentToContactLabel: numOfContacts => (
+        `Let us contact ${numOfContacts.length > 1 ? 'these people' : 'this person'} now to let them know you signed up and confirm their information.`
       ),
-      continueBtnLabel: 'continue'
+      finishBtnLabel: 'finish',
+      dateField: {
+        month: 'Month',
+        day: 'Day',
+        year: 'Year'
+      }
     }
   },
   signUpSuccessPage: {
@@ -189,7 +177,7 @@ const en = {
     paragraph2Header: 'Information You Provide To Us:',
     paragraph2Text: 'We receive and store any information you knowingly provide to us. For example, when you sign up or use a product or service we may collect Personal Information such as your name, email address, phone number, physical address, date of birth, emergency contact information and etc. Certain information may be required to register with us or to take advantage of some of our features. If you do not provide us with such information, your access to or use of the Service may be limited.',
     paragraph3Header: 'Other Information Collected from Your Use of the Service:',
-    paragraph3Text: 'Whenever you interact with our Service, we may automatically receive and record information on our server logs from your browser or device, which may include your IP address, device identification, “cookie” information, the type of browser and/or device you’re using to access our Service, and the page or feature you requested. “Cookies” are identifiers we transfer to your browser or device that allow us to recognize your browser or device and tell us how and when pages and features in our Service are visited and by how many people. You may be able to change the preferences on your browser or device to prevent or limit your device’s acceptance of cookies, but this may prevent you from taking advantage of some of our features. Our partners may also transmit cookies to your browser or device, when you click on links that appear on the Service. Also, if you click on a link to a third party website or service, such third party may also transmit cookies to you. Again, this Privacy Policy does not cover the use of cookies by any third parties, and we aren’t responsible for their privacy policies and practices. When we collect the usage information described in this paragraph, we only use this data in aggregate form, and not in a manner that would identify you personally. For example, this aggregate data can tell us how often users use a particular feature of the Service, and we can use that knowledge to make the Service interesting to as many users as possible.',
+    paragraph3Text: 'Whenever you interact with our Service, we may automatically receive and record information on our server logs from your browser or device, which may include your IP address, device identification, "cookie" information, the type of browser and/or device you\'re using to access our Service, and the page or feature you requested. "Cookies" are identifiers we transfer to your browser or device that allow us to recognize your browser or device and tell us how and when pages and features in our Service are visited and by how many people. You may be able to change the preferences on your browser or device to prevent or limit your device\'s acceptance of cookies, but this may prevent you from taking advantage of some of our features. Our partners may also transmit cookies to your browser or device, when you click on links that appear on the Service. Also, if you click on a link to a third party website or service, such third party may also transmit cookies to you. Again, this Privacy Policy does not cover the use of cookies by any third parties, and we aren\'t responsible for their privacy policies and practices. When we collect the usage information described in this paragraph, we only use this data in aggregate form, and not in a manner that would identify you personally. For example, this aggregate data can tell us how often users use a particular feature of the Service, and we can use that knowledge to make the Service interesting to as many users as possible.',
     paragraph4Header: 'Information Collected from Third Parties:',
     paragraph4Text: 'We may collect Personal Information from third parties we reasonably believe have the right to provide such information to us. In addition, we may collect Personal Information with your consent or as required by law or regulation.',
     subheader2: 'How We Use Personal Information',
@@ -254,7 +242,7 @@ const en = {
         {question: 'Do I have to pay to sign up and use Good Call?', answer: 'No, Good Call is free to sign up and use!'},
         {question: 'When should I call Good Call?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
         {question: 'Who can sign up for Good Call?', answer: 'Everyone! We believe everyone deserves fairness.'},
-        {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'No one expects to get arrested and we definitely hope you wouldn\'t be. Unfortunately, today unnecessary arrests are too common. Similar to providing emergency contacts and signing waivers, Good Call is there as a safety precaution in case something does happen. Moreover, we believe that everyone should have a just and fair court outcome, signing up will help support that mission.'},
+        {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'No one expects to get arrested and we definitely hope you wouldn\'t be. Unfortunately, the law enforcement and criminal justice system doesn\'t treat everyone equally and people get arrested for trivial reasons. Similar to providing emergency contacts and signing waivers, Good Call is there as a safety precaution to protect your rights in case something does happen. Even if you may not be personally affected by the system\'s injustice, signing up to show support and sharing Good Call with those around you will help accomplish our mission to provide a just and fair outcome for everyone.'},
         {question: 'Where can I currently use Good Call?', answer: 'Our hotline is currently live in the Bronx.'},
         {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently serving the Bronx and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
         {question: 'What is the Good Call hotline for the Bronx?', answer: '1 (347) 95 BRONX'},

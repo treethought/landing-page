@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 
 class PrivacyPolicyPage extends Component {
   render () {
-    const {content} = this.props.route
+    const { content } = this.props.route
 
     return (
       <div className='legal-container'>
@@ -89,8 +89,8 @@ class PrivacyPolicyPage extends Component {
   }
 }
 
-export default PrivacyPolicyPage
-
 PrivacyPolicyPage.propTypes = {
   route: PropTypes.object
 }
+
+export default PrivacyPolicyPage

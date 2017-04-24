@@ -1,17 +1,22 @@
 import React, { Component, PropTypes } from 'react'
-import {Link} from 'react-router'
+import { Link } from 'react-router'
 import FlatButton from 'material-ui/FlatButton'
 import SvgIcon from 'material-ui/SvgIcon'
 import urlencode from 'urlencode'
-import ga from './../../services/ga'
+import { trackShareEvent } from './../../services/ga'
 
 class SignUpSuccessPage extends Component {
+  trackShareEvent (action) {
+    return () => trackShareEvent(action)
+  }
 
   render () {
     const { content } = this.props.route
     const { referralCode } = this.props.location.query
 
-    const referralLink = `https://goodcall.nyc/?referredByCode=${referralCode}`
+    const referralLink = referralCode
+      ? `https://goodcall.nyc/?referredByCode=${referralCode}`
+      : 'https://goodcall.nyc/'
 
     const EmailIcon = (props) => (
       <SvgIcon {...props} viewBox='0 0 512 512' color='white'>
@@ -64,7 +69,7 @@ class SignUpSuccessPage extends Component {
 
             <span className='sign-up-success-page__share-link-text'>{ content.copyAndShare }</span>
 
-            <input className='sign-up-success-page__share-link' value={referralLink} onSelect={ga.triggerEvent('share-link-selected')} />
+            <textarea className='sign-up-success-page__share-link' defaultValue={referralLink} onSelect={this.trackShareEvent('share-link-selected')} readOnly='true' />
 
             <span className='sign-up-success-page__share-btns-text'>{ content.orShareOnSocialMedia }</span>
 
@@ -75,7 +80,7 @@ class SignUpSuccessPage extends Component {
               style={{ backgroundColor: '#40B097' }}
               label={'Email'}
               icon={<EmailIcon />}
-              onClick={ga.triggerEvent('share-via-email-btn-clicked')}
+              onClick={this.trackShareEvent('share-via-email-btn-clicked')}
             />
 
             <FlatButton
@@ -87,7 +92,7 @@ class SignUpSuccessPage extends Component {
               style={{ backgroundColor: '#2D4C8D' }}
               label={'Facebook'}
               icon={<FacebookIcon />}
-              onClick={ga.triggerEvent('share-via-facebook-btn-clicked')}
+              onClick={this.trackShareEvent('share-via-facebook-btn-clicked')}
             />
 
             <FlatButton
@@ -97,7 +102,7 @@ class SignUpSuccessPage extends Component {
               style={{ backgroundColor: '#0098F8' }}
               label={'Twitter'}
               icon={<TwitterIcon />}
-              onClick={ga.triggerEvent('share-via-twitter-btn-clicked')}
+              onClick={this.trackShareEvent('share-via-twitter-btn-clicked')}
             />
           </div>
         </div>

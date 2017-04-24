@@ -3,29 +3,26 @@ import {Grid, Row, Cell} from 'react-inline-grid'
 import SimplePanel from './../simple-panel'
 import FlatButton from 'material-ui/FlatButton'
 import {Link} from 'react-router'
-import ga from './../../services/ga'
 
 class AboutPage extends Component {
   render () {
-    let TwoColPanel = ({className, heading, text, children}) => (
+    const { content } = this.props.route
+
+    const TwoColPanel = ({className, heading, text, children}) => (
       <div className={`about-page__two-col-panel ${className || ''}`}>
         <Grid>
           <Row>
             <Cell is='5'>
               <h2 className='about-page__two-col-panel-subheader'>{heading}</h2>
             </Cell>
-
             <Cell is='7'>
-              <p className='about-page__two-col-panel-paragraph' dangerouslySetInnerHTML={{__html: text}}></p>
+              <p className='about-page__two-col-panel-paragraph' dangerouslySetInnerHTML={{__html: text}} />
             </Cell>
           </Row>
         </Grid>
-
         {children}
       </div>
     )
-
-    const {content} = this.props.route
 
     return (
       <div className='about-page'>
@@ -50,10 +47,10 @@ class AboutPage extends Component {
           heading={content.ourTeam.header}
           text={content.ourTeam.text}
         >
-          <img className='about-page__team-photo' src='/assets/imgs/team-wood.png'></img>
+          <img className='about-page__team-photo' src='/assets/imgs/team-photo-min.png' />
         </TwoColPanel>
 
-        <div className='about-page__horiz-divider'></div>
+        <div className='about-page__horiz-divider' />
 
         <TwoColPanel
           heading={content.joinTheMovement.header}
@@ -62,15 +59,13 @@ class AboutPage extends Component {
         >
           <Grid>
             <Row>
-              <Cell is='5'/>
-
+              <Cell is='5' />
               <Cell is='7'>
                 <FlatButton
                   className='about-page__sign-up-btn gc-std-btn'
                   style={{ backgroundColor: '#40B097' }}
                   label={content.signUpBtnLabel}
-                  onClick={ga.triggerEvent('sign-up-btn-clicked')}
-                  containerElement={<Link to='/sign-up'/>}
+                  containerElement={<Link to='/sign-up' />}
                 />
               </Cell>
             </Row>
@@ -81,8 +76,9 @@ class AboutPage extends Component {
   }
 }
 
+const { object } = PropTypes
 AboutPage.propTypes = {
-  route: PropTypes.object
+  route: object
 }
 
 export default AboutPage

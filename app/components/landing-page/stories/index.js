@@ -9,7 +9,6 @@ import MediaQuery from 'react-responsive'
 import FlatButton from 'material-ui/FlatButton'
 import { Link } from 'react-router'
 import ScrollDownBtn from './../../scroll-down-btn'
-import ga from './../../../services/ga'
 
 class Stories extends Component {
   constructor (props) {
@@ -121,7 +120,6 @@ class Stories extends Component {
           <div className='landing-page__stories-sign-up-btn-container'>
             <FlatButton
               label={content.signUpBtnLabel}
-              onClick={ga.triggerEvent('sign-up-btn-clicked')}
               className='gc-std-btn'
               style={{ backgroundColor: '#40B097' }}
               containerElement={<Link to='/sign-up' />}
@@ -131,7 +129,7 @@ class Stories extends Component {
 
         <MediaQuery query='(min-width: 850px)'>
           <div className='landing-page__stories-scroll-down-btn-container'>
-            <ScrollDownBtn to='landing-page__problem' text={content.scrollDownBtnLabel} />
+            <ScrollDownBtn to='landing-page__summary' text={content.scrollDownBtnLabel} />
           </div>
         </MediaQuery>
       </section>

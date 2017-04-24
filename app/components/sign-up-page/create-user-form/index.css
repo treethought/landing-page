@@ -1,33 +1,20 @@
-.sign-up-page__hint-security {
-  top: 250px !important;
-}
-
-.sign-up-page__date-select-container {
+.sign-up-page__form-fields-container {
+  position: relative;
   text-align: left;
-  margin-top: 5px;
-  margin-bottom: 10px;
 }
 
-.sign-up-page__date-select-label {
-  color: rgb(64, 176, 151);
-  font-size: 11px;
-  text-transform: uppercase;
+.sign-up-page__create-user-form-checkbox {
+  margin-bottom: 60px;
 }
 
-.sign-up-page__date-select-fields-container {
-  display: -webkit-flex;
-  display: flex;
-}
-
-.sign-up-page__form-select-date-field {
-  margin-right: 10px;
-}
-
-.sign-up-page__form-select-date-field:last-of-type {
-  margin-right: 0;
+.sign-up-page__recaptcha {
+  transform: scale(0.85);
+  position: relative;
+  right: 23px;
 }
 
 .sign-up-page__create-user-form-continue-btn {
+  margin-top: 15px !important;
   margin-bottom: 0 !important;
 }
 

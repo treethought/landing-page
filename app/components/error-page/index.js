@@ -1,13 +1,13 @@
-import React, {Component, PropTypes} from 'react'
-import Intro from './../intro'
+import React, { Component, PropTypes } from 'react'
 
 class ErrorPage extends Component {
   render () {
-    const {content} = this.props.route
+    const { content } = this.props.route
 
     return (
       <div className='error-page'>
-        <Intro heading='404' subheading={content.subheader} />
+        <h1 className='error-page__header'>404</h1>
+        <h2 className='error-page__subheader'>{content.subheader}</h2>
       </div>
     )
   }

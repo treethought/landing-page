@@ -1,157 +1,148 @@
-import React, {Component, PropTypes} from 'react'
-import SignUpPage from './../components/sign-up-page'
-import config from './../config'
-import fetcher from './../services/fetcher'
-import objectMap from 'object.map'
-import {browserHistory} from 'react-router'
-import moment from 'moment'
+import React, { Component, PropTypes } from 'react'
+import update from 'react-addons-update'
+import { SignUpPage } from '../components'
+import { postUser, postContacts } from '../services/api'
 import cookie from 'react-cookie'
-import ga from './../services/ga'
-
-let tmpContactId = 0
+import uuid from 'node-uuid'
+const { assign } = Object
+import { browserHistory } from 'react-router'
+import each from 'lodash.foreach'
 
 class SignUpPageContainer extends Component {
-  constructor () {
-    super()
-    this.state = {formStage: 0, user: {dateOfBirthObj: {}}, requestInProgress: false, userFormErrors: {}, contacts: [{tmpId: tmpContactId}], contactsFormErrors: [{}]}
-  }
-
-  createUser () {
-    const { user } = this.state
-    let {year, month, day} = user.dateOfBirthObj
-    let dateOfBirth = moment(`${year}-${month}-${day}`, 'YYYY-M-D').format()
-    // TODO: refactor into service
-    const referredByCode = cookie.load('referredByCode', { path: '/' })
-
-    fetcher({
-      url: `${config.apiBaseUrl}/users`,
-      method: 'POST',
-      body: {user: {
-        ...user,
-        dateOfBirth,
-        referredByCode
-      }},
-      first: this.setState.call(this, {requestInProgress: true})
-    }).then((res) => {
-      let {status, json} = res
-      if (status === 200) {
-        ga.triggerEvent('create-user-form-submit-success', user)()
-        this.setState({user: json.user, userFormErrors: {}, formStage: 1, requestInProgress: false})
-        if (referredByCode) { cookie.remove('referredByCode', { path: '/' }) }
-      } else {
-        ga.triggerEvent('create-user-form-submit-error', user)()
-        this.setState({
-          userFormErrors: objectMap(json.errors, (v) => v.join(', ')),
-          requestInProgress: false
-        })
+  constructor (props) {
+    super(props)
+    const initialContactTmpId = uuid.v4()
+    this.state = {
+      requestInProgress: false,
+      formStage: 0,
+      recaptchaSitekey: '6Lc7NxQUAAAAAIZCaPCuSa-9_N2tjZcCik5647lj',
+      user: {
+        ageVerified: false,
+        referredByCode: cookie.load('referredByCode', { path: '/' }),
+        recaptchaResponse: null,
+        errors: {}
+      },
+      contacts: {
+        notificationAllowed: true,
+        list: {
+          [initialContactTmpId]: {
+            tmpId: initialContactTmpId,
+            dateFieldShown: true,
+            errors: {}
+          }
+        }
       }
-    })
-  }
-
-  setUser (propName) {
-    return (e, i, v) => {
-      let prop = propName === 'heardAboutUsThrough' ? v : e.target.value
-      this.setState({user: {...this.state.user, [propName]: prop}})
     }
   }
 
-  setUserDateOfBirth (field) {
-    return (e, i, v) => {
-      let dateOfBirthObj = this.state.user.dateOfBirthObj
-      dateOfBirthObj[field] = v
-      this.setState({user: {...this.state.user, dateOfBirthObj: dateOfBirthObj}})
+  setUser (prop) {
+    return (value) => {
+      this.setState(update(this.state, {
+        user: { [prop]: { $set: value } }
+      }))
+    }
+  }
+
+  createUser () {
+    this.setState({ requestInProgress: true })
+    postUser(this.state.user, res => {
+      this.setState({ requestInProgress: false, formStage: 1 })
+    }, errors => {
+      this.setState(update(this.state, {
+        user: { errors: { $set: errors } },
+        requestInProgress: { $set: false }
+      }))
+    })
+  }
+
+  toggleContactNotificationAllowed () {
+    this.setState(update(this.state, {
+      contacts: { notificationAllowed: { $apply: v => !v } }
+    }))
+  }
+
+  setContact (tmpId, prop) {
+    return (value) => {
+      this.setState(update(this.state, {
+        contacts: { list: { [tmpId]: { [prop]: { $set: value } } } }
+      }))
+    }
+  }
+
+  toggleContactDateField (tmpId) {
+    return () => {
+      const dateFieldShown = this.state.contacts.list[tmpId].dateFieldShown
+      this.setState(update(this.state, {
+        contacts: {
+          list: {
+            [tmpId]: {
+              dateFieldShown: { $set: !dateFieldShown },
+              [dateFieldShown ? 'dateOfBirth' : 'neighborhood']: { $set: '' }
+            }
+          }
+        }
+      }))
     }
   }
 
   addContact () {
-    this.setState({contacts: this.state.contacts.concat({tmpId: ++tmpContactId})})
+    const tmpId = uuid.v4()
+    this.setState(update(this.state, {
+      contacts: { list: { $merge: { [tmpId]: { tmpId, dateFieldShown: true, errors: {} } } } }
+    }))
   }
 
-  setContact (tmpId, propName) {
-    return (e, i, v) => {
-      let prop = propName === 'isContactableByUs' ? v : e.target.value
-      let contacts = this.state.contacts.map((contact) => {
-        if (contact.tmpId === tmpId) { contact[propName] = prop }
-        return contact
-      })
-      this.setState({ contacts: contacts })
-    }
-  }
-
-  consentToContactIs () {
-    return (e, isChecked) => {
-      let contacts = this.state.contacts.map((contact) => {
-        contact.isContactableByUs = isChecked
-        return contact
-      })
-      this.setState({contacts: contacts})
-    }
-  }
-
-  removeContact (tmpId) {
+  deleteContact (tmpId) {
     return () => {
-      let contacts = this.state.contacts.filter((contact) => contact.tmpId !== tmpId)
-      this.setState({contacts: contacts})
+      let newList = assign({}, this.state.contacts.list)
+      delete newList[tmpId]
+      this.setState(update(this.state, { contacts: { list: { $set: newList } } }))
     }
   }
 
-  saveContacts () {
-    let form_token = this.state.user.form_token
-    let form_token_value = form_token ? form_token.value : ''
-    const { contacts, user } = this.state
-
-    fetcher({
-      url: `${config.apiBaseUrl}/contacts`,
-      method: 'POST',
-      body: {
-        contacts: {
-          list: contacts,
-          form_token_value: form_token_value,
-          user_id: user.id
-        }
-      },
-      first: this.setState.call(this, {requestInProgress: true})
-    }).then((res) => {
-      let {status, json} = res
-      if (status === 200) {
-        ga.triggerEvent('create-contacts-form-submit-success', { user, contacts })()
-        this.setState({contactsFormErrors: [{}], contacts: [], requestInProgress: false})
-        browserHistory.push({
-          pathname: '/sign-up/success',
-          query: { referralCode: user.referral_code }
-        })
-      } else {
-        ga.triggerEvent('create-contacts-form-submit-error', { user, contacts })()
-        document.body.scrollTop = document.documentElement.scrollTop = 0
-        this.setState({contactsFormErrors: json.errors, requestInProgress: false})
-      }
+  createContacts () {
+    postContacts({
+      contacts: this.state.contacts,
+      userName: this.state.user.name
+    }, res => {
+      const referralCode = cookie.load('referralCode', { path: '/' })
+      cookie.remove('referralCode', { path: '/' })
+      browserHistory.push({ pathname: '/sign-up/success', query: { referralCode } })
+    }, errors => {
+      each(errors, (errs, tmpId) => {
+        this.setState(update(this.state, {
+          contacts: { list: { [tmpId]: { errors: { $set: errs } } } }
+        }))
+      })
     })
   }
 
   render () {
-    const { content } = this.props.route
-
+    const { location, route } = this.props
+    const { content, locale } = route
     return (
       <SignUpPage
         {...this.state}
+        location={location}
         content={content}
-        location={this.props.location}
+        locale={locale}
         setUser={this.setUser.bind(this)}
         createUser={this.createUser.bind(this)}
-        addContact={this.addContact.bind(this)}
-        removeContact={this.removeContact.bind(this)}
+        toggleContactNotificationAllowed={this.toggleContactNotificationAllowed.bind(this)}
         setContact={this.setContact.bind(this)}
-        saveContacts={this.saveContacts.bind(this)}
-        consentToContactIs={this.consentToContactIs.bind(this)}
-        setUserDateOfBirth={this.setUserDateOfBirth.bind(this)}
+        toggleContactDateField={this.toggleContactDateField.bind(this)}
+        addContact={this.addContact.bind(this)}
+        deleteContact={this.deleteContact.bind(this)}
+        createContacts={this.createContacts.bind(this)}
       />
     )
   }
 }
 
+const { object } = PropTypes
 SignUpPageContainer.propTypes = {
-  route: PropTypes.object,
-  location: PropTypes.object
+  route: object,
+  location: object
 }
 
 export default SignUpPageContainer
