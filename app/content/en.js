@@ -130,6 +130,7 @@ const en = {
       dontKnowBirthdayAction: 'Answer another question.',
       dontKnowNeighborhoodQuestion: 'Don\'t know?',
       dontKnowNeighborhoodAction: 'Tell us their birthday instead.',
+      uniqueFact: 'What is a unique fact about them?',
       nameHintText: 'This is the person we will alert if you get arrested.',
       infoHintText: 'This will only be used to identify your emergency contact if you call the hotline in case of an arrest. Make sure you remember this information',
       hintConfirmLabelText: 'GOT IT',

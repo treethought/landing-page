@@ -127,7 +127,7 @@ class CreateContactsForm extends Component {
             )}
 
             <TextField
-              labelText='What is a unique fact about them?'
+              labelText={content.uniqueFact}
               onFocus={this.showHint.bind(this, 'info')}
               onChange={setContact(tmpId, 'fact')}
             />
