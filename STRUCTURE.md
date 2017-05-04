@@ -1,7 +1,5 @@
 # structure
 
-goodcall.nyc's landing page uses [react](https://github.com/facebook/react), [material-ui](http://www.material-ui.com/#/), [browserify](http://browserify.org/), and [node](https://nodejs.org/en/)
-
 `./index.js` is the entry point for the app.
 
 `./app/index.js` contains the root component of the app, which is a router
