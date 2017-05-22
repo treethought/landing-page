@@ -23,7 +23,7 @@ class SignUpPageContainer extends Component {
         errors: {}
       },
       contacts: {
-        notificationAllowed: true,
+        notificationAllowed: false,
         list: {
           [initialContactTmpId]: {
             tmpId: initialContactTmpId,

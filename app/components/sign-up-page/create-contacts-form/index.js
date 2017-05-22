@@ -6,7 +6,7 @@ import renderIf from 'render-if'
 import update from 'react-addons-update'
 import pick from 'lodash.pick'
 import mapObject from 'object.map'
-import { TextField, Checkbox, DateField } from '../../index'
+import { TextField/* , Checkbox */, DateField } from '../../index'
 import Hint from './../hint'
 import { lengthOfObject, scrollToTop, isDesktop } from '../../../services/utils'
 import { trackRegistrationEvent } from '../../../services/ga'
@@ -54,7 +54,7 @@ class CreateContactsForm extends Component {
 
   render () {
     const {
-      contacts, toggleContactNotificationAllowed, setContact, toggleContactDateField,
+      contacts/* , toggleContactNotificationAllowed */, setContact, toggleContactDateField,
       addContact, deleteContact, createContacts, content
     } = this.props
     const { hintShown } = this.state
@@ -134,15 +134,15 @@ class CreateContactsForm extends Component {
 
             {renderIf(i === arr.length - 1)(
               <div>
-                <div className='sign-up-page__text-btn' onClick={addContact}>
+                <div className='sign-up-page__text-btn sign-up-page__add-contact-btn' onClick={addContact}>
                   + {content.addContactBtnLabel}
                 </div>
 
-                <Checkbox
+                {/* <Checkbox
                   className='sign-up-page__create-contacts-form-checkbox'
                   label={content.consentToContactLabel(arr.length)}
                   onCheck={toggleContactNotificationAllowed}
-                />
+                /> */}
 
                 <FlatButton
                   className='gc-std-btn sign-up-page__form-continue-btn'

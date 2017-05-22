@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 import renderIf from 'render-if'
 import CreateUserForm from './create-user-form'
 import CreateContactsForm from './create-contacts-form'

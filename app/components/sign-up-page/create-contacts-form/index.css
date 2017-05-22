@@ -34,3 +34,7 @@
   position: relative;
   top: 60px;
 }
+
+.sign-up-page__add-contact-btn {
+  margin-bottom: 40px;
+}
