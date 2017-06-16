@@ -108,6 +108,20 @@ const en = {
     signUpBtnLabel: 'sign up'
   },
   signUpPage: {
+    header: 'Sign up and protect your rights',
+    subheader: 'How do you want to sign up?',
+    options: {
+      userFlow: {
+        header: 'Protect your rights',
+        details: 'List an emergency contact to alert in case of an arrest'
+      },
+      ocFlow: {
+        header: 'Be there for a loved one',
+        details: 'Add your contact info into our emergency directory so a loved one can reach out in case of an arrest'
+      }
+    }
+  },
+  oldSignUpPage: {
     header: 'We got your back, sign up now',
     createUserForm: {
       header: 'tell us about yourself',

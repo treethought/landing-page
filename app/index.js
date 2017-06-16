@@ -6,8 +6,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import content from './content'
 import locale from './services/locale'
 import {
-  LandingPage, ErrorPage, SignUpPageContainer, AboutPage, SignUpSuccessPage,
-  PrivacyPolicyPage, FaqPage, InnerPage, TermsAndConditionsPage
+  AboutPage, ErrorPage, FaqPage, InnerPage, LandingPage, PrivacyPolicyPage,
+  SignUpPage, SignUpSuccessPage, TermsAndConditionsPage
 } from './components'
 import { sendMessageWithNextUrl } from './services/utils'
 import { trackPageView } from './services/ga'
@@ -40,8 +40,10 @@ class App extends Component {
             <IndexRoute component={LandingPage} content={content.landingPage} />
             <Route path='about-us' component={AboutPage} content={content.aboutPage} />
             <Route path='sign-up'>
-              <IndexRoute component={SignUpPageContainer} content={content.signUpPage} locale={locale} />
-              <Route path='success' component={SignUpSuccessPage} content={content.signUpSuccessPage} />
+              <IndexRoute component={SignUpPage} content={content.signUpPage} />
+              {/* <Route path='/user' component={UserSignUpContainer} /> */}
+              {/* <Route path='/contact' component={ContactSignUpContainer} /> */}
+              <Route path='/success' component={SignUpSuccessPage} />
             </Route>
             <Route path='privacy-policy' component={PrivacyPolicyPage} content={content.privacyPolicyPage} />
             <Route path='faq' component={FaqPage} content={content.faqPage} />
