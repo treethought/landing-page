@@ -1,6 +1,6 @@
 .sign-up-page {
-  padding-top: 30px;
-  padding-bottom: 75px;
+  padding-top: 45px;
+  padding-bottom: 90px;
 }
 
 .sign-up-page__header {
@@ -8,7 +8,7 @@
   font-size: 36px;
   font-weight: bold;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .sign-up-page__subheader {
@@ -16,13 +16,15 @@
   font-size: 26px;
   font-weight: lighter;
   margin: 0;
-  margin-bottom: 35px;
+  margin-bottom: 80px;
 }
 
 .sign-up-page__options-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .sign-up-page__option {
@@ -30,13 +32,13 @@
   text-decoration: none;
   color: inherit;
   width: 100%;
-  max-width: 170px;
-  height: 90px;
+  max-width: 284px;
+  height: 140px;
   border: 1px solid #979797;
   border-radius: 4.8px;
+  padding: 50px;
   text-align: center;
-  margin-bottom: 20px;
-  padding: 15px 25px;
+  margin: 10px 15px;
   transition: 0.5s;
 }
 
@@ -48,6 +50,7 @@
   font-weight: bold;
   margin-bottom: 10px;
   margin-top: 0;
+  font-size: 26px;
 }
 
 .sign-up-page__option-details {
@@ -55,15 +58,30 @@
   line-height: 15px;
   margin: 0;
   font-weight: lighter;
+  font-size: 20px;
+  line-height: normal;
 }
 
 @media (max-width: 480px) {
+  .sign-up-page {
+    padding-top: 30px;
+    padding-bottom: 75px;
+  }
+
   .sign-up-page__header {
     font-size: 18px;
+    margin-bottom: 10px;
   }
 
   .sign-up-page__subheader {
     font-size: 16px;
+    margin-bottom: 35px;
+  }
+
+  .sign-up-page__option {
+    max-width: 170px;
+    height: 90px;
+    padding: 15px 25px;
   }
 
   .sign-up-page__option-header {

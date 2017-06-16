@@ -10,13 +10,10 @@ const Option = ({ content, to }) =>
 const SignUpPage = props => {
   const { content } = props.route
 
-  const options = [{
-    content: content.options.userFlow,
-    to: '/sign-up/user'
-  }, {
-    content: content.options.ocFlow,
-    to: '/sign-up/contact'
-  }]
+  const options = [
+    { content: content.options.userFlow, to: '/sign-up/user' },
+    { content: content.options.ocFlow, to: '/sign-up/contact' }
+  ]
 
   return (
     <div className='sign-up-page'>
