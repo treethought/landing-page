@@ -35,6 +35,14 @@ export function postContacts ({ contacts, userName }, onSuccess, onError) {
   }, onError)
 }
 
+export function createCharge ({ token, amount }) {
+  return makeRequest({
+    method: 'POST',
+    path: '/charges',
+    params: { charge: { source: token.id, amount } }
+  }).then(console.log, console.error)
+}
+
 function makeRequest ({ method = 'GET', path, params = {} }) {
   return new Promise((resolve, reject) => {
     const requestPromise = request(method, config.apiBaseUrl + path)

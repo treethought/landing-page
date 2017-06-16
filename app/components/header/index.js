@@ -8,12 +8,15 @@ import FlatButton from 'material-ui/FlatButton'
 import MediaQuery from 'react-responsive'
 import { Link } from 'react-router'
 import renderIf from 'render-if'
+import Checkout from '../../services/checkout'
+import DonationDialog from './donation-dialog'
 
 class Header extends Component {
   constructor (props) {
     super(props)
     const { content } = props
     this.state = {
+      donationDialogOpen: false,
       navBtns: [{
         label: content.faqBtnLabel,
         to: '/faq',
@@ -27,9 +30,9 @@ class Header extends Component {
       }, {
         label: content.donateBtnLabel,
         to: '/stub',
-        onClick: (e) => {
+        onClick: e => {
           e.preventDefault()
-          window.location.href = 'https://igg.me/at/C42BDfXWM58'
+          this.openDonationDialog()
         },
         className: 'header__nav-btn',
         activeClassName: 'header__nav-btn-active'
@@ -41,8 +44,22 @@ class Header extends Component {
     }
   }
 
+  openDonationDialog () {
+    this.setState({ donationDialogOpen: true })
+  }
+
+  closeDonationDialog () {
+    this.setState({ donationDialogOpen: false })
+  }
+
+  confirmDonationAmount (amount) {
+    this.closeDonationDialog()
+    Checkout(amount)
+  }
+
   render () {
     const { content, toggleLocale, inRegistrationFlow } = this.props
+    const { donationDialogOpen } = this.state
 
     const ToggleLanguageBtn = () => (
       <FlatButton
@@ -69,12 +86,17 @@ class Header extends Component {
           }
           iconElementRight={
             <nav className='header__nav'>
+              <DonationDialog
+                open={donationDialogOpen}
+                onConfirmAmount={this.confirmDonationAmount.bind(this)}
+                onCancel={this.closeDonationDialog.bind(this)}
+              />
+
               <MediaQuery query='(min-width: 950px)'>
 
                 {this.state.navBtns.map((btn, i) => (
                   <FlatButton
                     className={`green-on-hover ${btn.className || ''}`}
-                    style={btn.style}
                     onClick={btn.onClick}
                     key={i}
                     label={btn.label}
@@ -126,10 +148,11 @@ class Header extends Component {
   }
 }
 
+const { bool, func, object } = PropTypes
 Header.propTypes = {
-  content: PropTypes.object,
-  inRegistrationFlow: PropTypes.bool,
-  toggleLocale: PropTypes.func
+  content: object,
+  inRegistrationFlow: bool,
+  toggleLocale: func
 }
 
 export default Header
