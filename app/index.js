@@ -5,6 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import content from './content'
 import locale from './services/locale'
+import { UserSignUpPageContainer } from './containers'
 import {
   AboutPage, ErrorPage, FaqPage, InnerPage, LandingPage, PrivacyPolicyPage,
   SignUpPage, SignUpSuccessPage, TermsAndConditionsPage
@@ -31,7 +32,7 @@ class App extends Component {
   }
 
   render () {
-    const { content, locale } = this.state
+    const { content } = this.state
 
     return (
       <MuiThemeProvider muiTheme={theme}>
@@ -41,7 +42,7 @@ class App extends Component {
             <Route path='about-us' component={AboutPage} content={content.aboutPage} />
             <Route path='sign-up'>
               <IndexRoute component={SignUpPage} content={content.signUpPage} />
-              {/* <Route path='/user' component={UserSignUpContainer} /> */}
+              <Route path='user' component={UserSignUpPageContainer} content={content.userSignUpPage} />
               {/* <Route path='/contact' component={ContactSignUpContainer} /> */}
               <Route path='/success' component={SignUpSuccessPage} />
             </Route>

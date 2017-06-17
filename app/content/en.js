@@ -121,7 +121,7 @@ const en = {
       }
     }
   },
-  oldSignUpPage: {
+  userSignUpPage: {
     header: 'We got your back, sign up now',
     createUserForm: {
       header: 'tell us about yourself',
@@ -138,12 +138,6 @@ const en = {
       contactFormGroupHeader: 'Contact',
       nameLabel: 'First name, last name',
       phoneLabel: 'Phone number',
-      dateOfBirthLabel: 'Emergency Contact\'s Date of Birth',
-      neighborhoodLabel: 'What neighborhood did they grow up in?',
-      dontKnowBirthdayQuestion: 'Don\'t know their birthday?',
-      dontKnowBirthdayAction: 'Answer another question.',
-      dontKnowNeighborhoodQuestion: 'Don\'t know?',
-      dontKnowNeighborhoodAction: 'Tell us their birthday instead.',
       uniqueFact: 'What is a unique fact about them?',
       nameHintText: 'This is the person we will alert if you get arrested.',
       infoHintText: 'This will only be used to identify your emergency contact if you call the hotline in case of an arrest. Make sure you remember this information',
@@ -152,12 +146,7 @@ const en = {
       consentToContactLabel: numOfContacts => (
         `Let us contact ${numOfContacts > 1 ? 'these people' : 'this person'} now to let them know you signed up and confirm their information.`
       ),
-      finishBtnLabel: 'finish',
-      dateField: {
-        month: 'Month',
-        day: 'Day',
-        year: 'Year'
-      }
+      finishBtnLabel: 'finish'
     }
   },
   signUpSuccessPage: {

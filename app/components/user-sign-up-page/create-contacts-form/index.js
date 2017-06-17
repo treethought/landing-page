@@ -6,7 +6,7 @@ import renderIf from 'render-if'
 import update from 'react-addons-update'
 import pick from 'lodash.pick'
 import mapObject from 'object.map'
-import { TextField/* , Checkbox */, DateField } from '../../index'
+import { TextField/* , Checkbox */ } from '../../index'
 import Hint from './../hint'
 import { lengthOfObject, scrollToTop, isDesktop } from '../../../services/utils'
 import { trackRegistrationEvent } from '../../../services/ga'
@@ -22,7 +22,7 @@ class CreateContactsForm extends Component {
   handleDropoff () {
     const formData = values(this.props.contacts.list).map(contact => (
       mapObject(pick(contact,
-        ['name', 'phone', 'dateOfBirth', 'neighborhood', 'fact']
+        ['name', 'phone', 'fact']
       ), attrs => !!attrs)
     ))
     trackRegistrationEvent('leave-create-contacts-form', formData)
@@ -47,15 +47,15 @@ class CreateContactsForm extends Component {
 
   continueBtnIsDisabled () {
     return this.props.requestInProgress || some(this.props.contacts.list, (contact) => {
-      const { name, phone, dateOfBirth, neighborhood, fact } = contact
-      return !name || !phone || !(dateOfBirth || neighborhood) || !fact
+      const { name, phone, fact } = contact
+      return !name || !phone || !fact
     })
   }
 
   render () {
     const {
-      contacts/* , toggleContactNotificationAllowed */, setContact, toggleContactDateField,
-      addContact, deleteContact, createContacts, content
+      contacts/* , toggleContactNotificationAllowed */, setContact, addContact,
+      deleteContact, createContacts, content
     } = this.props
     const { hintShown } = this.state
     const hintsContainerIsShown = isDesktop
@@ -81,7 +81,7 @@ class CreateContactsForm extends Component {
           </div>
         )}
 
-        {values(contacts.list).map(({ tmpId, dateFieldShown, dateOfBirth, errors }, i, arr) => (
+        {values(contacts.list).map(({ tmpId, errors }, i, arr) => (
           <div className='sign-up-page__form-fields-container' key={tmpId}>
             <h3 className='sign-up-page__create-contacts-form-fields-header'>
               <span>{content.contactFormGroupHeader} #{i + 1}</span>
@@ -102,29 +102,6 @@ class CreateContactsForm extends Component {
               onChange={setContact(tmpId, 'phone')}
               errorText={errors.phone}
             />
-
-            {dateFieldShown ? (
-              <div className='sign-up-page__dont-know-container'>
-                <DateField
-                  onClick={this.showHint.bind(this, 'info')}
-                  labelText={content.dateOfBirthLabel}
-                  onChange={setContact(tmpId, 'dateOfBirth')}
-                  content={content.dateField}
-                />
-                <span className='sign-up-page__dont-know-question'>{content.dontKnowBirthdayQuestion}</span>&nbsp;
-                <span className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>{content.dontKnowBirthdayAction}</span>
-              </div>
-            ) : (
-              <div className='sign-up-page__dont-know-container'>
-                <TextField
-                  labelText={content.neighborhoodLabel}
-                  onFocus={this.showHint.bind(this, 'info')}
-                  onChange={setContact(tmpId, 'neighborhood')}
-                />
-                <span className='sign-up-page__dont-know-question'>{content.dontKnowNeighborhoodQuestion}</span>&nbsp;
-                <span className='sign-up-page__text-btn' onClick={toggleContactDateField(tmpId)}>{content.dontKnowNeighborhoodAction}</span>
-              </div>
-            )}
 
             <TextField
               labelText={content.uniqueFact}
@@ -167,7 +144,6 @@ CreateContactsForm.propTypes = {
   requestInProgress: bool,
   toggleContactNotificationAllowed: func,
   setContact: func,
-  toggleContactDateField: func,
   addContact: func,
   deleteContact: func,
   createContacts: func
