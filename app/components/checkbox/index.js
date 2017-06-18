@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import MCheckbox from 'material-ui/Checkbox'
+import { isDesktop } from '../../services/utils'
 
 class Checkbox extends Component {
   onCheck (e, isInputChecked) {
@@ -15,9 +16,9 @@ class Checkbox extends Component {
         className={className || ''}
         defaultChecked={defaultChecked}
         onCheck={this.onCheck.bind(this)}
-        style={{textAlign: 'left'}}
-        iconStyle={{width: '32px', height: '32px', fill: '#40B097'}}
-        labelStyle={{fontSize: '16px', color: '#4A4A4A', lineHeight: '24px', fontWeight: '300'}}
+        style={{ textAlign: 'left' }}
+        iconStyle={{ width: '32px', height: '32px', fill: '#40B097' }}
+        labelStyle={{ fontSize: isDesktop ? '16px' : '12px', color: '#4A4A4A', lineHeight: '24px', fontWeight: '300' }}
       />
     )
   }
