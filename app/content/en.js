@@ -149,6 +149,19 @@ const en = {
       finishBtnLabel: 'finish'
     }
   },
+  contactSignUpPage: {
+    header: 'Be there for your loved one.',
+    createContactForm: {
+      header: 'Tell us how to contact you',
+      nameLabel: 'First Name, Last Name',
+      phoneLabel: 'Cell Phone (xxx) xxx-xxxx',
+      emailLabel: 'Email',
+      factLabel: 'A unique fact about yourself',
+      verifyAgeText: 'Check this to agree that you are over 18 years old or have parental consent to sign up if you are over 13 years old.',
+      continueBtnLabel: 'continue',
+      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>.'
+    }
+  },
   signUpSuccessPage: {
     header: 'Thank you for signing up!',
     callText: 'Remember to call',
