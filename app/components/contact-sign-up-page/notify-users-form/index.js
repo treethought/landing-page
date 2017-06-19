@@ -13,15 +13,15 @@ const NotifyUsersForm = props => {
       <form className='sign-up-page__form'>
         {users.map((u, i, arr) => (
           <div className='sign-up-page__form-fields-container' key={u.tmpId}>
-            <h3 className='sign-up-page__create-contacts-form-fields-header'>
-              <span>#{i + 1}</span>
-              {arr.length > 1 &&
+            {arr.length > 1 &&
+              <h3 className='sign-up-page__create-contacts-form-fields-header'>
+                <span>Person #{i + 1}</span>
                 <span
                   className='sign-up-page__create-contacts-form-delete-btn'
                   onClick={deleteUser(u.tmpId)}
                 >&times;</span>
-              }
-            </h3>
+              </h3>
+            }
 
             <TextField
               labelText={content.nameLabel}

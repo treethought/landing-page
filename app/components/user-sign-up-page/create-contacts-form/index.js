@@ -83,12 +83,12 @@ class CreateContactsForm extends Component {
 
         {values(contacts.list).map(({ tmpId, errors }, i, arr) => (
           <div className='sign-up-page__form-fields-container' key={tmpId}>
-            <h3 className='sign-up-page__create-contacts-form-fields-header'>
-              <span>{content.contactFormGroupHeader} #{i + 1}</span>
-              {renderIf(arr.length > 1)(
+            {renderIf(arr.length > 1)(
+              <h3 className='sign-up-page__create-contacts-form-fields-header'>
+                <span>{content.contactFormGroupHeader} #{i + 1}</span>
                 <span className='sign-up-page__create-contacts-form-delete-btn' onClick={deleteContact(tmpId)}>&times;</span>
-              )}
-            </h3>
+              </h3>
+            )}
 
             <TextField
               labelText={content.nameLabel}
