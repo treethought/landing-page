@@ -27,14 +27,14 @@ class CreateContactForm extends Component {
 
   continueBtnIsDisabled () {
     const { contact, requestInProgress } = this.props
-    const { name, emailOrPhone, ageVerified, recaptchaResponse } = contact
-    return requestInProgress || !(name && emailOrPhone && ageVerified && recaptchaResponse)
+    const { name, email, phone, ageVerified, recaptchaResponse, fact } = contact
+    return requestInProgress || !(name && email && phone && fact && ageVerified && recaptchaResponse)
   }
 
   render () {
     const { content, setContact, createContact, contact, locale, recaptchaSitekey } = this.props
 
-    const contactFields = ['name', 'phone', 'email'].map(name => ({
+    const contactFields = ['name', 'phone', 'email', 'fact'].map(name => ({
       name,
       label: content[`${name}Label`],
       onChange: setContact(name)

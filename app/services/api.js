@@ -39,7 +39,7 @@ export function postContacts ({ contacts, userName }, onSuccess, onError) {
   const token = cookie.load('token', { path: '/' })
   return makeRequest({
     method: 'POST',
-    path: '/contacts/create_list',
+    path: '/contacts/list',
     params: { contacts: { notificationAllowed, token, list: values(list), userName } }
   }).then(res => {
     trackRegistrationEvent('create-contacts-form-submit-success')

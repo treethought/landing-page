@@ -11,14 +11,10 @@ class ContactSignUpPageContainer extends Component {
     const initialUserTmpId = uuid.v4()
     this.state = {
       requestInProgress: false,
-      formStage: 1,
+      formStage: 0,
       recaptchaSitekey: '6Lc7NxQUAAAAAIZCaPCuSa-9_N2tjZcCik5647lj',
-      contact: {
-        errors: {}
-      },
-      users: [
-        { tmpId: initialUserTmpId, errors: {} }
-      ]
+      contact: { errors: {} },
+      users: [ { tmpId: initialUserTmpId, errors: {} } ]
     }
   }
 
@@ -74,6 +70,7 @@ class ContactSignUpPageContainer extends Component {
         {...this.state}
         content={content}
         setContact={this.setContact.bind(this)}
+        createContact={this.createContact.bind(this)}
         addUser={this.addUser.bind(this)}
         deleteUser={this.deleteUser.bind(this)}
         setUser={this.setUser.bind(this)}

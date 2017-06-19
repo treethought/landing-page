@@ -15,7 +15,7 @@ class UserSignUpPageContainer extends Component {
     const initialContactTmpId = uuid.v4()
     this.state = {
       requestInProgress: false,
-      formStage: 1,
+      formStage: 0,
       recaptchaSitekey: '6Lc7NxQUAAAAAIZCaPCuSa-9_N2tjZcCik5647lj',
       user: {
         ageVerified: false,
