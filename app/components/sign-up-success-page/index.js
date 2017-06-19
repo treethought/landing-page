@@ -44,7 +44,7 @@ class SignUpSuccessPage extends Component {
           <p className='sign-up-success-page__paragraph'>
             <span className='sign-up-success-page__call-number'>
               {content.callText} <br />
-              <strong>(347) 95 BRONX</strong>
+              <strong>1-(833)-3-GOODCALL</strong>
             </span>
 
             <span className='sign-up-success-page__if-container'>

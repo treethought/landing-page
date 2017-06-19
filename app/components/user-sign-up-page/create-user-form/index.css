@@ -40,4 +40,8 @@
     margin-bottom: 10px;
   }
 
+  .sign-up-page__create-user-form-checkbox label {
+    line-height: 18px !important;
+  }
+
 }

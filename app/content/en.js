@@ -129,9 +129,9 @@ const en = {
       emailOrPhoneLabel: 'Email or Cell Phone (xxx) xxx-xxxx',
       hintText: 'Your information will only be used by Good Call to send you updates about our service.',
       hintConfirmLabelText: 'GOT IT',
-      verifyAgeText: 'Check this to agree that you are over 18 years old or have parental consent to sign up if you are over 13 years old.',
+      verifyAgeText: 'Check this to agree that you are over 18 years old or have parental consent to sign up if you are over 13 years old',
       continueBtnLabel: 'continue',
-      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>.'
+      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>'
     },
     createContactsForm: {
       header: 'provide an emergency contact',
@@ -157,9 +157,9 @@ const en = {
       phoneLabel: 'Cell Phone (xxx) xxx-xxxx',
       emailLabel: 'Email',
       factLabel: 'A unique fact about yourself',
-      verifyAgeText: 'Check this to agree that you are over 18 years old or have parental consent to sign up if you are over 13 years old.',
+      verifyAgeText: 'Check this to agree that you are over 18 years old or have parental consent to sign up if you are over 13 years old',
       continueBtnLabel: 'continue',
-      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>.'
+      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>'
     },
     notifyUsersForm: {
       header: 'Let them know you\'re there for them',
