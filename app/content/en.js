@@ -160,6 +160,13 @@ const en = {
       verifyAgeText: 'Check this to agree that you are over 18 years old or have parental consent to sign up if you are over 13 years old.',
       continueBtnLabel: 'continue',
       continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>.'
+    },
+    notifyUsersForm: {
+      header: 'Let them know you\'re there for them',
+      nameLabel: 'First Name, Last Name',
+      emailOrPhoneLabel: 'Email or Cell Number (xxx) xxx-xxxx',
+      addUserBtnLabel: 'Notify another loved one',
+      finishBtnLabel: 'Finish'
     }
   },
   signUpSuccessPage: {
