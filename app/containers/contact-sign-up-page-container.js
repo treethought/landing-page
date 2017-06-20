@@ -4,7 +4,6 @@ import uuid from 'node-uuid'
 import extend from 'extend'
 import cookie from 'react-cookie'
 import { browserHistory } from 'react-router'
-import each from 'lodash.foreach'
 import { postContact, notifyUsers } from '../services/api'
 import { ContactSignUpPage } from '../components'
 

@@ -169,7 +169,9 @@ const en = {
       nameLabel: 'First Name, Last Name',
       emailOrPhoneLabel: 'Email or Cell Number (xxx) xxx-xxxx',
       addUserBtnLabel: 'Notify another loved one',
-      finishBtnLabel: 'Finish'
+      finishBtnLabel: 'Finish',
+      hintText: 'This is the person you want to be there for - we will help you let them know that you signed up',
+      hintConfirmLabelText: 'GOT IT'
     }
   },
   signUpSuccessPage: {
