@@ -65,7 +65,7 @@ class CreateContactsForm extends Component {
     return (
       <form className='sign-up-page__form'>
         {renderIf(hintsContainerIsShown)(
-          <div className='sign-up-page__create-contacts-form-hints-container'>
+          <div className='sign-up-page__create-user-form-hints-container'>
             <Hint
               text={content.nameHintText}
               confirmLabelText={content.hintConfirmLabelText}
