@@ -1,7 +1,7 @@
 const en = {
   innerPage: {
     header: {
-      hotlineBannerText: 'If you or a loved one has been arrested in the Bronx call 347-95-BRONX (347-952-7669) for free legal support 24/7',
+      hotlineBannerText: 'If you or a loved one has been arrested in the Bronx call 1-833-3-GOODCALL (833-346-6322) for free legal support 24/7',
       faqBtnLabel: 'FAQ',
       aboutUsBtnLabel: 'About us',
       signUpBtnLabel: 'Sign up',
@@ -24,7 +24,7 @@ const en = {
   landingPage: {
     goodCallSummary: 'Good Call is a completely free 24/7 hotline that helps people who are arrested alert their loved ones and connect to a free lawyer. Everyone deserves fairness.',
     stories: {
-      header: 'No one expects to get arrested, but if it happens, we got your back',
+      header: 'Who would you call in case of an arrest?',
       signUpBtnLabel: 'sign up',
       scrollDownBtnLabel: 'Learn more',
       stories: [
@@ -74,10 +74,10 @@ const en = {
     howItWorks: {
       header: 'How Good Call Works',
       subheader: 'Know what to expect',
-      step1Text: 'you sign up for Good Call and list an emergency contact',
+      step1Text: 'you or a loved one signs up for Good Call',
       step2Text: 'you are unexpectedly arrested',
       step3Text: 'you are brought to the precinct',
-      step4Text: 'you call Good Call at\n (347) 95-BRONX',
+      step4Text: 'you call Good Call at\n 1-833-3-GOODCALL (833-346-6322)',
       step4substep1Text: 'we collect your information',
       step4substep2Text: 'we tell you your rights',
       step4substep3Text: 'we confirm your emergency contact',
@@ -85,16 +85,16 @@ const en = {
       step6Text: 'you can return home as soon as possible'
     },
     launchingSoon: {
-      header: 'We all deserve justice. Sign up, add a contact, protect your rights.',
-      subheader: 'We are now serving the Bronx!',
+      header: 'We got your back',
+      subheader: 'Want to be there for your loved ones in case they get arrested? Sign up so they can reach you when they need it most.',
       signUpBtnLabel: 'sign up'
     }
   },
   aboutPage: {
     header: 'We believe everyone deserves fairness.',
     aboutUs: {
-      header: 'About Us.',
-      text: 'Good Call is a project started within the <a class="about-page__paragraph-link" href="https://labs.robinhood.org/fellowship/">Blue Ridge Labs fellowship</a>, a five month program where teams build digital products aimed at addressing key issues faced by low-income New Yorkers, with an approach focused on human-centered design, testing, and outreach work. We built Good Call after months of research and discussions with people in New York communities and legal experts in the criminal justice space. We heard countless stories from people who were arrested for trivial reasons, and how uncomfortable, painful, confusing, and damaging this experience can be. We decided to try to do what we could to help address this issue. We are excited that our hotline is now serving the Bronx, with plans to expand to the rest of New York City.'
+      header: 'Our Story',
+      text: 'Our four founders met through <a class="about-page__paragraph-link" href="https://labs.robinhood.org/">Blue Ridge Labs @ Robin Hood</a>, a social impact incubator aimed at building technology to address problems faced by low income New Yorkers. During our research, we heard stories from dozens of New Yorkers who were arrested for trivial reasons like hopping a turnstile, forgetting to pay a ticket, or simply "fitting the description". With their cell phones taken away, their only way to reach out for help was a few phone calls on an old dial-pad phone, to numbers they had to have memorized. It was difficult for them to reach their loved ones and nearly impossible to reach a lawyer. Their inability to get help in this critical moment often times lead to devastating outcomes, including getting fired from their jobs, being wrongfully sent to jail for weeks on end, and admitting to crimes they didn\'t commit. <br /> <br /> We founded Good Call to provide better support throughout the arrest process, with the mission of ensuring that everyone who gets arrested has a fair process and a just outcome, and isn\'t punished because of what they look like, where they live, or how much money they have. In October of 2016, we launched our pilot with legal support being provided by <a class="about-page__paragraph-link" href="http://www.bronxdefenders.org/">The Bronx Defenders</a>, one of the most prestigious legal service providers in the country. Our goal is to bring Good Call to all of New York City and beyond.'
     },
     ourMissionText: 'Our mission is to make the arrest process and its aftermath less painful and harmful for those that are detained and their loved ones. We strive to make this process more transparent and just for all New Yorkers regardless of income.',
     ourTeam: {
@@ -103,7 +103,7 @@ const en = {
     },
     joinTheMovement: {
       header: 'Why Sign Up?',
-      text: 'We understand that no one expects to get arrested, but unfortunately as we see on the news, the criminal justice system doesn\'t treat everyone equally. Good Call is for everyone. Whether it\'s because you live in an area where police interaction is a common occurrence, or if you are a supportive ally for criminal justice reform, signing up for Good Call helps our mission to provide fair legal representation to everyone, regardless of income.'
+      text: 'Signing up only takes a minute or two, and it can make a big difference in an arrest situation. You can sign up and save a few of your emergency contacts to make sure you can reach them if you ever get arrested. You can also add your own contact information, to make sure your loved ones can reach you if they are in trouble. Sign up today, and help us provide better legal support for you and your community.'
     },
     signUpBtnLabel: 'sign up'
   },
