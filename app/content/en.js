@@ -112,12 +112,12 @@ const en = {
     subheader: 'How do you want to sign up?',
     options: {
       userFlow: {
-        header: 'Protect your rights',
-        details: 'List an emergency contact to alert in case of an arrest'
+        header: 'Protect yourself',
+        details: 'Save your emergency contacts so you can alert them in case you get arrested'
       },
       ocFlow: {
         header: 'Be there for a loved one',
-        details: 'Add your contact info into our emergency directory so a loved one can reach out in case of an arrest'
+        details: 'Save your contact info so your loved ones can reach you in case they get arrested'
       }
     }
   },
