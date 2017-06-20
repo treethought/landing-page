@@ -1,10 +1,13 @@
 import React from 'react'
 import FlatButton from 'material-ui/FlatButton'
 import { array, func } from 'prop-types'
+import some from 'lodash.some'
 import { TextField } from '../../index'
 
 const NotifyUsersForm = props => {
-  const { content, users, addUser, deleteUser, setUser } = props
+  const { content, users, addUser, deleteUser, setUser, notifyUsers } = props
+
+  const btnDisabled = () => some(users, ({ name, emailOrPhone }) => !name || !emailOrPhone)
 
   return (
     <div>
@@ -44,6 +47,8 @@ const NotifyUsersForm = props => {
                 className='gc-std-btn sign-up-page__form-continue-btn'
                 style={{ backgroundColor: '#40B097' }}
                 label={content.finishBtnLabel}
+                onClick={notifyUsers}
+                disabled={btnDisabled()}
               />
             </div>}
           </div>
@@ -57,7 +62,8 @@ NotifyUsersForm.propTypes = {
   users: array,
   setUser: func,
   addUser: func,
-  deleteUser: func
+  deleteUser: func,
+  notifyUsers: func
 }
 
 export default NotifyUsersForm

@@ -18,7 +18,7 @@ const ContactSignUpPage = props => {
 
         {formStage === 1 && <NotifyUsersForm
           content={content.notifyUsersForm}
-          {...pick(props, ['users', 'addUser', 'deleteUser', 'setUser'])}
+          {...pick(props, ['users', 'addUser', 'deleteUser', 'setUser', 'notifyUsers'])}
         />}
       </div>
     </div>

@@ -48,6 +48,19 @@ export function postContacts ({ contacts, userName }, onSuccess, onError) {
   }, onError)
 }
 
+export function notifyUsers ({ contactName, users }, onSuccess, onError) {
+  const token = cookie.load('token', { path: '/' })
+  return makeRequest({
+    method: 'POST',
+    path: '/users/notify',
+    params: { users: { contactName, token, list: users } }
+  }).then(res => {
+    trackRegistrationEvent('notify-users-form-submit-success')
+    cookie.remove('token', { path: '/' })
+    onSuccess(res)
+  }, onError)
+}
+
 function makeRequest ({ method = 'GET', path, params = {} }) {
   return new Promise((resolve, reject) => {
     const requestPromise = request(method, config.apiBaseUrl + path)

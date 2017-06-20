@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import update from 'react-addons-update'
 import uuid from 'node-uuid'
 import extend from 'extend'
-import { postContact } from '../services/api'
+import cookie from 'react-cookie'
+import { browserHistory } from 'react-router'
+import each from 'lodash.foreach'
+import { postContact, notifyUsers } from '../services/api'
 import { ContactSignUpPage } from '../components'
 
 class ContactSignUpPageContainer extends Component {
@@ -61,6 +64,20 @@ class ContactSignUpPageContainer extends Component {
     }
   }
 
+  notifyUsers () {
+    const { contact, users } = this.state
+    notifyUsers({ contactName: contact.name, users }, res => {
+      const referralCode = cookie.load('referralCode', { path: '/' })
+      cookie.remove('referralCode', { path: '/' })
+      browserHistory.push({ pathname: '/sign-up/success', query: { referralCode } })
+    }, errors => {
+      const newUsers = this.state.users.map(u => (
+        extend(u, { errors: errors[u.tmpId] || {} })
+      ))
+      this.setState(extend(this.state, { users: newUsers }))
+    })
+  }
+
   render () {
     const { route, locale } = this.props
     const { content } = route
@@ -74,6 +91,7 @@ class ContactSignUpPageContainer extends Component {
         addUser={this.addUser.bind(this)}
         deleteUser={this.deleteUser.bind(this)}
         setUser={this.setUser.bind(this)}
+        notifyUsers={this.notifyUsers.bind(this)}
         locale={locale}
       />
     )

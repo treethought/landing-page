@@ -56,7 +56,7 @@ class CreateUserForm extends Component {
       <form className='sign-up-page__form'>
         {renderIf(hintShown)(
           <div className='sign-up-page__form-hints-container'>
-            <Hint text={content.hintText} confirmLabelText={content.hintConfirmLabelText} top='13px' show={true} />
+            <Hint text={content.hintText} confirmLabelText={content.hintConfirmLabelText} top='13px' show />
           </div>
         )}
 
