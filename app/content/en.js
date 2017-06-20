@@ -1,7 +1,7 @@
 const en = {
   innerPage: {
     header: {
-      hotlineBannerText: 'If you or a loved one has been arrested in the Bronx call 347-95-BRONX (347-952-7669) for free legal support 24/7',
+      hotlineBannerText: 'If you or a loved one has been arrested in the Bronx call 1-833-3-GOODCALL (1-833-346-6322) for free legal support 24/7',
       faqBtnLabel: 'FAQ',
       aboutUsBtnLabel: 'About us',
       signUpBtnLabel: 'Sign up',
@@ -24,7 +24,7 @@ const en = {
   landingPage: {
     goodCallSummary: 'Good Call is a completely free 24/7 hotline that helps people who are arrested alert their loved ones and connect to a free lawyer. Everyone deserves fairness.',
     stories: {
-      header: 'No one expects to get arrested, but if it happens, we got your back',
+      header: 'Who would you call in case of an arrest?',
       signUpBtnLabel: 'sign up',
       scrollDownBtnLabel: 'Learn more',
       stories: [
@@ -74,10 +74,10 @@ const en = {
     howItWorks: {
       header: 'How Good Call Works',
       subheader: 'Know what to expect',
-      step1Text: 'you sign up for Good Call and list an emergency contact',
+      step1Text: 'you or a loved one signs up for Good Call',
       step2Text: 'you are unexpectedly arrested',
       step3Text: 'you are brought to the precinct',
-      step4Text: 'you call Good Call at\n (347) 95-BRONX',
+      step4Text: 'you call Good Call at\n 1-833-3-GOODCALL (1-833-346-6322)',
       step4substep1Text: 'we collect your information',
       step4substep2Text: 'we tell you your rights',
       step4substep3Text: 'we confirm your emergency contact',
@@ -85,16 +85,16 @@ const en = {
       step6Text: 'you can return home as soon as possible'
     },
     launchingSoon: {
-      header: 'We all deserve justice. Sign up, add a contact, protect your rights.',
-      subheader: 'We are now serving the Bronx!',
+      header: 'We got your back',
+      subheader: 'Want to be there for your loved ones in case they get arrested? Sign up so they can reach you when they need it most.',
       signUpBtnLabel: 'sign up'
     }
   },
   aboutPage: {
     header: 'We believe everyone deserves fairness.',
     aboutUs: {
-      header: 'About Us.',
-      text: 'Good Call is a project started within the <a class="about-page__paragraph-link" href="https://labs.robinhood.org/fellowship/">Blue Ridge Labs fellowship</a>, a five month program where teams build digital products aimed at addressing key issues faced by low-income New Yorkers, with an approach focused on human-centered design, testing, and outreach work. We built Good Call after months of research and discussions with people in New York communities and legal experts in the criminal justice space. We heard countless stories from people who were arrested for trivial reasons, and how uncomfortable, painful, confusing, and damaging this experience can be. We decided to try to do what we could to help address this issue. We are excited that our hotline is now serving the Bronx, with plans to expand to the rest of New York City.'
+      header: 'Our story.',
+      text: 'Our four founders met through <a class="about-page__paragraph-link" href="https://labs.robinhood.org/">Blue Ridge Labs @ Robin Hood</a>, a social impact incubator aimed at building technology to address problems faced by low income New Yorkers. During our research, we heard stories from dozens of New Yorkers who were arrested for trivial reasons like hopping a turnstile, forgetting to pay a ticket, or simply "fitting the description". With their cell phones taken away, their only way to reach out for help was a few phone calls on an old dial-pad phone, to numbers they had to have memorized. It was difficult for them to reach their loved ones and nearly impossible to reach a lawyer. Their inability to get help in this critical moment often times lead to devastating outcomes, including getting fired from their jobs, being wrongfully sent to jail for weeks on end, and admitting to crimes they didn\'t commit. <br /> <br /> We founded Good Call to provide better˚˜ support throughout the arrest process, with the mission of ensuring that everyone who gets arrested has a fair process and a just outcome, and isn\'t punished because of what they look like, where they live, or how much money they have. In October of 2016, we launched our pilot with legal support being provided by <a class="about-page__paragraph-link" href="http://www.bronxdefenders.org/">The Bronx Defenders</a>, one of the most prestigious legal service providers in the country. Our goal is to bring Good Call to all of New York City and beyond.'
     },
     ourMissionText: 'Our mission is to make the arrest process and its aftermath less painful and harmful for those that are detained and their loved ones. We strive to make this process more transparent and just for all New Yorkers regardless of income.',
     ourTeam: {
@@ -103,11 +103,25 @@ const en = {
     },
     joinTheMovement: {
       header: 'Why Sign Up?',
-      text: 'We understand that no one expects to get arrested, but unfortunately as we see on the news, the criminal justice system doesn\'t treat everyone equally. Good Call is for everyone. Whether it\'s because you live in an area where police interaction is a common occurrence, or if you are a supportive ally for criminal justice reform, signing up for Good Call helps our mission to provide fair legal representation to everyone, regardless of income.'
+      text: 'Signing up only takes a minute or two, and it can make a big difference in an arrest situation. You can sign up and save a few of your emergency contacts to make sure you can reach them if you ever get arrested. You can also add your own contact information, to make sure your loved ones can reach you if they are in trouble. Sign up today, and help us provide better legal support for you and your community.'
     },
     signUpBtnLabel: 'sign up'
   },
   signUpPage: {
+    header: 'Sign up and protect your rights',
+    subheader: 'How do you want to sign up?',
+    options: {
+      userFlow: {
+        header: 'Protect yourself',
+        details: 'Save your emergency contacts so you can alert them in case you get arrested'
+      },
+      ocFlow: {
+        header: 'Be there for a loved one',
+        details: 'Save your contact info so your loved ones can reach you in case they get arrested'
+      }
+    }
+  },
+  userSignUpPage: {
     header: 'We got your back, sign up now',
     createUserForm: {
       header: 'tell us about yourself',
@@ -115,21 +129,15 @@ const en = {
       emailOrPhoneLabel: 'Email or Cell Phone (xxx) xxx-xxxx',
       hintText: 'Your information will only be used by Good Call to send you updates about our service.',
       hintConfirmLabelText: 'GOT IT',
-      verifyAgeText: 'Check this to agree that you are over 18 years old or have parental consent to sign up if you are over 13 years old.',
+      verifyAgeText: 'Check this to agree that you are over 18 years old or have parental consent to sign up if you are over 13 years old',
       continueBtnLabel: 'continue',
-      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>.'
+      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>'
     },
     createContactsForm: {
       header: 'provide an emergency contact',
       contactFormGroupHeader: 'Contact',
       nameLabel: 'First name, last name',
       phoneLabel: 'Phone number',
-      dateOfBirthLabel: 'Emergency Contact\'s Date of Birth',
-      neighborhoodLabel: 'What neighborhood did they grow up in?',
-      dontKnowBirthdayQuestion: 'Don\'t know their birthday?',
-      dontKnowBirthdayAction: 'Answer another question.',
-      dontKnowNeighborhoodQuestion: 'Don\'t know?',
-      dontKnowNeighborhoodAction: 'Tell us their birthday instead.',
       uniqueFact: 'What is a unique fact about them?',
       nameHintText: 'This is the person we will alert if you get arrested.',
       infoHintText: 'This will only be used to identify your emergency contact if you call the hotline in case of an arrest. Make sure you remember this information',
@@ -138,12 +146,33 @@ const en = {
       consentToContactLabel: numOfContacts => (
         `Let us contact ${numOfContacts > 1 ? 'these people' : 'this person'} now to let them know you signed up and confirm their information.`
       ),
-      finishBtnLabel: 'finish',
-      dateField: {
-        month: 'Month',
-        day: 'Day',
-        year: 'Year'
-      }
+      finishBtnLabel: 'finish'
+    }
+  },
+  contactSignUpPage: {
+    header: 'Be there for your loved one.',
+    createContactForm: {
+      header: 'Tell us how to contact you',
+      nameLabel: 'First Name, Last Name',
+      phoneLabel: 'Cell Phone (xxx) xxx-xxxx',
+      emailLabel: 'Email',
+      factLabel: 'A unique fact about yourself',
+      nameHintText: 'Your information will be used by Good Call to identify you in our directory to alert in case of your loved one’s arrest',
+      factHintText: 'This should be a fact that your loved one would know about you (ex. your favorite movie is Harry Potter)',
+      hintConfirmLabelText: 'GOT IT',
+      verifyAgeText: 'Check this to agree that you are over 18 years old or have parental consent to sign up if you are over 13 years old',
+      continueBtnLabel: 'continue',
+      continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>'
+    },
+    notifyUsersForm: {
+      header: 'Let them know you\'re there for them',
+      personText: 'Person',
+      nameLabel: 'First Name, Last Name',
+      emailOrPhoneLabel: 'Email or Cell Number (xxx) xxx-xxxx',
+      addUserBtnLabel: 'Notify another loved one',
+      finishBtnLabel: 'Finish',
+      hintText: 'This is the person you want to be there for - we will help you let them know that you signed up',
+      hintConfirmLabelText: 'GOT IT'
     }
   },
   signUpSuccessPage: {
@@ -238,24 +267,32 @@ const en = {
   faqPage: {
     header: 'Frequently Asked Questions',
     sections: [
-      {header: 'About Good Call', faqs: [
-        {question: 'Do I have to pay to sign up and use Good Call?', answer: 'No, Good Call is free to sign up and use!'},
-        {question: 'When should I call Good Call?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
-        {question: 'Who can sign up for Good Call?', answer: 'Everyone! We believe everyone deserves fairness.'},
-        {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'No one expects to get arrested and we definitely hope you wouldn\'t be. Unfortunately, the law enforcement and criminal justice system doesn\'t treat everyone equally and people get arrested for trivial reasons. Similar to providing emergency contacts and signing waivers, Good Call is there as a safety precaution to protect your rights in case something does happen. Even if you may not be personally affected by the system\'s injustice, signing up to show support and sharing Good Call with those around you will help accomplish our mission to provide a just and fair outcome for everyone.'},
-        {question: 'Where can I currently use Good Call?', answer: 'Our hotline is currently live in the Bronx.'},
-        {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently serving the Bronx and will be serving the other boroughs soon. Sign up and we will let you know when Good Call\'s hotline is available in your area.'},
-        {question: 'What is the Good Call hotline for the Bronx?', answer: '1 (347) 95 BRONX'},
-        {question: 'Can I still call the hotline if I didn\'t sign up?', answer: 'Yes, we believe that everyone should get help when they are arrested. However, signing up will allow us to reach out to your emergency contact to let them know what\'s going on and to connect them with your lawyer which will help make your case stronger.'},
-        {question: 'How does Good Call get me a free lawyer?', answer: 'Good Call partners with legal service providers around the city who serve the community. Our lawyers are committed to providing quality representation to our callers.'},
-        {question: 'Will Good Call share my information with anyone?', answer: 'Good Call will only share your information with the lawyer that will represent you in the case that you get arrested. Good Call will never share your information with anyone else that you have not given us the consent to.'}
-      ]},
-      {header: 'If your loved one has been arrested - ', faqs: [
-        {question: 'What should I do if my loved one is arrested?', answer: 'You can call our hotline (347) 95 BRONX and we will connect you with one of our lawyers to help you with your loved one\'s case.'},
-        {question: 'Why did I get notified by Good Call?', answer: 'If you have been notified by Good Call that someone you know has been arrested, it is because that person has called our hotline and you were listed as their emergency contact.'},
-        {question: 'What is Good Call?', answer: 'Good Call is a free hotline to help people who are arrested reach their loved ones and secure a free lawyer right away.'},
-        {question: 'How can I learn more about my loved one\'s case?', answer: 'You can call our hotline (347) 95 BRONX to talk to one of our operators.'}
-      ]}
+      {
+        header: 'About Good Call',
+        faqs: [
+          {question: 'Do I have to pay to sign up and use Good Call?', answer: 'No, Good Call is free to sign up and use!'},
+          {question: 'What is the Good Call hotline number?', answer: '1-833-3-GOODCALL (1-833-346-6322)'},
+          {question: 'When should I call Good Call?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
+          {question: 'Who can sign up for Good Call?', answer: 'Anyone can sign up for Good Call, totally free.'},
+          {question: 'What is the difference between signing up to protect yourself and signing up to be there for a loved one?', answer: 'Signing up to <b>Protect yourself</b> allows you to save a few of your emergency contacts, to make sure your lawyer can get in touch with them if you are ever arrested. Signing up to <b>Be there for a loved one</b> allows you to add your own contact information, so you can be alerted and connected with a lawyer in case your loved ones are arrested. We recommend you sign up for both, to make sure we can provide the best support possible in case you or a loved one are arrested.'},
+          {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'If you don\'t think you will ever be arrested, but you want to make sure you\'re there for your loved ones in case it happens to them, you can sign up with the <b>Be there for a loved one</b> option to make sure they can reach you in case of emergency.'},
+          {question: 'Where can I use Good Call', answer: 'Our hotline is currently live in the Bronx, but you can sign up for Good Call no matter where you are.'},
+          {question: 'What if I was arrested outside of the Bronx, can I still call Good Call?', answer: 'The lawyers we work with are only allowed to represent clients who are arrested in the Bronx. However, if you are arrested in another borough and call the hotline, they can still provide basic information on your rights and the arrest process.'},
+          {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently piloting in the Bronx and will be serving the other boroughs soon.'},
+          {question: 'Can I still call the hotline if I didn\'t sign up?', answer: 'Yes, we believe that everyone should get help when they are arrested. However, signing up will allow us to reach out to your emergency contact to let them know what\'s going on and to connect them with your lawyer which will help make your case stronger.'},
+          {question: 'How does Good Call get me a free lawyer?', answer: 'Good Call partners with legal service providers around the city who serve the community. Our lawyers are committed to providing quality support to our callers.'},
+          {question: 'Is it safe to sign up?', answer: 'We have taken extensive measures to ensure that Good Call is safe and secure for our users. We take security and privacy very seriously, and use industry standard secutiry practices. Our system is designed specifically to avoid collecting any information that could put our users at risk.'}
+        ]
+      },
+      {
+        header: 'If your loved one has been arrested',
+        faqs: [
+          {question: 'What is Good Call?', answer: 'Good Call is a free 24/7 emergency arrest hotline to help people who are arrested reach their loved ones and talk to free lawyer right away'},
+          {question: 'What should I do if my loved one is arrested?', answer: 'You can call our hotline at 1-(833)-3 GOODCALL (1-833-346-6322) and we will connect you with one of our lawyers to help you with your loved one\'s case.'},
+          {question: 'Why did I get notified by Good Call?', answer: 'If you have been notified by Good Call that someone you know has been arrested, it is because that person has called our hotline and you were listed as their emergency contact.'},
+          {question: 'What do I do if I get notified by Good Call?', answer: 'Follow the instructions on the text message you got to get information about your loved one\'s case.'}
+        ]
+      }
     ]
   },
   termsAndConditionsPage: {

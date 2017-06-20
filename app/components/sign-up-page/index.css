@@ -1,88 +1,94 @@
 .sign-up-page {
-  padding-top: 70px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 123px;
-  color: #4A4A4A;
+  padding-top: 45px;
+  padding-bottom: 90px;
 }
 
-.sign-up-page__form-container {
-  margin: 0 auto;
-}
-
-.sign-up-page__form-header {
+.sign-up-page__header {
   text-align: center;
-  font-weight: normal;
-  font-size: 30px;
-  margin-bottom: 44px;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 30px;
 }
 
-.sign-up-page__form-subheader {
-  margin-top: 0;
+.sign-up-page__subheader {
   text-align: center;
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 60px;
+  font-size: 26px;
+  font-weight: lighter;
+  margin: 0;
+  margin-bottom: 80px;
 }
 
-.sign-up-page__form {
-  position: relative;
-  margin: 0 auto;
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
-  -webkit-justify-content: center;
-  -webkit-align-items: flex-start;
+.sign-up-page__options-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.sign-up-page__form-hints-container {
-  max-width: 330px;
-}
-
-.sign-up-page__form-fields-container {
-  max-width: 330px;
+.sign-up-page__option {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   width: 100%;
+  max-width: 284px;
+  height: 140px;
+  border: 1px solid #979797;
+  border-radius: 4.8px;
+  padding: 50px;
   text-align: center;
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin: 10px 15px;
+  transition: 0.5s;
 }
 
-@media (max-width: 640px) {
+.sign-up-page__option:hover {
+  border-color: #40B097;
+}
 
+.sign-up-page__option-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-size: 26px;
+}
+
+.sign-up-page__option-details {
+  color: #4A4A4A;
+  line-height: 15px;
+  margin: 0;
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: normal;
+}
+
+@media (max-width: 480px) {
   .sign-up-page {
-    padding-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 75px;
   }
 
-  .sign-up-page__form-hints-container {
-    width: 0;
-  }
-
-  .sign-up-page__form-header {
-    font-size: 20px;
-    max-width: 300px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-  }
-
-  .sign-up-page__form-subheader {
+  .sign-up-page__header {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
-  .sign-up-page__form-fields-container {
-    max-width: 300px;
-    width: 100%;
-    margin-right: 0;
-    margin-left: 0;
+  .sign-up-page__subheader {
+    font-size: 16px;
+    margin-bottom: 35px;
   }
 
+  .sign-up-page__option {
+    max-width: 170px;
+    height: 90px;
+    padding: 15px 25px;
+  }
+
+  .sign-up-page__option-header {
+    font-size: 16px;
+  }
+
+  .sign-up-page__option-details {
+    font-size: 12px;
+  }
 }
-
-@import url("./create-user-form/index.css");
-@import url("./create-contacts-form/index.css");
-@import url("./hint/index.css");

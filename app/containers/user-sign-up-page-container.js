@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import { object } from 'prop-types'
 import update from 'react-addons-update'
-import { SignUpPage } from '../components'
+import { UserSignUpPage } from '../components'
 import { postUser, postContacts } from '../services/api'
 import cookie from 'react-cookie'
 import uuid from 'node-uuid'
@@ -8,7 +9,7 @@ const { assign } = Object
 import { browserHistory } from 'react-router'
 import each from 'lodash.foreach'
 
-class SignUpPageContainer extends Component {
+class UserSignUpPageContainer extends Component {
   constructor (props) {
     super(props)
     const initialContactTmpId = uuid.v4()
@@ -25,11 +26,7 @@ class SignUpPageContainer extends Component {
       contacts: {
         notificationAllowed: false,
         list: {
-          [initialContactTmpId]: {
-            tmpId: initialContactTmpId,
-            dateFieldShown: true,
-            errors: {}
-          }
+          [initialContactTmpId]: { tmpId: initialContactTmpId, errors: {} }
         }
       }
     }
@@ -69,26 +66,10 @@ class SignUpPageContainer extends Component {
     }
   }
 
-  toggleContactDateField (tmpId) {
-    return () => {
-      const dateFieldShown = this.state.contacts.list[tmpId].dateFieldShown
-      this.setState(update(this.state, {
-        contacts: {
-          list: {
-            [tmpId]: {
-              dateFieldShown: { $set: !dateFieldShown },
-              [dateFieldShown ? 'dateOfBirth' : 'neighborhood']: { $set: '' }
-            }
-          }
-        }
-      }))
-    }
-  }
-
   addContact () {
     const tmpId = uuid.v4()
     this.setState(update(this.state, {
-      contacts: { list: { $merge: { [tmpId]: { tmpId, dateFieldShown: true, errors: {} } } } }
+      contacts: { list: { $merge: { [tmpId]: { tmpId, errors: {} } } } }
     }))
   }
 
@@ -121,7 +102,7 @@ class SignUpPageContainer extends Component {
     const { location, route } = this.props
     const { content, locale } = route
     return (
-      <SignUpPage
+      <UserSignUpPage
         {...this.state}
         location={location}
         content={content}
@@ -130,7 +111,6 @@ class SignUpPageContainer extends Component {
         createUser={this.createUser.bind(this)}
         toggleContactNotificationAllowed={this.toggleContactNotificationAllowed.bind(this)}
         setContact={this.setContact.bind(this)}
-        toggleContactDateField={this.toggleContactDateField.bind(this)}
         addContact={this.addContact.bind(this)}
         deleteContact={this.deleteContact.bind(this)}
         createContacts={this.createContacts.bind(this)}
@@ -139,10 +119,9 @@ class SignUpPageContainer extends Component {
   }
 }
 
-const { object } = PropTypes
-SignUpPageContainer.propTypes = {
+UserSignUpPageContainer.propTypes = {
   route: object,
   location: object
 }
 
-export default SignUpPageContainer
+export default UserSignUpPageContainer

@@ -1,75 +1,29 @@
-import React, { Component, PropTypes } from 'react'
-import renderIf from 'render-if'
-import CreateUserForm from './create-user-form'
-import CreateContactsForm from './create-contacts-form'
+import React from 'react'
+import { Link } from 'react-router'
 
-class SignUpPage extends Component {
-  render () {
-    const {
-      content, formStage, user, setUser, createUser, requestInProgress, locale,
-      recaptchaSitekey, toggleContactNotificationAllowed, contacts, setContact,
-      toggleContactDateField, addContact, deleteContact, createContacts
-    } = this.props
+const Option = ({ content, to }) =>
+  <Link to={to} className='sign-up-page__option'>
+    <h3 className='sign-up-page__option-header'>{content.header}</h3>
+    <p className='sign-up-page__option-details'>{content.details}</p>
+  </Link>
 
-    return (
-      <div className='sign-up-page'>
-        <div className='sign-up-page__form-container'>
-          <h1 className='sign-up-page__form-header'>{content.header}</h1>
-          {renderIf(formStage === 0)(
-            <div>
-              <h2 className='sign-up-page__form-subheader'>{content.createUserForm.header}</h2>
+const SignUpPage = props => {
+  const { content } = props.route
 
-              <CreateUserForm
-                content={content.createUserForm}
-                user={user}
-                setUser={setUser}
-                createUser={createUser}
-                locale={locale}
-                recaptchaSitekey={recaptchaSitekey}
-                requestInProgress={requestInProgress}
-              />
-            </div>
-          )}
+  const options = [
+    { content: content.options.userFlow, to: '/sign-up/user' },
+    { content: content.options.ocFlow, to: '/sign-up/contact' }
+  ]
 
-          {renderIf(formStage === 1)(
-            <div>
-              <h2 className='sign-up-page__form-subheader'>{content.createContactsForm.header}</h2>
-
-              <CreateContactsForm
-                content={content.createContactsForm}
-                toggleContactNotificationAllowed={toggleContactNotificationAllowed}
-                contacts={contacts}
-                setContact={setContact}
-                toggleContactDateField={toggleContactDateField}
-                requestInProgress={requestInProgress}
-                addContact={addContact}
-                deleteContact={deleteContact}
-                createContacts={createContacts}
-              />
-            </div>
-          )}
-        </div>
+  return (
+    <div className='sign-up-page'>
+      <h2 className='sign-up-page__header'>{content.header}</h2>
+      <h3 className='sign-up-page__subheader'>{content.subheader}</h3>
+      <div className='sign-up-page__options-container'>
+        {options.map((o, i) => <Option {...o} key={i} />)}
       </div>
-    )
-  }
-}
-
-const { object, number, func, bool, string } = PropTypes
-SignUpPage.propTypes = {
-  content: object,
-  locale: string,
-  formStage: number,
-  user: object,
-  setUser: func,
-  createUser: func,
-  toggleContactNotificationAllowed: func,
-  requestInProgress: bool,
-  contacts: object,
-  setContact: func,
-  toggleContactDateField: func,
-  addContact: func,
-  deleteContact: func,
-  createContacts: func
+    </div>
+  )
 }
 
 export default SignUpPage

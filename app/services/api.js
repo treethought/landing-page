@@ -21,15 +21,41 @@ export function postUser (user, onSuccess, onError) {
   }, onError)
 }
 
+export function postContact (contact, onSuccess, onError) {
+  return makeRequest({
+    method: 'POST',
+    path: '/contacts',
+    params: { contact }
+  }).then(res => {
+    cookie.save('token', res.token.value, { path: '/' })
+    cookie.save('referralCode', res.user.referralCode, { path: '/' })
+    trackRegistrationEvent('create-contact-form-submit-success')
+    onSuccess(res)
+  }, onError)
+}
+
 export function postContacts ({ contacts, userName }, onSuccess, onError) {
   const { notificationAllowed, list } = contacts
   const token = cookie.load('token', { path: '/' })
   return makeRequest({
     method: 'POST',
-    path: '/contacts',
+    path: '/contacts/list',
     params: { contacts: { notificationAllowed, token, list: values(list), userName } }
   }).then(res => {
     trackRegistrationEvent('create-contacts-form-submit-success')
+    cookie.remove('token', { path: '/' })
+    onSuccess(res)
+  }, onError)
+}
+
+export function notifyUsers ({ contactName, users }, onSuccess, onError) {
+  const token = cookie.load('token', { path: '/' })
+  return makeRequest({
+    method: 'POST',
+    path: '/users/notify',
+    params: { users: { contactName, token, list: users } }
+  }).then(res => {
+    trackRegistrationEvent('notify-users-form-submit-success')
     cookie.remove('token', { path: '/' })
     onSuccess(res)
   }, onError)

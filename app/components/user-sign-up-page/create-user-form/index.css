@@ -29,3 +29,19 @@
   color: #40B097;
   text-decoration: none;
 }
+
+@media (max-width: 640px) {
+
+  .sign-up-page__form-continue-btn-terms-text {
+    font-size: 12px;
+  }
+
+  .sign-up-page__create-user-form-checkbox {
+    margin-bottom: 10px;
+  }
+
+  .sign-up-page__create-user-form-checkbox label {
+    line-height: 18px !important;
+  }
+
+}
