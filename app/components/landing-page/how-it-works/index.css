@@ -58,7 +58,7 @@
   text-align: left;
   width: 240px;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .how-it-works__sub-step-row {
@@ -338,6 +338,7 @@
 
   .how-it-works__step-text {
     width: 120px;
+    font-size: 12px;
   }
 
   .how-it-works__parallel-step-icon-container {
