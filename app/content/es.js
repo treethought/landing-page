@@ -78,10 +78,10 @@ const es = {
       step2Text: 'eres detenido de forma inesperada',
       step3Text: 'eres llevado a un precinto',
       step4Text: 'llamas a Good Call al 1-833-3-GOODCALL (1-833-346-6322)',
-      step4substep1Text: 'recogemos tu información',
-      step4substep2Text: 'te decimos tus derechos',
-      step4substep3Text: 'confirmamos tu contacto de emergencia',
-      step5Text: 'Good Call avisa a tu contacto de emergencia y te consigue un abogado de inmediato',
+      step4substep1Text: 'automáticamente te conectamos con un abogado gratuito',
+      step4substep2Text: 'le dan información sobre el proceso y sus derechos',
+      step4substep3Text: 'identifican sus contactos de emergencia en nuestro directorio',
+      step5Text: 'Su abogado y sus seres queridos pueden trabajar juntos para preparar su caso',
       step6Text: 'puedes volver a casa tan pronto como sea posible'
     },
     launchingSoon: {
