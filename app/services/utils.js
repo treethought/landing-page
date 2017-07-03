@@ -1,4 +1,4 @@
-export const isDesktop = window.innerWidth > 640
+export const isDesktop = window.innerWidth > 740
 
 export const lengthOfObject = (obj) => {
   return Object.keys(obj).length
