@@ -1,13 +1,13 @@
 const es = {
   innerPage: {
     header: {
-      hotlineBannerText: 'Si tú o un ser querido han sido arrestados en el Bronx llama al 1-833-3-GOODCALL (1-833-346-6322) para recibir servicios de apoyo legal sin costo alguno 24/7',
       faqBtnLabel: 'Preguntas Frecuentes',
       aboutUsBtnLabel: 'Acerca de nosotros',
       signUpBtnLabel: 'Regístrate',
       toggleLanguageBtnLabel: 'English',
       donateBtnLabel: 'Donar'
     },
+    hotlineBannerText: 'Si tú o un ser querido han sido arrestados en el Bronx llama al 1-833-3-GOODCALL (1-833-346-6322) para recibir servicios de apoyo legal sin costo alguno 24/7',
     footer: {
       faqLinkLabel: 'Preguntas Frecuentes',
       aboutUsLinkLabel: 'Acerca de nosotros',

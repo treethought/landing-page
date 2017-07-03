@@ -15,18 +15,31 @@ class InnerPage extends Component {
     }
   }
 
+  componentDidMount () {
+    window.addEventListener('resize', e => {
+    })
+  }
+
   render () {
     const { location, children, route } = this.props
     const { content, toggleLocale } = route
+    const inRegistrationFlow = location && includes(location.pathname, '/sign-up')
 
     return (
       <div className='inner-page'>
         <Header
           content={content.header}
           toggleLocale={toggleLocale}
-          inRegistrationFlow={location && includes(location.pathname, '/sign-up')}
+          inRegistrationFlow={inRegistrationFlow}
         />
-        {children}
+        {!inRegistrationFlow && <div className='hotline-banner'>
+          <div className='hotline-banner-text'>
+            <b>{content.hotlineBannerText}</b>
+          </div>
+        </div>}
+        <div className='inner-page__content'>
+          {children}
+        </div>
         <Footer content={content.footer} />
       </div>
     )

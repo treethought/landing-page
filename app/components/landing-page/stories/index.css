@@ -1,6 +1,6 @@
 .landing-page__stories {
   position: relative;
-  padding-top: 90px;
+  /*padding-top: 90px;*/
   text-align: center;
   display: -webkit-flex;
   -webkit-flex-direction: column;
@@ -171,7 +171,7 @@
 @media (max-width: 674px) {
 
   .landing-page__stories {
-    padding-top: 72px;
+    /*padding-top: 72px;*/
   }
 
   .landing-page__story {
@@ -247,7 +247,7 @@
 @media (max-width: 470px) {
 
   .landing-page__stories {
-    padding-top: 110px;
+    /*padding-top: 110px;*/
   }
 
 }
@@ -269,7 +269,7 @@
   }
 
   .landing-page__stories {
-    padding-top: 77px;
+    /*padding-top: 77px;*/
   }
 
 }
