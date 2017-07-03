@@ -8,6 +8,7 @@ import FlatButton from 'material-ui/FlatButton'
 import MediaQuery from 'react-responsive'
 import { Link } from 'react-router'
 import renderIf from 'render-if'
+import { trackDonationEvent } from '../../services/ga'
 
 class Header extends Component {
   constructor (props) {
@@ -27,8 +28,9 @@ class Header extends Component {
       }, {
         label: content.donateBtnLabel,
         to: '/stub',
-        onClick: (e) => {
+        onClick: e => {
           e.preventDefault()
+          trackDonationEvent()
           window.location.href = 'https://igg.me/at/C42BDfXWM58'
         },
         className: 'header__nav-btn',

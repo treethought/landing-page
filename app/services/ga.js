@@ -18,3 +18,7 @@ export const trackPageView = pathname => {
 export const trackShareEvent = action => {
   ga('send', { hitType: 'event', eventCategory: 'share', eventAction: action })
 }
+
+export const trackDonationEvent = () => {
+  ga('send', { hitType: 'event', eventCategory: 'donate', eventAction: 'click' })
+}
