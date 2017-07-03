@@ -18,7 +18,7 @@ class CreateUserForm extends Component {
     const formData = mapObject(pick(this.props.user,
       ['ageVerified', 'recaptchaResponse', 'name', 'emailOrPhone']
     ), val => !!val)
-    trackRegistrationEvent('leave-create-user-form', formData)
+    trackRegistrationEvent('user', 'leave-1', formData)
   }
 
   componentDidMount () {

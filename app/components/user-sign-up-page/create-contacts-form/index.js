@@ -25,7 +25,7 @@ class CreateContactsForm extends Component {
         ['name', 'phone', 'fact']
       ), attrs => !!attrs)
     ))
-    trackRegistrationEvent('leave-create-contacts-form', formData)
+    trackRegistrationEvent('user', 'leave-2', formData)
   }
 
   componentDidMount () {

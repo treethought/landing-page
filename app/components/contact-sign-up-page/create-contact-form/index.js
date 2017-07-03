@@ -6,10 +6,10 @@ import Hint from '../../user-sign-up-page/hint'
 import update from 'react-addons-update'
 import values from 'lodash.values'
 import some from 'lodash.some'
-// import pick from 'lodash.pick'
-// import mapObject from 'object.map'
+import pick from 'lodash.pick'
+import mapObject from 'object.map'
 import { Checkbox, TextField } from './../../index.js'
-// import { trackRegistrationEvent } from './../../../services/ga'
+import { trackRegistrationEvent } from './../../../services/ga'
 
 class CreateContactForm extends Component {
   constructor (props) {
@@ -23,22 +23,22 @@ class CreateContactForm extends Component {
     }))
   }
 
-  // handleDropoff () {
-  //   const formData = mapObject(pick(this.props.contact,
-  //     ['ageVerified', 'recaptchaResponse', 'name', 'emailOrPhone']
-  //   ), val => !!val)
-  //   trackRegistrationEvent('leave-create-user-form', formData)
-  // }
+  handleDropoff () {
+    const formData = mapObject(pick(this.props.contact,
+      ['name', 'phone', 'email', 'fact', 'ageVerified', 'recaptchaResponse']
+    ), val => !!val)
+    trackRegistrationEvent('oc', 'leave-1', formData)
+  }
 
-  // componentDidMount () {
-  //   window.onbeforeunload = () =>
-  //     this.handleDropoff()
-  // }
-  //
-  // componentWillUnmount () {
-  //   this.handleDropoff()
-  //   window.onbeforeunload = null
-  // }
+  componentDidMount () {
+    window.onbeforeunload = () =>
+      this.handleDropoff()
+  }
+
+  componentWillUnmount () {
+    this.handleDropoff()
+    window.onbeforeunload = null
+  }
 
   continueBtnIsDisabled () {
     const { contact, requestInProgress } = this.props

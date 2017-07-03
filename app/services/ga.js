@@ -1,7 +1,11 @@
 const { ga } = window
 
-export const trackRegistrationEvent = (action, json) => {
-  let payload = { hitType: 'event', eventCategory: 'registration', eventAction: action }
+export const trackRegistrationEvent = (actor = null, action, json = null) => {
+  let payload = {
+    hitType: 'event',
+    eventCategory: actor ? `${actor}-reg` : 'reg',
+    eventAction: action
+  }
   if (json) { payload.eventLabel = JSON.stringify(json) }
   ga('send', payload)
 }

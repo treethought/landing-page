@@ -3,9 +3,13 @@ import { Link } from 'react-router'
 import FlatButton from 'material-ui/FlatButton'
 import SvgIcon from 'material-ui/SvgIcon'
 import urlencode from 'urlencode'
-import { trackShareEvent } from './../../services/ga'
+import { trackRegistrationEvent, trackShareEvent } from './../../services/ga'
 
 class SignUpSuccessPage extends Component {
+  componentDidMount () {
+    trackRegistrationEvent(null, 'success')
+  }
+
   trackShareEvent (action) {
     return () => trackShareEvent(action)
   }
@@ -69,7 +73,7 @@ class SignUpSuccessPage extends Component {
 
             <span className='sign-up-success-page__share-link-text'>{ content.copyAndShare }</span>
 
-            <textarea className='sign-up-success-page__share-link' defaultValue={referralLink} onSelect={this.trackShareEvent('share-link-selected')} readOnly='true' />
+            <textarea className='sign-up-success-page__share-link' defaultValue={referralLink} onSelect={this.trackShareEvent('link')} readOnly='true' />
 
             <span className='sign-up-success-page__share-btns-text'>{ content.orShareOnSocialMedia }</span>
 
@@ -80,7 +84,7 @@ class SignUpSuccessPage extends Component {
               style={{ backgroundColor: '#40B097' }}
               label={'Email'}
               icon={<EmailIcon />}
-              onClick={this.trackShareEvent('share-via-email-btn-clicked')}
+              onClick={this.trackShareEvent('email')}
             />
 
             <FlatButton
@@ -92,7 +96,7 @@ class SignUpSuccessPage extends Component {
               style={{ backgroundColor: '#2D4C8D' }}
               label={'Facebook'}
               icon={<FacebookIcon />}
-              onClick={this.trackShareEvent('share-via-facebook-btn-clicked')}
+              onClick={this.trackShareEvent('facebook')}
             />
 
             <FlatButton
@@ -102,7 +106,7 @@ class SignUpSuccessPage extends Component {
               style={{ backgroundColor: '#0098F8' }}
               label={'Twitter'}
               icon={<TwitterIcon />}
-              onClick={this.trackShareEvent('share-via-twitter-btn-clicked')}
+              onClick={this.trackShareEvent('twitter')}
             />
           </div>
         </div>

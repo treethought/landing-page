@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import FlatButton from 'material-ui/FlatButton'
 import { array, func } from 'prop-types'
+import FlatButton from 'material-ui/FlatButton'
+import mapObject from 'object.map'
 import some from 'lodash.some'
+import values from 'lodash.values'
+import pick from 'lodash.pick'
 import { TextField } from '../../index'
-import { isDesktop } from '../../../services/utils'
+import { isDesktop, scrollToTop } from '../../../services/utils'
 import Hint from '../../user-sign-up-page/hint'
+import { trackRegistrationEvent } from '../../../services/ga'
 
 class NotifyUsersForm extends Component {
   constructor (props) {
@@ -14,6 +18,26 @@ class NotifyUsersForm extends Component {
 
   showHint () {
     this.setState({ hintShown: true })
+  }
+
+  handleDropoff () {
+    const formData = values(this.props.users).map(contact => (
+      mapObject(pick(contact,
+        ['name', 'emailOrPhone']
+      ), attrs => !!attrs)
+    ))
+    trackRegistrationEvent('oc', 'leave-2', formData)
+  }
+
+  componentDidMount () {
+    setTimeout(scrollToTop, 300)
+    window.onbeforeunload = () =>
+      this.handleDropoff()
+  }
+
+  componentWillUnmount () {
+    this.handleDropoff()
+    window.onbeforeunload = null
   }
 
   render () {
