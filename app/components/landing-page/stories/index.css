@@ -5,8 +5,7 @@
   -webkit-flex-direction: column;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 64px);
-  min-height: 480px;
+  min-height: 420px;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -160,17 +159,12 @@
   }
 
   .landing-page__stories-header {
-    margin-bottom: 30px;
-    margin-top: 10px;
+    margin: 20px auto;
   }
 
 }
 
 @media (max-width: 674px) {
-
-  .landing-page__stories {
-    /*padding-top: 72px;*/
-  }
 
   .landing-page__story {
     margin-top: 35px;
@@ -178,8 +172,6 @@
 
   .landing-page__stories-header {
     font-size: 20px;
-    margin-bottom: 30px;
-    margin-top: 10px;
   }
 
   .landing-page__story-subheader {

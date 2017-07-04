@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import { func, object } from 'prop-types'
 import Slider from 'react-slick-data-doge-fork'
 import uuid from 'node-uuid'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
@@ -13,11 +14,10 @@ import ScrollDownBtn from './../../scroll-down-btn'
 class Stories extends Component {
   constructor (props) {
     super(props)
-    this.resetComponentKey = this.resetComponentKey.bind(this)
+    this.handleResize = this.handleResize.bind(this)
     const stories = props.content.stories.map((story) => (
       { pictureName: `${story.name}-min`, subheader: story.subheader, text: story.text, header: story.header }
     ))
-
     this.state = {
       componentKey: uuid.v4(),
       stories: rotate(stories, moment().get('minute') % stories.length)
@@ -30,12 +30,21 @@ class Stories extends Component {
   }
 
   componentDidMount () {
-    this.resetComponentKey()
-    window.addEventListener('resize', this.resetComponentKey)
+    this.handleResize()
+    window.addEventListener('resize', this.handleResize)
   }
 
   componentWillUnmount () {
-    window.removeEventListener('resize', this.resetComponentKey)
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  handleResize () {
+    this.resetComponentKey()
+    const innerPageContent = this.props.getInnerPageContent()
+    if (innerPageContent) {
+      console.log(innerPageContent.style.paddingTop)
+      this.stories.style.height = `calc(100vh - ${innerPageContent.style.paddingTop})`
+    }
   }
 
   resetComponentKey () {
@@ -71,7 +80,7 @@ class Stories extends Component {
     const {content} = this.props
 
     return (
-      <section className='landing-page__stories' key={this.state.componentKey}>
+      <section className='landing-page__stories' key={this.state.componentKey} ref={el => { this.stories = el }}>
         <h1 className='landing-page__stories-header'>{content.header}</h1>
 
         <ul className='landing-page__stories-carousel-list-container'>
@@ -138,7 +147,8 @@ class Stories extends Component {
 }
 
 Stories.propTypes = {
-  content: PropTypes.object
+  getInnerPageContent: func,
+  content: object
 }
 
 export default Stories

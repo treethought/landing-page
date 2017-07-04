@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import { func, object } from 'prop-types'
 import Stories from './stories'
 import SimplePanel from './../simple-panel'
 import Problem from './problem'
@@ -9,11 +10,12 @@ const { Element } = Scroll
 
 class LandingPage extends Component {
   render () {
-    const { content } = this.props.route
+    const { getInnerPageContent, route } = this.props
+    const { content } = route
 
     return (
       <div className='landing-page'>
-        <Stories content={content.stories} />
+        <Stories content={content.stories} getInnerPageContent={getInnerPageContent} />
 
         <Element name='landing-page__summary'>
           <SimplePanel
@@ -33,8 +35,8 @@ class LandingPage extends Component {
   }
 }
 
-const { object } = PropTypes
 LandingPage.propTypes = {
+  getInnerPageContent: func,
   route: object
 }
 

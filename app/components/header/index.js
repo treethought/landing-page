@@ -10,9 +10,11 @@ import navBtns from './nav-btns'
 class Header extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      navBtns: navBtns(props.content)
-    }
+    this.state = { navBtns: navBtns(props.content) }
+  }
+
+  componentDidMount () {
+    this.props.getHeaderRef(this.header)
   }
 
   render () {
@@ -20,7 +22,7 @@ class Header extends Component {
     const { navBtns } = this.state
 
     return (
-      <header className='header'>
+      <header className='header' ref={el => { this.header = el }}>
         <Link to='/'>
           <h1><img src='/assets/imgs/logo.png' alt='Good Call NYC' className='header__logo' /></h1>
         </Link>
@@ -42,9 +44,10 @@ class Header extends Component {
 }
 
 Header.propTypes = {
+  content: object,
+  getHeaderRef: func,
   inRegistrationFlow: bool,
-  toggleLocale: func,
-  content: object
+  toggleLocale: func
 }
 
 export default Header

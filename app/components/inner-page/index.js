@@ -21,7 +21,7 @@ class InnerPage extends Component {
   }
 
   setContentPadding () {
-    this.innerPageContent.style.paddingTop = `${85 + this.banner.offsetHeight}px`
+    this.innerPageContent.style.paddingTop = `${this.header.offsetHeight + this.banner.offsetHeight}px`
   }
 
   render () {
@@ -35,15 +35,19 @@ class InnerPage extends Component {
           content={content.header}
           toggleLocale={toggleLocale}
           inRegistrationFlow={inRegistrationFlow}
+          getHeaderRef={el => { this.header = el }}
         />
+
         {!inRegistrationFlow && <div className='hotline-banner' ref={el => { this.banner = el }}>
           <div className='hotline-banner-text'>
             <b>{content.hotlineBannerText}</b>
           </div>
         </div>}
+
         <div className='inner-page__content' ref={el => { this.innerPageContent = el }}>
-          {children}
+          {React.cloneElement(children, { getInnerPageContent: () => this.innerPageContent })}
         </div>
+
         <Footer content={content.footer} />
       </div>
     )
