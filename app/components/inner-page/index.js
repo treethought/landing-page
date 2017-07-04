@@ -16,8 +16,12 @@ class InnerPage extends Component {
   }
 
   componentDidMount () {
-    window.addEventListener('resize', e => {
-    })
+    this.setContentPadding()
+    window.addEventListener('resize', this.setContentPadding.bind(this))
+  }
+
+  setContentPadding () {
+    this.innerPageContent.style.paddingTop = `${85 + this.banner.offsetHeight}px`
   }
 
   render () {
@@ -32,12 +36,12 @@ class InnerPage extends Component {
           toggleLocale={toggleLocale}
           inRegistrationFlow={inRegistrationFlow}
         />
-        {!inRegistrationFlow && <div className='hotline-banner'>
+        {!inRegistrationFlow && <div className='hotline-banner' ref={el => { this.banner = el }}>
           <div className='hotline-banner-text'>
             <b>{content.hotlineBannerText}</b>
           </div>
         </div>}
-        <div className='inner-page__content'>
+        <div className='inner-page__content' ref={el => { this.innerPageContent = el }}>
           {children}
         </div>
         <Footer content={content.footer} />
