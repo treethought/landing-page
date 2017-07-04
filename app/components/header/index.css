@@ -10,7 +10,7 @@
   height: 85px;
   align-items: center;
   padding-left: 35px;
-  padding-right: 35px;
+  padding-right: 25px;
   background: #FDFFF9;
 }
 
@@ -21,8 +21,6 @@
 
 .header__logo {
   height: 42px;
-  position: relative;
-  top: 0px;
 }
 
 .header__nav {
@@ -78,11 +76,6 @@
   padding: 0 10px !important;
 }
 
-.header__icon-menu {
-  position: relative;
-  top: 5px;
-}
-
 @media (max-width: 849px) {
 
   .header {
@@ -91,6 +84,15 @@
 
   .header__logo {
     height: 35px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .header {
+    padding-left: 25px;
+    padding-right: 15px;
   }
 
 }
