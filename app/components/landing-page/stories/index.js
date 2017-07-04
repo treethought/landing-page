@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { func, object } from 'prop-types'
+import { string, object } from 'prop-types'
 import Slider from 'react-slick-data-doge-fork'
 import uuid from 'node-uuid'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
@@ -14,7 +14,7 @@ import ScrollDownBtn from './../../scroll-down-btn'
 class Stories extends Component {
   constructor (props) {
     super(props)
-    this.handleResize = this.handleResize.bind(this)
+    this.resetComponentKey = this.resetComponentKey.bind(this)
     const stories = props.content.stories.map((story) => (
       { pictureName: `${story.name}-min`, subheader: story.subheader, text: story.text, header: story.header }
     ))
@@ -30,26 +30,17 @@ class Stories extends Component {
   }
 
   componentDidMount () {
-    this.handleResize()
-    window.addEventListener('resize', this.handleResize)
+    this.resetComponentKey()
+    window.addEventListener('resize', this.resetComponentKey)
   }
 
   componentWillUnmount () {
-    window.removeEventListener('resize', this.handleResize)
-  }
-
-  handleResize () {
-    this.resetComponentKey()
-    const innerPageContent = this.props.getInnerPageContent()
-    if (innerPageContent) {
-      console.log(innerPageContent.style.paddingTop)
-      this.stories.style.height = `calc(100vh - ${innerPageContent.style.paddingTop})`
-    }
+    window.removeEventListener('resize', this.resetComponentKey)
   }
 
   resetComponentKey () {
     // this causes the component to remount, which is needed for <Slider /> to actually be responsive
-    this.setState({componentKey: uuid.v4()})
+    this.setState({ componentKey: uuid.v4() })
   }
 
   prevSlide () {
@@ -77,10 +68,10 @@ class Stories extends Component {
       pauseOnHover: false
     }
 
-    const {content} = this.props
+    const { content, height } = this.props
 
     return (
-      <section className='landing-page__stories' key={this.state.componentKey} ref={el => { this.stories = el }}>
+      <section className='landing-page__stories' key={this.state.componentKey} style={{ height }}>
         <h1 className='landing-page__stories-header'>{content.header}</h1>
 
         <ul className='landing-page__stories-carousel-list-container'>
@@ -147,8 +138,8 @@ class Stories extends Component {
 }
 
 Stories.propTypes = {
-  getInnerPageContent: func,
-  content: object
+  content: object,
+  height: string
 }
 
 export default Stories

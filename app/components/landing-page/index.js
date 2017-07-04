@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { func, object } from 'prop-types'
+import { string, object } from 'prop-types'
 import Stories from './stories'
 import SimplePanel from './../simple-panel'
 import Problem from './problem'
@@ -10,12 +10,12 @@ const { Element } = Scroll
 
 class LandingPage extends Component {
   render () {
-    const { getInnerPageContent, route } = this.props
+    const { innerPageContentPadding, route } = this.props
     const { content } = route
 
     return (
       <div className='landing-page'>
-        <Stories content={content.stories} getInnerPageContent={getInnerPageContent} />
+        <Stories content={content.stories} height={`calc(100vh - ${innerPageContentPadding})`} />
 
         <Element name='landing-page__summary'>
           <SimplePanel
@@ -36,7 +36,7 @@ class LandingPage extends Component {
 }
 
 LandingPage.propTypes = {
-  getInnerPageContent: func,
+  innerPageContentPadding: string,
   route: object
 }
 

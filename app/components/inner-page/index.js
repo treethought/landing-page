@@ -6,6 +6,11 @@ import cookie from 'react-cookie'
 import { browserHistory } from 'react-router'
 
 class InnerPage extends Component {
+  constructor () {
+    super()
+    this.state = { innerPageContentPadding: null }
+  }
+
   componentWillMount () {
     const { query, pathname } = this.props.location
     const { referredByCode } = query
@@ -21,12 +26,15 @@ class InnerPage extends Component {
   }
 
   setContentPadding () {
-    this.innerPageContent.style.paddingTop = `${this.header.offsetHeight + this.banner.offsetHeight}px`
+    const paddingTop = `${this.header.offsetHeight + this.banner.offsetHeight}px`
+    this.innerPageContent.style.paddingTop = paddingTop
+    this.setState({ innerPageContentPadding: paddingTop })
   }
 
   render () {
     const { location, children, route } = this.props
     const { content, toggleLocale } = route
+    const { innerPageContentPadding } = this.state
     const inRegistrationFlow = location && includes(location.pathname, '/sign-up')
 
     return (
@@ -45,7 +53,7 @@ class InnerPage extends Component {
         </div>}
 
         <div className='inner-page__content' ref={el => { this.innerPageContent = el }}>
-          {React.cloneElement(children, { getInnerPageContent: () => this.innerPageContent })}
+          {React.cloneElement(children, { innerPageContentPadding })}
         </div>
 
         <Footer content={content.footer} />
