@@ -34,11 +34,9 @@ class InnerPage extends Component {
 
   setContentPadding (nextLocation) {
     const location = nextLocation || this.props.location
-    const bannerOffset = onSignUpPage(location)
-      ? 0
-      : this.banner
-        ? this.banner.offsetHeight
-        : 0
+    const bannerOffset = !onSignUpPage(location) && this.banner
+      ? this.banner.offsetHeight
+      : 0
     const innerPageContentPadding = `${this.header.offsetHeight + bannerOffset}px`
     this.setState({ innerPageContentPadding })
   }
