@@ -28,7 +28,9 @@ class InnerPage extends Component {
 
   componentDidMount () {
     this.setContentPadding()
-    window.addEventListener('resize', this.setContentPadding)
+    window.addEventListener('resize', e => {
+      this.setContentPadding()
+    })
     browserHistory.listen(location => {
       onSignUpPage(location)
         ? this.setContentPadding(0)
