@@ -5,10 +5,16 @@ import includes from 'lodash.includes'
 import cookie from 'react-cookie'
 import { browserHistory } from 'react-router'
 
+const onSignUpPage = location => location && includes(location.pathname, '/sign-up')
+
 class InnerPage extends Component {
-  constructor () {
-    super()
-    this.state = { innerPageContentPadding: null }
+  constructor (props) {
+    super(props)
+    this.setContentPadding = this.setContentPadding.bind(this)
+    this.state = {
+      innerPageContentPadding: null,
+      onSignUpPage: onSignUpPage(props.location)
+    }
   }
 
   componentWillMount () {
@@ -22,13 +28,20 @@ class InnerPage extends Component {
 
   componentDidMount () {
     this.setContentPadding()
-    window.addEventListener('resize', this.setContentPadding.bind(this))
+    window.addEventListener('resize', this.setContentPadding)
+    browserHistory.listen(location => {
+      onSignUpPage(location)
+        ? this.setContentPadding(0)
+        : this.setContentPadding(this.banner.offsetHeight)
+    })
   }
 
-  setContentPadding () {
-    const paddingTop = `${this.header.offsetHeight + this.banner.offsetHeight}px`
-    this.innerPageContent.style.paddingTop = paddingTop
-    this.setState({ innerPageContentPadding: paddingTop })
+  setContentPadding (bannerOffset) {
+    const calculatedBannerOffset = bannerOffset === undefined
+      ? this.banner ? this.banner.offsetHeight : 0
+      : bannerOffset
+    const innerPageContentPadding = `${this.header.offsetHeight + calculatedBannerOffset}px`
+    this.setState({ innerPageContentPadding })
   }
 
   render () {
@@ -46,13 +59,21 @@ class InnerPage extends Component {
           getHeaderRef={el => { this.header = el }}
         />
 
-        {!inRegistrationFlow && <div className='hotline-banner' ref={el => { this.banner = el }}>
+        <div
+          className='hotline-banner'
+          ref={el => { this.banner = el }}
+          style={{ opacity: onSignUpPage(location) ? 0 : 1 }}
+        >
           <div className='hotline-banner-text'>
             <b>{content.hotlineBannerText}</b>
           </div>
-        </div>}
+        </div>
 
-        <div className='inner-page__content' ref={el => { this.innerPageContent = el }}>
+        <div
+          className='inner-page__content'
+          ref={el => { this.innerPageContent = el }}
+          style={{ paddingTop: innerPageContentPadding }}
+        >
           {React.cloneElement(children, { innerPageContentPadding })}
         </div>
 
