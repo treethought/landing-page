@@ -28,21 +28,18 @@ class InnerPage extends Component {
 
   componentDidMount () {
     this.setContentPadding()
-    window.addEventListener('resize', e => {
-      this.setContentPadding()
-    })
-    browserHistory.listen(location => {
-      onSignUpPage(location)
-        ? this.setContentPadding(0)
-        : this.setContentPadding(this.banner.offsetHeight)
-    })
+    window.addEventListener('resize', e => { this.setContentPadding() })
+    browserHistory.listen(nextLocation => { this.setContentPadding(nextLocation) })
   }
 
-  setContentPadding (bannerOffset) {
-    const calculatedBannerOffset = bannerOffset === undefined
-      ? this.banner ? this.banner.offsetHeight : 0
-      : bannerOffset
-    const innerPageContentPadding = `${this.header.offsetHeight + calculatedBannerOffset}px`
+  setContentPadding (nextLocation) {
+    const location = nextLocation || this.props.location
+    const bannerOffset = onSignUpPage(location)
+      ? 0
+      : this.banner
+        ? this.banner.offsetHeight
+        : 0
+    const innerPageContentPadding = `${this.header.offsetHeight + bannerOffset}px`
     this.setState({ innerPageContentPadding })
   }
 
