@@ -4,8 +4,6 @@ import Slider from 'react-slick-data-doge-fork'
 import uuid from 'node-uuid'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
-import rotate from 'rotate-array'
-import moment from 'moment'
 import MediaQuery from 'react-responsive'
 import FlatButton from 'material-ui/FlatButton'
 import { Link } from 'react-router'
@@ -21,7 +19,7 @@ class Stories extends Component {
     ))
     this.state = {
       componentKey: uuid.v4(),
-      stories: rotate(stories, moment().get('minute') % stories.length)
+      stories: stories
     }
   }
 
@@ -127,6 +125,17 @@ class Stories extends Component {
 
                       <p className='landing-page__story-text'>{story.text}</p>
                     </div>
+
+                    <MediaQuery query='(max-width: 849px)'>
+                      <div className='landing-page__stories-sign-up-btn-container'>
+                        <FlatButton
+                          label={content.signUpBtnLabel}
+                          className='gc-std-btn'
+                          style={{ backgroundColor: '#40B097' }}
+                          containerElement={<Link to='/sign-up' />}
+                        />
+                      </div>
+                    </MediaQuery>
                   </li>
                 </div>
               </div>
@@ -140,19 +149,6 @@ class Stories extends Component {
             <KeyboardArrowRight className='landing-page__stories-carousel__arrow' color='#FDFFF9' />
           </div>
         </ul>
-
-        {/*
-          <MediaQuery query='(max-width: 849px)'>
-            <div className='landing-page__stories-sign-up-btn-container'>
-              <FlatButton
-                label={content.signUpBtnLabel}
-                className='gc-std-btn'
-                style={{ backgroundColor: '#40B097' }}
-                containerElement={<Link to='/sign-up' />}
-              />
-            </div>
-          </MediaQuery>
-        */}
 
         <MediaQuery query='(min-width: 850px)'>
           <div className='landing-page__stories-scroll-down-btn-container'>
