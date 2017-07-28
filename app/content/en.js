@@ -27,6 +27,11 @@ const en = {
       header: 'Who would you call in case of an arrest?',
       signUpBtnLabel: 'sign up',
       scrollDownBtnLabel: 'Learn more',
+      donation: {
+        header: 'Support and donate to justice',
+        cta: 'donate',
+        newsletter: 'Sign up for our newsletter'
+      },
       stories: [
         {
           name: 'pharaoh',

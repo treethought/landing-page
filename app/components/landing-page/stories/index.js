@@ -4,12 +4,11 @@ import Slider from 'react-slick-data-doge-fork'
 import uuid from 'node-uuid'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
-import rotate from 'rotate-array'
-import moment from 'moment'
 import MediaQuery from 'react-responsive'
 import FlatButton from 'material-ui/FlatButton'
 import { Link } from 'react-router'
 import ScrollDownBtn from './../../scroll-down-btn'
+import { trackDonationEvent } from '../../../services/ga'
 
 class Stories extends Component {
   constructor (props) {
@@ -20,7 +19,7 @@ class Stories extends Component {
     ))
     this.state = {
       componentKey: uuid.v4(),
-      stories: rotate(stories, moment().get('minute') % stories.length)
+      stories: stories
     }
   }
 
@@ -55,6 +54,11 @@ class Stories extends Component {
     return window.innerWidth < 420
   }
 
+  goToDonationPage () {
+    trackDonationEvent()
+    window.location.href = 'https://igg.me/at/C42BDfXWM58'
+  }
+
   render () {
     let sliderSettings = {
       className: 'landing-page__stories-carousel',
@@ -83,8 +87,27 @@ class Stories extends Component {
           </div>
 
           <Slider {...sliderSettings} ref='landing-page__stories-carousel'>
-            {this.state.stories.map((story, i) => (
-              <div className='landing-page__story-container' key={i} style={{
+            <div
+              className='landing-page__donation-panel-container'
+              style={{
+                'backgroundImage': `url('./assets/imgs/${'donation-bg-min' + (this.isMobile() ? '-mobile' : '')}.png')`
+              }}
+            >
+              <h2 className='landing-page__stories-donation-header'>
+                {content.donation.header}
+              </h2>
+              <FlatButton
+                label={content.donation.cta}
+                className='gc-std-btn landing-page__stories-donation-btn'
+                onClick={this.goToDonationPage}
+              />
+              <a href='https://docs.google.com/forms/d/e/1FAIpQLScZoMlsT7GwU6LeBgJDhjYXH9fMozptEyyojWH_LMZAGv6iFw/viewform' className='landing-page__stories-newsletter-link'>
+                {content.donation.newsletter}
+              </a>
+            </div>
+
+            {this.state.stories.map(story => (
+              <div className='landing-page__story-container' key={JSON.stringify(story)} style={{
                 'backgroundImage': `url('./assets/imgs/${story.pictureName + (this.isMobile() ? '-mobile' : '')}.jpg')`
               }}>
                 <div className='landing-page__story-container-overlay'>
@@ -102,6 +125,17 @@ class Stories extends Component {
 
                       <p className='landing-page__story-text'>{story.text}</p>
                     </div>
+
+                    <MediaQuery query='(max-width: 849px)'>
+                      <div className='landing-page__stories-sign-up-btn-container'>
+                        <FlatButton
+                          label={content.signUpBtnLabel}
+                          className='gc-std-btn'
+                          style={{ backgroundColor: '#40B097' }}
+                          containerElement={<Link to='/sign-up' />}
+                        />
+                      </div>
+                    </MediaQuery>
                   </li>
                 </div>
               </div>
@@ -115,17 +149,6 @@ class Stories extends Component {
             <KeyboardArrowRight className='landing-page__stories-carousel__arrow' color='#FDFFF9' />
           </div>
         </ul>
-
-        <MediaQuery query='(max-width: 849px)'>
-          <div className='landing-page__stories-sign-up-btn-container'>
-            <FlatButton
-              label={content.signUpBtnLabel}
-              className='gc-std-btn'
-              style={{ backgroundColor: '#40B097' }}
-              containerElement={<Link to='/sign-up' />}
-            />
-          </div>
-        </MediaQuery>
 
         <MediaQuery query='(min-width: 850px)'>
           <div className='landing-page__stories-scroll-down-btn-container'>
