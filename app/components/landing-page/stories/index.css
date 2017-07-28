@@ -69,6 +69,51 @@
 .landing-page__donation-panel-container {
   background-size: cover;
   background-position: center;
+  color: #FDFFF9;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-page__stories-donation-header {
+  margin-top: 0;
+  font-weight: 500;
+  margin-bottom: 80px;
+  font-size: 46px;
+}
+
+.landing-page__stories-donation-btn {
+  background: #FDFFF9 !important;
+  margin-bottom: 45px !important;
+}
+
+.landing-page__stories-donation-btn span {
+  color: #4EBBA6 !important;
+}
+
+.landing-page__stories-newsletter-link {
+  font-weight: 300;
+  color: inherit;
+  display: block;
+  font-size: 18px;
+}
+
+@media (max-width: 520px) {
+
+  .landing-page__stories-donation-header {
+    margin-bottom: 50px;
+    font-size: 24px;
+  }
+
+  .landing-page__stories-donation-btn {
+    margin-bottom: 40px !important;
+  }
+
+  .landing-page__stories-newsletter-link {
+    font-size: 16px;
+  }
+
 }
 
 .landing-page__story-container {

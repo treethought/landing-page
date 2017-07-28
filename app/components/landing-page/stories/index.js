@@ -10,6 +10,7 @@ import MediaQuery from 'react-responsive'
 import FlatButton from 'material-ui/FlatButton'
 import { Link } from 'react-router'
 import ScrollDownBtn from './../../scroll-down-btn'
+import { trackDonationEvent } from '../../../services/ga'
 
 class Stories extends Component {
   constructor (props) {
@@ -55,6 +56,11 @@ class Stories extends Component {
     return window.innerWidth < 420
   }
 
+  goToDonationPage () {
+    trackDonationEvent()
+    window.location.href = 'https://igg.me/at/C42BDfXWM58'
+  }
+
   render () {
     let sliderSettings = {
       className: 'landing-page__stories-carousel',
@@ -89,6 +95,17 @@ class Stories extends Component {
                 'backgroundImage': `url('./assets/imgs/${'donation-bg-min' + (this.isMobile() ? '-mobile' : '')}.png')`
               }}
             >
+              <h2 className='landing-page__stories-donation-header'>
+                {content.donation.header}
+              </h2>
+              <FlatButton
+                label={content.donation.cta}
+                className='gc-std-btn landing-page__stories-donation-btn'
+                onClick={this.goToDonationPage}
+              />
+              <a href='https://docs.google.com/forms/d/e/1FAIpQLScZoMlsT7GwU6LeBgJDhjYXH9fMozptEyyojWH_LMZAGv6iFw/viewform' className='landing-page__stories-newsletter-link'>
+                {content.donation.newsletter}
+              </a>
             </div>
 
             {this.state.stories.map(story => (
@@ -124,16 +141,18 @@ class Stories extends Component {
           </div>
         </ul>
 
-        <MediaQuery query='(max-width: 849px)'>
-          <div className='landing-page__stories-sign-up-btn-container'>
-            <FlatButton
-              label={content.signUpBtnLabel}
-              className='gc-std-btn'
-              style={{ backgroundColor: '#40B097' }}
-              containerElement={<Link to='/sign-up' />}
-            />
-          </div>
-        </MediaQuery>
+        {/*
+          <MediaQuery query='(max-width: 849px)'>
+            <div className='landing-page__stories-sign-up-btn-container'>
+              <FlatButton
+                label={content.signUpBtnLabel}
+                className='gc-std-btn'
+                style={{ backgroundColor: '#40B097' }}
+                containerElement={<Link to='/sign-up' />}
+              />
+            </div>
+          </MediaQuery>
+        */}
 
         <MediaQuery query='(min-width: 850px)'>
           <div className='landing-page__stories-scroll-down-btn-container'>
