@@ -28,9 +28,9 @@ const es = {
       signUpBtnLabel: 'regístrate',
       scrollDownBtnLabel: 'Conoce más',
       donation: {
-        header: 'TODO',
-        cta: 'TODO',
-        newsletter: 'TODO'
+        header: 'Apoyen y donen a la justicia',
+        cta: 'donen',
+        newsletter: 'Suscriban a nuestros boletìn'
       },
       stories: [
         {
