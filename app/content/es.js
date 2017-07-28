@@ -27,6 +27,11 @@ const es = {
       header: '¿A quién llamarías en caso de arresto?',
       signUpBtnLabel: 'regístrate',
       scrollDownBtnLabel: 'Conoce más',
+      donation: {
+        header: 'TODO',
+        cta: 'TODO',
+        newsletter: 'TODO'
+      },
       stories: [
         {
           name: 'pharaoh',

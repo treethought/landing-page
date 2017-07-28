@@ -30,7 +30,7 @@ const en = {
       donation: {
         header: 'Support and donate to justice',
         cta: 'donate',
-        newsletter: 'Sign up for our newsletter to get updates'
+        newsletter: 'Sign up for our newsletter'
       },
       stories: [
         {
