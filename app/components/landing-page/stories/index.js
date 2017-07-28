@@ -83,8 +83,16 @@ class Stories extends Component {
           </div>
 
           <Slider {...sliderSettings} ref='landing-page__stories-carousel'>
-            {this.state.stories.map((story, i) => (
-              <div className='landing-page__story-container' key={i} style={{
+            <div
+              className='landing-page__donation-panel-container'
+              style={{
+                'backgroundImage': `url('./assets/imgs/${'donation-bg-min' + (this.isMobile() ? '-mobile' : '')}.png')`
+              }}
+            >
+            </div>
+
+            {this.state.stories.map(story => (
+              <div className='landing-page__story-container' key={JSON.stringify(story)} style={{
                 'backgroundImage': `url('./assets/imgs/${story.pictureName + (this.isMobile() ? '-mobile' : '')}.jpg')`
               }}>
                 <div className='landing-page__story-container-overlay'>

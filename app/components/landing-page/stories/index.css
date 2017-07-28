@@ -66,6 +66,11 @@
   height: 50px !important;
 }
 
+.landing-page__donation-panel-container {
+  background-size: cover;
+  background-position: center;
+}
+
 .landing-page__story-container {
   position: relative;
   text-align: center;
