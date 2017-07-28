@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { string, object } from 'prop-types'
-import Slider from 'react-slick-data-doge-fork'
-import uuid from 'node-uuid'
+import Slider from 'react-slick'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 import MediaQuery from 'react-responsive'
@@ -13,33 +12,6 @@ import { trackDonationEvent } from '../../../services/ga'
 class Stories extends Component {
   constructor (props) {
     super(props)
-    this.resetComponentKey = this.resetComponentKey.bind(this)
-    const stories = props.content.stories.map((story) => (
-      { pictureName: `${story.name}-min`, subheader: story.subheader, text: story.text, header: story.header }
-    ))
-    this.state = {
-      componentKey: uuid.v4(),
-      stories: stories
-    }
-  }
-
-  componentWillReceiveProps () {
-    // necessary to rerender carousel correctly on route change
-    this.resetComponentKey()
-  }
-
-  componentDidMount () {
-    this.resetComponentKey()
-    window.addEventListener('resize', this.resetComponentKey)
-  }
-
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.resetComponentKey)
-  }
-
-  resetComponentKey () {
-    // this causes the component to remount, which is needed for <Slider /> to actually be responsive
-    this.setState({ componentKey: uuid.v4() })
   }
 
   prevSlide () {
@@ -60,7 +32,13 @@ class Stories extends Component {
   }
 
   render () {
-    let sliderSettings = {
+    const { content, height } = this.props
+
+    const stories = content.stories.map((story) => (
+      { pictureName: `${story.name}-min`, subheader: story.subheader, text: story.text, header: story.header }
+    ))
+
+    const sliderSettings = {
       className: 'landing-page__stories-carousel',
       autoplay: true,
       arrows: false,
@@ -72,10 +50,8 @@ class Stories extends Component {
       pauseOnHover: false
     }
 
-    const { content, height } = this.props
-
     return (
-      <section className='landing-page__stories' key={this.state.componentKey} style={{ height }}>
+      <section className='landing-page__stories' style={{ height }}>
         <h1 className='landing-page__stories-header'>{content.header}</h1>
 
         <ul className='landing-page__stories-carousel-list-container'>
@@ -106,7 +82,7 @@ class Stories extends Component {
               </a>
             </div>
 
-            {this.state.stories.map(story => (
+            {stories.map(story => (
               <div className='landing-page__story-container' key={JSON.stringify(story)} style={{
                 'backgroundImage': `url('./assets/imgs/${story.pictureName + (this.isMobile() ? '-mobile' : '')}.jpg')`
               }}>
