@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import { string, object } from 'prop-types'
 import Slider from 'react-slick-data-doge-fork'
 import uuid from 'node-uuid'
 import KeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
@@ -17,7 +18,6 @@ class Stories extends Component {
     const stories = props.content.stories.map((story) => (
       { pictureName: `${story.name}-min`, subheader: story.subheader, text: story.text, header: story.header }
     ))
-
     this.state = {
       componentKey: uuid.v4(),
       stories: rotate(stories, moment().get('minute') % stories.length)
@@ -40,7 +40,7 @@ class Stories extends Component {
 
   resetComponentKey () {
     // this causes the component to remount, which is needed for <Slider /> to actually be responsive
-    this.setState({componentKey: uuid.v4()})
+    this.setState({ componentKey: uuid.v4() })
   }
 
   prevSlide () {
@@ -68,10 +68,10 @@ class Stories extends Component {
       pauseOnHover: false
     }
 
-    const {content} = this.props
+    const { content, height } = this.props
 
     return (
-      <section className='landing-page__stories' key={this.state.componentKey}>
+      <section className='landing-page__stories' key={this.state.componentKey} style={{ height }}>
         <h1 className='landing-page__stories-header'>{content.header}</h1>
 
         <ul className='landing-page__stories-carousel-list-container'>
@@ -138,7 +138,8 @@ class Stories extends Component {
 }
 
 Stories.propTypes = {
-  content: PropTypes.object
+  content: object,
+  height: string
 }
 
 export default Stories

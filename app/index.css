@@ -10,7 +10,6 @@ html, body {
 }
 
 body {
-  padding-top: 64px;
   font-family: Lato;
 }
 
@@ -52,7 +51,7 @@ body {
 
 .legal-container {
   color: #4a4a4a;
-  padding: 150px 133px 150px 133px;
+  padding: 100px 133px 150px 133px;
   text-align: center;
 }
 
@@ -155,6 +154,7 @@ body {
 @import url("./components/privacy-policy-page/index.css");
 @import url("./components/faq-page/index.css");
 @import url("./components/press-releases-page/index.css");
+@import url("./components/inner-page/index.css");
 
 @import url("./components/simple-panel/index.css");
 @import url("./components/scroll-down-btn/index.css");

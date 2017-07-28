@@ -5,7 +5,18 @@ import includes from 'lodash.includes'
 import cookie from 'react-cookie'
 import { browserHistory } from 'react-router'
 
+const onSignUpPage = location => location && includes(location.pathname, '/sign-up')
+
 class InnerPage extends Component {
+  constructor (props) {
+    super(props)
+    this.setContentPadding = this.setContentPadding.bind(this)
+    this.state = {
+      innerPageContentPadding: null,
+      onSignUpPage: onSignUpPage(props.location)
+    }
+  }
+
   componentWillMount () {
     const { query, pathname } = this.props.location
     const { referredByCode } = query
@@ -15,18 +26,54 @@ class InnerPage extends Component {
     }
   }
 
+  componentDidMount () {
+    this.setContentPadding()
+    window.addEventListener('resize', e => { this.setContentPadding() })
+    browserHistory.listen(nextLocation => { this.setContentPadding(nextLocation) })
+  }
+
+  setContentPadding (nextLocation) {
+    const location = nextLocation || this.props.location
+    const bannerOffset = !onSignUpPage(location) && this.banner
+      ? this.banner.offsetHeight
+      : 0
+    const innerPageContentPadding = `${this.header.offsetHeight + bannerOffset}px`
+    this.setState({ innerPageContentPadding })
+  }
+
   render () {
     const { location, children, route } = this.props
     const { content, toggleLocale } = route
+    const { innerPageContentPadding } = this.state
+    const inRegistrationFlow = location && includes(location.pathname, '/sign-up')
 
     return (
       <div className='inner-page'>
         <Header
           content={content.header}
           toggleLocale={toggleLocale}
-          inRegistrationFlow={location && includes(location.pathname, '/sign-up')}
+          inRegistrationFlow={inRegistrationFlow}
+          getHeaderRef={el => { this.header = el }}
         />
-        {children}
+
+        <div
+          className='hotline-banner'
+          ref={el => { this.banner = el }}
+          style={{ opacity: onSignUpPage(location) ? 0 : 1 }}
+        >
+          <div className='hotline-banner-text'>
+            <b>{content.hotlineBannerText}</b>
+          </div>
+        </div>
+
+        <div
+          className='inner-page__content'
+          ref={el => { this.innerPageContent = el }}
+          style={{ paddingTop: innerPageContentPadding }}
+        >
+          {React.cloneElement(children, { innerPageContentPadding })}
+        </div>
+
         <Footer content={content.footer} />
       </div>
     )

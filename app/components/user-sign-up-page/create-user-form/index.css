@@ -1,40 +1,9 @@
-.sign-up-page__form-fields-container {
-  position: relative;
-  text-align: left;
-}
-
-.sign-up-page__create-user-form-checkbox {
-  margin-bottom: 60px;
-}
-
-.sign-up-page__recaptcha {
-  transform: scale(0.85);
-  position: relative;
-  right: 23px;
-}
-
 .sign-up-page__create-user-form-continue-btn {
   margin-top: 15px !important;
   margin-bottom: 0 !important;
 }
 
-.sign-up-page__form-continue-btn-terms-text {
-  font-size: 16px;
-  color: #4A4A4A;
-  line-height: 24px;
-  margin-bottom: 95px !important;
-}
-
-.sign-up-page__form-continue-btn-terms-text a {
-  color: #40B097;
-  text-decoration: none;
-}
-
 @media (max-width: 640px) {
-
-  .sign-up-page__form-continue-btn-terms-text {
-    font-size: 12px;
-  }
 
   .sign-up-page__create-user-form-checkbox {
     margin-bottom: 10px;
