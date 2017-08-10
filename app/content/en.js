@@ -89,6 +89,9 @@ const en = {
       step5Text: 'Your lawyer and loved ones can work together to prepare your case',
       step6Text: 'you can return home as soon as possible'
     },
+    press: {
+      header: 'Featured Press'
+    },
     launchingSoon: {
       header: 'We got your back',
       subheader: 'Want to be there for your loved ones in case they get arrested? Sign up so they can reach you when they need it most.',

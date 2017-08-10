@@ -4,6 +4,7 @@ import Stories from './stories'
 import SimplePanel from './../simple-panel'
 import Problem from './problem'
 import HowItWorks from './how-it-works'
+import Press from './press'
 import LaunchingSoon from './launching-soon'
 import Scroll from 'react-scroll'
 const { Element } = Scroll
@@ -28,6 +29,8 @@ class LandingPage extends Component {
         <Problem content={content.problem} />
 
         <HowItWorks content={content.howItWorks} />
+
+        <Press content={content.press} />
 
         <LaunchingSoon content={content.launchingSoon} />
       </div>
