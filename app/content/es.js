@@ -89,6 +89,9 @@ const es = {
       step5Text: 'Su abogado y sus seres queridos pueden trabajar juntos para preparar su caso',
       step6Text: 'puedes volver a casa tan pronto como sea posible'
     },
+    press: {
+      header: 'Prensa destacada'
+    },
     launchingSoon: {
       header: 'Nosotros te cubrimos la espalda',
       subheader: '¿Quieres estar allí para sus seres queridos en caso de que sean arrestados? Inscríbase para que puedan comunicarse con usted cuando más lo necesitan.',
