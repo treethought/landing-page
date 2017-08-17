@@ -26,6 +26,11 @@
   height: 90px;
   margin-left: 10px;
   margin-right: 10px;
+  transition: 0.5s;
+}
+
+.landing-page__press-image:hover {
+  opacity: 0.6;
 }
 
 .landing-page__press-image:not(:last-child) {
