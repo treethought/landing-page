@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Scroll from 'react-scroll'
 const { Link } = Scroll
+import './index.scss'
 
 class ScrollDownBtn extends Component {
   render () {

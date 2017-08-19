@@ -7,6 +7,7 @@ import HowItWorks from './how-it-works'
 import LaunchingSoon from './launching-soon'
 import Scroll from 'react-scroll'
 const { Element } = Scroll
+import './index.scss'
 
 class LandingPage extends Component {
   render () {

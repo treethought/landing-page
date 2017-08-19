@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/FlatButton'
 import SvgIcon from 'material-ui/SvgIcon'
 import urlencode from 'urlencode'
 import { trackRegistrationEvent, trackShareEvent } from './../../services/ga'
+import './index.scss'
 
 class SignUpSuccessPage extends Component {
   componentDidMount () {

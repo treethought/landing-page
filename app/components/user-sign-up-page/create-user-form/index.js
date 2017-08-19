@@ -7,6 +7,7 @@ import mapObject from 'object.map'
 import Hint from './../hint'
 import { Checkbox, TextField } from './../../index.js'
 import { trackRegistrationEvent } from './../../../services/ga'
+import './index.scss'
 
 class CreateUserForm extends Component {
   constructor (props) {

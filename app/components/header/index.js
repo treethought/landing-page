@@ -6,6 +6,7 @@ import ToggleLanguageBtn from './toggle-language-btn'
 import NavMenu from './nav-menu'
 import NavDropdown from './nav-dropdown'
 import navBtns from './nav-btns'
+import './index.scss'
 
 class Header extends Component {
   constructor (props) {

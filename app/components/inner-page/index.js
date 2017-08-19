@@ -4,6 +4,7 @@ import Footer from './../footer'
 import includes from 'lodash.includes'
 import cookie from 'react-cookie'
 import { browserHistory } from 'react-router'
+import './index.scss'
 
 const onSignUpPage = location => location && includes(location.pathname, '/sign-up')
 

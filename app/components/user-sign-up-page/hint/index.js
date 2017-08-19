@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/FlatButton'
 import renderIf from 'render-if'
 import bowser from 'bowser'
 import { isDesktop } from '../../../services/utils'
+import './index.scss'
 
 class Hint extends Component {
   constructor () {

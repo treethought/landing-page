@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import FlatButton from 'material-ui/FlatButton'
 import { Link } from 'react-router'
+import './index.scss'
 
 class LaunchingSoon extends Component {
   render () {

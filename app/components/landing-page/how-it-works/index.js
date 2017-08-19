@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import renderIf from 'render-if'
+import './index.scss'
 
 class HowItWorks extends Component {
   constructor (props) {

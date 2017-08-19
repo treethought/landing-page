@@ -3,11 +3,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin()
 import 'isomorphic-fetch'
-import './app/index.scss'
 
 import React from 'react'
 import { render } from 'react-dom'
 import App from './app'
+import './app/index.scss'
 
 render(
   <App />,

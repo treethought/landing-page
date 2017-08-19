@@ -10,6 +10,7 @@ import { TextField/* , Checkbox */ } from '../../index'
 import Hint from './../hint'
 import { lengthOfObject, scrollToTop, isDesktop } from '../../../services/utils'
 import { trackRegistrationEvent } from '../../../services/ga'
+import './index.scss'
 
 class CreateContactsForm extends Component {
   constructor (props) {

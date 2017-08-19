@@ -1,8 +1,13 @@
+const path = require('path')
+
+const PATHS = {
+  app: path.join(__dirname, 'index.js'),
+  globalStyle: path.join(__dirname, 'app', 'global.scss')
+}
+
 module.exports = {
   entry: './index.js',
-  output: {
-    filename: 'bundle.js'
-  },
+  output: { filename: './bundle.js' },
   devServer: {
     port: 9966,
     historyApiFallback: true

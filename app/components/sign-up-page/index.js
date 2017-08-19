@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import './index.scss'
 
 const Option = ({ content, to }) =>
   <Link to={to} className='sign-up-page__option'>

@@ -1,8 +1,9 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
 import {Grid, Row, Cell} from 'react-inline-grid'
 import SimplePanel from './../simple-panel'
 import FlatButton from 'material-ui/FlatButton'
-import {Link} from 'react-router'
+import { Link } from 'react-router'
+import './index.scss'
 
 class AboutPage extends Component {
   render () {

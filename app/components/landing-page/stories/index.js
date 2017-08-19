@@ -8,6 +8,7 @@ import FlatButton from 'material-ui/FlatButton'
 import { Link } from 'react-router'
 import ScrollDownBtn from './../../scroll-down-btn'
 import { trackDonationEvent } from '../../../services/ga'
+import './index.scss'
 
 class Stories extends Component {
   constructor (props) {

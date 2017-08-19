@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
-import {Grid, Row, Cell} from 'react-inline-grid'
-import {Link} from 'react-router'
+import { Grid, Row, Cell } from 'react-inline-grid'
+import { Link } from 'react-router'
+import './index.scss'
 
 class Footer extends Component {
   constructor (props) {
@@ -64,7 +65,7 @@ class Footer extends Component {
               <div className='landing-page__footer-links-container'>
                 <div>
                   <a className='landing-page__footer-link' href='https://labs.robinhood.org/'>
-                    <img src='/assets/imgs/blueridgelabs.png'></img>
+                    <img src='/assets/imgs/blueridgelabs.png' />
                   </a>
                 </div>
               </div>

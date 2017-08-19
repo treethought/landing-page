@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import './index.scss'
 
 class ErrorPage extends Component {
   render () {

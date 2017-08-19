@@ -1,8 +1,9 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component, PropTypes } from 'react'
+import './index.scss'
 
 class FaqPage extends Component {
   render () {
-    const {content} = this.props.route
+    const { content } = this.props.route
 
     return (
       <div className='faq-page'>
