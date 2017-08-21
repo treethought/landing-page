@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "budo . -d --pushstate --serve bundle.js --live",
+    "css": "gulp watch",
     "build": "browserify . -o bundle.js -g uglifyify",
     "dist": "mkdir -p dist && bash -c 'cp index.html dist && cp bundle.js dist && cp -r assets dist && cp sitemap.xml dist'",
     "stage-push": "surge dist good-call-nyc-staging.surge.sh",
@@ -15,7 +16,6 @@
   },
   "browserify": {
     "transform": [
-      "browserify-css",
       [
         "babelify",
         {
@@ -85,9 +85,15 @@
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
     "browserify": "^10.0.0",
-    "browserify-css": "^0.9.1",
     "budo": "^9.2.1",
     "envify": "^3.4.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^3.1.0",
+    "merge-stream": "^1.0.1",
     "s3-website": "^2.1.0",
     "surge": "^0.18.0",
     "uglifyify": "^3.0.1"

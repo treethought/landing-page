@@ -1,12 +1,14 @@
-@import url("/assets/styles/normalize.css");
-@import url("/assets/styles/fonts.css");
-@import url("/assets/styles/overrides.css");
-@import url("/assets/styles/slick.min.css");
-@import url("/assets/styles/slick-theme.min.css");
+@import './scss/_variables';
+
+@import '/assets/styles/normalize.css';
+@import '/assets/styles/fonts.css';
+@import '/assets/styles/overrides.css';
+@import '/assets/styles/slick.min.css';
+@import '/assets/styles/slick-theme.min.css';
 
 html, body {
   position: relative;
-  background: #FDFFF9;
+  background: $beige;
 }
 
 body {
@@ -142,19 +144,16 @@ body {
 
 }
 
-@import url("./components/header/index.css");
-@import url("./components/footer/index.css");
-@import url("./components/landing-page/index.css");
-@import url("./components/error-page/index.css");
-@import url("./components/about-page/index.css");
-@import url("./components/sign-up-page/index.css");
-@import url("./components/user-sign-up-page/index.css");
-@import url("./components/contact-sign-up-page/index.css");
-@import url("./components/sign-up-success-page/index.css");
-@import url("./components/privacy-policy-page/index.css");
-@import url("./components/faq-page/index.css");
-@import url("./components/press-releases-page/index.css");
-@import url("./components/inner-page/index.css");
-
-@import url("./components/simple-panel/index.css");
-@import url("./components/scroll-down-btn/index.css");
+@import './components/header/index';
+@import './components/footer/index';
+@import './components/landing-page/index';
+@import './components/error-page/index';
+@import './components/about-page/index';
+@import './components/sign-up-page/index';
+@import './components/user-sign-up-page/index';
+@import './components/sign-up-success-page/index';
+@import './components/privacy-policy-page/index';
+@import './components/faq-page/index';
+@import './components/inner-page/index';
+@import './components/simple-panel/index';
+@import './components/scroll-down-btn/index';
