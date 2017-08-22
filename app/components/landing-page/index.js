@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { string, object } from 'prop-types'
-import Stories from './stories'
-import SimplePanel from './../simple-panel'
+import Call from './call'
 import Problem from './problem'
 import HowItWorks from './how-it-works'
 import Press from './press'
 import LaunchingSoon from './launching-soon'
-import Scroll from 'react-scroll'
-const { Element } = Scroll
 
 class LandingPage extends Component {
   render () {
@@ -16,15 +13,7 @@ class LandingPage extends Component {
 
     return (
       <div className='landing-page'>
-        <Stories content={content.stories} height={`calc(100vh - ${innerPageContentPadding})`} />
-
-        <Element name='landing-page__summary'>
-          <SimplePanel
-            text={content.goodCallSummary}
-            backgroundColor='#4A4A4A'
-            color='#FDFFF9'
-          />
-        </Element>
+        <Call content={content.call} height={`calc(100vh - ${innerPageContentPadding})`} />
 
         <Problem content={content.problem} />
 

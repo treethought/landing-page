@@ -1,7 +1,7 @@
 .h1 {
   font-weight: $regular;
   font-size: 50px;
-  // leading 65px
+  margin-bottom: 15px;
 }
 
 .h2 {
@@ -52,7 +52,7 @@
 
   .p {
     font-size: 14px;
-    // leading: 19px;
+    line-height: 19px;
   }
 
   .p-hint {
