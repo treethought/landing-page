@@ -1,4 +1,5 @@
 @import './scss/_variables';
+@import './scss/_elements';
 
 @import '/assets/styles/normalize.css';
 @import '/assets/styles/fonts.css';
@@ -8,11 +9,11 @@
 
 html, body {
   position: relative;
-  background: $beige;
+  background: $cream;
 }
 
 body {
-  font-family: Lato;
+  font-family: $sans-serif;
 }
 
 .gc-std-btn {
@@ -155,5 +156,7 @@ body {
 @import './components/privacy-policy-page/index';
 @import './components/faq-page/index';
 @import './components/inner-page/index';
+
 @import './components/simple-panel/index';
 @import './components/scroll-down-btn/index';
+@import './components/button/index';

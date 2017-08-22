@@ -11,88 +11,67 @@
   align-items: center;
   padding-left: 35px;
   padding-right: 25px;
-  background: $beige;
-}
 
-.header h1 {
-  display: inline;
-  margin: 0;
-}
+  .logo {
+    height: 42px;
+    object-fit: contain;
+  }
 
-.header__logo {
-  height: 42px;
-}
+  h1 {
+    display: inline;
+    margin: 0;
+    font-size: 0;
+  }
 
-.header__nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100%;
-}
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+  }
 
-.header__nav > div {
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
-  -webkit-justify-content: center;
-  -webkit-align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-}
+  .nav > div {
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
 
-.header__nav-btn {
-  color: #4A4A4A !important;
-  font-size: 14px;
-  margin-left: 5px !important;
-  margin-right: 5px !important;
-}
+  .nav-btn {
+    font-size: 14px;
+  }
 
-.header__nav-btn span {
-  text-transform: lowercase !important;
-  padding: 0 5px !important;
-}
+  .nav-btn-active span {
+    border-bottom: 2px solid #00FFEE;
+  }
 
-.header__nav-btn-active span {
-  border-bottom: 2px solid #00FFEE;
-}
-
-.header__sign-up-btn {
-  position: relative;
-  margin-left: 27px !important;
-  margin-right: 27px !important;
-  background: #40B097 !important;
-}
-
-.header__sign-up-btn span {
-  text-transform: lowercase !important;
-}
-
-.header__toggle-language-btn span {
-  text-transform: uppercase !important;
-  font-size: 13px !important;
-  padding: 0 10px !important;
+  .sign-up-btn {
+    position: relative;
+    margin-left: 27px !important;
+    margin-right: 27px !important;
+    background: #40B097 !important;
+  }
 }
 
 @media (max-width: 849px) {
-
   .header {
     height: 70px !important;
-  }
 
-  .header__logo {
-    height: 35px;
+    .logo {
+      height: 29px;
+    }
   }
-
 }
 
 @media (max-width: 480px) {
-
   .header {
     padding-left: 25px;
     padding-right: 15px;
   }
-
 }

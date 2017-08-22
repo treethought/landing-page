@@ -1,0 +1,68 @@
+.h1 {
+  font-weight: $regular;
+  font-size: 50px;
+  // leading 65px
+}
+
+.h2 {
+  font-weight: $regular;
+  font-size: 30px;
+  // leading 41px
+}
+
+.p {
+  font-weight: $regular;
+  // leading 24px
+}
+
+.p-hint {
+  font-weight: $light;
+  font-size: 18px;
+  // leading 24px
+}
+
+.footer-link {
+  font-size: 16px;
+  // leading 22px;
+  font-weight: $regular;
+}
+
+// TODO: differing leadings between dark and light?
+.dark {
+  background: $dark-grey;
+  color: $cream;
+}
+
+.light {
+  background: $white;
+  color: $black;
+}
+
+@media ($mobile) {
+
+  .h1 {
+    font-size: 26px;
+    // leading 30px;
+  }
+
+  .h2 {
+    font-size: 20px;
+    // leading: 27px;
+  }
+
+  .p {
+    font-size: 14px;
+    // leading: 19px;
+  }
+
+  .p-hint {
+    font-size: 14px;
+    // leading: 19px;
+  }
+
+  .footer-link {
+    font-size: 12px;
+    // leading: 16px;
+  }
+
+}

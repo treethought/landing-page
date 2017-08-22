@@ -22,12 +22,12 @@ class Header extends Component {
     const { navBtns } = this.state
 
     return (
-      <header className='header' ref={el => { this.header = el }}>
+      <header className='header dark' ref={el => { this.header = el }}>
         <Link to='/'>
-          <h1><img src='/assets/imgs/logo.png' alt='Good Call NYC' className='header__logo' /></h1>
+          <h1><img src='/assets/imgs/logo.png' alt='Good Call NYC' className='logo' /></h1>
         </Link>
 
-        <nav className='header__nav'>
+        <nav className='nav'>
           <MediaQuery query='(min-width: 950px)'>
             {!inRegistrationFlow && <NavMenu btns={navBtns} />}
           </MediaQuery>

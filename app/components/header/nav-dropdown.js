@@ -9,10 +9,11 @@ const NavDropdown = ({ btns }) =>
   <IconMenu
     className='header__icon-menu'
     menuStyle={{ 'background': '#F7F9F9' }}
+    iconStyle={{ 'fill': 'FFFFFF' }}
     iconButtonElement={<IconButton><MenuIcon /></IconButton>}
     targetOrigin={{horizontal: 'right', vertical: 'top'}}
     anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-    >
+  >
     {btns.map((btn, i) => (
       <MenuItem
         primaryText={btn.label}
@@ -20,7 +21,7 @@ const NavDropdown = ({ btns }) =>
         onClick={btn.onClick}
         containerElement={<Link to={btn.to} />}
         style={btn.style || {}}
-        />
+      />
     ))}
   </IconMenu>
 

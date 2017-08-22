@@ -1,14 +1,12 @@
 import React from 'react'
 import { func, string } from 'prop-types'
-import FlatButton from 'material-ui/FlatButton'
+import { Button } from '../index'
 
 const ToggleLanguageBtn = ({ onClick, label }) =>
-  <FlatButton
-    className='header__nav-btn header__toggle-language-btn'
+  <Button
+    className='nav-btn dark'
     label={label}
     onClick={onClick}
-    containerElement={<span style={{ display: 'inline-block' }} />}
-    hoverColor='#FDFFF9'
   />
 
 ToggleLanguageBtn.propTypes = {
