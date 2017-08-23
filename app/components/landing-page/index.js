@@ -9,6 +9,7 @@ import WhyWeExist from './why-we-exist'
 import Stories from './stories'
 import Press from './press'
 import SaveContact from './save-contact'
+import { Element as ScrollElement } from 'react-scroll'
 
 class LandingPage extends Component {
   render () {
@@ -17,7 +18,8 @@ class LandingPage extends Component {
 
     return (
       <div className='landing-page'>
-        <Call content={content.call} height={`calc(100vh - ${innerPageContentPadding})`} />
+        <Call content={content.call} height={`calc(100vh - ${innerPageContentPadding})`} headerPadding={innerPageContentPadding} />
+        <ScrollElement name='summary' />
         <Summary content={content.summary} />
         <LovedOnes content={content.lovedOnes} />
         <Lawyer content={content.lawyer} />
