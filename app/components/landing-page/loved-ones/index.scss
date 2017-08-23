@@ -1,0 +1,20 @@
+.loved-ones {
+  padding: 60px 30px;
+  padding-bottom: 0;
+
+  & > .p {
+    margin-bottom: 20px;
+  }
+
+  & > .icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    & > .icon {
+      height: 220px;
+      width: 220px;
+      background: rgba(0,0,0,0.2);
+    }
+  }
+}

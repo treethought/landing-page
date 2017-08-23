@@ -1,5 +1,4 @@
 import React from 'react'
-import { object } from 'prop-types'
 
 const images = [
   { file: 'univision.png', href: 'http://www.univision.com/nueva-york/wxtv/noticias/arrestos/una-campana-orienta-a-familias-de-el-bronx-sobre-como-pedir-auxilio-si-detienen-a-su-hijo' },
@@ -9,21 +8,16 @@ const images = [
   { file: 'bronxnet.jpg', href: 'http://www.bronxnet.org/tv/open/360-open-featured-interviews/9593-good-call-project-open-wednesday-june-21st-20172017-06-21-23-46-43' }
 ]
 
-const Press = ({ content }) => (
-  <section className='landing-page__press'>
-    <h2 className='landing-page__std-header landing-page__press-header'>{content.header}</h2>
-    <div className='landing-page__press-images'>
+const Press = ({ content }) =>
+  <section className='press'>
+    <div className='h2'>{content.header}</div>
+    <div className='images'>
       {images.map((img, i) => (
         <a href={img.href} key={i}>
-          <img src={`/assets/imgs/${img.file}`} className='landing-page__press-image' />
+          <img src={`/assets/imgs/${img.file}`} className='image' />
         </a>
       ))}
     </div>
   </section>
-)
-
-Press.propTypes = {
-  content: object
-}
 
 export default Press

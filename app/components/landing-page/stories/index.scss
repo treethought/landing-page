@@ -1,303 +1,64 @@
-.landing-page__stories {
+.stories {
   position: relative;
-  text-align: center;
-  display: -webkit-flex;
-  -webkit-flex-direction: column;
-  display: flex;
-  flex-direction: column;
-  min-height: 420px;
-  overflow: hidden;
-  box-sizing: border-box;
-}
+  color: $white;
 
-.landing-page__stories-carousel-list-container {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  position: relative;
-}
+  & .story {
+    height: 420px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
 
-.landing-page__stories-carousel, .slick-list, .slick-track {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
+    & > .story-header {
+      font-size: 30px;
+      position: relative;
+      font-weight: $semi-bold;
+      z-index: 100;
+    }
 
-.landing-page__stories-header {
-  font-size: 30px;
-  color: #4A4A4A;
-  margin: 40px auto;
-  padding-right: 20px;
-  padding-left: 20px;
-  letter-spacing: -0.16px;
-}
+    & > .story-subheader {
+      font-size: 16px;
+      border-bottom: 1px solid $green;
+      position: relative;
+      display: inline-block;
+      font-weight: $light;
+      z-index: 100;
+      margin-bottom: 120px;
+    }
 
-.landing-page__stories-carousel-list-container {
-  position: relative;
-}
-
-.landing-page__stories-carousel__arrow-container {
-  position: absolute;
-  z-index: 2;
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
-  -webkit-justify-content: center;
-  -webkit-align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  top: 0;
-  bottom: 0;
-}
-
-.landing-page__stories-carousel__left-arrow-container {
-  left: 0;
-}
-
-.landing-page__stories-carousel__right-arrow-container {
-  right: 0;
-}
-
-.landing-page__stories-carousel__arrow {
-  width: 50px !important;
-  height: 50px !important;
-}
-
-.landing-page__donation-panel-container {
-  background-size: cover;
-  background-position: center;
-  color: #FDFFF9;
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.landing-page__stories-donation-header {
-  margin-top: 0;
-  font-weight: 500;
-  margin-bottom: 80px;
-  font-size: 46px;
-}
-
-.landing-page__stories-donation-btn {
-  background: #FDFFF9 !important;
-  margin-bottom: 45px !important;
-}
-
-.landing-page__stories-donation-btn span {
-  color: #4EBBA6 !important;
-}
-
-.landing-page__stories-newsletter-link {
-  font-weight: 300;
-  color: inherit;
-  display: block;
-  font-size: 18px;
-}
-
-@media (max-width: 520px) {
-
-  .landing-page__stories-donation-header {
-    margin-bottom: 50px;
-    font-size: 24px;
+    & > .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background: rgba(0,0,0,0.3)
+    }
   }
 
-  .landing-page__stories-donation-btn {
-    margin-bottom: 40px !important;
+  & .dots {
+    position: absolute;
+    bottom: 20px;
+    display: flex !important;
+    flex-direction: row;
+    right: 0;
+    left: 0;
+    justify-content: center;
+
+    & .slick-active .dot {
+      background: $green;
+    }
+
+    & .dot {
+      width: 12px;
+      height: 12px;
+      background: $white;
+      border-radius: 50%;
+      margin-right: 8px;
+      margin-left: 8px;
+    }
   }
-
-  .landing-page__stories-newsletter-link {
-    font-size: 16px;
-  }
-
-}
-
-.landing-page__story-container {
-  position: relative;
-  text-align: center;
-  color: #FDFFF9;
-  background-size: cover;
-  background-position: center;
-}
-
-.landing-page__story-container-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.3);
-}
-
-.landing-page__story {
-  width: 100%;
-  margin-top: 80px;
-  text-align: center;
-}
-
-.landing-page__story-header {
-  font-weight: normal;
-  font-size: 40px;
-  margin: 0;
-}
-
-.landing-page__story-header mark {
-  background: rgba(0, 255, 238, 0.77);
-  color: inherit;
-  padding: 1px 5px;
-}
-
-.landing-page__story-text-container {
-  position: relative;
-  margin-top: 35px;
-  margin-right: 60px;
-  float: right;
-  max-width: 570px;
-  font-weight: 300;
-  font-size: 20px;
-  text-align: left;
-}
-
-.landing-page__story-subheader {
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 10px;
-  line-height: 0.9;
-}
-
-.landing-page__story-subheader-text {
-  border-bottom: 3px solid #45D8B8;
-}
-
-.landing-page__story-text {
-  font-size: 20px;
-  line-height: 1.15;
-  margin: 0;
-  padding-left: 18px;
-}
-
-.landing-page__story-text-quote {
-  font-size: 60px;
-  position: relative;
-  top: 8px;
-}
-
-.landing-page__stories-sign-up-btn-container {
-  position: absolute;
-  width: 100%;
-  bottom: 30px;
-}
-
-.landing-page__stories-scroll-down-btn-container {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding-bottom: 6px;
-}
-
-@media (max-width: 839px) {
-
-  .landing-page__story {
-    margin-right: 0;
-  }
-
-  .landing-page__story-text-container {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .landing-page__stories-header {
-    margin: 20px auto;
-  }
-
-}
-
-@media (max-width: 674px) {
-
-  .landing-page__story {
-    margin-top: 35px;
-  }
-
-  .landing-page__stories-header {
-    font-size: 20px;
-  }
-
-  .landing-page__story-subheader {
-    text-align: center;
-    font-size: 22px;
-  }
-
-  .landing-page__story-header {
-    font-size: 32px;
-  }
-
-  .landing-page__story-text-container {
-    padding-left: 40px;
-    padding-right: 40px;
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  .landing-page__story-text {
-    padding-left: 0;
-    font-size: 18px;
-  }
-
-  .landing-page__story-text-quote {
-    font-size: 45px;
-  }
-
-  .landing-page__stories-carousel__arrow {
-    display: none !important;
-  }
-
-}
-
-@media (max-width: 520px) {
-
-  .landing-page__story-text-container {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .landing-page__story-text-quote {
-    font-size: 36px;
-  }
-
-  .landing-page__story-header {
-    font-size: 22px;
-  }
-
-  .landing-page__story-subheader {
-    margin-top: 0;
-  }
-
-  .landing-page__story-subheader-text {
-    font-size: 15px;
-  }
-
-  .landing-page__story-text {
-    font-size: 14px;
-  }
-
-}
-
-@media (max-height: 600px) {
-
-  .landing-page__story-text-container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 10px;
-  }
-
-  .landing-page__story {
-    margin-top: 30px;
-  }
-
-  .landing-page__story-subheader {
-    margin-bottom: 15px;
-  }
-
 }

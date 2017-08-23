@@ -1,30 +1,9 @@
-.landing-page__std-header {
-  font-size: 30px;
-  margin: 0;
-}
-
-.landing-page__std-subheader {
-  font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 25px;
-  font-weight: 300;
-}
-
-@media (max-width: 839px) {
-
-  .landing-page__std-header {
-    font-size: 22px;
-  }
-
-  .landing-page__std-subheader {
-    font-size: 18px;
-  }
-
-}
-
 @import './call/index';
+@import './summary/index';
+@import './loved-ones/index';
+@import './lawyer/index';
+@import './partners/index';
+@import './why-we-exist/index';
 @import './stories/index';
-@import './problem/index';
-@import './launching-soon/index';
 @import './press/index';
-@import './how-it-works/index';
+@import './save-contact/index';

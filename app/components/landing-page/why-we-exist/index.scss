@@ -1,0 +1,16 @@
+.why-we-exist {
+  background: $green;
+  text-align: center;
+  color: $cream;
+  padding: 45px 35px 60px 35px;
+
+  & > .p {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  & > .h2 {
+    font-weight: $light;
+    line-height: 27px;
+  }
+}

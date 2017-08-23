@@ -1,0 +1,14 @@
+.save-contact {
+  background: $green;
+  color: $cream;
+  padding: 50px 30px 70px;
+  text-align: center;
+
+  & > .h2 {
+    margin-bottom: 45px;
+  }
+
+  & > .button {
+    margin: 0 auto;
+  }
+}

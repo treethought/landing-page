@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { string, object } from 'prop-types'
 import Call from './call'
-import Problem from './problem'
-import HowItWorks from './how-it-works'
+import Summary from './summary'
+import LovedOnes from './loved-ones'
+import Lawyer from './lawyer'
+import Partners from './partners'
+import WhyWeExist from './why-we-exist'
+import Stories from './stories'
 import Press from './press'
-import LaunchingSoon from './launching-soon'
+import SaveContact from './save-contact'
 
 class LandingPage extends Component {
   render () {
@@ -14,14 +18,14 @@ class LandingPage extends Component {
     return (
       <div className='landing-page'>
         <Call content={content.call} height={`calc(100vh - ${innerPageContentPadding})`} />
-
-        <Problem content={content.problem} />
-
-        <HowItWorks content={content.howItWorks} />
-
+        <Summary content={content.summary} />
+        <LovedOnes content={content.lovedOnes} />
+        <Lawyer content={content.lawyer} />
+        <Partners content={content.partners} />
+        <WhyWeExist content={content.whyWeExist} />
+        <Stories content={content.stories} />
         <Press content={content.press} />
-
-        <LaunchingSoon content={content.launchingSoon} />
+        <SaveContact content={content.saveContact} />
       </div>
     )
   }

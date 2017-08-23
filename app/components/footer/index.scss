@@ -1,71 +1,85 @@
-.landing-page__footer {
-  background: #4A4A4A;
-  color: #FDFFF9;
-  font-size: 14px;
-  font-weight: 300;
-  padding: 50px 94px;
-  padding-right: 0;
-}
-
-.landing-page__footer-header {
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.landing-page__footer-links-container {
-  display: -webkit-flex;
-  -webkit-flex-direction: column;
-  -webkit-justify-content: space-between;
-  -webkit-align-items: space-between;
+.footer {
+  background: $cream;
+  color: $black;
+  padding: 50px 30px 20px;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
+  align-items: flex-start;
 
-.landing-page__footer-link {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  margin-bottom: 5px;
-}
-
-.landing-page__footer-address-link-container {
-  font-style: normal;
-}
-
-.landing-page__footer-social-media-links-container {
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
-  -webkit-justify-content: flex-start;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-top: 5px;
-}
-
-.landing-page__footer-social-media-link {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  margin-right: 5px;
-  display: inline-block;
-}
-
-.landing-page__footer-social-media-link-icon {
-  height: 100%;
-}
-
-@media (max-width: 479px) {
-  .landing-page__footer {
-    padding-left: 20px;
+  & > .logo {
+    margin-bottom: 10px;
   }
-}
 
-@media (max-width: 900px) {
-  .landing-page__footer {
-    padding-left: 45px;
+  & > address {
+    font-style: normal;
+    margin-top: 10px;
+    margin-bottom: 35px;
+  }
+
+  & .links-header {
+    font-weight: $bold;
+  }
+
+  & > .site-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+
+    & > .links-header {
+      margin-bottom: 5px;
+    }
+  }
+
+  & > .follow-us {
+    margin-bottom: 20px;
+
+    & > .links-header {
+      margin-bottom: 15px;
+    }
+
+    & > .social-links {
+      display: flex;
+      flex-direction: row;
+
+      & > .social-link:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    & .social-media-logo {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  & > .mailing-list-form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    margin-bottom: 25px;
+
+    & > .mailing-list-input {
+      font-size: 12px;
+      font-weight: $light;
+      max-width: 190px;
+      padding: 15px 20px;
+      border: 1px solid $green;
+    }
+
+    & > .mailing-list-button {
+      width: 76px;
+      background: $green;
+      border: none;
+      color: $white;
+      font-weight: $light;
+    }
+  }
+
+  & > .non-profit {
+    font-size: 9px;
+    font-style: italic;
   }
 }

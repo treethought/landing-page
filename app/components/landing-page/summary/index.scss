@@ -1,0 +1,9 @@
+.summary {
+  padding: 50px 40px;
+  text-align: center;
+  color: $green;
+
+  & > .text {
+    margin-bottom: 40px;
+  }
+}

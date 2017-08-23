@@ -15,16 +15,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
 
-button:focus {
-  outline: none;
-  box-shadow: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
-.primary {
-  background: $green;
-  color: $cream;
-  min-width: 212px;
+  &.primary {
+    background: $green;
+    color: $cream;
+    min-width: 212px;
+  }
+
+  &.inverse {
+    background: $cream;
+    color: $green;
+    min-width: 212px;
+  }
 }

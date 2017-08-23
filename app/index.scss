@@ -94,6 +94,17 @@ body {
   padding-right: 20px;
 }
 
+// TODO: move to own file
+// global
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
 @media (max-width: 839px) {
 
   .legal-container {

@@ -1,0 +1,16 @@
+.partners {
+  padding: 60px 0;
+  text-align: center;
+
+  & > .logos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > img {
+      max-width: 130px;
+      object-fit: contain;
+      height: 95px;
+    }
+  }
+}

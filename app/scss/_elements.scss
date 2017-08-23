@@ -7,18 +7,18 @@
 .h2 {
   font-weight: $regular;
   font-size: 30px;
-  // leading 41px
+  margin-bottom: 11px;
 }
 
 .p {
   font-weight: $regular;
-  // leading 24px
+  line-height: 24px;
 }
 
 .p-hint {
   font-weight: $light;
   font-size: 18px;
-  // leading 24px
+  line-height: 24px;
 }
 
 .footer-link {
@@ -42,12 +42,12 @@
 
   .h1 {
     font-size: 26px;
-    // leading 30px;
+    margin-bottom: 4px;
   }
 
   .h2 {
     font-size: 20px;
-    // leading: 27px;
+    margin-bottom: 7px;
   }
 
   .p {
@@ -57,12 +57,12 @@
 
   .p-hint {
     font-size: 14px;
-    // leading: 19px;
+    line-height: 19px;
   }
 
   .footer-link {
     font-size: 12px;
-    // leading: 16px;
+    line-height: 16px;
   }
 
 }
