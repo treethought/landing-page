@@ -14,7 +14,9 @@
     padding-top: 185px;
     padding-left: 115px;
     padding: 145px;
-
+    max-width: $lp-max-width;
+    margin: 0 auto;
+    
     & .left {
       max-width: 640px;
 

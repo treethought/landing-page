@@ -1,14 +1,29 @@
 .save-contact {
   background: $green;
   color: $cream;
-  padding: 50px 30px 70px;
+  padding: 80px 30px;
   text-align: center;
 
   & > .h2 {
-    margin-bottom: 45px;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 55px;
   }
 
   & > .button {
     margin: 0 auto;
   }
+}
+
+@media ($mobile) {
+
+  .save-contact {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  & > .h2 {
+    margin-bottom: 45px;
+  }
+
 }

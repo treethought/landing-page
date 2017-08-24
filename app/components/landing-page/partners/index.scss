@@ -14,3 +14,27 @@
     }
   }
 }
+
+@media ($desktop) {
+  .partners {
+    max-width: $lp-max-width;
+    margin: 0 auto;
+    padding: 60px 200px 100px;
+
+    & > .h2 {
+      font-weight: $regular;
+      margin-bottom: 60px;
+    }
+
+    & > .logos-container {
+      flex-direction: row;
+      justify-content: space-between;
+
+      & > img {
+        max-width: 190px;
+        object-fit: contain;
+        height: 100px;
+      }
+    }
+  }
+}

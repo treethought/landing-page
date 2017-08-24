@@ -1,85 +1,165 @@
 .footer {
+  padding: 80px 100px 70px;
   background: $cream;
   color: $black;
-  padding: 50px 30px 20px;
   display: flex;
+  max-width: $lp-max-width;
+  margin: 0 auto;
+  //
   flex-direction: column;
   align-items: flex-start;
-
-  & > .logo {
-    margin-bottom: 10px;
-  }
-
-  & > address {
-    font-style: normal;
-    margin-top: 10px;
-    margin-bottom: 35px;
-  }
-
-  & .links-header {
-    font-weight: $bold;
-  }
-
-  & > .site-nav {
+  //
+  .main {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
 
-    & > .links-header {
-      margin-bottom: 5px;
-    }
-  }
-
-  & > .follow-us {
-    margin-bottom: 20px;
-
-    & > .links-header {
-      margin-bottom: 15px;
+    & > div:not(:last-child) {
+      margin-right: 50px;
     }
 
-    & > .social-links {
+    .meta {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      align-items: flex-start;
 
-      & > .social-link:not(:last-child) {
-        margin-right: 10px;
+      .logo {
+        margin-bottom: 20px;
+      }
+
+      address {
+        font-style: normal;
+        margin-top: 20px;
+        margin-bottom: 35px;
       }
     }
 
-    & .social-media-logo {
-      width: 40px;
-      height: 40px;
+    .links-header {
+      font-weight: $bold;
+    }
+
+    .site-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 30px;
+
+      .links-header {
+        margin-bottom: 5px;
+      }
+    }
+
+    .follow-us {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+
+      .links-header {
+        margin-bottom: 15px;
+      }
+
+      .social-links {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+
+        .social-link:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+
+      .social-media-logo {
+        width: 40px;
+        height: 40px;
+      }
+
+      .mailing-list-form {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: center;
+        margin-bottom: 25px;
+
+        .mailing-list-input {
+          font-size: 18px;
+          width: 325px;
+          font-weight: $light;
+          padding: 15px 20px;
+          border: 1px solid $green;
+        }
+
+        .mailing-list-button {
+          width: 76px;
+          background: $green;
+          border: none;
+          color: $white;
+          font-weight: $light;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
     }
   }
 
-  & > .mailing-list-form {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-    margin-bottom: 25px;
-
-    & > .mailing-list-input {
-      font-size: 12px;
-      font-weight: $light;
-      max-width: 190px;
-      padding: 15px 20px;
-      border: 1px solid $green;
-    }
-
-    & > .mailing-list-button {
-      width: 76px;
-      background: $green;
-      border: none;
-      color: $white;
-      font-weight: $light;
-    }
-  }
-
-  & > .non-profit {
+  .non-profit {
     font-size: 9px;
     font-style: italic;
+  }
+}
+
+@media ($mobile) {
+  .footer {
+    padding: 50px 30px 20px;
+
+    .main {
+      .meta {
+        .logo {
+          margin-bottom: 10px;
+        }
+
+        address {
+          margin-top: 10px;
+        }
+      }
+
+      .follow-us {
+        .mailing-list-form {
+          .mailing-list-input {
+            font-size: 12px;
+            width: 130px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media ($desktop) {
+  .footer {
+    .main {
+      .links-header {
+        font-size: 20px;
+        font-weight: $semi-bold;
+      }
+
+      .site-nav {
+        .links-header {
+          margin-bottom: 20px;
+        }
+      }
+
+      .follow-us {
+        .links-header {
+          margin-bottom: 24px;
+        }
+      }
+    }
   }
 }

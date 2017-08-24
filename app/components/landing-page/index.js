@@ -15,10 +15,11 @@ class LandingPage extends Component {
   render () {
     const { innerPageContentPadding, route } = this.props
     const { content } = route
+    const lowerPageHeight = `calc(100vh - ${innerPageContentPadding})`
 
     return (
       <div className='landing-page'>
-        <Call content={content.call} height={`calc(100vh - ${innerPageContentPadding})`} headerPadding={innerPageContentPadding} />
+        <Call content={content.call} height={lowerPageHeight} headerPadding={innerPageContentPadding} />
         <ScrollElement name='summary'>
           <Summary content={content.summary} />
         </ScrollElement>
@@ -26,7 +27,7 @@ class LandingPage extends Component {
         <Lawyer content={content.lawyer} />
         <Partners content={content.partners} />
         <WhyWeExist content={content.whyWeExist} />
-        <Stories content={content.stories} />
+        <Stories content={content.stories} height={lowerPageHeight} />
         <Press content={content.press} />
         <SaveContact content={content.saveContact} />
       </div>

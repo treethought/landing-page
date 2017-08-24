@@ -1,7 +1,7 @@
 .press {
   background: #FFFFFF;
-  padding: 50px 30px 50px;
   text-align: center;
+  padding: 90px 70px 115px;
 
   & > .h2 {
     margin-bottom: 36px;
@@ -24,6 +24,10 @@
       margin-right: 10px;
       transition: 0.5s;
 
+      &:first {
+        width: 100px;
+      }
+
       &:hover {
         opacity: 0.6;
       }
@@ -37,6 +41,8 @@
 
 @media ($mobile) {
   .press {
+    padding: 50px 30px 50px;
+
     & > .images .image {
       width: 150px;
       height: 60px;

@@ -22,7 +22,7 @@ class Stories extends Component {
   }
 
   render () {
-    const { content } = this.props
+    const { content, height } = this.props
 
     const stories = content.stories.map((story) => (
       { pictureName: `${story.name}-min`, subheader: story.subheader, header: story.header }
@@ -32,7 +32,7 @@ class Stories extends Component {
       className: 'carousel',
       autoplay: true,
       arrows: false,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 5000,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -48,14 +48,22 @@ class Stories extends Component {
         <Slider {...sliderSettings} ref='carousel'>
           {stories.map(({ pictureName, header, subheader }) => (
             <div key={pictureName} className='story' style={{
-              'backgroundImage': `url('./assets/imgs/${pictureName + (this.isMobile() ? '-mobile' : '')}.jpg')`
+              'backgroundImage': `url('./assets/imgs/${pictureName + (this.isMobile() ? '-mobile' : '')}.jpg')`,
+              'height': height
             }}>
-              <div className='story-header'>{header}</div>
-              <div className='story-subheader'>“{subheader}”</div>
+              <div className='content'>
+                <div className='story-header'>{header}</div>
+                <div className='story-subheader'>“{subheader}”</div>
+              </div>
               <div className='overlay' />
             </div>
           ))}
         </Slider>
+
+        <div className='arrows'>
+          <img src='/assets/imgs/arrow-left.svg' className='arrow' onClick={this.prevSlide} />
+          <img src='/assets/imgs/arrow-right.svg' className='arrow' onClick={this.nextSlide} />
+        </div>
       </section>
     )
   }

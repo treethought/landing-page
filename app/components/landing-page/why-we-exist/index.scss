@@ -1,16 +1,44 @@
 .why-we-exist {
+  padding: 80px 200px;
   background: $green;
   text-align: center;
   color: $cream;
-  padding: 45px 35px 60px 35px;
 
   & > .p {
-    text-transform: uppercase;
     margin-bottom: 30px;
   }
 
   & > .h2 {
     font-weight: $light;
-    line-height: 27px;
+    max-width: $lp-max-width;
+    margin: 0 auto;
+  }
+}
+
+@media ($mobile) {
+  .why-we-exist {
+    padding: 45px 35px 60px 35px;
+
+    & > .p {
+      text-transform: uppercase;
+    }
+
+    & > .h2 {
+      line-height: 27px;
+    }
+  }
+}
+
+@media ($desktop) {
+  .why-we-exist {
+    & > .p {
+      font-size: 30px;
+      font-weight: $semi-bold;
+    }
+
+    & > .h2 {
+      font-weight: $light;
+      line-height: 1.4em;
+    }
   }
 }

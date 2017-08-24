@@ -18,10 +18,10 @@ class Keypad extends Component {
       <div className='keypad'>
         <input className='phone' placeholder={'Enter a loved one\'s phone number'} type='phone' />
         <div className='digits-container'>
-          {digits.map(row => (
-            <div className='row'>
-              {row.map(key => (
-                <div className='key-container'>
+          {digits.map((row, i) => (
+            <div className='row' key={i}>
+              {row.map((key, j) => (
+                <div className='key-container' key={`${i}-${j}`}>
                   <div className='key'>{key}</div>
                 </div>
               ))}

@@ -2,8 +2,7 @@
   position: relative;
   color: $white;
 
-  & .story {
-    height: 420px;
+  .story {
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -11,14 +10,18 @@
     align-items: center;
     position: relative;
 
-    & > .story-header {
+    .content {
+      max-width: $lp-max-width;
+    }
+
+    .story-header {
       font-size: 30px;
       position: relative;
       font-weight: $semi-bold;
       z-index: 100;
     }
 
-    & > .story-subheader {
+    .story-subheader {
       font-size: 16px;
       border-bottom: 1px solid $green;
       position: relative;
@@ -27,19 +30,19 @@
       z-index: 100;
       margin-bottom: 120px;
     }
-
-    & > .overlay {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 1;
-      background: rgba(0,0,0,0.3)
-    }
   }
 
-  & .dots {
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0,0,0,0.3);
+  }
+
+  .dots {
     position: absolute;
     bottom: 20px;
     display: flex !important;
@@ -48,17 +51,68 @@
     left: 0;
     justify-content: center;
 
-    & .slick-active .dot {
+    .slick-active .dot {
       background: $green;
     }
 
-    & .dot {
+    .dot {
       width: 12px;
       height: 12px;
       background: $white;
       border-radius: 50%;
       margin-right: 8px;
       margin-left: 8px;
+    }
+  }
+
+  .arrows {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow {
+      cursor: pointer;
+
+      &:first-child {
+        margin-left: 30px;
+      }
+
+      &:last-child {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+@media ($mobile) {
+  .stories {
+    .arrows {
+      display: none;
+    }
+  }
+}
+
+@media ($desktop) {
+  .stories {
+    .story {
+      background-position: center;
+      justify-content: center;
+      align-items: flex-end;
+
+      .content {
+        padding-right: 150px;
+
+        .story-header {
+          font-size: 70px;
+        }
+
+        .story-subheader {
+          font-size: 40px;
+        }
+      }
     }
   }
 }

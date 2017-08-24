@@ -17,7 +17,11 @@ $bold: 600;
 
 // breakpoints
 $mobile: "max-width: 480px";
+$desktop: "min-width: 481px";
 
 // sticky header
 $sticky-header-height-desktop: 100px;
 $sticky-header-height-mobile: 70px;
+
+// landing page
+$lp-max-width: 1100px;

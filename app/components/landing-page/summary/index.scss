@@ -1,14 +1,30 @@
 .summary {
-  padding: 50px 40px;
+  padding: 110px 180px 77px;
   text-align: center;
   color: $green;
+  max-width: $lp-max-width;
+  margin: 0 auto;
 
   & > .text {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     line-height: 1.3em;
   }
 
   & > .icon {
-    width: 60px;
+    width: 88px;
+  }
+}
+
+@media ($mobile) {
+  .summary {
+    padding: 50px 40px;
+
+    & > .text {
+      margin-bottom: 40px;
+    }
+
+    & > .icon {
+      width: 60px;
+    }
   }
 }

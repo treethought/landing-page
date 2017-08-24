@@ -23,11 +23,10 @@
 
 .footer-link {
   font-size: 16px;
-  // leading 22px;
+  line-height: 22px;
   font-weight: $regular;
 }
 
-// TODO: differing leadings between dark and light?
 .dark {
   background: $dark-grey;
   color: $cream;

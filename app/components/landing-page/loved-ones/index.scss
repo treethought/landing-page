@@ -1,13 +1,19 @@
 .loved-ones {
-  padding: 60px 30px;
-  padding-bottom: 0;
+  padding: 165px 180px 0;
+  max-width: $lp-max-width;
+  margin: 0 auto;
 
-  & > .h2 {
-    font-weight: $semi-bold;
-  }
+  & > .content-container {
+    max-width: 464px;
+    width: 100%;
 
-  & > .p {
-    margin-bottom: 20px;
+    & > .h2 {
+      font-weight: $regular;
+    }
+
+    & > .p {
+      margin-bottom: 20px;
+    }
   }
 
   & > .icon-container {
@@ -16,9 +22,42 @@
     justify-content: center;
 
     & > .icon {
-      height: 220px;
-      width: 220px;
+      height: 360px;
+      width: 360px;
       background: rgba(0,0,0,0.2);
+    }
+  }
+}
+
+@media ($mobile) {
+  .loved-ones {
+    padding: 60px 30px 0;
+
+    .h2 {
+      font-weight: $semi-bold;
+    }
+
+    & > .icon-container {
+      & > .icon {
+        height: 220px;
+        width: 220px;
+      }
+    }
+  }
+}
+
+@media ($desktop) {
+  .loved-ones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .content-container {
+      order: 2;
+    }
+
+    .icon-container {
+      order: 1;
     }
   }
 }

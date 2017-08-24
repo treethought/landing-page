@@ -1,11 +1,61 @@
 .lawyer {
-  padding: 60px 30px;
+  padding: 165px 180px 0;
   padding-bottom: 0;
 
-  & > .icon {
-    width: 254px;
-    height: 144px;
-    background: rgba(0,0,0,0.2);
+  & > .content-container {
+    & > .h2 {
+      font-weight: $regular;
+    }
+  }
+
+  & > .icon-container {
+    .icon {
+      width: 530px;
+      height: 275px;
+      background: rgba(0,0,0,0.2);
+      margin: 0 auto;
+    }
+  }
+}
+
+@media ($mobile) {
+  .lawyer {
+    padding: 60px 30px 0;
+
+    & > .h2 {
+      font-weight: $semi-bold;
+    }
+
+    & > .icon-container {
+      .icon {
+        width: 254px;
+        height: 144px;
+      }
+    }
+  }
+}
+
+@media ($desktop) {
+  .lawyer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: $lp-max-width;
     margin: 0 auto;
+
+    & > .content-container {
+      max-width: 440px;
+    }
+
+    & > .icon-container {
+      padding-top: 85px;
+
+      .icon {
+        width: 530px;
+        height: 275px;
+        background: rgba(0,0,0,0.2);
+        margin: 0 auto;
+      }
+    }
   }
 }
