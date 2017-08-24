@@ -3,7 +3,7 @@ const en = {
     header: {
       faqBtnLabel: 'FAQ',
       aboutUsBtnLabel: 'About us',
-      signUpBtnLabel: 'Sign up',
+      signUpBtnLabel: 'Save a contact',
       toggleLanguageBtnLabel: 'En Español',
       donateBtnLabel: 'Donate'
     },

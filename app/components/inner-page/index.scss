@@ -1,11 +1,11 @@
 .hotline-banner {
   font-size: 18px;
-  color: #FDFFF9;
-  background: rgba(45,43,43,0.99);
+  color: $black;
+  background: $cream;
   padding-top: 6px;
   padding-bottom: 9px;
   position: fixed;
-  top: 85px;
+  top: $sticky-header-height-desktop;
   left: 0;
   right: 0;
   z-index: 1001;
@@ -24,7 +24,7 @@
 
   .hotline-banner {
     padding: 12px 19px 14px 16px;
-    top: 70px;
+    top: $sticky-header-height-mobile;
   }
 
   .hotline-banner-text {

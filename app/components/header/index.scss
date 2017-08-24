@@ -7,10 +7,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 85px;
+  height: $sticky-header-height-desktop;
   align-items: center;
-  padding-left: 35px;
-  padding-right: 25px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background: $black;
 
   .logo {
     height: 42px;
@@ -28,13 +29,19 @@
     flex-direction: row;
     align-items: center;
     height: 100%;
+
+    & .link {
+      width: 100px;
+    }
+
+    & .sign-up-btn {
+      margin-left: 30px;
+      margin-right: 30px;
+      font-size: 14px;
+    }
   }
 
   .nav > div {
-    display: -webkit-flex;
-    -webkit-flex-direction: row;
-    -webkit-justify-content: center;
-    -webkit-align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -48,20 +55,13 @@
   }
 
   .nav-btn-active span {
-    border-bottom: 2px solid #00FFEE;
-  }
-
-  .sign-up-btn {
-    position: relative;
-    margin-left: 27px !important;
-    margin-right: 27px !important;
-    background: #40B097 !important;
+    border-bottom: 2px solid $green;
   }
 }
 
 @media (max-width: 849px) {
   .header {
-    height: 70px !important;
+    height: $sticky-header-height-mobile;
 
     .logo {
       height: 29px;

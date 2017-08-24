@@ -1,11 +1,11 @@
-@import './scss/_variables';
-@import './scss/_elements';
-
 @import '/assets/styles/normalize.css';
 @import '/assets/styles/fonts.css';
 @import '/assets/styles/overrides.css';
 @import '/assets/styles/slick.min.css';
 @import '/assets/styles/slick-theme.min.css';
+
+@import './scss/_variables';
+@import './scss/_elements';
 
 html, body {
   position: relative;
@@ -104,6 +104,12 @@ a {
 input:focus {
   outline: none;
 }
+
+::-webkit-input-placeholder { color: inherit; opacity: 0.4; }
+::-moz-placeholder { color: inherit; opacity: 0.4; }
+:-ms-input-placeholder { color: inherit; opacity: 0.4; }
+:-moz-placeholder { color: inherit; opacity: 0.4; }
+
 
 @media (max-width: 839px) {
 

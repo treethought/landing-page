@@ -16,4 +16,8 @@ $semi-bold: 400;
 $bold: 600;
 
 // breakpoints
-$mobile: "max-width: 480px"
+$mobile: "max-width: 480px";
+
+// sticky header
+$sticky-header-height-desktop: 100px;
+$sticky-header-height-mobile: 70px;
