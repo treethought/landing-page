@@ -2,6 +2,10 @@
   padding: 60px 30px;
   padding-bottom: 0;
 
+  & > .h2 {
+    font-weight: $semi-bold;
+  }
+
   & > .p {
     margin-bottom: 20px;
   }

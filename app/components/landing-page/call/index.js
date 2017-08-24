@@ -1,5 +1,5 @@
 import React from 'react'
-import { number, string } from 'prop-types'
+import { string } from 'prop-types'
 import { Button } from '../../index'
 import { Link as ScrollLink } from 'react-scroll'
 
@@ -27,7 +27,7 @@ const Call = ({ height, headerPadding }) => (
 
 Call.propTypes = {
   height: string,
-  headerPadding: number
+  headerPadding: string
 }
 
 export default Call
