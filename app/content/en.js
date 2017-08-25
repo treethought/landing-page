@@ -9,19 +9,15 @@ const en = {
     },
     hotlineBannerText: 'If you or a loved one has been arrested in the Bronx call 1-833-3-GOODCALL (1-833-346-6322) for free legal support 24/7',
     footer: {
+      address: '150 Court St. 2nd Floor, Brooklyn, NY 11201',
       siteNavHeader: 'Site Navigation',
-      followHeader: 'Subscribe and follow',
       signUpLabel: 'Sign up',
-      faqLinkLabel: 'FAQ',
       aboutUsLinkLabel: 'About Us',
+      faqLinkLabel: 'FAQ',
+      donateBtnLabel: 'Donate',
       privacyPolicyLinkLabel: 'Privacy Policy',
       termsAndConditionsLinkLabel: 'Terms and Conditions',
-      contactUsHeader: 'Contact Us',
-      address: '150 Court St. 2nd Floor, Brooklyn, NY 11201',
-      ourCompanyHeader: 'Our Company',
-      ourPartnersHeader: 'Our Partners',
-      pressReleasesLinkLabel: 'Press Releases',
-      donateBtnLabel: 'Donate',
+      followHeader: 'Subscribe and follow',
       emailAddress: 'Email address',
       nonProfit: 'Good Call is a fiscally sponsored not-for-profit 501(c)(3)'
     }

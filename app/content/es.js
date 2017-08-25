@@ -9,93 +9,84 @@ const es = {
     },
     hotlineBannerText: 'Si tú o un ser querido han sido arrestados en el Bronx llama al 1-833-3-GOODCALL (1-833-346-6322) para recibir servicios de apoyo legal sin costo alguno 24/7',
     footer: {
-      faqLinkLabel: 'Preguntas Frecuentes',
+      address: '150 Court St. 2nd Floor, Brooklyn, NY 11201',
+      siteNavHeader: '[TODO]',
+      signUpLabel: 'Regístrate',
       aboutUsLinkLabel: 'Acerca de nosotros',
+      faqLinkLabel: 'Preguntas Frecuentes',
+      donateBtnLabel: 'Donar',
       privacyPolicyLinkLabel: 'Política de privacidad',
       termsAndConditionsLinkLabel: 'Términos de servicio',
-      contactUsHeader: 'Contáctanos',
-      address: '150 Court St. 2nd Floor, Brooklyn 11201',
-      ourCompanyHeader: 'Nuestra Compañía',
-      ourPartnersHeader: 'Nuestros socios',
-      pressReleasesLinkLabel: 'Comunicados de prensa',
-      donateBtnLabel: 'Donar'
+      followHeader: '[TODO]',
+      emailAddress: 'Correo electrónico',
+      nonProfit: '[TODO]'
     }
   },
   landingPage: {
-    goodCallSummary: 'Good Call es una línea directa 24/7 completamente  gratis que le ayuda a personas que han sido arrestadas a contactar a sus seres queridos y a un abogado gratis. Todos merecemos un trato justo.',
-    stories: {
+    call: {
       header: '¿A quién llamarías en caso de arresto?',
-      signUpBtnLabel: 'regístrate',
-      scrollDownBtnLabel: 'Conoce más',
-      donation: {
-        header: 'Apoyen y donen a la justicia',
-        cta: 'donen',
-        newsletter: 'Suscriban a nuestros boletìn'
-      },
-      stories: [
-        {
-          name: 'pharaoh',
-          header: 'Yo fui arrestado.',
-          subheader: 'porque yo me estaba defendiendo',
-          text: 'Cuando Pharaoh fue atacado por dos inquilinos en su casa en Brooklyn, él hizo todo lo posible para defenderse. Maltratado y golpeado, fue detenido cuando la policía llegó.'
-        },
-        {
-          name: 'nate',
-          header: 'Yo fui arrestado.',
-          subheader: 'porque el oficial dijo que era el protocolo',
-          text: 'Nate fue arrestado por posesión de marihuana. Aunque es un delito de bajo nivel que por lo general se resuelve con una simple multa, el oficial decidió arrestar a Nate porque creía que era "protocolo".'
-        },
-        {
-          name: 'sharmene',
-          header: 'Yo fui arrestada.',
-          subheader: 'de la nada',
-          text: 'Cuando un altercado de meses atrás se convirtió en una orden de arresto sin su conocimiento, Shermene fué detenida de forma inesperada.'
-        },
-        {
-          name: 'ray',
-          header: 'Yo fui arrestado.',
-          subheader: 'porque yo correspondí a la descripción',
-          text: 'En el barrio de Ray en Brooklyn “corresponder a la descripción" es una ofensa común. Una noche, Ray miró fuera de su casa a causa de un sonido perturbador, y rápidamente pasó de ser habitante preocupado a sospechoso.'
-        },
-        {
-          name: 'steven',
-          header: 'Yo fui arrestado.',
-          subheader: 'debido a una política depredadora',
-          text: 'Miles de personas cada año son detenidas, chequeadas y arrestadas. Steven fué uno de ellos.'
-        },
-        {
-          name: 'tina',
-          header: 'Yo fui arrestada.',
-          subheader: 'por protestar',
-          text: 'Tina estaba disfrutando de la tarde en su casa. La policía entró a su casa en busca de su ex-novio sin una orden de registro. Cuando ella habló en contra del porqué estaban haciendo la búsqueda, fue detenida.'
-        }
-      ]
+      text: '[TODO]',
+      cta: '[TODO]',
+      keypadLabel: '[TODO]'
     },
-    problem: {
-      header: 'Para la mayoría de Neoyorquinos, no hay donde acudir por ayuda.',
-      subheader: 'Nuestra misión',
-      text: 'Si no tienes un abogado privado que puedas llamar, el cual la mayoría de nosotros no tiene, es difícil saber qué hacer si eres arrestado. Sin un teléfono celular, y sólo unas pocas llamadas gratuitas desde el precinto, es difícil solicitar la ayuda que tú necesitas. Queremos cambiar esto.'
+    summary: {
+      header: '[TODO]'
     },
-    howItWorks: {
-      header: 'Así funciona Good Call',
-      subheader: 'Qué esperar de Good Call',
-      step1Text: 'usted o un ser querido se inscribe a Good Call',
-      step2Text: 'eres detenido de forma inesperada',
-      step3Text: 'eres llevado a un precinto',
-      step4Text: 'llamas a Good Call al 1-833-3-GOODCALL (1-833-346-6322)',
-      step4substep1Text: 'automáticamente te conectamos con un abogado gratuito',
-      step4substep2Text: 'le dan información sobre el proceso y sus derechos',
-      step4substep3Text: 'identifican sus contactos de emergencia en nuestro directorio',
-      step5Text: 'Su abogado y sus seres queridos pueden trabajar juntos para preparar su caso',
-      step6Text: 'puedes volver a casa tan pronto como sea posible'
+    lovedOnes: {
+      header: '[TODO]',
+      text: '[TODO]'
+    },
+    lawyer: {
+      header: '[TODO]',
+      text: '[TODO]'
+    },
+    partners: {
+      header: 'Nuestros socios'
+    },
+    whyWeExist: {
+      header: '[TODO]',
+      text: '[TODO]'
     },
     press: {
       header: 'Prensa destacada'
     },
-    launchingSoon: {
-      header: 'Nosotros te cubrimos la espalda',
-      subheader: '¿Quieres estar allí para sus seres queridos en caso de que sean arrestados? Inscríbase para que puedan comunicarse con usted cuando más lo necesitan.',
-      signUpBtnLabel: 'regístrate'
+    stories: {
+      stories: [
+        {
+          name: 'pharaoh',
+          header: 'Yo fui arrestado.',
+          subheader: 'porque yo me estaba defendiendo'
+        },
+        {
+          name: 'nate',
+          header: 'Yo fui arrestado.',
+          subheader: 'porque el oficial dijo que era el protocolo'
+        },
+        {
+          name: 'sharmene',
+          header: 'Yo fui arrestada.',
+          subheader: 'de la nada'
+        },
+        {
+          name: 'ray',
+          header: 'Yo fui arrestado.',
+          subheader: 'porque yo correspondí a la descripción'
+        },
+        {
+          name: 'steven',
+          header: 'Yo fui arrestado.',
+          subheader: 'debido a una política depredadora'
+        },
+        {
+          name: 'tina',
+          header: 'Yo fui arrestada.',
+          subheader: 'por protestar'
+        }
+      ]
+    },
+    saveContact: {
+      text: '[TODO]',
+      cta: '[TODO]'
     }
   },
   aboutPage: {
