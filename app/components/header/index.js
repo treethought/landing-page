@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { bool, func, object } from 'prop-types'
-import MediaQuery from 'react-responsive'
 import { Link } from 'react-router'
 import ToggleLanguageBtn from './toggle-language-btn'
 import NavDropdown from './nav-dropdown'
@@ -23,17 +22,17 @@ class Header extends Component {
         </Link>
 
         <nav className='nav'>
-          <MediaQuery query='(min-width: 950px)'>
+          <div className='nav-menu'>
             {!inRegistrationFlow && btns.map(b =>
               <Button {...b} key={b.label} activeClassName='nav-btn-active' />
             )}
-          </MediaQuery>
+          </div>
 
           <ToggleLanguageBtn onClick={toggleLocale} label={content.toggleLanguageBtnLabel} />
 
-          <MediaQuery query='(max-width: 949px)'>
+          <div className='nav-dropdown'>
             {!inRegistrationFlow && <NavDropdown btns={btns} />}
-          </MediaQuery>
+          </div>
         </nav>
       </header>
     )
