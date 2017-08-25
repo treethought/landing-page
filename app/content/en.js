@@ -9,6 +9,8 @@ const en = {
     },
     hotlineBannerText: 'If you or a loved one has been arrested in the Bronx call 1-833-3-GOODCALL (1-833-346-6322) for free legal support 24/7',
     footer: {
+      siteNavHeader: 'Site Navigation',
+      followHeader: 'Subscribe and follow',
       signUpLabel: 'Sign up',
       faqLinkLabel: 'FAQ',
       aboutUsLinkLabel: 'About Us',
@@ -19,84 +21,76 @@ const en = {
       ourCompanyHeader: 'Our Company',
       ourPartnersHeader: 'Our Partners',
       pressReleasesLinkLabel: 'Press Releases',
-      donateBtnLabel: 'Donate'
+      donateBtnLabel: 'Donate',
+      emailAddress: 'Email address',
+      nonProfit: 'Good Call is a fiscally sponsored not-for-profit 501(c)(3)'
     }
   },
   landingPage: {
-    goodCallSummary: 'Good Call is a completely free 24/7 hotline that helps people who are arrested alert their loved ones and connect to a free lawyer. Everyone deserves fairness.',
-    stories: {
+    call: {
       header: 'Who would you call in case of an arrest?',
-      signUpBtnLabel: 'sign up',
-      scrollDownBtnLabel: 'Learn more',
-      donation: {
-        header: 'Support and donate to justice',
-        cta: 'donate',
-        newsletter: 'Sign up for our newsletter'
-      },
-      stories: [
-        {
-          name: 'pharaoh',
-          header: 'I was arrested.',
-          subheader: 'because I was defending myself',
-          text: 'When Pharaoh was attacked by two tenants in his Brooklyn home, he tried his best to defend himself. Battered and bruised, he was still arrested when the police showed up.'
-        },
-        {
-          name: 'nate',
-          header: 'I was arrested.',
-          subheader: 'because the officer said it was protocol',
-          text: 'Nate was arrested for the possession of marijuana. Although this low level offense is usually resolved with a simple ticket, the officer decided to arrest Nate because he believed it was “protocol.”'
-        },
-        {
-          name: 'sharmene',
-          header: 'I was arrested.',
-          subheader: 'out of nowhere',
-          text: 'When an altercation from months before turned into a warrant without her knowledge, Shermene was arrested unexpectedly.'
-        },
-        {
-          name: 'ray',
-          header: 'I was arrested.',
-          subheader: 'because I fit the description',
-          text: 'In Ray’s neighborhood in Brooklyn, “fitting the description” is a common offense. One night, Ray looked out of his doorway because of a disturbance, and quickly went from a concerned resident to a suspect.'
-        },
-        {
-          name: 'steven',
-          header: 'I was arrested.',
-          subheader: 'because of a predatory policy',
-          text: 'Thousands of people every year are stopped, frisked, and arrested. Steven happened to be one of them.'
-        },
-        {
-          name: 'tina',
-          header: 'I was arrested.',
-          subheader: 'for speaking out',
-          text: 'Tina was enjoying her afternoon in her home. The police came into her house looking for her ex-boyfriend without a valid search warrant. When she spoke out against the search, Tina was arrested instead.'
-        }
-      ]
+      text: 'We got your back, sign up to save an emergency contact to alert in case of an arrest and list yourself as an emergency contact for someone you want to be there for',
+      cta: 'save a contact',
+      keypadLabel: 'Enter a loved one\'s phone number'
     },
-    problem: {
-      header: 'For most New Yorkers, there is nowhere to turn for help.',
-      subheader: 'Our mission',
-      text: 'If you don\'t have a private lawyer to call, which most of us don\'t, it is hard to know what to do if you’ve been arrested. Without a cell phone, and only a few free calls from a precinct, it is difficult at best to reach the help you need. We want to change that.'
+    summary: {
+      header: 'Good Call runs a free 24/7 emergency arrest hotline and an emergency contact directory. With one call to 1-833-3-GOODCALL, we alert your loved ones and connect you with a free lawyer.'
     },
-    howItWorks: {
-      header: 'How Good Call Works',
-      subheader: 'Know what to expect',
-      step1Text: 'you or a loved one signs up for Good Call',
-      step2Text: 'you are unexpectedly arrested',
-      step3Text: 'you are brought to the precinct',
-      step4Text: 'you call Good Call at\n 1-833-3-GOODCALL (1-833-346-6322)',
-      step4substep1Text: 'we automatically connect you with a free lawyer',
-      step4substep2Text: 'they give you information on the process and your rights',
-      step4substep3Text: 'they identify your emergency contacts in our directory',
-      step5Text: 'Your lawyer and loved ones can work together to prepare your case',
-      step6Text: 'you can return home as soon as possible'
+    lovedOnes: {
+      header: 'Make sure you and your loved ones can reach each other at the time of arrest',
+      text: 'Save an emergency contact for Good Call to alert in case of an arrest or be that contact for someone you want to be there for'
+    },
+    lawyer: {
+      header: 'Talk to a lawyer earlier and not 15 minutes before arraignments',
+      text: 'Call 1-833-3-GOODCALL if you or a loved one get arrested to talk to a free lawyer can tell you what to expect and start working on the case'
+    },
+    partners: {
+      header: 'Our partners'
+    },
+    whyWeExist: {
+      header: 'Why we exist',
+      text: 'A majority of arrests are in low-income communities and for low-level misdemeanors. Currently, legal support comes too late and the consequences of this lack of support is devastating. We want to change that.'
     },
     press: {
       header: 'Featured Press'
     },
-    launchingSoon: {
-      header: 'We got your back',
-      subheader: 'Want to be there for your loved ones in case they get arrested? Sign up so they can reach you when they need it most.',
-      signUpBtnLabel: 'sign up'
+    stories: {
+      stories: [
+        {
+          name: 'pharaoh',
+          header: 'I was arrested.',
+          subheader: 'because I was defending myself'
+        },
+        {
+          name: 'nate',
+          header: 'I was arrested.',
+          subheader: 'because the officer said it was protocol'
+        },
+        {
+          name: 'sharmene',
+          header: 'I was arrested.',
+          subheader: 'out of nowhere'
+        },
+        {
+          name: 'ray',
+          header: 'I was arrested.',
+          subheader: 'because I fit the description'
+        },
+        {
+          name: 'steven',
+          header: 'I was arrested.',
+          subheader: 'because of a predatory policy'
+        },
+        {
+          name: 'tina',
+          header: 'I was arrested.',
+          subheader: 'for speaking out'
+        }
+      ]
+    },
+    saveContact: {
+      text: 'Save an emergency contact to protect yourself and the rights of your loved ones',
+      cta: 'Save a contact'
     }
   },
   aboutPage: {
@@ -312,19 +306,6 @@ const en = {
     paragraph1Line3: 'You hereby certify to Good Call that You are at least 13 years of age. In jurisdictions where 13 is not the age of consent to contract, You represent and warrant that You have all necessary authorizations and permissions from an appropriate legal guardian. You also certify that You are otherwise legally permitted to use the Service.',
     subheader1: 'How do we use your information',
     paragraph2Line1: 'By using the service you agree to have Good Call store my personal information and share your name and date of birth with the Legal Service Provider who will represent you in the event of an arrest.  In the event of my arrest in the Legal Service Provider’s legal jurisdiction, I give the Legal Service Provider permission to inform Good Call so they can reach out to my emergency contact(s).  Additionally, if the Legal Service Provider is contacted by one of my loved ones and told that I have been arrested, the Legal Service Provider can provide my name and date of birth to Good Call, so that my emergency contact(s) can be notified.'
-  },
-  pressReleasesPage: {
-    header: 'Press Releases',
-    releases: [
-      {
-        header: '“Good Call” Hotline Launches In The Bronx To Provide Better Legal Support During Arrest',
-        content: `
-          <p><strong>NEW YORK CITY - October 14, 2016</strong> - Good Call, a product of Blue Ridge Labs’ social impact incubator program, launched a free hotline today to improve legal support for people who are arrested in the Bronx. The hotline, 347-95-BRONX, can be called by anyone who is arrested in the Bronx or their loved ones, to receive advice and give a lawyer more time to look into their case. Today, detainees don’t get a chance to speak with a lawyer until a brief meeting shortly before their arraignment.</p>
-          <p>“We are both excited and humbled to bring this service to the Bronx”, said Gabe Leader-Rose, co-founder of Good Call. “Over the past few months, we’ve heard hundreds of accounts of people in our city being arrested for trivial reasons and paying an unacceptable price. We know there are much larger systemic issues in the criminal justice system and policing practices than we are able to address, but we hope that Good Call will help the community push back against injustice.”</p>
-          <p>When arrested, all of a person’s belongings are confiscated before they are allowed to make a phone call on a traditional dial pad phone. In the age of smartphones, with less of us memorizing phone numbers, this can make it very difficult for someone to reach the people they need. To combat this issue, Good Call runs a website, goodcall.nyc, where users can signup and list emergency contacts to alert in case of their arrest - no memorization required. Good Call is partnering with reputable Legal Service Providers in the Bronx to staff intake operators and lawyers for the hotline, looking to help the subjects of roughly 40,000 arrests that happen in the Bronx each year. If the hotline is a success in the Bronx, Good Call plans to expand to the remaining four boroughs, and make the arrest process more fair for all New Yorkers, regardless of income.</p>
-        `
-      }
-    ]
   }
 }
 

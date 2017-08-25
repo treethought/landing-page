@@ -33,14 +33,14 @@ const Footer = ({ content }) => {
               <a
                 href='https://www.google.com/maps?q=150+Court+St.+2nd+Floor,+Brooklyn+11201'
                 className='footer-link green-on-hover'
-                >
+              >
                 {content.address}
               </a>
             </address>
           </div>
 
           <div className='site-nav'>
-            <div className='footer-link links-header'>Site Navigation</div>
+            <div className='footer-link links-header'>{content.siteNavHeader}</div>
             {navLinks.map(({ to, label, onClick }) => (
               <Link to={to} key={label} onClick={onClick} className='footer-link green-on-hover'>
                 {content[label]}
@@ -49,7 +49,7 @@ const Footer = ({ content }) => {
           </div>
 
           <div className='follow-us'>
-            <div className='footer-link links-header'>Subscribe and follow</div>
+            <div className='footer-link links-header'>{content.followHeader}</div>
             <div className='social-links'>
               {socialLinks.map(({ href, src }) => (
                 <a href={href} className='social-link' key={src}>
@@ -61,7 +61,7 @@ const Footer = ({ content }) => {
             <form className='mailing-list-form'>
               <input
                 className='mailing-list-input'
-                placeholder='Email address'
+                placeholder={content.emailAddress}
                 />
               <div className='mailing-list-button'>
                 <img src='/assets/imgs/subscribe-arrow.svg' />
@@ -71,7 +71,7 @@ const Footer = ({ content }) => {
         </div>
 
         <div className='non-profit'>
-          Good Call is a fiscally sponsored not-for-profit 501(c)(3)
+          {content.nonProfit}
         </div>
       </div>
     </footer>

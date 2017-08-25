@@ -4,20 +4,16 @@ import { Button } from '../../index'
 import { Link as ScrollLink } from 'react-scroll'
 import Keypad from './keypad'
 
-const Call = ({ height, headerPadding }) => (
+const Call = ({ height, headerPadding, content }) => (
   <div className='call' style={{ 'height': height }}>
     <div className='content'>
       <div className='left'>
-        <div className='h1'>
-          Who would you call in case of an arrest?
-        </div>
-        <div className='p'>
-          We got your back, sign up to save an emergency contact to alert in case of an arrest and list yourself as an emergency contact for someone you want to be there for
-        </div>
-        <Button label='save a contact' selector='primary' />
+        <div className='h1'>{content.header}</div>
+        <div className='p'>{content.text}</div>
+        <Button label={content.cta} selector='primary' />
       </div>
       <div className='right'>
-        <Keypad />
+        <Keypad label={content.keypadLabel} />
       </div>
     </div>
 

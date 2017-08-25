@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { string } from 'prop-types'
 
 const digits = [
   ['1', '2', '3'],
@@ -27,13 +28,14 @@ class Keypad extends Component {
   }
 
   render () {
+    const { label } = this.props
     const { number } = this.state
 
     return (
       <div className='keypad'>
         <input
           className='phone'
-          placeholder={'Enter a loved one\'s phone number'}
+          placeholder={label}
           type='phone'
           onChange={this.onChange}
           value={number}
@@ -52,6 +54,10 @@ class Keypad extends Component {
       </div>
     )
   }
+}
+
+Keypad.propTypes = {
+  label: string
 }
 
 export default Keypad
