@@ -1,61 +1,54 @@
 .lawyer {
-  padding: 165px 180px 0;
+  max-width: $lp-max-width;
+  margin: 0 auto;
+  padding: 165px $lp-h-padding 0;
   padding-bottom: 0;
 
-  & > .content-container {
-    & > .h2 {
+  .content-container {
+    max-width: 464px;
+    width: 50%;
+
+    .h2 {
       font-weight: $regular;
     }
   }
 
-  & > .icon-container {
-    .icon {
-      width: 530px;
-      height: 275px;
-      background: rgba(0,0,0,0.2);
-      margin: 0 auto;
-    }
+  .icon {
+    max-height: 360px;
+    max-width: 360px;
+    object-fit: contain;
   }
 }
 
-@media ($mobile) {
+@media #{$mobile-only} {
   .lawyer {
     padding: 60px 30px 0;
 
-    & > .h2 {
+    .h2 {
       font-weight: $semi-bold;
     }
 
-    & > .icon-container {
-      .icon {
-        width: 254px;
-        height: 144px;
-      }
+    .icon {
+      height: 220px;
+      width: 220px;
     }
   }
 }
 
-@media ($desktop) {
+@media #{$tablet-up} {
   .lawyer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: $lp-max-width;
-    margin: 0 auto;
 
-    & > .content-container {
-      max-width: 440px;
+    .content-container {
+      align-self: flex-start;
+      margin-right: 50px;
     }
 
-    & > .icon-container {
-      padding-top: 85px;
-
-      .icon {
-        width: 530px;
-        height: 275px;
-        background: rgba(0,0,0,0.2);
-        margin: 0 auto;
-      }
+    .icon {
+      width: 50%;
+      align-self: flex-end;
     }
   }
 }

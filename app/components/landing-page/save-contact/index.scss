@@ -15,7 +15,7 @@
   }
 }
 
-@media ($mobile) {
+@media #{$mobile-only} {
 
   .save-contact {
     padding-top: 50px;

@@ -3,6 +3,7 @@
   // TODO: update with video instead
   background-image: url('http://bronxink.org/wp-content/blogs.dir/3/files/2011/10/DSC_0121.jpg');
   background-size: cover;
+  max-height: 700px;
 
   & > .content {
     display: flex;
@@ -11,12 +12,10 @@
     position: relative;
     color: $cream;
     z-index: 2;
-    padding-top: 185px;
-    padding-left: 115px;
-    padding: 145px;
+    padding: 145px $lp-h-padding;
     max-width: $lp-max-width;
     margin: 0 auto;
-    
+
     & .left {
       max-width: 640px;
 
@@ -37,6 +36,7 @@
       .phone {
         background: transparent;
         border: none;
+        text-align: center;
         color: $cream;
         font-weight: $light;
         width: 100%;
@@ -105,7 +105,7 @@
   }
 }
 
-@media ($mobile) {
+@media #{$mobile-only} {
   .call {
     & > .content {
       padding-top: 60px;

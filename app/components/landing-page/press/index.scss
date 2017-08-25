@@ -39,7 +39,7 @@
   }
 }
 
-@media ($mobile) {
+@media #{$mobile-only} {
   .press {
     padding: 50px 30px 50px;
 

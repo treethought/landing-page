@@ -1,5 +1,5 @@
 .why-we-exist {
-  padding: 80px 200px;
+  padding: 80px $lp-h-padding;
   background: $green;
   text-align: center;
   color: $cream;
@@ -15,7 +15,7 @@
   }
 }
 
-@media ($mobile) {
+@media #{$mobile-only} {
   .why-we-exist {
     padding: 45px 35px 60px 35px;
 
@@ -29,7 +29,7 @@
   }
 }
 
-@media ($desktop) {
+@media #{$tablet-up} {
   .why-we-exist {
     & > .p {
       font-size: 30px;

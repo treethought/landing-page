@@ -1,19 +1,20 @@
 .footer {
-  padding: 80px 100px 70px;
+  padding: 80px $lp-h-padding 70px;
   background: $cream;
   color: $black;
   display: flex;
   max-width: $lp-max-width;
   margin: 0 auto;
-  //
   flex-direction: column;
   align-items: flex-start;
-  //
+  position: relative;
+
   .main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    position: relative;
     flex-wrap: wrap;
 
     & > div:not(:last-child) {
@@ -52,10 +53,13 @@
     }
 
     .follow-us {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       margin-bottom: 20px;
+      max-width: 330px;
+      width: 100%;
 
       .links-header {
         margin-bottom: 15px;
@@ -81,12 +85,12 @@
         display: flex;
         flex-direction: row;
         align-items: stretch;
-        justify-content: center;
+        justify-content: flex-start;
         margin-bottom: 25px;
+        width: 100%;
 
         .mailing-list-input {
           font-size: 18px;
-          width: 325px;
           font-weight: $light;
           padding: 15px 20px;
           border: 1px solid $green;
@@ -114,7 +118,7 @@
   }
 }
 
-@media ($mobile) {
+@media #{$mobile-only} {
   .footer {
     padding: 50px 30px 20px;
 
@@ -133,7 +137,6 @@
         .mailing-list-form {
           .mailing-list-input {
             font-size: 12px;
-            width: 130px;
           }
         }
       }
@@ -141,7 +144,7 @@
   }
 }
 
-@media ($desktop) {
+@media #{$tablet-up} {
   .footer {
     .main {
       .links-header {

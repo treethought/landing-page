@@ -1,11 +1,12 @@
 .loved-ones {
-  padding: 165px 180px 0;
+  padding: 165px $lp-h-padding 0;
   max-width: $lp-max-width;
   margin: 0 auto;
+  position: relative;
 
   & > .content-container {
     max-width: 464px;
-    width: 100%;
+    width: 50%;
 
     & > .h2 {
       font-weight: $regular;
@@ -16,20 +17,14 @@
     }
   }
 
-  & > .icon-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    & > .icon {
-      height: 360px;
-      width: 360px;
-      background: rgba(0,0,0,0.2);
-    }
+  & > .icon {
+    max-height: 360px;
+    max-width: 360px;
+    object-fit: contain;
   }
 }
 
-@media ($mobile) {
+@media #{$mobile-only} {
   .loved-ones {
     padding: 60px 30px 0;
 
@@ -37,16 +32,14 @@
       font-weight: $semi-bold;
     }
 
-    & > .icon-container {
-      & > .icon {
-        height: 220px;
-        width: 220px;
-      }
+    & > .icon {
+      height: 220px;
+      width: 220px;
     }
   }
 }
 
-@media ($desktop) {
+@media #{$tablet-up} {
   .loved-ones {
     display: flex;
     flex-direction: row;
@@ -54,9 +47,13 @@
 
     .content-container {
       order: 2;
+      align-self: flex-start;
+      margin-left: 50px;
     }
 
-    .icon-container {
+    .icon {
+      width: 50%;
+      align-self: flex-end;
       order: 1;
     }
   }

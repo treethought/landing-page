@@ -1,5 +1,5 @@
 .summary {
-  padding: 110px 180px 77px;
+  padding: 110px $lp-h-padding 77px;
   text-align: center;
   color: $green;
   max-width: $lp-max-width;
@@ -15,7 +15,7 @@
   }
 }
 
-@media ($mobile) {
+@media #{$mobile-only} {
   .summary {
     padding: 50px 40px;
 

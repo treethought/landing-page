@@ -87,7 +87,7 @@
   }
 }
 
-@media ($mobile) {
+@media #{$mobile-only} {
   .stories {
     .arrows {
       display: none;
@@ -95,7 +95,7 @@
   }
 }
 
-@media ($desktop) {
+@media #{$tablet-up} {
   .stories {
     .story {
       background-position: center;
