@@ -26,11 +26,25 @@
     background: $green;
     color: $cream;
     min-width: 212px;
+    transition: 0.3s;
+
+    &:hover {
+      background: transparent;
+      border: 1px solid $green;
+      color: $green;
+    }
   }
 
   &.inverse {
     background: $cream;
     color: $green;
     min-width: 212px;
+    transition: 0.3s;
+
+    &:hover {
+      background: transparent;
+      border: 1px solid $cream;
+      color: $cream;
+    }
   }
 }

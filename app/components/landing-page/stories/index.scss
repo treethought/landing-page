@@ -9,46 +9,42 @@
     justify-content: flex-end;
     align-items: center;
     position: relative;
+    min-height: 300px;
 
     .content {
       max-width: $lp-max-width;
-    }
-
-    .story-header {
-      font-size: 30px;
-      position: relative;
-      font-weight: $semi-bold;
       z-index: 100;
+
+      .story-header {
+        position: relative;
+        font-weight: $semi-bold;
+      }
+
+      .story-subheader {
+        border-bottom: 1px solid $green;
+        position: relative;
+        display: inline-block;
+        font-weight: $light;
+        margin-bottom: 120px;
+      }
     }
 
-    .story-subheader {
-      font-size: 16px;
-      border-bottom: 1px solid $green;
-      position: relative;
-      display: inline-block;
-      font-weight: $light;
-      z-index: 100;
-      margin-bottom: 120px;
+    .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background: rgba(0,0,0,0.3);
     }
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background: rgba(0,0,0,0.3);
   }
 
   .dots {
     position: absolute;
-    bottom: 20px;
+    right: 0; left: 0; bottom: 20px;
     display: flex !important;
     flex-direction: row;
-    right: 0;
-    left: 0;
     justify-content: center;
 
     .slick-active .dot {
@@ -67,7 +63,7 @@
 
   .arrows {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 40px;  bottom: 40px; left: 0; right: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -89,8 +85,34 @@
 
 @media #{$mobile-only} {
   .stories {
+    .content {
+      .story-header {
+        font-size: 30px;
+      }
+
+      .story-subheader {
+        font-size: 16px;
+      }
+    }
+
     .arrows {
       display: none;
+    }
+  }
+}
+
+@media #{$desktop-only} {
+  .stories {
+    .story {
+      .content {
+        .story-header {
+          font-size: 70px;
+        }
+
+        .story-subheader {
+          font-size: 40px;
+        }
+      }
     }
   }
 }
@@ -104,14 +126,28 @@
 
       .content {
         padding-right: 150px;
+      }
+    }
+  }
+}
 
+@media #{$tablet-only} {
+  .stories {
+    .story {
+      .content {
         .story-header {
-          font-size: 70px;
+          font-size: 40px;
         }
 
         .story-subheader {
-          font-size: 40px;
+          font-size: 20px;
         }
+      }
+    }
+
+    .arrows {
+      .arrow {
+        height: 60px;
       }
     }
   }

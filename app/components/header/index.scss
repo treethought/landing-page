@@ -52,6 +52,11 @@
 
   .nav-btn {
     font-size: 14px;
+    transition: 0.5s;
+
+    &:hover {
+      color: $green;
+    }
   }
 
   .nav-btn-active span {

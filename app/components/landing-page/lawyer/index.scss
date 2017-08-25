@@ -1,15 +1,18 @@
 .lawyer {
+  padding: 165px $lp-h-padding 0;
   max-width: $lp-max-width;
   margin: 0 auto;
-  padding: 165px $lp-h-padding 0;
-  padding-bottom: 0;
+  position: relative;
 
   .content-container {
     max-width: 464px;
-    width: 50%;
 
     .h2 {
       font-weight: $regular;
+    }
+
+    .p {
+      margin-bottom: 20px;
     }
   }
 
@@ -20,9 +23,12 @@
   }
 }
 
-@media #{$mobile-only} {
+@media (max-width: 674px) {
   .lawyer {
     padding: 60px 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .h2 {
       font-weight: $semi-bold;
@@ -35,7 +41,7 @@
   }
 }
 
-@media #{$tablet-up} {
+@media (min-width: 675px) {
   .lawyer {
     display: flex;
     flex-direction: row;

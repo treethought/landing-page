@@ -4,42 +4,44 @@
   margin: 0 auto;
   position: relative;
 
-  & > .content-container {
+  .content-container {
     max-width: 464px;
-    width: 50%;
 
-    & > .h2 {
+    .h2 {
       font-weight: $regular;
     }
 
-    & > .p {
+    .p {
       margin-bottom: 20px;
     }
   }
 
-  & > .icon {
+  .icon {
     max-height: 360px;
     max-width: 360px;
     object-fit: contain;
   }
 }
 
-@media #{$mobile-only} {
+@media (max-width: 674px) {
   .loved-ones {
     padding: 60px 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .h2 {
       font-weight: $semi-bold;
     }
 
-    & > .icon {
+    .icon {
       height: 220px;
       width: 220px;
     }
   }
 }
 
-@media #{$tablet-up} {
+@media (min-width: 675px) {
   .loved-ones {
     display: flex;
     flex-direction: row;

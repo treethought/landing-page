@@ -24,7 +24,9 @@ class Header extends Component {
 
         <nav className='nav'>
           <MediaQuery query='(min-width: 950px)'>
-            {!inRegistrationFlow && btns.map(b => <Button {...b} key={b.label} />)}
+            {!inRegistrationFlow && btns.map(b =>
+              <Button {...b} key={b.label} activeClassName='nav-btn-active' />
+            )}
           </MediaQuery>
 
           <ToggleLanguageBtn onClick={toggleLocale} label={content.toggleLanguageBtnLabel} />

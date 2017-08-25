@@ -27,6 +27,14 @@
   font-weight: $regular;
 }
 
+.green-on-hover {
+  transition: 0.5s;
+
+  &:hover {
+    color: $green;
+  }
+}
+
 .dark {
   background: $dark-grey;
   color: $cream;
@@ -64,4 +72,10 @@
     line-height: 16px;
   }
 
+}
+
+@media #{$tablet-only} {
+  .h2 {
+    font-size: 24px;
+  }
 }

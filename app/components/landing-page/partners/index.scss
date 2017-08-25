@@ -15,28 +15,32 @@
       object-fit: contain;
       height: 95px;
       margin: 20px;
-      cursor: pointer;
     }
   }
 }
 
 @media #{$tablet-up} {
   .partners {
-    max-width: $lp-max-width;
-    margin: 0 auto;
+    background: $white;
     padding: 60px $lp-h-padding 100px;
 
-    .h2 {
-      font-weight: $regular;
-      margin-bottom: 60px;
-    }
+    .content {
+      max-width: $lp-max-width;
+      margin: 0 auto;
 
-    .logos-container {
-      img {
-        max-width: 190px;
-        object-fit: contain;
-        height: 100px;
+      .h2 {
+        font-weight: $regular;
+        margin-bottom: 60px;
+      }
+
+      .logos-container {
+        img {
+          max-width: 190px;
+          object-fit: contain;
+          height: 100px;
+        }
       }
     }
+
   }
 }
