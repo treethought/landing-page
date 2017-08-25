@@ -10,7 +10,7 @@ const Call = ({ height, headerPadding, content }) => (
       <div className='left'>
         <div className='h1'>{content.header}</div>
         <div className='p'>{content.text}</div>
-        <Button label={content.cta} selector='primary' />
+        <Button label={content.cta} selector='primary' to='/sign-up' />
       </div>
       <div className='right'>
         <Keypad label={content.keypadLabel} />
