@@ -91,20 +91,24 @@ const en = {
   },
   aboutPage: {
     header: 'We believe everyone deserves fairness.',
+    ourMissionText: 'Our mission is to make the arrest process and its aftermath less painful and harmful for those that are detained and their loved ones. We strive to make this process more transparent and just for all New Yorkers regardless of income.',
     aboutUs: {
-      header: 'Our story.',
+      header: 'Our story',
       text: 'Our four founders met through <a class="about-page__paragraph-link" href="https://labs.robinhood.org/">Blue Ridge Labs @ Robin Hood</a>, a social impact incubator aimed at building technology to address problems faced by low income New Yorkers. During our research, we heard stories from dozens of New Yorkers who were arrested for trivial reasons like hopping a turnstile, forgetting to pay a ticket, or simply "fitting the description". With their cell phones taken away, their only way to reach out for help was a few phone calls on an old dial-pad phone, to numbers they had to have memorized. It was difficult for them to reach their loved ones and nearly impossible to reach a lawyer. Their inability to get help in this critical moment often times lead to devastating outcomes, including getting fired from their jobs, being wrongfully sent to jail for weeks on end, and admitting to crimes they didn\'t commit. <br /> <br /> We founded Good Call to provide better support throughout the arrest process, with the mission of ensuring that everyone who gets arrested has a fair process and a just outcome, and isn\'t punished because of what they look like, where they live, or how much money they have. In October of 2016, we launched our pilot with legal support being provided by <a class="about-page__paragraph-link" href="http://www.bronxdefenders.org/">The Bronx Defenders</a>, one of the most prestigious legal service providers in the country. Our goal is to bring Good Call to all of New York City and beyond.'
     },
-    ourMissionText: 'Our mission is to make the arrest process and its aftermath less painful and harmful for those that are detained and their loved ones. We strive to make this process more transparent and just for all New Yorkers regardless of income.',
     ourTeam: {
-      header: 'Our team.',
+      header: 'Our founding team',
       text: 'We come from a diverse set of backgrounds and experiences, from 3D Printing to web design to community organizing. However, we share a passion for creating a better and more just New York City for everyone.'
     },
-    joinTheMovement: {
-      header: 'Why Sign Up?',
-      text: 'Signing up only takes a minute or two, and it can make a big difference in an arrest situation. You can sign up and save a few of your emergency contacts to make sure you can reach them if you ever get arrested. You can also add your own contact information, to make sure your loved ones can reach you if they are in trouble. Sign up today, and help us provide better legal support for you and your community.'
+    community: {
+      header: 'Community centered tech nonprofit',
+      text: 'We built Good Call with and for the communities we serve through human-centered design and community outreach. We are stronger together.'
     },
-    signUpBtnLabel: 'sign up'
+    donate: {
+      header: 'Donate to justice',
+      text: 'Saving a contact only takes a minute or two, and it can make a big difference in an arrest situation. You can  save a few of your emergency contacts to make sure you can reach them if you ever get arrested. You can also add your own contact information, to make sure your loved ones can reach you if they are in trouble. Help us provide better legal support for you and your community.',
+      cta: 'Donate'
+    }
   },
   signUpPage: {
     header: 'Sign up and protect your rights',

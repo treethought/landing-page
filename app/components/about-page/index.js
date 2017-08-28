@@ -1,82 +1,77 @@
-import React, {Component, PropTypes} from 'react'
-import {Grid, Row, Cell} from 'react-inline-grid'
-import SimplePanel from './../simple-panel'
-import FlatButton from 'material-ui/FlatButton'
-import {Link} from 'react-router'
+import React from 'react'
+import { object } from 'prop-types'
+import { Button } from '../index'
 
-class AboutPage extends Component {
-  render () {
-    const { content } = this.props.route
+const AboutPage = ({ route }) => {
+  const { content } = route
 
-    const TwoColPanel = ({className, heading, text, children}) => (
-      <div className={`about-page__two-col-panel ${className || ''}`}>
-        <Grid>
-          <Row>
-            <Cell is='5'>
-              <h2 className='about-page__two-col-panel-subheader'>{heading}</h2>
-            </Cell>
-            <Cell is='7'>
-              <p className='about-page__two-col-panel-paragraph' dangerouslySetInnerHTML={{__html: text}} />
-            </Cell>
-          </Row>
-        </Grid>
-        {children}
+  const metrics = [
+    { label: 'Calls processed by Good Call', number: '300+' },
+    { label: 'Major legal service providers providing legal support on our hotline', number: '2' },
+    { label: 'Average time it takes for us to connect someone with a free lawyer', number: '46s' }
+  ]
+
+  return (
+    <div className='about-page'>
+      <div className='banner'>
+        <div className='banner-header'>{content.header}</div>
       </div>
-    )
 
-    return (
-      <div className='about-page'>
-        <div className='about-page__banner'>
-          <h1 className='about-page__banner-header'>{content.header}</h1>
+      <div className='mission'>
+        <div className='mission-text h2'>{content.ourMissionText}</div>
+      </div>
+
+      <div className='story'>
+        <div className='content'>
+          <div className='h2'>{content.aboutUs.header}</div>
+          <div className='story-text' dangerouslySetInnerHTML={{ __html: content.aboutUs.text }} />
+          <img className='story-icon' src='/assets/imgs/coil.svg' />
         </div>
-
-        <TwoColPanel
-          heading={content.aboutUs.header}
-          text={content.aboutUs.text}
-        />
-
-        <SimplePanel
-          font-weight='300'
-          backgroundColor='#40B097'
-          color='#FDFFF9'
-          text={content.ourMissionText}
-        />
-
-        <TwoColPanel
-          className='about-page__our-team'
-          heading={content.ourTeam.header}
-          text={content.ourTeam.text}
-        >
-          <img className='about-page__team-photo' src='/assets/imgs/team-photo-min.png' />
-        </TwoColPanel>
-
-        <div className='about-page__horiz-divider' />
-
-        <TwoColPanel
-          heading={content.joinTheMovement.header}
-          text={content.joinTheMovement.text}
-          className='about-page__join-our-movement'
-        >
-          <Grid>
-            <Row>
-              <Cell is='5' />
-              <Cell is='7'>
-                <FlatButton
-                  className='about-page__sign-up-btn gc-std-btn'
-                  style={{ backgroundColor: '#40B097' }}
-                  label={content.signUpBtnLabel}
-                  containerElement={<Link to='/sign-up' />}
-                />
-              </Cell>
-            </Row>
-          </Grid>
-        </TwoColPanel>
       </div>
-    )
-  }
+
+      <div className='metrics'>
+        <div className='subheader'>Since October 2016</div>
+        <div className='container'>
+          {metrics.map(({ label, number }) => (
+            <div className='metric'>
+              <div className='number'>{number}</div>
+              <div className='label'>{label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className='team'>
+        <div className='content'>
+          <div className='h2'>{content.ourTeam.header}</div>
+          <div className='text'>{content.ourTeam.text}</div>
+          <img className='team-photo' src='/assets/imgs/team-photo-min.png' />
+        </div>
+      </div>
+
+      <div className='community'>
+        <div className='content'>
+          <div className='h2'>{content.community.header}</div>
+          <div className='text'>{content.community.text}</div>
+          <img className='photo' src='http://www.arenakettering.co.uk/wp-content/uploads/grey-square.png' />
+        </div>
+      </div>
+
+      <div className='donate'>
+        <div className='content'>
+          <div className='h2'>{content.donate.header}</div>
+          <div className='text'>{content.donate.text}</div>
+          <Button
+            className='donate-btn'
+            label={content.donate.cta}
+            selector='inverse'
+          />
+        </div>
+      </div>
+    </div>
+  )
 }
 
-const { object } = PropTypes
 AboutPage.propTypes = {
   route: object
 }
