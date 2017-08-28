@@ -29,12 +29,12 @@ const AboutPage = ({ route }) => {
 
           <img className='story-icon' src='/assets/imgs/coil.svg' />
 
-          <div className='metrics-subheader'>{content.metrics.header}</div>
+          <div className='metrics-subheader'>{content.aboutUs.metrics.header}</div>
           <div className='metrics-container'>
             {metrics.map(({ type, number }, i) => (
               <div className='metric' key={i}>
                 <div className='number'>{number}</div>
-                <div className='label'>{content.metrics.metrics[type]}</div>
+                <div className='label'>{content.aboutUs.metrics.metrics[type]}</div>
               </div>
             ))}
           </div>

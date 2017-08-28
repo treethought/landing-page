@@ -91,20 +91,32 @@ const es = {
   },
   aboutPage: {
     header: 'Nosotros creemos que todos merecemos un trato justo.',
-    aboutUs: {
-      header: 'Nuestra historia.',
-      text: 'Nuestros cuatro fundadores se reunieron a través de <a class="about-page__paragraph-link" href="https://labs.robinhood.org/">Blue Ridge Labs @ Robin Hood</a>, una incubadora de impacto social dirigida a la construcción de tecnología para abordar los problemas que enfrentan los neoyorquinos de bajos ingresos. Durante nuestra investigación, escuchamos historias de decenas de neoyorquinos que fueron arrestados por razones triviales como saltar un torniquete, olvidarse de pagar un boleto o simplemente "tener la descripción adecuda". Con sus teléfonos celulares quitados, su única manera de alcanzar ayuda era algunas llamadas de teléfono en un teléfono viejo de teclado de marcación, a los números que tenían que haber memorizado. Era difícil para ellos llegar a sus seres queridos y casi imposible llegar a un abogado. Su incapacidad para obtener ayuda en este momento crítico conduce resultados devastadores, incluyendo ser despedido de sus trabajos, ser enviado injustamente a la cárcel durante semanas y admitir a los crímenes que no cometieron. <br /> <br /> Fundamos Good Call para proporcionar un mejor apoyo durante todo el proceso de arresto, con la misión de asegurar que todos los que son arrestados tienen un proceso justo y un resultado justo, y no son castigados por lo que parecen, dónde viven o cuanto dinero tienen. En octubre de 2016, lanzamos nuestro piloto con el apoyo legal proporcionado por <a class="about-page__paragraph-link" href="http://www.bronxdefenders.org/">The Bronx Defenders</a>, uno de los proveedores de servicios legales más prestigiosos del país. Nuestra meta es traer Good Call a toda la ciudad de Nueva York y más allá.'
-    },
     ourMissionText: 'Nuestra misión es hacer que el proceso de detención y sus secuelas sean menos dolorosas y perjudiciales para aquellos que son arrestados y sus seres queridos. Nos esforzamos para que este proceso sea más transparente y justo para todos los neoyorquinos, independientemente de su nivel de ingresos.',
+    aboutUs: {
+      header: 'Nuestra historia',
+      text: 'Nuestros cuatro fundadores se reunieron a través de Blue Ridge Labs @ Robin Hood, una incubadora de impacto social dirigida a la construcción de tecnología para abordar los problemas que enfrentan los neoyorquinos de bajos ingresos. Durante nuestra investigación, escuchamos historias de decenas de neoyorquinos que fueron arrestados por razones triviales como saltar un torniquete, olvidarse de pagar un boleto o simplemente "tener la descripción adecuda". Con sus teléfonos celulares quitados, su única manera de alcanzar ayuda era algunas llamadas de teléfono en un teléfono viejo de teclado de marcación, a los números que tenían que haber memorizado. Era difícil para ellos llegar a sus seres queridos y casi imposible llegar a un abogado. Su incapacidad para obtener ayuda en este momento crítico conduce resultados devastadores, incluyendo ser despedido de sus trabajos, ser enviado injustamente a la cárcel durante semanas y admitir a los crímenes que no cometieron. <br /> <br /> [TODO]',
+      metrics: {
+        header: '[TODO]',
+        metrics: {
+          calls: '[TODO]',
+          lsps: '[TODO]',
+          time: '[TODO]'
+        }
+      }
+    },
     ourTeam: {
-      header: 'Nuestro equipo.',
+      header: '[TODO]',
       text: 'Somos un grupo con diversos conocimientos y experiencias, desde impresión 3D, diseño web, hasta organización comunitaria. Sin embargo, compartimos una pasión por crear una ciudad más justa para todos.'
     },
-    joinTheMovement: {
-      header: '¿Porqué registrarse?',
-      text: 'La inscripción toma solamente un minuto o dos, y puede hacer una gran diferencia en una situación de arresto. Usted puede inscribirse y guardar algunos de sus contactos de emergencia para asegurarse de que puede contactar los si alguna vez sea arrestado. También puede agregar su propia información de contacto, para asegurarse de que sus seres queridos pueden alcalzar lo si están en problemas. Regístrese hoy y ayúdenos a brindarle un mejor apoyo legal para usted y su comunidad.'
+    community: {
+      header: '[TODO]',
+      text: '[TODO]'
     },
-    signUpBtnLabel: 'regístrate'
+    donate: {
+      header: '[TODO]',
+      text: '[TODO]',
+      cta: 'Donar'
+    }
   },
   signUpPage: {
     header: 'Regístrate y protege tus derechos',
