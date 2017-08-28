@@ -16,14 +16,12 @@
 }
 
 @media #{$mobile-only} {
-
   .save-contact {
     padding-top: 50px;
     padding-bottom: 70px;
-  }
 
-  .h2 {
-    margin-bottom: 45px;
+    .h2 {
+      margin-bottom: 45px;
+    }
   }
-
 }

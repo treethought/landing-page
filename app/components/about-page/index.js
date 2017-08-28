@@ -5,10 +5,11 @@ import { Button } from '../index'
 const AboutPage = ({ route }) => {
   const { content } = route
 
+  // TODO: api call
   const metrics = [
-    { label: 'Calls processed by Good Call', number: '300+' },
-    { label: 'Major legal service providers providing legal support on our hotline', number: '2' },
-    { label: 'Average time it takes for us to connect someone with a free lawyer', number: '46s' }
+    { type: 'calls', number: '300+' },
+    { type: 'lsps', number: '2' },
+    { type: 'time', number: '46s' }
   ]
 
   return (
@@ -18,25 +19,22 @@ const AboutPage = ({ route }) => {
       </div>
 
       <div className='mission'>
-        <div className='mission-text h2'>{content.ourMissionText}</div>
+        <div className='content h2'>{content.ourMissionText}</div>
       </div>
 
-      <div className='story'>
+      <div className='story panel'>
         <div className='content'>
           <div className='h2'>{content.aboutUs.header}</div>
-          <div className='story-text' dangerouslySetInnerHTML={{ __html: content.aboutUs.text }} />
-          <img className='story-icon' src='/assets/imgs/coil.svg' />
-        </div>
-      </div>
+          <div className='story-text text' dangerouslySetInnerHTML={{ __html: content.aboutUs.text }} />
 
-      <div className='metrics'>
-        <div className='content'>
-          <div className='subheader'>Since October 2016</div>
-          <div className='container'>
-            {metrics.map(({ label, number }) => (
-              <div className='metric' key={label}>
+          <img className='story-icon' src='/assets/imgs/coil.svg' />
+
+          <div className='metrics-subheader'>{content.metrics.header}</div>
+          <div className='metrics-container'>
+            {metrics.map(({ type, number }, i) => (
+              <div className='metric' key={i}>
                 <div className='number'>{number}</div>
-                <div className='label'>{label}</div>
+                <div className='label'>{content.metrics.metrics[type]}</div>
               </div>
             ))}
           </div>
@@ -44,14 +42,15 @@ const AboutPage = ({ route }) => {
       </div>
 
       <div className='team'>
-        <div className='content'>
+        <div className='content panel'>
           <div className='h2'>{content.ourTeam.header}</div>
           <div className='text'>{content.ourTeam.text}</div>
-          <img className='team-photo' src='/assets/imgs/team-photo-min.png' />
         </div>
+
+        <img className='team-photo' src='/assets/imgs/team-photo-min.png' />
       </div>
 
-      <div className='community'>
+      <div className='community panel'>
         <div className='content'>
           <div className='h2'>{content.community.header}</div>
           <div className='text'>{content.community.text}</div>
@@ -59,7 +58,7 @@ const AboutPage = ({ route }) => {
         </div>
       </div>
 
-      <div className='donate'>
+      <div className='donate panel'>
         <div className='content'>
           <div className='h2'>{content.donate.header}</div>
           <div className='text'>{content.donate.text}</div>

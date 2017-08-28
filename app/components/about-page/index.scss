@@ -1,4 +1,19 @@
 .about-page {
+  // shared
+  .text {
+    font-size: 18px;
+  }
+
+  .content {
+    max-width: $lp-max-width;
+    margin: 0 auto;
+  }
+
+  .panel {
+    padding: 80px $lp-h-padding;
+  }
+
+  // specific
   .banner {
     background-image: url('/assets/imgs/bookings-min.jpg');
     background-size: cover;
@@ -25,72 +40,46 @@
     color: $cream;
     padding: 100px $lp-h-padding;
     text-align: center;
-
-    .mission-text {
-      max-width: $lp-max-width;
-      margin: 0 auto;
-    }
   }
 
   .story {
+    position: relative;
     background: $white;
     color: $black;
-    padding: 80px $lp-h-padding;
 
     .content {
-      max-width: $lp-max-width;
-      margin: 0 auto;
-
       .h2 {
         margin-bottom: 30px;
       }
 
       .story-text {
-        font-size: 18px;
         margin-bottom: 80px;
       }
 
       .story-icon {
         display: block;
         margin: 0 auto;
+        margin-bottom: 80px;
       }
-    }
-  }
 
-  .metrics {
-    position: relative;
-    background: $white;
-    color: $black;
-
-    .content {
-      padding: 100px $lp-h-padding;
-      margin: 0 auto;
-
-      .subheader {
+      .metrics-subheader {
         text-align: center;
         font-size: 24px;
         font-weight: $bold;
         margin-bottom: 40px;
       }
 
-      .container {
-        max-width: $lp-max-width;
-        margin: 0 auto;
+      .metrics-container {
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        padding-bottom: 110px;
 
         .metric {
           max-width: 300px;
           text-align: center;
           margin: 0 auto;
-
-          &:not(:last-child) {
-            margin-bottom: 20px;
-          }
 
           .number {
             font-size: 80px;
@@ -109,14 +98,12 @@
   }
 
   .team {
+    position: relative;
     background: $cream;
-    padding: 80px $lp-h-padding;
-    padding-bottom: 0;
 
     .content {
-      max-width: $lp-max-width;
-      margin: 0 auto;
       position: relative;
+      padding-bottom: 0;
 
       .h2 {
         padding-bottom: 30px;
@@ -125,21 +112,20 @@
       .text {
         padding-bottom: 110px;
       }
+    }
 
-      .team-photo {
-        max-width: $lp-max-width;
-        width: 100%;
-        position: relative;
-        top: 4px;
-      }
+    .team-photo {
+      display: block;
+      margin: 0 auto;
+      max-width: $lp-max-width;
+      width: 100%;
+      position: relative;
+      top: 4px;
     }
   }
 
   .community {
     .content {
-      max-width: $lp-max-width;
-      margin: 0 auto;
-      padding: 100px $lp-h-padding 120px;
       position: relative;
 
       .h2 {
@@ -163,12 +149,8 @@
   .donate {
     background: $green;
     color: $cream;
-    padding: 90px $lp-h-padding 80px;
 
     .content {
-      max-width: $lp-max-width;
-      margin: 0 auto;
-
       .h2 {
         margin-bottom: 23px;
       }
@@ -193,13 +175,13 @@
       }
     }
 
-    .metrics {
+    .story {
       .content {
-        .subheader {
+        .metrics-subheader {
           font-size: 20px;
         }
 
-        .container {
+        .metrics-container {
           .metric {
             max-width: 240px;
 
@@ -210,6 +192,26 @@
             .label {
               font-size: 15px;
               line-height: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .about-page {
+    .story {
+      .content {
+        .metrics-container {
+          flex-direction: column;
+
+          .metric {
+            max-width: 400px;
+
+            &:not(:last-child) {
+              margin-bottom: 40px;
             }
           }
         }
