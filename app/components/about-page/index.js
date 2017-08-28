@@ -30,14 +30,16 @@ const AboutPage = ({ route }) => {
       </div>
 
       <div className='metrics'>
-        <div className='subheader'>Since October 2016</div>
-        <div className='container'>
-          {metrics.map(({ label, number }) => (
-            <div className='metric'>
-              <div className='number'>{number}</div>
-              <div className='label'>{label}</div>
-            </div>
-          ))}
+        <div className='content'>
+          <div className='subheader'>Since October 2016</div>
+          <div className='container'>
+            {metrics.map(({ label, number }) => (
+              <div className='metric' key={label}>
+                <div className='number'>{number}</div>
+                <div className='label'>{label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
