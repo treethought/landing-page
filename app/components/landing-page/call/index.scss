@@ -49,10 +49,10 @@
         border: none;
         color: $cream;
         font-weight: $light;
-        &::-webkit-input-placeholder { opacity: 0.9; font-size: 20px; }
-        &::-moz-placeholder { opacity: 0.9; font-size: 20px; }
-        &:-ms-input-placeholder { opacity: 0.9; font-size: 20px; }
-        &:-moz-placeholder { opacity: 0.9; font-size: 20px; }
+        &::-webkit-input-placeholder { opacity: 0.9; font-size: 20px; line-height: 45px; }
+        &::-moz-placeholder { opacity: 0.9; font-size: 20px; line-height: 45px; }
+        &:-ms-input-placeholder { opacity: 0.9; font-size: 20px; line-height: 45px; }
+        &:-moz-placeholder { opacity: 0.9; font-size: 20px; line-height: 45px; }
         border-bottom: 2px solid $cream;
         font-size: 35px;
         padding-bottom: 5px;
