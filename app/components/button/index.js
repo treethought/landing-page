@@ -9,11 +9,11 @@ const Button = ({ className = '', label, onClick, selector = 'plain', to, href, 
 
   return (
     <Wrapper>
-      <button className={`button ${selector} ${className}`} onClick={onClick}>
+      <div className={`button ${selector} ${className}`} onClick={onClick}>
         <span>
           {label}
         </span>
-      </button>
+      </div>
     </Wrapper>
   )
 }

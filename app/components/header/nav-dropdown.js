@@ -7,9 +7,8 @@ import { Link } from 'react-router'
 
 const NavDropdown = ({ btns }) =>
   <IconMenu
-    className='header__icon-menu'
     menuStyle={{ 'background': '#F7F9F9' }}
-    iconStyle={{ 'fill': 'FFFFFF' }}
+    iconStyle={{ 'fill': '#FFFFFF' }}
     iconButtonElement={<IconButton><MenuIcon /></IconButton>}
     targetOrigin={{horizontal: 'right', vertical: 'top'}}
     anchorOrigin={{horizontal: 'right', vertical: 'top'}}
