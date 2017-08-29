@@ -18,15 +18,11 @@
 
     & .image {
       object-fit: contain;
-      width: 250px;
+      width: 200px;
       height: 90px;
       margin-left: 10px;
       margin-right: 10px;
       transition: 0.5s;
-
-      &:first {
-        width: 100px;
-      }
 
       &:hover {
         opacity: 0.6;
