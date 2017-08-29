@@ -1,7 +1,8 @@
 import React from 'react'
+import { bool, func, object, string } from 'prop-types'
 import { Link } from 'react-router'
 
-const Footer = ({ content }) => {
+const Footer = ({ content, subscribedToMailingList, subscribeToMailingList, error, setEmail }) => {
   const goToDonationPage = e => {
     e.preventDefault()
     window.location.href = 'https://www.generosity.com/community-fundraising/good-call-everyone-deserves-fairness'
@@ -58,15 +59,23 @@ const Footer = ({ content }) => {
               ))}
             </div>
 
-            <form className='mailing-list-form'>
-              <input
-                className='mailing-list-input'
-                placeholder={content.emailAddress}
-                />
-              <div className='mailing-list-button'>
-                <img src='/assets/imgs/subscribe-arrow.svg' />
-              </div>
-            </form>
+            {subscribedToMailingList ? (
+              <div>{content.subscriptionConfirm}</div>
+            ) : (
+              <form className='mailing-list-form'>
+                <div className='inputs'>
+                  <input
+                    className='mailing-list-input'
+                    placeholder={content.emailAddress}
+                    onChange={setEmail}
+                  />
+                  <div className='mailing-list-button' onClick={subscribeToMailingList}>
+                    <img src='/assets/imgs/subscribe-arrow.svg' />
+                  </div>
+                </div>
+                {error && <div className='error'>{error}</div>}
+              </form>
+            )}
           </div>
         </div>
 
@@ -76,6 +85,14 @@ const Footer = ({ content }) => {
       </div>
     </footer>
   )
+}
+
+Footer.propTypes = {
+  content: object,
+  email: string,
+  error: string,
+  subscribedToMailingList: bool,
+  subscribeToMailingList: func
 }
 
 export default Footer

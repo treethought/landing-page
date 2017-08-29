@@ -56,6 +56,14 @@ export function notifyUsers ({ contactName, users }, onSuccess, onError) {
   }, onError)
 }
 
+export function subscribeToMailingList (email, onSuccess, onError) {
+  return makeRequest({
+    method: 'POST',
+    path: '/subscriptions/mailing_list',
+    params: { subscription: { email } }
+  }).then(onSuccess, onError)
+}
+
 function makeRequest ({ method = 'GET', path, params = {} }) {
   return new Promise((resolve, reject) => {
     const requestPromise = request(method, config.apiBaseUrl + path)

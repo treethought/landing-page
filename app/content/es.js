@@ -19,6 +19,7 @@ const es = {
       termsAndConditionsLinkLabel: 'Términos de servicio',
       followHeader: '[TODO]',
       emailAddress: 'Correo electrónico',
+      subscriptionConfirm: '[TODO]',
       nonProfit: '[TODO]'
     }
   },

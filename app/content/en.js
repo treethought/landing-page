@@ -19,6 +19,7 @@ const en = {
       termsAndConditionsLinkLabel: 'Terms and Conditions',
       followHeader: 'Subscribe and follow',
       emailAddress: 'Email address',
+      subscriptionConfirm: 'Thank you! Please check your email for a confirmation soon.',
       nonProfit: 'Good Call is a fiscally sponsored not-for-profit 501(c)(3)'
     }
   },

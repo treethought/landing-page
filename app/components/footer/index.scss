@@ -87,31 +87,41 @@
 
       .mailing-list-form {
         position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        justify-content: flex-start;
         margin-bottom: 25px;
         width: 100%;
 
-        .mailing-list-input {
-          font-size: 18px;
-          font-weight: $light;
-          padding: 15px 20px;
-          border: 1px solid $green;
+        .inputs {
+          display: flex;
+          flex-direction: row;
+          align-items: stretch;
+          justify-content: flex-start;
+
+          .mailing-list-input {
+            font-size: 18px;
+            font-weight: $light;
+            padding: 15px 20px;
+            border: 1px solid $green;
+          }
+
+          .mailing-list-button {
+            width: 76px;
+            background: $green;
+            border: none;
+            color: $white;
+            font-weight: $light;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+          }
         }
 
-        .mailing-list-button {
-          width: 76px;
-          background: $green;
-          border: none;
-          color: $white;
-          font-weight: $light;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
+        .error {
+          color: $light-grey;
+          font-style: italic;
+          font-weight: $normal;
+          margin-top: 5px;
         }
       }
     }
@@ -140,8 +150,10 @@
 
       .follow-us {
         .mailing-list-form {
-          .mailing-list-input {
-            font-size: 12px;
+          .inputs {
+            .mailing-list-input {
+              font-size: 12px;
+            }
           }
         }
       }
