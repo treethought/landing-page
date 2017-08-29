@@ -44,3 +44,15 @@
 
   }
 }
+
+@media (max-width: 530px) {
+  .partners {
+    .logos-container {
+      flex-direction: column;
+
+      img {
+        margin: 10px;
+      }
+    }
+  }
+}
