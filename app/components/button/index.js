@@ -4,8 +4,8 @@ import { Link } from 'react-router'
 
 const Button = ({ className = '', label, onClick, selector = 'plain', to, href, activeClassName }) => {
   const Wrapper = ({ children }) => to
-    ? <Link to={to} activeClassName={activeClassName}>{children}</Link>
-    : <a href={href}>{children}</a>
+    ? <Link to={to} style={{ 'display': 'inline-block' }} activeClassName={activeClassName}>{children}</Link>
+    : <a href={href} style={{ 'display': 'inline-block' }}>{children}</a>
 
   return (
     <Wrapper>
