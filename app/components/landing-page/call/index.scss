@@ -1,12 +1,19 @@
 .call {
   position: relative;
-  // TODO: update with video instead
-  background-image: url('http://bronxink.org/wp-content/blogs.dir/3/files/2011/10/DSC_0121.jpg');
+  background-image: url('/assets/videos/bw.mp4');
   background-size: cover;
   max-height: 700px;
   min-height: 420px;
+  overflow: hidden;
 
-  & > .content {
+  .video {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -17,14 +24,14 @@
     max-width: $lp-max-width;
     margin: 0 auto;
 
-    & .left {
+    .left {
       max-width: 640px;
 
-      & > .h1 {
+      .h1 {
         margin-bottom: 15px;
       }
 
-      & > .p {
+      .p {
         margin-bottom: 30px;
         font-weight: $light;
       }
@@ -86,7 +93,7 @@
     }
   }
 
-  & > .overlay {
+  .overlay {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -96,7 +103,7 @@
     z-index: 1;
   }
 
-  & > .arrow-container {
+  .arrow-container {
     position: absolute;
     z-index: 2;
     bottom: 40px;
@@ -115,7 +122,7 @@
 
 @media #{$mobile-only} {
   .call {
-    & > .content {
+    .content {
       padding-top: 60px;
       padding-left: 30px;
       padding-right: 60px;
