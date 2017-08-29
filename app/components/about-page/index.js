@@ -2,14 +2,11 @@ import React from 'react'
 import { object } from 'prop-types'
 import { Button } from '../index'
 
-const AboutPage = ({ route }) => {
-  const { content } = route
-
-  // TODO: api call
-  const metrics = [
-    { type: 'calls', number: '300+' },
-    { type: 'lsps', number: '2' },
-    { type: 'time', number: '46s' }
+const AboutPage = ({ content, metrics }) => {
+  const formattedMetrics = [
+    { type: 'calls', number: metrics.calls },
+    { type: 'lsps', number: metrics.lsps },
+    { type: 'time', number: `${metrics.time}s` }
   ]
 
   return (
@@ -31,7 +28,7 @@ const AboutPage = ({ route }) => {
 
           <div className='metrics-subheader'>{content.aboutUs.metrics.header}</div>
           <div className='metrics-container'>
-            {metrics.map(({ type, number }, i) => (
+            {formattedMetrics.map(({ type, number }, i) => (
               <div className='metric' key={i}>
                 <div className='number'>{number}</div>
                 <div className='label'>{content.aboutUs.metrics.metrics[type]}</div>
@@ -74,7 +71,8 @@ const AboutPage = ({ route }) => {
 }
 
 AboutPage.propTypes = {
-  route: object
+  route: object,
+  metrics: object
 }
 
 export default AboutPage

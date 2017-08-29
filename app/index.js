@@ -4,9 +4,11 @@ import { useScroll } from 'react-router-scroll'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import content from './content'
 import locale from './services/locale'
-import { ContactSignUpPageContainer, UserSignUpPageContainer } from './containers'
 import {
-  AboutPage, ErrorPage, FaqPage, InnerPage, LandingPage, PrivacyPolicyPage,
+  AboutPageContainer, ContactSignUpPageContainer, UserSignUpPageContainer
+} from './containers'
+import {
+  ErrorPage, FaqPage, InnerPage, LandingPage, PrivacyPolicyPage,
   SignUpPage, SignUpSuccessPage, TermsAndConditionsPage
 } from './components'
 import { sendMessageWithNextUrl } from './services/utils'
@@ -35,7 +37,7 @@ class App extends Component {
         <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
           <Route path='/' component={InnerPage} content={content.innerPage} toggleLocale={this.toggleLocale.bind(this)} onChange={sendMessageWithNextUrl}>
             <IndexRoute component={LandingPage} content={content.landingPage} />
-            <Route path='about-us' component={AboutPage} content={content.aboutPage} />
+            <Route path='about-us' component={AboutPageContainer} content={content.aboutPage} />
             <Route path='sign-up'>
               <IndexRoute component={SignUpPage} content={content.signUpPage} />
               <Route path='user' component={UserSignUpPageContainer} content={content.userSignUpPage} />

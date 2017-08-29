@@ -64,6 +64,13 @@ export function subscribeToMailingList (email, onSuccess, onError) {
   }).then(onSuccess, onError)
 }
 
+export function fetchMetrics (onSuccess, onError) {
+  return makeRequest({
+    method: 'GET',
+    path: '/analytics/about_page'
+  }).then(onSuccess, onError)
+}
+
 function makeRequest ({ method = 'GET', path, params = {} }) {
   return new Promise((resolve, reject) => {
     const requestPromise = request(method, config.apiBaseUrl + path)
