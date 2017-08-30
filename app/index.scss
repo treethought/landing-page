@@ -96,7 +96,7 @@ body {
 
 // TODO: move to own file
 // global
-a {
+.inner-page a {
   text-decoration: none;
   color: inherit;
 }
@@ -118,6 +118,13 @@ img[data-fit] {
 img[data-fit~="contain"] {
   object-fit: contain;
   background-size: contain;
+}
+
+.browsehappy {
+  position: fixed;
+  top: 0; right: 0; left: 0; bottom: 0;
+  background: $cream;
+  z-index: 10000;
 }
 
 @media (max-width: 839px) {
