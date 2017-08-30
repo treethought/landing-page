@@ -75,7 +75,7 @@ function makeRequest ({ method = 'GET', path, params = {} }) {
   return new Promise((resolve, reject) => {
     const requestPromise = request(method, config.apiBaseUrl + path)
       .send(snakeize(params))
-      .set('Accept', 'applicaton/json')
+      .set('Accept', 'application/json')
       .set('LOCALE', locale.get())
     requestPromise.then(({ body }) => {
       let camelizedBody = isArray(body)
