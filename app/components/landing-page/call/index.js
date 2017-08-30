@@ -7,7 +7,7 @@ import Keypad from './keypad'
 const Call = ({ height, headerPadding, content }) => (
   <div className='call' style={{ 'height': height }}>
 
-    <video poster='/assets/videos/bw.jpg' className='video' playsInline autoPlay muted loop>
+    <video poster='/assets/videos/bw.jpg' className='video' playsInline autoPlay muted loop data-fit='contain'>
       <source src='/assets/videos/bw.mp4' type='video/mp4' />
     </video>
 

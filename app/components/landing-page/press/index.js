@@ -14,7 +14,7 @@ const Press = ({ content }) =>
     <div className='images'>
       {images.map((img, i) => (
         <a href={img.href} key={i}>
-          <img src={`/assets/imgs/${img.file}`} className='image' />
+          <img src={`/assets/imgs/${img.file}`} className='image' data-fit='contain' />
         </a>
       ))}
     </div>

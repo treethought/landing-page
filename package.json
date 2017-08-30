@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run start-js\" \"npm run start-css\"",
+    "start-ie": "export USE_IE=true && npm start",
     "start-js": "budo . -d --pushstate --serve bundle.js --live",
     "start-css": "gulp watch",
     "build": "browserify . -o bundle.js -g uglifyify && gulp styles",
-    "dist": "rm -rf dist; mkdir -p dist && bash -c 'cp -r index.html bundle.js bundle.css assets sitemap.xml dist'",
+    "dist": "rm -rf dist; mkdir -p dist && bash -c 'cp -r index.html bundle.js bundle.css assets vendor sitemap.xml dist'",
     "stage-push": "surge dist good-call-nyc-staging.surge.sh",
     "stage-copy-html": "cp -r dist/index.html dist/200.html",
     "stage": "export NODE_ENV=production; export IS_STAGING=true; npm run build && npm run dist && npm run stage-copy-html && npm run stage-push",
