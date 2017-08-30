@@ -7,7 +7,7 @@ const Partners = ({ content }) =>
     <div className='content'>
       <div className='h2'>{content.header}</div>
       <div className='logos-container'>
-        {logos.map(logo => <img src={`/assets/imgs/${logo}`} data-fit='contain' />)}
+        {logos.map((logo, i) => <img src={`/assets/imgs/${logo}`} data-fit='contain' key={i} />)}
       </div>
     </div>
   </div>
