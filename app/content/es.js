@@ -278,6 +278,7 @@ const es = {
     header: 'Preguntas Frecuentes',
     sections: [
       {
+        id: 'about',
         header: 'Acerca de Good Call',
         faqs: [
           {question: '¿Tengo que pagar para inscribirme y utilizar Good Call?', answer: 'No. ¡Registrarse en Good Call y utilizar la línea es completamente gratuito!'},
@@ -295,12 +296,21 @@ const es = {
         ]
       },
       {
+        id: 'loved-ones',
         header: 'Si un ser querido ha sido arrestado',
         faqs: [
           {question: '¿Qué es Good Call?', answer: 'Good Call es una línea 24/7 gratuita de emergencia para ayudar a las personas que son arrestadas alcanzar a sus seres queridos y hablar con un abogado gratuito de inmediato.'},
           {question: '¿Qué debo hacer si un ser querido es arrestado?', answer: 'Puede llamar a nuestra línea directa al 1-(833)-3-GOODCALL (1-833-346-6322) y le pondremos en contacto con uno de nuestros abogados para ayudarle con el caso de su ser querido.'},
           {question: '¿Por qué fui contactado por Good Call?', answer: 'Si has sido contactado por Good Call significa que alguien que conoces ha sido arrestado, la persona ha llamado a nuestra línea telefónica y tú eres uno de su contactos de emergencia.'},
           {question: '¿Qué hago si recibo una notificación de Good Call?', answer: 'Siga las instrucciones en el mensaje de texto que tiene para obtener información sobre el caso de su ser querido.'}
+        ]
+      },
+      {
+        id: 'rights',
+        header: '[TODO]',
+        faqs: [
+          {question: '[TODO]', answer: '[TODO]'},
+          {question: '[TODO]', answer: '[TODO]'}
         ]
       }
     ]

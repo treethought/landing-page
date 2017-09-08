@@ -1,33 +1,40 @@
 .faq-page {
   color: #4A4A4A;
+}
+
+.h1 {
+  margin: 120px auto;
+  text-align: center;
+}
+
+.tabs {
+  border-top: 2px solid $green;
+  border-bottom: 2px solid $green;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+}
+
+.sections {
   padding: 35px 130px 99px;
 }
 
-.faq-page__header {
-  font-weight: 700;
-  font-size: 40px;
-  letter-spacing: -0.21px;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 72px;
-}
-
-.faq-page__section-faqs {
+.section-faqs {
   margin-bottom: 35px;
 }
 
-.faq-page__section-header {
+.section-header {
   font-weight: 400;
   font-size: 30px;
   margin-top: 0;
   margin-bottom: 27px;
 }
 
-.faq-page__faq {
+.faq {
   margin-bottom: 25px;
 }
 
-.faq-page__faq-question {
+.faq-question {
   font-weight: 400;
   font-size: 24px;
   color: #40B097;
@@ -35,7 +42,7 @@
   margin-bottom: 3px;
 }
 
-.faq-page__faq-answer {
+.faq-answer {
   font-size: 20px;
   margin: 0;
 }
@@ -46,19 +53,19 @@
     padding: 99px 40px;
   }
 
-  .faq-page__header {
+  .header {
     font-size: 32px;
   }
 
-  .faq-page__section-header {
+  .section-header {
     font-size: 26px;
   }
 
-  .faq-page__faq-question {
+  .faq-question {
     font-size: 20px;
   }
 
-  .faq-page__faq-answer {
+  .faq-answer {
     font-size: 16px;
   }
 

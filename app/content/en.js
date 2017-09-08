@@ -280,6 +280,7 @@ const en = {
     header: 'Frequently Asked Questions',
     sections: [
       {
+        id: 'about',
         header: 'About Good Call',
         faqs: [
           {question: 'Do I have to pay to sign up and use Good Call?', answer: 'No, Good Call is free to sign up and use!'},
@@ -297,12 +298,21 @@ const en = {
         ]
       },
       {
+        id: 'loved-ones',
         header: 'If your loved one has been arrested',
         faqs: [
           {question: 'What is Good Call?', answer: 'Good Call is a free 24/7 emergency arrest hotline to help people who are arrested reach their loved ones and talk to free lawyer right away'},
           {question: 'What should I do if my loved one is arrested?', answer: 'You can call our hotline at 1-(833)-3 GOODCALL (1-833-346-6322) and we will connect you with one of our lawyers to help you with your loved one\'s case.'},
           {question: 'Why did I get notified by Good Call?', answer: 'If you have been notified by Good Call that someone you know has been arrested, it is because that person has called our hotline and you were listed as their emergency contact.'},
           {question: 'What do I do if I get notified by Good Call?', answer: 'Follow the instructions on the text message you got to get information about your loved one\'s case.'}
+        ]
+      },
+      {
+        id: 'rights',
+        header: 'Knowing your rights',
+        faqs: [
+          {question: 'How is your day?', answer: 'call your mother and tell her you love her'},
+          {question: 'How is your doggo?', answer: 'health, wealth, stealth'}
         ]
       }
     ]

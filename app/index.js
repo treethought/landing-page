@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Route, IndexRoute, browserHistory, applyRouterMiddleware } from 'react-router'
-import { useScroll } from 'react-router-scroll'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import content from './content'
 import locale from './services/locale'
@@ -34,7 +33,7 @@ class App extends Component {
 
     return (
       <MuiThemeProvider>
-        <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
+        <Router history={browserHistory}>
           <Route path='/' component={InnerPage} content={content.innerPage} toggleLocale={this.toggleLocale.bind(this)} onChange={sendMessageWithNextUrl}>
             <IndexRoute component={LandingPage} content={content.landingPage} />
             <Route path='about-us' component={AboutPageContainer} content={content.aboutPage} />
