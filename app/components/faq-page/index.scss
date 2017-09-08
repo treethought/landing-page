@@ -2,7 +2,7 @@
   color: #4A4A4A;
 
   .h1 {
-    margin: 120px auto;
+    margin: 120px 40px;
     text-align: center;
   }
 
@@ -30,6 +30,9 @@
       cursor: pointer;
       transition: 0.5s;
       font-weight: $regular;
+
+      padding: 20px;
+      text-align: center;
 
       &:hover {
         background: $green;
@@ -72,8 +75,18 @@
   }
 }
 
-@media (max-width: 800px) {
+@media #{$tablet-down} {
   .faq-page {
+    .h1 {
+      font-size: 40px;
+      margin: 60px 40px;
+    }
+
+    .tabs {
+      .tab {
+        font-size: 18px;
+      }
+    }
 
     .sections {
       padding: 99px 40px;
@@ -89,6 +102,21 @@
 
     .faq-answer {
       font-size: 16px;
+    }
+  }
+}
+
+@media #{$mobile-only} {
+  .faq-page {
+    .h1 {
+      font-size: 26px;
+      margin: 40px 20px;
+    }
+
+    .tabs {
+      .tab {
+        font-size: 9px;
+      }
     }
   }
 }

@@ -8,7 +8,6 @@ class FaqPage extends Component {
   constructor () {
     super()
     this.state = { activeSectionId: 'about', scrollPos: window.scrollY }
-    this.header = {}
     this.onScroll = this.onScroll.bind(this)
   }
 
@@ -43,7 +42,7 @@ class FaqPage extends Component {
       { name: 'Knowing your rights', sectionId: 'rights' }
     ]
 
-    const areTabsSticky = scrollPos >= this.header.offsetHeight + 240
+    const areTabsSticky = this.header && scrollPos >= (this.header.offsetHeight + parseInt(window.getComputedStyle(this.header).marginTop) * 2)
     const tabsStyle = Object.assign({ height: tabsHeight }, areTabsSticky ? { position: 'fixed', left: 0, right: 0, top: innerPageContentPadding } : {})
     const faqPageStyle = areTabsSticky ? { paddingTop: tabsHeight } : {}
 
