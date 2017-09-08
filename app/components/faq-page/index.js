@@ -24,8 +24,8 @@ class FaqPage extends Component {
 
         <div className='tabs'>
           {tabs.map(({ name, sectionId }) => (
-            <ScrollLink key={sectionId} {...{ to: sectionId, duration: 500, smooth: true, offset: -parseInt(innerPageContentPadding) - 20 }}>
-              <div className='tab'>
+            <ScrollLink className='tab' key={sectionId} {...{ to: sectionId, duration: 500, smooth: true, offset: -parseInt(innerPageContentPadding) - 20 }}>
+              <div>
                 {name}
               </div>
             </ScrollLink>
