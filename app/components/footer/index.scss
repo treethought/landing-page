@@ -169,6 +169,10 @@
 @media #{$tablet-up} {
   .footer {
     .main {
+      & > div {
+        flex: 1 0 300px;
+      }
+
       .links-header {
         font-size: 20px;
         font-weight: $semi-bold;
