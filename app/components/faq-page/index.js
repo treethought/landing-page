@@ -7,6 +7,7 @@ class FaqPage extends Component {
     super()
     this.state = { activeSectionId: 'about', scrollPos: window.scrollY }
     this.header = {}
+    this.tabs = {}
   }
 
   componentDidMount () {
@@ -32,6 +33,7 @@ class FaqPage extends Component {
     const { innerPageContentPadding, route } = this.props
     const { scrollPos } = this.state
     const { content } = route
+    const tabsHeight = 100
 
     const tabs = [
       { name: 'About Good Call', sectionId: 'about' },
@@ -39,19 +41,18 @@ class FaqPage extends Component {
       { name: 'Knowing your rights', sectionId: 'rights' }
     ]
 
-    const offset = this.header.offsetHeight + 240
-    const tabsStyle = scrollPos >= offset ? { position: 'fixed', left: 0, right: 0, top: innerPageContentPadding } : {}
+    const areTabsSticky = scrollPos >= this.header.offsetHeight + 240
+    const tabsStyle = Object.assign({ height: tabsHeight }, areTabsSticky ? { position: 'fixed', left: 0, right: 0, top: innerPageContentPadding } : {})
+    const faqPageStyle = areTabsSticky ? { paddingTop: tabsHeight } : {}
 
     return (
-      <div className='faq-page'>
+      <div className='faq-page' style={faqPageStyle}>
         <h1 className='h1' ref={el => { this.header = el }}>{content.header}</h1>
 
         <div className='tabs fixed' style={tabsStyle}>
           {tabs.map(({ name, sectionId }) => (
-            <ScrollLink className='tab' activeClass='active-tab' key={sectionId} {...{ to: sectionId, duration: 500, smooth: true, offset: -parseInt(innerPageContentPadding) - 20 }}>
-              <div>
-                {name}
-              </div>
+            <ScrollLink className='tab' activeClass='active-tab' key={sectionId} {...{ to: sectionId, duration: 500, smooth: true, offset: -parseInt(innerPageContentPadding) - 20 - tabsHeight }}>
+              <div>{name}</div>
             </ScrollLink>
           ))}
         </div>
