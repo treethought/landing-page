@@ -18,10 +18,6 @@
     position: relative;
     flex-wrap: wrap;
 
-    & > div {
-      flex: 1 0 300px;
-    }
-
     & > div:not(:last-child) {
       margin-right: 50px;
     }
