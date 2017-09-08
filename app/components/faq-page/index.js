@@ -2,31 +2,33 @@ import React, { Component } from 'react'
 import { object } from 'prop-types'
 import { Link as ScrollLink, Element as ScrollElement } from 'react-scroll'
 
+let scrollTicking = false
+
 class FaqPage extends Component {
   constructor () {
     super()
     this.state = { activeSectionId: 'about', scrollPos: window.scrollY }
     this.header = {}
-    this.tabs = {}
+    this.onScroll = this.onScroll.bind(this)
   }
 
   componentDidMount () {
-    let lastKnownScrollPos = 0
-    let ticking = false
-    window.addEventListener('scroll', e => {
-      lastKnownScrollPos = window.scrollY
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          this.setState({ scrollPos: lastKnownScrollPos })
-          ticking = false
-        })
-      }
-      ticking = true
-    })
+    window.addEventListener('scroll', this.onScroll)
   }
 
   componentWillUnmount () {
-    window.removeEventListener('scroll')
+    window.removeEventListener('scroll', this.onScroll)
+  }
+
+  onScroll (e) {
+    let lastKnownScrollPos = window.scrollY
+    if (!scrollTicking) {
+      window.requestAnimationFrame(() => {
+        this.setState({ scrollPos: lastKnownScrollPos })
+        scrollTicking = false
+      })
+    }
+    scrollTicking = true
   }
 
   render () {
@@ -51,7 +53,16 @@ class FaqPage extends Component {
 
         <div className='tabs fixed' style={tabsStyle}>
           {tabs.map(({ name, sectionId }) => (
-            <ScrollLink className='tab' activeClass='active-tab' key={sectionId} {...{ to: sectionId, duration: 500, smooth: true, offset: -parseInt(innerPageContentPadding) - 20 - tabsHeight }}>
+            <ScrollLink
+              key={sectionId}
+              className='tab'
+              {...{
+                to: sectionId,
+                duration: 500,
+                smooth: true,
+                offset: -parseInt(innerPageContentPadding) - 20 - tabsHeight
+              }}
+            >
               <div>{name}</div>
             </ScrollLink>
           ))}
