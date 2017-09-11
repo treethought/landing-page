@@ -10,7 +10,7 @@ import {
   ErrorPage, FaqPage, InnerPage, LandingPage, PrivacyPolicyPage,
   SignUpPage, SignUpSuccessPage, TermsAndConditionsPage
 } from './components'
-import { sendMessageWithNextUrl } from './services/utils'
+import { sendMessageWithNextUrl, scrollToTop } from './services/utils'
 import { trackPageView } from './services/ga'
 
 browserHistory.listen(location => { trackPageView(location.pathname) })
@@ -28,13 +28,18 @@ class App extends Component {
     window.location.reload()
   }
 
+  handleChange (_, nextState, __, cb) {
+    sendMessageWithNextUrl(_, nextState, __, cb)
+    scrollToTop()
+  }
+
   render () {
     const { content } = this.state
 
     return (
       <MuiThemeProvider>
         <Router history={browserHistory}>
-          <Route path='/' component={InnerPage} content={content.innerPage} toggleLocale={this.toggleLocale.bind(this)} onChange={sendMessageWithNextUrl}>
+          <Route path='/' component={InnerPage} content={content.innerPage} toggleLocale={this.toggleLocale.bind(this)} onChange={this.handleChange.bind(this)}>
             <IndexRoute component={LandingPage} content={content.landingPage} />
             <Route path='about-us' component={AboutPageContainer} content={content.aboutPage} />
             <Route path='sign-up'>
