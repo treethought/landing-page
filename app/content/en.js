@@ -281,38 +281,34 @@ const en = {
     sections: [
       {
         id: 'about',
-        header: 'About Good Call',
+        header: 'About the hotline',
         faqs: [
-          {question: 'Do I have to pay to sign up and use Good Call?', answer: 'No, Good Call is free to sign up and use!'},
           {question: 'What is the Good Call hotline number?', answer: '1-833-3-GOODCALL (1-833-346-6322)'},
-          {question: 'When should I call Good Call?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
-          {question: 'Who can sign up for Good Call?', answer: 'Anyone can sign up for Good Call, totally free.'},
-          {question: 'What is the difference between signing up to protect yourself and signing up to be there for a loved one?', answer: 'Signing up to <b>Protect yourself</b> allows you to save a few of your emergency contacts, to make sure your lawyer can get in touch with them if you are ever arrested. Signing up to <b>Be there for a loved one</b> allows you to add your own contact information, so you can be alerted and connected with a lawyer in case your loved ones are arrested. We recommend you sign up for both, to make sure we can provide the best support possible in case you or a loved one are arrested.'},
-          {question: 'I don\'t think I would be arrested, why should I sign up?', answer: 'If you don\'t think you will ever be arrested, but you want to make sure you\'re there for your loved ones in case it happens to them, you can sign up with the <b>Be there for a loved one</b> option to make sure they can reach you in case of emergency.'},
-          {question: 'Where can I use Good Call', answer: 'Our hotline is currently live in the Bronx, but you can sign up for Good Call no matter where you are.'},
-          {question: 'What if I was arrested outside of the Bronx, can I still call Good Call?', answer: 'The lawyers we work with are only allowed to represent clients who are arrested in the Bronx. However, if you are arrested in another borough and call the hotline, they can still provide basic information on your rights and the arrest process.'},
-          {question: 'If I don\'t live in the Bronx, can I still sign up for Good Call?', answer: 'Yes! We are currently piloting in the Bronx and will be serving the other boroughs soon.'},
-          {question: 'Can I still call the hotline if I didn\'t sign up?', answer: 'Yes, we believe that everyone should get help when they are arrested. However, signing up will allow us to reach out to your emergency contact to let them know what\'s going on and to connect them with your lawyer which will help make your case stronger.'},
+          {question: 'Can I call the hotline even if I haven\'t saved any emergency contacts?', answer: 'Yes! Anyone can call the hotline in case of an arrest and talk to a free lawyer, whether or not they have saved any contact information ahead of time. However, saving emergency contacts will allow your lawyer to get in touch with in case your are ever arrested, and help them build a strong case for your defense.'},
+          {question: 'Do I need to pay to use Good Call?', answer: 'Nope, Good Call is always free. Saving your emergency contacts is also free!'},
+          {question: 'When should I call the hotline?', answer: 'Call our hotline if you or your loved one has been arrested in the Bronx. The earlier a lawyer is notified, the more time they will have to properly prepare your case.'},
           {question: 'How does Good Call get me a free lawyer?', answer: 'Good Call partners with legal service providers around the city who serve the community. Our lawyers are committed to providing quality support to our callers.'},
-          {question: 'Is it safe to sign up?', answer: 'We have taken extensive measures to ensure that Good Call is safe and secure for our users. We take security and privacy very seriously, and use industry standard secutiry practices. Our system is designed specifically to avoid collecting any information that could put our users at risk.'}
+          {question: 'Can I use Good Call everywhere?', answer: 'Our hotline is currently available in the Bronx, but you can save contacts in our directory no matter where you are. We are expanding to cover all of NYC very soon. Subscribe to us and you\'ll be the first to know!'},
+          {question: 'What if I was arrested outside of the Bronx, can I still call Good Call?', answer: 'The lawyers we work with are only allowed to represent clients who are arrested in the Bronx. However, if you are arrested in another borough and call the hotline, they can still provide basic information on your rights and the arrest process.'}
         ]
       },
       {
         id: 'loved-ones',
-        header: 'If your loved one has been arrested',
+        header: 'Saving contacts',
         faqs: [
-          {question: 'What is Good Call?', answer: 'Good Call is a free 24/7 emergency arrest hotline to help people who are arrested reach their loved ones and talk to free lawyer right away'},
-          {question: 'What should I do if my loved one is arrested?', answer: 'You can call our hotline at 1-(833)-3 GOODCALL (1-833-346-6322) and we will connect you with one of our lawyers to help you with your loved one\'s case.'},
-          {question: 'Why did I get notified by Good Call?', answer: 'If you have been notified by Good Call that someone you know has been arrested, it is because that person has called our hotline and you were listed as their emergency contact.'},
-          {question: 'What do I do if I get notified by Good Call?', answer: 'Follow the instructions on the text message you got to get information about your loved one\'s case.'}
+          {question: 'What is Good Call\'s emergency contact directory?', answer: 'When someone is arrested, their phone is taken away, and they may not have memorized the phone numbers of all the people they want to reach. We\'re combating this problem with our emergency contact directory. When someone calls our hotline, their new lawyer can search our directory to find their loved ones and get in touch. You can add your emergency contacts to our directory to make sure you can reach them in case of an arrest. You can also add your own information, to make sure your friends and loved ones can reach you if they are in trouble.'},
+          {question: 'Is it safe to save my contacts? ', answer: 'We take security and privacy very seriously at Good Call and use industry standard practices. We have taken extensive measures to ensure that we don\'t put you at risk in any way. For instance, your emergency contacts are can never be linked back to you by anyone except for yourself in our database, and we don\'t collect any information that can be used against you.'},
+          {question: 'What is the difference between saving contacts to protect yourself or to be there for a loved one?', answer: 'Saving contacts to <b>Protect yourself</b> allows you to save a few of your emergency contacts, to make sure your lawyer can get in touch with them if you are ever arrested. Saving contacts to <b>Be there for a loved one</b> allows you to add your own contact information, so you can be alerted and connected with a lawyer in case your loved ones are arrested. We recommend you do both, to make sure we can provide the best support possible in case you or a loved one are arrested.'},
+          {question: 'I don\'t think I would be arrested, why should I save my contact information?', answer: 'Saving your contact information will help ensure that you can be there for your loved ones if they ever get in trouble.  Just choose the <b>Be there for a loved one</b> option when saving contacts.'}
         ]
       },
       {
         id: 'rights',
-        header: 'Knowing your rights',
+        header: 'I received an arrest text alert',
         faqs: [
-          {question: 'How is your day?', answer: 'call your mother and tell her you love her'},
-          {question: 'How is your doggo?', answer: 'health, wealth, stealth'}
+          {question: 'Why did I get notified by Good Call?', answer: 'If you have been notified by Good Call that someone you know has been arrested, it is because that person has called our hotline and you were listed as their emergency contact.'},
+          {question: 'I received a text alerting me that someone I know has been arrested, what do I do now?', answer: 'Follow the instructions on the text message you got to get information about your loved one\'s case.'},
+          {question: 'How will Good Call help me?', answer: 'Good Call will connect you to your loved one\'s lawyer. That way, they can give you information about your loved one\'s case.'}
         ]
       }
     ]

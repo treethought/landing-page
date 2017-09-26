@@ -36,12 +36,6 @@ class FaqPage extends Component {
     const { content } = route
     const tabsHeight = 100
 
-    const tabs = [
-      { name: 'About Good Call', sectionId: 'about' },
-      { name: 'If your loved one has been arrested', sectionId: 'loved-ones' },
-      { name: 'Knowing your rights', sectionId: 'rights' }
-    ]
-
     const areTabsSticky = this.header && scrollPos >= (this.header.offsetHeight + parseInt(window.getComputedStyle(this.header).marginTop) * 2)
     const tabsStyle = Object.assign({ height: tabsHeight }, areTabsSticky ? { position: 'fixed', left: 0, right: 0, top: innerPageContentPadding } : {})
     const faqPageStyle = areTabsSticky ? { paddingTop: tabsHeight } : {}
@@ -51,18 +45,18 @@ class FaqPage extends Component {
         <h1 className='h1' ref={el => { this.header = el }}>{content.header}</h1>
 
         <div className='tabs fixed' style={tabsStyle}>
-          {tabs.map(({ name, sectionId }) => (
+          {content.sections.map(({ header, id }) => (
             <ScrollLink
-              key={sectionId}
+              key={id}
               className='tab'
               {...{
-                to: sectionId,
+                to: id,
                 duration: 500,
                 smooth: true,
                 offset: -parseInt(innerPageContentPadding) - 20 - tabsHeight
               }}
             >
-              <div>{name}</div>
+              <div>{header}</div>
             </ScrollLink>
           ))}
         </div>
