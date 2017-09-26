@@ -25,28 +25,28 @@ const en = {
   },
   landingPage: {
     call: {
-      header: 'Who would you call in case of an arrest?',
-      text: 'We got your back, sign up to save an emergency contact to alert in case of an arrest and list yourself as an emergency contact for someone you want to be there for',
+      header: 'Who would you call in case of an arrest? Make your first call a Good Call.',
+      text: 'Make your first call a Good Call. Talk to a free lawyer right away. Add your emergency contacts to our directory so you can reach them too.',
       cta: 'save a contact',
       keypadLabel: 'Enter a loved one\'s phone number'
     },
     summary: {
-      header: 'Good Call runs a free 24/7 emergency arrest hotline and an emergency contact directory. With one call to 1-833-3-GOODCALL, we alert your loved ones and connect you with a free lawyer.'
+      header: '<b>We\'re on call 24/7.</b> Our emergency arrest hotline is always available. Just one call to 1-833-3-GOODCALL alerts your loved ones and connects you to a free lawyer.'
     },
     lovedOnes: {
-      header: 'Make sure you and your loved ones can reach each other at the time of arrest',
-      text: 'Save an emergency contact for Good Call to alert in case of an arrest or be that contact for someone you want to be there for'
+      header: 'Let loved ones know',
+      text: 'Friends, family, you name it - we give them the agency to be there for you in case of an arrest. Situation reversed, you can be there for them too.'
     },
     lawyer: {
-      header: 'Talk to a lawyer earlier and not 15 minutes before arraignments',
-      text: 'Call 1-833-3-GOODCALL if you or a loved one get arrested to talk to a free lawyer can tell you what to expect and start working on the case'
+      header: 'Immediate legal help',
+      text: 'If you or a loved one are arrested, we\'ll also put you in touch with a free lawyer. They\'ll tell you what to expect and begin handling the case.'
     },
     partners: {
       header: 'Our partners'
     },
     whyWeExist: {
-      header: 'Why we exist',
-      text: 'A majority of arrests are in low-income communities and for low-level misdemeanors. Currently, legal support comes too late and the consequences of this lack of support is devastating. We want to change that.'
+      header: 'Our mission',
+      text: 'Low-income communities experience a higher number of arrests, most of which are for low-level misdeamnors. Unfortunately, legal help comes too late after potentially damanging events have unfolded. The consequences can last a lifetime. We\'re going to change that.'
     },
     press: {
       header: 'Featured Press'
@@ -92,15 +92,15 @@ const en = {
   },
   aboutPage: {
     header: 'We believe everyone deserves fairness.',
-    ourMissionText: 'Our mission is to make the arrest process and its aftermath less painful and harmful for those that are detained and their loved ones. We strive to make this process more transparent and just for all New Yorkers regardless of income.',
+    ourMissionText: 'Arrests and their aftermaths have proven to be frightening and painful for the detained, their family, and friends. We strive to provide those affected with as much transparency as possible about the legal process and system, regardless of income, race and sex.',
     aboutUs: {
       header: 'Our story',
       text: 'Our four founders met through Blue Ridge Labs @ Robin Hood, a social impact incubator aimed at building technology to address problems faced by low income New Yorkers. During our research, we heard stories from dozens of New Yorkers who were arrested for trivial reasons like hopping a turnstile, forgetting to pay a ticket, or simply "fitting the description". With their cell phones taken away, their only way to reach out for help was a few phone calls on an old dial-pad phone, to numbers they had to have memorized. It was difficult for them to reach their loved ones and nearly impossible to reach a lawyer. Their inability to get help in this critical moment often times lead to devastating outcomes, including getting fired from their jobs, being wrongfully sent to jail for weeks on end, and admitting to crimes they didn\'t commit. <br /> <br />We built Good Call to provide better support during the arrest process and launched our hotline in October 2016 in the Bronx with legal support being provided by The Bronx Defenders. Our goal is to expand Good Call to cover all of NYC and beyond.',
       metrics: {
         header: 'Since October 2016',
         metrics: {
-          calls: 'Calls processed by Good Call',
-          lsps: 'Major legal service providers providing legal support on our hotline',
+          calls: 'Good Calls made!',
+          lsps: 'Major legal services providing support on our hotline',
           time: 'Average time it takes for us to connect someone with a free lawyer'
         }
       }
@@ -115,7 +115,7 @@ const en = {
     },
     donate: {
       header: 'Donate to justice',
-      text: '[TODO]',
+      text: 'Support Good Call and help us ensure that everyone can have access to free legal help when they need it most.',
       cta: 'Donate'
     }
   },

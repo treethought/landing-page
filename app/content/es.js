@@ -3,53 +3,53 @@ const es = {
     header: {
       faqBtnLabel: 'Preguntas Frecuentes',
       aboutUsBtnLabel: 'Acerca de nosotros',
-      signUpBtnLabel: 'Regístrate',
+      signUpBtnLabel: 'Guarde sus contactos',
       toggleLanguageBtnLabel: 'English',
       donateBtnLabel: 'Donar'
     },
     hotlineBannerText: 'Si tú o un ser querido han sido arrestados en el Bronx llama al 1-833-3-GOODCALL (1-833-346-6322) para recibir servicios de apoyo legal sin costo alguno 24/7',
     footer: {
-      address: '150 Court St. 2nd Floor, Brooklyn, NY 11201',
-      siteNavHeader: '[TODO]',
+      address: '150 Court St. 2do Piso, Brooklyn, NY 11201',
+      siteNavHeader: 'Navegación del sitio web',
       signUpLabel: 'Regístrate',
       aboutUsLinkLabel: 'Acerca de nosotros',
       faqLinkLabel: 'Preguntas Frecuentes',
       donateBtnLabel: 'Donar',
       privacyPolicyLinkLabel: 'Política de privacidad',
       termsAndConditionsLinkLabel: 'Términos de servicio',
-      followHeader: '[TODO]',
+      followHeader: 'Subscríbete y síguenos',
       emailAddress: 'Correo electrónico',
-      subscriptionConfirm: '[TODO]',
-      nonProfit: '[TODO]'
+      subscriptionConfirm: '¡Gracias! Se le enviara una confirmación a su correo electrónico.',
+      nonProfit: 'Good Call es una organización sin fines de lucro, fiscalmente patrocinado.'
     }
   },
   landingPage: {
     call: {
-      header: '¿A quién llamarías en caso de arresto?',
-      text: '[TODO]',
-      cta: '[TODO]',
-      keypadLabel: '[TODO]'
+      header: '¿A quién llamarías en caso de un arresto? Haz tu primera llamada a Good Call.',
+      text: 'Haga su primera llamada a Good Call. Hable gratuitamente con un abogado de inmediato. Agregue sus contactos de emergencia a nuestro directorio para que ellos también puedan ser contactados.',
+      cta: 'Guarde sus contactos',
+      keypadLabel: 'Ingrese el número de teléfono de un ser querido'
     },
     summary: {
-      header: '[TODO]'
+      header: '<b>Le servimos 24/7.</b> Nuestra línea de emergencia de arrestos siempre está a su disposición. Con una sola llamada a 1-833-3-GOODCALL se le alertara a sus seres queridos y se le conectará con un abogado gratis.'
     },
     lovedOnes: {
-      header: '[TODO]',
-      text: '[TODO]'
+      header: 'Dejele saber a sus seres queridos.',
+      text: 'Amigos, familia, usted decide! Les damos al oportunidad de estar ahí por usted y para usted en caso de un arresto. Y en caso de lo contrario, tú puedes estar ahí para ellos.'
     },
     lawyer: {
-      header: '[TODO]',
-      text: '[TODO]'
+      header: 'Servicios legales de inmediato',
+      text: 'Si usted o un ser querido es arrestado, lo conectaremos gratuitamente con un abogado. Los abogados serán los encargados de decirle que esperar de su caso.'
     },
     partners: {
       header: 'Nuestros socios'
     },
     whyWeExist: {
-      header: '[TODO]',
-      text: '[TODO]'
+      header: 'Nuestra misión',
+      text: 'Comunidades de bajos recursos son los que enfrentan ser arrestados, en muchos casos por delitos menores. Desafortunadamente, la ayuda legal llega muy tarde y potencialmente puede causar más daños. Las consecuencias puede durar toda la vida. Nosotros cambiaremos esto.'
     },
     press: {
-      header: 'Prensa destacada'
+      header: 'En la prensa'
     },
     stories: {
       stories: [
@@ -86,36 +86,36 @@ const es = {
       ]
     },
     saveContact: {
-      text: '[TODO]',
-      cta: '[TODO]'
+      text: 'Guarde un contacto de emergencia para proteger sus derechos y los derechos de sus seres queridos.',
+      cta: 'Guardar contacto'
     }
   },
   aboutPage: {
     header: 'Nosotros creemos que todos merecemos un trato justo.',
-    ourMissionText: 'Nuestra misión es hacer que el proceso de detención y sus secuelas sean menos dolorosas y perjudiciales para aquellos que son arrestados y sus seres queridos. Nos esforzamos para que este proceso sea más transparente y justo para todos los neoyorquinos, independientemente de su nivel de ingresos.',
+    ourMissionText: 'Nuestra misión es hacer que el proceso de detención, y sus secuelas sean menos dolorosas y perjudiciales para aquellos que son arrestados y sus seres queridos. Nos esforzamos para que este proceso sea más transparente y justo para todos los neoyorquinos, sin importar su situación económica, raza or sexo.',
     aboutUs: {
       header: 'Nuestra historia',
-      text: 'Nuestros cuatro fundadores se reunieron a través de Blue Ridge Labs @ Robin Hood, una incubadora de impacto social dirigida a la construcción de tecnología para abordar los problemas que enfrentan los neoyorquinos de bajos ingresos. Durante nuestra investigación, escuchamos historias de decenas de neoyorquinos que fueron arrestados por razones triviales como saltar un torniquete, olvidarse de pagar un boleto o simplemente "tener la descripción adecuda". Con sus teléfonos celulares quitados, su única manera de alcanzar ayuda era algunas llamadas de teléfono en un teléfono viejo de teclado de marcación, a los números que tenían que haber memorizado. Era difícil para ellos llegar a sus seres queridos y casi imposible llegar a un abogado. Su incapacidad para obtener ayuda en este momento crítico conduce resultados devastadores, incluyendo ser despedido de sus trabajos, ser enviado injustamente a la cárcel durante semanas y admitir a los crímenes que no cometieron. <br /> <br /> [TODO]',
+      text: 'Nuestros cuatro fundadores se reunieron a través de Blue Ridge Labs @ Robin Hood, una incubadora de impacto social dirigida a la construcción de tecnología para abordar los problemas que enfrentan los neoyorquinos de bajos ingresos. Durante nuestra investigación, escuchamos historias de decenas de neoyorquinos que fueron arrestados por razones triviales como saltar un torniquete, olvidarse de pagar un boleto o simplemente "tener la descripción adecuda". Con sus teléfonos celulares quitados, su única manera de alcanzar ayuda era algunas llamadas de teléfono en un teléfono viejo de teclado de marcación, a los números que tenían que haber memorizado. Era difícil para ellos llegar a sus seres queridos y casi imposible llegar a un abogado. Su incapacidad para obtener ayuda en este momento crítico conduce resultados devastadores, incluyendo ser despedido de sus trabajos, ser enviado injustamente a la cárcel durante semanas y admitir a los crímenes que no cometieron. <br /> <br /> Creamos Good Call para proveer un mejor servicio durante el proceso de arresto. Estrenamos nuestra línea directa en Octubre del 2016 en el Bronx con la ayuda legal ofrecida por The Bronx Defenders. Nuestra meta es de expandir la cobertura de Good Call a todo Nueva York y más allá.',
       metrics: {
-        header: '[TODO]',
+        header: 'Desde Octubre del 2016',
         metrics: {
-          calls: '[TODO]',
-          lsps: '[TODO]',
-          time: '[TODO]'
+          calls: '¡Good Call fue creada!',
+          lsps: 'Los mayores proveedores de servicios legales ayudando nuestra línea de emergencias.',
+          time: 'El tiempo promedio que se nos toma conectar a alguien con un abogado gratis.'
         }
       }
     },
     ourTeam: {
-      header: '[TODO]',
+      header: 'Nuestro equipo fundador',
       text: 'Somos un grupo con diversos conocimientos y experiencias, desde impresión 3D, diseño web, hasta organización comunitaria. Sin embargo, compartimos una pasión por crear una ciudad más justa para todos.'
     },
     community: {
-      header: '[TODO]',
-      text: '[TODO]'
+      header: 'Tecnología centrada en la comunidad, sin fines de lucro.',
+      text: 'Hemos creado Good Call con las comunidades y para las comunidades en las cuáles hemos servido. Somos más fuertes si estamos juntos.'
     },
     donate: {
-      header: '[TODO]',
-      text: '[TODO]',
+      header: 'Haga su donacion',
+      text: 'Apoye a Good Call y ayudenos a asegurarnos que todos tengan acceso gratis a ayuda legal cuando lo necesiten.',
       cta: 'Donar'
     }
   },
