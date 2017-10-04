@@ -68,7 +68,12 @@
           top: 9px;
           right: 0;
           cursor: pointer;
-          transition: 0.5s;
+          -webkit-animation: pulsate 1s ease-out;
+          -webkit-animation-iteration-count: infinite;
+        }
+
+        @-webkit-keyframes pulsate {
+          50% {-webkit-transform: scale(1.1, 1.1);}
         }
       }
 
