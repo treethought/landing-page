@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { string } from 'prop-types'
 
 const digits = [
-  ['1', '2', '3'],
-  ['4', '5', '6'],
-  ['7', '8', '9'],
-  ['∗', '0', '#']
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  ['dialpad_delete_arrow', 0, 'dialpad_cancel']
 ]
 
 class Keypad extends Component {
@@ -21,10 +21,14 @@ class Keypad extends Component {
   }
 
   onKeyClick (key) {
-    return e => {
-      const { number } = this.state
-      this.setState({ number: number + key })
-    }
+    const { number } = this.state
+    const del = e => { this.setState({ number: number.slice(0, -1) }) }
+    const cancel = e => { this.setState({ number: '' }) }
+    const push = e => { this.setState({ number: number + key }) }
+    return {
+      dialpad_delete_arrow: del,
+      dialpad_cancel: cancel
+    }[key] || push
   }
 
   render () {
@@ -45,7 +49,12 @@ class Keypad extends Component {
             <div className='row' key={i}>
               {row.map((key, j) => (
                 <div className='key-container' key={`${i}-${j}`} onClick={this.onKeyClick(key)}>
-                  <div className='key'>{key}</div>
+                  <div className='key'>
+                    {typeof key === 'number'
+                      ? key
+                      : <img src={`/assets/imgs/${key}.svg`} className='key-icon' />
+                    }
+                  </div>
                 </div>
               ))}
             </div>

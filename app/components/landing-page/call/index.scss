@@ -87,6 +87,10 @@
             .key {
               font-size: 32px;
               font-weight: $light;
+
+              .key-icon {
+                display: block;
+              }
             }
           }
         }
