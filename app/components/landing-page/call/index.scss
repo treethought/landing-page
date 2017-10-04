@@ -65,10 +65,11 @@
 
         .phone-enter-arrow {
           position: absolute;
-          top: 9px;
+          top: 2px;
           right: 0;
+          height: 40px;
           cursor: pointer;
-          animation: pulsate 1s ease-out;
+          animation: pulsate 1.25s ease-out;
           animation-iteration-count: infinite;
         }
 

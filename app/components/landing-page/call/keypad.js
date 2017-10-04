@@ -50,7 +50,7 @@ class Keypad extends Component {
             onChange={this.onChange}
             value={number}
           />
-          {enterArrowDisplayed && <img src='/assets/imgs/dialpad_enter_arrow.svg' className='phone-enter-arrow' />}
+          {enterArrowDisplayed && <img src='/assets/imgs/dialpad_enter_btn.svg' className='phone-enter-arrow' />}
         </div>
         <div className='digits-container'>
           {digits.map((row, i) => (
