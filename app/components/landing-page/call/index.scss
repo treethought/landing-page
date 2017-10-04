@@ -44,21 +44,34 @@
       flex-direction: column;
       align-items: center;
 
-      .phone {
-        background: transparent;
-        border: none;
-        color: $cream;
-        font-weight: $light;
-        &::-webkit-input-placeholder { opacity: 0.9; font-size: 20px; line-height: 45px; }
-        &::-moz-placeholder { opacity: 0.9; font-size: 20px; line-height: 45px; }
-        &:-ms-input-placeholder { opacity: 0.9; font-size: 20px; line-height: 20px; }
-        &:-moz-placeholder { opacity: 0.9; font-size: 20px; line-height: 45px; }
-        border-bottom: 2px solid $cream;
-        font-size: 35px;
-        padding-bottom: 5px;
-        margin-bottom: 65px;
-        width: 100%;
+      .phone-container {
+        position: relative;
+
+        .phone {
+          background: transparent;
+          border: none;
+          color: $cream;
+          font-weight: $light;
+          &::-webkit-input-placeholder { opacity: 0.9; font-size: 20px; line-height: 45px; }
+          &::-moz-placeholder { opacity: 0.9; font-size: 20px; line-height: 45px; }
+          &:-ms-input-placeholder { opacity: 0.9; font-size: 20px; line-height: 20px; }
+          &:-moz-placeholder { opacity: 0.9; font-size: 20px; line-height: 45px; }
+          border-bottom: 2px solid $cream;
+          font-size: 35px;
+          padding-bottom: 5px;
+          margin-bottom: 65px;
+          width: 100%;
+        }
+
+        .phone-enter-arrow {
+          position: absolute;
+          top: 9px;
+          right: 0;
+          cursor: pointer;
+          transition: 0.5s;
+        }
       }
+
 
       .digits-container {
         .row {

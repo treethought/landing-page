@@ -14,36 +14,44 @@ class Keypad extends Component {
     this.state = { number: '' }
     this.onChange = this.onChange.bind(this)
     this.onKeyClick = this.onKeyClick.bind(this)
+    this.setNumber = this.setNumber.bind(this)
   }
 
   onChange (e) {
-    this.setState({ number: e.target.value })
+    this.setNumber(e.target.value)
   }
 
   onKeyClick (key) {
-    const { number } = this.state
-    const del = e => { this.setState({ number: number.slice(0, -1) }) }
-    const cancel = e => { this.setState({ number: '' }) }
-    const push = e => { this.setState({ number: number + key }) }
-    return {
-      dialpad_delete_arrow: del,
-      dialpad_cancel: cancel
-    }[key] || push
+    return e => {
+      const { number } = this.state
+      const nextNumber = typeof key === 'number'
+        ? number + key
+        : { dialpad_delete_arrow: number.slice(0, -1), dialpad_cancel: '' }[key]
+      this.setNumber(nextNumber)
+    }
+  }
+
+  setNumber (number) {
+    this.setState({ enterArrowDisplayed: number.length >= 10, number })
   }
 
   render () {
     const { label } = this.props
-    const { number } = this.state
+    const { number, enterArrowDisplayed } = this.state
 
     return (
       <div className='keypad'>
-        <input
-          className='phone'
-          placeholder={label}
-          type='phone'
-          onChange={this.onChange}
-          value={number}
-        />
+
+        <div className='phone-container'>
+          <input
+            className='phone'
+            placeholder={label}
+            type='tel'
+            onChange={this.onChange}
+            value={number}
+          />
+          {enterArrowDisplayed && <img src='/assets/imgs/dialpad_enter_arrow.svg' className='phone-enter-arrow' />}
+        </div>
         <div className='digits-container'>
           {digits.map((row, i) => (
             <div className='row' key={i}>
