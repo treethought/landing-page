@@ -28,7 +28,7 @@ const es = {
       header: '¿A quién llamarías en caso de un arresto? Haz tu primera llamada a Good Call.',
       text: 'Haga su primera llamada a Good Call. Hable gratuitamente con un abogado de inmediato. Agregue sus contactos de emergencia a nuestro directorio para que ellos también puedan ser contactados.',
       cta: 'Guarde sus contactos',
-      keypadLabel: 'Ingrese el número de teléfono de un ser querido'
+      keypadLabel: 'Ingrese el número de teléfono'
     },
     summary: {
       header: '<b>Le servimos 24/7.</b><br />Nuestra línea de emergencia de arrestos siempre está a su disposición. Con una sola llamada a 1-833-3-GOODCALL se le alertara a sus seres queridos y se le conectará con un abogado gratis.'

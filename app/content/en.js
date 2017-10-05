@@ -106,7 +106,7 @@ const en = {
       metrics: {
         header: 'Since October 2016',
         metrics: {
-          calls: 'Good Calls made!',
+          calls: 'Calls connected',
           lsps: 'Major legal services providing support on our hotline',
           time: 'Average time it takes for us to connect someone with a free lawyer'
         }

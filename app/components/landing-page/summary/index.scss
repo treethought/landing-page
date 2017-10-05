@@ -1,8 +1,8 @@
 .summary {
   padding: 110px $lp-h-padding 77px;
   text-align: center;
-  color: $green;
-  background: $cream;
+  color: $cream;
+  background: $green;
 
   .content {
     max-width: $lp-max-width;
@@ -22,8 +22,6 @@
 
 @media #{$mobile-only} {
   .summary {
-    padding: 50px 40px;
-
     .content {
       .text {
         margin-bottom: 40px;
@@ -33,5 +31,11 @@
         width: 60px;
       }
     }
+  }
+}
+
+@media #{$tablet-down} {
+  .summary {
+    padding: 50px 40px;
   }
 }

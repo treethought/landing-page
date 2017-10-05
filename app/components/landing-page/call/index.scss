@@ -65,16 +65,15 @@
 
         .phone-enter-arrow {
           position: absolute;
-          top: 2px;
-          right: 0;
+          top: 7px;
+          right: -2px;
           height: 40px;
           cursor: pointer;
-          animation: pulsate 1.25s ease-out;
-          animation-iteration-count: infinite;
-        }
+          transition: 0.5s;
 
-        @-webkit-keyframes pulsate {
-          50% { opacity: 0; }
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
 
@@ -147,9 +146,9 @@
 @media #{$mobile-only} {
   .call {
     .content {
-      padding-top: 60px;
+      padding-top: 30px;
       padding-left: 30px;
-      padding-right: 60px;
+      padding-right: 30px;
     }
   }
 }

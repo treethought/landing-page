@@ -1,6 +1,8 @@
 .partners {
   padding: 60px 0;
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 
   .logos-container {
     display: flex;
@@ -11,7 +13,7 @@
     margin: 0 auto;
 
     img {
-      max-width: 130px;
+      max-width: 100px;
       object-fit: contain;
       height: 95px;
       margin: 20px;
@@ -22,7 +24,7 @@
 @media #{$tablet-up} {
   .partners {
     background: $white;
-    padding: 60px $lp-h-padding 100px;
+    padding: 50px $lp-h-padding 40px;
 
     .content {
       max-width: $lp-max-width;
@@ -30,12 +32,12 @@
 
       .h2 {
         font-weight: $regular;
-        margin-bottom: 60px;
+        margin-bottom: 20px;
       }
 
       .logos-container {
         img {
-          max-width: 190px;
+          max-width: 150px;
           object-fit: contain;
           height: 100px;
         }

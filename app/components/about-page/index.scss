@@ -57,7 +57,7 @@
   .mission {
     background: $green;
     color: $cream;
-    padding: 100px $lp-h-padding;
+    padding: 60px $lp-h-padding;
     text-align: center;
   }
 
@@ -139,8 +139,6 @@
   }
 
   .community {
-    padding-top: 110px;
-
     .h2 {
       margin: 0;
     }
@@ -211,6 +209,10 @@
   .about-page {
     .col-container {
       display: block;
+
+      .h2 {
+        margin-bottom: 30px;
+      }
     }
   }
 }

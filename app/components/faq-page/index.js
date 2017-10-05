@@ -34,7 +34,7 @@ class FaqPage extends Component {
     const { innerPageContentPadding, route } = this.props
     const { scrollPos } = this.state
     const { content } = route
-    const tabsHeight = 100
+    const tabsHeight = 70
 
     const areTabsSticky = this.header && scrollPos >= (this.header.offsetHeight + parseInt(window.getComputedStyle(this.header).marginTop) * 2)
     const tabsStyle = Object.assign({ height: tabsHeight }, areTabsSticky ? { position: 'fixed', left: 0, right: 0, top: innerPageContentPadding } : {})
