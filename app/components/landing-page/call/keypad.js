@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { string } from 'prop-types'
+import cookie from 'react-cookie'
+import { browserHistory } from 'react-router'
 
 const digits = [
   [1, 2, 3],
@@ -15,6 +17,7 @@ class Keypad extends Component {
     this.onChange = this.onChange.bind(this)
     this.onKeyClick = this.onKeyClick.bind(this)
     this.setNumber = this.setNumber.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
   }
 
   onChange (e) {
@@ -35,6 +38,11 @@ class Keypad extends Component {
     this.setState({ enterArrowDisplayed: number.length >= 10, number })
   }
 
+  onSubmit () {
+    cookie.save('phone', this.state.number, { path: '/' })
+    browserHistory.push({ pathname: '/sign-up' })
+  }
+
   render () {
     const { label } = this.props
     const { number, enterArrowDisplayed } = this.state
@@ -50,7 +58,7 @@ class Keypad extends Component {
             onChange={this.onChange}
             value={number}
           />
-          {enterArrowDisplayed && <img src='/assets/imgs/dialpad_enter_btn.svg' className='phone-enter-arrow' />}
+          {enterArrowDisplayed && <img src='/assets/imgs/dialpad_enter_btn.svg' className='phone-enter-arrow' onClick={this.onSubmit} />}
         </div>
         <div className='digits-container'>
           {digits.map((row, i) => (
