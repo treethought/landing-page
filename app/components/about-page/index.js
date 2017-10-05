@@ -1,18 +1,20 @@
 import React from 'react'
-import { object } from 'prop-types'
-import { Button } from '../index'
+import { number, object, string } from 'prop-types'
+import CountUp from 'react-countup'
+import range from 'lodash.range'
+import { Button, Carousel } from '../index'
 
-const AboutPage = ({ content, metrics }) => {
+const AboutPage = ({ content, metrics, rightsIndex, carouselHeight }) => {
   const formattedMetrics = [
-    { type: 'calls', number: metrics.calls },
-    { type: 'lsps', number: metrics.lsps },
-    { type: 'time', number: `${metrics.time}s` }
+    { type: 'calls' },
+    { type: 'lsps' },
+    { type: 'time', suffix: 's' }
   ]
 
   return (
     <div className='about-page'>
       <div className='banner'>
-        <div className='banner-header'>{content.header}</div>
+        <div className='banner-header'>{content.header.prefix} {content.header.rights[rightsIndex]}.</div>
       </div>
 
       <div className='mission'>
@@ -21,16 +23,16 @@ const AboutPage = ({ content, metrics }) => {
 
       <div className='story panel'>
         <div className='content'>
-          <div className='h2'>{content.aboutUs.header}</div>
-          <div className='story-text text' dangerouslySetInnerHTML={{ __html: content.aboutUs.text }} />
-
-          <img className='story-icon' src='/assets/imgs/coil.svg' />
+          <div className='col-container'>
+            <div className='h2'>{content.aboutUs.header}</div>
+            <div className='story-text text' dangerouslySetInnerHTML={{ __html: content.aboutUs.text }} />
+          </div>
 
           <div className='metrics-subheader'>{content.aboutUs.metrics.header}</div>
           <div className='metrics-container'>
-            {formattedMetrics.map(({ type, number }, i) => (
+            {formattedMetrics.map(({ type, suffix }, i) => (
               <div className='metric' key={i}>
-                <div className='number'>{number}</div>
+                <div className='number'>{metrics[type] ? <CountUp start={0} end={metrics[type]} /> : '--'}{suffix}</div>
                 <div className='label'>{content.aboutUs.metrics.metrics[type]}</div>
               </div>
             ))}
@@ -39,7 +41,7 @@ const AboutPage = ({ content, metrics }) => {
       </div>
 
       <div className='team'>
-        <div className='content panel'>
+        <div className='content panel col-container'>
           <div className='h2'>{content.ourTeam.header}</div>
           <div className='text'>{content.ourTeam.text}</div>
         </div>
@@ -49,21 +51,38 @@ const AboutPage = ({ content, metrics }) => {
 
       <div className='community panel'>
         <div className='content'>
-          <div className='h2'>{content.community.header}</div>
-          <div className='text'>{content.community.text}</div>
-          <img className='photo' src='http://www.arenakettering.co.uk/wp-content/uploads/grey-square.png' />
+          <div className='col-container'>
+            <div className='h2'>{content.community.header}</div>
+            <div>{content.community.text}</div>
+          </div>
         </div>
+      </div>
+
+      <div>
+        <Carousel>
+          {range(1, 6).map(n => (
+            <div
+              key={`com-img-${n}`}
+              className='com-img'
+              style={{ 'backgroundImage': `url('./assets/imgs/com-${n}.jpg')`, 'height': carouselHeight }}
+            />
+          ))}
+        </Carousel>
       </div>
 
       <div className='donate panel'>
         <div className='content'>
-          <div className='h2'>{content.donate.header}</div>
-          <div className='text'>{content.donate.text}</div>
-          <Button
-            className='donate-btn'
-            label={content.donate.cta}
-            selector='inverse'
-          />
+          <div className='col-container'>
+            <div className='h2'>{content.donate.header}</div>
+            <div>
+              <div className='text'>{content.donate.text}</div>
+              <Button
+                className='donate-btn'
+                label={content.donate.cta}
+                selector='inverse'
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -71,8 +90,9 @@ const AboutPage = ({ content, metrics }) => {
 }
 
 AboutPage.propTypes = {
-  route: object,
-  metrics: object
+  metrics: object,
+  carouselHeight: string,
+  rightsIndex: number
 }
 
 export default AboutPage

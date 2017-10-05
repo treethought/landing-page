@@ -5,7 +5,11 @@ import { fetchMetrics } from '../services/api'
 class AboutPageContainer extends Component {
   constructor () {
     super()
-    this.state = { metrics: { calls: '', lsps: '', time: '' } }
+    this.state = {
+      rightsIndex: 0,
+      metrics: { calls: '', lsps: '', time: '' },
+      interval: null
+    }
   }
 
   componentWillMount () {
@@ -14,14 +18,29 @@ class AboutPageContainer extends Component {
     }, console.error)
   }
 
+  componentDidMount () {
+    const { rights } = this.props.route.content.header
+    const interval = setInterval(() => {
+      this.setState({ rightsIndex: (this.state.rightsIndex + 1) % rights.length })
+    }, 3000)
+    this.setState({ interval })
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.state.interval)
+  }
+
   render () {
-    const { content } = this.props.route
+    const { innerPageContentPadding, route } = this.props
     const { metrics } = this.state
+    const carouselHeight = `calc(100vh - ${innerPageContentPadding})`
+
     return (
       <AboutPage
         {...this.state}
-        content={content}
+        content={route.content}
         metrics={metrics}
+        carouselHeight={carouselHeight}
       />
     )
   }

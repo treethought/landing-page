@@ -88,10 +88,20 @@ const en = {
     }
   },
   aboutPage: {
-    header: 'We believe everyone deserves fairness.',
+    header: {
+      prefix: 'We believe everyone deserves',
+      rights: [
+        'fairness',
+        'support',
+        'justice',
+        'security',
+        'representation',
+        'equality'
+      ]
+    },
     ourMissionText: 'Arrests and their aftermaths have proven to be frightening and painful for the detained, their family, and friends. We strive to provide those affected with as much transparency as possible about the legal process and system, regardless of income, race and sex.',
     aboutUs: {
-      header: 'Our story',
+      header: 'Our story.',
       text: 'Our four founders met through Blue Ridge Labs @ Robin Hood, a social impact incubator aimed at building technology to address problems faced by low income New Yorkers. During our research, we heard stories from dozens of New Yorkers who were arrested for trivial reasons like hopping a turnstile, forgetting to pay a ticket, or simply "fitting the description". With their cell phones taken away, their only way to reach out for help was a few phone calls on an old dial-pad phone, to numbers they had to have memorized. It was difficult for them to reach their loved ones and nearly impossible to reach a lawyer. Their inability to get help in this critical moment often times lead to devastating outcomes, including getting fired from their jobs, being wrongfully sent to jail for weeks on end, and admitting to crimes they didn\'t commit. <br /> <br />We built Good Call to provide better support during the arrest process and launched our hotline in October 2016 in the Bronx with legal support being provided by The Bronx Defenders. Our goal is to expand Good Call to cover all of NYC and beyond.',
       metrics: {
         header: 'Since October 2016',

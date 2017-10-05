@@ -88,10 +88,19 @@ const es = {
     }
   },
   aboutPage: {
-    header: 'Nosotros creemos que todos merecemos un trato justo.',
+    header: {
+      prefix: 'Nosotros creemos que todos merecemos',
+      rights: [
+        'un trato justo',
+        'ayuda',
+        'seguridad',
+        'representación',
+        'justicia por igual'
+      ]
+    },
     ourMissionText: 'Nuestra misión es hacer que el proceso de detención, y sus secuelas sean menos dolorosas y perjudiciales para aquellos que son arrestados y sus seres queridos. Nos esforzamos para que este proceso sea más transparente y justo para todos los neoyorquinos, sin importar su situación económica, raza or sexo.',
     aboutUs: {
-      header: 'Nuestra historia',
+      header: 'Nuestra historia.',
       text: 'Nuestros cuatro fundadores se reunieron a través de Blue Ridge Labs @ Robin Hood, una incubadora de impacto social dirigida a la construcción de tecnología para abordar los problemas que enfrentan los neoyorquinos de bajos ingresos. Durante nuestra investigación, escuchamos historias de decenas de neoyorquinos que fueron arrestados por razones triviales como saltar un torniquete, olvidarse de pagar un boleto o simplemente "tener la descripción adecuda". Con sus teléfonos celulares quitados, su única manera de alcanzar ayuda era algunas llamadas de teléfono en un teléfono viejo de teclado de marcación, a los números que tenían que haber memorizado. Era difícil para ellos llegar a sus seres queridos y casi imposible llegar a un abogado. Su incapacidad para obtener ayuda en este momento crítico conduce resultados devastadores, incluyendo ser despedido de sus trabajos, ser enviado injustamente a la cárcel durante semanas y admitir a los crímenes que no cometieron. <br /> <br /> Creamos Good Call para proveer un mejor servicio durante el proceso de arresto. Estrenamos nuestra línea directa en Octubre del 2016 en el Bronx con la ayuda legal ofrecida por The Bronx Defenders. Nuestra meta es de expandir la cobertura de Good Call a todo Nueva York y más allá.',
       metrics: {
         header: 'Desde Octubre del 2016',

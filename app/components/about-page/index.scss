@@ -9,6 +9,25 @@
     margin: 0 auto;
   }
 
+  .col-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .h2 {
+      font-weight: $semi-bold;
+    }
+
+    & > :first-child {
+      max-width: 300px;
+      margin-right: 100px;
+    }
+
+    & > :last-child {
+      max-width: 700px;
+    }
+  }
+
   .panel {
     padding: 80px $lp-h-padding;
   }
@@ -53,12 +72,6 @@
       }
 
       .story-text {
-        margin-bottom: 80px;
-      }
-
-      .story-icon {
-        display: block;
-        margin: 0 auto;
         margin-bottom: 80px;
       }
 
@@ -126,25 +139,18 @@
   }
 
   .community {
-    .content {
-      position: relative;
+    padding-top: 110px;
 
-      .h2 {
-        padding-bottom: 30px;
-      }
-
-      .text {
-        padding-bottom: 60px;
-      }
-
-      .photo {
-        max-width: 800px;
-        max-height: 500px;
-        width: 100%;
-        display: block;
-        margin: 0 auto;
-      }
+    .h2 {
+      margin: 0;
     }
+  }
+
+  .com-img {
+    background-size: cover;
+    background-position: center;
+    // z-index: 100;
+    position: relative;
   }
 
   .donate {
@@ -197,6 +203,14 @@
           }
         }
       }
+    }
+  }
+}
+
+@media #{$tablet-down} {
+  .about-page {
+    .col-container {
+      display: block;
     }
   }
 }
