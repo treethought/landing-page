@@ -26,10 +26,11 @@ class UserSignUpPageContainer extends Component {
       contacts: {
         notificationAllowed: false,
         list: {
-          [initialContactTmpId]: { tmpId: initialContactTmpId, errors: {} }
+          [initialContactTmpId]: { tmpId: initialContactTmpId, errors: {}, defaultPhone: cookie.load('phone', { path: '/' }) }
         }
       }
     }
+    cookie.remove('phone', { path: '/' })
   }
 
   setUser (prop) {
