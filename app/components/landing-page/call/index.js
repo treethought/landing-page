@@ -23,7 +23,7 @@ const Call = ({ height, headerPadding, content }) => (
     </div>
 
     <div className='arrow-container'>
-      <ScrollLink {...{ to: 'summary', duration: 500, smooth: true, offset: -parseInt(headerPadding) }}>
+      <ScrollLink {...{ to: 'press', duration: 500, smooth: true, offset: -parseInt(headerPadding) }}>
         <img className='arrow' src='/assets/imgs/arrow-down.svg' />
       </ScrollLink>
     </div>

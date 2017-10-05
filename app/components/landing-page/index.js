@@ -20,10 +20,10 @@ class LandingPage extends Component {
     return (
       <div className='landing-page'>
         <Call content={content.call} height={lowerPageHeight} headerPadding={innerPageContentPadding} />
-        <Press />
-        <ScrollElement name='summary'>
-          <Summary content={content.summary} />
+        <ScrollElement name='press'>
+          <Press />
         </ScrollElement>
+        <Summary content={content.summary} />
         <LovedOnes content={content.lovedOnes} />
         <Lawyer content={content.lawyer} />
         <WhyWeExist content={content.whyWeExist} />
