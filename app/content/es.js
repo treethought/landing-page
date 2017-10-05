@@ -31,7 +31,7 @@ const es = {
       keypadLabel: 'Ingrese el número de teléfono de un ser querido'
     },
     summary: {
-      header: '<b>Le servimos 24/7.</b> Nuestra línea de emergencia de arrestos siempre está a su disposición. Con una sola llamada a 1-833-3-GOODCALL se le alertara a sus seres queridos y se le conectará con un abogado gratis.'
+      header: '<b>Le servimos 24/7.</b><br />Nuestra línea de emergencia de arrestos siempre está a su disposición. Con una sola llamada a 1-833-3-GOODCALL se le alertara a sus seres queridos y se le conectará con un abogado gratis.'
     },
     lovedOnes: {
       header: 'Dejele saber a sus seres queridos.',
@@ -47,9 +47,6 @@ const es = {
     whyWeExist: {
       header: 'Nuestra misión',
       text: 'Comunidades de bajos recursos son los que enfrentan ser arrestados, en muchos casos por delitos menores. Desafortunadamente, la ayuda legal llega muy tarde y potencialmente puede causar más daños. Las consecuencias puede durar toda la vida. Nosotros cambiaremos esto.'
-    },
-    press: {
-      header: 'En la prensa'
     },
     stories: {
       stories: [

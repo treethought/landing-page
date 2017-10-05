@@ -8,9 +8,8 @@ const images = [
   { file: 'bronxnet.jpg', href: 'http://www.bronxnet.org/tv/open/360-open-featured-interviews/9593-good-call-project-open-wednesday-june-21st-20172017-06-21-23-46-43' }
 ]
 
-const Press = ({ content }) =>
+const Press = () =>
   <section className='press'>
-    <div className='h2'>{content.header}</div>
     <div className='images'>
       {images.map((img, i) => (
         <a href={img.href} key={i}>

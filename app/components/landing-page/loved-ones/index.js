@@ -6,7 +6,7 @@ const LovedOnes = ({ content }) =>
       <div className='h2'>{content.header}</div>
       <p className='p'>{content.text}</p>
     </div>
-    <img className='icon' src='http://www.arenakettering.co.uk/wp-content/uploads/grey-square.png' />
+    <img className='icon' src='/assets/imgs/contact-loved-ones.png' />
   </div>
 
 export default LovedOnes

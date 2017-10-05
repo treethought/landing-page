@@ -31,7 +31,7 @@ const en = {
       keypadLabel: 'Enter a loved one\'s phone number'
     },
     summary: {
-      header: '<b>We\'re on call 24/7.</b> Our emergency arrest hotline is always available. Just one call to 1-833-3-GOODCALL alerts your loved ones and connects you to a free lawyer.'
+      header: '<b>We\'re on call 24/7.</b><br />Our emergency arrest hotline is always available. Just one call to 1-833-3-GOODCALL alerts your loved ones and connects you to a free lawyer.'
     },
     lovedOnes: {
       header: 'Let loved ones know',
@@ -47,9 +47,6 @@ const en = {
     whyWeExist: {
       header: 'Our mission',
       text: 'Low-income communities experience a higher number of arrests, most of which are for low-level misdeamnors. Unfortunately, legal help comes too late after potentially damanging events have unfolded. The consequences can last a lifetime. We\'re going to change that.'
-    },
-    press: {
-      header: 'Featured Press'
     },
     stories: {
       stories: [

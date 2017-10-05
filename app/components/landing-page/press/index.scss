@@ -1,11 +1,7 @@
 .press {
   background: #FFFFFF;
   text-align: center;
-  padding: 90px 70px 115px;
-
-  & > .h2 {
-    margin-bottom: 36px;
-  }
+  padding: 40px 70px;
 
   & > .images {
     display: flex;
@@ -19,7 +15,7 @@
     & .image {
       object-fit: contain;
       width: 200px;
-      height: 90px;
+      height: 45px;
       margin-left: 10px;
       margin-right: 10px;
       transition: 0.5s;
