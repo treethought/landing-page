@@ -4,7 +4,7 @@ import CountUp from 'react-countup'
 import range from 'lodash.range'
 import { Button, Carousel } from '../index'
 
-const AboutPage = ({ content, metrics, rightsIndex, carouselHeight }) => {
+const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight }) => {
   const formattedMetrics = [
     { type: 'calls' },
     { type: 'lsps' },
@@ -14,7 +14,9 @@ const AboutPage = ({ content, metrics, rightsIndex, carouselHeight }) => {
   return (
     <div className='about-page'>
       <div className='banner'>
-        <div className='banner-header'>{content.header.prefix} {content.header.rights[rightsIndex]}.</div>
+        <div className={`banner-header ${rightsClass}`}>
+          {content.header.prefix} {content.header.rights[rightsIndex]}.
+        </div>
       </div>
 
       <div className='mission'>

@@ -51,6 +51,12 @@
       font-weight: normal;
       padding: 15px 7px 15px 13px;
       text-align: center;
+      opacity: 1;
+      transition: 0.5s;
+
+      &.hide {
+        opacity: 0;
+      }
     }
   }
 

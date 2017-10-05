@@ -8,7 +8,9 @@ class AboutPageContainer extends Component {
     this.state = {
       rightsIndex: 0,
       metrics: { calls: '', lsps: '', time: '' },
-      interval: null
+      interval: null,
+      bannerHeader: null,
+      rightsClass: ''
     }
   }
 
@@ -21,8 +23,14 @@ class AboutPageContainer extends Component {
   componentDidMount () {
     const { rights } = this.props.route.content.header
     const interval = setInterval(() => {
-      this.setState({ rightsIndex: (this.state.rightsIndex + 1) % rights.length })
-    }, 3000)
+      this.setState({ rightsClass: 'hide' })
+      setTimeout(() => {
+        this.setState({ rightsIndex: (this.state.rightsIndex + 1) % rights.length })
+        setTimeout(() => {
+          this.setState({ rightsClass: 'show' })
+        }, 500)
+      }, 1000)
+    }, 5000)
     this.setState({ interval })
   }
 
