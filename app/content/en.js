@@ -46,7 +46,7 @@ const en = {
     },
     whyWeExist: {
       header: 'Our mission',
-      text: 'Low-income communities experience a higher number of arrests, most of which are for low-level misdeamnors. Unfortunately, legal help comes too late after potentially damanging events have unfolded. The consequences can last a lifetime.<br />We\'re going to change that.'
+      text: 'Low-income communities experience a higher number of arrests, most of which are for low-level misdeamnors. Unfortunately, legal help comes too late after potentially damaging events have unfolded. The consequences can last a lifetime.<br />We\'re going to change that.'
     },
     stories: {
       stories: [
