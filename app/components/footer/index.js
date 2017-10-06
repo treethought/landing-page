@@ -47,43 +47,41 @@ const Footer = ({ content, subscribedToMailingList, subscribeToMailingList, erro
       ))}
     </div>
 
-  const FollowUs = () =>
-    <div className='follow-us'>
-      <div className='footer-link links-header'>{content.followHeader}</div>
-      <div className='social-links'>
-        {socialLinks.map(({ href, src }) => (
-          <a href={href} className='social-link' key={src}>
-            <img src={src} className='social-media-logo' />
-          </a>
-        ))}
-      </div>
-
-      {subscribedToMailingList ? (
-        <div>{content.subscriptionConfirm}</div>
-      ) : (
-        <form className='mailing-list-form'>
-          <div className='inputs'>
-            <input
-              className='mailing-list-input'
-              placeholder={content.emailAddress}
-              onChange={setEmail}
-            />
-            <div className='mailing-list-button' onClick={subscribeToMailingList}>
-              <img src='/assets/imgs/subscribe-arrow.svg' />
-            </div>
-          </div>
-          {error && <div className='error'>{error}</div>}
-        </form>
-      )}
-    </div>
-
   return (
     <footer className='footer'>
       <div className='content'>
         <div className='main'>
           <Meta />
           <SiteNav />
-          <FollowUs />
+
+          <div className='follow-us'>
+            <div className='footer-link links-header'>{content.followHeader}</div>
+            <div className='social-links'>
+              {socialLinks.map(({ href, src }) => (
+                <a href={href} className='social-link' key={src}>
+                  <img src={src} className='social-media-logo' />
+                </a>
+              ))}
+            </div>
+
+            {subscribedToMailingList ? (
+              <div>{content.subscriptionConfirm}</div>
+            ) : (
+              <form className='mailing-list-form'>
+                <div className='inputs'>
+                  <input
+                    className='mailing-list-input'
+                    placeholder={content.emailAddress}
+                    onChange={setEmail}
+                  />
+                  <div className='mailing-list-button' onClick={subscribeToMailingList}>
+                    <img src='/assets/imgs/subscribe-arrow.svg' />
+                  </div>
+                </div>
+                {error && <div className='error'>{error}</div>}
+              </form>
+            )}
+          </div>
         </div>
 
         <div className='non-profit'>{content.nonProfit}</div>
