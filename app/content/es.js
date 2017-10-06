@@ -26,7 +26,7 @@ const es = {
   landingPage: {
     call: {
       header: '¿A quién llamarías en caso de un arresto? Haz tu primera llamada a Good Call.',
-      text: 'Haga su primera llamada a Good Call. Hable gratuitamente con un abogado de inmediato. Agregue sus contactos de emergencia a nuestro directorio para que ellos también puedan ser contactados.',
+      text: 'Hable gratuitamente con un abogado de inmediato. Agregue sus contactos de emergencia a nuestro directorio para que ellos también puedan ser contactados.',
       cta: 'Guarde sus contactos',
       keypadLabel: 'Ingrese el número de teléfono'
     },

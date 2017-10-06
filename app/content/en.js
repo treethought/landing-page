@@ -26,7 +26,7 @@ const en = {
   landingPage: {
     call: {
       header: 'Who would you call in case of an arrest? Make your first call a Good Call.',
-      text: 'Make your first call a Good Call. Talk to a free lawyer right away. Add your emergency contacts to our directory so you can reach them too.',
+      text: 'Talk to a free lawyer right away. Add your emergency contacts to our directory so you can reach them too.',
       cta: 'save a contact',
       keypadLabel: 'Enter a loved one\'s phone number'
     },
