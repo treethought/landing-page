@@ -12,6 +12,10 @@ import SaveContact from './save-contact'
 import { Element as ScrollElement } from 'react-scroll'
 
 class LandingPage extends Component {
+  componentDidMount () {
+    window.scrollTo(0, 100)
+  }
+
   render () {
     const { innerPageContentPadding, route } = this.props
     const { content } = route
