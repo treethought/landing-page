@@ -1,17 +1,11 @@
 import React from 'react'
-import { number, object, string } from 'prop-types'
-import CountUp from 'react-countup'
+import { bool, func, number, object, string } from 'prop-types'
 import range from 'lodash.range'
 import { Button, Carousel } from '../index'
+import Metrics from './metrics'
 
-const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight }) => {
-  const formattedMetrics = [
-    { type: 'calls' },
-    { type: 'lsps' },
-    { type: 'time', suffix: 's' }
-  ]
-
-  const slides = range(1, 6).map(n => (
+const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight, metricsShown, showMetrics }) => {
+  const Slides = range(1, 6).map(n => (
     <div
       key={`com-img-${n}`}
       className='com-img'
@@ -38,15 +32,7 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight 
             <div className='story-text text p' dangerouslySetInnerHTML={{ __html: content.aboutUs.text }} />
           </div>
 
-          <div className='metrics-subheader'>{content.aboutUs.metrics.header}</div>
-          <div className='metrics-container'>
-            {formattedMetrics.map(({ type, suffix }, i) => (
-              <div className='metric' key={i}>
-                <div className='number'>{metrics[type] ? <CountUp start={0} end={metrics[type]} /> : '--'}{suffix}</div>
-                <div className='label'>{content.aboutUs.metrics.metrics[type]}</div>
-              </div>
-            ))}
-          </div>
+          <Metrics {...{ metricsShown, showMetrics, content, metrics }} />
         </div>
       </div>
 
@@ -70,7 +56,7 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight 
 
       <div>
         <Carousel id='com-imgs-carousel'>
-          {slides}
+          {Slides}
         </Carousel>
       </div>
 
@@ -96,7 +82,10 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight 
 AboutPage.propTypes = {
   metrics: object,
   carouselHeight: string,
-  rightsIndex: number
+  rightsIndex: number,
+  rightsClass: string,
+  metricsShown: bool,
+  showMetrics: func
 }
 
 export default AboutPage

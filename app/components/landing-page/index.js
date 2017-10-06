@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { string, object } from 'prop-types'
 import Call from './call'
 import Summary from './summary'
@@ -11,32 +11,25 @@ import Press from './press'
 import SaveContact from './save-contact'
 import { Element as ScrollElement } from 'react-scroll'
 
-class LandingPage extends Component {
-  componentDidMount () {
-    window.scrollTo(0, 100)
-  }
+const LandingPage = ({ innerPageContentPadding, route }) => {
+  const { content } = route
+  const lowerPageHeight = `calc(100vh - ${innerPageContentPadding})`
 
-  render () {
-    const { innerPageContentPadding, route } = this.props
-    const { content } = route
-    const lowerPageHeight = `calc(100vh - ${innerPageContentPadding})`
-
-    return (
-      <div className='landing-page'>
-        <Call content={content.call} height={lowerPageHeight} headerPadding={innerPageContentPadding} />
-        <ScrollElement name='press'>
-          <Press />
-        </ScrollElement>
-        <Summary content={content.summary} />
-        <Lawyer content={content.lawyer} />
-        <LovedOnes content={content.lovedOnes} />
-        <WhyWeExist content={content.whyWeExist} />
-        <Partners content={content.partners} />
-        <Stories content={content.stories} height={lowerPageHeight} />
-        <SaveContact content={content.saveContact} />
-      </div>
-    )
-  }
+  return (
+    <div className='landing-page'>
+      <Call content={content.call} height={lowerPageHeight} headerPadding={innerPageContentPadding} />
+      <ScrollElement name='press'>
+        <Press />
+      </ScrollElement>
+      <Summary content={content.summary} />
+      <Lawyer content={content.lawyer} />
+      <LovedOnes content={content.lovedOnes} />
+      <WhyWeExist content={content.whyWeExist} />
+      <Partners content={content.partners} />
+      <Stories content={content.stories} height={lowerPageHeight} />
+      <SaveContact content={content.saveContact} />
+    </div>
+  )
 }
 
 LandingPage.propTypes = {

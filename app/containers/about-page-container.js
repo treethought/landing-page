@@ -10,8 +10,10 @@ class AboutPageContainer extends Component {
       metrics: { calls: '', lsps: '', time: '' },
       interval: null,
       bannerHeader: null,
-      rightsClass: ''
+      rightsClass: '',
+      metricsShown: false
     }
+    this.showMetrics = this.showMetrics.bind(this)
   }
 
   componentWillMount () {
@@ -38,6 +40,12 @@ class AboutPageContainer extends Component {
     clearInterval(this.state.interval)
   }
 
+  showMetrics () {
+    if (!this.state.metricsShown) {
+      this.setState({ metricsShown: true })
+    }
+  }
+
   render () {
     const { innerPageContentPadding, route } = this.props
     const { metrics } = this.state
@@ -49,6 +57,7 @@ class AboutPageContainer extends Component {
         content={route.content}
         metrics={metrics}
         carouselHeight={carouselHeight}
+        showMetrics={this.showMetrics}
       />
     )
   }
