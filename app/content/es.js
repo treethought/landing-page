@@ -3,117 +3,127 @@ const es = {
     header: {
       faqBtnLabel: 'Preguntas Frecuentes',
       aboutUsBtnLabel: 'Acerca de nosotros',
-      signUpBtnLabel: 'Regístrate',
+      signUpBtnLabel: 'Guarde sus contactos',
       toggleLanguageBtnLabel: 'English',
       donateBtnLabel: 'Donar'
     },
     hotlineBannerText: 'Si tú o un ser querido han sido arrestados en el Bronx llama al 1-833-3-GOODCALL (1-833-346-6322) para recibir servicios de apoyo legal sin costo alguno 24/7',
     footer: {
-      faqLinkLabel: 'Preguntas Frecuentes',
+      address: '150 Court St. 2do Piso, Brooklyn, NY 11201',
+      siteNavHeader: 'Navegación del sitio web',
+      signUpLabel: 'Regístrate',
       aboutUsLinkLabel: 'Acerca de nosotros',
+      faqLinkLabel: 'Preguntas Frecuentes',
+      donateBtnLabel: 'Donar',
       privacyPolicyLinkLabel: 'Política de privacidad',
       termsAndConditionsLinkLabel: 'Términos de servicio',
-      contactUsHeader: 'Contáctanos',
-      address: '150 Court St. 2nd Floor, Brooklyn 11201',
-      ourCompanyHeader: 'Nuestra Compañía',
-      ourPartnersHeader: 'Nuestros socios',
-      pressReleasesLinkLabel: 'Comunicados de prensa',
-      donateBtnLabel: 'Donar'
+      followHeader: 'Subscríbete y síguenos',
+      emailAddress: 'Correo electrónico',
+      subscriptionConfirm: '¡Gracias! Se le enviara una confirmación a su correo electrónico.',
+      nonProfit: 'Good Call es una organización sin fines de lucro, fiscalmente patrocinado.'
     }
   },
   landingPage: {
-    goodCallSummary: 'Good Call es una línea directa 24/7 completamente  gratis que le ayuda a personas que han sido arrestadas a contactar a sus seres queridos y a un abogado gratis. Todos merecemos un trato justo.',
+    call: {
+      header: '¿A quién llamarías en caso de un arresto? Haz tu primera llamada a Good Call.',
+      text: 'Haga su primera llamada a Good Call. Hable gratuitamente con un abogado de inmediato. Agregue sus contactos de emergencia a nuestro directorio para que ellos también puedan ser contactados.',
+      cta: 'Guarde sus contactos',
+      keypadLabel: 'Ingrese el número de teléfono'
+    },
+    summary: {
+      header: '<b>Le servimos 24/7.</b><br />Nuestra línea de emergencia de arrestos siempre está a su disposición. Con una sola llamada a 1-833-3-GOODCALL se le alertara a sus seres queridos y se le conectará con un abogado gratis.'
+    },
+    lawyer: {
+      header: 'Servicios legales de inmediato',
+      text: 'Si usted o un ser querido es arrestado, lo conectaremos gratuitamente con un abogado. Los abogados serán los encargados de decirle que esperar de su caso.'
+    },
+    lovedOnes: {
+      header: 'Dejele saber a sus seres queridos.',
+      text: 'Amigos, familia, usted decide! Les damos al oportunidad de estar ahí por usted y para usted en caso de un arresto. Y en caso de lo contrario, tú puedes estar ahí para ellos.'
+    },
+    partners: {
+      header: 'Nuestros socios'
+    },
+    whyWeExist: {
+      header: 'Nuestra misión',
+      text: 'Comunidades de bajos recursos son los que enfrentan ser arrestados, en muchos casos por delitos menores. Desafortunadamente, la ayuda legal llega muy tarde y potencialmente puede causar más daños. Las consecuencias puede durar toda la vida. Nosotros cambiaremos esto.'
+    },
     stories: {
-      header: '¿A quién llamarías en caso de arresto?',
-      signUpBtnLabel: 'regístrate',
-      scrollDownBtnLabel: 'Conoce más',
-      donation: {
-        header: 'Apoyen y donen a la justicia',
-        cta: 'donen',
-        newsletter: 'Suscriban a nuestros boletìn'
-      },
       stories: [
         {
           name: 'pharaoh',
           header: 'Yo fui arrestado.',
-          subheader: 'porque yo me estaba defendiendo',
-          text: 'Cuando Pharaoh fue atacado por dos inquilinos en su casa en Brooklyn, él hizo todo lo posible para defenderse. Maltratado y golpeado, fue detenido cuando la policía llegó.'
+          subheader: 'porque yo me estaba defendiendo'
         },
         {
           name: 'nate',
           header: 'Yo fui arrestado.',
-          subheader: 'porque el oficial dijo que era el protocolo',
-          text: 'Nate fue arrestado por posesión de marihuana. Aunque es un delito de bajo nivel que por lo general se resuelve con una simple multa, el oficial decidió arrestar a Nate porque creía que era "protocolo".'
+          subheader: 'porque el oficial dijo que era el protocolo'
         },
         {
           name: 'sharmene',
           header: 'Yo fui arrestada.',
-          subheader: 'de la nada',
-          text: 'Cuando un altercado de meses atrás se convirtió en una orden de arresto sin su conocimiento, Shermene fué detenida de forma inesperada.'
+          subheader: 'de la nada'
         },
         {
           name: 'ray',
           header: 'Yo fui arrestado.',
-          subheader: 'porque yo correspondí a la descripción',
-          text: 'En el barrio de Ray en Brooklyn “corresponder a la descripción" es una ofensa común. Una noche, Ray miró fuera de su casa a causa de un sonido perturbador, y rápidamente pasó de ser habitante preocupado a sospechoso.'
+          subheader: 'porque yo correspondí a la descripción'
         },
         {
           name: 'steven',
           header: 'Yo fui arrestado.',
-          subheader: 'debido a una política depredadora',
-          text: 'Miles de personas cada año son detenidas, chequeadas y arrestadas. Steven fué uno de ellos.'
+          subheader: 'debido a una política depredadora'
         },
         {
           name: 'tina',
           header: 'Yo fui arrestada.',
-          subheader: 'por protestar',
-          text: 'Tina estaba disfrutando de la tarde en su casa. La policía entró a su casa en busca de su ex-novio sin una orden de registro. Cuando ella habló en contra del porqué estaban haciendo la búsqueda, fue detenida.'
+          subheader: 'por protestar'
         }
       ]
     },
-    problem: {
-      header: 'Para la mayoría de Neoyorquinos, no hay donde acudir por ayuda.',
-      subheader: 'Nuestra misión',
-      text: 'Si no tienes un abogado privado que puedas llamar, el cual la mayoría de nosotros no tiene, es difícil saber qué hacer si eres arrestado. Sin un teléfono celular, y sólo unas pocas llamadas gratuitas desde el precinto, es difícil solicitar la ayuda que tú necesitas. Queremos cambiar esto.'
-    },
-    howItWorks: {
-      header: 'Así funciona Good Call',
-      subheader: 'Qué esperar de Good Call',
-      step1Text: 'usted o un ser querido se inscribe a Good Call',
-      step2Text: 'eres detenido de forma inesperada',
-      step3Text: 'eres llevado a un precinto',
-      step4Text: 'llamas a Good Call al 1-833-3-GOODCALL (1-833-346-6322)',
-      step4substep1Text: 'automáticamente te conectamos con un abogado gratuito',
-      step4substep2Text: 'le dan información sobre el proceso y sus derechos',
-      step4substep3Text: 'identifican sus contactos de emergencia en nuestro directorio',
-      step5Text: 'Su abogado y sus seres queridos pueden trabajar juntos para preparar su caso',
-      step6Text: 'puedes volver a casa tan pronto como sea posible'
-    },
-    press: {
-      header: 'Prensa destacada'
-    },
-    launchingSoon: {
-      header: 'Nosotros te cubrimos la espalda',
-      subheader: '¿Quieres estar allí para sus seres queridos en caso de que sean arrestados? Inscríbase para que puedan comunicarse con usted cuando más lo necesitan.',
-      signUpBtnLabel: 'regístrate'
+    saveContact: {
+      text: 'Guarde un contacto de emergencia para proteger sus derechos y los derechos de sus seres queridos.',
+      cta: 'Guardar contacto'
     }
   },
   aboutPage: {
-    header: 'Nosotros creemos que todos merecemos un trato justo.',
+    header: {
+      prefix: 'Nosotros creemos que todos merecemos',
+      rights: [
+        'un trato justo',
+        'ayuda',
+        'seguridad',
+        'representación',
+        'justicia por igual'
+      ]
+    },
+    ourMissionText: 'Nuestra misión es hacer que el proceso de detención, y sus secuelas sean menos dolorosas y perjudiciales para aquellos que son arrestados y sus seres queridos. Nos esforzamos para que este proceso sea más transparente y justo para todos los neoyorquinos, sin importar su situación económica, raza or sexo.',
     aboutUs: {
       header: 'Nuestra historia.',
-      text: 'Nuestros cuatro fundadores se reunieron a través de <a class="about-page__paragraph-link" href="https://labs.robinhood.org/">Blue Ridge Labs @ Robin Hood</a>, una incubadora de impacto social dirigida a la construcción de tecnología para abordar los problemas que enfrentan los neoyorquinos de bajos ingresos. Durante nuestra investigación, escuchamos historias de decenas de neoyorquinos que fueron arrestados por razones triviales como saltar un torniquete, olvidarse de pagar un boleto o simplemente "tener la descripción adecuda". Con sus teléfonos celulares quitados, su única manera de alcanzar ayuda era algunas llamadas de teléfono en un teléfono viejo de teclado de marcación, a los números que tenían que haber memorizado. Era difícil para ellos llegar a sus seres queridos y casi imposible llegar a un abogado. Su incapacidad para obtener ayuda en este momento crítico conduce resultados devastadores, incluyendo ser despedido de sus trabajos, ser enviado injustamente a la cárcel durante semanas y admitir a los crímenes que no cometieron. <br /> <br /> Fundamos Good Call para proporcionar un mejor apoyo durante todo el proceso de arresto, con la misión de asegurar que todos los que son arrestados tienen un proceso justo y un resultado justo, y no son castigados por lo que parecen, dónde viven o cuanto dinero tienen. En octubre de 2016, lanzamos nuestro piloto con el apoyo legal proporcionado por <a class="about-page__paragraph-link" href="http://www.bronxdefenders.org/">The Bronx Defenders</a>, uno de los proveedores de servicios legales más prestigiosos del país. Nuestra meta es traer Good Call a toda la ciudad de Nueva York y más allá.'
+      text: 'Nuestros cuatro fundadores se reunieron a través de Blue Ridge Labs @ Robin Hood, una incubadora de impacto social dirigida a la construcción de tecnología para abordar los problemas que enfrentan los neoyorquinos de bajos ingresos. Durante nuestra investigación, escuchamos historias de decenas de neoyorquinos que fueron arrestados por razones triviales como saltar un torniquete, olvidarse de pagar un boleto o simplemente "tener la descripción adecuda". Con sus teléfonos celulares quitados, su única manera de alcanzar ayuda era algunas llamadas de teléfono en un teléfono viejo de teclado de marcación, a los números que tenían que haber memorizado. Era difícil para ellos llegar a sus seres queridos y casi imposible llegar a un abogado. Su incapacidad para obtener ayuda en este momento crítico conduce resultados devastadores, incluyendo ser despedido de sus trabajos, ser enviado injustamente a la cárcel durante semanas y admitir a los crímenes que no cometieron. <br /> <br /> Creamos Good Call para proveer un mejor servicio durante el proceso de arresto. Estrenamos nuestra línea directa en Octubre del 2016 en el Bronx con la ayuda legal ofrecida por The Bronx Defenders. Nuestra meta es de expandir la cobertura de Good Call a todo Nueva York y más allá.',
+      metrics: {
+        header: 'Desde Octubre del 2016',
+        metrics: {
+          calls: '¡Good Call fue creada!',
+          lsps: 'Los mayores proveedores de servicios legales ayudando nuestra línea de emergencias.',
+          time: 'El tiempo promedio que se nos toma conectar a alguien con un abogado gratis.'
+        }
+      }
     },
-    ourMissionText: 'Nuestra misión es hacer que el proceso de detención y sus secuelas sean menos dolorosas y perjudiciales para aquellos que son arrestados y sus seres queridos. Nos esforzamos para que este proceso sea más transparente y justo para todos los neoyorquinos, independientemente de su nivel de ingresos.',
     ourTeam: {
-      header: 'Nuestro equipo.',
+      header: 'Nuestro equipo fundador',
       text: 'Somos un grupo con diversos conocimientos y experiencias, desde impresión 3D, diseño web, hasta organización comunitaria. Sin embargo, compartimos una pasión por crear una ciudad más justa para todos.'
     },
-    joinTheMovement: {
-      header: '¿Porqué registrarse?',
-      text: 'La inscripción toma solamente un minuto o dos, y puede hacer una gran diferencia en una situación de arresto. Usted puede inscribirse y guardar algunos de sus contactos de emergencia para asegurarse de que puede contactar los si alguna vez sea arrestado. También puede agregar su propia información de contacto, para asegurarse de que sus seres queridos pueden alcalzar lo si están en problemas. Regístrese hoy y ayúdenos a brindarle un mejor apoyo legal para usted y su comunidad.'
+    community: {
+      header: 'Tecnología centrada en la comunidad, sin fines de lucro.',
+      text: 'Hemos creado Good Call con las comunidades y para las comunidades en las cuáles hemos servido. Somos más fuertes si estamos juntos.'
     },
-    signUpBtnLabel: 'regístrate'
+    donate: {
+      header: 'Haga su donacion',
+      text: 'Apoye a Good Call y ayudenos a asegurarnos que todos tengan acceso gratis a ayuda legal cuando lo necesiten.',
+      cta: 'Donar'
+    }
   },
   signUpPage: {
     header: 'Regístrate y protege tus derechos',
@@ -274,29 +284,35 @@ const es = {
     header: 'Preguntas Frecuentes',
     sections: [
       {
-        header: 'Acerca de Good Call',
+        id: 'about',
+        header: 'Acerca de línea directa',
         faqs: [
-          {question: '¿Tengo que pagar para inscribirme y utilizar Good Call?', answer: 'No. ¡Registrarse en Good Call y utilizar la línea es completamente gratuito!'},
           {question: '¿Cuál es el número de la línea directa de Good Call?', answer: '1-833-3-GOODCALL (1-833-346-6322)'},
+          {question: '¿Puedo llamar a la linea de emergencia a pesar de no haber guadado ningún contacto de emergencia?', answer: '¡Sí! Cualquiera puede llamar a nuestra línea de emergencia en caso de un arresto, para comunicarse con un abogado sin importar si has guardado tus contacto de emergencia de antemano. Sin embargo, al guardar sus contactos de emergencia le permitirá al abogado dejarle saber a sus seres queridos si ha sido arrestado. De esa manera ayudaría a los abogados a construir un caso más fuerte en su defensa.'},
+          {question: '¿Tengo que pagar para inscribirme y utilizar Good Call?', answer: 'No, Good Call siempre es gratis. Guardar tus contactos de emergencia también es gratis!'},
           {question: '¿Cuándo debo llamar a Good Call?', answer: 'Llama a nuestra línea si tú o un ser querido han sido arrestados en el Bronx. Cuanto más pronto un abogado sea avisado, más tiempo tendrá él para preparar adecuadamente tu caso.'},
-          {question: '¿Quién puede inscribirse en Good Call?', answer: 'Cualquier persona puede inscribirse en Good Call, totalmente gratis.'},
-          {question: '¿Cuál es la diferencia entre inscirbirse para protegerse a uno mismo e inscribirse para estar alli para un ser querido?', answer: 'La inscripción <b>para protegerse</b> le permite guardar algunos de sus contactos de emergencia, para asegurarse de que su abogado puede ponerse en contacto con ellos si alguna vez sea arrestado. La inscripción para <b>estar allí para un ser querido</b> permite agregar su propia información de contacto, para que pueda ser alertado y conectado con un abogado en caso de que sus seres queridos sean detenidos. Le recomendamos que se suscriba a ambos, para asegurarse de que podemos ayudar con el mejor apoyo posible en caso de que usted o un ser querido sean arrestados.'},
-          {question: 'No creo que vaya a ser arrestado, ¿por qué debería inscribirme?', answer: 'Si usted no cree que va ser arrestado, pero desea asegurarse de que va estár allí para sus seres queridos en caso de que le suceda a ellos, usted puede inscribirse con el <b>estar allí por un ser querido</b> opción para asegurarse de que se puede estar en contacto en caso de una emergencia.'},
-          {question: '¿Dónde puedo usar Good Call?', answer: 'Nuestra línea directa está en el Bronx, pero se puede inscribirse en Good Call no importa dónde se encuentre.'},
-          {question: '¿Qué pasa si me detuvieron fuera del Bronx, todavía puedo llamar a Good Call?', answer: 'Los abogados con los que trabajamos sólo pueden representar a clientes arrestados en el Bronx. Sin embargo, si usted es arrestado en otro condado y llama a la línea de emergencia, todavía pueden disponer información básica sobre sus derechos y el proceso de arresto.'},
-          {question: 'Si yo no vivo en el Bronx, ¿Puedo inscribirme en Good Call?', answer: 'Si! Ahora estamos presente en el Bronx y estaremos sirviendo a los otros condados pronto.'},
-          {question: '¿Puedo llamar a la línea si no me he inscrito?', answer: 'Sí, creemos que todos deben recibir ayuda cuando son arrestados. Sin embargo, el registrarte nos permitirá llamar a tus contactos de emergencia para hacerles saber lo que está sucediendo y te conectaremos con un abogado que te ayudará a fortalecer tu caso.'},
-          {question: '¿Cómo puede Good Call conseguir un abogado gratuito?', answer: 'Good Call esta asociado con proveedores de servicios legales alrededor de la ciudad que sirven a la comunidad. Nuestros abogados están comprometidos a brindar un apoyo de calidad a nuestros llamadores.'},
-          {question: '¿Es seguro inscribirse?', answer: 'Nosotros hemos tomado medidas extensas para asegurar que Good Call es seguro para nuestros usuarios. Tomamos muy en serio la seguridad y la privacidad y usamos las prácticas de seguridad exemplar en la industria. Nuestro sistema está diseñado específicamente para evitar recaudar.'}
+          {question: '¿Cómo puede Good Call conseguir un abogado gratuito?', answer: 'Good Call está asociado con proveedores de servicios legales alrededor de la ciudad que sirven a la comunidad. Nuestros abogados están comprometidos a brindar un apoyo de calidad a nuestros llamadores.'},
+          {question: '¿Puedo utilizar Good Call en cualquier lugar?', answer: 'Nuestra línea de emergencia está disponible en el Bronx pero puedes guardar tus contactos en nuestro directorio sin importar en donde estes. Estaremos expandiendo nuestra cobertura a toda Nueva York muy pronto. Subscríbete y serás el primero en saber!'},
+          {question: '¿Qué pasa si me detuvieron fuera del Bronx, todavía puedo llamar a Good Call?', answer: 'Los abogados con los que trabajamos sólo pueden representar a clientes arrestados en el Bronx. Sin embargo, si usted es arrestado en otro condado y llama a la línea de emergencia, todavía pueden disponer información básica sobre sus derechos y el proceso de arresto.'}
         ]
       },
       {
-        header: 'Si un ser querido ha sido arrestado',
+        id: 'loved-ones',
+        header: 'Guardando sus contactos',
         faqs: [
-          {question: '¿Qué es Good Call?', answer: 'Good Call es una línea 24/7 gratuita de emergencia para ayudar a las personas que son arrestadas alcanzar a sus seres queridos y hablar con un abogado gratuito de inmediato.'},
-          {question: '¿Qué debo hacer si un ser querido es arrestado?', answer: 'Puede llamar a nuestra línea directa al 1-(833)-3-GOODCALL (1-833-346-6322) y le pondremos en contacto con uno de nuestros abogados para ayudarle con el caso de su ser querido.'},
-          {question: '¿Por qué fui contactado por Good Call?', answer: 'Si has sido contactado por Good Call significa que alguien que conoces ha sido arrestado, la persona ha llamado a nuestra línea telefónica y tú eres uno de su contactos de emergencia.'},
-          {question: '¿Qué hago si recibo una notificación de Good Call?', answer: 'Siga las instrucciones en el mensaje de texto que tiene para obtener información sobre el caso de su ser querido.'}
+          {question: '¿Qué es el directorio de contactos de emergencia de Good Call?', answer: 'Cuando alguien es arrestado le quitan su celular, y es probable que  no hayan memorizado los números de teléfonos de las personas con las cuales se quieren comunicar. Nosotros estamos combatiendo este problema con nuestro directorio de contactos de emergencia. Cuando alguien llama a nuestra línea de emergencia, su nuevo abogado puede buscar a sus seres queridos en nuestro directorio y ponerse en contacto. Usted puede agregar sus contactos de emergencia a nuestro directorio para asegurarse que sus seres queridos puedan ser contactados en caso de un arresto. También puede agregar su propia información, para asegurarse que sus familiares y seres queridos lo puedan contactar en caso de que se metan en una situación comprometedora.'},
+          {question: '¿Es seguro inscribirse?', answer: 'Nosotros hemos tomado extensas medidas para asegurar que Good Call es seguro para nuestros usuarios. Tomamos muy en serio la seguridad y la privacidad y usamos las prácticas de seguridad exemplar en la industria. Nuestro sistema está diseñado específicamente para evitar recaudar.'},
+          {question: '¿Cuál es la diferencia entre inscirbirse para protegerse a uno mismo e inscribirse para estar alli para un ser querido?', answer: 'La inscripción para <b>Protégete</b> le permite guardar algunos de sus contactos de emergencia, para asegurarse de que su abogado puede ponerse en contacto con ellos si alguna vez sea arrestado. La inscripción <b>Para estar allí para un ser querido</b> permite agregar su propia información de contacto, para que pueda ser alertado y conectado con un abogado en caso de que sus seres queridos sean detenidos. Le recomendamos que se suscriba a ambos, para asegurarse de que podemos ayudar con el mejor apoyo posible en caso de que usted o un ser querido sean arrestados.'},
+          {question: 'No creo que vaya a ser arrestado, ¿por qué debería inscribirme?', answer: 'Guardando la información de su contactos ayudará a asegurarnos de que sus seres queridos puedan contactarlo en caso de emergencia. Elija la opción <b>Estar ahí para un ser querido</b> cuando esté guardando sus contactos.'}
+        ]
+      },
+      {
+        id: 'rights',
+        header: 'He recibido un mensaje de texto de alerta de arresto',
+        faqs: [
+          {question: '¿Por qué fui contactado por Good Call?', answer: 'Si has sido contactado por Good Call significa que alguien que conoces ha sido arrestado, la persona ha llamado a nuestra línea telefónica y tú eres uno de los contactos de emergencia.'},
+          {question: '¿Qué hago si recibo una notificación de Good Call?', answer: 'Siga las instrucciones en el mensaje de texto que tiene para obtener información sobre el caso de su ser querido.'},
+          {question: '¿Como Good Call puede ayudarme?', answer: 'Good Call te conectara al abogado de tu ser querido. De esa forma ellos te pueden dar información de su caso.'}
         ]
       }
     ]

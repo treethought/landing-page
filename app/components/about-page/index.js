@@ -1,84 +1,91 @@
-import React, {Component, PropTypes} from 'react'
-import {Grid, Row, Cell} from 'react-inline-grid'
-import SimplePanel from './../simple-panel'
-import FlatButton from 'material-ui/FlatButton'
-import {Link} from 'react-router'
+import React from 'react'
+import { bool, func, number, object, string } from 'prop-types'
+import range from 'lodash.range'
+import { Button, Carousel } from '../index'
+import Metrics from './metrics'
 
-class AboutPage extends Component {
-  render () {
-    const { content } = this.props.route
+const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight, metricsShown, showMetrics }) => {
+  const Slides = range(1, 6).map(n => (
+    <div
+      key={`com-img-${n}`}
+      className='com-img'
+      style={{ 'backgroundImage': `url('./assets/imgs/com-${n}.jpg')`, 'height': carouselHeight }}
+    />
+  ))
 
-    const TwoColPanel = ({className, heading, text, children}) => (
-      <div className={`about-page__two-col-panel ${className || ''}`}>
-        <Grid>
-          <Row>
-            <Cell is='5'>
-              <h2 className='about-page__two-col-panel-subheader'>{heading}</h2>
-            </Cell>
-            <Cell is='7'>
-              <p className='about-page__two-col-panel-paragraph' dangerouslySetInnerHTML={{__html: text}} />
-            </Cell>
-          </Row>
-        </Grid>
-        {children}
+  return (
+    <div className='about-page'>
+      <div className='banner'>
+        <div className={`banner-header ${rightsClass}`}>
+          {content.header.prefix} {content.header.rights[rightsIndex]}.
+        </div>
       </div>
-    )
 
-    return (
-      <div className='about-page'>
-        <div className='about-page__banner'>
-          <h1 className='about-page__banner-header'>{content.header}</h1>
+      <div className='mission'>
+        <div className='content h2'>{content.ourMissionText}</div>
+      </div>
+
+      <div className='story panel'>
+        <div className='content'>
+          <div className='col-container'>
+            <div className='h2'>{content.aboutUs.header}</div>
+            <div className='story-text text p' dangerouslySetInnerHTML={{ __html: content.aboutUs.text }} />
+          </div>
+
+          <Metrics {...{ metricsShown, showMetrics, content, metrics }} />
+        </div>
+      </div>
+
+      <div className='team'>
+        <div className='content panel col-container'>
+          <div className='h2'>{content.ourTeam.header}</div>
+          <div className='text p'>{content.ourTeam.text}</div>
         </div>
 
-        <TwoColPanel
-          heading={content.aboutUs.header}
-          text={content.aboutUs.text}
-        />
-
-        <SimplePanel
-          font-weight='300'
-          backgroundColor='#40B097'
-          color='#FDFFF9'
-          text={content.ourMissionText}
-        />
-
-        <TwoColPanel
-          className='about-page__our-team'
-          heading={content.ourTeam.header}
-          text={content.ourTeam.text}
-        >
-          <img className='about-page__team-photo' src='/assets/imgs/team-photo-min.png' />
-        </TwoColPanel>
-
-        <div className='about-page__horiz-divider' />
-
-        <TwoColPanel
-          heading={content.joinTheMovement.header}
-          text={content.joinTheMovement.text}
-          className='about-page__join-our-movement'
-        >
-          <Grid>
-            <Row>
-              <Cell is='5' />
-              <Cell is='7'>
-                <FlatButton
-                  className='about-page__sign-up-btn gc-std-btn'
-                  style={{ backgroundColor: '#40B097' }}
-                  label={content.signUpBtnLabel}
-                  containerElement={<Link to='/sign-up' />}
-                />
-              </Cell>
-            </Row>
-          </Grid>
-        </TwoColPanel>
+        <img className='team-photo' src='/assets/imgs/team-photo-min.png' />
       </div>
-    )
-  }
+
+      <div className='community panel'>
+        <div className='content'>
+          <div className='col-container'>
+            <div className='h2'>{content.community.header}</div>
+            <div className='p'>{content.community.text}</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <Carousel id='com-imgs-carousel'>
+          {Slides}
+        </Carousel>
+      </div>
+
+      <div className='donate panel'>
+        <div className='content'>
+          <div className='col-container'>
+            <div className='h2'>{content.donate.header}</div>
+            <div>
+              <div className='text p'>{content.donate.text}</div>
+              <Button
+                className='donate-btn'
+                label={content.donate.cta}
+                selector='inverse'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
-const { object } = PropTypes
 AboutPage.propTypes = {
-  route: object
+  metrics: object,
+  carouselHeight: string,
+  rightsIndex: number,
+  rightsClass: string,
+  metricsShown: bool,
+  showMetrics: func
 }
 
 export default AboutPage

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import { func, string } from 'prop-types'
 import MTextField from 'material-ui/TextField'
 import { isDesktop } from '../../services/utils'
 
@@ -8,7 +9,7 @@ class TextField extends Component {
   }
 
   render () {
-    const { className, name, type, labelText, errorText, onFocus, onBlur } = this.props
+    const { className, name, type, labelText, errorText, onFocus, onBlur, defaultValue } = this.props
 
     return (
       <MTextField
@@ -24,6 +25,8 @@ class TextField extends Component {
         name={name || ''}
         type={type || 'text'}
 
+        defaultValue={defaultValue || ''}
+
         floatingLabelText={labelText}
         errorText={errorText}
         onChange={this.onChange.bind(this)}
@@ -34,8 +37,6 @@ class TextField extends Component {
   }
 }
 
-const { string, func } = PropTypes
-
 TextField.propTypes = {
   className: string,
   labelText: string,
@@ -43,7 +44,8 @@ TextField.propTypes = {
   onChange: func,
   onFocus: func,
   name: string,
-  errorText: string
+  errorText: string,
+  defaultValue: string
 }
 
 export default TextField

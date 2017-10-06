@@ -1,0 +1,60 @@
+.lawyer {
+  padding: 80px $lp-h-padding;
+  max-width: $lp-max-width;
+  margin: 0 auto;
+  position: relative;
+
+  .content-container {
+    max-width: 464px;
+
+    .h2 {
+      font-weight: $regular;
+    }
+
+    .p {
+      margin-bottom: 20px;
+    }
+  }
+
+  .icon {
+    max-height: 360px;
+    max-width: 360px;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 674px) {
+  .lawyer {
+    padding: 60px 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .h2 {
+      font-weight: $semi-bold;
+    }
+
+    .icon {
+      height: 220px;
+      width: 220px;
+    }
+  }
+}
+
+@media (min-width: 675px) {
+  .lawyer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .content-container {
+      align-self: flex-start;
+      margin-right: 50px;
+    }
+
+    .icon {
+      width: 50%;
+      align-self: flex-end;
+    }
+  }
+}

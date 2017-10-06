@@ -1,0 +1,31 @@
+// colors
+$green: #4EBBA6;
+$cream: #FDFFF9;
+$white: #FFFFFF;
+$black: #000000;
+$light-grey: #9B9B9B;
+$dark-grey: #2D2D2D;
+
+// fonts
+$sans-serif: Nunito Sans;
+
+// font-weights
+$light: 200;
+$regular: 300;
+$semi-bold: 400;
+$bold: 600;
+
+// breakpoints
+$mobile-only: "(max-width: 480px), (orientation: landscape) and (max-height: 650px)";
+$tablet-up: "(min-width: 481px) and (min-height: 651px)";
+$tablet-only: "(min-width: 481px) and (max-width: 950px)";
+$tablet-down: "(max-width: 950px)";
+$desktop-only: "(min-width: 951px)";
+
+// sticky header
+$sticky-header-height-desktop: 100px;
+$sticky-header-height-mobile: 70px;
+
+// landing page
+$lp-max-width: 1100px;
+$lp-h-padding: 40px;

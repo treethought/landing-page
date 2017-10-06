@@ -1,0 +1,41 @@
+.summary {
+  padding: 110px $lp-h-padding 77px;
+  text-align: center;
+  color: $cream;
+  background: $green;
+
+  .content {
+    max-width: $lp-max-width;
+    margin: 0 auto;
+
+    .text {
+      font-weight: $light;
+      margin-bottom: 50px;
+      line-height: 1.3em;
+    }
+
+    .icon {
+      width: 88px;
+    }
+  }
+}
+
+@media #{$mobile-only} {
+  .summary {
+    .content {
+      .text {
+        margin-bottom: 40px;
+      }
+
+      .icon {
+        width: 60px;
+      }
+    }
+  }
+}
+
+@media #{$tablet-down} {
+  .summary {
+    padding: 50px 40px;
+  }
+}

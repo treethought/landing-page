@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import { Router, Route, IndexRoute, browserHistory, applyRouterMiddleware } from 'react-router'
-import { useScroll } from 'react-router-scroll'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import content from './content'
 import locale from './services/locale'
-import { ContactSignUpPageContainer, UserSignUpPageContainer } from './containers'
 import {
-  AboutPage, ErrorPage, FaqPage, InnerPage, LandingPage, PrivacyPolicyPage,
+  AboutPageContainer, ContactSignUpPageContainer, UserSignUpPageContainer
+} from './containers'
+import {
+  ErrorPage, FaqPage, InnerPage, LandingPage, PrivacyPolicyPage,
   SignUpPage, SignUpSuccessPage, TermsAndConditionsPage
 } from './components'
-import { sendMessageWithNextUrl } from './services/utils'
+import { sendMessageWithNextUrl, scrollToTop } from './services/utils'
 import { trackPageView } from './services/ga'
 
 browserHistory.listen(location => { trackPageView(location.pathname) })
@@ -27,15 +28,20 @@ class App extends Component {
     window.location.reload()
   }
 
+  handleChange (_, nextState, __, cb) {
+    sendMessageWithNextUrl(_, nextState, __, cb)
+    scrollToTop()
+  }
+
   render () {
     const { content } = this.state
 
     return (
       <MuiThemeProvider>
-        <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
-          <Route path='/' component={InnerPage} content={content.innerPage} toggleLocale={this.toggleLocale.bind(this)} onChange={sendMessageWithNextUrl}>
+        <Router history={browserHistory}>
+          <Route path='/' component={InnerPage} content={content.innerPage} toggleLocale={this.toggleLocale.bind(this)} onChange={this.handleChange.bind(this)}>
             <IndexRoute component={LandingPage} content={content.landingPage} />
-            <Route path='about-us' component={AboutPage} content={content.aboutPage} />
+            <Route path='about-us' component={AboutPageContainer} content={content.aboutPage} />
             <Route path='sign-up'>
               <IndexRoute component={SignUpPage} content={content.signUpPage} />
               <Route path='user' component={UserSignUpPageContainer} content={content.userSignUpPage} />

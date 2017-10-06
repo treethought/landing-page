@@ -81,7 +81,7 @@ class CreateContactsForm extends Component {
           </div>
         )}
 
-        {values(contacts.list).map(({ tmpId, errors }, i, arr) => (
+        {values(contacts.list).map(({ tmpId, errors, defaultPhone }, i, arr) => (
           <div className='sign-up-page__form-fields-container' key={tmpId}>
             {renderIf(arr.length > 1)(
               <h3 className='sign-up-page__create-contacts-form-fields-header'>
@@ -101,6 +101,7 @@ class CreateContactsForm extends Component {
               labelText={content.phoneLabel}
               onChange={setContact(tmpId, 'phone')}
               errorText={errors.phone}
+              defaultValue={defaultPhone}
             />
 
             <TextField

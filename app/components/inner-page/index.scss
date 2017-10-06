@@ -1,0 +1,31 @@
+.hotline-banner {
+  font-size: 18px;
+  color: $black;
+  background: $cream;
+  padding-top: 6px;
+  padding-bottom: 9px;
+  position: fixed;
+  top: $sticky-header-height-desktop;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+@media (max-width: 849px) {
+
+  .hotline-banner {
+    padding: 12px 19px 14px 16px;
+    top: $sticky-header-height-mobile;
+  }
+
+  .hotline-banner-text {
+    font-size: 13px;
+  }
+
+}

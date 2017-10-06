@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import Header from './../header'
-import Footer from './../footer'
+import { Header } from '../index'
+import { FooterContainer } from '../../containers'
 import includes from 'lodash.includes'
 import cookie from 'react-cookie'
 import { browserHistory } from 'react-router'
@@ -67,14 +67,13 @@ class InnerPage extends Component {
         </div>
 
         <div
-          className='inner-page__content'
           ref={el => { this.innerPageContent = el }}
           style={{ paddingTop: innerPageContentPadding }}
         >
           {React.cloneElement(children, { innerPageContentPadding })}
         </div>
 
-        <Footer content={content.footer} />
+        <FooterContainer content={content.footer} />
       </div>
     )
   }

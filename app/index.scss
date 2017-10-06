@@ -1,0 +1,196 @@
+@import '/assets/styles/normalize.css';
+@import '/assets/styles/fonts.css';
+@import '/assets/styles/overrides.css';
+@import '/assets/styles/slick.min.css';
+@import '/assets/styles/slick-theme.min.css';
+
+@import './scss/_variables';
+@import './scss/_elements';
+
+html, body {
+  position: relative;
+  background: $white;
+}
+
+body {
+  font-family: $sans-serif;
+}
+
+.gc-std-btn {
+  height: 44px !important;
+  line-height: 44px !important;
+  min-height: 44px !important;
+  min-width: 190px !important;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+}
+
+.gc-std-btn span {
+  font-size: 16px !important;
+  color: #FFFFFF;
+  letter-spacing: 0.57px !important;
+  font-weight: 300 !important;
+  text-transform: none !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+
+.gc-std-btn:disabled {
+  background: #E5E5E5 !important;
+}
+
+.gc-std-btn:disabled span {
+  color: #A1A1A1 !important;
+}
+
+.green-on-hover {
+  transition: 0.5s;
+}
+
+.green-on-hover:hover {
+  color: #00FFEB !important;
+}
+
+/* legal pages: privacy-policy-page and terms-and-conditions-page */
+
+.legal-container {
+  color: #4a4a4a;
+  padding: 100px 133px 150px 133px;
+  text-align: center;
+}
+
+.legal-header {
+  font-weight: 400;
+  font-size: 40px;
+  letter-spacing: -0.21px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.legal-effective-date {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 33px;
+}
+
+.legal-paragraph {
+  font-weight: 300;
+  font-size: 20px;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.legal-subheader {
+  font-weight: 400;
+  font-size: 30px;
+  border-bottom: 2px solid #00ffee;
+  display: inline-block;
+  text-align: center;
+  margin-top: 45px;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+// TODO: move to own file
+// global
+.inner-page a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder { color: inherit; opacity: 0.4; }
+::-moz-placeholder { color: inherit; opacity: 0.4; }
+:-ms-input-placeholder { color: inherit; opacity: 0.4; }
+:-moz-placeholder { color: inherit; opacity: 0.4; }
+
+img[data-fit] {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+img[data-fit~="contain"] {
+  object-fit: contain;
+  background-size: contain;
+}
+
+.browsehappy {
+  position: fixed;
+  top: 0; right: 0; left: 0; bottom: 0;
+  background: $cream;
+  z-index: 10000;
+}
+
+@media (max-width: 839px) {
+
+  .legal-container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .legal-header {
+    font-size: 36px;
+  }
+
+  .legal-effective-date {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 33px;
+  }
+
+  .legal-paragraph {
+    font-size: 18px;
+  }
+
+  .legal-subheader {
+    font-size: 26px;
+  }
+
+}
+
+@media (max-width: 589px) {
+
+  .legal-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .legal-paragraph {
+    font-size: 16px;
+  }
+
+  .legal-subheader {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 22px;
+  }
+
+  .gc-std-btn span {
+    font-weight: 500 !important;
+  }
+
+}
+
+@import './components/header/index';
+@import './components/footer/index';
+@import './components/landing-page/index';
+@import './components/error-page/index';
+@import './components/about-page/index';
+@import './components/sign-up-page/index';
+@import './components/user-sign-up-page/index';
+@import './components/sign-up-success-page/index';
+@import './components/privacy-policy-page/index';
+@import './components/faq-page/index';
+@import './components/inner-page/index';
+
+@import './components/simple-panel/index';
+@import './components/scroll-down-btn/index';
+@import './components/button/index';
+@import './components/carousel/index';

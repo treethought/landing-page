@@ -1,0 +1,44 @@
+.why-we-exist {
+  padding: 80px $lp-h-padding;
+  background: $light-grey;
+  text-align: center;
+  color: $cream;
+
+  & > .p {
+    margin-bottom: 30px;
+  }
+
+  & > .h2 {
+    font-weight: $light;
+    max-width: $lp-max-width;
+    margin: 0 auto;
+  }
+}
+
+@media #{$mobile-only} {
+  .why-we-exist {
+    padding: 45px 35px 60px 35px;
+
+    & > .p {
+      text-transform: uppercase;
+    }
+
+    & > .h2 {
+      line-height: 27px;
+    }
+  }
+}
+
+@media #{$tablet-up} {
+  .why-we-exist {
+    & > .p {
+      font-size: 30px;
+      font-weight: $semi-bold;
+    }
+
+    & > .h2 {
+      font-weight: $light;
+      line-height: 1.4em;
+    }
+  }
+}

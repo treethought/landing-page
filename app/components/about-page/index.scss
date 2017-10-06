@@ -1,0 +1,244 @@
+.about-page {
+  // shared
+  .content {
+    max-width: $lp-max-width;
+    margin: 0 auto;
+  }
+
+  .col-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .h2 {
+      font-weight: $semi-bold;
+    }
+
+    & > :first-child {
+      max-width: 300px;
+      margin-right: 100px;
+    }
+
+    & > :last-child {
+      max-width: 700px;
+    }
+  }
+
+  .panel {
+    padding: 80px $lp-h-padding;
+  }
+
+  // specific
+  .banner {
+    background-image: url('/assets/imgs/bookings-min.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 506px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+
+    .banner-header {
+      background: rgba(0, 255, 238, 0.77);
+      color: $cream;
+      font-size: 40px;
+      font-weight: normal;
+      padding: 15px 7px 15px 13px;
+      text-align: center;
+      opacity: 1;
+      transition: 0.5s;
+
+      &.hide {
+        opacity: 0;
+      }
+    }
+  }
+
+  .mission {
+    background: $green;
+    color: $cream;
+    padding: 60px $lp-h-padding;
+    text-align: center;
+  }
+
+  .story {
+    position: relative;
+    background: $white;
+    color: $black;
+
+    .content {
+      .h2 {
+        margin-bottom: 30px;
+      }
+
+      .story-text {
+        margin-bottom: 80px;
+      }
+
+      .metrics-subheader {
+        text-align: center;
+        font-size: 24px;
+        font-weight: $bold;
+        margin-bottom: 40px;
+      }
+
+      .metrics-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .metric {
+          max-width: 300px;
+          width: 100%;
+          text-align: center;
+          margin: 0 auto;
+
+          .number {
+            font-size: 80px;
+            color: $green;
+            font-weight: $bold;
+          }
+
+          .label {
+            font-size: 24px;
+            color: $light-grey;
+            line-height: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  .team {
+    position: relative;
+    background: $cream;
+
+    .content {
+      position: relative;
+      padding-bottom: 0;
+
+      .h2 {
+        padding-bottom: 30px;
+      }
+
+      .text {
+        padding-bottom: 110px;
+      }
+    }
+
+    .team-photo {
+      display: block;
+      margin: 0 auto;
+      max-width: $lp-max-width;
+      width: 100%;
+      position: relative;
+      top: 4px;
+    }
+  }
+
+  .community {
+    .h2 {
+      margin: 0;
+    }
+  }
+
+  .com-img {
+    background-size: cover;
+    background-position: center;
+    max-height: 700px;
+    position: relative;
+  }
+
+  .donate {
+    background: $green;
+    color: $cream;
+
+    .content {
+      .h2 {
+        margin-bottom: 23px;
+      }
+
+      .text {
+        font-weight: $light;
+        margin-bottom: 60px;
+      }
+
+      .donate-btn {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media #{$mobile-only} {
+  .about-page {
+    .banner {
+      .banner-header {
+        font-size: 26px;
+      }
+    }
+
+    .story {
+      .content {
+        .metrics-subheader {
+          font-size: 20px;
+        }
+
+        .metrics-container {
+          .metric {
+            max-width: 240px;
+
+            .number {
+              font-size: 40px;
+            }
+
+            .label {
+              font-size: 15px;
+              line-height: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$tablet-down} {
+  .about-page {
+    .col-container {
+      display: block;
+
+      .h2 {
+        margin-bottom: 30px;
+      }
+
+      & > :first-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .about-page {
+    .story {
+      .content {
+        .metrics-container {
+          flex-direction: column;
+
+          .metric {
+            max-width: 400px;
+
+            &:not(:last-child) {
+              margin-bottom: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
