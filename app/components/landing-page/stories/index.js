@@ -11,7 +11,7 @@ const Stories = ({ content, height }) => {
 
   return (
     <section className='stories'>
-      <Carousel>
+      <Carousel id='stories-carousel'>
         {stories.map(({ pictureName, header, subheader }) => (
           <div key={pictureName} className='story' style={{
             'backgroundImage': `url('./assets/imgs/${pictureName + (isMobile() ? '-mobile' : '')}.jpg')`,

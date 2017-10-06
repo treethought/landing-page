@@ -24,8 +24,8 @@ class LandingPage extends Component {
           <Press />
         </ScrollElement>
         <Summary content={content.summary} />
-        <LovedOnes content={content.lovedOnes} />
         <Lawyer content={content.lawyer} />
+        <LovedOnes content={content.lovedOnes} />
         <WhyWeExist content={content.whyWeExist} />
         <Partners content={content.partners} />
         <Stories content={content.stories} height={lowerPageHeight} />

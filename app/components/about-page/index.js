@@ -11,6 +11,14 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight 
     { type: 'time', suffix: 's' }
   ]
 
+  const slides = range(1, 6).map(n => (
+    <div
+      key={`com-img-${n}`}
+      className='com-img'
+      style={{ 'backgroundImage': `url('./assets/imgs/com-${n}.jpg')`, 'height': carouselHeight }}
+    />
+  ))
+
   return (
     <div className='about-page'>
       <div className='banner'>
@@ -27,7 +35,7 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight 
         <div className='content'>
           <div className='col-container'>
             <div className='h2'>{content.aboutUs.header}</div>
-            <div className='story-text text' dangerouslySetInnerHTML={{ __html: content.aboutUs.text }} />
+            <div className='story-text text p' dangerouslySetInnerHTML={{ __html: content.aboutUs.text }} />
           </div>
 
           <div className='metrics-subheader'>{content.aboutUs.metrics.header}</div>
@@ -45,7 +53,7 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight 
       <div className='team'>
         <div className='content panel col-container'>
           <div className='h2'>{content.ourTeam.header}</div>
-          <div className='text'>{content.ourTeam.text}</div>
+          <div className='text p'>{content.ourTeam.text}</div>
         </div>
 
         <img className='team-photo' src='/assets/imgs/team-photo-min.png' />
@@ -55,20 +63,14 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight 
         <div className='content'>
           <div className='col-container'>
             <div className='h2'>{content.community.header}</div>
-            <div>{content.community.text}</div>
+            <div className='p'>{content.community.text}</div>
           </div>
         </div>
       </div>
 
       <div>
-        <Carousel>
-          {range(1, 6).map(n => (
-            <div
-              key={`com-img-${n}`}
-              className='com-img'
-              style={{ 'backgroundImage': `url('./assets/imgs/com-${n}.jpg')`, 'height': carouselHeight }}
-            />
-          ))}
+        <Carousel id='com-imgs-carousel'>
+          {slides}
         </Carousel>
       </div>
 
@@ -77,7 +79,7 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight 
           <div className='col-container'>
             <div className='h2'>{content.donate.header}</div>
             <div>
-              <div className='text'>{content.donate.text}</div>
+              <div className='text p'>{content.donate.text}</div>
               <Button
                 className='donate-btn'
                 label={content.donate.cta}

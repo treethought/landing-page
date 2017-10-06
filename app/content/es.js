@@ -33,13 +33,13 @@ const es = {
     summary: {
       header: '<b>Le servimos 24/7.</b><br />Nuestra línea de emergencia de arrestos siempre está a su disposición. Con una sola llamada a 1-833-3-GOODCALL se le alertara a sus seres queridos y se le conectará con un abogado gratis.'
     },
-    lovedOnes: {
-      header: 'Dejele saber a sus seres queridos.',
-      text: 'Amigos, familia, usted decide! Les damos al oportunidad de estar ahí por usted y para usted en caso de un arresto. Y en caso de lo contrario, tú puedes estar ahí para ellos.'
-    },
     lawyer: {
       header: 'Servicios legales de inmediato',
       text: 'Si usted o un ser querido es arrestado, lo conectaremos gratuitamente con un abogado. Los abogados serán los encargados de decirle que esperar de su caso.'
+    },
+    lovedOnes: {
+      header: 'Dejele saber a sus seres queridos.',
+      text: 'Amigos, familia, usted decide! Les damos al oportunidad de estar ahí por usted y para usted en caso de un arresto. Y en caso de lo contrario, tú puedes estar ahí para ellos.'
     },
     partners: {
       header: 'Nuestros socios'

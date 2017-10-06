@@ -1,9 +1,5 @@
 .about-page {
   // shared
-  .text {
-    font-size: 18px;
-  }
-
   .content {
     max-width: $lp-max-width;
     margin: 0 auto;
@@ -153,7 +149,7 @@
   .com-img {
     background-size: cover;
     background-position: center;
-    // z-index: 100;
+    max-height: 700px;
     position: relative;
   }
 
@@ -218,6 +214,10 @@
 
       .h2 {
         margin-bottom: 30px;
+      }
+
+      & > :first-child {
+        margin-right: 0px;
       }
     }
   }

@@ -39,7 +39,7 @@ const en = {
     },
     lawyer: {
       header: 'Immediate legal help',
-      text: 'If you or a loved one are arrested, we\'ll also put you in touch with a free lawyer. They\'ll tell you what to expect and begin handling the case.'
+      text: 'If you or a loved one are arrested, we\'ll put you in touch with a free lawyer. They\'ll tell you what to expect and begin handling the case.'
     },
     partners: {
       header: 'Our partners'

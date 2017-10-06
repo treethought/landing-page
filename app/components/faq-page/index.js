@@ -71,7 +71,7 @@ class FaqPage extends Component {
                   {faqs.map((faq, j) => (
                     <li className='faq' key={j}>
                       <h3 className='faq-question'>{faq.question}</h3>
-                      <p className='faq-answer' dangerouslySetInnerHTML={{__html: faq.answer}} />
+                      <p className='faq-answer p' dangerouslySetInnerHTML={{__html: faq.answer}} />
                     </li>
                   ))}
                 </ul>

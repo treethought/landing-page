@@ -9,21 +9,21 @@ class Carousel extends Component {
   }
 
   prevSlide () {
-    this.refs['carousel-slider'].slickPrev()
+    this.refs[this.props.id].slickPrev()
   }
 
   nextSlide () {
-    this.refs['carousel-slider'].slickNext()
+    this.refs[this.props.id].slickNext()
   }
 
   render () {
-    const { children } = this.props
+    const { children, id } = this.props
 
     const sliderSettings = {
-      className: 'carousel-slider',
+      className: id,
       autoplay: true,
-      arrows: false,
       autoplaySpeed: 5000,
+      arrows: false,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -36,7 +36,7 @@ class Carousel extends Component {
 
     return (
       <div className='carousel'>
-        <Slider {...sliderSettings} ref='carousel-slider'>
+        <Slider {...sliderSettings} ref={id}>
           {children}
         </Slider>
 
