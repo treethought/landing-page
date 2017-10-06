@@ -46,7 +46,7 @@ const es = {
     },
     whyWeExist: {
       header: 'Nuestra misión',
-      text: 'Comunidades de bajos recursos son los que enfrentan ser arrestados, en muchos casos por delitos menores. Desafortunadamente, la ayuda legal llega muy tarde y potencialmente puede causar más daños. Las consecuencias puede durar toda la vida. Nosotros cambiaremos esto.'
+      text: 'Comunidades de bajos recursos son los que enfrentan ser arrestados, en muchos casos por delitos menores. Desafortunadamente, la ayuda legal llega muy tarde y potencialmente puede causar más daños. Las consecuencias puede durar toda la vida.<br />Nosotros cambiaremos esto.'
     },
     stories: {
       stories: [
