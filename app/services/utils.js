@@ -5,7 +5,7 @@ export const lengthOfObject = (obj) => {
 }
 
 export const scrollToTop = () => {
-  window.scrollTo(0, 1)
+  document.body.scrollTop = document.documentElement.scrollTop = 1
 }
 
 export const sendMessageWithNextUrl = (prevState, nextState, replace, callback) => {
