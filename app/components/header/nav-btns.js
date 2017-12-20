@@ -16,7 +16,7 @@ const navBtns = content => [{
   onClick: e => {
     e.preventDefault()
     trackDonationEvent()
-    window.location.href = 'https://igg.me/at/C42BDfXWM58'
+    window.location.href = 'https://creativevisions.networkforgood.com/projects/31964-creative-visions-fiscal-sponsorship-good-call'
   },
   className: 'nav-btn dark link',
   activeClassName: 'nav-btn-active'
