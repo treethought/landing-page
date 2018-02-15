@@ -11,7 +11,7 @@ const es = {
     footer: {
       address: '150 Court St. 2do Piso, Brooklyn, NY 11201',
       siteNavHeader: 'Navegación del sitio web',
-      signUpLabel: 'Regístrate',
+      signUpLabel: 'Guarde sus contactos',
       aboutUsLinkLabel: 'Acerca de nosotros',
       faqLinkLabel: 'Preguntas Frecuentes',
       donateBtnLabel: 'Donar',
@@ -126,8 +126,8 @@ const es = {
     }
   },
   signUpPage: {
-    header: 'Regístrate y protege tus derechos',
-    subheader: '¿Cómo desea inscribirse?',
+    header: 'Guarde sus contactos y protege tus derechos',
+    subheader: 'Escoge una opción',
     options: {
       userFlow: {
         header: 'Protégete',
@@ -140,9 +140,9 @@ const es = {
     }
   },
   userSignUpPage: {
-    header: 'Nosotros te cubrimos la espalda, regístrate ahora',
+    header: 'Nosotros te cubrimos la espalda',
     createUserForm: {
-      header: 'cuéntanos acerca de ti',
+      header: 'Cuéntanos acerca de ti',
       nameLabel: 'Nombre Completo',
       emailOrPhoneLabel: 'Correo electrónico o móvil (xxx) xxx-xxxx',
       hintText: 'Tu información será utilizada por Good Call solo para enviarte actualizaciones relacionadas con nuestro servicio.',
@@ -168,7 +168,7 @@ const es = {
     }
   },
   contactSignUpPage: {
-    header: 'Esté allí para su ser querido.',
+    header: 'Esté allí para su ser querido',
     createContactForm: {
       header: 'Díganos cómo contactarlo',
       nameLabel: 'Nombre, Apellido',

@@ -11,7 +11,7 @@ const en = {
     footer: {
       address: '150 Court St. 2nd Floor, Brooklyn, NY 11201',
       siteNavHeader: 'Site Navigation',
-      signUpLabel: 'Sign up',
+      signUpLabel: 'Save a contact',
       aboutUsLinkLabel: 'About Us',
       faqLinkLabel: 'FAQ',
       donateBtnLabel: 'Donate',
@@ -127,8 +127,8 @@ const en = {
     }
   },
   signUpPage: {
-    header: 'Sign up and protect your rights',
-    subheader: 'How do you want to sign up?',
+    header: 'Save a contact and protect your rights',
+    subheader: 'Choose an option',
     options: {
       userFlow: {
         header: 'Protect yourself',
@@ -141,9 +141,9 @@ const en = {
     }
   },
   userSignUpPage: {
-    header: 'We got your back, sign up now',
+    header: 'We got your back',
     createUserForm: {
-      header: 'tell us about yourself',
+      header: 'Tell us about yourself',
       nameLabel: 'Full Name',
       emailOrPhoneLabel: 'Email or Cell Phone (xxx) xxx-xxxx',
       hintText: 'Your information will only be used by Good Call to send you updates about our service.',
@@ -153,7 +153,7 @@ const en = {
       continueBtnTermsText: 'By clicking “continue,” you are agreeing to our <a href="/terms-and-conditions" target="_blank">Terms and Conditions</a>'
     },
     createContactsForm: {
-      header: 'provide an emergency contact',
+      header: 'Provide an emergency contact',
       contactFormGroupHeader: 'Contact',
       nameLabel: 'First name, last name',
       phoneLabel: 'Phone number',
@@ -169,7 +169,7 @@ const en = {
     }
   },
   contactSignUpPage: {
-    header: 'Be there for your loved one.',
+    header: 'Be there for your loved one',
     createContactForm: {
       header: 'Tell us how to contact you',
       nameLabel: 'First Name, Last Name',

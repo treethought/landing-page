@@ -10,7 +10,7 @@ const ContactSignUpPage = props => {
   return (
     <div className='sign-up-page'>
       <div className='sign-up-page__form-container'>
-        <h1 className='sign-up-page__form-header'>{content.header}</h1>
+        <h1 className='sign-up-page__header'>{content.header}</h1>
         {formStage === 0 && <CreateContactForm
           content={content.createContactForm}
           {...pick(props, ['setContact', 'contact', 'recaptchaSitekey', 'createContact', 'locale'])}

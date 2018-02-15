@@ -65,7 +65,7 @@ class CreateContactForm extends Component {
 
     return (
       <div>
-        <h2 className='sign-up-page__form-subheader'>{content.header}</h2>
+        <h2 className='sign-up-page__subheader'>{content.header}</h2>
 
         <form className='sign-up-page__form'>
           {hintsContainerIsShown && <div className='sign-up-page__create-user-form-hints-container'>

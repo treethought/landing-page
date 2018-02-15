@@ -11,10 +11,10 @@ const UserSignUpPage = props => {
   return (
     <div className='sign-up-page'>
       <div className='sign-up-page__form-container'>
-        <h1 className='sign-up-page__form-header'>{content.header}</h1>
+        <h1 className='sign-up-page__header'>{content.header}</h1>
         {renderIf(formStage === 0)(
           <div>
-            <h2 className='sign-up-page__form-subheader'>{content.createUserForm.header}</h2>
+            <h2 className='sign-up-page__subheader'>{content.createUserForm.header}</h2>
             <CreateUserForm
               {...pick(props, [
                 'user', 'setUser', 'createUser', 'locale', 'recaptchaSitekey',
@@ -27,7 +27,7 @@ const UserSignUpPage = props => {
 
         {renderIf(formStage === 1)(
           <div>
-            <h2 className='sign-up-page__form-subheader'>{content.createContactsForm.header}</h2>
+            <h2 className='sign-up-page__subheader'>{content.createContactsForm.header}</h2>
 
             <CreateContactsForm
               content={content.createContactsForm}
