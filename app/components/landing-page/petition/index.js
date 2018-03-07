@@ -27,7 +27,9 @@ class Petition extends Component {
     return (
       <div className='petition'>
         <img className='petition__img' src='/assets/imgs/petition.svg' />
-        <div className='petition__close-btn' onClick={this.close}>Return to www.goodcall.nyc</div>
+        <div className='petition__close-btn' onClick={this.close}>
+          <span>Return to www.goodcall.nyc</span>
+        </div>
         <div className='petition__content'>
           <div className='petition__desc'>
             <h2 className='petition__header'>#Good4NYC</h2>
