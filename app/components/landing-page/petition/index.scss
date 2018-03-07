@@ -15,6 +15,10 @@
   top: 40px;
   right: 60px;
   font-weight: 200;
+
+  span {
+    border-bottom: 1px solid $white;
+  }
 }
 
 .petition__img {
@@ -22,6 +26,7 @@
   left: 0;
   top: 0;
   height: 100vh;
+  z-index: 10001;
 }
 
 .petition__content {
@@ -32,6 +37,7 @@
   height: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  z-index: 10002;
 }
 
 .petition__desc {
@@ -75,9 +81,39 @@
   font-weight: 200;
 }
 
-@media #{$mobile-only} {
+@media (max-width: 1150px) {
+  .petition__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .petition__desc {
+    padding: 0;
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+
+  .petition__p {
+    margin-bottom: 40px;
+  }
+
+  .petition__subheader-green {
+    display: block;
+  }
+
+  .petition__cta {
+    padding-right: 100px;
+    padding-left: 100px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 750px) {
 
   .petition__close-btn {
+    top: 20px;
     right: 0;
     left: 0;
     text-align: center;
