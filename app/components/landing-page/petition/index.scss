@@ -1,0 +1,75 @@
+.petition {
+  position: fixed;
+  background: $black;
+  color: $white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+}
+
+.petition__close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 60px;
+}
+
+.petition__img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+}
+
+.petition__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.petition__desc {
+  padding-left: 100px;
+  margin-right: 200px;
+}
+
+.petition__header {
+  font-size: 100px;
+  margin: 0;
+}
+
+.petition__subheader {
+  text-transform: uppercase;
+  font-size: 30px;
+  margin: 0;
+}
+
+.petition__p {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 26px;
+}
+
+.petition__subheader-green {
+  color: $green;
+}
+
+.petition__cta {
+  padding-right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.petition__btn {
+  margin-bottom: 15px;
+}
+
+.petition__signatures {
+  font-weight: 200;
+}
