@@ -102,3 +102,10 @@
        url('../fonts/nunito-sans-v2-latin-600italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/nunito-sans-v2-latin-600italic.svg#NunitoSans') format('svg'); /* Legacy iOS */
 }
+/* cooper hewitt - medium */
+@font-face {
+  font-family: 'Cooper Hewitt';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/CooperHewitt-Medium.otf') format('opentype');
+}
