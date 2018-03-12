@@ -23,7 +23,7 @@ class Header extends Component {
         <nav className='nav'>
           <div className='nav-menu'>
             {!inRegistrationFlow && btns.map(b =>
-              <Button {...b} key={b.label} activeClassName='nav-btn-active' />
+              <Button {...b} key={b.label} />
             )}
           </div>
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { string, object } from 'prop-types'
+import Petition from './petition'
 import Call from './call'
 import Summary from './summary'
 import LovedOnes from './loved-ones'
@@ -17,6 +18,7 @@ const LandingPage = ({ innerPageContentPadding, route }) => {
 
   return (
     <div className='landing-page'>
+      <Petition />
       <Call content={content.call} height={lowerPageHeight} headerPadding={innerPageContentPadding} />
       <ScrollElement name='press'>
         <Press />

@@ -50,6 +50,15 @@
     position: relative;
   }
 
+  .nav-petition-link {
+    text-transform: none !important;
+    width: 150px !important
+  }
+
+  .nav-petition-link > span {
+    text-align: left;
+  }
+
   .nav-btn {
     font-size: 14px;
     transition: 0.5s;
@@ -81,7 +90,8 @@
   }
 }
 
-@media (min-width: 950px) {
+// before petition: 950px
+@media (min-width: 1150px) {
   .header {
     .nav-dropdown {
       display: none !important;
@@ -89,7 +99,8 @@
   }
 }
 
-@media (max-width: 949px) {
+// before petition: 949px
+@media (max-width: 1150px) {
   .header {
     .nav-menu {
       display: none !important;
