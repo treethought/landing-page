@@ -10,16 +10,21 @@ class Petition extends Component {
     }
     this.close = this.close.bind(this)
     this.signPetition = this.signPetition.bind(this)
+    this.saveCookie = this.saveCookie.bind(this)
   }
 
   close () {
-    cookie.save('petitionSeen', true, { path: '/' })
+    this.saveCookie()
     this.setState({ petitionSeen: true })
   }
 
   signPetition () {
-    cookie.save('petitionSeen', true, { path: '/' })
+    this.saveCookie()
     window.location.href = 'https://www.change.org/p/new-york-city-council-good4nyc-five-boroughs-one-hotline-for-justice-ddee9e6c-3ef3-4881-a21c-d24b768f4403'
+  }
+
+  saveCookie () {
+    cookie.save('petitionSeen', true, { path: '/', maxAge: 86400 })
   }
 
   render () {
