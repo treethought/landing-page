@@ -14,11 +14,12 @@ class Petition extends Component {
 
   close () {
     cookie.save('petitionSeen', true, { path: '/' })
+    this.setState({ petitionSeen: true })
   }
 
   signPetition () {
     cookie.save('petitionSeen', true, { path: '/' })
-    window.location.href = 'https://google.com/'
+    window.location.href = 'https://www.change.org/p/new-york-city-council-good4nyc-five-boroughs-one-hotline-for-justice-ddee9e6c-3ef3-4881-a21c-d24b768f4403'
   }
 
   render () {
@@ -38,7 +39,6 @@ class Petition extends Component {
           </div>
           <div className='petition__cta'>
             <Button className='petition__btn' onClick={this.signPetition} label='Sign our petition' selector='primary' />
-            <div className='petition__signatures'>received 2000 signatures</div>
           </div>
         </div>
       </div>

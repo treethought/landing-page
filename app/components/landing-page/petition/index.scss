@@ -78,10 +78,6 @@
   margin-bottom: 15px;
 }
 
-.petition__signatures {
-  font-weight: 200;
-}
-
 @media (max-width: 1150px) {
   .petition__content {
     display: flex;
@@ -157,8 +153,5 @@
     line-height: 22px;
     margin-bottom: 30px;
   }
-
-  .petition__signatures {
-    font-size: 14px;
-  }
+  
 }
