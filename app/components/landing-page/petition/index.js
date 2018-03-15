@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from '../../index'
+import { scrollToTop } from '../../../services/utils'
 import cookie from 'react-cookie'
 
 class Petition extends Component {
@@ -16,6 +17,7 @@ class Petition extends Component {
   close () {
     this.saveCookie()
     this.setState({ petitionSeen: true })
+    scrollToTop()
   }
 
   signPetition () {
