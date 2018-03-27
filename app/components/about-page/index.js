@@ -4,6 +4,28 @@ import range from 'lodash.range'
 import { Button, Carousel } from '../index'
 import Metrics from './metrics'
 
+const bios = [{
+  name: 'Gabriel Leader-Rose',
+  imgSrc: 'gabe.png',
+  title: 'Co-Executive Director',
+  bio: 'Prior to starting Good Call, Gabe worked in product management at a variety of startups in Boston and NYC. He has experience assistant teaching at public schools in Boston and New Orleans, and holds a B.S. in Engineering Physics from Tulane University.'
+}, {
+  name: 'Jelani Anglin',
+  imgSrc: 'jelani.png',
+  title: 'Co-Executive Director',
+  bio: 'Jelani Anglin, a Queens native, has always been known to be a people person. His experiences over the years led him to the community-organizing field. He has organized on several campaigns (Airbnb, AFLCIO and Kathleen Rice, and more). When not at Good Call, he enjoys making music.'
+}, {
+  name: 'Eugene Lynch',
+  imgSrc: 'eugene.png',
+  title: 'Software Engineer',
+  bio: 'Eugene is a software engineer with experience working in education, immigration, space exploration, and finance. Along with his work on Good Call, he volunteers with a number of organizations addressing injustice in NYC\'s criminal justice system. He is a graduate of UC Berkeley\'s College of Chemistry.'
+}, {
+  name: 'Stephanie Yim',
+  imgSrc: 'steph.png',
+  title: 'Designer',
+  bio: 'Stephanie is a UX/UI designer passionate about creating using design to further social good and challenge expectations. She has experience designing in legal tech, social justice, fintech, and sharing economies. She is a native New Yorker and graduate of Carnegie Mellon University.'
+}]
+
 const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight, metricsShown, showMetrics }) => {
   const Slides = range(1, 6).map(n => (
     <div
@@ -36,13 +58,32 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight,
         </div>
       </div>
 
-      <div className='team'>
-        <div className='content panel col-container'>
-          <div className='h2'>{content.ourTeam.header}</div>
-          <div className='text p'>{content.ourTeam.text}</div>
-        </div>
+      <div className='team panel'>
+        <div className='content'>
+          <div className='col-container'>
+            <div className='h2'>{content.ourTeam.header}</div>
+            <div className='text p'>{content.ourTeam.text}</div>
+          </div>
 
-        <img className='team-photo' src='/assets/imgs/team-photo-min.png' />
+          <div className='bios'>
+            {bios.map(({ name, imgSrc, title, bio }) => (
+              <div className='bio-container' key={name}>
+                <div className='bio'>
+                  <div className='top'>
+                    <img src={`/assets/imgs/${imgSrc}`} className='bio-img' />
+                    <div className='headers'>
+                      <div className='name'>{name}</div>
+                      <div className='title'>{title}</div>
+                    </div>
+                  </div>
+                  <div className='bottom'>
+                    {bio}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className='community panel'>

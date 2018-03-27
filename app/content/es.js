@@ -112,7 +112,7 @@ const es = {
       }
     },
     ourTeam: {
-      header: 'Nuestro equipo fundador',
+      header: 'Nuestro equipo fundador.',
       text: 'Somos un grupo con diversos conocimientos y experiencias, desde impresión 3D, diseño web, hasta organización comunitaria. Sin embargo, compartimos una pasión por crear una ciudad más justa para todos.'
     },
     community: {

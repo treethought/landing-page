@@ -115,28 +115,66 @@
 
   .team {
     position: relative;
-    background: $cream;
+    background: #F4F3F4;
 
     .content {
       position: relative;
       padding-bottom: 0;
 
-      .h2 {
-        padding-bottom: 30px;
+      .col-container {
+        padding-left: 40px;
+        padding-right: 40px;
+
+        & > .h2 {
+          width: 280px !important;
+        }
       }
 
-      .text {
-        padding-bottom: 110px;
+      .bios {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: relative;
       }
-    }
 
-    .team-photo {
-      display: block;
-      margin: 0 auto;
-      max-width: $lp-max-width;
-      width: 100%;
-      position: relative;
-      top: 4px;
+      .bio-container {
+        width: 50%;
+      }
+
+      .bio {
+        padding: 40px;
+      }
+
+      .top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      .headers {
+        font-size: 24px;
+      }
+
+      .name {
+        font-weight: $bold;
+      }
+
+      .title {
+        font-weight: $regular;
+      }
+
+      .bio-img {
+        width: 200px;
+        object-fit: contain;
+        margin-right: 25px;
+      }
+
+      .bottom {
+        font-size: 18px;
+        font-weight: $regular;
+      }
     }
   }
 
@@ -220,6 +258,18 @@
         margin-right: 0px;
       }
     }
+
+    .team {
+      .content {
+        .bios {
+          margin-top: 60px;
+        }
+
+        .bio-container {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -237,6 +287,38 @@
               margin-bottom: 40px;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .about-page {
+    .team {
+      .content {
+        .col-container {
+          padding: 0;
+        }
+
+        .bio {
+          padding: 0;
+        }
+
+        .bio-container {
+          margin-bottom: 40px;
+        }
+
+        .bio-img {
+          width: 100px !important;
+        }
+
+        .headers {
+          font-size: 18px;
+        }
+
+        .bottom {
+          font-size: 14px;
         }
       }
     }
