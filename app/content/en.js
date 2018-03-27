@@ -113,7 +113,7 @@ const en = {
       }
     },
     ourTeam: {
-      header: 'Our founding team',
+      header: 'Our founding team.',
       text: 'We come from a diverse set of backgrounds and experiences, from 3D Printing to web design to community organizing. However, we share a passion for creating a better and more just New York City for everyone.'
     },
     community: {
