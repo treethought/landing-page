@@ -23,7 +23,7 @@ const bios = [{
   name: 'Stephanie Yim',
   imgSrc: 'steph.png',
   title: 'Designer',
-  bio: 'Stephanie is a UX/UI designer passionate about creating using design to further social good and challenge expectations. She has experience designing in legal tech, social justice, fintech, and sharing economies. She is a native New Yorker and graduate of Carnegie Mellon University.'
+  bio: 'Stephanie is a UX/UI designer passionate about using design to further social good and challenge expectations. She has experience designing in legal tech, social justice, fintech, and sharing economies. She is a native New Yorker and graduate of Carnegie Mellon University.'
 }]
 
 const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight, metricsShown, showMetrics }) => {
