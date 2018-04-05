@@ -8,17 +8,17 @@ const bios = [{
   name: 'Gabriel Leader-Rose',
   imgSrc: 'gabe.png',
   title: 'Co-Executive Director',
-  bio: 'Prior to starting Good Call, Gabe worked in product management at a variety of startups in Boston and NYC. He has experience assistant teaching at public schools in Boston and New Orleans, and holds a B.S. in Engineering Physics from Tulane University.'
+  bio: 'Gabe Leader-Rose has a background in product management and a passion for using technology to support communities of color and fight against oppressive systems. Prior to founding Good Call, Gabe managed physical and digital products at a 3D printing tech startup in NYC. Seeking to apply his knowledge of technology and systems to issues facing marginalized communities, Gabe joined the Blue Ridge Labs Fellowship in 2016, where he met his Good Call cofounders. Gabe has volunteered as a math teacher at public schools in Boston and New Orleans, and holds a degree in Engineering Physics from Tulane University. Outside of his work at Good Call, Gabe is an upright bassist, composer, and music producer.'
 }, {
   name: 'Jelani Anglin',
   imgSrc: 'jelani.png',
   title: 'Co-Executive Director',
-  bio: 'Jelani Anglin, a Queens native, has always been known to be a people person. His experiences over the years led him to the community-organizing field. He has organized on several campaigns (Airbnb, AFLCIO and Kathleen Rice, and more). When not at Good Call, he enjoys making music.'
+  bio: 'Jelani is a community organizer and serial entrepreneur. During High School, Jelani started his first online business, for which he was awarded the NYS FBLA Business Plan of the Year award, and was featured on national TV.  Prior to founding Good Call, Jelani worked on a variety of issue-based and electoral campaigns. Growing up in Far Rockaway, NY, and organizing in low-income communities across the east coast, Jelani experienced firsthand the pitfalls that exist for those oppressed by the criminal justice system. He works every day to better communities similar to where he grew up, and hopes his work will be a stepping stone for other young black males.'
 }, {
   name: 'Eugene Lynch',
   imgSrc: 'eugene.png',
   title: 'Software Engineer',
-  bio: 'Eugene is a software engineer with experience working in education, immigration, space exploration, and finance. Along with his work on Good Call, he volunteers with a number of organizations addressing injustice in NYC\'s criminal justice system. He is a graduate of UC Berkeley\'s College of Chemistry.'
+  bio: 'Eugene is a software engineer with experience working in education, immigration, space exploration, and finance. Along with his work on Good Call, he volunteers with <a href="http://www.thebronxfreedomfund.org/dollarbailbrigade/" class="link">Dollar Bail Brigade</a>, <a href="https://www.courtwatchnyc.org/" class="link">Court Watch NYC</a>, and <a href="http://paroleprepny.org/" class="link">The Parole Preparation Project</a>. He is a graduate of UC Berkeley\'s College of Chemistry.'
 }, {
   name: 'Stephanie Yim',
   imgSrc: 'steph.png',
@@ -76,9 +76,7 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight,
                       <div className='title'>{title}</div>
                     </div>
                   </div>
-                  <div className='bottom'>
-                    {bio}
-                  </div>
+                  <div className='bottom' dangerouslySetInnerHTML={{ __html: bio }} />
                 </div>
               </div>
             ))}
