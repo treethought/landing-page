@@ -1,6 +1,13 @@
 import { trackDonationEvent } from '../../services/ga'
 
 const navBtns = content => [{
+  label: 'Join us in NYC on May 24th!',
+  onClick: e => {
+    e.preventDefault()
+    window.location.href = 'https://justiceforall.splashthat.com/'
+  },
+  className: 'nav-btn dark link nav-petition-link'
+}, {
   label: content.faqBtnLabel,
   to: '/faq',
   className: 'nav-btn dark link',
