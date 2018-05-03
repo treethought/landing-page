@@ -1,12 +1,10 @@
 import { trackDonationEvent } from '../../services/ga'
 
-const navBtns = content => [{
-  label: 'Join us in NYC on May 24th!',
-  onClick: e => {
-    e.preventDefault()
-    window.location.href = 'https://justiceforall.splashthat.com/'
-  },
-  className: 'nav-btn dark link nav-petition-link'
+const navBtns = (content, toggleLocale) => [{
+  label: content.toggleLanguageBtnLabel,
+  onClick: toggleLocale,
+  className: 'nav-btn dark link',
+  activeClassName: 'nav-btn-active'
 }, {
   label: content.faqBtnLabel,
   to: '/faq',

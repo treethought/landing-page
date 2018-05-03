@@ -12,7 +12,7 @@ class Header extends Component {
 
   render () {
     const { content, toggleLocale, inRegistrationFlow } = this.props
-    const btns = navBtns(content)
+    const btns = navBtns(content, toggleLocale)
 
     return (
       <header className='header dark' ref={el => { this.header = el }}>
@@ -21,17 +21,18 @@ class Header extends Component {
         </Link>
 
         <nav className='nav'>
+          <Button
+            label='Join us in NYC on 5/24!'
+            href='https://justiceforall.splashthat.com/'
+            activeClassName='nav-btn-active'
+            className='nav-btn dark link nav-petition-link'
+          />
+
           <div className='nav-menu'>
             {!inRegistrationFlow && btns.map(b =>
               <Button {...b} key={b.label} />
             )}
           </div>
-
-          <Button
-            className='nav-btn dark'
-            label={content.toggleLanguageBtnLabel}
-            onClick={toggleLocale}
-          />
 
           <div className='nav-dropdown'>
             {!inRegistrationFlow && <NavDropdown btns={btns} />}
