@@ -1,12 +1,10 @@
 import { trackDonationEvent } from '../../services/ga'
 
-const navBtns = content => [{
-  label: 'Sign our petition to bring Good Call to all of NYC!',
-  onClick: e => {
-    e.preventDefault()
-    window.location.href = 'https://www.change.org/p/new-york-city-council-good4nyc-five-boroughs-one-hotline-for-justice-ddee9e6c-3ef3-4881-a21c-d24b768f4403'
-  },
-  className: 'nav-btn dark link nav-petition-link'
+const navBtns = (content, toggleLocale) => [{
+  label: content.toggleLanguageBtnLabel,
+  onClick: toggleLocale,
+  className: 'nav-btn dark link',
+  activeClassName: 'nav-btn-active'
 }, {
   label: content.faqBtnLabel,
   to: '/faq',

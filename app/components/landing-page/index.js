@@ -18,7 +18,6 @@ const LandingPage = ({ innerPageContentPadding, route }) => {
 
   return (
     <div className='landing-page'>
-      <Petition />
       <Call content={content.call} height={lowerPageHeight} headerPadding={innerPageContentPadding} />
       <ScrollElement name='press'>
         <Press />
