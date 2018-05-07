@@ -10,20 +10,33 @@
     align-items: center;
     flex-wrap: wrap;
     max-width: 1700px;
+    padding: 20px;
 
     & .image-container {
       transition: 0.5s;
       position: relative;
-      width: 50%;
-
-      & .image {
-      }
+      width: 25%;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
         opacity: 0.6;
       }
+    }
+  }
+}
 
-      &:not(:last-child) {
+@media #{$tablet-down} {
+  .press {
+    & > .images {
+      max-width: 600px;
+      margin: 0 auto;
+
+      & .image-container {
+        width: 50%;
       }
     }
   }
@@ -31,14 +44,10 @@
 
 @media #{$mobile-only} {
   .press {
-    & > .images .image {
-    }
-  }
-}
-
-@media #{$tablet-down} {
-  .press {
-    & > .images .image {
+    & > .images {
+      & .image-container {
+        width: 100%;
+      }
     }
   }
 }
