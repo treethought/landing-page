@@ -3,6 +3,7 @@ import { bool, func, number, object, string } from 'prop-types'
 import range from 'lodash.range'
 import { Button, Carousel } from '../index'
 import Metrics from './metrics'
+import { trackDonationEvent } from '../../services/ga'
 
 const bios = [{
   name: 'Gabriel Leader-Rose',
@@ -25,6 +26,11 @@ const bios = [{
   title: 'Designer',
   bio: 'Stephanie is a UX/UI designer passionate about using design to further social good and challenge expectations. She has experience designing in legal tech, social justice, fintech, and sharing economies. She is a native New Yorker and graduate of Carnegie Mellon University.'
 }]
+
+function toDonatePage () {
+  trackDonationEvent()
+  window.location.href = 'https://creativevisions.networkforgood.com/projects/31964-creative-visions-fiscal-sponsorship-good-call'
+}
 
 const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight, metricsShown, showMetrics }) => {
   const Slides = range(1, 6).map(n => (
@@ -109,6 +115,7 @@ const AboutPage = ({ content, metrics, rightsIndex, rightsClass, carouselHeight,
                 className='donate-btn'
                 label={content.donate.cta}
                 selector='inverse'
+                onClick= {toDonatePage}
               />
             </div>
           </div>
